@@ -44,8 +44,7 @@ public:
     /**
      * Enum for valid border styles for pages
      */
-    enum PageBorder
-    {
+    enum PageBorder {
         NoBorder = 0,  //CUPS Default 'none'
         SingleLine,
         SingleThickLine,
@@ -56,7 +55,7 @@ public:
     /**
      * Create a widget for extra CUPS options
      */
-    explicit KCupsOptionsPagesWidget( QPrintDialog *parent );
+    explicit KCupsOptionsPagesWidget(QPrintDialog *parent);
 
     /**
      * Destructor
@@ -66,7 +65,7 @@ public:
     /**
      * Set the border style of pages
      */
-    void setPageBorder( PageBorder pageBorder = NoBorder  );
+    void setPageBorder(PageBorder pageBorder = NoBorder);
 
     /**
      * Returns the selected page border style
@@ -76,7 +75,7 @@ public:
     /**
      * Set Page Label text
      */
-    void setPageLabel( QString label = ""  );
+    void setPageLabel(QString label = "");
 
     /**
      * Returns Page Label text
@@ -86,7 +85,7 @@ public:
     /**
      * Set mirror pages selected
      */
-    void setMirrorPages( bool mirror = false  );
+    void setMirrorPages(bool mirror = false);
 
     /**
      * Returns if mirror pages selected
@@ -95,7 +94,7 @@ public:
 
 protected:
 
-    void setupCupsOptions( QStringList &cupsOptions );
+    void setupCupsOptions(QStringList &cupsOptions);
 
 private:
 

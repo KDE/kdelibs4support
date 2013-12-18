@@ -35,11 +35,10 @@
 #include <kpluginloader.h>
 #include <kservice.h>
 
-
 class KPrintPreviewPrivate
 {
 public:
-    KPrintPreviewPrivate(KPrintPreview *host, QPrinter * _printer)
+    KPrintPreviewPrivate(KPrintPreview *host, QPrinter *_printer)
         : q(host)
         , printer(_printer)
         , mainWidget(new QWidget(host))
@@ -48,7 +47,7 @@ public:
     {
         mainWidget->setLayout(new QVBoxLayout);
 
-        if ( tempdir.isValid() ) {
+        if (tempdir.isValid()) {
             filename = tempdir.path() + '/' + "print_preview.pdf";
         } else {
             qWarning() << "Failed to create temporary directory";
@@ -126,8 +125,6 @@ void KPrintPreviewPrivate::setCentralWidget(QWidget *widget)
     mainWidget->layout()->addWidget(widget);
 }
 
-
-
 KPrintPreview::KPrintPreview(QPrinter *printer, QWidget *parent)
     : QDialog(parent)
     , d(new KPrintPreviewPrivate(this, printer))
@@ -178,7 +175,4 @@ bool KPrintPreview::isAvailable()
 {
     return !KMimeTypeTrader::self()->query("application/pdf", "KParts/ReadOnlyPart").isEmpty();
 }
-
-
-
 

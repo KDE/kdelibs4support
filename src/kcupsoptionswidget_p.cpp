@@ -27,12 +27,12 @@
 #include <QPrintDialog>
 
 /** @internal */
-KCupsOptionsWidget::KCupsOptionsWidget( QPrintDialog *parent ) : QWidget( parent )
+KCupsOptionsWidget::KCupsOptionsWidget(QPrintDialog *parent) : QWidget(parent)
 {
     m_dialog = parent;
 
     // When user accepts the dialog, then set up the QPrinter with the CUPS options
-    connect( m_dialog, SIGNAL(accepted()), this, SLOT(setupPrinter()) );
+    connect(m_dialog, SIGNAL(accepted()), this, SLOT(setupPrinter()));
 }
 
 KCupsOptionsWidget::~KCupsOptionsWidget()
@@ -48,8 +48,8 @@ bool KCupsOptionsWidget::cupsAvailable()
     // whereas if CUPS is not available it will return the real number of copies.
     // This behaviour is guaranteed never to change, so we can use it as a reliable substitute.
     QPrinter testPrinter;
-    testPrinter.setNumCopies( 2 );
-    return ( testPrinter.numCopies() == 1 );
+    testPrinter.setNumCopies(2);
+    return (testPrinter.numCopies() == 1);
 #else
     return false;
 #endif
@@ -57,27 +57,27 @@ bool KCupsOptionsWidget::cupsAvailable()
 
 void KCupsOptionsWidget::setupPrinter()
 {
-    if ( cupsAvailable() ) {
+    if (cupsAvailable()) {
         QStringList cupsOptions = m_dialog->printer()->printEngine()->property(QPrintEngine::PrintEnginePropertyKey(0xfe00)).toStringList();
 
-        setupCupsOptions( cupsOptions );
+        setupCupsOptions(cupsOptions);
 
         m_dialog->printer()->printEngine()->setProperty(QPrintEngine::PrintEnginePropertyKey(0xfe00), QVariant(cupsOptions));
     }
 }
 
-void KCupsOptionsWidget::setupCupsOptions( QStringList &cupsOptions )
+void KCupsOptionsWidget::setupCupsOptions(QStringList &cupsOptions)
 {
     Q_UNUSED(cupsOptions);
 }
 
-void KCupsOptionsWidget::setCupsOption( QStringList &cupsOptions, const QString& option, const QString& value )
+void KCupsOptionsWidget::setCupsOption(QStringList &cupsOptions, const QString &option, const QString &value)
 {
-    if ( cupsOptions.contains( option ) ) {
-        cupsOptions.replace( cupsOptions.indexOf( option ) + 1, value );
+    if (cupsOptions.contains(option)) {
+        cupsOptions.replace(cupsOptions.indexOf(option) + 1, value);
     } else {
-        cupsOptions.append( option );
-        cupsOptions.append( value );
+        cupsOptions.append(option);
+        cupsOptions.append(value);
     }
 }
 

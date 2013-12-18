@@ -45,7 +45,7 @@ public:
     /**
      * Create a widget for CUPS options
      */
-    explicit KCupsOptionsWidget( QPrintDialog *parent );
+    explicit KCupsOptionsWidget(QPrintDialog *parent);
 
     /**
      * Destructor
@@ -66,8 +66,8 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void setupCupsOptions( QStringList &cupsOptions );
-    void setCupsOption( QStringList &cupsOptions, const QString& option, const QString& value );
+    virtual void setupCupsOptions(QStringList &cupsOptions);
+    void setCupsOption(QStringList &cupsOptions, const QString &option, const QString &value);
 
     QPrintDialog *m_dialog;
 

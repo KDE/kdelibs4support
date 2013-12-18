@@ -34,52 +34,52 @@
 #include <QLabel>
 
 QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-                                          PageSelectPolicy pageSelectPolicy,
-                                          const QList<QWidget*> &customTabs,
-                                          QWidget *parent)
+        PageSelectPolicy pageSelectPolicy,
+        const QList<QWidget *> &customTabs,
+        QWidget *parent)
 {
-    QPrintDialog *dialog = new QPrintDialog( printer, parent );
+    QPrintDialog *dialog = new QPrintDialog(printer, parent);
     // Windows and lpr don't support server side page range so default to not
     // showing print range in dialog, it will be enabled automatically
     // for systems where CUPS is available
-    if ( pageSelectPolicy == SystemSelectsPages ) {
-        dialog->setOption( QAbstractPrintDialog::PrintPageRange, false);
+    if (pageSelectPolicy == SystemSelectsPages) {
+        dialog->setOption(QAbstractPrintDialog::PrintPageRange, false);
     }
 #if HAVE_X11
-    if ( KCupsOptionsWidget::cupsAvailable() ) {
-        KCupsOptionsPagesWidget *cupsOptionsPagesTab = new KCupsOptionsPagesWidget( dialog );
-        dialog->setOptionTabs( QList<QWidget*>() << cupsOptionsPagesTab << customTabs );
-        if ( pageSelectPolicy == SystemSelectsPages ) {
-            dialog->setOption( QAbstractPrintDialog::PrintPageRange, true );
+    if (KCupsOptionsWidget::cupsAvailable()) {
+        KCupsOptionsPagesWidget *cupsOptionsPagesTab = new KCupsOptionsPagesWidget(dialog);
+        dialog->setOptionTabs(QList<QWidget *>() << cupsOptionsPagesTab << customTabs);
+        if (pageSelectPolicy == SystemSelectsPages) {
+            dialog->setOption(QAbstractPrintDialog::PrintPageRange, true);
         }
     } else {
-        dialog->setOptionTabs( customTabs );
+        dialog->setOptionTabs(customTabs);
     }
 #else //Not X11
-    foreach( QWidget* w, customTabs ) // reparent to avoid leaks
-        w->setParent( dialog );
+    foreach (QWidget *w, customTabs) { // reparent to avoid leaks
+        w->setParent(dialog);
+    }
 #endif
-    dialog->setWindowTitle( i18nc( "@title:window", "Print" ) );
+    dialog->setWindowTitle(i18nc("@title:window", "Print"));
     return dialog;
 }
 
 QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-                                          const QList<QWidget*> &customTabs,
-                                          QWidget *parent)
+        const QList<QWidget *> &customTabs,
+        QWidget *parent)
 {
     return KdePrint::createPrintDialog(printer, KdePrint::ApplicationSelectsPages, customTabs, parent);
 }
 
-
 QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-                                          PageSelectPolicy pageSelectPolicy,
-                                          QWidget *parent)
+        PageSelectPolicy pageSelectPolicy,
+        QWidget *parent)
 {
-    return KdePrint::createPrintDialog(printer, pageSelectPolicy, QList<QWidget*>(), parent);
+    return KdePrint::createPrintDialog(printer, pageSelectPolicy, QList<QWidget *>(), parent);
 }
 
 QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-                                          QWidget *parent)
+        QWidget *parent)
 {
-    return KdePrint::createPrintDialog(printer, KdePrint::ApplicationSelectsPages, QList<QWidget*>(), parent);
+    return KdePrint::createPrintDialog(printer, KdePrint::ApplicationSelectsPages, QList<QWidget *>(), parent);
 }

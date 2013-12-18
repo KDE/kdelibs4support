@@ -34,9 +34,9 @@
 #include <klocalizedstring.h>
 
 /** @internal */
-KCupsOptionsPagesWidget::KCupsOptionsPagesWidget( QPrintDialog *parent ) : KCupsOptionsWidget( parent )
+KCupsOptionsPagesWidget::KCupsOptionsPagesWidget(QPrintDialog *parent) : KCupsOptionsWidget(parent)
 {
-    ui.setupUi( this );
+    ui.setupUi(this);
 
     //set all the default values
     //TODO restore last used values
@@ -49,55 +49,54 @@ KCupsOptionsPagesWidget::~KCupsOptionsPagesWidget()
 {
 }
 
-void KCupsOptionsPagesWidget::setupCupsOptions( QStringList &cupsOptions )
+void KCupsOptionsPagesWidget::setupCupsOptions(QStringList &cupsOptions)
 {
-    switch ( pageBorder() )
-    {
-        case NoBorder        :                                                              break; //default
-        case SingleLine      : setCupsOption( cupsOptions, "page-border", "single" );       break;
-        case SingleThickLine : setCupsOption( cupsOptions, "page-border", "single-thick" ); break;
-        case DoubleLine      : setCupsOption( cupsOptions, "page-border", "double" );       break;
-        case DoubleThickLine : setCupsOption( cupsOptions, "page-border", "double-thick" ); break;
+    switch (pageBorder()) {
+    case NoBorder        :                                                              break; //default
+    case SingleLine      : setCupsOption(cupsOptions, "page-border", "single");       break;
+    case SingleThickLine : setCupsOption(cupsOptions, "page-border", "single-thick"); break;
+    case DoubleLine      : setCupsOption(cupsOptions, "page-border", "double");       break;
+    case DoubleThickLine : setCupsOption(cupsOptions, "page-border", "double-thick"); break;
     }
 
-    if ( !pageLabel().isEmpty() ) {
-        setCupsOption( cupsOptions, "page-label", pageLabel() );
+    if (!pageLabel().isEmpty()) {
+        setCupsOption(cupsOptions, "page-label", pageLabel());
     }
 
-    if ( mirrorPages() ) {
-        setCupsOption( cupsOptions, "mirror", "" );
+    if (mirrorPages()) {
+        setCupsOption(cupsOptions, "mirror", "");
     }
 }
 
 void KCupsOptionsPagesWidget::initPageBorder()
 {
-    ui.pageBorderCombo->addItem( i18nc("No border line", "None"), NoBorder );
-    ui.pageBorderCombo->addItem( i18n("Single Line"),       SingleLine );
-    ui.pageBorderCombo->addItem( i18n("Single Thick Line"), SingleThickLine );
-    ui.pageBorderCombo->addItem( i18n("Double Line"),       DoubleLine );
-    ui.pageBorderCombo->addItem( i18n("Double Thick Line"), DoubleThickLine );
+    ui.pageBorderCombo->addItem(i18nc("No border line", "None"), NoBorder);
+    ui.pageBorderCombo->addItem(i18n("Single Line"),       SingleLine);
+    ui.pageBorderCombo->addItem(i18n("Single Thick Line"), SingleThickLine);
+    ui.pageBorderCombo->addItem(i18n("Double Line"),       DoubleLine);
+    ui.pageBorderCombo->addItem(i18n("Double Thick Line"), DoubleThickLine);
 
-    setPageBorder( NoBorder );
+    setPageBorder(NoBorder);
 }
 
-void KCupsOptionsPagesWidget::setPageBorder( KCupsOptionsPagesWidget::PageBorder pageBorder  )
+void KCupsOptionsPagesWidget::setPageBorder(KCupsOptionsPagesWidget::PageBorder pageBorder)
 {
-    ui.pageBorderCombo->setCurrentIndex( ui.pageBorderCombo->findData( QVariant( pageBorder ) ) );
+    ui.pageBorderCombo->setCurrentIndex(ui.pageBorderCombo->findData(QVariant(pageBorder)));
 }
 
 KCupsOptionsPagesWidget::PageBorder KCupsOptionsPagesWidget::pageBorder() const
 {
-    return (KCupsOptionsPagesWidget::PageBorder) ui.pageBorderCombo->itemData( ui.pageBorderCombo->currentIndex() ).toInt();
+    return (KCupsOptionsPagesWidget::PageBorder) ui.pageBorderCombo->itemData(ui.pageBorderCombo->currentIndex()).toInt();
 }
 
 void KCupsOptionsPagesWidget::initPageLabel()
 {
-    setPageLabel( "" );
+    setPageLabel("");
 }
 
-void KCupsOptionsPagesWidget::setPageLabel( QString label )
+void KCupsOptionsPagesWidget::setPageLabel(QString label)
 {
-    ui.pageLabelLineEdit->insert( label );
+    ui.pageLabelLineEdit->insert(label);
 }
 
 QString KCupsOptionsPagesWidget::pageLabel() const
@@ -107,12 +106,12 @@ QString KCupsOptionsPagesWidget::pageLabel() const
 
 void KCupsOptionsPagesWidget::initMirrorPages()
 {
-    setMirrorPages( false );
+    setMirrorPages(false);
 }
 
-void KCupsOptionsPagesWidget::setMirrorPages( bool mirror )
+void KCupsOptionsPagesWidget::setMirrorPages(bool mirror)
 {
-    ui.mirrorPagesCheckBox->setChecked( mirror );
+    ui.mirrorPagesCheckBox->setChecked(mirror);
 }
 
 bool KCupsOptionsPagesWidget::mirrorPages() const

@@ -44,8 +44,7 @@ public:
     /**
     * Enum for valid page set
     */
-    enum PageSet
-    {
+    enum PageSet {
         AllPages = 0,  //CUPS Default
         OddPages,
         EvenPages
@@ -54,7 +53,7 @@ public:
     /**
      * Create a widget for extra CUPS options
      */
-    explicit KCupsOptionsSettingsWidget( QPrintDialog *parent );
+    explicit KCupsOptionsSettingsWidget(QPrintDialog *parent);
 
     /**
      * Destructor
@@ -64,7 +63,7 @@ public:
     /**
     * Set the Page Set
     */
-    void setPageSet( PageSet pageSet = AllPages  );
+    void setPageSet(PageSet pageSet = AllPages);
 
     /**
     * Returns the selected Page Set
@@ -75,16 +74,16 @@ public:
     * Set the Server Selects Pages Mode
     */
 
-    void setSystemSelectsPages( bool systemSelectsPages = true  );
+    void setSystemSelectsPages(bool systemSelectsPages = true);
 
     /**
     * Returns if set to System Selects Pages mode
     */
     bool systemSelectsPages() const;
 
-    protected:
+protected:
 
-    void setupCupsOptions( QStringList &cupsOptions );
+    void setupCupsOptions(QStringList &cupsOptions);
 
 private:
 

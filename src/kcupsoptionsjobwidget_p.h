@@ -47,8 +47,7 @@ public:
     /**
      * Enum for values of job-hold-until option
      */
-    enum JobHoldUntil
-    {
+    enum JobHoldUntil {
         NoHold = 0,  //CUPS Default
         Indefinite,
         DayTime,
@@ -62,7 +61,7 @@ public:
     /**
      * Create a widget for extra CUPS options
      */
-    explicit KCupsOptionsJobWidget( QPrintDialog *parent );
+    explicit KCupsOptionsJobWidget(QPrintDialog *parent);
 
     /**
      * Destructor
@@ -72,7 +71,7 @@ public:
     /**
      * Set the Job Hold option
      */
-    void setJobHold( JobHoldUntil jobHold = NoHold );
+    void setJobHold(JobHoldUntil jobHold = NoHold);
 
     /**
      * Returns the selected Job Hold option
@@ -82,7 +81,7 @@ public:
     /**
      * Set the Job Hold Time
      */
-    void setJobHoldTime( QTime holdUntilTime );
+    void setJobHoldTime(QTime holdUntilTime);
 
     /**
      * Returns the selected Job Hold Time
@@ -92,7 +91,7 @@ public:
     /**
      * Set the Job Billing text
      */
-    void setJobBilling( QString jobBilling = "" );
+    void setJobBilling(QString jobBilling = "");
 
     /**
      * Returns the entered Job Billing text
@@ -102,7 +101,7 @@ public:
     /**
      * Set Job Priority
      */
-    void setJobPriority( int priority = 50  );
+    void setJobPriority(int priority = 50);
 
     /**
      * Returns Job Priority
@@ -112,7 +111,7 @@ public:
     /**
      * Set Job options
      */
-    void setJobOptions( QStringList jobOptions );
+    void setJobOptions(QStringList jobOptions);
 
     /**
      * Returns the entered Job Options
@@ -121,7 +120,7 @@ public:
 
 protected:
 
-    void setupCupsOptions( QStringList &cupsOptions );
+    void setupCupsOptions(QStringList &cupsOptions);
 
 private Q_SLOTS:
 
