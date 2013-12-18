@@ -37,7 +37,7 @@ class KComponentDataPrivate
 public:
     KComponentDataPrivate(const K4AboutData &aboutData_)
         : aboutData(aboutData_),
-        refCount(1)
+          refCount(1)
     {
     }
 
@@ -72,9 +72,8 @@ public:
 
 private:
     QAtomicInt refCount;
-    KComponentDataPrivate(const KComponentDataPrivate&);
-    KComponentDataPrivate &operator=(const KComponentDataPrivate&);
+    KComponentDataPrivate(const KComponentDataPrivate &);
+    KComponentDataPrivate &operator=(const KComponentDataPrivate &);
 };
 
 #endif // KERNEL_KCOMPONENTDATA_P_H
-// vim: sw=4 sts=4 et tw=100

@@ -56,17 +56,18 @@ private Q_SLOTS:
         QApplication::sendEvent(&w, &e);
 
         QString prefix = "This is a long prefix for the tab title. ";
-        for (int i = 0; i < 6; ++i)
-            w.insertTab(i, new QWidget, prefix+QString::number(i));
+        for (int i = 0; i < 6; ++i) {
+            w.insertTab(i, new QWidget, prefix + QString::number(i));
+        }
         w.removeTab(0);
         for (int i = 0; i < 5; ++i) {
             //kDebug() << i << w.tabText(i);
-            QCOMPARE(w.tabText(i), QString(prefix+QString::number(i+1)));
+            QCOMPARE(w.tabText(i), QString(prefix + QString::number(i + 1)));
         }
         w.removeTab(0);
         for (int i = 0; i < 4; ++i) {
             //kDebug() << i << w.tabText(i);
-            QCOMPARE(w.tabText(i), QString(prefix+QString::number(i+2)));
+            QCOMPARE(w.tabText(i), QString(prefix + QString::number(i + 2)));
         }
     }
     void testMoveTab()
@@ -74,21 +75,21 @@ private Q_SLOTS:
         // Test inspired by #170470 and #177036 (title messup).
         // Then expanded to include the problem of #159295 (focus loss).
         QWidget topLevel;
-        QComboBox* combo = new QComboBox(&topLevel);
+        QComboBox *combo = new QComboBox(&topLevel);
         combo->setEditable(true);
-        KTabWidget* w = new KTabWidget(&topLevel);
+        KTabWidget *w = new KTabWidget(&topLevel);
         w->setAutomaticResizeTabs(true);
         w->resize(300, 400);
         QResizeEvent e(w->size(), QSize());
         QApplication::sendEvent(w, &e);
         QString prefix = "This is a long prefix for the tab title. ";
-        KLineEdit* lineEdits[4];
+        KLineEdit *lineEdits[4];
         for (int i = 0; i < 4; ++i) {
-            QWidget* page = new QWidget;
+            QWidget *page = new QWidget;
             page->setObjectName(QString::number(i));
             lineEdits[i] = new KLineEdit(page); // a widget that can take focus
-            lineEdits[i]->setObjectName("LineEdit"+QString::number(i));
-            w->insertTab(i, page, prefix+QString::number(i));
+            lineEdits[i]->setObjectName("LineEdit" + QString::number(i));
+            w->insertTab(i, page, prefix + QString::number(i));
             //kDebug() << i << w->tabText(i);
         }
         topLevel.show();
@@ -104,45 +105,45 @@ private Q_SLOTS:
         QCOMPARE(topLevel.focusWidget()->objectName(), lineEdits[0]->objectName());
         QVERIFY(lineEdits[0]->isVisible());
 
-        w->moveTab(0,3);
+        w->moveTab(0, 3);
         //for (int i = 0; i < 4; ++i)
-            //kDebug() << i << w->tabText(i);
-        QCOMPARE(w->tabText(0), QString(prefix+QString::number(1)));
-        QCOMPARE(w->tabText(1), QString(prefix+QString::number(2)));
-        QCOMPARE(w->tabText(2), QString(prefix+QString::number(3)));
-        QCOMPARE(w->tabText(3), QString(prefix+QString::number(0)));
+        //kDebug() << i << w->tabText(i);
+        QCOMPARE(w->tabText(0), QString(prefix + QString::number(1)));
+        QCOMPARE(w->tabText(1), QString(prefix + QString::number(2)));
+        QCOMPARE(w->tabText(2), QString(prefix + QString::number(3)));
+        QCOMPARE(w->tabText(3), QString(prefix + QString::number(0)));
 
         // Did the focus switch to the lineEdit, due to removeTab+insertTab? Whoops.
         QCOMPARE(topLevel.focusWidget()->objectName(), lineEdits[0]->objectName());
 
-        w->moveTab(3,0);
+        w->moveTab(3, 0);
         QCOMPARE(topLevel.focusWidget()->objectName(), lineEdits[0]->objectName());
         for (int i = 0; i < 4; ++i) {
             //kDebug() << i << w->tabText(i);
-            QCOMPARE(w->tabText(i), QString(prefix+QString::number(i)));
+            QCOMPARE(w->tabText(i), QString(prefix + QString::number(i)));
         }
-     }
+    }
 
 #ifndef KDE_NO_DEPRECATED
     void testSetHidden()
-     {
-         KTabWidget w;
-         w.insertTab(0, new QWidget, "a tab");
-         QVERIFY(!w.isTabBarHidden());
-         w.show();
-         QVERIFY(!w.isTabBarHidden());
-         w.setTabBarHidden(true);
-         QVERIFY(w.isTabBarHidden());
-     }
+    {
+        KTabWidget w;
+        w.insertTab(0, new QWidget, "a tab");
+        QVERIFY(!w.isTabBarHidden());
+        w.show();
+        QVERIFY(!w.isTabBarHidden());
+        w.setTabBarHidden(true);
+        QVERIFY(w.isTabBarHidden());
+    }
 #endif
-     void testMiddleClickTabReordering();
-     void testTabMoved();
+    void testMiddleClickTabReordering();
+    void testTabMoved();
 
 private Q_SLOTS:
     void slotCurrentChanged(int index)
     {
         QCOMPARE(index, 0);
-        KTabWidget* w = qobject_cast<KTabWidget *>(sender());
+        KTabWidget *w = qobject_cast<KTabWidget *>(sender());
         QVERIFY(w);
         QCOMPARE(w->tabText(0), QString("First post!"));
     }
@@ -151,10 +152,12 @@ private Q_SLOTS:
 //  MyTabWidget is a tab widget that provides access to the tab bar.
 // This is needed for the following unit test.
 
-class MyTabWidget : public KTabWidget {
+class MyTabWidget : public KTabWidget
+{
 
 public:
-    QTabBar* getTabBar() const {
+    QTabBar *getTabBar() const
+    {
         return tabBar();
     }
 };
@@ -164,8 +167,8 @@ void KTabWidget_UnitTest::testMiddleClickTabReordering()
     MyTabWidget tabWidget;
     tabWidget.setMovable(true);
 
-    QWidget* w0 = new QWidget;
-    QWidget* w1 = new QWidget;
+    QWidget *w0 = new QWidget;
+    QWidget *w1 = new QWidget;
     tabWidget.insertTab(0, w0, "Tab 0");
     tabWidget.insertTab(1, w1, "Tab 1");
     tabWidget.show();

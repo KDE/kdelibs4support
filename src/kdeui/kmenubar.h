@@ -38,12 +38,12 @@
 class KDE4SUPPORT_DEPRECATED_EXPORT KMenuBar : public QMenuBar
 {
     Q_OBJECT
-    Q_PROPERTY( bool topLevelMenu READ isTopLevelMenu WRITE setTopLevelMenu )
+    Q_PROPERTY(bool topLevelMenu READ isTopLevelMenu WRITE setTopLevelMenu)
 
 public:
 
-    explicit KMenuBar (QWidget *parent=0);
-    ~KMenuBar ();
+    explicit KMenuBar(QWidget *parent = 0);
+    ~KMenuBar();
 
     /**
      * This controls whether or not this menubar will be a top-level
@@ -72,36 +72,36 @@ public:
     bool isTopLevelMenu() const;
 
     // TT are overloading virtuals :(
-    virtual void setGeometry( const QRect &r );
-    virtual void setGeometry( int x, int y, int w, int h );
-    virtual void resize( int w, int h );
-    void resize( const QSize& s );
+    virtual void setGeometry(const QRect &r);
+    virtual void setGeometry(int x, int y, int w, int h);
+    virtual void resize(int w, int h);
+    void resize(const QSize &s);
 
-    virtual void setFrameStyle( int );
-    virtual void setLineWidth( int );
-    virtual void setMargin( int );
+    virtual void setFrameStyle(int);
+    virtual void setLineWidth(int);
+    virtual void setMargin(int);
     virtual QSize sizeHint() const;
 protected Q_SLOTS:
     void slotReadConfig();
 protected:
-    virtual void resizeEvent( QResizeEvent* );
+    virtual void resizeEvent(QResizeEvent *);
     virtual bool eventFilter(QObject *, QEvent *);
 #pragma message("Port to Qt5 native filter")
 #if 0
-    virtual bool x11Event( XEvent* );
+    virtual bool x11Event(XEvent *);
 #endif
-    virtual void closeEvent( QCloseEvent* );
-    virtual void paintEvent( QPaintEvent* );
+    virtual void closeEvent(QCloseEvent *);
+    virtual void paintEvent(QPaintEvent *);
 private Q_SLOTS:
     void updateFallbackSize();
     void selectionTimeout();
 private:
     void setTopLevelMenuInternal(bool top_level);
     void updateMenuBarSize();
-    void checkSize( int& w, int& h );
+    void checkSize(int &w, int &h);
 private:
     class KMenuBarPrivate;
-    KMenuBarPrivate * const d;
+    KMenuBarPrivate *const d;
 };
 
 #endif

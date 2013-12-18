@@ -24,11 +24,11 @@
 
 #include "klocale.h"
 #if defined Q_OS_WIN
-    #include "klocale_win_p.h"
+#include "klocale_win_p.h"
 #elif defined Q_OS_MAC
-    #include "klocale_mac_p.h"
+#include "klocale_mac_p.h"
 #else
-    #include "klocale_unix_p.h"
+#include "klocale_unix_p.h"
 #endif
 
 #include <QMutex>
@@ -45,22 +45,22 @@
 
 KLocale::KLocale(KSharedConfig::Ptr config)
 #if defined Q_OS_WIN
-        : d(new KLocaleWindowsPrivate(this, config))
+    : d(new KLocaleWindowsPrivate(this, config))
 #elif defined Q_OS_MAC
-        : d(new KLocaleMacPrivate(this, config))
+    : d(new KLocaleMacPrivate(this, config))
 #else
-        : d(new KLocaleUnixPrivate(this, config))
+    : d(new KLocaleUnixPrivate(this, config))
 #endif
 {
 }
 
 KLocale::KLocale(const QString &language, const QString &country, KConfig *config)
 #if defined Q_OS_WIN
-        : d(new KLocaleWindowsPrivate(this, language, country, config))
+    : d(new KLocaleWindowsPrivate(this, language, country, config))
 #elif defined Q_OS_MAC
-        : d(new KLocaleMacPrivate(this, language, country, config))
+    : d(new KLocaleMacPrivate(this, language, country, config))
 #else
-        : d(new KLocaleUnixPrivate(this, language, country, config))
+    : d(new KLocaleUnixPrivate(this, language, country, config))
 #endif
 {
 }
@@ -313,9 +313,10 @@ public:
     {
         QMutexLocker lock(&mutex);
         // If there's no QApp, postpone initialization
-        QCoreApplication* coreApp = QCoreApplication::instance();
-        if (inited || !coreApp)
+        QCoreApplication *coreApp = QCoreApplication::instance();
+        if (inited || !coreApp) {
             return;
+        }
         inited = true;
         QTextCodec::setCodecForLocale(locale.codecForEncoding());
         if (coreApp->thread() != QThread::currentThread()) {
@@ -331,14 +332,14 @@ public:
 
 Q_GLOBAL_STATIC(KGlobalLocaleStatic, s_globalLocale)
 
-KLocale * KLocale::global()
+KLocale *KLocale::global()
 {
-    KGlobalLocaleStatic* glob = s_globalLocale();
+    KGlobalLocaleStatic *glob = s_globalLocale();
     glob->init();
     return &glob->locale;
 }
 
-double KLocale::readNumber(const QString &_str, bool * ok) const
+double KLocale::readNumber(const QString &_str, bool *ok) const
 {
     return d->readNumber(_str, ok);
 }
@@ -546,7 +547,7 @@ void KLocale::setMonetaryDecimalSymbol(const QString &symbol)
     d->setMonetaryDecimalSymbol(symbol);
 }
 
-void KLocale::setCurrencySymbol(const QString & symbol)
+void KLocale::setCurrencySymbol(const QString &symbol)
 {
     d->setCurrencySymbol(symbol);
 }
@@ -656,7 +657,7 @@ KLocale::CalendarSystem KLocale::calendarSystem() const
     return d->calendarSystem();
 }
 
-const KCalendarSystem * KLocale::calendar() const
+const KCalendarSystem *KLocale::calendar() const
 {
     return d->calendar();
 }
@@ -677,12 +678,12 @@ KLocale::WeekNumberSystem KLocale::weekNumberSystem() const
 }
 
 KLocale::KLocale(const KLocale &rhs)
-        : d(new KLocalePrivate(*rhs.d))
+    : d(new KLocalePrivate(*rhs.d))
 {
     d->q = this;
 }
 
-KLocale & KLocale::operator=(const KLocale & rhs)
+KLocale &KLocale::operator=(const KLocale &rhs)
 {
     // the assignment operator works here
     *d = *rhs.d;

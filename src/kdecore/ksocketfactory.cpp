@@ -50,8 +50,9 @@ static inline void setError(QAbstractSocket *socket, QAbstractSocket::SocketErro
 void KSocketFactory::connectToHost(QTcpSocket *socket, const QString &protocol, const QString &host,
                                    quint16 port)
 {
-    if (!socket)
+    if (!socket) {
         return;
+    }
 
 #ifndef QT_NO_NETWORKPROXY
     socket->setProxy(proxyForConnection(protocol, host));
@@ -65,7 +66,7 @@ void KSocketFactory::connectToHost(QTcpSocket *socket, const QUrl &url)
 }
 
 QTcpSocket *KSocketFactory::connectToHost(const QString &protocol, const QString &host, quint16 port,
-                                          QObject *parent)
+        QObject *parent)
 {
     // ### TO-DO: find a way to determine if we should use QSslSocket or plain QTcpSocket
     QTcpSocket *socket = new QSslSocket(parent);
@@ -79,10 +80,11 @@ QTcpSocket *KSocketFactory::connectToHost(const QUrl &url, QObject *parent)
 }
 
 void KSocketFactory::synchronousConnectToHost(QTcpSocket *socket, const QString &protocol,
-                                              const QString &host, quint16 port, int msecs)
+        const QString &host, quint16 port, int msecs)
 {
-    if (!socket)
+    if (!socket) {
         return;
+    }
 
     connectToHost(socket, protocol, host, port);
     if (!socket->waitForConnected(msecs))
@@ -96,7 +98,7 @@ void KSocketFactory::synchronousConnectToHost(QTcpSocket *socket, const QUrl &ur
 }
 
 QTcpSocket *KSocketFactory::synchronousConnectToHost(const QString &protocol, const QString &host,
-                                                     quint16 port, int msecs, QObject *parent)
+        quint16 port, int msecs, QObject *parent)
 {
     QTcpSocket *socket = connectToHost(protocol, host, port, parent);
     if (!socket->waitForConnected(msecs))

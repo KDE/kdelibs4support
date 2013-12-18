@@ -32,9 +32,9 @@ public:
     KLocaleWindowsPrivate(KLocale *q_ptr,
                           const QString &language, const QString &country, KConfig *config);
 
-    KLocaleWindowsPrivate( const KLocaleWindowsPrivate &rhs );
+    KLocaleWindowsPrivate(const KLocaleWindowsPrivate &rhs);
 
-    KLocaleWindowsPrivate &operator=( const KLocaleWindowsPrivate &rhs );
+    KLocaleWindowsPrivate &operator=(const KLocaleWindowsPrivate &rhs);
 
     virtual ~KLocaleWindowsPrivate();
 
@@ -61,10 +61,10 @@ protected:
     virtual const QByteArray encoding();
 
 private:
-    QString windowsLocaleValue( LCTYPE key ) const;
+    QString windowsLocaleValue(LCTYPE key) const;
     LCID m_winLocaleId;
     // Encoding settings
-    char m_win32SystemEncoding[3+7]; //"cp " + lang ID
+    char m_win32SystemEncoding[3 + 7]; //"cp " + lang ID
 };
 
 #endif // KLOCALE_WIN_P_H

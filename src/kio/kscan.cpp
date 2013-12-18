@@ -17,7 +17,6 @@
     Boston, MA 02110-1301, USA.
 */
 
-
 #include "kscan.h"
 
 #include <QtCore/QFile>
@@ -30,27 +29,26 @@ class KScanDialog::KScanDialogPrivate
 {
 public:
     KScanDialogPrivate()
-        : m_currentId( 1 )
+        : m_currentId(1)
     {}
     int m_currentId;
 };
 
 // static factory method
-KScanDialog * KScanDialog::getScanDialog( QWidget *parent )
+KScanDialog *KScanDialog::getScanDialog(QWidget *parent)
 {
-    return KServiceTypeTrader::createInstanceFromQuery<KScanDialog>( "KScan/KScanDialog", QString(), parent );
+    return KServiceTypeTrader::createInstanceFromQuery<KScanDialog>("KScan/KScanDialog", QString(), parent);
 }
 
-
-KScanDialog::KScanDialog( int dialogFace, int buttonMask,
-			  QWidget *parent )
-    : KPageDialog( parent ),
-      d( new KScanDialogPrivate )
+KScanDialog::KScanDialog(int dialogFace, int buttonMask,
+                         QWidget *parent)
+    : KPageDialog(parent),
+      d(new KScanDialogPrivate)
 {
-  setFaceType( (KPageDialog::FaceType)dialogFace );
-  setWindowTitle( i18n("Acquire Image") );
-  buttonBox()->setStandardButtons((QDialogButtonBox::StandardButtons)buttonMask);
-  buttonBox()->button(QDialogButtonBox::Close)->setDefault(true);
+    setFaceType((KPageDialog::FaceType)dialogFace);
+    setWindowTitle(i18n("Acquire Image"));
+    buttonBox()->setStandardButtons((QDialogButtonBox::StandardButtons)buttonMask);
+    buttonBox()->button(QDialogButtonBox::Close)->setDefault(true);
 }
 
 KScanDialog::~KScanDialog()
@@ -79,28 +77,27 @@ class KOCRDialog::KOCRDialogPrivate
 {
 public:
     KOCRDialogPrivate()
-        : m_currentId( 1 )
+        : m_currentId(1)
     {}
     int m_currentId;
 };
 
 // static factory method
-KOCRDialog * KOCRDialog::getOCRDialog( QWidget *parent )
+KOCRDialog *KOCRDialog::getOCRDialog(QWidget *parent)
 {
-    return KServiceTypeTrader::createInstanceFromQuery<KOCRDialog>( "KScan/KOCRDialog", QString(), parent );
+    return KServiceTypeTrader::createInstanceFromQuery<KOCRDialog>("KScan/KOCRDialog", QString(), parent);
 }
 
-
-KOCRDialog::KOCRDialog( int dialogFace, int buttonMask,
-			  QWidget *parent, bool modal )
-    : KPageDialog( parent ),
-      d( new KOCRDialogPrivate )
+KOCRDialog::KOCRDialog(int dialogFace, int buttonMask,
+                       QWidget *parent, bool modal)
+    : KPageDialog(parent),
+      d(new KOCRDialogPrivate)
 {
-  setFaceType( (KPageDialog::FaceType)dialogFace );
-  setWindowTitle( i18n("OCR Image") );
-  buttonBox()->setStandardButtons((QDialogButtonBox::StandardButtons)buttonMask);
-  buttonBox()->button(QDialogButtonBox::Close)->setDefault(true);
-  setModal( modal );
+    setFaceType((KPageDialog::FaceType)dialogFace);
+    setWindowTitle(i18n("OCR Image"));
+    buttonBox()->setStandardButtons((QDialogButtonBox::StandardButtons)buttonMask);
+    buttonBox()->button(QDialogButtonBox::Close)->setDefault(true);
+    setModal(modal);
 }
 
 KOCRDialog::~KOCRDialog()
@@ -117,6 +114,4 @@ int KOCRDialog::nextId()
 {
     return ++d->m_currentId;
 }
-
-
 

@@ -31,27 +31,27 @@ class KFileMetaPreview;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KPreviewPropsPlugin : public KPropertiesDialogPlugin
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
 
-  KPreviewPropsPlugin( KPropertiesDialog *_props );
-  virtual ~KPreviewPropsPlugin();
+    KPreviewPropsPlugin(KPropertiesDialog *_props);
+    virtual ~KPreviewPropsPlugin();
 
-  /**
-   * Tests whether a preview for the first item should be shown
-   */
-  static bool supports( const KFileItemList& _items );
+    /**
+     * Tests whether a preview for the first item should be shown
+     */
+    static bool supports(const KFileItemList &_items);
 
 private Q_SLOTS:
-  void currentPageChanged( KPageWidgetItem *, KPageWidgetItem * );
+    void currentPageChanged(KPageWidgetItem *, KPageWidgetItem *);
 
 private:
-  KFileMetaPreview* preview;
-  void createLayout();
+    KFileMetaPreview *preview;
+    void createLayout();
 
-  class KPreviewPropsPluginPrivate;
-  KPreviewPropsPluginPrivate* const d;
+    class KPreviewPropsPluginPrivate;
+    KPreviewPropsPluginPrivate *const d;
 };
 
 #endif

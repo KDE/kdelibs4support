@@ -167,13 +167,13 @@ public:
      */
     bool conflictsWith(const QKeySequence &needle) const;
 
-   /**
-     * Returns a description of the shortcut as a semicolon-separated
-     * list of key sequences, as returned by QKeySequence::toString().
-     * @return the string represenation of this shortcut
-     * @see QKeySequence::toString()
-     * @see KShortcut(const QString &description)
-     */
+    /**
+      * Returns a description of the shortcut as a semicolon-separated
+      * list of key sequences, as returned by QKeySequence::toString().
+      * @return the string represenation of this shortcut
+      * @see QKeySequence::toString()
+      * @see KShortcut(const QString &description)
+      */
     QString toString() const;
 
     /**
@@ -255,8 +255,9 @@ inline uint qHash(const KShortcut &key)
 inline uint qHash(const QKeySequence &key)
 {
     uint hash = 0;
-    for(int i = 0; i < static_cast<int>(key.count()); i++)
-       hash += qHash(key[uint(i)]);
+    for (int i = 0; i < static_cast<int>(key.count()); i++) {
+        hash += qHash(key[uint(i)]);
+    }
     return hash;
 }
 

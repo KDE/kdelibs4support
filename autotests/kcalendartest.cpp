@@ -814,7 +814,7 @@ void KCalendarTest::testHebrewStrings()
     setlocale(LC_ALL, oldLocale.toLatin1());
 }
 
-QDate KCalendarTest::setIsoWeekDate(const KCalendarSystem * calendar, int year, int isoWeek, int dayOfWeek)
+QDate KCalendarTest::setIsoWeekDate(const KCalendarSystem *calendar, int year, int isoWeek, int dayOfWeek)
 {
     QDate resultDate;
     calendar->setDateIsoWeek(resultDate, year, isoWeek, dayOfWeek);
@@ -863,7 +863,7 @@ void KCalendarTest::testDayOfYearDate()
     delete locale;
 }
 
-QDate KCalendarTest::setDayOfYearDate(const KCalendarSystem * calendar, int year, int dayOfYear)
+QDate KCalendarTest::setDayOfYearDate(const KCalendarSystem *calendar, int year, int dayOfYear)
 {
     QDate resultDate;
     calendar->setDate(resultDate, year, dayOfYear);
@@ -1093,7 +1093,7 @@ void KCalendarTest::testEra()
     delete calendar;
 }
 
-QDate KCalendarTest::setEraDate(const KCalendarSystem * calendar, const QString &era, int yearInEra, int month, int day)
+QDate KCalendarTest::setEraDate(const KCalendarSystem *calendar, const QString &era, int yearInEra, int month, int day)
 {
     QDate resultDate;
     calendar->setDate(resultDate, era, yearInEra, month, day);
@@ -1234,7 +1234,6 @@ void KCalendarTest::testIslamicCivil()
 
     delete calendar;
 }
-
 
 void KCalendarTest::testIndianNational()
 {
@@ -1489,7 +1488,6 @@ void KCalendarTest::testIslamicCivilYmd()
     delete calendar;
 }
 
-
 // Jalali Calendar System
 
 void KCalendarTest::testJalaliBasic()
@@ -1721,7 +1719,6 @@ void KCalendarTest::testMinguoBasic()
     delete calendar;
 }
 
-
 void KCalendarTest::testThaiBasic()
 {
     const KCalendarSystem *calendar = KCalendarSystem::create(KLocale::ThaiCalendar);
@@ -1767,11 +1764,10 @@ void KCalendarTest::testThaiBasic()
     delete calendar;
 }
 
-
 // generic test functions, call from calendar system specific ones
 void KCalendarTest::testCalendarSystemType(const KCalendarSystem *calendar,
-                                           KLocale::CalendarSystem system,
-                                           const QString &type, const QString &label)
+        KLocale::CalendarSystem system,
+        const QString &type, const QString &label)
 {
     QCOMPARE(calendar->calendarType(),               type);
     QCOMPARE(calendar->calendarSystem(),             system);
@@ -1883,7 +1879,7 @@ void KCalendarTest::testEraDate(const KCalendarSystem *calendar, const QDate &da
 //  e.g. testWeekDayName( cal, 6, QDate(y,m,d), QString("Monday"), QString("Mon") )
 
 void KCalendarTest::testWeekDayName(const KCalendarSystem *calendar, int weekDay, const QDate &date,
-                                    const QString &narrowName, const QString & shortName, const QString & longName)
+                                    const QString &narrowName, const QString &shortName, const QString &longName)
 {
     QCOMPARE(calendar->weekDayName(weekDay, KCalendarSystem::ShortDayName), shortName);
     QCOMPARE(calendar->weekDayName(weekDay, KCalendarSystem::LongDayName), longName);
@@ -2123,7 +2119,6 @@ void KCalendarTest::testGregorianDaysInYear()
 
     delete calendar;
 }
-
 
 void KCalendarTest::testGregorianDaysInMonth()
 {
@@ -2766,7 +2761,6 @@ void KCalendarTest::testWeekNumberSystem()
     QCOMPARE(weekYear, 2012);
     QCOMPARE(calendar->week(QDate(2012, 12, 31), &weekYear), 53);       //Last Day
     QCOMPARE(weekYear, 2012);
-
 
     // First Partial Week, second week starting Sunday
     locale->setWeekStartDay(7);

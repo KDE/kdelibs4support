@@ -38,13 +38,13 @@
 #include <QHash>
 #include <QScrollBar>
 
-static QString alphabetSample ()
+static QString alphabetSample()
 {
     return i18nc("short",
-    // i18n: A shorter version of the alphabet test phrase translated in
-    // another message. It is displayed in the dropdown list of font previews
-    // (the font selection combo box), so keep it under the length equivalent
-    // to 60 or so proportional Latin characters.
+                 // i18n: A shorter version of the alphabet test phrase translated in
+                 // another message. It is displayed in the dropdown list of font previews
+                 // (the font selection combo box), so keep it under the length equivalent
+                 // to 60 or so proportional Latin characters.
                  "The Quick Brown Fox Jumps Over The Lazy Dog");
 }
 
@@ -52,14 +52,14 @@ class KFontFamilyDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    explicit KFontFamilyDelegate (QObject *parent);
+    explicit KFontFamilyDelegate(QObject *parent);
 
-    void paint (QPainter *painter,
-                const QStyleOptionViewItem &option,
-                const QModelIndex &index) const;
+    void paint(QPainter *painter,
+               const QStyleOptionViewItem &option,
+               const QModelIndex &index) const;
 
-    QSize sizeHint (const QStyleOptionViewItem &option,
-                    const QModelIndex &index) const;
+    QSize sizeHint(const QStyleOptionViewItem &option,
+                   const QModelIndex &index) const;
 
     QIcon truetype;
     QIcon bitmap;
@@ -69,8 +69,8 @@ public:
     QHash<QString, QString> fontFamilyTrMap;
 };
 
-KFontFamilyDelegate::KFontFamilyDelegate (QObject *parent)
-: QAbstractItemDelegate(parent)
+KFontFamilyDelegate::KFontFamilyDelegate(QObject *parent)
+    : QAbstractItemDelegate(parent)
 {
     truetype = QIcon(QLatin1String(":/trolltech/styles/commonstyle/images/fonttruetype-16.png"));
     bitmap = QIcon(QLatin1String(":/trolltech/styles/commonstyle/images/fontbitmap-16.png"));
@@ -81,9 +81,9 @@ KFontFamilyDelegate::KFontFamilyDelegate (QObject *parent)
     sizeFactSample = 1.0; // better leave at 1, so that user can relate sizes to default
 }
 
-void KFontFamilyDelegate::paint (QPainter *painter,
-                                 const QStyleOptionViewItem &option,
-                                 const QModelIndex &index) const
+void KFontFamilyDelegate::paint(QPainter *painter,
+                                const QStyleOptionViewItem &option,
+                                const QModelIndex &index) const
 {
     QBrush sampleBrush;
     if (option.state & QStyle::State_Selected) {
@@ -111,18 +111,18 @@ void KFontFamilyDelegate::paint (QPainter *painter,
     if (availableSystems.count() > 0) {
         canShowLanguageSample = false;
         QString scriptsSpec = i18nc("Numeric IDs of scripts for font previews",
-        // i18n: Integer which indicates the script you used in the sample text
-        // for font previews in your language. For the possible values, see
-        // http://doc.trolltech.com/qfontdatabase.html#WritingSystem-enum
-        // If the sample text contains several scripts, their IDs can be given
-        // as a comma-separated list (e.g. for Japanese it is "1,27").
+                                    // i18n: Integer which indicates the script you used in the sample text
+                                    // for font previews in your language. For the possible values, see
+                                    // http://doc.trolltech.com/qfontdatabase.html#WritingSystem-enum
+                                    // If the sample text contains several scripts, their IDs can be given
+                                    // as a comma-separated list (e.g. for Japanese it is "1,27").
                                     "1");
         QStringList scriptStrIds = scriptsSpec.split(',');
         foreach (const QString &scriptStrId, scriptStrIds) {
             bool convOk;
             int ws = scriptStrId.toInt(&convOk);
-            if (   convOk && ws > 0 && ws < QFontDatabase::WritingSystemsCount
-                && availableSystems.contains(static_cast<QFontDatabase::WritingSystem>(ws))) {
+            if (convOk && ws > 0 && ws < QFontDatabase::WritingSystemsCount
+                    && availableSystems.contains(static_cast<QFontDatabase::WritingSystem>(ws))) {
                 canShowLanguageSample = true;
                 break;
             }
@@ -135,7 +135,7 @@ void KFontFamilyDelegate::paint (QPainter *painter,
         icon = &truetype;
     }
     QRect r = option.rect;
-    icon->paint(painter, r, Qt::AlignLeft|Qt::AlignTop);
+    icon->paint(painter, r, Qt::AlignLeft | Qt::AlignTop);
 
     // Claim space taken up by the icon.
     QSize actualSize = icon->actualSize(r.size());
@@ -150,7 +150,7 @@ void KFontFamilyDelegate::paint (QPainter *painter,
     QFont familyFont = baseFont;
     familyFont.setPointSizeF(familyFont.pointSizeF() * sizeFactFamily);
     painter->setFont(familyFont);
-    painter->drawText(r, Qt::AlignTop|Qt::AlignLeading|Qt::TextSingleLine, trFontFamily);
+    painter->drawText(r, Qt::AlignTop | Qt::AlignLeading | Qt::TextSingleLine, trFontFamily);
 
     // Claim space taken up by the font family name.
     int h = painter->fontMetrics().lineSpacing();
@@ -177,7 +177,7 @@ void KFontFamilyDelegate::paint (QPainter *painter,
     painter->setFont(sampleFont);
     QPen oldPen = painter->pen();
     painter->setPen(sampleBrush.color());
-    painter->drawText(r, Qt::AlignTop|Qt::AlignLeading|Qt::TextSingleLine, sample);
+    painter->drawText(r, Qt::AlignTop | Qt::AlignLeading | Qt::TextSingleLine, sample);
     painter->setFont(oldPainterFont);
     painter->setPen(oldPen);
 
@@ -186,8 +186,8 @@ void KFontFamilyDelegate::paint (QPainter *painter,
     }
 }
 
-QSize KFontFamilyDelegate::sizeHint (const QStyleOptionViewItem &option,
-                                     const QModelIndex &index) const
+QSize KFontFamilyDelegate::sizeHint(const QStyleOptionViewItem &option,
+                                    const QModelIndex &index) const
 {
     Q_UNUSED(option);
 
@@ -213,10 +213,10 @@ QSize KFontFamilyDelegate::sizeHint (const QStyleOptionViewItem &option,
 class KFontComboBoxPrivate
 {
 public:
-    KFontComboBoxPrivate (KFontComboBox *parent);
-    void updateDatabase ();
-    void updateIndexToFont ();
-    void _k_currentFontChanged (int index);
+    KFontComboBoxPrivate(KFontComboBox *parent);
+    void updateDatabase();
+    void updateIndexToFont();
+    void _k_currentFontChanged(int index);
 
     KFontComboBox *k;
     QFont currentFont;
@@ -227,7 +227,7 @@ public:
     QStringList fontList;
 };
 
-KFontComboBoxPrivate::KFontComboBoxPrivate (KFontComboBox *parent)
+KFontComboBoxPrivate::KFontComboBoxPrivate(KFontComboBox *parent)
     : k(parent),
       currentFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont)),
       onlyFixed(false),
@@ -235,7 +235,7 @@ KFontComboBoxPrivate::KFontComboBoxPrivate (KFontComboBox *parent)
 {
 }
 
-void KFontComboBoxPrivate::updateDatabase ()
+void KFontComboBoxPrivate::updateDatabase()
 {
     QStringList fontFamilies = fontList;
     if (fontList.isEmpty()) {
@@ -257,7 +257,7 @@ void KFontComboBoxPrivate::updateDatabase ()
     }
 }
 
-void KFontComboBoxPrivate::updateIndexToFont ()
+void KFontComboBoxPrivate::updateIndexToFont()
 {
     // QFontInfo necessary to return the family with proper casing.
     QString selectedFontFamily = QFontInfo(currentFont).family();
@@ -288,7 +288,7 @@ void KFontComboBoxPrivate::updateIndexToFont ()
     signalsAllowed = true;
 }
 
-void KFontComboBoxPrivate::_k_currentFontChanged (int index)
+void KFontComboBoxPrivate::_k_currentFontChanged(int index)
 {
     if (!signalsAllowed) {
         return;
@@ -308,8 +308,8 @@ void KFontComboBoxPrivate::_k_currentFontChanged (int index)
     }
 }
 
-KFontComboBox::KFontComboBox (QWidget *parent)
-: KComboBox(true, parent), d(new KFontComboBoxPrivate(this))
+KFontComboBox::KFontComboBox(QWidget *parent)
+    : KComboBox(true, parent), d(new KFontComboBoxPrivate(this))
 {
     // Inputing arbitrary font names does not make sense.
     setInsertPolicy(QComboBox::NoInsert);
@@ -329,12 +329,12 @@ KFontComboBox::KFontComboBox (QWidget *parent)
     d->updateIndexToFont();
 }
 
-KFontComboBox::~KFontComboBox ()
+KFontComboBox::~KFontComboBox()
 {
     delete d;
 }
 
-void KFontComboBox::setOnlyFixed (bool onlyFixed)
+void KFontComboBox::setOnlyFixed(bool onlyFixed)
 {
     if (onlyFixed != d->onlyFixed) {
         d->onlyFixed = onlyFixed;
@@ -342,7 +342,7 @@ void KFontComboBox::setOnlyFixed (bool onlyFixed)
     }
 }
 
-void KFontComboBox::setFontList (const QStringList &fontList)
+void KFontComboBox::setFontList(const QStringList &fontList)
 {
     if (fontList != d->fontList) {
         d->fontList = fontList;
@@ -350,12 +350,12 @@ void KFontComboBox::setFontList (const QStringList &fontList)
     }
 }
 
-QFont KFontComboBox::currentFont () const
+QFont KFontComboBox::currentFont() const
 {
     return d->currentFont;
 }
 
-void KFontComboBox::setCurrentFont (const QFont &font)
+void KFontComboBox::setCurrentFont(const QFont &font)
 {
     if (font != d->currentFont) {
         d->currentFont = font;
@@ -364,10 +364,10 @@ void KFontComboBox::setCurrentFont (const QFont &font)
     }
 }
 
-bool KFontComboBox::event (QEvent *e)
+bool KFontComboBox::event(QEvent *e)
 {
     if (e->type() == QEvent::Resize) {
-        QListView *lview = qobject_cast<QListView*>(view());
+        QListView *lview = qobject_cast<QListView *>(view());
         if (lview) {
             QString sample = alphabetSample();
             // Limit text sample length to avoid too wide list view.
@@ -376,7 +376,7 @@ bool KFontComboBox::event (QEvent *e)
             }
             QFont approxFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
             approxFont.setPointSizeF(approxFont.pointSizeF()
-                                           * d->delegate->sizeFactSample);
+                                     * d->delegate->sizeFactSample);
             int widgetWidth = width();
             int sampleWidth = QFontMetrics(approxFont).width(sample);
             sampleWidth = qRound(sampleWidth * 1.1); // extra for wider fonts
@@ -385,7 +385,7 @@ bool KFontComboBox::event (QEvent *e)
             if (lview->verticalScrollBar()) {
                 vsbarWidth = lview->verticalScrollBar()->width();
             }
-            lview->window()->setFixedWidth(  qMax(widgetWidth, sampleWidth)
+            lview->window()->setFixedWidth(qMax(widgetWidth, sampleWidth)
                                            + iconWidth + vsbarWidth);
         }
     }

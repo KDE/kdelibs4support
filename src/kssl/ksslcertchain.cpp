@@ -51,48 +51,53 @@
 #define sk_pop d->kossl->sk_pop
 #endif
 
-class KSSLCertChainPrivate {
+class KSSLCertChainPrivate
+{
 public:
-  KSSLCertChainPrivate() {
-     kossl = KOSSL::self();
-  }
+    KSSLCertChainPrivate()
+    {
+        kossl = KOSSL::self();
+    }
 
-  ~KSSLCertChainPrivate() {
-  }
+    ~KSSLCertChainPrivate()
+    {
+    }
 
-  KOSSL *kossl;
+    KOSSL *kossl;
 };
 
 KSSLCertChain::KSSLCertChain()
-	:d(new KSSLCertChainPrivate)
+    : d(new KSSLCertChainPrivate)
 {
-  _chain = NULL;
+    _chain = NULL;
 }
 
-
-KSSLCertChain::~KSSLCertChain() {
+KSSLCertChain::~KSSLCertChain()
+{
 #if KSSL_HAVE_SSL
-  if (_chain) {
-    STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
+    if (_chain) {
+        STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
-    for (;;) {
-      X509* x5 = sk_X509_pop(x);
-      if (!x5) break;
-      d->kossl->X509_free(x5);
+        for (;;) {
+            X509 *x5 = sk_X509_pop(x);
+            if (!x5) {
+                break;
+            }
+            d->kossl->X509_free(x5);
+        }
+        sk_X509_free(x);
     }
-    sk_X509_free(x);
-  }
 #endif
-  delete d;
+    delete d;
 }
 
-
-bool KSSLCertChain::isValid() {
-  return (_chain && depth() > 0);
+bool KSSLCertChain::isValid()
+{
+    return (_chain && depth() > 0);
 }
 
-
-KSSLCertChain *KSSLCertChain::replicate() {
+KSSLCertChain *KSSLCertChain::replicate()
+{
     KSSLCertChain *x = new KSSLCertChain;
     QList<KSSLCertificate *> ch = getChain();
     x->setChain(ch);   // this will do a deep copy for us
@@ -100,12 +105,12 @@ KSSLCertChain *KSSLCertChain::replicate() {
     return x;
 }
 
-
-int KSSLCertChain::depth() {
+int KSSLCertChain::depth()
+{
 #if KSSL_HAVE_SSL
-  return sk_X509_num((STACK_OF(X509)*)_chain);
+    return sk_X509_num((STACK_OF(X509) *)_chain);
 #endif
-return 0;
+    return 0;
 }
 
 void *KSSLCertChain::rawChain()
@@ -113,92 +118,105 @@ void *KSSLCertChain::rawChain()
     return _chain;
 }
 
-
-QList<KSSLCertificate *> KSSLCertChain::getChain() const {
+QList<KSSLCertificate *> KSSLCertChain::getChain() const
+{
     QList<KSSLCertificate *> cl;
-    if (!_chain) return cl;
+    if (!_chain) {
+        return cl;
+    }
 #if KSSL_HAVE_SSL
     STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
-   for (int i = 0; i < sk_X509_num(x); i++) {
-     X509* x5 = sk_X509_value(x, i);
-     if (!x5) continue;
-     KSSLCertificate *nc = new KSSLCertificate;
-     nc->setCert(d->kossl->X509_dup(x5));
-     cl.append(nc);
-   }
+    for (int i = 0; i < sk_X509_num(x); i++) {
+        X509 *x5 = sk_X509_value(x, i);
+        if (!x5) {
+            continue;
+        }
+        KSSLCertificate *nc = new KSSLCertificate;
+        nc->setCert(d->kossl->X509_dup(x5));
+        cl.append(nc);
+    }
 
 #endif
-   return cl;
+    return cl;
 }
 
-
-void KSSLCertChain::setChain(const QList<KSSLCertificate *>& chain) {
+void KSSLCertChain::setChain(const QList<KSSLCertificate *> &chain)
+{
 #if KSSL_HAVE_SSL
     if (_chain) {
         STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
         for (;;) {
-            X509* x5 = sk_X509_pop(x);
-            if (!x5) break;
+            X509 *x5 = sk_X509_pop(x);
+            if (!x5) {
+                break;
+            }
             d->kossl->X509_free(x5);
         }
         sk_X509_free(x);
         _chain = NULL;
     }
 
-    if (chain.isEmpty()) return;
+    if (chain.isEmpty()) {
+        return;
+    }
     _chain = (void *)sk_new(NULL);
     foreach (KSSLCertificate *x, chain) {
-        sk_X509_push((STACK_OF(X509)*)_chain, d->kossl->X509_dup(x->getCert()));
+        sk_X509_push((STACK_OF(X509) *)_chain, d->kossl->X509_dup(x->getCert()));
     }
 
 #endif
 }
 
-
-void KSSLCertChain::setChain(void *stack_of_x509) {
+void KSSLCertChain::setChain(void *stack_of_x509)
+{
 #if KSSL_HAVE_SSL
-if (_chain) {
-    STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
+    if (_chain) {
+        STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
-    for (;;) {
-      X509* x5 = sk_X509_pop(x);
-      if (!x5) break;
-      d->kossl->X509_free(x5);
+        for (;;) {
+            X509 *x5 = sk_X509_pop(x);
+            if (!x5) {
+                break;
+            }
+            d->kossl->X509_free(x5);
+        }
+        sk_X509_free(x);
+        _chain = NULL;
     }
-    sk_X509_free(x);
-    _chain = NULL;
-}
 
-if (!stack_of_x509) return;
+    if (!stack_of_x509) {
+        return;
+    }
 
-_chain = (void *)sk_new(NULL);
-STACK_OF(X509) *x = (STACK_OF(X509) *)stack_of_x509;
+    _chain = (void *)sk_new(NULL);
+    STACK_OF(X509) *x = (STACK_OF(X509) *)stack_of_x509;
 
-   for (int i = 0; i < sk_X509_num(x); i++) {
-     X509* x5 = sk_X509_value(x, i);
-     if (!x5) continue;
-     sk_X509_push((STACK_OF(X509)*)_chain,d->kossl->X509_dup(x5));
-   }
+    for (int i = 0; i < sk_X509_num(x); i++) {
+        X509 *x5 = sk_X509_value(x, i);
+        if (!x5) {
+            continue;
+        }
+        sk_X509_push((STACK_OF(X509) *)_chain, d->kossl->X509_dup(x5));
+    }
 
 #else
-_chain = NULL;
+    _chain = NULL;
 #endif
 }
 
-
-void KSSLCertChain::setCertChain(const QStringList& chain) {
+void KSSLCertChain::setCertChain(const QStringList &chain)
+{
     QList<KSSLCertificate *> cl;
     for (QStringList::ConstIterator s = chain.begin(); s != chain.end(); ++s) {
-       KSSLCertificate *c = KSSLCertificate::fromString((*s).toLocal8Bit());
-       if (c) {
-          cl.append(c);
-       }
+        KSSLCertificate *c = KSSLCertificate::fromString((*s).toLocal8Bit());
+        if (c) {
+            cl.append(c);
+        }
     }
     setChain(cl);
 }
-
 
 #if KSSL_HAVE_SSL
 #undef sk_new

@@ -56,65 +56,66 @@ const bool NATIVE_FILEDIALOGS_BY_DEFAULT = true;
 const bool NATIVE_FILEDIALOGS_BY_DEFAULT = false;
 #endif
 
-static QStringList mime2KdeFilter( const QStringList &mimeTypes, QString *allExtensions = 0 )
+static QStringList mime2KdeFilter(const QStringList &mimeTypes, QString *allExtensions = 0)
 {
     QMimeDatabase db;
-  QStringList kdeFilter;
-  QStringList allExt;
-  foreach( const QString& mimeType, mimeTypes ) {
-    QMimeType mime(db.mimeTypeForName(mimeType));
-    if (mime.isValid()) {
-      allExt += mime.globPatterns();
-      kdeFilter.append(mime.globPatterns().join(QLatin1String(" ")) +
-                       QLatin1Char('|') +
-                       mime.comment());
+    QStringList kdeFilter;
+    QStringList allExt;
+    foreach (const QString &mimeType, mimeTypes) {
+        QMimeType mime(db.mimeTypeForName(mimeType));
+        if (mime.isValid()) {
+            allExt += mime.globPatterns();
+            kdeFilter.append(mime.globPatterns().join(QLatin1String(" ")) +
+                             QLatin1Char('|') +
+                             mime.comment());
+        }
     }
-  }
-  if (allExtensions) {
-      allExt.sort();
-      *allExtensions = allExt.join(QLatin1String(" "));
-  }
-  return kdeFilter;
+    if (allExtensions) {
+        allExt.sort();
+        *allExtensions = allExt.join(QLatin1String(" "));
+    }
+    return kdeFilter;
 }
 /** @return File dialog filter in Qt format for @a filters
  *          or "All files (*)" for empty list.
  */
-static QString qtFilter(const QStringList& _filters)
+static QString qtFilter(const QStringList &_filters)
 {
     QString converted;
     const QStringList filters = _filters;
 
-    foreach (const QString& current, filters) {
+    foreach (const QString &current, filters) {
         QString new_f; //filter part
         QString new_name; //filter name part
         int p = current.indexOf('|');
-        if (p==-1) {
+        if (p == -1) {
             new_f = current;
             new_name = current; // nothing better found
-        }
-        else {
+        } else {
             new_f = current.left(p);
-            new_name = current.mid(p+1);
+            new_name = current.mid(p + 1);
         }
-	//Qt filters assume anything in () is the file extension list
-	new_name = new_name.replace('(', '[').replace(')',']').trimmed();
+        //Qt filters assume anything in () is the file extension list
+        new_name = new_name.replace('(', '[').replace(')', ']').trimmed();
 
         //convert everything to lower case and remove dupes (doesn't matter on win32)
         QStringList allfiltersUnique;
-        const QStringList origList( new_f.split(' ', QString::SkipEmptyParts) );
-        foreach (const QString& origFilter, origList) {
-	if (!allfiltersUnique.contains(origFilter, Qt::CaseInsensitive))
+        const QStringList origList(new_f.split(' ', QString::SkipEmptyParts));
+        foreach (const QString &origFilter, origList) {
+            if (!allfiltersUnique.contains(origFilter, Qt::CaseInsensitive)) {
                 allfiltersUnique += origFilter.toLower();
+            }
         }
 
-        if (!converted.isEmpty())
+        if (!converted.isEmpty()) {
             converted += ";;";
+        }
 
         converted += (new_name + " (" + allfiltersUnique.join(" ") + QLatin1Char(')'));
     }
 
     // Strip escape characters from escaped '/' characters.
-    converted.replace("\\/","/");
+    converted.replace("\\/", "/");
 
     return converted;
 }
@@ -122,20 +123,21 @@ static QString qtFilter(const QStringList& _filters)
 /** @return File dialog filter in Qt format for @a filter in KDE format
  *          or "All files (*)" for empty filter.
  */
-static QString qtFilter(const QString& filter)
+static QString qtFilter(const QString &filter)
 {
     // Qt format: "some text (*.first *.second)" or "All files (*)" separated by ;;
     // KDE format: "*.first *.second|Description" or "*|Description", separated by \n (Description is optional)
     QStringList filters;
-    if (filter.isEmpty())
+    if (filter.isEmpty()) {
         filters += i18n("*|All files");
-    else {
-      // check if it's a mimefilter
-      int pos = filter.indexOf('/');
-      if (pos > 0 && filter[pos - 1] != '\\')
-          filters = mime2KdeFilter(filter.split(QLatin1Char(' '), QString::SkipEmptyParts));
-      else
-          filters = filter.split('\n', QString::SkipEmptyParts);
+    } else {
+        // check if it's a mimefilter
+        int pos = filter.indexOf('/');
+        if (pos > 0 && filter[pos - 1] != '\\') {
+            filters = mime2KdeFilter(filter.split(QLatin1Char(' '), QString::SkipEmptyParts));
+        } else {
+            filters = filter.split('\n', QString::SkipEmptyParts);
+        }
     }
     return qtFilter(filters);
 }
@@ -144,29 +146,33 @@ class KFileDialogPrivate
 {
 public:
     /** Data used for native mode. */
-    class Native {
+    class Native
+    {
     public:
         Native()
-          : mode(KFile::File),
-            operationMode(KFileWidget::Opening)
+            : mode(KFile::File),
+              operationMode(KFileWidget::Opening)
         {
         }
         /** @return previously set (global) start dir or the first url
          selected using setSelection() or setUrl() if the start dir is empty. */
         QUrl startDir() const
         {
-            if (!s_startDir.isEmpty())
+            if (!s_startDir.isEmpty()) {
                 return s_startDir;
-            if (!selectedUrls.isEmpty())
+            }
+            if (!selectedUrls.isEmpty()) {
                 return selectedUrls.first();
+            }
             return QUrl();
         }
         /** @return previously set (global) start dir or @p defaultDir
          if the start dir is empty. */
-        static QUrl staticStartDir( const QUrl& defaultDir )
+        static QUrl staticStartDir(const QUrl &defaultDir)
         {
-            if ( s_startDir.isEmpty() )
-              return defaultDir;
+            if (s_startDir.isEmpty()) {
+                return defaultDir;
+            }
             return s_startDir;
         }
         static QUrl s_startDir;
@@ -180,40 +186,42 @@ public:
     };
 
     KFileDialogPrivate()
-      : native(0),
-        w(0),
-        cfgGroup(KSharedConfig::openConfig(), ConfigGroup)
+        : native(0),
+          w(0),
+          cfgGroup(KSharedConfig::openConfig(), ConfigGroup)
     {
         if (cfgGroup.readEntry("Native", NATIVE_FILEDIALOGS_BY_DEFAULT) &&
-            KFileDialogPrivate::Native::s_allowNative)
+                KFileDialogPrivate::Native::s_allowNative) {
             native = new Native;
+        }
     }
 
     static bool isNative()
     {
-        if(!KFileDialogPrivate::Native::s_allowNative)
+        if (!KFileDialogPrivate::Native::s_allowNative) {
             return false;
+        }
         KConfigGroup cfgGroup(KSharedConfig::openConfig(), ConfigGroup);
         return cfgGroup.readEntry("Native", NATIVE_FILEDIALOGS_BY_DEFAULT);
     }
 
-    static QString getOpenFileName(const QUrl& startDir, const QString& filter,
-                                   QWidget *parent, const QString& caption,
+    static QString getOpenFileName(const QUrl &startDir, const QString &filter,
+                                   QWidget *parent, const QString &caption,
                                    QString *selectedFilter);
-    static QUrl getOpenUrl(const QUrl& startDir, const QString& filter,
-                           QWidget *parent, const QString& caption,
+    static QUrl getOpenUrl(const QUrl &startDir, const QString &filter,
+                           QWidget *parent, const QString &caption,
                            QString *selectedFilter);
-    static QStringList getOpenFileNames(const QUrl& startDir, const QString& filter,
-                                        QWidget *parent, const QString& caption,
+    static QStringList getOpenFileNames(const QUrl &startDir, const QString &filter,
+                                        QWidget *parent, const QString &caption,
                                         QString *selectedFilter);
-    static QList<QUrl> getOpenUrls(const QUrl& startDir, const QString& filter,
-                                  QWidget *parent, const QString& caption,
-                                  QString *selectedFilter);
-    static QString getSaveFileName(const QUrl& dir, const QString& filter,
-                                   QWidget *parent, const QString& caption,
+    static QList<QUrl> getOpenUrls(const QUrl &startDir, const QString &filter,
+                                   QWidget *parent, const QString &caption,
+                                   QString *selectedFilter);
+    static QString getSaveFileName(const QUrl &dir, const QString &filter,
+                                   QWidget *parent, const QString &caption,
                                    KFileDialog::Options options, QString *selectedFilter);
-    static QUrl getSaveUrl(const QUrl& dir, const QString& filter,
-                           QWidget *parent, const QString& caption,
+    static QUrl getSaveUrl(const QUrl &dir, const QString &filter,
+                           QWidget *parent, const QString &caption,
                            KFileDialog::Options options, QString *selectedFilter);
 
     ~KFileDialogPrivate()
@@ -221,32 +229,33 @@ public:
         delete native;
     }
 
-    Native* native;
-    KFileWidget* w;
+    Native *native;
+    KFileWidget *w;
     KConfigGroup cfgGroup;
 };
 
 QUrl KFileDialogPrivate::Native::s_startDir;
 bool KFileDialogPrivate::Native::s_allowNative = true;
 
-KFileDialog::KFileDialog(const QUrl& startDir, const QString& filter,
-                         QWidget *parent, QWidget* customWidget)
+KFileDialog::KFileDialog(const QUrl &startDir, const QString &filter,
+                         QWidget *parent, QWidget *customWidget)
 #ifdef Q_OS_WIN
-    : QDialog( parent , Qt::WindowMinMaxButtonsHint),
+    : QDialog(parent, Qt::WindowMinMaxButtonsHint),
 #else
-    : QDialog( parent ),
+    : QDialog(parent),
 #endif
-      d( new KFileDialogPrivate )
+      d(new KFileDialogPrivate)
 
 {
     if (d->native) {
         KFileDialogPrivate::Native::s_startDir = startDir;
         // check if it's a mimefilter
         int pos = filter.indexOf('/');
-        if (pos > 0 && filter[pos - 1] != '\\')
-          setMimeFilter(filter.split(QLatin1Char(' '), QString::SkipEmptyParts));
-        else
-          setFilter(filter);
+        if (pos > 0 && filter[pos - 1] != '\\') {
+            setMimeFilter(filter.split(QLatin1Char(' '), QString::SkipEmptyParts));
+        } else {
+            setFilter(filter);
+        }
         return;
     }
 
@@ -254,7 +263,7 @@ KFileDialog::KFileDialog(const QUrl& startDir, const QString& filter,
     KFileWidget *fileQWidget = d->w;
 
     KWindowConfig::restoreWindowSize(windowHandle(), d->cfgGroup); // call this before the fileQWidget is set as the main widget.
-                                                                   // otherwise the sizes for the components are not obeyed (ereslibre)
+    // otherwise the sizes for the components are not obeyed (ereslibre)
 
     d->w->setFilter(filter);
     QVBoxLayout *layout = new QVBoxLayout;
@@ -268,35 +277,36 @@ KFileDialog::KFileDialog(const QUrl& startDir, const QString& filter,
 
     // Publish signals
     connect(fileQWidget, SIGNAL(fileSelected(QUrl)),
-                         SIGNAL(fileSelected(QUrl)));
+            SIGNAL(fileSelected(QUrl)));
     connect(fileQWidget, SIGNAL(fileHighlighted(QUrl)),
-                         SIGNAL(fileHighlighted(QUrl)));
+            SIGNAL(fileHighlighted(QUrl)));
     connect(fileQWidget, SIGNAL(selectionChanged()),
-                         SIGNAL(selectionChanged()));
+            SIGNAL(selectionChanged()));
     connect(fileQWidget, SIGNAL(filterChanged(QString)),
-                         SIGNAL(filterChanged(QString)));
+            SIGNAL(filterChanged(QString)));
 
     connect(fileQWidget, SIGNAL(accepted()), SLOT(accept()));
     //connect(fileQWidget, SIGNAL(canceled()), SLOT(slotCancel()));
 
-    if (customWidget)
-     d->w->setCustomWidget(QString(), customWidget);
+    if (customWidget) {
+        d->w->setCustomWidget(QString(), customWidget);
+    }
 }
-
 
 KFileDialog::~KFileDialog()
 {
     delete d;
 }
 
-void KFileDialog::setLocationLabel(const QString& text)
+void KFileDialog::setLocationLabel(const QString &text)
 {
-    if (d->native)
-        return; // not available
+    if (d->native) {
+        return;    // not available
+    }
     d->w->setLocationLabel(text);
 }
 
-void KFileDialog::setFilter(const QString& filter)
+void KFileDialog::setFilter(const QString &filter)
 {
     if (d->native) {
         d->native->filter = filter;
@@ -307,13 +317,14 @@ void KFileDialog::setFilter(const QString& filter)
 
 QString KFileDialog::currentFilter() const
 {
-    if (d->native)
-        return QString(); // not available
+    if (d->native) {
+        return QString();    // not available
+    }
     return d->w->currentFilter();
 }
 
-void KFileDialog::setMimeFilter( const QStringList& mimeTypes,
-                                 const QString& defaultType )
+void KFileDialog::setMimeFilter(const QStringList &mimeTypes,
+                                const QString &defaultType)
 {
     d->w->setMimeFilter(mimeTypes, defaultType);
 
@@ -357,8 +368,9 @@ QMimeType KFileDialog::currentFilterMimeType()
 
 void KFileDialog::setPreviewWidget(KPreviewWidgetBase *w)
 {
-    if (d->native)
-      return;
+    if (d->native) {
+        return;
+    }
     d->w->setPreviewWidget(w);
 }
 
@@ -379,17 +391,19 @@ QSize KFileDialog::sizeHint() const
 // This slot still exists mostly for compat purposes; for subclasses which reimplement slotOk
 void KFileDialog::slotOk()
 {
-    if (d->native)
+    if (d->native) {
         return;
+    }
     d->w->slotOk();
 }
 
 // This slot still exists mostly for compat purposes; for subclasses which reimplement accept
 void KFileDialog::accept()
 {
-    if (d->native)
+    if (d->native) {
         return;
-    setResult( QDialog::Accepted ); // keep old behavior; probably not needed though
+    }
+    setResult(QDialog::Accepted);   // keep old behavior; probably not needed though
     d->w->accept();
     KConfigGroup cfgGroup(KSharedConfig::openConfig(), ConfigGroup);
     QDialog::accept();
@@ -398,79 +412,84 @@ void KFileDialog::accept()
 // This slot still exists mostly for compat purposes; for subclasses which reimplement slotCancel
 void KFileDialog::slotCancel()
 {
-    if (d->native)
+    if (d->native) {
         return;
+    }
     d->w->slotCancel();
     reject();
 }
 
-void KFileDialog::setUrl(const QUrl& url, bool clearforward)
+void KFileDialog::setUrl(const QUrl &url, bool clearforward)
 {
     if (d->native) {
-         d->native->selectedUrls.clear();
-         d->native->selectedUrls.append(url);
+        d->native->selectedUrls.clear();
+        d->native->selectedUrls.append(url);
         return;
     }
     d->w->setUrl(url, clearforward);
 }
 
-void KFileDialog::setSelection(const QString& name)
+void KFileDialog::setSelection(const QString &name)
 {
     if (d->native) {
-         d->native->selectedUrls.clear();
-         d->native->selectedUrls.append(QUrl(name)); // could be relative
-         return;
+        d->native->selectedUrls.clear();
+        d->native->selectedUrls.append(QUrl(name)); // could be relative
+        return;
     }
     d->w->setSelection(name);
 }
 
-QString KFileDialog::getOpenFileName(const QUrl& startDir,
-                                     const QString& filter,
-                                     QWidget *parent, const QString& caption)
+QString KFileDialog::getOpenFileName(const QUrl &startDir,
+                                     const QString &filter,
+                                     QWidget *parent, const QString &caption)
 {
     return KFileDialogPrivate::getOpenFileName(startDir, filter, parent, caption, 0);
 }
 
-QString KFileDialogPrivate::getOpenFileName(const QUrl& startDir,
-                                            const QString& filter,
-                                            QWidget *parent,
-                                            const QString& caption,
-                                            QString *selectedFilter)
+QString KFileDialogPrivate::getOpenFileName(const QUrl &startDir,
+        const QString &filter,
+        QWidget *parent,
+        const QString &caption,
+        QString *selectedFilter)
 {
     if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) {
         return QFileDialog::getOpenFileName(
-            parent,
-            caption.isEmpty() ? i18n("Open") : caption,
-            KFileDialogPrivate::Native::staticStartDir( startDir ).toLocalFile(),
-            qtFilter(filter),
-            selectedFilter );
+                   parent,
+                   caption.isEmpty() ? i18n("Open") : caption,
+                   KFileDialogPrivate::Native::staticStartDir(startDir).toLocalFile(),
+                   qtFilter(filter),
+                   selectedFilter);
 // TODO use extra args?     QString * selectedFilter = 0, Options options = 0
     }
     KFileDialog dlg(startDir, filter, parent);
 
-    dlg.setOperationMode( KFileDialog::Opening );
-    dlg.setMode( KFile::File | KFile::LocalOnly | KFile::ExistingOnly );
+    dlg.setOperationMode(KFileDialog::Opening);
+    dlg.setMode(KFile::File | KFile::LocalOnly | KFile::ExistingOnly);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Open") : caption);
 
     dlg.exec();
-    if(selectedFilter) *selectedFilter = dlg.currentMimeFilter();
+    if (selectedFilter) {
+        *selectedFilter = dlg.currentMimeFilter();
+    }
     return dlg.selectedFile();
 }
 
-QString KFileDialog::getOpenFileNameWId(const QUrl& startDir,
-                                        const QString& filter,
-                                        WId parent_id, const QString& caption)
+QString KFileDialog::getOpenFileNameWId(const QUrl &startDir,
+                                        const QString &filter,
+                                        WId parent_id, const QString &caption)
 {
-    if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile()))
-        return KFileDialog::getOpenFileName(startDir, filter, 0, caption); // everything we can do...
-    QWidget* parent = QWidget::find( parent_id );
+    if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) {
+        return KFileDialog::getOpenFileName(startDir, filter, 0, caption);    // everything we can do...
+    }
+    QWidget *parent = QWidget::find(parent_id);
     KFileDialogPrivate::Native::s_allowNative = false;
     KFileDialog dlg(startDir, filter, parent);
-    if( parent == NULL && parent_id != 0 )
-        KWindowSystem::setMainWindow( &dlg, parent_id );
+    if (parent == NULL && parent_id != 0) {
+        KWindowSystem::setMainWindow(&dlg, parent_id);
+    }
 
-    dlg.setOperationMode( KFileDialog::Opening );
-    dlg.setMode( KFile::File | KFile::LocalOnly | KFile::ExistingOnly );
+    dlg.setOperationMode(KFileDialog::Opening);
+    dlg.setMode(KFile::File | KFile::LocalOnly | KFile::ExistingOnly);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Open") : caption);
 
     dlg.exec();
@@ -478,98 +497,105 @@ QString KFileDialog::getOpenFileNameWId(const QUrl& startDir,
     return dlg.selectedFile();
 }
 
-QStringList KFileDialog::getOpenFileNames(const QUrl& startDir,
-                                          const QString& filter,
-                                          QWidget *parent,
-                                          const QString& caption)
+QStringList KFileDialog::getOpenFileNames(const QUrl &startDir,
+        const QString &filter,
+        QWidget *parent,
+        const QString &caption)
 {
     return KFileDialogPrivate::getOpenFileNames(startDir, filter, parent, caption, 0);
 }
 
-QStringList KFileDialogPrivate::getOpenFileNames(const QUrl& startDir,
-                                                 const QString& filter,
-                                                 QWidget *parent,
-                                                 const QString& caption,
-                                                 QString *selectedFilter)
+QStringList KFileDialogPrivate::getOpenFileNames(const QUrl &startDir,
+        const QString &filter,
+        QWidget *parent,
+        const QString &caption,
+        QString *selectedFilter)
 {
     if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) {
         return QFileDialog::getOpenFileNames(
-            parent,
-            caption.isEmpty() ? i18n("Open") : caption,
-            KFileDialogPrivate::Native::staticStartDir( startDir ).toLocalFile(),
-            qtFilter( filter ), selectedFilter );
+                   parent,
+                   caption.isEmpty() ? i18n("Open") : caption,
+                   KFileDialogPrivate::Native::staticStartDir(startDir).toLocalFile(),
+                   qtFilter(filter), selectedFilter);
 // TODO use extra args?  QString * selectedFilter = 0, Options options = 0
     }
     KFileDialogPrivate::Native::s_allowNative = false;
     KFileDialog dlg(startDir, filter, parent);
 
-    dlg.setOperationMode( KFileDialog::Opening );
+    dlg.setOperationMode(KFileDialog::Opening);
     dlg.setMode(KFile::Files | KFile::LocalOnly | KFile::ExistingOnly);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Open") : caption);
 
     dlg.exec();
-    if(selectedFilter) *selectedFilter = dlg.currentMimeFilter();
+    if (selectedFilter) {
+        *selectedFilter = dlg.currentMimeFilter();
+    }
     return dlg.selectedFiles();
 }
 
-QUrl KFileDialog::getOpenUrl(const QUrl& startDir, const QString& filter,
-                             QWidget *parent, const QString& caption)
+QUrl KFileDialog::getOpenUrl(const QUrl &startDir, const QString &filter,
+                             QWidget *parent, const QString &caption)
 {
     return KFileDialogPrivate::getOpenUrl(startDir, filter, parent, caption, 0);
 }
-QUrl KFileDialogPrivate::getOpenUrl(const QUrl& startDir, const QString& filter,
-                                    QWidget *parent, const QString& caption,
+QUrl KFileDialogPrivate::getOpenUrl(const QUrl &startDir, const QString &filter,
+                                    QWidget *parent, const QString &caption,
                                     QString *selectedFilter)
 {
     if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) {
-        const QString fileName( KFileDialogPrivate::getOpenFileName(
-            startDir, filter, parent, caption, selectedFilter) );
+        const QString fileName(KFileDialogPrivate::getOpenFileName(
+                                   startDir, filter, parent, caption, selectedFilter));
         return fileName.isEmpty() ? QUrl() : QUrl::fromLocalFile(fileName);
     }
     KFileDialogPrivate::Native::s_allowNative = false;
     KFileDialog dlg(startDir, filter, parent);
 
-    dlg.setOperationMode( KFileDialog::Opening );
-    dlg.setMode( KFile::File | KFile::ExistingOnly );
+    dlg.setOperationMode(KFileDialog::Opening);
+    dlg.setMode(KFile::File | KFile::ExistingOnly);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Open") : caption);
 
     dlg.exec();
-    if(selectedFilter) *selectedFilter = dlg.currentMimeFilter();
+    if (selectedFilter) {
+        *selectedFilter = dlg.currentMimeFilter();
+    }
     return dlg.selectedUrl();
 }
 
-QList<QUrl> KFileDialog::getOpenUrls(const QUrl& startDir,
-                                     const QString& filter,
+QList<QUrl> KFileDialog::getOpenUrls(const QUrl &startDir,
+                                     const QString &filter,
                                      QWidget *parent,
-                                     const QString& caption)
+                                     const QString &caption)
 {
     return KFileDialogPrivate::getOpenUrls(startDir, filter, parent, caption, 0);
 }
 
-QList<QUrl> KFileDialogPrivate::getOpenUrls(const QUrl& startDir,
-                                            const QString& filter,
-                                            QWidget *parent,
-                                            const QString& caption,
-                                            QString *selectedFilter)
+QList<QUrl> KFileDialogPrivate::getOpenUrls(const QUrl &startDir,
+        const QString &filter,
+        QWidget *parent,
+        const QString &caption,
+        QString *selectedFilter)
 {
     if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) {
-        const QStringList fileNames( KFileDialogPrivate::getOpenFileNames(
-            startDir, filter, parent, caption, selectedFilter) );
+        const QStringList fileNames(KFileDialogPrivate::getOpenFileNames(
+                                        startDir, filter, parent, caption, selectedFilter));
         QList<QUrl> urls;
-        Q_FOREACH(const QString &file, fileNames)
+        Q_FOREACH (const QString &file, fileNames) {
             urls.append(QUrl::fromLocalFile(file));
+        }
         return urls;
     }
     KFileDialogPrivate::Native::s_allowNative = false;
 
     KFileDialog dlg(startDir, filter, parent);
 
-    dlg.setOperationMode( KFileDialog::Opening );
-    dlg.setMode( KFile::Files | KFile::ExistingOnly );
+    dlg.setOperationMode(KFileDialog::Opening);
+    dlg.setMode(KFile::Files | KFile::ExistingOnly);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Open") : caption);
 
     dlg.exec();
-    if(selectedFilter) *selectedFilter = dlg.currentMimeFilter();
+    if (selectedFilter) {
+        *selectedFilter = dlg.currentMimeFilter();
+    }
     return dlg.selectedUrls();
 }
 
@@ -580,43 +606,44 @@ void KFileDialog::setConfirmOverwrite(bool enable)
     }
 }
 
-QUrl KFileDialog::getExistingDirectoryUrl(const QUrl& startDir,
-                                          QWidget *parent,
-                                          const QString& caption)
+QUrl KFileDialog::getExistingDirectoryUrl(const QUrl &startDir,
+        QWidget *parent,
+        const QString &caption)
 {
     return QFileDialog::getExistingDirectoryUrl(parent, caption, KFileDialogPrivate::Native::staticStartDir(startDir));
 }
 
-QString KFileDialog::getExistingDirectory(const QUrl& startDir,
-                                          QWidget *parent,
-                                          const QString& caption)
+QString KFileDialog::getExistingDirectory(const QUrl &startDir,
+        QWidget *parent,
+        const QString &caption)
 {
     if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) {
         return QFileDialog::getExistingDirectory(parent, caption,
-            KFileDialogPrivate::Native::staticStartDir( startDir ).toLocalFile(),
-            QFileDialog::ShowDirsOnly);
+                KFileDialogPrivate::Native::staticStartDir(startDir).toLocalFile(),
+                QFileDialog::ShowDirsOnly);
     }
     QUrl url = KFileDialog::getExistingDirectoryUrl(startDir, parent, caption);
-    if ( url.isValid() )
+    if (url.isValid()) {
         return url.toLocalFile();
+    }
     return QString();
 }
 
-QUrl KFileDialog::getImageOpenUrl(const QUrl& startDir, QWidget *parent,
-                                  const QString& caption)
+QUrl KFileDialog::getImageOpenUrl(const QUrl &startDir, QWidget *parent,
+                                  const QString &caption)
 {
     if (KFileDialogPrivate::isNative() && (!startDir.isValid() || startDir.isLocalFile())) { // everything we can do...
-        const QStringList mimetypes( KImageIO::mimeTypes( KImageIO::Reading ) );
+        const QStringList mimetypes(KImageIO::mimeTypes(KImageIO::Reading));
         return KFileDialog::getOpenUrl(startDir, mimetypes.join(" "), parent, caption);
     }
-    const QStringList mimetypes = KImageIO::mimeTypes( KImageIO::Reading );
+    const QStringList mimetypes = KImageIO::mimeTypes(KImageIO::Reading);
     KFileDialogPrivate::Native::s_allowNative = false;
     KFileDialog dlg(startDir, mimetypes.join(" "), parent);
 
-    dlg.setOperationMode( KFileDialog::Opening );
-    dlg.setMode( KFile::File | KFile::ExistingOnly );
-    dlg.setWindowTitle( caption.isEmpty() ? i18n("Open") : caption );
-    dlg.setInlinePreviewShown( true );
+    dlg.setOperationMode(KFileDialog::Opening);
+    dlg.setMode(KFile::File | KFile::ExistingOnly);
+    dlg.setWindowTitle(caption.isEmpty() ? i18n("Open") : caption);
+    dlg.setInlinePreviewShown(true);
 
     dlg.exec();
 
@@ -625,22 +652,25 @@ QUrl KFileDialog::getImageOpenUrl(const QUrl& startDir, QWidget *parent,
 
 QUrl KFileDialog::selectedUrl() const
 {
-    if (d->native)
+    if (d->native) {
         return d->native->selectedUrls.isEmpty() ? QUrl() : d->native->selectedUrls.first();
+    }
     return d->w->selectedUrl();
 }
 
 QList<QUrl> KFileDialog::selectedUrls() const
 {
-    if (d->native)
+    if (d->native) {
         return d->native->selectedUrls;
+    }
     return d->w->selectedUrls();
 }
 
 QString KFileDialog::selectedFile() const
 {
-    if (d->native)
+    if (d->native) {
         return selectedUrl().toLocalFile();
+    }
     return d->w->selectedFile();
 }
 
@@ -648,9 +678,10 @@ QStringList KFileDialog::selectedFiles() const
 {
     if (d->native) {
         QStringList lst;
-        Q_FOREACH(const QUrl &u, selectedUrls()) {
-            if (u.isLocalFile())
+        Q_FOREACH (const QUrl &u, selectedUrls()) {
+            if (u.isLocalFile()) {
                 lst.append(u.toLocalFile());
+            }
         }
         return lst;
     }
@@ -659,30 +690,31 @@ QStringList KFileDialog::selectedFiles() const
 
 QUrl KFileDialog::baseUrl() const
 {
-    if (d->native)
-        return selectedUrl().isEmpty() ? QUrl() : QUrl::fromLocalFile(selectedUrl().path()); /* shouldn't that be .directory()? */
+    if (d->native) {
+        return selectedUrl().isEmpty() ? QUrl() : QUrl::fromLocalFile(selectedUrl().path());    /* shouldn't that be .directory()? */
+    }
     return d->w->baseUrl();
 }
 
-QString KFileDialog::getSaveFileName(const QUrl& dir, const QString& filter,
+QString KFileDialog::getSaveFileName(const QUrl &dir, const QString &filter,
                                      QWidget *parent,
-                                     const QString& caption)
+                                     const QString &caption)
 {
     //TODO KDE5: replace this method by the method below (with default parameter values in declaration)
     // Set no confirm-overwrite mode for backwards compatibility
     return KFileDialogPrivate::getSaveFileName(dir, filter, parent, caption, Options(0), 0);
 }
 
-QString KFileDialog::getSaveFileName(const QUrl& dir, const QString& filter,
+QString KFileDialog::getSaveFileName(const QUrl &dir, const QString &filter,
                                      QWidget *parent,
-                                     const QString& caption, Options options)
+                                     const QString &caption, Options options)
 {
     return KFileDialogPrivate::getSaveFileName(dir, filter, parent, caption, options, 0);
 }
 
-QString KFileDialogPrivate::getSaveFileName(const QUrl& dir, const QString& filter,
-                                            QWidget *parent, const QString& caption,
-                                            KFileDialog::Options options, QString *selectedFilter)
+QString KFileDialogPrivate::getSaveFileName(const QUrl &dir, const QString &filter,
+        QWidget *parent, const QString &caption,
+        KFileDialog::Options options, QString *selectedFilter)
 {
     if (KFileDialogPrivate::isNative()) {
         bool defaultDir = dir.isEmpty();
@@ -690,25 +722,26 @@ QString KFileDialogPrivate::getSaveFileName(const QUrl& dir, const QString& filt
         QUrl startDir;
         QString recentDirClass;
         if (specialDir) {
-          startDir = KFileDialog::getStartUrl(dir, recentDirClass);
-        }
-        else if ( !specialDir && !defaultDir ) {
-          if (!dir.isLocalFile())
-              qWarning() << "non-local start dir " << dir;
-          startDir = dir;
+            startDir = KFileDialog::getStartUrl(dir, recentDirClass);
+        } else if (!specialDir && !defaultDir) {
+            if (!dir.isLocalFile()) {
+                qWarning() << "non-local start dir " << dir;
+            }
+            startDir = dir;
         }
 
         QFileDialog::Options opts = (options & KFileDialog::ConfirmOverwrite) ? QFileDialog::Options(0) : QFileDialog::DontConfirmOverwrite;
         const QString result = QFileDialog::getSaveFileName(
-            parent,
-            caption.isEmpty() ? i18n("Save As") : caption,
-            KFileDialogPrivate::Native::staticStartDir( startDir ).toLocalFile(),
-            qtFilter(filter),
+                                   parent,
+                                   caption.isEmpty() ? i18n("Save As") : caption,
+                                   KFileDialogPrivate::Native::staticStartDir(startDir).toLocalFile(),
+                                   qtFilter(filter),
 // TODO use extra args?     QString * selectedFilter = 0, Options opts = 0
-            selectedFilter, opts );
+                                   selectedFilter, opts);
         if (!result.isEmpty()) {
-            if (!recentDirClass.isEmpty())
+            if (!recentDirClass.isEmpty()) {
                 KRecentDirs::add(recentDirClass, QUrl::fromLocalFile(result).toString());
+            }
             KRecentDocument::add(result);
         }
         return result;
@@ -716,8 +749,8 @@ QString KFileDialogPrivate::getSaveFileName(const QUrl& dir, const QString& filt
 
     KFileDialog dlg(dir, filter, parent);
 
-    dlg.setOperationMode( KFileDialog::Saving );
-    dlg.setMode( KFile::File | KFile::LocalOnly );
+    dlg.setOperationMode(KFileDialog::Saving);
+    dlg.setMode(KFile::File | KFile::LocalOnly);
     dlg.setConfirmOverwrite(options & KFileDialog::ConfirmOverwrite);
     dlg.setInlinePreviewShown(options & KFileDialog::ShowInlinePreview);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Save As") : caption);
@@ -725,36 +758,38 @@ QString KFileDialogPrivate::getSaveFileName(const QUrl& dir, const QString& filt
     dlg.exec();
 
     QString filename = dlg.selectedFile();
-    if (!filename.isEmpty())
+    if (!filename.isEmpty()) {
         KRecentDocument::add(filename);
+    }
 
     return filename;
 }
 
-QString KFileDialog::getSaveFileNameWId(const QUrl& dir, const QString& filter,
-                                     WId parent_id,
-                                     const QString& caption)
+QString KFileDialog::getSaveFileNameWId(const QUrl &dir, const QString &filter,
+                                        WId parent_id,
+                                        const QString &caption)
 {
     //TODO KDE5: replace this method by the method below (with default parameter values in declaration)
     // Set no confirm-overwrite mode for backwards compatibility
     return getSaveFileNameWId(dir, filter, parent_id, caption, Options(0));
 }
 
-QString KFileDialog::getSaveFileNameWId(const QUrl& dir, const QString& filter,
-                                     WId parent_id,
-                                     const QString& caption, Options options)
+QString KFileDialog::getSaveFileNameWId(const QUrl &dir, const QString &filter,
+                                        WId parent_id,
+                                        const QString &caption, Options options)
 {
     if (KFileDialogPrivate::isNative()) {
         return KFileDialog::getSaveFileName(dir, filter, 0, caption, options); // everything we can do...
     }
 
-    QWidget* parent = QWidget::find( parent_id );
+    QWidget *parent = QWidget::find(parent_id);
     KFileDialog dlg(dir, filter, parent);
-    if( parent == NULL && parent_id != 0 )
-        KWindowSystem::setMainWindow( &dlg, parent_id);
+    if (parent == NULL && parent_id != 0) {
+        KWindowSystem::setMainWindow(&dlg, parent_id);
+    }
 
-    dlg.setOperationMode( KFileDialog::Saving );
-    dlg.setMode( KFile::File | KFile::LocalOnly );
+    dlg.setOperationMode(KFileDialog::Saving);
+    dlg.setMode(KFile::File | KFile::LocalOnly);
     dlg.setConfirmOverwrite(options & ConfirmOverwrite);
     dlg.setInlinePreviewShown(options & ShowInlinePreview);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Save As") : caption);
@@ -762,33 +797,34 @@ QString KFileDialog::getSaveFileNameWId(const QUrl& dir, const QString& filter,
     dlg.exec();
 
     QString filename = dlg.selectedFile();
-    if (!filename.isEmpty())
+    if (!filename.isEmpty()) {
         KRecentDocument::add(filename);
+    }
 
     return filename;
 }
 
-QUrl KFileDialog::getSaveUrl(const QUrl& dir, const QString& filter,
-                             QWidget *parent, const QString& caption)
+QUrl KFileDialog::getSaveUrl(const QUrl &dir, const QString &filter,
+                             QWidget *parent, const QString &caption)
 {
     //TODO KDE5: replace this method by the method below (with default parameter values in declaration)
     // Set no confirm-overwrite mode for backwards compatibility
     return KFileDialogPrivate::getSaveUrl(dir, filter, parent, caption, Options(0), 0);
 }
 
-QUrl KFileDialog::getSaveUrl(const QUrl& dir, const QString& filter,
-                             QWidget *parent, const QString& caption, Options options)
+QUrl KFileDialog::getSaveUrl(const QUrl &dir, const QString &filter,
+                             QWidget *parent, const QString &caption, Options options)
 {
     return KFileDialogPrivate::getSaveUrl(dir, filter, parent, caption, options, 0);
 }
 
-QUrl KFileDialogPrivate::getSaveUrl(const QUrl& dir, const QString& filter,
-                                    QWidget *parent, const QString& caption,
+QUrl KFileDialogPrivate::getSaveUrl(const QUrl &dir, const QString &filter,
+                                    QWidget *parent, const QString &caption,
                                     KFileDialog::Options options, QString *selectedFilter)
 {
     if (KFileDialogPrivate::isNative() && (!dir.isValid() || dir.isLocalFile())) {
-        const QString fileName( KFileDialogPrivate::getSaveFileName(
-            dir, filter, parent, caption, options, selectedFilter) );
+        const QString fileName(KFileDialogPrivate::getSaveFileName(
+                                   dir, filter, parent, caption, options, selectedFilter));
         return fileName.isEmpty() ? QUrl() : QUrl::fromLocalFile(fileName);
     }
 
@@ -796,134 +832,145 @@ QUrl KFileDialogPrivate::getSaveUrl(const QUrl& dir, const QString& filter,
 
     KFileDialog dlg(dir, filter, parent);
 
-    dlg.setOperationMode( KFileDialog::Saving );
-    dlg.setMode( KFile::File );
+    dlg.setOperationMode(KFileDialog::Saving);
+    dlg.setMode(KFile::File);
     dlg.setConfirmOverwrite(options & KFileDialog::ConfirmOverwrite);
     dlg.setInlinePreviewShown(options & KFileDialog::ShowInlinePreview);
     dlg.setWindowTitle(caption.isEmpty() ? i18n("Save As") : caption);
 
     dlg.exec();
-    if(selectedFilter) *selectedFilter = dlg.currentMimeFilter();
+    if (selectedFilter) {
+        *selectedFilter = dlg.currentMimeFilter();
+    }
     QUrl url = dlg.selectedUrl();
-    if (url.isValid())
-        KRecentDocument::add( url );
+    if (url.isValid()) {
+        KRecentDocument::add(url);
+    }
 
     return url;
 }
 
-void KFileDialog::setMode( KFile::Modes m )
+void KFileDialog::setMode(KFile::Modes m)
 {
-    if (d->native)
+    if (d->native) {
         d->native->mode = m;
-    else
+    } else {
         d->w->setMode(m);
+    }
 }
 
 KFile::Modes KFileDialog::mode() const
 {
-    if (d->native)
+    if (d->native) {
         return d->native->mode;
+    }
     return d->w->mode();
 }
 
-QPushButton * KFileDialog::okButton() const
+QPushButton *KFileDialog::okButton() const
 {
     return d->w->okButton();
 }
 
-QPushButton * KFileDialog::cancelButton() const
+QPushButton *KFileDialog::cancelButton() const
 {
     return d->w->cancelButton();
 }
 
-KUrlComboBox* KFileDialog::locationEdit() const
+KUrlComboBox *KFileDialog::locationEdit() const
 {
     return d->w->locationEdit();
 }
 
-KFileFilterCombo* KFileDialog::filterWidget() const
+KFileFilterCombo *KFileDialog::filterWidget() const
 {
     return d->w->filterWidget();
 }
 
-KActionCollection * KFileDialog::actionCollection() const
+KActionCollection *KFileDialog::actionCollection() const
 {
     return d->w->actionCollection();
 }
 
-void KFileDialog::setKeepLocation( bool keep )
+void KFileDialog::setKeepLocation(bool keep)
 {
-    if (d->native)
+    if (d->native) {
         return;
+    }
     d->w->setKeepLocation(keep);
 }
 
 bool KFileDialog::keepsLocation() const
 {
-    if (d->native)
+    if (d->native) {
         return false;
+    }
     return d->w->keepsLocation();
 }
 
-void KFileDialog::setOperationMode( OperationMode mode )
+void KFileDialog::setOperationMode(OperationMode mode)
 {
-    if (d->native)
+    if (d->native) {
         d->native->operationMode = static_cast<KFileWidget::OperationMode>(mode);
-    else
+    } else {
         d->w->setOperationMode(static_cast<KFileWidget::OperationMode>(mode));
+    }
 }
 
 KFileDialog::OperationMode KFileDialog::operationMode() const
 {
-    if (d->native)
+    if (d->native) {
         return static_cast<KFileDialog::OperationMode>(d->native->operationMode);
+    }
     return static_cast<KFileDialog::OperationMode>(d->w->operationMode());
 }
 
-void KFileDialog::keyPressEvent( QKeyEvent *e )
+void KFileDialog::keyPressEvent(QKeyEvent *e)
 {
-    if (d->native)
+    if (d->native) {
         return;
+    }
 
-    if ( e->key() == Qt::Key_Escape )
-    {
+    if (e->key() == Qt::Key_Escape) {
         e->accept();
         d->w->cancelButton()->animateClick();
+    } else {
+        QDialog::keyPressEvent(e);
     }
-    else
-        QDialog::keyPressEvent( e );
 }
 
-void KFileDialog::hideEvent( QHideEvent *e )
+void KFileDialog::hideEvent(QHideEvent *e)
 {
-    if (d->native)
+    if (d->native) {
         return;
+    }
 
     KWindowConfig::saveWindowSize(windowHandle(), d->cfgGroup, KConfigBase::Persistent);
 
-    QDialog::hideEvent( e );
+    QDialog::hideEvent(e);
 }
 
 // static
-QUrl KFileDialog::getStartUrl(const QUrl& startDir,
-                              QString& recentDirClass)
+QUrl KFileDialog::getStartUrl(const QUrl &startDir,
+                              QString &recentDirClass)
 {
     return KFileWidget::getStartUrl(startDir, recentDirClass);
 }
 
-void KFileDialog::setStartDir(const QUrl& directory)
+void KFileDialog::setStartDir(const QUrl &directory)
 {
-    if (KFileDialogPrivate::isNative())
+    if (KFileDialogPrivate::isNative()) {
         KFileDialogPrivate::Native::s_startDir = directory;
+    }
     KFileWidget::setStartDir(directory);
 }
 
-KToolBar * KFileDialog::toolBar() const
+KToolBar *KFileDialog::toolBar() const
 {
     return d->w->toolBar();
 }
 
-KFileWidget* KFileDialog::fileWidget()
+KFileWidget *KFileDialog::fileWidget()
 {
     return d->w;
 }
@@ -943,8 +990,8 @@ int KFileDialog::exec()
     case KFileWidget::Opening:
     case KFileWidget::Other:
         if (d->native->mode & KFile::File) {
-            QUrl url( KFileDialogPrivate::getOpenUrl(
-               d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), &d->native->selectedFilter ) );
+            QUrl url(KFileDialogPrivate::getOpenUrl(
+                         d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), &d->native->selectedFilter));
             if (url.isEmpty() || !url.isValid()) {
                 res = QDialog::Rejected;
                 break;
@@ -953,10 +1000,9 @@ int KFileDialog::exec()
             d->native->selectedUrls.append(url);
             res = QDialog::Accepted;
             break;
-        }
-        else if (d->native->mode & KFile::Files) {
-            QList<QUrl> urls( KFileDialogPrivate::getOpenUrls(
-                d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), &d->native->selectedFilter ) );
+        } else if (d->native->mode & KFile::Files) {
+            QList<QUrl> urls(KFileDialogPrivate::getOpenUrls(
+                                 d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), &d->native->selectedFilter));
             if (urls.isEmpty()) {
                 res = QDialog::Rejected;
                 break;
@@ -964,10 +1010,9 @@ int KFileDialog::exec()
             d->native->selectedUrls = urls;
             res = QDialog::Accepted;
             break;
-        }
-        else if (d->native->mode & KFile::Directory) {
-            QUrl url( KFileDialog::getExistingDirectoryUrl(
-                d->native->startDir(), parentWidget(), windowTitle()) );
+        } else if (d->native->mode & KFile::Directory) {
+            QUrl url(KFileDialog::getExistingDirectoryUrl(
+                         d->native->startDir(), parentWidget(), windowTitle()));
             if (url.isEmpty() || !url.isValid()) {
                 res = QDialog::Rejected;
                 break;
@@ -980,8 +1025,8 @@ int KFileDialog::exec()
         break;
     case KFileWidget::Saving:
         if (d->native->mode & KFile::File) {
-            QUrl url( KFileDialogPrivate::getSaveUrl(
-                d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), Options(0), &d->native->selectedFilter ) );
+            QUrl url(KFileDialogPrivate::getSaveUrl(
+                         d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), Options(0), &d->native->selectedFilter));
             if (url.isEmpty() || !url.isValid())  {
                 res = QDialog::Rejected;
                 break;
@@ -990,10 +1035,9 @@ int KFileDialog::exec()
             d->native->selectedUrls.append(url);
             res = QDialog::Accepted;
             break;
-        }
-        else if (d->native->mode & KFile::Directory) {
-            QUrl url( KFileDialog::getExistingDirectoryUrl(
-                d->native->startDir(), parentWidget(), windowTitle()) );
+        } else if (d->native->mode & KFile::Directory) {
+            QUrl url(KFileDialog::getExistingDirectoryUrl(
+                         d->native->startDir(), parentWidget(), windowTitle()));
             if (url.isEmpty() || !url.isValid()) {
                 res = QDialog::Rejected;
                 break;
@@ -1026,27 +1070,27 @@ int KFileDialog::exec()
 #define KF_EXTERN extern
 #endif
 
-typedef QString (*_qt_filedialog_existing_directory_hook)(QWidget *parent, const QString &caption,
-                                                          const QString &dir,
-                                                          QFileDialog::Options options);
+typedef QString(*_qt_filedialog_existing_directory_hook)(QWidget *parent, const QString &caption,
+        const QString &dir,
+        QFileDialog::Options options);
 KF_EXTERN _qt_filedialog_existing_directory_hook qt_filedialog_existing_directory_hook;
 
-typedef QString (*_qt_filedialog_open_filename_hook)(QWidget * parent, const QString &caption,
-                                                     const QString &dir, const QString &filter,
-                                                     QString *selectedFilter,
-                                                     QFileDialog::Options options);
+typedef QString(*_qt_filedialog_open_filename_hook)(QWidget *parent, const QString &caption,
+        const QString &dir, const QString &filter,
+        QString *selectedFilter,
+        QFileDialog::Options options);
 KF_EXTERN _qt_filedialog_open_filename_hook qt_filedialog_open_filename_hook;
 
-typedef QStringList (*_qt_filedialog_open_filenames_hook)(QWidget * parent, const QString &caption,
-                                                          const QString &dir, const QString &filter,
-                                                          QString *selectedFilter,
-                                                          QFileDialog::Options options);
+typedef QStringList(*_qt_filedialog_open_filenames_hook)(QWidget *parent, const QString &caption,
+        const QString &dir, const QString &filter,
+        QString *selectedFilter,
+        QFileDialog::Options options);
 KF_EXTERN _qt_filedialog_open_filenames_hook qt_filedialog_open_filenames_hook;
 
-typedef QString (*_qt_filedialog_save_filename_hook)(QWidget * parent, const QString &caption,
-                                                     const QString &dir, const QString &filter,
-                                                     QString *selectedFilter,
-                                                     QFileDialog::Options options);
+typedef QString(*_qt_filedialog_save_filename_hook)(QWidget *parent, const QString &caption,
+        const QString &dir, const QString &filter,
+        QString *selectedFilter,
+        QFileDialog::Options options);
 KF_EXTERN _qt_filedialog_save_filename_hook qt_filedialog_save_filename_hook;
 
 /*
@@ -1059,25 +1103,34 @@ class KFileDialogQtOverride
 public:
     KFileDialogQtOverride()
     {
-        if(!qt_filedialog_existing_directory_hook)
-            qt_filedialog_existing_directory_hook=&getExistingDirectory;
-        if(!qt_filedialog_open_filename_hook)
-            qt_filedialog_open_filename_hook=&getOpenFileName;
-        if(!qt_filedialog_open_filenames_hook)
-            qt_filedialog_open_filenames_hook=&getOpenFileNames;
-        if(!qt_filedialog_save_filename_hook)
-            qt_filedialog_save_filename_hook=&getSaveFileName;
+        if (!qt_filedialog_existing_directory_hook) {
+            qt_filedialog_existing_directory_hook = &getExistingDirectory;
+        }
+        if (!qt_filedialog_open_filename_hook) {
+            qt_filedialog_open_filename_hook = &getOpenFileName;
+        }
+        if (!qt_filedialog_open_filenames_hook) {
+            qt_filedialog_open_filenames_hook = &getOpenFileNames;
+        }
+        if (!qt_filedialog_save_filename_hook) {
+            qt_filedialog_save_filename_hook = &getSaveFileName;
+        }
     }
 
-    ~KFileDialogQtOverride() {
-        if(qt_filedialog_existing_directory_hook == &getExistingDirectory)
+    ~KFileDialogQtOverride()
+    {
+        if (qt_filedialog_existing_directory_hook == &getExistingDirectory) {
             qt_filedialog_existing_directory_hook = 0;
-        if(qt_filedialog_open_filename_hook == &getOpenFileName)
+        }
+        if (qt_filedialog_open_filename_hook == &getOpenFileName) {
             qt_filedialog_open_filename_hook = 0;
-        if(qt_filedialog_open_filenames_hook == &getOpenFileNames)
-            qt_filedialog_open_filenames_hook=0;
-        if(qt_filedialog_save_filename_hook == &getSaveFileName)
-            qt_filedialog_save_filename_hook=0;
+        }
+        if (qt_filedialog_open_filenames_hook == &getOpenFileNames) {
+            qt_filedialog_open_filenames_hook = 0;
+        }
+        if (qt_filedialog_save_filename_hook == &getSaveFileName) {
+            qt_filedialog_save_filename_hook = 0;
+        }
     }
 
     /*
@@ -1089,21 +1142,20 @@ public:
         QTextStream           str(&filter, QIODevice::WriteOnly);
         QStringList           list(f.split(";;").replaceInStrings("/", "\\/"));
         QStringList::const_iterator it(list.begin()),
-                              end(list.end());
-        bool                  first=true;
+                    end(list.end());
+        bool                  first = true;
 
-        for(; it!=end; ++it)
-        {
-            int ob=(*it).lastIndexOf('('),
-                cb=(*it).lastIndexOf(')');
+        for (; it != end; ++it) {
+            int ob = (*it).lastIndexOf('('),
+                cb = (*it).lastIndexOf(')');
 
-            if(-1!=cb && ob<cb)
-            {
-                if(first)
-                    first=false;
-                else
+            if (-1 != cb && ob < cb) {
+                if (first) {
+                    first = false;
+                } else {
                     str << '\n';
-                str << (*it).mid(ob+1, (cb-ob)-1) << '|' << (*it).mid(0, ob);
+                }
+                str << (*it).mid(ob + 1, (cb - ob) - 1) << '|' << (*it).mid(0, ob);
             }
         }
 
@@ -1115,20 +1167,18 @@ public:
      */
     static void kde2QtFilter(const QString &orig, const QString &kde, QString *sel)
     {
-        if(sel)
-        {
+        if (sel) {
             QStringList           list(orig.split(";;"));
             QStringList::const_iterator it(list.begin()),
-                                  end(list.end());
+                        end(list.end());
             int                   pos;
 
-            for(; it!=end; ++it)
-                if(-1!=(pos=(*it).indexOf(kde)) && pos>0 &&
-                   ('('==(*it)[pos-1] || ' '==(*it)[pos-1]) &&
-                   (*it).length()>=kde.length()+pos &&
-                   (')'==(*it)[pos+kde.length()] || ' '==(*it)[pos+kde.length()]))
-                {
-                    *sel=*it;
+            for (; it != end; ++it)
+                if (-1 != (pos = (*it).indexOf(kde)) && pos > 0 &&
+                        ('(' == (*it)[pos - 1] || ' ' == (*it)[pos - 1]) &&
+                        (*it).length() >= kde.length() + pos &&
+                        (')' == (*it)[pos + kde.length()] || ' ' == (*it)[pos + kde.length()])) {
+                    *sel = *it;
                     return;
                 }
         }
@@ -1138,8 +1188,9 @@ public:
                                         QFileDialog::Options options)
     {
         if (KFileDialogPrivate::isNative()) {
-            if(qt_filedialog_existing_directory_hook)
-                qt_filedialog_existing_directory_hook=0; // do not override
+            if (qt_filedialog_existing_directory_hook) {
+                qt_filedialog_existing_directory_hook = 0;    // do not override
+            }
             return QFileDialog::getExistingDirectory(parent, caption, dir, options);
         }
 
@@ -1152,8 +1203,9 @@ public:
                                    QFileDialog::Options options)
     {
         if (KFileDialogPrivate::isNative()) {
-            if(qt_filedialog_open_filename_hook)
-                qt_filedialog_open_filename_hook=0; // do not override
+            if (qt_filedialog_open_filename_hook) {
+                qt_filedialog_open_filename_hook = 0;    // do not override
+            }
             return QFileDialog::getOpenFileName(parent, caption, dir, filter, selectedFilter, options);
         }
 
@@ -1161,14 +1213,15 @@ public:
         KFileDialog dlg(QUrl::fromLocalFile(dir), qt2KdeFilter(filter), parent);
 
         dlg.setOperationMode(KFileDialog::Opening);
-        dlg.setMode(KFile::File|KFile::LocalOnly);
+        dlg.setMode(KFile::File | KFile::LocalOnly);
         dlg.setWindowTitle(caption);
         dlg.exec();
 
         QString rv(dlg.selectedFile());
 
-        if(!rv.isEmpty())
+        if (!rv.isEmpty()) {
             kde2QtFilter(filter, dlg.currentFilter(), selectedFilter);
+        }
 
         return rv;
     }
@@ -1178,8 +1231,9 @@ public:
                                         QFileDialog::Options options)
     {
         if (KFileDialogPrivate::isNative()) {
-            if(qt_filedialog_open_filenames_hook)
-                qt_filedialog_open_filenames_hook=0; // do not override
+            if (qt_filedialog_open_filenames_hook) {
+                qt_filedialog_open_filenames_hook = 0;    // do not override
+            }
             return QFileDialog::getOpenFileNames(parent, caption, dir, filter, selectedFilter, options);
         }
 
@@ -1187,14 +1241,15 @@ public:
         KFileDialog dlg(QUrl::fromLocalFile(dir), qt2KdeFilter(filter), parent);
 
         dlg.setOperationMode(KFileDialog::Opening);
-        dlg.setMode(KFile::Files|KFile::LocalOnly);
+        dlg.setMode(KFile::Files | KFile::LocalOnly);
         dlg.setWindowTitle(caption);
         dlg.exec();
 
         QStringList rv(dlg.selectedFiles());
 
-        if(rv.count())
+        if (rv.count()) {
             kde2QtFilter(filter, dlg.currentFilter(), selectedFilter);
+        }
 
         return rv;
     }
@@ -1204,8 +1259,9 @@ public:
                                    QFileDialog::Options options)
     {
         if (KFileDialogPrivate::isNative()) {
-            if(qt_filedialog_save_filename_hook)
-                qt_filedialog_save_filename_hook=0; // do not override
+            if (qt_filedialog_save_filename_hook) {
+                qt_filedialog_save_filename_hook = 0;    // do not override
+            }
             return QFileDialog::getSaveFileName(parent, caption, dir, filter, selectedFilter, options);
         }
 
@@ -1213,15 +1269,16 @@ public:
         KFileDialog dlg(QUrl::fromLocalFile(dir), qt2KdeFilter(filter), parent);
 
         dlg.setOperationMode(KFileDialog::Saving);
-        dlg.setMode(KFile::File|KFile::LocalOnly);
+        dlg.setMode(KFile::File | KFile::LocalOnly);
         dlg.setWindowTitle(caption);
         dlg.setConfirmOverwrite(!(options & QFileDialog::DontConfirmOverwrite));
         dlg.exec();
 
         QString rv(dlg.selectedFile());
 
-        if(!rv.isEmpty())
+        if (!rv.isEmpty()) {
             kde2QtFilter(filter, dlg.currentFilter(), selectedFilter);
+        }
 
         return rv;
     }

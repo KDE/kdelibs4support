@@ -23,90 +23,87 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 
-KHBox::KHBox( QWidget* parent )
-  : QFrame( parent ),
-    d( 0 )
+KHBox::KHBox(QWidget *parent)
+    : QFrame(parent),
+      d(0)
 {
-  QHBoxLayout* layout = new QHBoxLayout( this );
-  layout->setSpacing( 0 );
-  layout->setMargin( 0 );
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->setSpacing(0);
+    layout->setMargin(0);
 
-  setLayout( layout );
+    setLayout(layout);
 }
 
-
-KHBox::KHBox( bool /*vertical*/, QWidget* parent )
-  : QFrame( parent ),
-    d( 0 )
+KHBox::KHBox(bool /*vertical*/, QWidget *parent)
+    : QFrame(parent),
+      d(0)
 {
-  QVBoxLayout* layout = new QVBoxLayout( this );
-  layout->setSpacing( 0 );
-  layout->setMargin( 0 );
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setSpacing(0);
+    layout->setMargin(0);
 
-  setLayout( layout );
+    setLayout(layout);
 }
 
 KHBox::~KHBox()
 {
 }
 
-void KHBox::childEvent( QChildEvent* event )
+void KHBox::childEvent(QChildEvent *event)
 {
-  switch ( event->type() ) {
-    case QEvent::ChildAdded:
-    {
-      QChildEvent* childEvent = static_cast<QChildEvent *>( event );
-      if ( childEvent->child()->isWidgetType() ) {
-        QWidget* widget = static_cast<QWidget *>( childEvent->child() );
-        static_cast<QBoxLayout *>( layout() )->addWidget( widget );
-      }
+    switch (event->type()) {
+    case QEvent::ChildAdded: {
+        QChildEvent *childEvent = static_cast<QChildEvent *>(event);
+        if (childEvent->child()->isWidgetType()) {
+            QWidget *widget = static_cast<QWidget *>(childEvent->child());
+            static_cast<QBoxLayout *>(layout())->addWidget(widget);
+        }
 
-      break;
+        break;
     }
-    case QEvent::ChildRemoved:
-    {
-      QChildEvent* childEvent = static_cast<QChildEvent *>( event );
-      if ( childEvent->child()->isWidgetType() ) {
-        QWidget* widget = static_cast<QWidget *>( childEvent->child() );
-        static_cast<QBoxLayout *>( layout() )->removeWidget( widget );
-      }
+    case QEvent::ChildRemoved: {
+        QChildEvent *childEvent = static_cast<QChildEvent *>(event);
+        if (childEvent->child()->isWidgetType()) {
+            QWidget *widget = static_cast<QWidget *>(childEvent->child());
+            static_cast<QBoxLayout *>(layout())->removeWidget(widget);
+        }
 
-      break;
+        break;
     }
     default:
-	break;
-  }
-  QFrame::childEvent(event);
+        break;
+    }
+    QFrame::childEvent(event);
 }
 
 QSize KHBox::sizeHint() const
 {
-  KHBox* that = const_cast<KHBox *>( this );
-  QApplication::sendPostedEvents( that, QEvent::ChildAdded );
+    KHBox *that = const_cast<KHBox *>(this);
+    QApplication::sendPostedEvents(that, QEvent::ChildAdded);
 
-  return QFrame::sizeHint();
+    return QFrame::sizeHint();
 }
 
 QSize KHBox::minimumSizeHint() const
 {
-  KHBox* that = const_cast<KHBox *>( this );
-  QApplication::sendPostedEvents( that, QEvent::ChildAdded );
+    KHBox *that = const_cast<KHBox *>(this);
+    QApplication::sendPostedEvents(that, QEvent::ChildAdded);
 
-  return QFrame::minimumSizeHint();
+    return QFrame::minimumSizeHint();
 }
 
-void KHBox::setSpacing( int spacing )
+void KHBox::setSpacing(int spacing)
 {
-  layout()->setSpacing( spacing );
+    layout()->setSpacing(spacing);
 }
 
-void KHBox::setStretchFactor( QWidget* widget, int stretch )
+void KHBox::setStretchFactor(QWidget *widget, int stretch)
 {
-  static_cast<QBoxLayout *>( layout() )->setStretchFactor( widget, stretch );
+    static_cast<QBoxLayout *>(layout())->setStretchFactor(widget, stretch);
 }
 
-void KHBox::setMargin( int margin )
+void KHBox::setMargin(int margin)
 {
-	layout()->setMargin( margin );
+    layout()->setMargin(margin);
 }
 

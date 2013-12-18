@@ -1,4 +1,3 @@
-/* kate: tab-indents off; replace-tabs on; tab-width 4; remove-trailing-space on; encoding utf-8;*/
 /*
    This file is part of the KDE libraries
    Copyright 1999 Waldo Bastian <bastian@kde.org>
@@ -37,7 +36,7 @@
  * The KSaveFile class has been made to write out changes to an existing
  * file atomically. This means that either <b>ALL</b> changes will be written
  * to the file, or <b>NO</b> changes have been written, and the original file
- * (if any) has been unchanged. This is useful if you have lots of 
+ * (if any) has been unchanged. This is useful if you have lots of
  * time-consuming processing to perform during which an interruption could
  * occur, or if any error in the file structure will cause the entire file
  * to be corrupt.

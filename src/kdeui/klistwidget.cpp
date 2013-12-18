@@ -27,43 +27,43 @@
 
 class KListWidget::KListWidgetPrivate
 {
-    public:
-        KListWidgetPrivate(KListWidget *q)
-            : q(q),
-              m_pCurrentItem(0),
-              m_eventPos()
-        {
-        }
+public:
+    KListWidgetPrivate(KListWidget *q)
+        : q(q),
+          m_pCurrentItem(0),
+          m_eventPos()
+    {
+    }
 
-        void _k_slotItemEntered(QListWidgetItem*);
-        void _k_slotOnViewport();
-        void _k_slotSettingsChanged(int);
-        void _k_slotAutoSelect();
-        void _k_slotEmitExecute(QListWidgetItem *item);
+    void _k_slotItemEntered(QListWidgetItem *);
+    void _k_slotOnViewport();
+    void _k_slotSettingsChanged(int);
+    void _k_slotAutoSelect();
+    void _k_slotEmitExecute(QListWidgetItem *item);
 
-        KListWidget *q;
-        bool m_bUseSingle : 1;
-        bool m_bChangeCursorOverItem : 1;
+    KListWidget *q;
+    bool m_bUseSingle : 1;
+    bool m_bChangeCursorOverItem : 1;
 
-        QListWidgetItem* m_pCurrentItem;
-        QTimer* m_pAutoSelect;
-        int m_autoSelectDelay;
-        QPoint m_eventPos;
+    QListWidgetItem *m_pCurrentItem;
+    QTimer *m_pAutoSelect;
+    int m_autoSelectDelay;
+    QPoint m_eventPos;
 };
 
-KListWidget::KListWidget( QWidget *parent )
+KListWidget::KListWidget(QWidget *parent)
     : QListWidget(parent), d(new KListWidgetPrivate(this))
 {
-    connect( this, SIGNAL(viewportEntered()),
-             this, SLOT(_k_slotOnViewport()) );
-    connect( this, SIGNAL(itemEntered(QListWidgetItem*)),
-             this, SLOT(_k_slotItemEntered(QListWidgetItem*)) );
+    connect(this, SIGNAL(viewportEntered()),
+            this, SLOT(_k_slotOnViewport()));
+    connect(this, SIGNAL(itemEntered(QListWidgetItem*)),
+            this, SLOT(_k_slotItemEntered(QListWidgetItem*)));
     d->_k_slotSettingsChanged(KGlobalSettings::SETTINGS_MOUSE);
-    connect( KGlobalSettings::self(), SIGNAL(settingsChanged(int)), SLOT(_k_slotSettingsChanged(int)) );
+    connect(KGlobalSettings::self(), SIGNAL(settingsChanged(int)), SLOT(_k_slotSettingsChanged(int)));
 
-    d->m_pAutoSelect = new QTimer( this );
-    connect( d->m_pAutoSelect, SIGNAL(timeout()),
-             this, SLOT(_k_slotAutoSelect()) );
+    d->m_pAutoSelect = new QTimer(this);
+    connect(d->m_pAutoSelect, SIGNAL(timeout()),
+            this, SLOT(_k_slotAutoSelect()));
 }
 
 KListWidget::~KListWidget()
@@ -71,44 +71,43 @@ KListWidget::~KListWidget()
     delete d;
 }
 
-void KListWidget::KListWidgetPrivate::_k_slotItemEntered( QListWidgetItem *item )
+void KListWidget::KListWidgetPrivate::_k_slotItemEntered(QListWidgetItem *item)
 {
-    if ( item && m_bChangeCursorOverItem && m_bUseSingle )
-        q->viewport()->setCursor( QCursor( Qt::OpenHandCursor ) );
+    if (item && m_bChangeCursorOverItem && m_bUseSingle) {
+        q->viewport()->setCursor(QCursor(Qt::OpenHandCursor));
+    }
 
-    if ( item && (m_autoSelectDelay > -1) && m_bUseSingle ) {
-      m_pAutoSelect->setSingleShot( true );
-      m_pAutoSelect->start( m_autoSelectDelay );
-      m_pCurrentItem = item;
+    if (item && (m_autoSelectDelay > -1) && m_bUseSingle) {
+        m_pAutoSelect->setSingleShot(true);
+        m_pAutoSelect->start(m_autoSelectDelay);
+        m_pCurrentItem = item;
     }
 }
 
 void KListWidget::KListWidgetPrivate::_k_slotOnViewport()
 {
-    if ( m_bChangeCursorOverItem )
+    if (m_bChangeCursorOverItem) {
         q->viewport()->unsetCursor();
+    }
 
     m_pAutoSelect->stop();
     m_pCurrentItem = 0;
 }
 
-
 void KListWidget::KListWidgetPrivate::_k_slotSettingsChanged(int category)
 {
-    if (category != KGlobalSettings::SETTINGS_MOUSE)
+    if (category != KGlobalSettings::SETTINGS_MOUSE) {
         return;
+    }
     m_bUseSingle = q->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
 
     q->disconnect(q, SIGNAL(itemClicked(QListWidgetItem*)));
     q->disconnect(q, SIGNAL(itemDoubleClicked(QListWidgetItem*)));
 
-    if( m_bUseSingle )
-    {
+    if (m_bUseSingle) {
         q->connect(q, SIGNAL(itemClicked(QListWidgetItem*)),
                    SLOT(_k_slotEmitExecute(QListWidgetItem*)));
-    }
-    else
-    {
+    } else {
         q->connect(q, SIGNAL(itemDoubleClicked(QListWidgetItem*)),
                    SLOT(_k_slotEmitExecute(QListWidgetItem*)));
     }
@@ -116,94 +115,99 @@ void KListWidget::KListWidgetPrivate::_k_slotSettingsChanged(int category)
     m_bChangeCursorOverItem = KGlobalSettings::changeCursorOverIcon();
     m_autoSelectDelay = KGlobalSettings::autoSelectDelay();
 
-    if( !m_bUseSingle || !m_bChangeCursorOverItem )
+    if (!m_bUseSingle || !m_bChangeCursorOverItem) {
         q->viewport()->unsetCursor();
+    }
 }
 
 void KListWidget::KListWidgetPrivate::_k_slotAutoSelect()
 {
-  // check that the item still exists
-  if( q->row( m_pCurrentItem ) == -1 )
-    return;
+    // check that the item still exists
+    if (q->row(m_pCurrentItem) == -1) {
+        return;
+    }
 
-  //Give this widget the keyboard focus.
-  if( !q->hasFocus() )
-    q->setFocus();
+    //Give this widget the keyboard focus.
+    if (!q->hasFocus()) {
+        q->setFocus();
+    }
 
-  Qt::KeyboardModifiers keybstate = QApplication::keyboardModifiers();
+    Qt::KeyboardModifiers keybstate = QApplication::keyboardModifiers();
 
-  QListWidgetItem* previousItem = q->currentItem();
-  q->setCurrentItem( m_pCurrentItem );
+    QListWidgetItem *previousItem = q->currentItem();
+    q->setCurrentItem(m_pCurrentItem);
 
-  if( m_pCurrentItem ) {
-    //Shift pressed?
-    if( (keybstate & Qt::ShiftModifier) ) {
-      bool block = q->signalsBlocked();
-      q->blockSignals( true );
+    if (m_pCurrentItem) {
+        //Shift pressed?
+        if ((keybstate & Qt::ShiftModifier)) {
+            bool block = q->signalsBlocked();
+            q->blockSignals(true);
 
-      //No Ctrl? Then clear before!
-      if( !(keybstate & Qt::ControlModifier) )
-            q->clearSelection();
+            //No Ctrl? Then clear before!
+            if (!(keybstate & Qt::ControlModifier)) {
+                q->clearSelection();
+            }
 
-      bool select = !m_pCurrentItem->isSelected();
-      bool update = q->viewport()->updatesEnabled();
-      q->viewport()->setUpdatesEnabled( false );
+            bool select = !m_pCurrentItem->isSelected();
+            bool update = q->viewport()->updatesEnabled();
+            q->viewport()->setUpdatesEnabled(false);
 
-      bool down = q->row( previousItem ) < q->row( m_pCurrentItem );
-      QListWidgetItem* it = down ? previousItem : m_pCurrentItem;
+            bool down = q->row(previousItem) < q->row(m_pCurrentItem);
+            QListWidgetItem *it = down ? previousItem : m_pCurrentItem;
 
-      for (int i = q->row(it) ; i < q->count() ; i++ ) {
-        if ( down && q->item(i) == m_pCurrentItem ) {
-            m_pCurrentItem->setSelected(select);
-            break;
+            for (int i = q->row(it); i < q->count(); i++) {
+                if (down && q->item(i) == m_pCurrentItem) {
+                    m_pCurrentItem->setSelected(select);
+                    break;
+                }
+
+                if (!down && q->item(i) == previousItem) {
+                    previousItem->setSelected(select);
+                    break;
+                }
+                it->setSelected(select);
+            }
+
+            q->blockSignals(block);
+            q->viewport()->setUpdatesEnabled(update);
+
+            emit q->itemSelectionChanged();
+
+            if (q->selectionMode() == QAbstractItemView::SingleSelection) {
+                q->emit itemSelectionChanged();
+            }
+        } else if ((keybstate & Qt::ControlModifier)) {
+            m_pCurrentItem->setSelected(!m_pCurrentItem->isSelected());
+        } else {
+            bool block = q->signalsBlocked();
+            q->blockSignals(true);
+
+            if (!m_pCurrentItem->isSelected()) {
+                q->clearSelection();
+            }
+
+            q->blockSignals(block);
+
+            m_pCurrentItem->setSelected(true);
         }
-
-        if ( !down && q->item(i) == previousItem ) {
-            previousItem->setSelected(select);
-            break;
-        }
-        it->setSelected(select);
+    } else {
+        kDebug() << "That's not supposed to happen!!!!";
     }
-
-      q->blockSignals( block );
-      q->viewport()->setUpdatesEnabled( update );
-
-      emit q->itemSelectionChanged();
-
-      if( q->selectionMode() == QAbstractItemView::SingleSelection )
-        q->emit itemSelectionChanged();
-    }
-    else if( (keybstate & Qt::ControlModifier) )
-      m_pCurrentItem->setSelected(!m_pCurrentItem->isSelected());
-    else {
-      bool block = q->signalsBlocked();
-      q->blockSignals( true );
-
-      if( !m_pCurrentItem->isSelected() )
-        q->clearSelection();
-
-      q->blockSignals( block );
-
-      m_pCurrentItem->setSelected(true);
-    }
-  }
-  else
-    kDebug() << "That's not supposed to happen!!!!";
 }
 
 void KListWidget::KListWidgetPrivate::_k_slotEmitExecute(QListWidgetItem *item)
 {
-  Qt::KeyboardModifiers keybstate = QApplication::keyboardModifiers();
+    Qt::KeyboardModifiers keybstate = QApplication::keyboardModifiers();
 
-  m_pAutoSelect->stop();
+    m_pAutoSelect->stop();
 
-  //Don't emit executed if in SC mode and Shift or Ctrl are pressed
-  if( !( m_bUseSingle && ((keybstate & Qt::ShiftModifier) || (keybstate & Qt::ControlModifier)) ) ) {
-    emit q->executed( item );
-    if (!m_eventPos.isNull()) {
-        emit q->executed( item, m_eventPos );
+    //Don't emit executed if in SC mode and Shift or Ctrl are pressed
+    if (!(m_bUseSingle && ((keybstate & Qt::ShiftModifier) || (keybstate & Qt::ControlModifier)))) {
+        emit q->executed(item);
+        if (!m_eventPos.isNull()) {
+            emit q->executed(item, m_eventPos);
+        }
     }
-  }
 }
 
 //
@@ -215,62 +219,57 @@ void KListWidget::KListWidgetPrivate::_k_slotEmitExecute(QListWidgetItem *item)
 //
 void KListWidget::keyPressEvent(QKeyEvent *e)
 {
-  if( e->key() == Qt::Key_Escape )
-  {
-    e->ignore();
-  }
-  else if( e->key() == Qt::Key_F1 )
-  {
-    e->ignore();
-  }
-  else
-  {
-    QListWidget::keyPressEvent(e);
-  }
+    if (e->key() == Qt::Key_Escape) {
+        e->ignore();
+    } else if (e->key() == Qt::Key_F1) {
+        e->ignore();
+    } else {
+        QListWidget::keyPressEvent(e);
+    }
 }
 
-void KListWidget::focusOutEvent( QFocusEvent *fe )
+void KListWidget::focusOutEvent(QFocusEvent *fe)
 {
-  d->m_pAutoSelect->stop();
+    d->m_pAutoSelect->stop();
 
-  QListWidget::focusOutEvent( fe );
+    QListWidget::focusOutEvent(fe);
 }
 
-void KListWidget::leaveEvent( QEvent *e )
+void KListWidget::leaveEvent(QEvent *e)
 {
-  d->m_pAutoSelect->stop();
+    d->m_pAutoSelect->stop();
 
-  QListWidget::leaveEvent( e );
+    QListWidget::leaveEvent(e);
 }
 
-void KListWidget::mousePressEvent( QMouseEvent *e )
+void KListWidget::mousePressEvent(QMouseEvent *e)
 {
-  if( (selectionMode() == QAbstractItemView::ExtendedSelection) && (e->modifiers() & Qt::ShiftModifier) && !(e->modifiers() & Qt::ControlModifier) ) {
-    bool block = signalsBlocked();
-    blockSignals( true );
+    if ((selectionMode() == QAbstractItemView::ExtendedSelection) && (e->modifiers() & Qt::ShiftModifier) && !(e->modifiers() & Qt::ControlModifier)) {
+        bool block = signalsBlocked();
+        blockSignals(true);
 
-    clearSelection();
+        clearSelection();
 
-    blockSignals( block );
-  }
+        blockSignals(block);
+    }
 
-  QListWidget::mousePressEvent( e );
+    QListWidget::mousePressEvent(e);
 }
 
-void KListWidget::mouseDoubleClickEvent ( QMouseEvent * e )
+void KListWidget::mouseDoubleClickEvent(QMouseEvent *e)
 {
-  QPoint oldPos = d->m_eventPos;
-  d->m_eventPos = e->globalPos();
-  QListWidget::mouseDoubleClickEvent(e);
-  d->m_eventPos = oldPos;
+    QPoint oldPos = d->m_eventPos;
+    d->m_eventPos = e->globalPos();
+    QListWidget::mouseDoubleClickEvent(e);
+    d->m_eventPos = oldPos;
 }
 
-void KListWidget::mouseReleaseEvent ( QMouseEvent * e )
+void KListWidget::mouseReleaseEvent(QMouseEvent *e)
 {
-  QPoint oldPos = d->m_eventPos;
-  d->m_eventPos = e->globalPos();
-  QListWidget::mouseReleaseEvent(e);
-  d->m_eventPos = oldPos;
+    QPoint oldPos = d->m_eventPos;
+    d->m_eventPos = e->globalPos();
+    QListWidget::mouseReleaseEvent(e);
+    d->m_eventPos = oldPos;
 }
 
 #include "moc_klistwidget.cpp"

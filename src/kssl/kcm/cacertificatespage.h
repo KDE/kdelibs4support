@@ -51,11 +51,11 @@ Q_SIGNALS:
 
 protected:
     void showEvent(QShowEvent *event);
-    
+
 private:
     bool addCertificateItem(const KSslCaCertificate &caCert);
     void enableDisableSelectionClicked(bool isEnable);
-    
+
     Ui::CaCertificatesPage m_ui;
     QTreeWidgetItem *m_systemCertificatesParent;
     QTreeWidgetItem *m_userCertificatesParent;

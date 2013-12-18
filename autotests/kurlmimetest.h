@@ -32,5 +32,4 @@ private Q_SLOTS:
     void testMostLocalUrlList();
 };
 
-
 #endif

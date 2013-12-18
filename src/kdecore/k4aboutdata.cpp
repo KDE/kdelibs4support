@@ -55,81 +55,82 @@
 class K4AboutPerson::Private
 {
 public:
-   KLocalizedString _name;
-   KLocalizedString _task;
-   QString _emailAddress;
-   QString _webAddress;
-   QString _ocsUsername;
+    KLocalizedString _name;
+    KLocalizedString _task;
+    QString _emailAddress;
+    QString _webAddress;
+    QString _ocsUsername;
 
-   QString _nameNoop;
+    QString _nameNoop;
 };
 
-K4AboutPerson::K4AboutPerson( const KLocalizedString &_name,
-                            const KLocalizedString &_task,
-                            const QByteArray &_emailAddress,
-                            const QByteArray &_webAddress )
-  : d(new Private)
+K4AboutPerson::K4AboutPerson(const KLocalizedString &_name,
+                             const KLocalizedString &_task,
+                             const QByteArray &_emailAddress,
+                             const QByteArray &_webAddress)
+    : d(new Private)
 {
-   d->_name = _name;
-   d->_task = _task;
-   d->_emailAddress = QString::fromUtf8(_emailAddress.data());
-   d->_webAddress = QString::fromUtf8(_webAddress.data());
+    d->_name = _name;
+    d->_task = _task;
+    d->_emailAddress = QString::fromUtf8(_emailAddress.data());
+    d->_webAddress = QString::fromUtf8(_webAddress.data());
 }
 
-K4AboutPerson::K4AboutPerson( const KLocalizedString &_name,
-                            const KLocalizedString &_task,
-                            const QByteArray &_emailAddress,
-                            const QByteArray &_webAddress,
-                            const QByteArray &_ocsUsername )
-  : d(new Private)
+K4AboutPerson::K4AboutPerson(const KLocalizedString &_name,
+                             const KLocalizedString &_task,
+                             const QByteArray &_emailAddress,
+                             const QByteArray &_webAddress,
+                             const QByteArray &_ocsUsername)
+    : d(new Private)
 {
-   d->_name = _name;
-   d->_task = _task;
-   d->_emailAddress = QString::fromUtf8(_emailAddress.data());
-   d->_webAddress = QString::fromUtf8(_webAddress.data());
-   d->_ocsUsername = QString::fromUtf8( _ocsUsername.data() );
+    d->_name = _name;
+    d->_task = _task;
+    d->_emailAddress = QString::fromUtf8(_emailAddress.data());
+    d->_webAddress = QString::fromUtf8(_webAddress.data());
+    d->_ocsUsername = QString::fromUtf8(_ocsUsername.data());
 }
 
-K4AboutPerson::K4AboutPerson( const QString &_name, const QString &_email )
-  : d(new Private)
+K4AboutPerson::K4AboutPerson(const QString &_name, const QString &_email)
+    : d(new Private)
 {
-   d->_nameNoop = _name;
-   d->_emailAddress = _email;
+    d->_nameNoop = _name;
+    d->_emailAddress = _email;
 }
 
-K4AboutPerson::K4AboutPerson(const K4AboutPerson& other): d(new Private)
+K4AboutPerson::K4AboutPerson(const K4AboutPerson &other): d(new Private)
 {
     *d = *other.d;
 }
 
 K4AboutPerson::~K4AboutPerson()
 {
-   delete d;
+    delete d;
 }
 
 QString K4AboutPerson::name() const
 {
-   if (!d->_nameNoop.isEmpty())
-      return d->_nameNoop;
-   return d->_name.toString();
+    if (!d->_nameNoop.isEmpty()) {
+        return d->_nameNoop;
+    }
+    return d->_name.toString();
 }
 
 QString K4AboutPerson::task() const
 {
-   if (!d->_task.isEmpty())
-      return d->_task.toString();
-   return QString();
+    if (!d->_task.isEmpty()) {
+        return d->_task.toString();
+    }
+    return QString();
 }
 
 QString K4AboutPerson::emailAddress() const
 {
-   return d->_emailAddress;
+    return d->_emailAddress;
 }
-
 
 QString K4AboutPerson::webAddress() const
 {
-   return d->_webAddress;
+    return d->_webAddress;
 }
 
 QString K4AboutPerson::ocsUsername() const
@@ -137,78 +138,75 @@ QString K4AboutPerson::ocsUsername() const
     return d->_ocsUsername;
 }
 
-K4AboutPerson &K4AboutPerson::operator=(const K4AboutPerson& other)
+K4AboutPerson &K4AboutPerson::operator=(const K4AboutPerson &other)
 {
-   *d = *other.d;
-   return *this;
+    *d = *other.d;
+    return *this;
 }
-
-
 
 class K4AboutLicense::Private : public QSharedData
 {
 public:
-    Private( enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData );
-    Private( const QString &pathToFile, const K4AboutData *aboutData );
-    Private( const KLocalizedString &licenseText, const K4AboutData *aboutData );
-    Private( const Private& other);
+    Private(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData);
+    Private(const QString &pathToFile, const K4AboutData *aboutData);
+    Private(const KLocalizedString &licenseText, const K4AboutData *aboutData);
+    Private(const Private &other);
 public:
     enum K4AboutData::LicenseKey  _licenseKey;
     KLocalizedString             _licenseText;
     QString                      _pathToLicenseTextFile;
     // needed for access to the possibly changing copyrightStatement()
-    const K4AboutData *           _aboutData;
+    const K4AboutData            *_aboutData;
 };
 
-K4AboutLicense::Private::Private( enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData )
-  : QSharedData(),
-    _licenseKey( licenseType ),
-    _aboutData( aboutData )
+K4AboutLicense::Private::Private(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData)
+    : QSharedData(),
+      _licenseKey(licenseType),
+      _aboutData(aboutData)
 {
 }
 
-K4AboutLicense::Private::Private( const QString &pathToFile, const K4AboutData *aboutData )
-  : QSharedData(),
-    _licenseKey( K4AboutData::License_File ),
-    _pathToLicenseTextFile( pathToFile ),
-    _aboutData( aboutData )
+K4AboutLicense::Private::Private(const QString &pathToFile, const K4AboutData *aboutData)
+    : QSharedData(),
+      _licenseKey(K4AboutData::License_File),
+      _pathToLicenseTextFile(pathToFile),
+      _aboutData(aboutData)
 {
 }
 
-K4AboutLicense::Private::Private( const KLocalizedString &licenseText, const K4AboutData *aboutData )
-  : QSharedData(),
-    _licenseKey( K4AboutData::License_Custom ),
-    _licenseText( licenseText ),
-    _aboutData( aboutData )
+K4AboutLicense::Private::Private(const KLocalizedString &licenseText, const K4AboutData *aboutData)
+    : QSharedData(),
+      _licenseKey(K4AboutData::License_Custom),
+      _licenseText(licenseText),
+      _aboutData(aboutData)
 {
 }
 
-K4AboutLicense::Private::Private(const K4AboutLicense::Private& other)
-  : QSharedData(other),
-    _licenseKey( other._licenseKey ),
-    _licenseText( other._licenseText ),
-    _pathToLicenseTextFile( other._pathToLicenseTextFile ),
-    _aboutData( other._aboutData )
+K4AboutLicense::Private::Private(const K4AboutLicense::Private &other)
+    : QSharedData(other),
+      _licenseKey(other._licenseKey),
+      _licenseText(other._licenseText),
+      _pathToLicenseTextFile(other._pathToLicenseTextFile),
+      _aboutData(other._aboutData)
 {}
 
-
-K4AboutLicense::K4AboutLicense( enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData )
-  : d(new Private(licenseType,aboutData))
+K4AboutLicense::K4AboutLicense(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData)
+    : d(new Private(licenseType, aboutData))
 {
 }
 
-K4AboutLicense::K4AboutLicense( const QString &pathToFile, const K4AboutData *aboutData )
-  : d(new Private(pathToFile,aboutData))
+K4AboutLicense::K4AboutLicense(const QString &pathToFile, const K4AboutData *aboutData)
+    : d(new Private(pathToFile, aboutData))
 {
 }
 
-K4AboutLicense::K4AboutLicense( const KLocalizedString &licenseText, const K4AboutData *aboutData )
-  : d(new Private(licenseText,aboutData))
+K4AboutLicense::K4AboutLicense(const KLocalizedString &licenseText, const K4AboutData *aboutData)
+    : d(new Private(licenseText, aboutData))
 {
 }
 
-K4AboutLicense::K4AboutLicense(const K4AboutLicense& other)
-  : d(other.d)
+K4AboutLicense::K4AboutLicense(const K4AboutLicense &other)
+    : d(other.d)
 {
 }
 
@@ -219,7 +217,7 @@ QString K4AboutLicense::text() const
 {
     QString result;
 
-    const QString lineFeed = QString::fromLatin1( "\n\n" );
+    const QString lineFeed = QString::fromLatin1("\n\n");
 
     if (d->_aboutData && !d->_aboutData->copyrightStatement().isEmpty()) {
         result = d->_aboutData->copyrightStatement() + lineFeed;
@@ -227,8 +225,7 @@ QString K4AboutLicense::text() const
 
     bool knownLicense = false;
     QString pathToFile;
-    switch ( d->_licenseKey )
-    {
+    switch (d->_licenseKey) {
     case K4AboutData::License_File:
         pathToFile = d->_pathToLicenseTextFile;
         break;
@@ -265,11 +262,11 @@ QString K4AboutLicense::text() const
             result = d->_licenseText.toString();
             break;
         }
-        // fall through
+    // fall through
     default:
         result += QObject::tr("No licensing terms for this program have been specified.\n"
-                       "Please check the documentation or the source for any\n"
-                       "licensing terms.\n");
+                              "Please check the documentation or the source for any\n"
+                              "licensing terms.\n");
     }
 
     if (knownLicense) {
@@ -290,7 +287,6 @@ QString K4AboutLicense::text() const
     return result;
 }
 
-
 QString K4AboutLicense::name(K4AboutData::NameFormat formatName) const
 {
     QString licenseShort;
@@ -298,54 +294,53 @@ QString K4AboutLicense::name(K4AboutData::NameFormat formatName) const
 
     switch (d->_licenseKey) {
     case K4AboutData::License_GPL_V2:
-        licenseShort = i18nc("@item license (short name)","GPL v2");
-        licenseFull = i18nc("@item license","GNU General Public License Version 2");
+        licenseShort = i18nc("@item license (short name)", "GPL v2");
+        licenseFull = i18nc("@item license", "GNU General Public License Version 2");
         break;
     case K4AboutData::License_LGPL_V2:
-        licenseShort = i18nc("@item license (short name)","LGPL v2");
-        licenseFull = i18nc("@item license","GNU Lesser General Public License Version 2");
+        licenseShort = i18nc("@item license (short name)", "LGPL v2");
+        licenseFull = i18nc("@item license", "GNU Lesser General Public License Version 2");
         break;
     case K4AboutData::License_BSD:
-        licenseShort = i18nc("@item license (short name)","BSD License");
-        licenseFull = i18nc("@item license","BSD License");
+        licenseShort = i18nc("@item license (short name)", "BSD License");
+        licenseFull = i18nc("@item license", "BSD License");
         break;
     case K4AboutData::License_Artistic:
-        licenseShort = i18nc("@item license (short name)","Artistic License");
-        licenseFull = i18nc("@item license","Artistic License");
+        licenseShort = i18nc("@item license (short name)", "Artistic License");
+        licenseFull = i18nc("@item license", "Artistic License");
         break;
     case K4AboutData::License_QPL_V1_0:
-        licenseShort = i18nc("@item license (short name)","QPL v1.0");
-        licenseFull = i18nc("@item license","Q Public License");
+        licenseShort = i18nc("@item license (short name)", "QPL v1.0");
+        licenseFull = i18nc("@item license", "Q Public License");
         break;
     case K4AboutData::License_GPL_V3:
-        licenseShort = i18nc("@item license (short name)","GPL v3");
-        licenseFull = i18nc("@item license","GNU General Public License Version 3");
+        licenseShort = i18nc("@item license (short name)", "GPL v3");
+        licenseFull = i18nc("@item license", "GNU General Public License Version 3");
         break;
     case K4AboutData::License_LGPL_V3:
-        licenseShort = i18nc("@item license (short name)","LGPL v3");
-        licenseFull = i18nc("@item license","GNU Lesser General Public License Version 3");
+        licenseShort = i18nc("@item license (short name)", "LGPL v3");
+        licenseFull = i18nc("@item license", "GNU Lesser General Public License Version 3");
         break;
     case K4AboutData::License_Custom:
     case K4AboutData::License_File:
-        licenseShort = licenseFull = i18nc("@item license","Custom");
+        licenseShort = licenseFull = i18nc("@item license", "Custom");
         break;
     default:
-        licenseShort = licenseFull = i18nc("@item license","Not specified");
+        licenseShort = licenseFull = i18nc("@item license", "Not specified");
     }
 
     const QString result =
-        (formatName == K4AboutData::ShortName ) ? licenseShort :
-        (formatName == K4AboutData::FullName ) ?  licenseFull :
-                                                 QString();
+        (formatName == K4AboutData::ShortName) ? licenseShort :
+        (formatName == K4AboutData::FullName) ?  licenseFull :
+        QString();
 
     return result;
 }
 
-
-K4AboutLicense &K4AboutLicense::operator=(const K4AboutLicense& other)
+K4AboutLicense &K4AboutLicense::operator=(const K4AboutLicense &other)
 {
-   d = other.d;
-   return *this;
+    d = other.d;
+    return *this;
 }
 
 K4AboutData::LicenseKey K4AboutLicense::key() const
@@ -383,17 +378,16 @@ K4AboutLicense K4AboutLicense::byKeyword(const QString &rawKeyword)
     keyword.remove(QLatin1Char('.'));
 
     K4AboutData::LicenseKey license = ldict.value(keyword.toLatin1(),
-                                                 K4AboutData::License_Custom);
+                                      K4AboutData::License_Custom);
     return K4AboutLicense(license, 0);
 }
-
 
 class K4AboutData::Private
 {
 public:
     Private()
         : customAuthorTextEnabled(false)
-        {}
+    {}
     QByteArray _appName;
     KLocalizedString _programName;
     KLocalizedString _shortDescription;
@@ -422,19 +416,18 @@ public:
     QByteArray _bugEmailAddress;
 };
 
-
-K4AboutData::K4AboutData( const QByteArray &_appName,
-                        const QByteArray &_catalogName,
-                        const KLocalizedString &_programName,
-                        const QByteArray &_version,
-                        const KLocalizedString &_shortDescription,
-                        enum LicenseKey licenseType,
-                        const KLocalizedString &_copyrightStatement,
-                        const KLocalizedString &text,
-                        const QByteArray &homePageAddress,
-                        const QByteArray &bugsEmailAddress
-                      )
-  : d(new Private)
+K4AboutData::K4AboutData(const QByteArray &_appName,
+                         const QByteArray &_catalogName,
+                         const KLocalizedString &_programName,
+                         const QByteArray &_version,
+                         const KLocalizedString &_shortDescription,
+                         enum LicenseKey licenseType,
+                         const KLocalizedString &_copyrightStatement,
+                         const KLocalizedString &text,
+                         const QByteArray &homePageAddress,
+                         const QByteArray &bugsEmailAddress
+                        )
+    : d(new Private)
 {
     d->_appName = _appName;
     int p = d->_appName.indexOf('/');
@@ -444,11 +437,12 @@ K4AboutData::K4AboutData( const QByteArray &_appName,
 
     d->_catalogName = _catalogName;
     d->_programName = _programName;
-    if (!d->_programName.isEmpty()) // KComponentData("klauncher") gives empty program name
+    if (!d->_programName.isEmpty()) { // KComponentData("klauncher") gives empty program name
         d->_translatedProgramName = _programName.toString().toUtf8();
+    }
     d->_version = _version;
     d->_shortDescription = _shortDescription;
-    d->_licenseList.append(K4AboutLicense(licenseType,this));
+    d->_licenseList.append(K4AboutLicense(licenseType, this));
     d->_copyrightStatement = _copyrightStatement;
     d->_otherText = text;
     d->_homepageAddress = QString::fromLatin1(homePageAddress.data());
@@ -459,14 +453,13 @@ K4AboutData::K4AboutData( const QByteArray &_appName,
         if (dot >= 0) {
             d->organizationDomain = d->_homepageAddress.mid(dot + 1);
             const int slash = d->organizationDomain.indexOf(QLatin1Char('/'));
-            if (slash >= 0)
+            if (slash >= 0) {
                 d->organizationDomain.truncate(slash);
-        }
-        else {
+            }
+        } else {
             d->organizationDomain = QString::fromLatin1("kde.org");
         }
-    }
-    else {
+    } else {
         d->organizationDomain = QString::fromLatin1("kde.org");
     }
 }
@@ -476,24 +469,24 @@ K4AboutData::~K4AboutData()
     delete d;
 }
 
-K4AboutData::K4AboutData(const K4AboutData& other): d(new Private)
+K4AboutData::K4AboutData(const K4AboutData &other): d(new Private)
 {
     *d = *other.d;
     QList<K4AboutLicense>::iterator it = d->_licenseList.begin(), itEnd = d->_licenseList.end();
-    for ( ; it != itEnd; ++it) {
-        K4AboutLicense& al = *it;
+    for (; it != itEnd; ++it) {
+        K4AboutLicense &al = *it;
         al.d.detach();
         al.d->_aboutData = this;
     }
 }
 
-K4AboutData &K4AboutData::operator=(const K4AboutData& other)
+K4AboutData &K4AboutData::operator=(const K4AboutData &other)
 {
     if (this != &other) {
         *d = *other.d;
         QList<K4AboutLicense>::iterator it = d->_licenseList.begin(), itEnd = d->_licenseList.end();
-        for ( ; it != itEnd; ++it) {
-            K4AboutLicense& al = *it;
+        for (; it != itEnd; ++it) {
+            K4AboutLicense &al = *it;
             al.d.detach();
             al.d->_aboutData = this;
         }
@@ -518,204 +511,206 @@ K4AboutData::operator KAboutData() const
     return aboutData;
 }
 
-K4AboutData &K4AboutData::addAuthor( const KLocalizedString &name,
-                                   const KLocalizedString &task,
-                                   const QByteArray &emailAddress,
-                                   const QByteArray &webAddress )
+K4AboutData &K4AboutData::addAuthor(const KLocalizedString &name,
+                                    const KLocalizedString &task,
+                                    const QByteArray &emailAddress,
+                                    const QByteArray &webAddress)
 {
-  d->_authorList.append(K4AboutPerson(name,task,emailAddress,webAddress));
-  return *this;
-}
-
-K4AboutData &K4AboutData::addAuthor( const KLocalizedString &name,
-                                   const KLocalizedString &task,
-                                   const QByteArray &emailAddress,
-                                   const QByteArray &webAddress,
-                                   const QByteArray &ocsUsername )
-{
-  d->_authorList.append(K4AboutPerson(name,task,emailAddress,webAddress,ocsUsername));
-  return *this;
-}
-
-K4AboutData &K4AboutData::addCredit( const KLocalizedString &name,
-                                   const KLocalizedString &task,
-                                   const QByteArray &emailAddress,
-                                   const QByteArray &webAddress )
-{
-  d->_creditList.append(K4AboutPerson(name,task,emailAddress,webAddress));
-  return *this;
-}
-
-K4AboutData &K4AboutData::addCredit( const KLocalizedString &name,
-                                   const KLocalizedString &task,
-                                   const QByteArray &emailAddress,
-                                   const QByteArray &webAddress,
-                                   const QByteArray &ocsUsername )
-{
-  d->_creditList.append(K4AboutPerson(name,task,emailAddress,webAddress,ocsUsername));
-  return *this;
-}
-
-K4AboutData &K4AboutData::setTranslator( const KLocalizedString& name,
-                                       const KLocalizedString& emailAddress )
-{
-  d->translatorName = name;
-  d->translatorEmail = emailAddress;
-  return *this;
-}
-
-K4AboutData &K4AboutData::setLicenseText( const KLocalizedString &licenseText )
-{
-    d->_licenseList[0] = K4AboutLicense(licenseText,this);
+    d->_authorList.append(K4AboutPerson(name, task, emailAddress, webAddress));
     return *this;
 }
 
-K4AboutData &K4AboutData::addLicenseText( const KLocalizedString &licenseText )
+K4AboutData &K4AboutData::addAuthor(const KLocalizedString &name,
+                                    const KLocalizedString &task,
+                                    const QByteArray &emailAddress,
+                                    const QByteArray &webAddress,
+                                    const QByteArray &ocsUsername)
+{
+    d->_authorList.append(K4AboutPerson(name, task, emailAddress, webAddress, ocsUsername));
+    return *this;
+}
+
+K4AboutData &K4AboutData::addCredit(const KLocalizedString &name,
+                                    const KLocalizedString &task,
+                                    const QByteArray &emailAddress,
+                                    const QByteArray &webAddress)
+{
+    d->_creditList.append(K4AboutPerson(name, task, emailAddress, webAddress));
+    return *this;
+}
+
+K4AboutData &K4AboutData::addCredit(const KLocalizedString &name,
+                                    const KLocalizedString &task,
+                                    const QByteArray &emailAddress,
+                                    const QByteArray &webAddress,
+                                    const QByteArray &ocsUsername)
+{
+    d->_creditList.append(K4AboutPerson(name, task, emailAddress, webAddress, ocsUsername));
+    return *this;
+}
+
+K4AboutData &K4AboutData::setTranslator(const KLocalizedString &name,
+                                        const KLocalizedString &emailAddress)
+{
+    d->translatorName = name;
+    d->translatorEmail = emailAddress;
+    return *this;
+}
+
+K4AboutData &K4AboutData::setLicenseText(const KLocalizedString &licenseText)
+{
+    d->_licenseList[0] = K4AboutLicense(licenseText, this);
+    return *this;
+}
+
+K4AboutData &K4AboutData::addLicenseText(const KLocalizedString &licenseText)
 {
     // if the default license is unknown, overwrite instead of append
     K4AboutLicense &firstLicense = d->_licenseList[0];
     if (d->_licenseList.count() == 1 && firstLicense.d->_licenseKey == License_Unknown) {
-        firstLicense = K4AboutLicense(licenseText,this);
+        firstLicense = K4AboutLicense(licenseText, this);
     } else {
-        d->_licenseList.append(K4AboutLicense(licenseText,this));
+        d->_licenseList.append(K4AboutLicense(licenseText, this));
     }
     return *this;
 }
 
-K4AboutData &K4AboutData::setLicenseTextFile( const QString &pathToFile )
+K4AboutData &K4AboutData::setLicenseTextFile(const QString &pathToFile)
 {
-    d->_licenseList[0] = K4AboutLicense(pathToFile,this);
+    d->_licenseList[0] = K4AboutLicense(pathToFile, this);
     return *this;
 }
 
-K4AboutData &K4AboutData::addLicenseTextFile( const QString &pathToFile )
+K4AboutData &K4AboutData::addLicenseTextFile(const QString &pathToFile)
 {
     // if the default license is unknown, overwrite instead of append
     K4AboutLicense &firstLicense = d->_licenseList[0];
     if (d->_licenseList.count() == 1 && firstLicense.d->_licenseKey == License_Unknown) {
-        firstLicense = K4AboutLicense(pathToFile,this);
+        firstLicense = K4AboutLicense(pathToFile, this);
     } else {
-        d->_licenseList.append(K4AboutLicense(pathToFile,this));
+        d->_licenseList.append(K4AboutLicense(pathToFile, this));
     }
     return *this;
 }
 
-K4AboutData &K4AboutData::setAppName( const QByteArray &_appName )
+K4AboutData &K4AboutData::setAppName(const QByteArray &_appName)
 {
-  d->_appName = _appName;
-  return *this;
+    d->_appName = _appName;
+    return *this;
 }
 
-K4AboutData &K4AboutData::setProgramName( const KLocalizedString &_programName )
+K4AboutData &K4AboutData::setProgramName(const KLocalizedString &_programName)
 {
-  d->_programName = _programName;
-  translateInternalProgramName();
-  return *this;
+    d->_programName = _programName;
+    translateInternalProgramName();
+    return *this;
 }
 
-K4AboutData &K4AboutData::setOcsProvider(const QByteArray &_ocsProviderUrl )
+K4AboutData &K4AboutData::setOcsProvider(const QByteArray &_ocsProviderUrl)
 {
     d->_ocsProviderUrl = _ocsProviderUrl;
     return *this;
 }
 
-K4AboutData &K4AboutData::setVersion( const QByteArray &_version )
+K4AboutData &K4AboutData::setVersion(const QByteArray &_version)
 {
-  d->_version = _version;
-  return *this;
-}
-
-K4AboutData &K4AboutData::setShortDescription( const KLocalizedString &_shortDescription )
-{
-  d->_shortDescription = _shortDescription;
-  return *this;
-}
-
-K4AboutData &K4AboutData::setCatalogName( const QByteArray &_catalogName )
-{
-  d->_catalogName = _catalogName;
-  return *this;
-}
-
-K4AboutData &K4AboutData::setLicense( LicenseKey licenseKey)
-{
-    d->_licenseList[0] = K4AboutLicense(licenseKey,this);
+    d->_version = _version;
     return *this;
 }
 
-K4AboutData &K4AboutData::addLicense( LicenseKey licenseKey)
+K4AboutData &K4AboutData::setShortDescription(const KLocalizedString &_shortDescription)
+{
+    d->_shortDescription = _shortDescription;
+    return *this;
+}
+
+K4AboutData &K4AboutData::setCatalogName(const QByteArray &_catalogName)
+{
+    d->_catalogName = _catalogName;
+    return *this;
+}
+
+K4AboutData &K4AboutData::setLicense(LicenseKey licenseKey)
+{
+    d->_licenseList[0] = K4AboutLicense(licenseKey, this);
+    return *this;
+}
+
+K4AboutData &K4AboutData::addLicense(LicenseKey licenseKey)
 {
     // if the default license is unknown, overwrite instead of append
     K4AboutLicense &firstLicense = d->_licenseList[0];
     if (d->_licenseList.count() == 1 && firstLicense.d->_licenseKey == License_Unknown) {
-        firstLicense = K4AboutLicense(licenseKey,this);
+        firstLicense = K4AboutLicense(licenseKey, this);
     } else {
-        d->_licenseList.append(K4AboutLicense(licenseKey,this));
+        d->_licenseList.append(K4AboutLicense(licenseKey, this));
     }
     return *this;
 }
 
-K4AboutData &K4AboutData::setCopyrightStatement( const KLocalizedString &_copyrightStatement )
+K4AboutData &K4AboutData::setCopyrightStatement(const KLocalizedString &_copyrightStatement)
 {
-  d->_copyrightStatement = _copyrightStatement;
-  return *this;
+    d->_copyrightStatement = _copyrightStatement;
+    return *this;
 }
 
-K4AboutData &K4AboutData::setOtherText( const KLocalizedString &_otherText )
+K4AboutData &K4AboutData::setOtherText(const KLocalizedString &_otherText)
 {
-  d->_otherText = _otherText;
-  return *this;
+    d->_otherText = _otherText;
+    return *this;
 }
 
-K4AboutData &K4AboutData::setHomepage( const QByteArray &_homepage )
+K4AboutData &K4AboutData::setHomepage(const QByteArray &_homepage)
 {
-  d->_homepageAddress = QString::fromLatin1(_homepage.data());
-  return *this;
+    d->_homepageAddress = QString::fromLatin1(_homepage.data());
+    return *this;
 }
 
-K4AboutData &K4AboutData::setBugAddress( const QByteArray &_bugAddress )
+K4AboutData &K4AboutData::setBugAddress(const QByteArray &_bugAddress)
 {
-  d->_bugEmailAddress = _bugAddress;
-  return *this;
+    d->_bugEmailAddress = _bugAddress;
+    return *this;
 }
 
-K4AboutData &K4AboutData::setOrganizationDomain( const QByteArray &domain )
+K4AboutData &K4AboutData::setOrganizationDomain(const QByteArray &domain)
 {
-  d->organizationDomain = QString::fromLatin1(domain.data());
-  return *this;
+    d->organizationDomain = QString::fromLatin1(domain.data());
+    return *this;
 }
 
-K4AboutData &K4AboutData::setProductName( const QByteArray &_productName )
+K4AboutData &K4AboutData::setProductName(const QByteArray &_productName)
 {
-  d->productName = QString::fromUtf8(_productName.data());
-  return *this;
+    d->productName = QString::fromUtf8(_productName.data());
+    return *this;
 }
 
 QString K4AboutData::appName() const
 {
-  return QString::fromUtf8(d->_appName.data());
+    return QString::fromUtf8(d->_appName.data());
 }
 
 QString K4AboutData::productName() const
 {
-   if (!d->productName.isEmpty())
-      return d->productName;
-   return appName();
+    if (!d->productName.isEmpty()) {
+        return d->productName;
+    }
+    return appName();
 }
 
 QString K4AboutData::programName() const
 {
-   if (!d->_programName.isEmpty())
-      return d->_programName.toString();
-   return QString();
+    if (!d->_programName.isEmpty()) {
+        return d->_programName.toString();
+    }
+    return QString();
 }
 
 /// @internal
 /// Return the program name. It is always pre-allocated.
 /// Needed for KCrash in particular.
-const char* K4AboutData::internalProgramName() const
+const char *K4AboutData::internalProgramName() const
 {
-   return d->_translatedProgramName.constData();
+    return d->_translatedProgramName.constData();
 }
 
 /// @internal
@@ -724,11 +719,12 @@ const char* K4AboutData::internalProgramName() const
 /// the i18n() call will be done here in advance.
 void K4AboutData::translateInternalProgramName() const
 {
-  d->_translatedProgramName.clear();
+    d->_translatedProgramName.clear();
 #pragma message("KDE5 FIXME: This code must be replaced by something with KLocalizedString")
 #if 0
-  if( KLocale::global())
-      d->_translatedProgramName = programName().toUtf8();
+    if (KLocale::global()) {
+        d->_translatedProgramName = programName().toUtf8();
+    }
 #endif
 }
 
@@ -737,7 +733,7 @@ QString K4AboutData::programIconName() const
     return d->programIconName.isEmpty() ? appName() : d->programIconName;
 }
 
-K4AboutData &K4AboutData::setProgramIconName( const QString &iconName )
+K4AboutData &K4AboutData::setProgramIconName(const QString &iconName)
 {
     d->programIconName = iconName;
     return *this;
@@ -748,16 +744,17 @@ QVariant K4AboutData::programLogo() const
     return d->programLogo;
 }
 
-K4AboutData &K4AboutData::setProgramLogo(const QVariant& image)
+K4AboutData &K4AboutData::setProgramLogo(const QVariant &image)
 {
-    d->programLogo = image ;
+    d->programLogo = image;
     return *this;
 }
 
 QString K4AboutData::ocsProviderUrl() const
 {
-    if( !d->_ocsProviderUrl.isEmpty() )
-      return QString::fromUtf8( d->_ocsProviderUrl.data() );
+    if (!d->_ocsProviderUrl.isEmpty()) {
+        return QString::fromUtf8(d->_ocsProviderUrl.data());
+    }
     return QString();
 }
 
@@ -769,34 +766,36 @@ QString K4AboutData::version() const
 /// @internal
 /// Return the untranslated and uninterpreted (to UTF8) string
 /// for the version information. Used in particular for KCrash.
-const char* K4AboutData::internalVersion() const
+const char *K4AboutData::internalVersion() const
 {
-   return d->_version.constData();
+    return d->_version.constData();
 }
 
 QString K4AboutData::shortDescription() const
 {
-   if (!d->_shortDescription.isEmpty())
-      return d->_shortDescription.toString();
-   return QString();
+    if (!d->_shortDescription.isEmpty()) {
+        return d->_shortDescription.toString();
+    }
+    return QString();
 }
 
 QString K4AboutData::catalogName() const
 {
-   if (!d->_catalogName.isEmpty())
-     return QString::fromUtf8(d->_catalogName.data());
-   // Fallback to appname for catalog name if empty.
-   return QString::fromUtf8(d->_appName.data());
+    if (!d->_catalogName.isEmpty()) {
+        return QString::fromUtf8(d->_catalogName.data());
+    }
+    // Fallback to appname for catalog name if empty.
+    return QString::fromUtf8(d->_appName.data());
 }
 
 QString K4AboutData::homepage() const
 {
-   return d->_homepageAddress;
+    return d->_homepageAddress;
 }
 
 QString K4AboutData::bugAddress() const
 {
-   return QString::fromUtf8(d->_bugEmailAddress.data());
+    return QString::fromUtf8(d->_bugEmailAddress.data());
 }
 
 QString K4AboutData::organizationDomain() const
@@ -804,25 +803,25 @@ QString K4AboutData::organizationDomain() const
     return d->organizationDomain;
 }
 
-
 /// @internal
 /// Return the untranslated and uninterpreted (to UTF8) string
 /// for the bug mail address. Used in particular for KCrash.
-const char* K4AboutData::internalBugAddress() const
+const char *K4AboutData::internalBugAddress() const
 {
-   if (d->_bugEmailAddress.isEmpty())
-      return 0;
-   return d->_bugEmailAddress.constData();
+    if (d->_bugEmailAddress.isEmpty()) {
+        return 0;
+    }
+    return d->_bugEmailAddress.constData();
 }
 
 QList<K4AboutPerson> K4AboutData::authors() const
 {
-   return d->_authorList;
+    return d->_authorList;
 }
 
 QList<K4AboutPerson> K4AboutData::credits() const
 {
-   return d->_creditList;
+    return d->_creditList;
 }
 
 #define NAME_OF_TRANSLATORS "Your names"
@@ -845,45 +844,41 @@ QList<K4AboutPerson> K4AboutData::translators() const
     QString translatorName;
     if (!d->translatorName.isEmpty()) {
         translatorName = d->translatorName.toString();
-    }
-    else {
+    } else {
         translatorName = ki18nc("NAME OF TRANSLATORS", NAME_OF_TRANSLATORS).toString(); //toString(tmpLocale);
     }
 
     QString translatorEmail;
     if (!d->translatorEmail.isEmpty()) {
         translatorEmail = d->translatorEmail.toString();
-    }
-    else {
+    } else {
         translatorEmail = ki18nc("EMAIL OF TRANSLATORS", EMAIL_OF_TRANSLATORS).toString(); //toString(tmpLocale);
     }
 #if 0
     delete tmpLocale;
 #endif
-    if ( translatorName.isEmpty() || translatorName == QString::fromUtf8( NAME_OF_TRANSLATORS ) )
+    if (translatorName.isEmpty() || translatorName == QString::fromUtf8(NAME_OF_TRANSLATORS)) {
         return personList;
+    }
 
     const QStringList nameList(translatorName.split(QString(QLatin1Char(','))));
 
     QStringList emailList;
-    if( !translatorEmail.isEmpty() && translatorEmail != QString::fromUtf8( EMAIL_OF_TRANSLATORS ) )
-    {
-       emailList = translatorEmail.split(QString(QLatin1Char(',')), QString::KeepEmptyParts);
+    if (!translatorEmail.isEmpty() && translatorEmail != QString::fromUtf8(EMAIL_OF_TRANSLATORS)) {
+        emailList = translatorEmail.split(QString(QLatin1Char(',')), QString::KeepEmptyParts);
     }
 
     QStringList::const_iterator nit;
     QStringList::const_iterator eit = emailList.constBegin();
 
-    for( nit = nameList.constBegin(); nit != nameList.constEnd(); ++nit )
-    {
+    for (nit = nameList.constBegin(); nit != nameList.constEnd(); ++nit) {
         QString email;
-        if ( eit != emailList.constEnd() )
-        {
+        if (eit != emailList.constEnd()) {
             email = *eit;
             ++eit;
         }
 
-        personList.append( K4AboutPerson( (*nit).trimmed(), email.trimmed() ) );
+        personList.append(K4AboutPerson((*nit).trimmed(), email.trimmed()));
     }
 
     return personList;
@@ -892,18 +887,19 @@ QList<K4AboutPerson> K4AboutData::translators() const
 QString K4AboutData::aboutTranslationTeam()
 {
     return i18nc("replace this with information about your translation team",
-            "<p>KDE is translated into many languages thanks to the work "
-            "of the translation teams all over the world.</p>"
-            "<p>For more information on KDE internationalization "
-            "visit <a href=\"http://l10n.kde.org\">http://l10n.kde.org</a></p>"
-            );
+                 "<p>KDE is translated into many languages thanks to the work "
+                 "of the translation teams all over the world.</p>"
+                 "<p>For more information on KDE internationalization "
+                 "visit <a href=\"http://l10n.kde.org\">http://l10n.kde.org</a></p>"
+                );
 }
 
 QString K4AboutData::otherText() const
 {
-   if (!d->_otherText.isEmpty())
-      return d->_otherText.toString();
-   return QString();
+    if (!d->_otherText.isEmpty()) {
+        return d->_otherText.toString();
+    }
+    return QString();
 }
 
 QString K4AboutData::license() const
@@ -911,7 +907,7 @@ QString K4AboutData::license() const
     return d->_licenseList.at(0).text();
 }
 
-QString K4AboutData::licenseName( NameFormat formatName ) const
+QString K4AboutData::licenseName(NameFormat formatName) const
 {
     return d->_licenseList.at(0).name(formatName);
 }
@@ -923,48 +919,51 @@ QList<K4AboutLicense> K4AboutData::licenses() const
 
 QString K4AboutData::copyrightStatement() const
 {
-  if (!d->_copyrightStatement.isEmpty())
-    return d->_copyrightStatement.toString();
-  return QString();
+    if (!d->_copyrightStatement.isEmpty()) {
+        return d->_copyrightStatement.toString();
+    }
+    return QString();
 }
 
 QString K4AboutData::customAuthorPlainText() const
 {
-  if (!d->customAuthorPlainText.isEmpty())
-    return d->customAuthorPlainText.toString();
-  return QString();
+    if (!d->customAuthorPlainText.isEmpty()) {
+        return d->customAuthorPlainText.toString();
+    }
+    return QString();
 }
 
 QString K4AboutData::customAuthorRichText() const
 {
-  if (!d->customAuthorRichText.isEmpty())
-    return d->customAuthorRichText.toString();
-  return QString();
+    if (!d->customAuthorRichText.isEmpty()) {
+        return d->customAuthorRichText.toString();
+    }
+    return QString();
 }
 
 bool K4AboutData::customAuthorTextEnabled() const
 {
-  return d->customAuthorTextEnabled;
+    return d->customAuthorTextEnabled;
 }
 
-K4AboutData &K4AboutData::setCustomAuthorText( const KLocalizedString &plainText,
-                                             const KLocalizedString &richText )
+K4AboutData &K4AboutData::setCustomAuthorText(const KLocalizedString &plainText,
+        const KLocalizedString &richText)
 {
-  d->customAuthorPlainText = plainText;
-  d->customAuthorRichText = richText;
+    d->customAuthorPlainText = plainText;
+    d->customAuthorRichText = richText;
 
-  d->customAuthorTextEnabled = true;
+    d->customAuthorTextEnabled = true;
 
-  return *this;
+    return *this;
 }
 
 K4AboutData &K4AboutData::unsetCustomAuthorText()
 {
-  d->customAuthorPlainText = KLocalizedString();
-  d->customAuthorRichText = KLocalizedString();
+    d->customAuthorPlainText = KLocalizedString();
+    d->customAuthorRichText = KLocalizedString();
 
-  d->customAuthorTextEnabled = false;
+    d->customAuthorTextEnabled = false;
 
-  return *this;
+    return *this;
 }
 

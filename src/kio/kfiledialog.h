@@ -124,9 +124,8 @@ public:
       *
       * @see KFileWidget::KFileWidget()
       */
-    KFileDialog(const QUrl& startDir, const QString& filter,
-                QWidget *parent, QWidget* widget = 0);
-
+    KFileDialog(const QUrl &startDir, const QString &filter,
+                QWidget *parent, QWidget *widget = 0);
 
     /**
      * Destructs the file dialog.
@@ -173,7 +172,7 @@ public:
      *
      * This takes absolute URLs and relative file names.
      */
-    void setSelection(const QString& name);
+    void setSelection(const QString &name);
 
     /**
      * Sets the operational mode of the filedialog to @p Saving, @p Opening
@@ -192,7 +191,7 @@ public:
      * @see operationMode
      * @see KFileDialog::OperationMode
      */
-    void setOperationMode( KFileDialog::OperationMode );
+    void setOperationMode(KFileDialog::OperationMode);
 
     /**
      * @returns the current operation mode, Opening, Saving or Other. Default
@@ -214,7 +213,7 @@ public:
      * you can type in the filename and change the directory without having
      * to type the name again.
      */
-    void setKeepLocation( bool keep );
+    void setKeepLocation(bool keep);
 
     /**
      * @returns whether the contents of the location edit are kept when
@@ -269,7 +268,7 @@ public:
      * @see filterChanged
      * @see setMimeFilter
      */
-    void setFilter(const QString& filter);
+    void setFilter(const QString &filter);
 
     /**
      * Returns the current filter as entered by the user or one of the
@@ -301,8 +300,8 @@ public:
      *
      * Do not use in conjunction with setFilter()
      */
-    void setMimeFilter( const QStringList& types,
-                        const QString& defaultType = QString() );
+    void setMimeFilter(const QStringList &types,
+                       const QString &defaultType = QString());
 
     /**
      * The mimetype for the desired output format.
@@ -373,21 +372,20 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QString getOpenFileName(const QUrl& startDir = QUrl(),
-                                   const QString& filter = QString(),
+    static QString getOpenFileName(const QUrl &startDir = QUrl(),
+                                   const QString &filter = QString(),
                                    QWidget *parent = 0,
-                                   const QString& caption = QString());
+                                   const QString &caption = QString());
 
-
-   /**
-     * Use this version only if you have no QWidget available as
-     * parent widget. This can be the case if the parent widget is
-     * a widget in another process or if the parent widget is a
-     * non-Qt widget. For example, in a GTK program.
-    */
-   static QString getOpenFileNameWId(const QUrl& startDir,
-                                     const QString& filter,
-                                     WId parent_id, const QString& caption);
+    /**
+      * Use this version only if you have no QWidget available as
+      * parent widget. This can be the case if the parent widget is
+      * a widget in another process or if the parent widget is a
+      * non-Qt widget. For example, in a GTK program.
+     */
+    static QString getOpenFileNameWId(const QUrl &startDir,
+                                      const QString &filter,
+                                      WId parent_id, const QString &caption);
 
     /**
      * Creates a modal file dialog and returns the selected
@@ -408,12 +406,10 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QStringList getOpenFileNames(const QUrl& startDir = QUrl(),
-                                        const QString& filter = QString(),
+    static QStringList getOpenFileNames(const QUrl &startDir = QUrl(),
+                                        const QString &filter = QString(),
                                         QWidget *parent = 0,
-                                        const QString& caption = QString());
-
-
+                                        const QString &caption = QString());
 
     /**
      * Creates a modal file dialog and returns the selected
@@ -434,12 +430,10 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QUrl getOpenUrl(const QUrl& startDir = QUrl(),
-                           const QString& filter = QString(),
-                           QWidget *parent= 0,
-                           const QString& caption = QString());
-
-
+    static QUrl getOpenUrl(const QUrl &startDir = QUrl(),
+                           const QString &filter = QString(),
+                           QWidget *parent = 0,
+                           const QString &caption = QString());
 
     /**
      * Creates a modal file dialog and returns the selected
@@ -460,12 +454,10 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QList<QUrl> getOpenUrls(const QUrl& startDir = QUrl(),
-                                   const QString& filter = QString(),
+    static QList<QUrl> getOpenUrls(const QUrl &startDir = QUrl(),
+                                   const QString &filter = QString(),
                                    QWidget *parent = 0,
-                                   const QString& caption = QString());
-
-
+                                   const QString &caption = QString());
 
     /**
      * Creates a modal file dialog and returns the selected
@@ -486,10 +478,10 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QString getSaveFileName(const QUrl& startDir = QUrl(),
-                                   const QString& filter = QString(),
+    static QString getSaveFileName(const QUrl &startDir = QUrl(),
+                                   const QString &filter = QString(),
                                    QWidget *parent = 0,
-                                   const QString& caption = QString());
+                                   const QString &caption = QString());
 
     /**
      * Creates a modal file dialog and returns the selected
@@ -513,20 +505,19 @@ public:
      *
      * @since 4.4
      */
-    static QString getSaveFileName(const QUrl& startDir,
-                                   const QString& filter,
+    static QString getSaveFileName(const QUrl &startDir,
+                                   const QString &filter,
                                    QWidget *parent,
-                                   const QString& caption,
+                                   const QString &caption,
                                    Options options);
-
 
     /**
      * This function accepts the window id of the parent window, instead
      * of QWidget*. It should be used only when necessary.
      */
-    static QString getSaveFileNameWId(const QUrl &startDir, const QString& filter,
+    static QString getSaveFileNameWId(const QUrl &startDir, const QString &filter,
                                       WId parent_id,
-                                      const QString& caption);
+                                      const QString &caption);
 
     /**
      * This function accepts the window id of the parent window, instead
@@ -534,9 +525,9 @@ public:
      *
      * @since 4.4
      */
-    static QString getSaveFileNameWId(const QUrl &startDir, const QString& filter,
+    static QString getSaveFileNameWId(const QUrl &startDir, const QString &filter,
                                       WId parent_id,
-                                      const QString& caption,
+                                      const QString &caption,
                                       Options options);
 
     /**
@@ -558,10 +549,10 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QUrl getSaveUrl(const QUrl& startDir = QUrl(),
-                           const QString& filter = QString(),
+    static QUrl getSaveUrl(const QUrl &startDir = QUrl(),
+                           const QString &filter = QString(),
                            QWidget *parent = 0,
-                           const QString& caption = QString());
+                           const QString &caption = QString());
 
     /**
      * Creates a modal file dialog and returns the selected
@@ -585,12 +576,11 @@ public:
      *
      * @since 4.4
      */
-    static QUrl getSaveUrl(const QUrl& startDir,
-                           const QString& filter,
+    static QUrl getSaveUrl(const QUrl &startDir,
+                           const QString &filter,
                            QWidget *parent,
-                           const QString& caption,
+                           const QString &caption,
                            Options options);
-
 
     /**
      * Creates a modal directory-selection dialog and returns the selected
@@ -605,9 +595,9 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QString getExistingDirectory(const QUrl& startDir = QUrl(),
-                                        QWidget * parent = 0,
-                                        const QString& caption = QString());
+    static QString getExistingDirectory(const QUrl &startDir = QUrl(),
+                                        QWidget *parent = 0,
+                                        const QString &caption = QString());
 
     /**
      * Creates a modal directory-selection dialog and returns the selected
@@ -623,9 +613,9 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QUrl getExistingDirectoryUrl(const QUrl& startDir = QUrl(),
-                                        QWidget * parent = 0,
-                                        const QString& caption = QString());
+    static QUrl getExistingDirectoryUrl(const QUrl &startDir = QUrl(),
+                                        QWidget *parent = 0,
+                                        const QString &caption = QString());
 
     /**
      * Creates a modal file dialog with an image previewer and returns the
@@ -639,9 +629,9 @@ public:
      *
      * @see KFileWidget::KFileWidget()
      */
-    static QUrl getImageOpenUrl(const QUrl& startDir = QUrl(),
+    static QUrl getImageOpenUrl(const QUrl &startDir = QUrl(),
                                 QWidget *parent = 0,
-                                const QString& caption = QString());
+                                const QString &caption = QString());
 
     /**
      * Sets the mode of the dialog.
@@ -664,7 +654,7 @@ public:
      * setMode( mode );
      * \endcode
      */
-    void setMode( KFile::Modes m );
+    void setMode(KFile::Modes m);
 
     /**
      * Returns the mode of the filedialog.
@@ -679,13 +669,13 @@ public:
      * Most useful if you want to make clear what
      * the location is used for.
      */
-    void setLocationLabel(const QString& text);
+    void setLocationLabel(const QString &text);
 
     /**
      * Returns the KFileWidget that implements most of this file dialog.
      * If you link to libkfile you can cast this to a KFileWidget*.
      */
-    KFileWidget* fileWidget();
+    KFileWidget *fileWidget();
 
     /**
      * Returns a pointer to the toolbar.
@@ -747,13 +737,13 @@ public:
      * @see KFileWidget::KFileWidget()
      * @see KFileWidget::getStartUrl(const QUrl& startDir, QString& recentDirClass);
      */
-    static QUrl getStartUrl(const QUrl& startDir, QString& recentDirClass);
+    static QUrl getStartUrl(const QUrl &startDir, QString &recentDirClass);
 
     /**
      * @internal
      * Used by KDirSelectDialog to share the dialog's start directory.
      */
-    static void setStartDir(const QUrl& directory);
+    static void setStartDir(const QUrl &directory);
 
 #ifdef Q_OS_WIN
 public Q_SLOTS:
@@ -770,14 +760,14 @@ Q_SIGNALS:
       *
       * \since 4.4
       */
-    void fileSelected(const QUrl&);
+    void fileSelected(const QUrl &);
 
     /**
       * Emitted when the user highlights a file.
       *
       * \since 4.4
       */
-    void fileHighlighted(const QUrl&);
+    void fileHighlighted(const QUrl &);
 
     /**
      * Emitted when the user hilights one or more files in multiselection mode.
@@ -799,18 +789,18 @@ Q_SIGNALS:
      * @see setFilter()
      * @see currentFilter()
      */
-    void filterChanged( const QString& filter );
+    void filterChanged(const QString &filter);
 
 protected:
     /**
      * Reimplemented to animate the cancel button.
      */
-    virtual void keyPressEvent( QKeyEvent *e );
+    virtual void keyPressEvent(QKeyEvent *e);
 
     /**
      * Reimplemented for saving the dialog geometry.
      */
-    virtual void hideEvent( QHideEvent *event );
+    virtual void hideEvent(QHideEvent *event);
 
 protected Q_SLOTS:
     virtual void slotOk();
@@ -820,7 +810,7 @@ protected Q_SLOTS:
 private:
     Q_DISABLE_COPY(KFileDialog)
 
-    KFileDialogPrivate * const d;
+    KFileDialogPrivate *const d;
 };
 
 #endif

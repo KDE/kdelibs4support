@@ -21,27 +21,26 @@
 
 #include <QtCore/QProcess>
 
-
 #include <qstandardpaths.h>
 
 class KFileMetaDataReader::Private
 {
 public:
-    Private(KFileMetaDataReader* parent);
+    Private(KFileMetaDataReader *parent);
     ~Private();
 
     void slotLoadingFinished(int exitCode, QProcess::ExitStatus exitStatus);
 
     bool m_readContextData;
-    QProcess* m_process;
+    QProcess *m_process;
     QStringList arguments;
     QHash<QUrl, Nepomuk::Variant> m_metaData;
 
 private:
-    KFileMetaDataReader* const q;
+    KFileMetaDataReader *const q;
 };
 
-KFileMetaDataReader::Private::Private(KFileMetaDataReader* parent) :
+KFileMetaDataReader::Private::Private(KFileMetaDataReader *parent) :
     m_readContextData(true),
     m_process(new QProcess()),
     m_metaData(),
@@ -99,11 +98,11 @@ void KFileMetaDataReader::Private::slotLoadingFinished(int exitCode, QProcess::E
     emit q->finished();
 }
 
-KFileMetaDataReader::KFileMetaDataReader(const QList<QUrl>& urls, QObject* parent) :
+KFileMetaDataReader::KFileMetaDataReader(const QList<QUrl> &urls, QObject *parent) :
     QObject(parent),
     d(new Private(this))
 {
-    foreach (const QUrl& url, urls) {
+    foreach (const QUrl &url, urls) {
         d->arguments.append(url.toString());
     }
 

@@ -63,7 +63,7 @@ public:
      *
      * It does not copy the data. The data is shared between the old and new objects.
      */
-    KComponentData(const KComponentData&);
+    KComponentData(const KComponentData &);
 
     /**
      * Assignment operator.
@@ -74,12 +74,12 @@ public:
      * from this object and no referenced KSharedConfig object needs
      * it anymore, it is deleted
      */
-    KComponentData &operator=(const KComponentData&);
+    KComponentData &operator=(const KComponentData &);
 
     /**
      * Returns whether two KComponentData objects reference the same data.
      */
-    bool operator==(const KComponentData&) const;
+    bool operator==(const KComponentData &) const;
 
     /**
      * Returns whether two KComponentData objects do not reference the same data.
@@ -103,7 +103,7 @@ public:
      *                       @see KComponentData::mainComponent
      */
     explicit KComponentData(const QByteArray &componentName, const QByteArray &catalogName = QByteArray(),
-                MainComponentRegistration registerAsMain = RegisterAsMainComponent);
+                            MainComponentRegistration registerAsMain = RegisterAsMainComponent);
 
     /**
      * Constructor.
@@ -217,11 +217,11 @@ protected:
     void setConfigName(const QString &name);
 
     /** Standard trick to add virtuals later. @internal */
-    virtual void virtual_hook( int id, void* data );
+    virtual void virtual_hook(int id, void *data);
 
 private:
     // Ref-counted data
-    KComponentDataPrivate* d;
+    KComponentDataPrivate *d;
     friend class KComponentDataPrivate;
 };
 

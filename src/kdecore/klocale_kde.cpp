@@ -75,17 +75,17 @@ KLocaleStaticData::KLocaleStaticData()
     // Languages using non-Western Arabic digit sets.
     // FIXME: Temporary until full language-sensitivity implemented.
     languagesUsingDigitSet.insert(KLocale::ArabicIndicDigits, QStringList() << QString::fromLatin1("ar") << QString::fromLatin1("ps"));
-    languagesUsingDigitSet.insert(KLocale::BengaliDigits, QStringList() << QString::fromLatin1("bn") << QString::fromLatin1("as") );
+    languagesUsingDigitSet.insert(KLocale::BengaliDigits, QStringList() << QString::fromLatin1("bn") << QString::fromLatin1("as"));
     languagesUsingDigitSet.insert(KLocale::DevenagariDigits, QStringList() << QString::fromLatin1("hi") << QString::fromLatin1("ne"));
     languagesUsingDigitSet.insert(KLocale::EasternArabicIndicDigits, QStringList() << QString::fromLatin1("fa") << QString::fromLatin1("ur"));
-    languagesUsingDigitSet.insert(KLocale::GujaratiDigits, QStringList() << QString::fromLatin1("gu") );
-    languagesUsingDigitSet.insert(KLocale::GurmukhiDigits, QStringList() << QString::fromLatin1("pa") );
-    languagesUsingDigitSet.insert(KLocale::KannadaDigits, QStringList() << QString::fromLatin1("kn") );
-    languagesUsingDigitSet.insert(KLocale::KhmerDigits, QStringList() << QString::fromLatin1("km") );
-    languagesUsingDigitSet.insert(KLocale::MalayalamDigits, QStringList() << QString::fromLatin1("ml") );
-    languagesUsingDigitSet.insert(KLocale::OriyaDigits, QStringList() << QString::fromLatin1("or") );
-    languagesUsingDigitSet.insert(KLocale::TamilDigits, QStringList() << QString::fromLatin1("ta") );
-    languagesUsingDigitSet.insert(KLocale::TeluguDigits, QStringList() << QString::fromLatin1("te") );
+    languagesUsingDigitSet.insert(KLocale::GujaratiDigits, QStringList() << QString::fromLatin1("gu"));
+    languagesUsingDigitSet.insert(KLocale::GurmukhiDigits, QStringList() << QString::fromLatin1("pa"));
+    languagesUsingDigitSet.insert(KLocale::KannadaDigits, QStringList() << QString::fromLatin1("kn"));
+    languagesUsingDigitSet.insert(KLocale::KhmerDigits, QStringList() << QString::fromLatin1("km"));
+    languagesUsingDigitSet.insert(KLocale::MalayalamDigits, QStringList() << QString::fromLatin1("ml"));
+    languagesUsingDigitSet.insert(KLocale::OriyaDigits, QStringList() << QString::fromLatin1("or"));
+    languagesUsingDigitSet.insert(KLocale::TamilDigits, QStringList() << QString::fromLatin1("ta"));
+    languagesUsingDigitSet.insert(KLocale::TeluguDigits, QStringList() << QString::fromLatin1("te"));
     languagesUsingDigitSet.insert(KLocale::ThaiDigits, QStringList() << QString::fromLatin1("th"));
 }
 
@@ -94,14 +94,14 @@ Q_GLOBAL_STATIC(KLocaleStaticData, staticData)
 Q_GLOBAL_STATIC_WITH_ARGS(QMutex, s_kLocaleMutex, (QMutex::Recursive))
 
 KLocalePrivate::KLocalePrivate(KLocale *q_ptr)
-               : q(q_ptr),
-                 m_config(KSharedConfig::Ptr()),
-                 m_country(QString()),
-                 m_language(QString()),
-                 m_languages(0),
-                 m_calendar(0),
-                 m_currency(0),
-                 m_codecForEncoding(0)
+    : q(q_ptr),
+      m_config(KSharedConfig::Ptr()),
+      m_country(QString()),
+      m_language(QString()),
+      m_languages(0),
+      m_calendar(0),
+      m_currency(0),
+      m_codecForEncoding(0)
 {
 }
 
@@ -305,22 +305,22 @@ void KLocalePrivate::initCountry(const QString &country, const QString &configCo
 {
     // Cache the valid countries list and add the default C as it is valid to use
     QStringList validCountries = allCountriesList();
-    validCountries.append( defaultCountry() );
+    validCountries.append(defaultCountry());
 
     // First check if the constructor passed in a value and if so if it is valid
     QString putativeCountry = country;
 
-    if ( putativeCountry.isEmpty() || !validCountries.contains( putativeCountry, Qt::CaseInsensitive ) ) {
+    if (putativeCountry.isEmpty() || !validCountries.contains(putativeCountry, Qt::CaseInsensitive)) {
 
         // If the requested country is not valid, try the country as set in the config:
         putativeCountry = configCountry;
 
-        if ( putativeCountry.isEmpty() || !validCountries.contains( putativeCountry, Qt::CaseInsensitive ) ) {
+        if (putativeCountry.isEmpty() || !validCountries.contains(putativeCountry, Qt::CaseInsensitive)) {
 
             // If the config country is not valid try the current host system country
             putativeCountry = systemCountry();
 
-            if ( putativeCountry.isEmpty() || !validCountries.contains( putativeCountry, Qt::CaseInsensitive ) ) {
+            if (putativeCountry.isEmpty() || !validCountries.contains(putativeCountry, Qt::CaseInsensitive)) {
                 // Only if no other option, resort to the default C
                 putativeCountry = defaultCountry();
             }
@@ -328,7 +328,7 @@ void KLocalePrivate::initCountry(const QString &country, const QString &configCo
     }
 
     // Always save as lowercase, unless it's C when we want it uppercase
-    if ( putativeCountry.toLower() == defaultCountry().toLower() ) {
+    if (putativeCountry.toLower() == defaultCountry().toLower()) {
         m_country = defaultCountry();
     } else {
         m_country = putativeCountry.toLower();
@@ -340,7 +340,7 @@ QString KLocalePrivate::systemCountry() const
     // Use QLocale for now as it supposedly provides a sensible default most times,
     // e.g. if locale is only "de" it is assumed to mean country of "DE"
     QString systemCountry, s1, s2, s3;
-    splitLocale( QLocale::system().name(), s1, systemCountry, s2, s3 );
+    splitLocale(QLocale::system().name(), s1, systemCountry, s2, s3);
     return systemCountry.toLower();
 }
 
@@ -417,12 +417,12 @@ void KLocalePrivate::initFormat()
 
     // Numeric
 #define readConfigEntry(key, default, save) \
-        save = entry.readEntry(key, default); \
-        save = cg.readEntry(key, save);
+    save = entry.readEntry(key, default); \
+    save = cg.readEntry(key, save);
 
 #define readConfigNumEntry(key, default, save, type) \
-        save = (type)entry.readEntry(key, int(default)); \
-        save = (type)cg.readEntry(key, int(save));
+    save = (type)entry.readEntry(key, int(default)); \
+    save = (type)cg.readEntry(key, int(save));
 
     // Country settings
     readConfigEntry("CountryDivisionCode", QString(), m_countryDivisionCode);
@@ -498,9 +498,9 @@ void KLocalePrivate::initFormat()
     KConfig langCfg(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("%1/entry.desktop").arg(m_language)));
     KConfigGroup lang(&langCfg, "KCM Locale");
 #define read3ConfigBoolEntry(key, default, save) \
-        save = entry.readEntry(key, default); \
-        save = lang.readEntry(key, save); \
-        save = cg.readEntry(key, save);
+    save = entry.readEntry(key, default); \
+    save = lang.readEntry(key, save); \
+    save = cg.readEntry(key, save);
 
     read3ConfigBoolEntry("NounDeclension", false, m_nounDeclension);
     read3ConfigBoolEntry("DateMonthNamePossessive", false, m_dateMonthNamePossessive);
@@ -611,7 +611,7 @@ bool KLocalePrivate::setLanguage(const QStringList &languages)
     //    kdelibs.mo but nothing from appname.mo, you get a mostly English app with layout from
     //    right to left. That was considered to be a bug by the Hebrew translators.
     QStringList list;
-    foreach(const QString &language, languages) {
+    foreach (const QString &language, languages) {
         if (!language.isEmpty() && !list.contains(language) && KLocalizedString::isApplicationTranslatedInto(language)) {
             list.append(language);
         }
@@ -646,7 +646,7 @@ void KLocalePrivate::initCurrency()
 void KLocalePrivate::setCurrencyCode(const QString &newCurrencyCode)
 {
     if (!newCurrencyCode.isEmpty() && newCurrencyCode != m_currency->isoCurrencyCode() &&
-        KCurrencyCode::isValid(newCurrencyCode)) {
+            KCurrencyCode::isValid(newCurrencyCode)) {
         m_currencyCode = newCurrencyCode;
         initCurrency();
     }
@@ -847,7 +847,7 @@ QString KLocalePrivate::convertDigits(const QString &str, KLocale::DigitSet digi
 
     QString nstr;
     QString digitDraw = digitSetString(digitSet);
-    foreach(const QChar &c, str) {
+    foreach (const QChar &c, str) {
         if (c.isDigit()) {
             nstr += digitDraw[c.digitValue()];
         } else {
@@ -860,7 +860,7 @@ QString KLocalePrivate::convertDigits(const QString &str, KLocale::DigitSet digi
 QString KLocalePrivate::toArabicDigits(const QString &str)
 {
     QString nstr;
-    foreach(const QChar &c, str) {
+    foreach (const QChar &c, str) {
         if (c.isDigit()) {
             nstr += QChar('0' + c.digitValue());
         } else {
@@ -1000,7 +1000,7 @@ QList<int> KLocalePrivate::digitGroupFormatToList(const QString &digitGroupForma
 {
     QList<int> groupList;
     QStringList stringList = digitGroupFormat.split(QLatin1Char(';'));
-    foreach(const QString &size, stringList) {
+    foreach (const QString &size, stringList) {
         groupList.append(size.toInt());
     }
     return groupList;
@@ -1143,7 +1143,6 @@ QString KLocalePrivate::formatMoney(double num, const QString &symbol, int preci
     return res;
 }
 
-
 QString KLocalePrivate::formatNumber(double num, int precision) const
 {
     if (precision < 0) {
@@ -1193,7 +1192,9 @@ static void _inc_by_one(QString &str, int position)
             break;
         case '9':
             str[i] = '0';
-            if (i == 0) str.prepend(QLatin1Char('1'));
+            if (i == 0) {
+                str.prepend(QLatin1Char('1'));
+            }
             continue;
         case '.':
             continue;
@@ -1208,16 +1209,18 @@ static void _round(QString &str, int precision)
     int decimalSymbolPos = str.indexOf(QLatin1Char('.'));
 
     if (decimalSymbolPos == -1) {
-        if (precision == 0)  return;
-        else if (precision > 0) { // add dot if missing (and needed)
+        if (precision == 0) {
+            return;
+        } else if (precision > 0) { // add dot if missing (and needed)
             str.append(QLatin1Char('.'));
             decimalSymbolPos = str.length() - 1;
         }
     }
     // fill up with more than enough zeroes (in case fractional part too short)
     str.reserve(str.length() + precision);
-    for (int i = 0; i < precision; ++i)
+    for (int i = 0; i < precision; ++i) {
         str.append(QLatin1Char('0'));
+    }
 
     // Now decide whether to round up or down
     char last_char = str[decimalSymbolPos + precision + 1].toLatin1();
@@ -1313,8 +1316,8 @@ QList<QString> KLocalePrivate::dialectUnitsList(KLocale::BinaryUnitDialect diale
     QList<QString> binaryUnits;
 
     // Adds a given translation to the binaryUnits list.
-    #define CACHE_BYTE_FMT(ctxt_text) \
-        binaryUnits.append(i18nc(ctxt_text, QLatin1String("%1")));
+#define CACHE_BYTE_FMT(ctxt_text) \
+    binaryUnits.append(i18nc(ctxt_text, QLatin1String("%1")));
 
     // Do not remove i18n: comments below, they are used by the
     // translators.
@@ -1465,7 +1468,7 @@ void KLocalePrivate::setBinaryUnitDialect(KLocale::BinaryUnitDialect newDialect)
 
 QString KLocalePrivate::formatDuration(unsigned long mSec) const
 {
-    if (mSec >= 24*3600000) {
+    if (mSec >= 24 * 3600000) {
         return i18nc("@item:intext %1 is a real number, e.g. 1.23 days", "%1 days",
                      formatNumber(mSec / (24 * 3600000.0), 2));
     } else if (mSec >= 3600000) {
@@ -1543,7 +1546,7 @@ QString KLocalePrivate::formatDate(const QDate &date, KLocale::DateFormat format
     return calendar()->formatDate(date, format);
 }
 
-double KLocalePrivate::readNumber(const QString &_str, bool * ok) const
+double KLocalePrivate::readNumber(const QString &_str, bool *ok) const
 {
     QString str = _str.trimmed();
     bool neg = false;
@@ -1578,7 +1581,7 @@ double KLocalePrivate::readNumber(const QString &_str, bool * ok) const
 
     // Remove group separators
     bool groupOk = true;
-    if(str.contains(thousandsSeparator())) {
+    if (str.contains(thousandsSeparator())) {
         str = parseDigitGroup(str, thousandsSeparator(), decimalSymbol(),
                               numericDigitGrouping(), &groupOk);
     }
@@ -1652,7 +1655,7 @@ double KLocalePrivate::readMoney(const QString &_str, bool *ok) const
     }
 
     // Then try removing sign from either end (with a special case for parenthesis)
-    if (str[0] == QLatin1Char('(') && str[str.length()-1] == QLatin1Char(')')) {
+    if (str[0] == QLatin1Char('(') && str[str.length() - 1] == QLatin1Char(')')) {
         if (positiveMonetarySignPosition() != KLocale::ParensAround) {
             neg = true;
         }
@@ -1674,7 +1677,7 @@ double KLocalePrivate::readMoney(const QString &_str, bool *ok) const
             if (!posSign.isEmpty() && (str.left(posLen) == posSign || str.right(posSign.length()) == posSign)) {
                 len = posLen;
                 sign = posSign;
-            } else if (negSign.isEmpty() && str[0].isDigit() && str[str.length() - 1].isDigit()){
+            } else if (negSign.isEmpty() && str[0].isDigit() && str[str.length() - 1].isDigit()) {
                 neg = true;
             }
         }
@@ -1700,7 +1703,7 @@ double KLocalePrivate::readMoney(const QString &_str, bool *ok) const
 
     // Remove group separators
     bool groupOk = true;
-    if(str.contains(monetaryThousandsSeparator())) {
+    if (str.contains(monetaryThousandsSeparator())) {
         str = parseDigitGroup(str, monetaryThousandsSeparator(), monetaryDecimalSymbol(),
                               monetaryDigitGrouping(), &groupOk);
     }
@@ -1841,8 +1844,8 @@ static void stripStringAndSucceedingSeparator(QString &inout, const QLatin1Strin
     }
     int curPos = remPos + 2;
     while (curPos < inout.size() &&
-           (inout.at(curPos).isSpace() ||
-            (inout.at(curPos).isPunct() && inout.at(curPos) != QLatin1Char('%')))) {
+            (inout.at(curPos).isSpace() ||
+             (inout.at(curPos).isPunct() && inout.at(curPos) != QLatin1Char('%')))) {
         curPos++;
     }
     inout.remove(remPos, curPos - remPos);
@@ -1882,7 +1885,7 @@ QTime KLocalePrivate::readLocaleTime(const QString &intstr, bool *ok, KLocale::T
     int minute = -1;
     int second = -1;
     bool useDayPeriod = false;
-    KDayPeriod dayPeriod = dayPeriodForTime(QTime(0,0,0));
+    KDayPeriod dayPeriod = dayPeriodForTime(QTime(0, 0, 0));
     int strpos = 0;
     int formatpos = 0;
     bool error = false;
@@ -1947,8 +1950,7 @@ QTime KLocalePrivate::readLocaleTime(const QString &intstr, bool *ok, KLocale::T
         switch (c.unicode()) {
 
         case 'p': // Day Period, normally AM/PM
-        case 'P': // Lowercase Day Period, normally am/pm
-        {
+        case 'P': { // Lowercase Day Period, normally am/pm
             error = true;
             foreach (const KDayPeriod &testDayPeriod, dayPeriods()) {
                 QString dayPeriodText = testDayPeriod.periodName(KLocale::ShortName);
@@ -2101,8 +2103,7 @@ QString KLocalePrivate::formatLocaleTime(const QTime &time, KLocale::TimeFormatO
                 }
                 buffer[index++] = number % 10 + '0';
                 break;
-            case 'p':
-            {
+            case 'p': {
                 put_it_in(buffer, index, dayPeriodForTime(time).periodName(KLocale::ShortName));
                 break;
             }
@@ -2122,7 +2123,7 @@ QString KLocalePrivate::formatLocaleTime(const QTime &time, KLocale::TimeFormatO
 bool KLocalePrivate::use12Clock() const
 {
     if ((timeFormat().contains(QString::fromLatin1("%I")) > 0) ||
-        (timeFormat().contains(QString::fromLatin1("%l")) > 0)) {
+            (timeFormat().contains(QString::fromLatin1("%l")) > 0)) {
         return true;
     } else {
         return false;
@@ -2149,15 +2150,15 @@ QList<KDayPeriod> KLocalePrivate::dayPeriods() const
     // valid loacle constructed.
     if (m_dayPeriods.isEmpty()) {
         m_dayPeriods.append(KDayPeriod(QString::fromLatin1("am"),
-                                       i18nc( "Before Noon KLocale::LongName", "Ante Meridiem" ),
-                                       i18nc( "Before Noon KLocale::ShortName", "AM" ),
-                                       i18nc( "Before Noon KLocale::NarrowName", "A" ),
-                                       QTime( 0, 0, 0 ), QTime( 11, 59, 59, 999 ), 0, 12 ));
+                                       i18nc("Before Noon KLocale::LongName", "Ante Meridiem"),
+                                       i18nc("Before Noon KLocale::ShortName", "AM"),
+                                       i18nc("Before Noon KLocale::NarrowName", "A"),
+                                       QTime(0, 0, 0), QTime(11, 59, 59, 999), 0, 12));
         m_dayPeriods.append(KDayPeriod(QString::fromLatin1("pm"),
-                                       i18nc( "After Noon KLocale::LongName", "Post Meridiem" ),
-                                       i18nc( "After Noon KLocale::ShortName", "PM" ),
-                                       i18nc( "After Noon KLocale::NarrowName", "P" ),
-                                       QTime( 12, 0, 0 ), QTime( 23, 59, 59, 999 ), 0, 12 ));
+                                       i18nc("After Noon KLocale::LongName", "Post Meridiem"),
+                                       i18nc("After Noon KLocale::ShortName", "PM"),
+                                       i18nc("After Noon KLocale::NarrowName", "P"),
+                                       QTime(12, 0, 0), QTime(23, 59, 59, 999), 0, 12));
     }
     return m_dayPeriods;
 }
@@ -2283,7 +2284,7 @@ void KLocalePrivate::initEncoding()
     QByteArray codeset = systemCodeset();
 
     if (!codeset.isEmpty()) {
-        QTextCodec* codec = QTextCodec::codecForName(codeset);
+        QTextCodec *codec = QTextCodec::codecForName(codeset);
         if (codec) {
             setEncoding(codec->mibEnum());
         }
@@ -2324,19 +2325,21 @@ static inline bool isUnicodeNonCharacter(uint ucs4)
     return (ucs4 & 0xfffe) == 0xfffe || (ucs4 - 0xfdd0U) < 16;
 }
 
-QByteArray KLocalePrivate::encodeFileNameUTF8(const QString & fileName)
+QByteArray KLocalePrivate::encodeFileNameUTF8(const QString &fileName)
 {
-    if (fileName.isNull()) return QByteArray();
+    if (fileName.isNull()) {
+        return QByteArray();
+    }
     int len = fileName.length();
     const QChar *uc = fileName.constData();
 
     uchar replacement = '?';
-    int rlen = 3*len;
+    int rlen = 3 * len;
     int surrogate_high = -1;
 
     QByteArray rstr;
     rstr.resize(rlen);
-    uchar* cursor = (uchar*)rstr.data();
+    uchar *cursor = (uchar *)rstr.data();
     const QChar *ch = uc;
     int invalid = 0;
 
@@ -2368,13 +2371,12 @@ QByteArray KLocalePrivate::encodeFileNameUTF8(const QString & fileName)
         }
 
         if (u >= 0x10FE00 && u <= 0x10FE7F) {
-            *cursor++ = (uchar)(u - 0x10FE00 + 128) ;
-        }
-        else if (u < 0x80) {
+            *cursor++ = (uchar)(u - 0x10FE00 + 128);
+        } else if (u < 0x80) {
             *cursor++ = (uchar)u;
         } else {
             if (u < 0x0800) {
-                *cursor++ = 0xc0 | ((uchar) (u >> 6));
+                *cursor++ = 0xc0 | ((uchar)(u >> 6));
             } else {
                 // is it one of the Unicode non-characters?
                 if (isUnicodeNonCharacter(u)) {
@@ -2385,19 +2387,19 @@ QByteArray KLocalePrivate::encodeFileNameUTF8(const QString & fileName)
                 }
 
                 if (u > 0xffff) {
-                    *cursor++ = 0xf0 | ((uchar) (u >> 18));
-                    *cursor++ = 0x80 | (((uchar) (u >> 12)) & 0x3f);
+                    *cursor++ = 0xf0 | ((uchar)(u >> 18));
+                    *cursor++ = 0x80 | (((uchar)(u >> 12)) & 0x3f);
                 } else {
-                    *cursor++ = 0xe0 | (((uchar) (u >> 12)) & 0x3f);
+                    *cursor++ = 0xe0 | (((uchar)(u >> 12)) & 0x3f);
                 }
-                *cursor++ = 0x80 | (((uchar) (u >> 6)) & 0x3f);
+                *cursor++ = 0x80 | (((uchar)(u >> 6)) & 0x3f);
             }
-            *cursor++ = 0x80 | ((uchar) (u&0x3f));
+            *cursor++ = 0x80 | ((uchar)(u & 0x3f));
         }
         ++ch;
     }
 
-    rstr.resize(cursor - (const uchar*)rstr.constData());
+    rstr.resize(cursor - (const uchar *)rstr.constData());
     return rstr;
 }
 
@@ -2416,14 +2418,14 @@ QString KLocalePrivate::decodeFileNameUTF8(const QByteArray &localFileName)
     for (int i = 0; i < len; ++i) {
         ch = chars[i];
         if (need) {
-            if ((ch&0xc0) == 0x80) {
+            if ((ch & 0xc0) == 0x80) {
                 uc = (uc << 6) | (ch & 0x3f);
                 --need;
                 if (!need) {
                     bool nonCharacter;
                     if (!(nonCharacter = isUnicodeNonCharacter(uc)) && uc > 0xffff && uc < 0x110000) {
                         // surrogate pair
-                        Q_ASSERT((qch - (ushort*)result.unicode()) + 2 < result.length());
+                        Q_ASSERT((qch - (ushort *)result.unicode()) + 2 < result.length());
                         *qch++ = QChar::highSurrogate(uc);
                         *qch++ = QChar::lowSurrogate(uc);
                     } else if ((uc < min_uc) || (uc >= 0xd800 && uc <= 0xdfff) || nonCharacter || uc >= 0x110000) {
@@ -2447,7 +2449,7 @@ QString KLocalePrivate::decodeFileNameUTF8(const QByteArray &localFileName)
                 uc = ch & 0x0f;
                 need = 2;
                 min_uc = 0x800;
-            } else if ((ch&0xf8) == 0xf0) {
+            } else if ((ch & 0xf8) == 0xf0) {
                 uc = ch & 0x07;
                 need = 3;
                 min_uc = 0x10000;
@@ -2463,7 +2465,7 @@ QString KLocalePrivate::decodeFileNameUTF8(const QByteArray &localFileName)
     result.truncate(qch - (ushort *)result.unicode());
     return result;
 
-error: 
+error:
 
     qch = (ushort *)result.unicode();
     for (int i = 0; i < len; ++i) {
@@ -2615,7 +2617,7 @@ void KLocalePrivate::setMonetaryDecimalSymbol(const QString &symbol)
     m_monetaryDecimalSymbol = symbol.trimmed();
 }
 
-void KLocalePrivate::setCurrencySymbol(const QString & symbol)
+void KLocalePrivate::setCurrencySymbol(const QString &symbol)
 {
     m_currencySymbol = symbol.trimmed();
 }
@@ -2682,7 +2684,7 @@ QTextCodec *KLocalePrivate::codecForEncoding() const
 
 bool KLocalePrivate::setEncoding(int mibEnum)
 {
-    QTextCodec * codec = QTextCodec::codecForMib(mibEnum);
+    QTextCodec *codec = QTextCodec::codecForMib(mibEnum);
     if (codec) {
         m_codecForEncoding = codec;
     }
@@ -2702,9 +2704,9 @@ QStringList KLocalePrivate::installedLanguages()
 {
     QStringList languages;
     const QStringList localeDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("locale"), QStandardPaths::LocateDirectory);
-    Q_FOREACH(const QString& localeDir, localeDirs) {
+    Q_FOREACH (const QString &localeDir, localeDirs) {
         const QStringList entries = QDir(localeDir).entryList(QDir::Dirs);
-        Q_FOREACH(const QString& d, entries) {
+        Q_FOREACH (const QString &d, entries) {
             if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/entry.desktop"))) {
                 languages.append(d);
             }
@@ -2729,9 +2731,9 @@ QStringList KLocalePrivate::allCountriesList() const
 {
     QStringList countries;
     const QStringList localeDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("locale/l10n"), QStandardPaths::LocateDirectory);
-    Q_FOREACH(const QString& localeDir, localeDirs) {
+    Q_FOREACH (const QString &localeDir, localeDirs) {
         const QStringList entries = QDir(localeDir).entryList(QDir::Dirs);
-        Q_FOREACH(const QString& d, entries) {
+        Q_FOREACH (const QString &d, entries) {
             if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/entry.desktop"))) {
                 countries.append(d);
             }
@@ -2835,7 +2837,7 @@ KLocale::CalendarSystem KLocalePrivate::calendarSystem() const
     return m_calendarSystem;
 }
 
-const KCalendarSystem * KLocalePrivate::calendar()
+const KCalendarSystem *KLocalePrivate::calendar()
 {
     if (!m_calendar) {
         m_calendar = KCalendarSystem::create(m_calendarSystem, m_config, q);

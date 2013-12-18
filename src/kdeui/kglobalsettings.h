@@ -132,7 +132,7 @@ public:
      * @return whether context menus should be shown on button press
      * or button release (click).
      */
-    static bool showContextMenusOnPress ();
+    static bool showContextMenusOnPress();
 
     /**
      * This enum describes the completion mode used for by the KCompletion class.
@@ -145,7 +145,7 @@ public:
         /**
          * No completion is used.
          */
-        CompletionNone=1,
+        CompletionNone = 1,
         /**
          * Text is automatically filled in whenever possible.
          */
@@ -179,8 +179,7 @@ public:
     /**
      * Describes the mouse settings.
      */
-    struct KMouseSettings
-    {
+    struct KMouseSettings {
         enum { RightHanded = 0, LeftHanded = 1 };
         int handed; // left or right
     };
@@ -190,7 +189,7 @@ public:
      * On Windows, settings are retrieved from the system.
      * @return the current mouse settings
      */
-    static KMouseSettings & mouseSettings();
+    static KMouseSettings &mouseSettings();
 
     /**
      * The path to the desktop directory of the current user.
@@ -412,7 +411,7 @@ public:
      *         start at (0,0).
      * @deprecated use QApplication::desktop()->screenGeometry(point)
      */
-    static KDE4SUPPORT_DEPRECATED QRect desktopGeometry(const QPoint& point);
+    static KDE4SUPPORT_DEPRECATED QRect desktopGeometry(const QPoint &point);
 
     /**
      * This function returns the desktop geometry for an application that needs
@@ -427,7 +426,7 @@ public:
      *         start at (0,0).
      * @deprecated use QApplication::desktop()->screenGeometry(w)
      */
-    static KDE4SUPPORT_DEPRECATED QRect desktopGeometry(const QWidget* w);
+    static KDE4SUPPORT_DEPRECATED QRect desktopGeometry(const QWidget *w);
 
     /**
      * This function determines if the user wishes to see icons on the
@@ -459,7 +458,7 @@ public:
         GradientEffects         = 0x0001, ///< GUI with only gradients enabled.
         SimpleAnimationEffects  = 0x0002, ///< GUI with simple animations enabled.
         ComplexAnimationEffects = 0x0006  ///< GUI with complex animations enabled.
-                                          ///< Note that ComplexAnimationsEffects implies SimpleAnimationEffects.
+                                  ///< Note that ComplexAnimationsEffects implies SimpleAnimationEffects.
     };
 
     Q_DECLARE_FLAGS(GraphicEffects, GraphicEffect)
@@ -514,7 +513,7 @@ public:
      * ::KColorScheme).
      *
      * @return the QPalette
-     * 
+     *
      * @deprecated since 5.0, use KColorScheme::createApplicationPalette()
      */
     static KDE4SUPPORT_DEPRECATED QPalette createApplicationPalette(const KSharedConfigPtr &config = KSharedConfigPtr());
@@ -531,7 +530,7 @@ public:
      * @since 4.6.3
      *
      * @return the QPalette
-     * 
+     *
      * @deprecated since 5.0, use KColorScheme::createApplicationPalette()
      */
     static KDE4SUPPORT_DEPRECATED QPalette createNewApplicationPalette(const KSharedConfigPtr &config = KSharedConfigPtr());
@@ -543,7 +542,8 @@ public:
     enum ChangeType { PaletteChanged = 0, FontChanged, StyleChanged,
                       SettingsChanged, IconChanged, CursorChanged,
                       ToolbarStyleChanged,
-                      BlockShortcuts, NaturalSortingChanged };
+                      BlockShortcuts, NaturalSortingChanged
+                    };
 
     /**
      * Notifies all KDE applications on the current display of a change.
@@ -562,7 +562,7 @@ public:
      * Return the KGlobalSettings singleton.
      * This is used to connect to its signals, to be notified of changes.
      */
-    static KGlobalSettings* self();
+    static KGlobalSettings *self();
 
     /**
      * Specifies options passed to activate().
@@ -597,7 +597,8 @@ public:
      */
     enum SettingsCategory { SETTINGS_MOUSE, SETTINGS_COMPLETION, SETTINGS_PATHS,
                             SETTINGS_POPUPMENU, SETTINGS_QT, SETTINGS_SHORTCUTS,
-                            SETTINGS_LOCALE, SETTINGS_STYLE };
+                            SETTINGS_LOCALE, SETTINGS_STYLE
+                          };
 
 Q_SIGNALS:
     /**
@@ -692,7 +693,7 @@ private:
     KGlobalSettings();
 
     class Private;
-    Private* const d;
+    Private *const d;
 
     Q_PRIVATE_SLOT(d, void _k_slotNotifyChange(int, int))
     Q_PRIVATE_SLOT(d, void _k_slotIconChange(int))

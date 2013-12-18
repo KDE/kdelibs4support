@@ -48,8 +48,8 @@
 class KDE4SUPPORT_DEPRECATED_EXPORT KSessionManager
 {
 public:
-  KSessionManager();
-  virtual ~KSessionManager();
+    KSessionManager();
+    virtual ~KSessionManager();
 
     /**
        See QApplication::saveState() for documentation.
@@ -60,7 +60,7 @@ public:
        indicate a problem and to halt the shutdown process (will
        implicitly call sm.cancel() ).
      */
-  virtual bool saveState( QSessionManager& sm );
+    virtual bool saveState(QSessionManager &sm);
     /**
        See QApplication::commitData() for documentation.
 
@@ -70,21 +70,21 @@ public:
        indicate a problem and to halt the shutdown process (will
        implicitly call sm.cancel() ).
      */
-  virtual bool commitData( QSessionManager& sm );
+    virtual bool commitData(QSessionManager &sm);
 
-  static QList<KSessionManager*>& sessionClients();
+    static QList<KSessionManager *> &sessionClients();
 
 protected:
-  /** Virtual hook, used to add new "virtual" functions while maintaining
-      binary compatibility. Unused in this class.
-  */
-  virtual void virtual_hook( int id, void* data );
+    /** Virtual hook, used to add new "virtual" functions while maintaining
+        binary compatibility. Unused in this class.
+    */
+    virtual void virtual_hook(int id, void *data);
 
 private:
-  class Private;
-  Private* const d;
+    class Private;
+    Private *const d;
 
-  Q_DISABLE_COPY(KSessionManager)
+    Q_DISABLE_COPY(KSessionManager)
 };
 
 #endif // KSESSIONMANAGER_H

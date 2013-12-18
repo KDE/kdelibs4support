@@ -18,19 +18,19 @@
 #include <kmenubar.h>
 #include "kstatusbartest.h"
 
-testWindow::testWindow (QWidget *)
-    : KXmlGuiWindow (0)
- {
+testWindow::testWindow(QWidget *)
+    : KXmlGuiWindow(0)
+{
     // Setup Menus
-    menuBar = new KMenuBar (this);
+    menuBar = new KMenuBar(this);
     fileMenu = new QMenu;
-    menuBar->addAction ( "&File" );
+    menuBar->addAction("&File");
     QAction *action = fileMenu->addAction("&Exit");
-    action->setShortcut( Qt::ALT + Qt::Key_Q );
+    action->setShortcut(Qt::ALT + Qt::Key_Q);
 
-    connect( action, SIGNAL(triggered()), qApp, SLOT(quit()) );
+    connect(action, SIGNAL(triggered()), qApp, SLOT(quit()));
 
-    statusbar = new KStatusBar (this);
+    statusbar = new KStatusBar(this);
     setStatusBar(statusbar);
     statusbar->insertItem("Zoom: XXXX", 0);
     statusbar->insertItem("XXX", 1);
@@ -41,14 +41,14 @@ testWindow::testWindow (QWidget *)
     insert = true;
     statusbar->changeItem("Line: 13567", 2);
 
-    connect (statusbar, SIGNAL(pressed(int)), this, SLOT(slotPress(int)));
-    connect (statusbar, SIGNAL(released(int)), this, SLOT(slotClick(int)));
+    connect(statusbar, SIGNAL(pressed(int)), this, SLOT(slotPress(int)));
+    connect(statusbar, SIGNAL(released(int)), this, SLOT(slotClick(int)));
 
-    widget = new QTextEdit (this);
+    widget = new QTextEdit(this);
 
     setCentralWidget(widget);
 
-    setCaption( KGlobal::caption() );
+    setCaption(KGlobal::caption());
 
     smenu = new QMenu;
 
@@ -60,68 +60,64 @@ testWindow::testWindow (QWidget *)
     smenu->addAction("400%");
     smenu->addAction("oo%");
 
-    connect (smenu, SIGNAL(triggered(QAction*)), this, SLOT(slotMenu(QAction*)));
+    connect(smenu, SIGNAL(triggered(QAction*)), this, SLOT(slotMenu(QAction*)));
 }
 
 void testWindow::slotClick(int id)
 {
-  switch (id)
-   {
+    switch (id) {
     case 0:
-      break;
+        break;
 
     case 1:
-      if (insert == true)
-       {
-         insert = false;
-         statusbar->changeItem("OVR", 1);
-       }
-      else
-       {
-         insert = true;
-         statusbar->changeItem("INS", 1);
-       }
-      break;
+        if (insert == true) {
+            insert = false;
+            statusbar->changeItem("OVR", 1);
+        } else {
+            insert = true;
+            statusbar->changeItem("INS", 1);
+        }
+        break;
 
     case 2:
-      QMessageBox::information(0, "Go to line", "Enter line number:", "where?");
-      statusbar->changeItem("16543", 2);
-      break;
-   }
+        QMessageBox::information(0, "Go to line", "Enter line number:", "where?");
+        statusbar->changeItem("16543", 2);
+        break;
+    }
 }
 
 void testWindow::slotPress(int id)
 {
-  if (id == 0)
-    smenu->popup(QCursor::pos()); // This popup should understand keys up and down
+    if (id == 0) {
+        smenu->popup(QCursor::pos());    // This popup should understand keys up and down
+    }
 }
 
 void testWindow::slotMenu(QAction *action)
 {
-  QString s = "Zoom: ";
-  s.append (action->text());
-  statusbar->changeItem(s,0);
+    QString s = "Zoom: ";
+    s.append(action->text());
+    statusbar->changeItem(s, 0);
 }
 
-testWindow::~testWindow ()
+testWindow::~testWindow()
 {
-  // I would delete toolbars here, but there are none
-  delete statusbar;
+    // I would delete toolbars here, but there are none
+    delete statusbar;
 }
 
-int main( int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
-        QApplication::setApplicationName("test");
-        QApplication *myApp = new QApplication(argc, argv);
-        testWindow *test = new testWindow;
+    QApplication::setApplicationName("test");
+    QApplication *myApp = new QApplication(argc, argv);
+    testWindow *test = new testWindow;
 
-        test->show();
-        test->resize(test->width(), test->height()); // I really really really dunno why it doesn't show
-        int ret = myApp->exec();
+    test->show();
+    test->resize(test->width(), test->height()); // I really really really dunno why it doesn't show
+    int ret = myApp->exec();
 
-        delete test;
+    delete test;
 
-        return ret;
+    return ret;
 }
-
 

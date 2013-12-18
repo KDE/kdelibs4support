@@ -39,7 +39,7 @@ public:
 //Override only a few of the Gregorian private methods
 
 KCalendarSystemJapanesePrivate::KCalendarSystemJapanesePrivate(KCalendarSystemJapanese *q)
-                              : KCalendarSystemGregorianPrivate(q)
+    : KCalendarSystemGregorianPrivate(q)
 {
 }
 
@@ -93,16 +93,15 @@ int KCalendarSystemJapanesePrivate::earliestValidYear() const
     return 1;
 }
 
-
 KCalendarSystemJapanese::KCalendarSystemJapanese(const KSharedConfig::Ptr config, const KLocale *locale)
-                       : KCalendarSystemGregorian(*new KCalendarSystemJapanesePrivate(this), config, locale)
+    : KCalendarSystemGregorian(*new KCalendarSystemJapanesePrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemJapanese::KCalendarSystemJapanese(KCalendarSystemJapanesePrivate &dd,
-                                                 const KSharedConfig::Ptr config, const KLocale *locale)
-                       : KCalendarSystemGregorian(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystemGregorian(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

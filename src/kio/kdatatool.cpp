@@ -37,7 +37,7 @@ class KDataToolInfo::KDataToolInfoPrivate
 {
 public:
     KDataToolInfoPrivate()
-     : service(0)
+        : service(0)
     {}
 
     KService::Ptr service;
@@ -49,28 +49,27 @@ KDataToolInfo::KDataToolInfo()
 {
 }
 
-KDataToolInfo::KDataToolInfo(const KService::Ptr& service, const QString &componentName)
+KDataToolInfo::KDataToolInfo(const KService::Ptr &service, const QString &componentName)
     : d(new KDataToolInfoPrivate)
 {
     d->service = service;
     d->componentName = componentName;
 
-    if ( !d->service && !d->service->serviceTypes().contains( "KDataTool" ) )
-    {
+    if (!d->service && !d->service->serviceTypes().contains("KDataTool")) {
         /*qDebug() << "The service" << d->service->name()
                        << "does not feature the service type KDataTool";*/
         d->service = 0;
     }
 }
 
-KDataToolInfo::KDataToolInfo( const KDataToolInfo& info )
+KDataToolInfo::KDataToolInfo(const KDataToolInfo &info)
     : d(new KDataToolInfoPrivate)
 {
     d->service = info.service();
     d->componentName = info.componentName();
 }
 
-KDataToolInfo& KDataToolInfo::operator= ( const KDataToolInfo& info )
+KDataToolInfo &KDataToolInfo::operator= (const KDataToolInfo &info)
 {
     d->service = info.service();
     d->componentName = info.componentName();
@@ -84,59 +83,67 @@ KDataToolInfo::~KDataToolInfo()
 
 QString KDataToolInfo::dataType() const
 {
-    if ( !d->service )
+    if (!d->service) {
         return QString();
+    }
 
-    return d->service->property( "DataType" ).toString();
+    return d->service->property("DataType").toString();
 }
 
 QStringList KDataToolInfo::mimeTypes() const
 {
-    if ( !d->service )
+    if (!d->service) {
         return QStringList();
+    }
 
-    return d->service->property( "DataMimeTypes" ).toStringList();
+    return d->service->property("DataMimeTypes").toStringList();
 }
 
 bool KDataToolInfo::isReadOnly() const
 {
-    if ( !d->service )
+    if (!d->service) {
         return true;
+    }
 
-    return d->service->property( "ReadOnly" ).toBool();
+    return d->service->property("ReadOnly").toBool();
 }
 
 QString KDataToolInfo::iconName() const
 {
-    if ( !d->service )
+    if (!d->service) {
         return QString();
+    }
     return d->service->icon();
 }
 
 QStringList KDataToolInfo::commands() const
 {
-    if ( !d->service )
+    if (!d->service) {
         return QStringList();
+    }
 
-    return d->service->property( "Commands" ).toStringList();
+    return d->service->property("Commands").toStringList();
 }
 
 QStringList KDataToolInfo::userCommands() const
 {
-    if ( !d->service )
+    if (!d->service) {
         return QStringList();
+    }
 
-    return d->service->comment().split( ',', QString::SkipEmptyParts );
+    return d->service->comment().split(',', QString::SkipEmptyParts);
 }
 
-KDataTool* KDataToolInfo::createTool( QObject* parent ) const
+KDataTool *KDataToolInfo::createTool(QObject *parent) const
 {
-    if ( !d->service )
+    if (!d->service) {
         return 0;
+    }
 
-    KDataTool* tool = d->service->createInstance<KDataTool>(parent);
-    if ( tool )
+    KDataTool *tool = d->service->createInstance<KDataTool>(parent);
+    if (tool) {
         tool->setComponentName(d->componentName);
+    }
     return tool;
 }
 
@@ -150,44 +157,42 @@ QString KDataToolInfo::componentName() const
     return d->componentName;
 }
 
-QList<KDataToolInfo> KDataToolInfo::query(const QString& datatype, const QString& mimetype, const QString &componentName)
+QList<KDataToolInfo> KDataToolInfo::query(const QString &datatype, const QString &mimetype, const QString &componentName)
 {
     QList<KDataToolInfo> lst;
 
     QString constr;
 
-    if ( !datatype.isEmpty() )
-    {
-        constr = QString::fromLatin1( "DataType == '%1'" ).arg( datatype );
+    if (!datatype.isEmpty()) {
+        constr = QString::fromLatin1("DataType == '%1'").arg(datatype);
     }
-    if ( !mimetype.isEmpty() )
-    {
-        QString tmp = QString::fromLatin1( "'%1' in DataMimeTypes" ).arg( mimetype );
-        if ( constr.isEmpty() )
+    if (!mimetype.isEmpty()) {
+        QString tmp = QString::fromLatin1("'%1' in DataMimeTypes").arg(mimetype);
+        if (constr.isEmpty()) {
             constr = tmp;
-        else
+        } else {
             constr = constr + " and " + tmp;
+        }
     }
-/* Bug in KServiceTypeTrader ? Test with HEAD-kdelibs!
-    if (!componentName.isEmpty())
-    {
-        QString tmp = QString::fromLatin1( "not ('%1' in ExcludeFrom)" ).arg(componentName);
-        if ( constr.isEmpty() )
-            constr = tmp;
-        else
-            constr = constr + " and " + tmp;
-    } */
+    /* Bug in KServiceTypeTrader ? Test with HEAD-kdelibs!
+        if (!componentName.isEmpty())
+        {
+            QString tmp = QString::fromLatin1( "not ('%1' in ExcludeFrom)" ).arg(componentName);
+            if ( constr.isEmpty() )
+                constr = tmp;
+            else
+                constr = constr + " and " + tmp;
+        } */
 
     // Query the trader
     //qDebug() << constr;
-    const KService::List offers = KServiceTypeTrader::self()->query( "KDataTool", constr );
+    const KService::List offers = KServiceTypeTrader::self()->query("KDataTool", constr);
 
     KService::List::ConstIterator it = offers.begin();
-    for( ; it != offers.end(); ++it )
-    {
+    for (; it != offers.end(); ++it) {
         // Temporary replacement for the non-working trader query above
         if (componentName.isEmpty() || !(*it)->property("ExcludeFrom").toStringList()
-             .contains(componentName)) {
+                .contains(componentName)) {
             lst.append(KDataToolInfo(*it, componentName));
         } else {
             //qDebug() << (*it)->entryPath() << " excluded.";
@@ -199,7 +204,7 @@ QList<KDataToolInfo> KDataToolInfo::query(const QString& datatype, const QString
 
 bool KDataToolInfo::isValid() const
 {
-    return( d->service );
+    return (d->service);
 }
 
 /*************************************************
@@ -216,12 +221,12 @@ public:
     KDataToolInfo info;
 };
 
-KDataToolAction::KDataToolAction( const QString & text, const KDataToolInfo & info, const QString & command,
-                                  QObject *parent )
-    : QAction( text, parent ),
+KDataToolAction::KDataToolAction(const QString &text, const KDataToolInfo &info, const QString &command,
+                                 QObject *parent)
+    : QAction(text, parent),
       d(new KDataToolActionPrivate)
 {
-    setIcon( QIcon::fromTheme( info.iconName() ) );
+    setIcon(QIcon::fromTheme(info.iconName()));
     d->command = command;
     d->info = info;
 }
@@ -233,39 +238,38 @@ KDataToolAction::~KDataToolAction()
 
 void KDataToolAction::slotActivated()
 {
-    emit toolActivated( d->info, d->command );
+    emit toolActivated(d->info, d->command);
 }
 
-QList<QAction*> KDataToolAction::dataToolActionList( const QList<KDataToolInfo> & tools, const QObject *receiver, const char* slot, KActionCollection* parent )
+QList<QAction *> KDataToolAction::dataToolActionList(const QList<KDataToolInfo> &tools, const QObject *receiver, const char *slot, KActionCollection *parent)
 {
-    QList<QAction*> actionList;
-    if ( tools.isEmpty() )
+    QList<QAction *> actionList;
+    if (tools.isEmpty()) {
         return actionList;
+    }
 
     QAction *sep_action = new QAction(parent);
     sep_action->setSeparator(true);
-    actionList.append( sep_action );
+    actionList.append(sep_action);
     QList<KDataToolInfo>::ConstIterator entry = tools.begin();
-    for( ; entry != tools.end(); ++entry )
-    {
+    for (; entry != tools.end(); ++entry) {
         const QStringList userCommands = (*entry).userCommands();
         const QStringList commands = (*entry).commands();
         Q_ASSERT(!commands.isEmpty());
-        if ( commands.count() != userCommands.count() )
+        if (commands.count() != userCommands.count())
             qWarning() << "KDataTool desktop file error (" << (*entry).service()->entryPath()
-                        << ")." << commands.count() << "commands and"
-                        << userCommands.count() << " descriptions.";
+                       << ")." << commands.count() << "commands and"
+                       << userCommands.count() << " descriptions.";
         QStringList::ConstIterator uit = userCommands.begin();
         QStringList::ConstIterator cit = commands.begin();
-        for (; uit != userCommands.end() && cit != commands.end(); ++uit, ++cit )
-        {
+        for (; uit != userCommands.end() && cit != commands.end(); ++uit, ++cit) {
             //qDebug() << "creating action " << *uit << " " << *cit;
             const QString name = (*entry).service()->entryPath(); // something unique
-            KDataToolAction * action = new KDataToolAction( *uit, *entry, *cit, parent );
-            parent->addAction( name, action );
-            connect( action, SIGNAL(toolActivated(KDataToolInfo,QString)),
-                     receiver, slot );
-            actionList.append( action );
+            KDataToolAction *action = new KDataToolAction(*uit, *entry, *cit, parent);
+            parent->addAction(name, action);
+            connect(action, SIGNAL(toolActivated(KDataToolInfo,QString)),
+                    receiver, slot);
+            actionList.append(action);
         }
     }
 
@@ -285,7 +289,7 @@ public:
     QString componentName;
 };
 
-KDataTool::KDataTool( QObject* parent )
+KDataTool::KDataTool(QObject *parent)
     : QObject(parent), d(new KDataToolPrivate)
 {
 }
@@ -302,6 +306,6 @@ void KDataTool::setComponentName(const QString &componentName)
 
 QString KDataTool::componentName() const
 {
-   return d->componentName;
+    return d->componentName;
 }
 

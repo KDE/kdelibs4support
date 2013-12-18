@@ -28,8 +28,7 @@
 #include <QtCore/QMap>
 #include <klocale.h>
 
-struct TimeFormatTestValue
-{
+struct TimeFormatTestValue {
     QString timeFormat; // time format string
     // expected values for the various format options
     QMap<KLocale::TimeFormatOptions, QString> exp;

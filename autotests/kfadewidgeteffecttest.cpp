@@ -28,15 +28,15 @@
 class KFadeWidgetEffectTest : public QObject
 {
     Q_OBJECT
-    private Q_SLOTS:
-        void initTestCase();
-        void createEffect();
-        void startEffect();
-        void cleanupTestCase();
+private Q_SLOTS:
+    void initTestCase();
+    void createEffect();
+    void startEffect();
+    void cleanupTestCase();
 
-    private:
-        QWidget *parent, *w;
-        QPointer<KFadeWidgetEffect> fade;
+private:
+    QWidget *parent, *w;
+    QPointer<KFadeWidgetEffect> fade;
 };
 
 void KFadeWidgetEffectTest::initTestCase()

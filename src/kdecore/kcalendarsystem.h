@@ -323,7 +323,9 @@ public:
      */
 #ifndef KDE_NO_DEPRECATED
     KDE4SUPPORT_DEPRECATED virtual bool setYMD(QDate &date, int y, int m, int d) const
-    { return setDate(date, y, m, d); }
+    {
+        return setDate(date, y, m, d);
+    }
 #endif
 
     //KDE5 make virtual?
@@ -953,7 +955,9 @@ public:
      */
 #ifndef KDE_NO_DEPRECATED
     KDE4SUPPORT_DEPRECATED QString dayOfWeekString(const QDate &date) const
-    { return formatDate(date, KLocale::DayOfWeek, KLocale::ShortNumber); }
+    {
+        return formatDate(date, KLocale::DayOfWeek, KLocale::ShortNumber);
+    }
 #endif
 
     //KDE5 make virtual?
@@ -1090,7 +1094,9 @@ public:
      */
 #ifndef KDE_NO_DEPRECATED
     KDE4SUPPORT_DEPRECATED QString daysInWeekString(const QDate &date) const
-    { return formatDate(date, KLocale::DaysInWeek, KLocale::ShortNumber); }
+    {
+        return formatDate(date, KLocale::DaysInWeek, KLocale::ShortNumber);
+    }
 #endif
 
     //KDE5 make protected or remove?
@@ -1613,7 +1619,7 @@ protected:
      */
     KCalendarSystem(KCalendarSystemPrivate &dd, const KSharedConfig::Ptr config, const KLocale *locale);
 
-    KCalendarSystemPrivate * const d_ptr;
+    KCalendarSystemPrivate *const d_ptr;
 
 private:
     // Other classes that need access to protected/private functions

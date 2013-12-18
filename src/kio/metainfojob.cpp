@@ -1,5 +1,4 @@
 // -*- c++ -*-
-// vim: ts=4 sw=4 et
 /*  This file is part of the KDE libraries
     Copyright (C) 2002 Rolf Magnus <ramagnus@kde.org>
 
@@ -40,8 +39,8 @@ public:
     Q_DECLARE_PUBLIC(MetaInfoJob)
 };
 
-MetaInfoJob::MetaInfoJob(const KFileItemList& items, KFileMetaInfo::WhatFlags,
-     int, int, const QStringList&, const QStringList&)
+MetaInfoJob::MetaInfoJob(const KFileItemList &items, KFileMetaInfo::WhatFlags,
+                         int, int, const QStringList &, const QStringList &)
     : KIO::Job()
     , d(new MetaInfoJobPrivate)
 {
@@ -50,8 +49,7 @@ MetaInfoJob::MetaInfoJob(const KFileItemList& items, KFileMetaInfo::WhatFlags,
     d->items        = items;
     d->currentItem  = 0;
 
-    if (d->items.isEmpty())
-    {
+    if (d->items.isEmpty()) {
         //qDebug() << "nothing to do for the MetaInfoJob";
         emitResult();
         return;
@@ -74,14 +72,13 @@ void MetaInfoJob::start()
     getMetaInfo();
 }
 
-void MetaInfoJob::removeItem(const KFileItem& item)
+void MetaInfoJob::removeItem(const KFileItem &item)
 {
     Q_D(MetaInfoJob);
-    if (d->items.at( d->currentItem ) == item)
-    {
-        KJob* job = subjobs().first();
+    if (d->items.at(d->currentItem) == item) {
+        KJob *job = subjobs().first();
         job->kill();
-        removeSubjob( job );
+        removeSubjob(job);
         determineNextFile();
     }
 
@@ -91,8 +88,7 @@ void MetaInfoJob::removeItem(const KFileItem& item)
 void MetaInfoJob::determineNextFile()
 {
     Q_D(MetaInfoJob);
-    if (d->currentItem >= d->items.count() - 1)
-    {
+    if (d->currentItem >= d->items.count() - 1) {
         //qDebug() << "finished MetaInfoJob";
         emitResult();
         return;
@@ -103,9 +99,8 @@ void MetaInfoJob::determineNextFile()
 
 #if 0 // HACK DISABLED
     // does the file item already have the needed info? Then shortcut
-    KFileItem item = d->items.at( d->currentItem );
-    if (item.metaInfo(false).isValid())
-    {
+    KFileItem item = d->items.at(d->currentItem);
+    if (item.metaInfo(false).isValid()) {
 //qDebug() << "Is already valid *************************";
         emit gotMetaInfo(item);
         determineNextFile();
@@ -116,7 +111,7 @@ void MetaInfoJob::determineNextFile()
     getMetaInfo();
 }
 
-void MetaInfoJob::slotResult( KJob *job )
+void MetaInfoJob::slotResult(KJob *job)
 {
     removeSubjob(job);
     Q_ASSERT(!hasSubjobs()); // We should have only one job at a time ...
@@ -127,14 +122,14 @@ void MetaInfoJob::slotResult( KJob *job )
 void MetaInfoJob::getMetaInfo()
 {
     Q_D(MetaInfoJob);
-    KFileItem item = d->items.at( d->currentItem );
+    KFileItem item = d->items.at(d->currentItem);
     Q_ASSERT(!item.isNull());
 
     QUrl URL;
     URL.setScheme("metainfo");
     URL.setPath(item.url().path());
 
-    KIO::TransferJob* job = KIO::get(URL, NoReload, HideProgressInfo);
+    KIO::TransferJob *job = KIO::get(URL, NoReload, HideProgressInfo);
     addSubjob(job);
 
     connect(job,  SIGNAL(data(KIO::Job*,QByteArray)),
@@ -143,8 +138,7 @@ void MetaInfoJob::getMetaInfo()
     job->addMetaData("mimeType", item.mimetype());
 }
 
-
-void MetaInfoJob::slotMetaInfo(KIO::Job*, const QByteArray &data)
+void MetaInfoJob::slotMetaInfo(KIO::Job *, const QByteArray &data)
 {
     Q_D(MetaInfoJob);
     KFileMetaInfo info;
@@ -152,7 +146,7 @@ void MetaInfoJob::slotMetaInfo(KIO::Job*, const QByteArray &data)
 
     s >> info;
 
-    KFileItem item = d->items.at( d->currentItem );
+    KFileItem item = d->items.at(d->currentItem);
 #if 0 // HACK DISABLED
     item.setMetaInfo(info);
 #endif
@@ -160,15 +154,15 @@ void MetaInfoJob::slotMetaInfo(KIO::Job*, const QByteArray &data)
     d->succeeded = true;
 }
 
-KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo( const KFileItemList& items)
+KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const KFileItemList &items)
 {
     return new MetaInfoJob(items);
 }
 
-KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo( const QList<QUrl> &items)
+KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const QList<QUrl> &items)
 {
     KFileItemList fileItems;
-    foreach (const QUrl& url, items) {
+    foreach (const QUrl &url, items) {
         fileItems.append(KFileItem(url));
     }
     MetaInfoJob *job = new MetaInfoJob(fileItems);

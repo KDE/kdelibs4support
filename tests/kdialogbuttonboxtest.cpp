@@ -25,74 +25,72 @@
 #include <QPushButton>
 #include <QBoxLayout>
 
-int main(int argc, char **argv) {
-   QApplication a(argc, argv);
+int main(int argc, char **argv)
+{
+    QApplication a(argc, argv);
 
-  // example 1
-  {
-    QDialog *w = new QDialog;
-    w->setObjectName( "A common dialog" );
-    w->setModal(true);
-    w->setWindowTitle("Example 1");
-    QVBoxLayout *tl = new QVBoxLayout(w);
-    tl->setMargin(5);
-    QLabel *l = new QLabel("A very common dialog\n\n"\
-			   "OK and Cancel are left aligned, Help\n"\
-			   "is right aligned. Try resizing\n"\
-			   "the window!\n"
-			   "Press OK or Cancel when done"
-			   , w);
-    l->setAlignment(Qt::AlignVCenter|Qt::AlignLeft);
-    l->setMinimumSize(l->sizeHint());
-    tl->addWidget(l,1);
-    KDialogButtonBox *bbox = new KDialogButtonBox(w);
-    QPushButton *b = bbox->addButton(QLatin1String("OK"), QDialogButtonBox::AcceptRole);
-    b->setDefault(true);
-    w->connect(b, SIGNAL(clicked()),
-	       w, SLOT(accept()));
-   bbox->addButton(QLatin1String("Cancel"),QDialogButtonBox::RejectRole,  w, SLOT(accept()));
+    // example 1
+    {
+        QDialog *w = new QDialog;
+        w->setObjectName("A common dialog");
+        w->setModal(true);
+        w->setWindowTitle("Example 1");
+        QVBoxLayout *tl = new QVBoxLayout(w);
+        tl->setMargin(5);
+        QLabel *l = new QLabel("A very common dialog\n\n"\
+                               "OK and Cancel are left aligned, Help\n"\
+                               "is right aligned. Try resizing\n"\
+                               "the window!\n"
+                               "Press OK or Cancel when done"
+                               , w);
+        l->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+        l->setMinimumSize(l->sizeHint());
+        tl->addWidget(l, 1);
+        KDialogButtonBox *bbox = new KDialogButtonBox(w);
+        QPushButton *b = bbox->addButton(QLatin1String("OK"), QDialogButtonBox::AcceptRole);
+        b->setDefault(true);
+        w->connect(b, SIGNAL(clicked()),
+                   w, SLOT(accept()));
+        bbox->addButton(QLatin1String("Cancel"), QDialogButtonBox::RejectRole,  w, SLOT(accept()));
 
-   bbox->addButton(QLatin1String("Help"), QDialogButtonBox::HelpRole);
+        bbox->addButton(QLatin1String("Help"), QDialogButtonBox::HelpRole);
 
+        tl->addWidget(bbox, 0);
+        tl->activate();
+        w->exec();
+        delete w;
+    }
 
-    tl->addWidget(bbox,0);
-    tl->activate();
-    w->exec();
-    delete w;
-  }
+    // example 2
+    {
+        QDialog *w = new QDialog(0);
+        w->setObjectName("Vertical");
+        w->setModal(true);
+        w->setWindowTitle("Example 2 ");
+        QHBoxLayout *tl = new QHBoxLayout(w);
+        tl->setMargin(5);
+        QLabel *l = new QLabel("Did I mention that it's possible\n"
+                               "to make vertically aligned buttons\n"
+                               "too?"
+                               , w);
+        l->setAlignment(Qt::AlignVCenter | Qt::AlignLeft);
+        l->setMinimumSize(l->sizeHint());
+        tl->addWidget(l, 1);
+        KDialogButtonBox *bbox = new KDialogButtonBox(w, Qt::Vertical);
 
+        QPushButton *b = bbox->addButton(QLatin1String("OK"), QDialogButtonBox::AcceptRole);
+        b->setDefault(true);
+        w->connect(b, SIGNAL(clicked()),
+                   w, SLOT(accept()));
+        bbox->addButton(QLatin1String("Cancel"), QDialogButtonBox::RejectRole,  w, SLOT(accept()));
 
-  // example 2
-  {
-    QDialog *w = new QDialog(0);
-    w->setObjectName("Vertical");
-    w->setModal(true);
-    w->setWindowTitle("Example 2 ");
-    QHBoxLayout *tl = new QHBoxLayout(w);
-    tl->setMargin(5);
-    QLabel *l = new QLabel("Did I mention that it's possible\n"
-			   "to make vertically aligned buttons\n"
-			   "too?"
-			   ,w);
-    l->setAlignment(Qt::AlignVCenter|Qt::AlignLeft);
-    l->setMinimumSize(l->sizeHint());
-    tl->addWidget(l,1);
-    KDialogButtonBox *bbox = new KDialogButtonBox(w, Qt::Vertical);
+        bbox->addButton(QLatin1String("Help"), QDialogButtonBox::HelpRole);
 
-    QPushButton *b = bbox->addButton(QLatin1String("OK"), QDialogButtonBox::AcceptRole);
-    b->setDefault(true);
-    w->connect(b, SIGNAL(clicked()),
-	       w, SLOT(accept()));
-    bbox->addButton(QLatin1String("Cancel"),QDialogButtonBox::RejectRole,  w, SLOT(accept()));
+        tl->addWidget(bbox, 0);
+        tl->activate();
+        w->exec();
+        delete w;
+    }
 
-    bbox->addButton(QLatin1String("Help"), QDialogButtonBox::HelpRole);
-
-
-    tl->addWidget(bbox,0);
-    tl->activate();
-    w->exec();
-    delete w;
-  }
-
-  return 0;
+    return 0;
 }

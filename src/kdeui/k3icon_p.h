@@ -49,7 +49,7 @@ public:
 
 private:
     class KIconPrivate;
-    KIconPrivate * d;
+    KIconPrivate *d;
 };
 
 #endif

@@ -32,9 +32,9 @@ public:
     KLocaleMacPrivate(KLocale *q_ptr,
                       const QString &language, const QString &country, KConfig *config);
 
-    KLocaleMacPrivate( const KLocaleMacPrivate &rhs );
+    KLocaleMacPrivate(const KLocaleMacPrivate &rhs);
 
-    KLocaleMacPrivate &operator=( const KLocaleMacPrivate &rhs );
+    KLocaleMacPrivate &operator=(const KLocaleMacPrivate &rhs);
 
     virtual ~KLocaleMacPrivate();
 
@@ -53,7 +53,7 @@ protected:
     virtual QByteArray systemCodeset() const;
 
 private:
-    QString macLocaleValue( CFStringRef key ) const;
+    QString macLocaleValue(CFStringRef key) const;
     CFLocaleRef m_macLocale;
 };
 

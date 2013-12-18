@@ -44,8 +44,9 @@ void KDebugTest::initTestCase()
     QStandardPaths::enableTestMode(true);
 
     QString kdebugrc = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1Char('/') + "kdebugrc";
-    if (!kdebugrc.isEmpty())
+    if (!kdebugrc.isEmpty()) {
         QFile::remove(kdebugrc);
+    }
     QFile::remove("kdebug.dbg");
     QFile::remove("myarea.dbg");
 
@@ -77,15 +78,14 @@ void KDebugTest::initTestCase()
 void KDebugTest::cleanupTestCase()
 {
     QString kdebugrc = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1Char('/') + "kdebugrc";
-    if (!kdebugrc.isEmpty())
+    if (!kdebugrc.isEmpty()) {
         QFile::remove(kdebugrc);
+    }
     // TODO QFile::remove("kdebug.dbg");
     QFile::remove("myarea.dbg");
 }
 
-
-
-static QList<QByteArray> readLines(const char* fileName = "kdebug.dbg")
+static QList<QByteArray> readLines(const char *fileName = "kdebug.dbg")
 {
     const QString path = QFile::decodeName(fileName);
     Q_ASSERT(!path.isEmpty());
@@ -98,13 +98,14 @@ static QList<QByteArray> readLines(const char* fileName = "kdebug.dbg")
     QByteArray line;
     do {
         line = file.readLine();
-        if (!line.isEmpty())
+        if (!line.isEmpty()) {
             lines.append(line);
-    } while(!line.isEmpty());
+        }
+    } while (!line.isEmpty());
     return lines;
 }
 
-void KDebugTest::compareLines(const QList<QByteArray>& expectedLines, const char* fileName)
+void KDebugTest::compareLines(const QList<QByteArray> &expectedLines, const char *fileName)
 {
     QList<QByteArray> lines = readLines(fileName);
     //qDebug() << lines;
@@ -133,12 +134,13 @@ class TestClass
 {
 public:
     TestClass() {}
-    QString getSomething() const {
+    QString getSomething() const
+    {
         kDebug(180) << "Nested kDebug call";
         return "TestClass";
     }
 };
-QDebug operator<<(QDebug s, const TestClass& me)
+QDebug operator<<(QDebug s, const TestClass &me)
 {
     s << me.getSomething() << "after the call";
     return s;
@@ -287,9 +289,9 @@ void KDebugTest::testNoMainComponentData()
 #ifdef Q_OS_WIN
     proc.start("kdebug_qcoreapptest.exe");
 #else
-    if (QFile::exists("./kdebug_qcoreapptest.shell"))
+    if (QFile::exists("./kdebug_qcoreapptest.shell")) {
         proc.start("./kdebug_qcoreapptest.shell");
-    else {
+    } else {
         QVERIFY(QFile::exists("./kdebug_qcoreapptest"));
         proc.start("./kdebug_qcoreapptest");
     }
@@ -307,8 +309,9 @@ void KDebugTest::testNoMainComponentData()
     expectedLines << "kdebug_qcoreapptest main: This should appear, under the kdebug_qcoreapptest area";
     expectedLines << "kdebug_qcoreapptest main: Debug in area 100";
     expectedLines << ""; // artefact of split, I guess?
-    for (int i = 0; i < qMin(expectedLines.count(), receivedLines.count()); ++i)
+    for (int i = 0; i < qMin(expectedLines.count(), receivedLines.count()); ++i) {
         QCOMPARE(QString::fromLatin1(receivedLines[i]), QString::fromLatin1(expectedLines[i]));
+    }
     QCOMPARE(receivedLines.count(), expectedLines.count());
     QCOMPARE(receivedLines, expectedLines);
 }
@@ -323,8 +326,9 @@ public:
     void doDebugs()
     {
         KDEBUG_BLOCK
-        for (int i = 0; i < 10; ++i)
+        for (int i = 0; i < 10; ++i) {
             kDebug() << "A kdebug statement in a thread:" << i;
+        }
     }
 };
 
@@ -337,8 +341,9 @@ void KDebugTest::testMultipleThreads()
     KDebugThreadTester tester;
     QThreadPool::globalInstance()->setMaxThreadCount(10);
     QFutureSynchronizer<void> sync;
-    for (int threadNum = 0; threadNum < 10; ++threadNum)
+    for (int threadNum = 0; threadNum < 10; ++threadNum) {
         sync.addFuture(QtConcurrent::run(&tester, &KDebugThreadTester::doDebugs));
+    }
     sync.waitForFinished();
 
     QVERIFY(QFile::exists("kdebug.dbg"));
@@ -354,7 +359,7 @@ void KDebugTest::testMultipleThreads()
 #if 0
     // Check that the lines are whole
     QList<QByteArray> lines = readLines();
-    Q_FOREACH(const QByteArray& line, lines) {
+    Q_FOREACH (const QByteArray &line, lines) {
         qDebug() << line;
         QCOMPARE(line.count("doDebugs"), 1);
         QCOMPARE(line.count('\n'), 1);

@@ -54,20 +54,18 @@ class KFileMetaDataReaderApplication : public QCoreApplication
     Q_OBJECT
 
 public:
-    KFileMetaDataReaderApplication(int& argc, char** argv);
+    KFileMetaDataReaderApplication(int &argc, char **argv);
 
 private Q_SLOTS:
     void readAndSendMetaData();
 
 private:
-    void sendMetaData(const QHash<QUrl, Nepomuk::Variant>& data);
-    QHash<QUrl, Nepomuk::Variant> readFileMetaData(const QList<QUrl>& urls) const;
-    QHash<QUrl, Nepomuk::Variant> readFileAndContextMetaData(const QList<QUrl>& urls) const;
+    void sendMetaData(const QHash<QUrl, Nepomuk::Variant> &data);
+    QHash<QUrl, Nepomuk::Variant> readFileMetaData(const QList<QUrl> &urls) const;
+    QHash<QUrl, Nepomuk::Variant> readFileAndContextMetaData(const QList<QUrl> &urls) const;
 };
 
-
-
-KFileMetaDataReaderApplication::KFileMetaDataReaderApplication(int& argc, char** argv) :
+KFileMetaDataReaderApplication::KFileMetaDataReaderApplication(int &argc, char **argv) :
     QCoreApplication(argc, argv)
 {
     QTimer::singleShot(0, this, SLOT(readAndSendMetaData()));
@@ -94,7 +92,7 @@ void KFileMetaDataReaderApplication::readAndSendMetaData()
     quit();
 }
 
-void KFileMetaDataReaderApplication::sendMetaData(const QHash<QUrl, Nepomuk::Variant>& data)
+void KFileMetaDataReaderApplication::sendMetaData(const QHash<QUrl, Nepomuk::Variant> &data)
 {
     QByteArray byteArray;
     QDataStream out(&byteArray, QIODevice::WriteOnly);
@@ -108,7 +106,7 @@ void KFileMetaDataReaderApplication::sendMetaData(const QHash<QUrl, Nepomuk::Var
         // Unlike QVariant no streaming operators are implemented for Nepomuk::Variant.
         // So it is required to manually encode the variant for the stream.
         // The decoding counterpart is located in KFileMetaDataReader.
-        const Nepomuk::Variant& variant = it.value();
+        const Nepomuk::Variant &variant = it.value();
         if (variant.isList()) {
             out << 0 << variant.toStringList();
         } else if (variant.isResource()) {
@@ -121,7 +119,7 @@ void KFileMetaDataReaderApplication::sendMetaData(const QHash<QUrl, Nepomuk::Var
     cout << byteArray.toBase64().constData();
 }
 
-QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileMetaData(const QList<QUrl>& urls) const
+QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileMetaData(const QList<QUrl> &urls) const
 {
     QHash<QUrl, Nepomuk::Variant> data;
 
@@ -132,7 +130,7 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileMetaData(c
         const QString path = urls.first().toLocalFile();
         KFileMetaInfo metaInfo(path, QString(), KFileMetaInfo::Fastest);
         const QHash<QString, KFileMetaInfoItem> metaInfoItems = metaInfo.items();
-        foreach (const KFileMetaInfoItem& metaInfoItem, metaInfoItems) {
+        foreach (const KFileMetaInfoItem &metaInfoItem, metaInfoItems) {
             const QString uriString = metaInfoItem.name();
             const Nepomuk::Variant value(metaInfoItem.value());
             data.insert(uriString,
@@ -143,7 +141,7 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileMetaData(c
     return data;
 }
 
-QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileAndContextMetaData(const QList<QUrl>& urls) const
+QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileAndContextMetaData(const QList<QUrl> &urls) const
 {
     QHash<QUrl, Nepomuk::Variant> metaData;
 
@@ -172,8 +170,8 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileAndContext
             while (it != variants.constEnd()) {
                 Nepomuk::Types::Property prop(it.key());
                 metaData.insert(prop.uri(), Nepomuk::Utils::formatPropertyValue(prop, it.value(),
-                                                                                QList<Nepomuk::Resource>() << file,
-                                                                                Nepomuk::Utils::WithKioLinks));
+                                QList<Nepomuk::Resource>() << file,
+                                Nepomuk::Utils::WithKioLinks));
                 ++it;
             }
             useReadFromFileFallback = !isNepomukIndexerActive || variants.isEmpty();
@@ -191,7 +189,7 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileAndContext
     } else {
         // Read the data for rating, comment and tags
         bool first = true;
-        foreach (const QUrl& url, urls) {
+        foreach (const QUrl &url, urls) {
             Nepomuk::Resource file(url);
             if (!file.isValid()) {
                 continue;
@@ -223,7 +221,7 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileAndContext
     metaData.insert(QUrl("kfileitem#comment"), comment);
 
     QList<Nepomuk::Variant> tagVariants;
-    foreach (const Nepomuk::Tag& tag, tags) {
+    foreach (const Nepomuk::Tag &tag, tags) {
         tagVariants.append(Nepomuk::Variant(tag));
     }
     metaData.insert(QUrl("kfileitem#tags"), tagVariants);
@@ -234,10 +232,10 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataReaderApplication::readFileAndContext
 int main(int argc, char *argv[])
 {
     K4AboutData aboutData("kfilemetadatareader", "kio4", ki18n("KFileMetaDataReader"),
-                         "1.0",
-                         ki18n("KFileMetaDataReader can be used to read metadata from a file"),
-                         K4AboutData::License_GPL,
-                         ki18n("(C) 2011, Peter Penz"));
+                          "1.0",
+                          ki18n("KFileMetaDataReader can be used to read metadata from a file"),
+                          K4AboutData::License_GPL,
+                          ki18n("(C) 2011, Peter Penz"));
     aboutData.addAuthor(ki18n("Peter Penz"), ki18n("Current maintainer"), "peter.penz19@gmail.com");
 
     KCmdLineArgs::init(argc, argv, &aboutData);

@@ -21,34 +21,35 @@
 #include "ksessionmanager.h"
 
 KSessionManager::KSessionManager():
-     d(0)
+    d(0)
 {
-    sessionClients().removeAll( this );
-    sessionClients().append( this );
+    sessionClients().removeAll(this);
+    sessionClients().append(this);
 }
 
 KSessionManager::~KSessionManager()
 {
-    sessionClients().removeAll( this );
+    sessionClients().removeAll(this);
 }
 
-bool KSessionManager::saveState(QSessionManager&)
+bool KSessionManager::saveState(QSessionManager &)
 {
     return true;
 }
 
-bool KSessionManager::commitData(QSessionManager&)
+bool KSessionManager::commitData(QSessionManager &)
 {
     return true;
 }
 
-QList<KSessionManager *>& KSessionManager::sessionClients()
+QList<KSessionManager *> &KSessionManager::sessionClients()
 {
-    static QList<KSessionManager*> session_clients;
+    static QList<KSessionManager *> session_clients;
     return session_clients;
 }
 
-void KSessionManager::virtual_hook( int, void* )
-{ /*BASE::virtual_hook( id, data );*/ }
-
+void KSessionManager::virtual_hook(int, void *)
+{
+    /*BASE::virtual_hook( id, data );*/
+}
 

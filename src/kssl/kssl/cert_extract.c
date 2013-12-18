@@ -20,12 +20,12 @@
 **  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 **
 **
-**  Originally written and released under the GPL by 
+**  Originally written and released under the GPL by
 **  Ariel Glenn from the AcIS R&D group at Columbia
 **  as the two sources findoffset.c and dblist.c. See under
 **  http://www.columbia.edu/~ariel/good-certs/ for more details.
 **
-**  Merged into one single program in August 1998 
+**  Merged into one single program in August 1998
 **  by Ralf S. Engelschall for use in the mod_ssl project.
 **  See under http://www.engelschall.com/sw/mod_ssl/ for more details.
 **
@@ -78,12 +78,13 @@ int findoffset(char *dbname)
                         continue;
                     }
                     break;
-                }
-                else
+                } else {
                     offset++;
+                }
             }
-            if (offset > 0)
-                break;          /* found it, let's quit */
+            if (offset > 0) {
+                break;    /* found it, let's quit */
+            }
         }
     }
     db->close(db);
@@ -117,8 +118,7 @@ int main(int argc, char **argv)
     if (offset == 0) {
         fprintf(stderr, "Could not determine cert offset in DB file '%s'\n", dbname);
         exit(1);
-    }
-    else {
+    } else {
         fprintf(stderr, "Ok: certificates are at offset %d\n", offset);
     }
 
@@ -137,8 +137,9 @@ int main(int argc, char **argv)
         if (dvalue.size > offset && ((dvalue.size) - offset) > 500) {
             p = (char *)dvalue.data + offset - 1;
             if (byte1 != -1 && byte2 != -1)
-                if (byte1 != p[0] || byte2 != p[1])
+                if (byte1 != p[0] || byte2 != p[1]) {
                     continue;
+                }
             ASN1_get_object((unsigned char **)&p, (long *)&plen, &ptag, &pclass, dvalue.size);
             if (ptag == V_ASN1_SEQUENCE) {      /* ok, it might be a cert then. */
                 if (byte1 == -1 && byte2 == -1) {
@@ -169,8 +170,7 @@ int main(int argc, char **argv)
                 fprintf(stderr, "Extracted: %s (", oname);
                 write(fileno(stderr), shortname, dvalue.size - plen - offset);
                 fprintf(stderr, ")\n");
-            }
-            else {
+            } else {
                 /* fprintf(stderr, "Hmmm... ptag is %d, plen is %d\n", ptag, plen); */
             }
         }

@@ -44,59 +44,62 @@ static bool s_sharingEnabled;
 
 #define FILESHARECONF "/etc/security/fileshare.conf"
 
-static QString findExe( const char* exeName )
+static QString findExe(const char *exeName)
 {
-   // Normally fileshareset and filesharelist are installed in kde4/libexec;
-   // allow distributions to move it somewhere else in the PATH or in /usr/sbin.
-   QString exe = QStandardPaths::findExecutable(exeName);
-   if (exe.isEmpty())
-       exe = QStandardPaths::findExecutable(exeName, QStringList() << "/usr/sbin");
-   if (exe.isEmpty())
-       qWarning() << exeName << "not found in PATH nor in /usr/sbin";
-   return exe;
+    // Normally fileshareset and filesharelist are installed in kde4/libexec;
+    // allow distributions to move it somewhere else in the PATH or in /usr/sbin.
+    QString exe = QStandardPaths::findExecutable(exeName);
+    if (exe.isEmpty()) {
+        exe = QStandardPaths::findExecutable(exeName, QStringList() << "/usr/sbin");
+    }
+    if (exe.isEmpty()) {
+        qWarning() << exeName << "not found in PATH nor in /usr/sbin";
+    }
+    return exe;
 }
 
 KFileSharePrivate::KFileSharePrivate()
 {
-  KDirWatch::self()->addFile(FILESHARECONF);
-  connect(KDirWatch::self(), SIGNAL(dirty(QString)),this,
-          SLOT(slotFileChange(QString)));
-  connect(KDirWatch::self(), SIGNAL(created(QString)),this,
-          SLOT(slotFileChange(QString)));
-  connect(KDirWatch::self(), SIGNAL(deleted(QString)),this,
-          SLOT(slotFileChange(QString)));
+    KDirWatch::self()->addFile(FILESHARECONF);
+    connect(KDirWatch::self(), SIGNAL(dirty(QString)), this,
+            SLOT(slotFileChange(QString)));
+    connect(KDirWatch::self(), SIGNAL(created(QString)), this,
+            SLOT(slotFileChange(QString)));
+    connect(KDirWatch::self(), SIGNAL(deleted(QString)), this,
+            SLOT(slotFileChange(QString)));
 }
 
 KFileSharePrivate::~KFileSharePrivate()
 {
-  KDirWatch::self()->removeFile(FILESHARECONF);
+    KDirWatch::self()->removeFile(FILESHARECONF);
 }
 
 Q_GLOBAL_STATIC(KFileSharePrivate, _self)
 
-KFileSharePrivate* KFileSharePrivate::self()
+KFileSharePrivate *KFileSharePrivate::self()
 {
-   return _self();
+    return _self();
 }
 
 void KFileSharePrivate::slotFileChange(const QString &file)
 {
-  if(file==FILESHARECONF) {
-     KFileShare::readConfig();
-     KFileShare::readShareList();
-  }
+    if (file == FILESHARECONF) {
+        KFileShare::readConfig();
+        KFileShare::readShareList();
+    }
 }
 
-KFileShare::ShareMode readEntry(const KConfigGroup &cg, const char* key,
-	const KFileShare::ShareMode& aDefault)
+KFileShare::ShareMode readEntry(const KConfigGroup &cg, const char *key,
+                                const KFileShare::ShareMode &aDefault)
 {
-    const QByteArray data=cg.readEntry(key, QByteArray());
+    const QByteArray data = cg.readEntry(key, QByteArray());
 
     if (!data.isEmpty()) {
-        if (data.toLower() == "simple")
+        if (data.toLower() == "simple") {
             return KFileShare::Simple;
-        else if (data.toLower() == "advanced")
+        } else if (data.toLower() == "advanced") {
             return KFileShare::Advanced;
+        }
     }
 
     return aDefault;
@@ -107,91 +110,99 @@ void KFileShare::readConfig() // static
     // Create KFileSharePrivate instance
     KFileSharePrivate::self();
     KConfig config(QLatin1String(FILESHARECONF));
-    KConfigGroup group( &config, QString() );
+    KConfigGroup group(&config, QString());
 
     s_sharingEnabled = group.readEntry("FILESHARING", true);
     s_restricted = group.readEntry("RESTRICT", true);
     s_fileShareGroup = group.readEntry("FILESHAREGROUP", "fileshare");
 
-
-    if (!s_sharingEnabled)
+    if (!s_sharingEnabled) {
         s_authorization = UserNotAllowed;
-    else
-    if (!s_restricted )
+    } else if (!s_restricted) {
         s_authorization = Authorized;
-    else {
+    } else {
         // check if current user is in fileshare group
         KUserGroup shareGroup(s_fileShareGroup);
-        if (shareGroup.users().contains(KUser()) )
+        if (shareGroup.users().contains(KUser())) {
             s_authorization = Authorized;
-        else
+        } else {
             s_authorization = UserNotAllowed;
+        }
     }
 
     s_shareMode = readEntry(group, "SHARINGMODE", Simple);
-
 
     s_sambaEnabled = group.readEntry("SAMBA", true);
     s_nfsEnabled = group.readEntry("NFS", true);
 }
 
-KFileShare::ShareMode KFileShare::shareMode() {
-  if ( s_authorization == NotInitialized )
-      readConfig();
+KFileShare::ShareMode KFileShare::shareMode()
+{
+    if (s_authorization == NotInitialized) {
+        readConfig();
+    }
 
-  return s_shareMode;
+    return s_shareMode;
 }
 
-bool KFileShare::sharingEnabled() {
-  if ( s_authorization == NotInitialized )
-      readConfig();
+bool KFileShare::sharingEnabled()
+{
+    if (s_authorization == NotInitialized) {
+        readConfig();
+    }
 
-  return s_sharingEnabled;
+    return s_sharingEnabled;
 }
 
-bool KFileShare::isRestricted() {
-  if ( s_authorization == NotInitialized )
-      readConfig();
+bool KFileShare::isRestricted()
+{
+    if (s_authorization == NotInitialized) {
+        readConfig();
+    }
 
-  return s_restricted;
+    return s_restricted;
 }
 
-QString KFileShare::fileShareGroup() {
-  if ( s_authorization == NotInitialized )
-      readConfig();
+QString KFileShare::fileShareGroup()
+{
+    if (s_authorization == NotInitialized) {
+        readConfig();
+    }
 
-  return s_fileShareGroup;
+    return s_fileShareGroup;
 }
 
+bool KFileShare::sambaEnabled()
+{
+    if (s_authorization == NotInitialized) {
+        readConfig();
+    }
 
-bool KFileShare::sambaEnabled() {
-  if ( s_authorization == NotInitialized )
-      readConfig();
-
-  return s_sambaEnabled;
+    return s_sambaEnabled;
 }
 
-bool KFileShare::nfsEnabled() {
-  if ( s_authorization == NotInitialized )
-      readConfig();
+bool KFileShare::nfsEnabled()
+{
+    if (s_authorization == NotInitialized) {
+        readConfig();
+    }
 
-  return s_nfsEnabled;
+    return s_nfsEnabled;
 }
-
 
 void KFileShare::readShareList()
 {
     KFileSharePrivate::self();
     s_shareList()->clear();
 
-    QString exe = ::findExe( "filesharelist" );
+    QString exe = ::findExe("filesharelist");
     if (exe.isEmpty()) {
         s_authorization = ErrorNotFound;
         return;
     }
     QProcess proc;
-    proc.start( exe, QStringList() );
-    if ( !proc.waitForFinished() ) {
+    proc.start(exe, QStringList());
+    if (!proc.waitForFinished()) {
         qWarning() << "Can't run" << exe;
         s_authorization = ErrorNotFound;
         return;
@@ -201,91 +212,95 @@ void KFileShare::readShareList()
     while (!proc.atEnd()) {
         QString line = proc.readLine().trimmed();
         int length = line.length();
-	if ( length > 0 )
-	{
-            if ( line[length-1] != '/' )
+        if (length > 0) {
+            if (line[length - 1] != '/') {
                 line += '/';
+            }
             s_shareList()->append(line);
             //qDebug() << "Shared dir:" << line;
         }
     }
 }
 
-
-bool KFileShare::isDirectoryShared( const QString& _path )
+bool KFileShare::isDirectoryShared(const QString &_path)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5,1,1)
-    if ( ! s_shareList.exists() )
+    if (! s_shareList.exists())
 #else
-    if ( s_shareList()->isEmpty() )
+    if (s_shareList()->isEmpty())
 #endif
         readShareList();
 
-    QString path( _path );
-    if ( path[path.length()-1] != '/' )
+    QString path(_path);
+    if (path[path.length() - 1] != '/') {
         path += '/';
-    return s_shareList()->contains( path );
+    }
+    return s_shareList()->contains(path);
 }
 
 KFileShare::Authorization KFileShare::authorization()
 {
     // The app should do this on startup, but if it doesn't, let's do here.
-    if ( s_authorization == NotInitialized )
+    if (s_authorization == NotInitialized) {
         readConfig();
+    }
     return s_authorization;
 }
 
-bool KFileShare::setShared( const QString& path, bool shared )
+bool KFileShare::setShared(const QString &path, bool shared)
 {
     if (! KFileShare::sharingEnabled() ||
-          KFileShare::shareMode() == Advanced)
-       return false;
+            KFileShare::shareMode() == Advanced) {
+        return false;
+    }
 
     //qDebug() << path << "," << shared;
-    QString exe = ::findExe( "fileshareset" );
-    if (exe.isEmpty())
+    QString exe = ::findExe("fileshareset");
+    if (exe.isEmpty()) {
         return false;
+    }
 
     QStringList args;
-    if ( shared )
+    if (shared) {
         args << "--add";
-    else
+    } else {
         args << "--remove";
-    args << path ;
-    int ec = QProcess::execute( exe, args ); // should be ok, the perl script terminates fast
+    }
+    args << path;
+    int ec = QProcess::execute(exe, args);   // should be ok, the perl script terminates fast
     //qDebug() << "exitCode=" << ec;
     bool ok = !ec;
     switch (ec) {
-        case 1:
-          // User is not authorized
-          break;
-        case 3:
-          // Called script with --add, but path was already shared before.
-          // Result is nevertheless what the client wanted, so
-          // this is alright.
-          ok = true;
-          break;
-        case 4:
-          // Invalid mount point
-          break;
-        case 5:
-          // Called script with --remove, but path was not shared before.
-          // Result is nevertheless what the client wanted, so
-          // this is alright.
-          ok = true;
-          break;
-        case 6:
-          // There is no export method
-          break;
-        case 7:
-          // file sharing is disabled
-          break;
-        case 8:
-          // advanced sharing is enabled
-          break;
-        case 255:
-          // Abitrary error
-          break;
+    case 1:
+        // User is not authorized
+        break;
+    case 3:
+        // Called script with --add, but path was already shared before.
+        // Result is nevertheless what the client wanted, so
+        // this is alright.
+        ok = true;
+        break;
+    case 4:
+        // Invalid mount point
+        break;
+    case 5:
+        // Called script with --remove, but path was not shared before.
+        // Result is nevertheless what the client wanted, so
+        // this is alright.
+        ok = true;
+        break;
+    case 6:
+        // There is no export method
+        break;
+    case 7:
+        // file sharing is disabled
+        break;
+    case 8:
+        // advanced sharing is enabled
+        break;
+    case 255:
+        // Abitrary error
+        break;
     }
 
     return ok;

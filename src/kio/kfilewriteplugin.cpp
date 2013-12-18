@@ -24,37 +24,40 @@
 #include <QHash>
 #include <QDebug>
 
-KFileWritePlugin::KFileWritePlugin(QObject* parent, const QStringList&)
-        :QObject(parent), d(0)
+KFileWritePlugin::KFileWritePlugin(QObject *parent, const QStringList &)
+    : QObject(parent), d(0)
 {
 }
 
-KFileWritePlugin::~KFileWritePlugin() {
+KFileWritePlugin::~KFileWritePlugin()
+{
 }
 
 Q_GLOBAL_STATIC(KFileWriterProvider, staticKFileWriterProvider)
 
-KFileWriterProvider*
-KFileWriterProvider::self() {
+KFileWriterProvider *
+KFileWriterProvider::self()
+{
     return staticKFileWriterProvider();
 }
 
-KFileWriterProvider::~KFileWriterProvider() {
+KFileWriterProvider::~KFileWriterProvider()
+{
     qDeleteAll(plugins);
     plugins.clear();
 }
 
-KFileWritePlugin*
-KFileWriterProvider::loadPlugin(const QString& key) {
+KFileWritePlugin *
+KFileWriterProvider::loadPlugin(const QString &key)
+{
     //qDebug() << "loading writer for key " << key;
     const QString constraint = QString::fromLatin1("'%1' in MetaDataKeys")
-        .arg(key);
+                               .arg(key);
     const KService::List offers = KServiceTypeTrader::self()->query(
-        "KFileWrite", constraint);
+                                      "KFileWrite", constraint);
     if (offers.isEmpty()) {
         return 0;
     }
     return offers.first()->createInstance<KFileWritePlugin>();
 }
-
 

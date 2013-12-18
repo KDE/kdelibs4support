@@ -32,7 +32,7 @@ public:
     /**
      * Constructs a hue/saturation selection widget.
      */
-    explicit KHueSaturationSelector( QWidget *parent = 0 );
+    explicit KHueSaturationSelector(QWidget *parent = 0);
 
     /**
      * Destructor.
@@ -42,61 +42,59 @@ public:
     /**
      * Sets the chooser mode. The allowed modes are defined
      * in KColorChooserMode.
-     * 
+     *
      * @param    The chooser mode as defined in KColorChooserMode
      */
-    void setChooserMode ( KColorChooserMode chooserMode );
+    void setChooserMode(KColorChooserMode chooserMode);
 
     /**
      * Returns the chooser mode.
-     * 
+     *
      * @return   The chooser mode (defined in KColorChooserMode)
      */
-    KColorChooserMode chooserMode () const;
-
+    KColorChooserMode chooserMode() const;
 
     /**
      * Returns the hue value
-     * 
+     *
      * @return   The hue value (0-360)
      */
     int hue() const;
 
     /**
      * Sets the hue value (0-360)
-     * 
+     *
      * @param  hue  The hue value (0-360)
      */
-    void setHue( int hue );
+    void setHue(int hue);
 
     /**
      * Returns the saturation (0-255)
-     * 
+     *
      * @return The saturation (0-255)
      */
     int saturation() const;
 
     /**
      * Sets the saturation (0-255)
-     * 
+     *
      * @param  saturation   The saturation (0-255)
      */
-    void setSaturation( int saturation );
+    void setSaturation(int saturation);
 
     /**
      * Returns the color value (also known as lumniousity, 0-255)
-     * 
+     *
      * @return  The color value (0-255)
      */
     int colorValue() const;
 
     /**
      * Sets the color value (0-255)
-     * 
+     *
      * @param  colorValue  The color value (0-255)
      */
-    void setColorValue( int colorValue );
-
+    void setColorValue(int colorValue);
 
     /**
      * Updates the contents
@@ -108,23 +106,23 @@ protected:
      * Draws the contents of the widget on a pixmap,
      * which is used for buffering.
      */
-    virtual void drawPalette( QPixmap *pixmap );
-    virtual void resizeEvent( QResizeEvent * );
+    virtual void drawPalette(QPixmap *pixmap);
+    virtual void resizeEvent(QResizeEvent *);
 
     /**
      * Reimplemented from KXYSelector. This drawing is
      * buffered in a pixmap here. As real drawing
      * routine, drawPalette() is used.
      */
-    virtual void drawContents( QPainter *painter );
+    virtual void drawContents(QPainter *painter);
 
 private:
 
     class Private;
     friend class Private;
-    Private * const d;
+    Private *const d;
 
-    Q_DISABLE_COPY( KHueSaturationSelector )
+    Q_DISABLE_COPY(KHueSaturationSelector)
 };
 
 #endif /*KHUESATURATIONSELECT_H_*/

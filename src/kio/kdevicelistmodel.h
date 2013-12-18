@@ -40,10 +40,10 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KDeviceListModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    explicit KDeviceListModel(QObject *parent=0);
-    explicit KDeviceListModel(const QString &predicate, QObject *parent=0);
+    explicit KDeviceListModel(QObject *parent = 0);
+    explicit KDeviceListModel(const QString &predicate, QObject *parent = 0);
     explicit KDeviceListModel(const Solid::Predicate &predicate,
-                              QObject *parent=0);
+                              QObject *parent = 0);
     ~KDeviceListModel();
 
     /**
@@ -92,8 +92,7 @@ public:
      */
     int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
-    Solid::Device deviceForIndex( const QModelIndex& index ) const;
-
+    Solid::Device deviceForIndex(const QModelIndex &index) const;
 
 Q_SIGNALS:
     void modelInitialized();
@@ -104,7 +103,7 @@ private:
     Q_PRIVATE_SLOT(d, void _k_deviceRemoved(const QString &))
 
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif

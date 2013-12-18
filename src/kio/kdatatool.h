@@ -58,7 +58,7 @@ public:
      * @param service the corresponding service
      * @param componentName the name of the component to use
      */
-    KDataToolInfo(const KService::Ptr& service, const QString &componentName);
+    KDataToolInfo(const KService::Ptr &service, const QString &componentName);
     /**
      * Destructor
      */
@@ -66,11 +66,11 @@ public:
     /**
      * Copy constructor.
      */
-    KDataToolInfo( const KDataToolInfo& info );
+    KDataToolInfo(const KDataToolInfo &info);
     /**
      * Assignment operator.
      */
-    KDataToolInfo& operator= ( const KDataToolInfo& info );
+    KDataToolInfo &operator= (const KDataToolInfo &info);
 
     /**
      * Returns the data type that the DataTool can accept.
@@ -135,7 +135,7 @@ public:
      * @param parent the parent of the QObject (or 0 for parent-less KDataTools)
      * @return a pointer to the created data tool or 0 on error.
      */
-    KDataTool* createTool( QObject* parent = 0 ) const;
+    KDataTool *createTool(QObject *parent = 0) const;
 
     /**
      * The KDataToolInfo's service that is represented by this class.
@@ -164,13 +164,12 @@ public:
      * and also used if the tool wants to read its configuration in the app's config file).
      * @return the list of results
      */
-    static QList<KDataToolInfo> query(const QString& datatype, const QString& mimetype, const QString &componentName);
+    static QList<KDataToolInfo> query(const QString &datatype, const QString &mimetype, const QString &componentName);
 
 private:
     class KDataToolInfoPrivate;
-    KDataToolInfoPrivate * const d;
+    KDataToolInfoPrivate *const d;
 };
-
 
 /**
  * This class helps applications implement support for KDataTool.
@@ -195,7 +194,7 @@ public:
      * @param parent This action's parent
      * @param name The name of the action
      */
-    KDataToolAction( const QString & text, const KDataToolInfo & info, const QString & command, QObject *parent );
+    KDataToolAction(const QString &text, const KDataToolInfo &info, const QString &command, QObject *parent);
 
     /**
      * Destructor
@@ -213,7 +212,7 @@ public:
      * @param parent the parent action collection for the actions to be created
      * @return the KActions
      */
-    static QList<QAction*> dataToolActionList( const QList<KDataToolInfo> & tools, const QObject *receiver, const char* slot, KActionCollection* parent );
+    static QList<QAction *> dataToolActionList(const QList<KDataToolInfo> &tools, const QObject *receiver, const char *slot, KActionCollection *parent);
 
 Q_SIGNALS:
     /**
@@ -221,14 +220,14 @@ Q_SIGNALS:
      * @param info a description of the activated tools
      * @param command the command for the tool
      */
-    void toolActivated( const KDataToolInfo & info, const QString & command );
+    void toolActivated(const KDataToolInfo &info, const QString &command);
 
 protected:
     virtual void slotActivated();
 
 private:
     class KDataToolActionPrivate;
-    KDataToolActionPrivate * const d;
+    KDataToolActionPrivate *const d;
 
 };
 
@@ -252,7 +251,7 @@ public:
      * The data-tool is only created when a menu-item, that relates to it, is activated.
      * @param parent the parent of the QObject (or 0 for parent-less KDataTools)
      */
-    KDataTool( QObject* parent = 0 );
+    KDataTool(QObject *parent = 0);
 
     /**
      * Destructor
@@ -284,11 +283,11 @@ public:
      *                 QString, but the mimetype can be text/plain, text/html etc.)
      * @return true if successful, false otherwise
      */
-    virtual bool run( const QString& command, void* data, const QString& datatype, const QString& mimetype) = 0;
+    virtual bool run(const QString &command, void *data, const QString &datatype, const QString &mimetype) = 0;
 
 private:
     class KDataToolPrivate;
-    KDataToolPrivate * const d;
+    KDataToolPrivate *const d;
 };
 
 #endif

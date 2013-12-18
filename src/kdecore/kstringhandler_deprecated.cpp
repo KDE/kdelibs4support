@@ -47,16 +47,16 @@ int KStringHandler::naturalCompare(const QString &_a, const QString &_b, Qt::Cas
         b = _b.toLower();
     }
 
-    const QChar* currA = a.unicode(); // iterator over a
-    const QChar* currB = b.unicode(); // iterator over b
+    const QChar *currA = a.unicode(); // iterator over a
+    const QChar *currB = b.unicode(); // iterator over b
 
     if (currA == currB) {
         return 0;
     }
 
     while (!currA->isNull() && !currB->isNull()) {
-        const QChar* begSeqA = currA; // beginning of a new character sequence of a
-        const QChar* begSeqB = currB;
+        const QChar *begSeqA = currA; // beginning of a new character sequence of a
+        const QChar *begSeqB = currB;
         if (currA->unicode() == QChar::ObjectReplacementCharacter) {
             return 1;
         }
@@ -83,8 +83,8 @@ int KStringHandler::naturalCompare(const QString &_a, const QString &_b, Qt::Cas
         }
 
         // compare these sequences
-        const QStringRef& subA(a.midRef(begSeqA - a.unicode(), currA - begSeqA));
-        const QStringRef& subB(b.midRef(begSeqB - b.unicode(), currB - begSeqB));
+        const QStringRef &subA(a.midRef(begSeqA - a.unicode(), currA - begSeqA));
+        const QStringRef &subB(b.midRef(begSeqB - b.unicode(), currB - begSeqB));
         const int cmp = QStringRef::localeAwareCompare(subA, subB);
         if (cmp != 0) {
             return cmp < 0 ? -1 : +1;

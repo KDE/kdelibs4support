@@ -21,9 +21,9 @@
 
 class A
 {
-    public:
-        A() : i(1) {}
-        int i;
+public:
+    A() : i(1) {}
+    int i;
 };
 
 K_GLOBAL_STATIC(A, globalA)
@@ -31,17 +31,17 @@ K_GLOBAL_STATIC(A, globalA2)
 
 class B
 {
-    public:
-        ~B()
-        {
-            Q_ASSERT(globalA.isDestroyed());
-            qDebug() << "All global statics were successfully destroyed.";
-        }
+public:
+    ~B()
+    {
+        Q_ASSERT(globalA.isDestroyed());
+        qDebug() << "All global statics were successfully destroyed.";
+    }
 };
 
 Q_GLOBAL_STATIC(B, globalB)
 
-int main(int, char**)
+int main(int, char **)
 {
     Q_ASSERT(globalB);
 

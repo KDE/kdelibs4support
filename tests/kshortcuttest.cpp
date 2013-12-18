@@ -28,44 +28,44 @@ private Q_SLOTS:
     void testRemoveShortcut()
     {
         KShortcut cutShortCut(Qt::CTRL + Qt::Key_X, Qt::SHIFT + Qt::Key_Delete);
-        cutShortCut.remove( Qt::SHIFT + Qt::Key_Delete, KShortcut::KeepEmpty );
-        cutShortCut.remove( Qt::CTRL + Qt::Key_X, KShortcut::KeepEmpty );
+        cutShortCut.remove(Qt::SHIFT + Qt::Key_Delete, KShortcut::KeepEmpty);
+        cutShortCut.remove(Qt::CTRL + Qt::Key_X, KShortcut::KeepEmpty);
         //qDebug( "%s", qPrintable( cutShortCut.toString() ) );
-        QVERIFY( cutShortCut.isEmpty() );
+        QVERIFY(cutShortCut.isEmpty());
 
         cutShortCut = KShortcut(Qt::CTRL + Qt::Key_X, Qt::SHIFT + Qt::Key_Delete);
         //remove primary shortcut. We expect the alternate to become primary.
-        cutShortCut.remove( Qt::CTRL + Qt::Key_X, KShortcut::RemoveEmpty );
-        QVERIFY( cutShortCut.primary() == QKeySequence(Qt::SHIFT + Qt::Key_Delete) );
-        QVERIFY( cutShortCut.alternate().isEmpty() );
+        cutShortCut.remove(Qt::CTRL + Qt::Key_X, KShortcut::RemoveEmpty);
+        QVERIFY(cutShortCut.primary() == QKeySequence(Qt::SHIFT + Qt::Key_Delete));
+        QVERIFY(cutShortCut.alternate().isEmpty());
     }
 
     void testKShortcut()
     {
         KShortcut null;
-        QVERIFY( null.isEmpty() );
+        QVERIFY(null.isEmpty());
 
-        KShortcut zero( 0 );
-        QVERIFY( zero.isEmpty() );
-        QVERIFY( zero.primary().isEmpty() );
-        QVERIFY( zero.alternate().isEmpty() );
+        KShortcut zero(0);
+        QVERIFY(zero.isEmpty());
+        QVERIFY(zero.primary().isEmpty());
+        QVERIFY(zero.alternate().isEmpty());
 
-        KShortcut quit( "Ctrl+X, Ctrl+C; Z, Z" ); // quit in emacs vs. quit in vi :)
-        QCOMPARE( quit.primary().toString(), QString::fromLatin1("Ctrl+X, Ctrl+C") );
-        QCOMPARE( quit.alternate().toString(), QString::fromLatin1("Z, Z") );
-        QCOMPARE( quit.primary(), QKeySequence(Qt::CTRL + Qt::Key_X, Qt::CTRL + Qt::Key_C) );
-        QVERIFY( quit != null );
-        QVERIFY( !( quit == null ) );
+        KShortcut quit("Ctrl+X, Ctrl+C; Z, Z");   // quit in emacs vs. quit in vi :)
+        QCOMPARE(quit.primary().toString(), QString::fromLatin1("Ctrl+X, Ctrl+C"));
+        QCOMPARE(quit.alternate().toString(), QString::fromLatin1("Z, Z"));
+        QCOMPARE(quit.primary(), QKeySequence(Qt::CTRL + Qt::Key_X, Qt::CTRL + Qt::Key_C));
+        QVERIFY(quit != null);
+        QVERIFY(!(quit == null));
 
-        QVERIFY( !quit.contains( Qt::CTRL+Qt::Key_X ) );
-        QVERIFY( !quit.contains( Qt::CTRL+Qt::Key_Z ) );
-        QVERIFY( !quit.contains( Qt::CTRL+Qt::Key_C ) );
-        QKeySequence seq( Qt::CTRL+Qt::Key_X, Qt::CTRL+Qt::Key_C );
-        QVERIFY( quit.contains( seq ) );
-        QVERIFY( !null.contains( seq ) );
+        QVERIFY(!quit.contains(Qt::CTRL + Qt::Key_X));
+        QVERIFY(!quit.contains(Qt::CTRL + Qt::Key_Z));
+        QVERIFY(!quit.contains(Qt::CTRL + Qt::Key_C));
+        QKeySequence seq(Qt::CTRL + Qt::Key_X, Qt::CTRL + Qt::Key_C);
+        QVERIFY(quit.contains(seq));
+        QVERIFY(!null.contains(seq));
 
-        quit.setAlternate( seq );
-        QCOMPARE( quit.primary().toString(), quit.alternate().toString() );
+        quit.setAlternate(seq);
+        QCOMPARE(quit.primary().toString(), quit.alternate().toString());
     }
 
     void isEmpty()
@@ -118,7 +118,7 @@ private Q_SLOTS:
         QString p1 = QChar(QChar::highSurrogate(k)) + QChar(QChar::lowSurrogate(k));
 
 #if QT_VERSION < 0x050000
-        QCOMPARE(invalid_key.toString(), QString("Meta+Ctrl+Alt+Shift+"+p1)); // What happens
+        QCOMPARE(invalid_key.toString(), QString("Meta+Ctrl+Alt+Shift+" + p1)); // What happens
 #else
         QCOMPARE(invalid_key.toString(), QString());     // What i would expect
 #endif

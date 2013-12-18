@@ -23,8 +23,8 @@
 #include <kde4support_export.h>
 #include <kpassworddialog.h>
 
-
-namespace KIO {
+namespace KIO
+{
 
 /**
  * @deprecated  use KPasswordDialog
@@ -48,15 +48,14 @@ public:
      * @param modal         if true, the dialog will be modal (default:true).
      * @param parent        the parent widget (default:NULL).
      */
-    PasswordDialog( const QString& prompt, const QString& user,
-                    bool enableKeep = false, bool modal=true,
-                    QWidget* parent=0 );
+    PasswordDialog(const QString &prompt, const QString &user,
+                   bool enableKeep = false, bool modal = true,
+                   QWidget *parent = 0);
 
     /**
      * Destructor
      */
     ~PasswordDialog();
-
 
     /**
      * A convienence static method for obtaining authorization
@@ -74,12 +73,12 @@ public:
      *
      * @return Accepted/Rejected based on the user choice.
      */
-    static int getNameAndPassword( QString& user, QString& pass, bool* keep,
-                                   const QString& prompt = QString(),
-                                   bool readOnly = false,
-                                   const QString& caption = QString(),
-                                   const QString& comment = QString(),
-                                   const QString& label = QString() );
+    static int getNameAndPassword(QString &user, QString &pass, bool *keep,
+                                  const QString &prompt = QString(),
+                                  bool readOnly = false,
+                                  const QString &caption = QString(),
+                                  const QString &comment = QString(),
+                                  const QString &label = QString());
 
 };
 

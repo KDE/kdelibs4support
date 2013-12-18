@@ -77,12 +77,12 @@ QString KDateTimeFormatter::formatTime(const QTime &fromTime,
 
 // Format an input date to match a POSIX date format string
 QString KDateTimeFormatter::formatDateTime(const KDateTime &fromDateTime,
-                                           const QString &toFormat,
-                                           KLocale::TimeFormatOptions timeOptions,
-                                           const KCalendarSystem *calendar,
-                                           const KLocale *locale,
-                                           KLocale::DigitSet digitSet,
-                                           KLocale::DateTimeFormatStandard formatStandard) const
+        const QString &toFormat,
+        KLocale::TimeFormatOptions timeOptions,
+        const KCalendarSystem *calendar,
+        const KLocale *locale,
+        KLocale::DigitSet digitSet,
+        KLocale::DateTimeFormatStandard formatStandard) const
 {
     // If not valid input, don't waste our time
     if (!fromDateTime.isValid() || !calendar->isValid(fromDateTime.date()) || toFormat.isEmpty()) {
@@ -98,12 +98,12 @@ QString KDateTimeFormatter::formatDateTime(const KDateTime &fromDateTime,
 
 // Format an input date to match a POSIX date format string
 QString KDateTimeFormatter::formatDateTimePosix(const KDateTime &fromDateTime,
-                                                const QString &toFormat,
-                                                KLocale::TimeFormatOptions timeOptions,
-                                                const KCalendarSystem *calendar,
-                                                const KLocale *locale,
-                                                KLocale::DigitSet digitSet,
-                                                KLocale::DateTimeFormatStandard formatStandard) const
+        const QString &toFormat,
+        KLocale::TimeFormatOptions timeOptions,
+        const KCalendarSystem *calendar,
+        const KLocale *locale,
+        KLocale::DigitSet digitSet,
+        KLocale::DateTimeFormatStandard formatStandard) const
 {
 //qDebug() << "formatDateTimePosix(" << fromDateTime << toFormat << ")";
     // If not valid input, don't waste our time
@@ -235,7 +235,7 @@ QString KDateTimeFormatter::formatDateTimePosix(const KDateTime &fromDateTime,
                     }
                     componentString = calendar->eraName(fromDateTime.date());
                 } else if (modifierChar != QLatin1Char(':')) {    //Century numeric, default 0 pad to 2 places with sign
-                    componentInteger =  qAbs(year) / 100 ;
+                    componentInteger =  qAbs(year) / 100;
                     minWidth = 2;
                     if (year < 0) {
                         signChar = QLatin1Char('-');
@@ -641,11 +641,11 @@ void KDateTimeFormatter::initEnglish(const KCalendarSystem *calendar, const KLoc
 // Original QDate::fmtDateTime() code taken from Qt 4.7 under LGPL, now heavily modifed
 // Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
 QString KDateTimeFormatter::formatDateTimeUnicode(const KDateTime &fromDateTime,
-                                                  const QString &toFormat,
-                                                  KLocale::TimeFormatOptions timeOptions,
-                                                  const KCalendarSystem *calendar,
-                                                  const KLocale *locale,
-                                                  KLocale::DigitSet digitSet) const
+        const QString &toFormat,
+        KLocale::TimeFormatOptions timeOptions,
+        const KCalendarSystem *calendar,
+        const KLocale *locale,
+        KLocale::DigitSet digitSet) const
 {
     const QLatin1Char quote('\'');
 
@@ -656,8 +656,9 @@ QString KDateTimeFormatter::formatDateTimeUnicode(const KDateTime &fromDateTime,
     for (int i = 0; i < toFormat.length(); ++i) {
         if (toFormat.at(i) == quote) {
             if (status == quote) {
-                if (i > 0 && toFormat.at(i - 1) == quote)
+                if (i > 0 && toFormat.at(i - 1) == quote) {
                     result += QLatin1Char('\'');
+                }
                 status = QLatin1Char('0');
             } else {
                 if (!format.isEmpty()) {
@@ -698,11 +699,11 @@ QString KDateTimeFormatter::formatDateTimeUnicode(const KDateTime &fromDateTime,
 // Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).
 // Replaces tokens by their value. See QDateTime::toString() for a list of valid tokens
 QString KDateTimeFormatter::getUnicodeString(const KDateTime &fromDateTime,
-                                             const QString &toFormat,
-                                             KLocale::TimeFormatOptions timeOptions,
-                                             const KCalendarSystem *calendar,
-                                             const KLocale *locale,
-                                             KLocale::DigitSet digitSet) const
+        const QString &toFormat,
+        KLocale::TimeFormatOptions timeOptions,
+        const KCalendarSystem *calendar,
+        const KLocale *locale,
+        KLocale::DigitSet digitSet) const
 {
     if (toFormat.isEmpty()) {
         return QString();
@@ -738,18 +739,18 @@ QString KDateTimeFormatter::getUnicodeString(const KDateTime &fromDateTime,
     } else if (toFormat.startsWith(QLatin1String("yyyy"))) {
         const int year = calendar->year(fromDateTime.date());
         result = QString::number(qAbs(year)).rightJustified(4, QLatin1Char('0'));
-        if (year > 0)
+        if (year > 0) {
             removed = 4;
-        else {
+        } else {
             result.prepend(QLatin1Char('-'));
             removed = 5;
         }
     } else if (toFormat.startsWith(QLatin1String("yy"))) {
         const int year = calendar->year(fromDateTime.date());
         result = QString::number(year).right(2).rightJustified(2, QLatin1Char('0'));
-        if (year > 0)
+        if (year > 0) {
             removed = 2;
-        else {
+        } else {
             if (result.startsWith('0')) {
                 result = result.right(1);
             }
@@ -768,7 +769,7 @@ QString KDateTimeFormatter::getUnicodeString(const KDateTime &fromDateTime,
 // Reimplement if special integer to string handling required, e.g. Hebrew.
 // Utility to convert an integer into the correct display string form
 QString KDateTimeFormatter::stringFromInteger(int number, int padWidth, QChar padChar, QChar signChar,
-                                              KLocale::DigitSet digitSet, const KLocale *locale) const
+        KLocale::DigitSet digitSet, const KLocale *locale) const
 {
     if (padChar == QChar() && signChar == QChar()) {
 //qDebug() << "  stringFromInteger(" << number << padWidth << "null" << "null" << ")";

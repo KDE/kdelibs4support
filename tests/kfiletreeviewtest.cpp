@@ -31,7 +31,7 @@
 #include <kfiletreeview_p.h>
 
 Window::Window()
-  : KMainWindow(0)
+    : KMainWindow(0)
 {
     setObjectName("Test FileTreeView");
 
@@ -54,19 +54,19 @@ Window::Window()
     connect(dirOnlyMode, SIGNAL(toggled(bool)), mTreeView, SLOT(setDirOnlyMode(bool)));
 
     layout->setRowStretch(3, 1);
- 
+
     setCentralWidget(mainWidget);
     resize(600, 400);
 }
 
 void Window::showHome()
 {
-    mTreeView->setCurrentUrl( QUrl::fromLocalFile( QDir::home().absolutePath() ) );
+    mTreeView->setCurrentUrl(QUrl::fromLocalFile(QDir::home().absolutePath()));
 }
 
 void Window::showRoot()
 {
-    mTreeView->setCurrentUrl( QUrl::fromLocalFile( QDir::root().absolutePath() ) );
+    mTreeView->setCurrentUrl(QUrl::fromLocalFile(QDir::root().absolutePath()));
 }
 
 int main(int argc, char **argv)

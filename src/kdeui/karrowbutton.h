@@ -40,57 +40,63 @@ class KArrowButtonPrivate;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KArrowButton : public QPushButton
 {
-	Q_OBJECT
-	/**
-	 * Arrow type for this button, from Qt::ArrowType.
-	 */
-	Q_PROPERTY( int arrowType READ arrowTp WRITE setArrowTp )
+    Q_OBJECT
+    /**
+     * Arrow type for this button, from Qt::ArrowType.
+     */
+    Q_PROPERTY(int arrowType READ arrowTp WRITE setArrowTp)
 
-	public:
-		/**
-		 * Constructs an arrow button.
-		 *
-		 * @param parent This button's parent
-		 * @param arrow The direction the arrrow should be pointing in
-		 */
-		explicit KArrowButton(QWidget *parent = 0, Qt::ArrowType arrow = Qt::UpArrow);
+public:
+    /**
+     * Constructs an arrow button.
+     *
+     * @param parent This button's parent
+     * @param arrow The direction the arrrow should be pointing in
+     */
+    explicit KArrowButton(QWidget *parent = 0, Qt::ArrowType arrow = Qt::UpArrow);
 
-		/**
-		 * Destructor.
-		 */
-		virtual ~KArrowButton();
+    /**
+     * Destructor.
+     */
+    virtual ~KArrowButton();
 
-		/**
-		 * Reimplemented from QPushButton.
-		 */
-		virtual QSize sizeHint() const;
+    /**
+     * Reimplemented from QPushButton.
+     */
+    virtual QSize sizeHint() const;
 
-		/**
-		* Returns the arrow type
-		*/
-		Qt::ArrowType arrowType() const;
+    /**
+    * Returns the arrow type
+    */
+    Qt::ArrowType arrowType() const;
 
-		/// hack for moc braindamage with enums, use arrowType() instead
-		int arrowTp() const { return (int) arrowType(); }
-		/// hack for moc braindamage with enums, use setArrowType() instead
-		void setArrowTp( int tp ) { setArrowType( (Qt::ArrowType) tp ); }
-	public Q_SLOTS:
-		/**
-		 * Defines in what direction the arrow is pointing to. Will repaint the
-		 * button if necessary.
-		 *
-		 * @param a The direction this arrow should be pointing in
-		 */
-		void setArrowType(Qt::ArrowType a);
+    /// hack for moc braindamage with enums, use arrowType() instead
+    int arrowTp() const
+    {
+        return (int) arrowType();
+    }
+    /// hack for moc braindamage with enums, use setArrowType() instead
+    void setArrowTp(int tp)
+    {
+        setArrowType((Qt::ArrowType) tp);
+    }
+public Q_SLOTS:
+    /**
+     * Defines in what direction the arrow is pointing to. Will repaint the
+     * button if necessary.
+     *
+     * @param a The direction this arrow should be pointing in
+     */
+    void setArrowType(Qt::ArrowType a);
 
-	protected:
-		/**
-		 * Reimplemented from QPushButton.
-		 */
-		virtual void paintEvent(QPaintEvent*);
+protected:
+    /**
+     * Reimplemented from QPushButton.
+     */
+    virtual void paintEvent(QPaintEvent *);
 
-	private:
-		KArrowButtonPrivate * const d;
+private:
+    KArrowButtonPrivate *const d;
 };
 
 #endif // karrowbutton_h

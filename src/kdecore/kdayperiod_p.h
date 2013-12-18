@@ -99,7 +99,7 @@ public:
      * @param rhs KDayPeriod to assign
      *
      */
-    KDayPeriod& operator=(const KDayPeriod &rhs);
+    KDayPeriod &operator=(const KDayPeriod &rhs);
 
     /**
      * Return the Period Code

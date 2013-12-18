@@ -35,5 +35,4 @@ private Q_SLOTS:
     void testWorking_KPluginLoader_KPluginFactory();
 };
 
-
 #endif

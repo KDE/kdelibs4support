@@ -28,19 +28,19 @@
 namespace KStringHandler
 {
 
-    /**
-      Does a natural comparing of the strings. A negative value is returned if \a a
-      is smaller than \a b. A positive value is returned if \a a is greater than \a b. 0
-      is returned if both values are equal.
+/**
+  Does a natural comparing of the strings. A negative value is returned if \a a
+  is smaller than \a b. A positive value is returned if \a a is greater than \a b. 0
+  is returned if both values are equal.
 
-      @param a first string to compare
-      @param b second string to compare
-      @param caseSensitivity whether to use case sensitive compare or not
+  @param a first string to compare
+  @param b second string to compare
+  @param caseSensitivity whether to use case sensitive compare or not
 
-      @since 4.1
-      @deprecated Should use QCollator instead
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT int naturalCompare( const QString& a, const QString& b, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive );
+  @since 4.1
+  @deprecated Should use QCollator instead
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT int naturalCompare(const QString &a, const QString &b, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive);
 }
 
 #endif

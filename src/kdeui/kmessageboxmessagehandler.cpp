@@ -24,21 +24,20 @@
 
 class KMessageBoxMessageHandlerPrivate
 {
-    public:
-        KMessageBoxMessageHandlerPrivate(KMessageBoxMessageHandler *q)
-            : q(q)
-        {
-        }
+public:
+    KMessageBoxMessageHandlerPrivate(KMessageBoxMessageHandler *q)
+        : q(q)
+    {
+    }
 
-        void showMessageBox(KMessage::MessageType messageType, const QString &text, const QString &caption);
-        QWidget *parentWidget();
+    void showMessageBox(KMessage::MessageType messageType, const QString &text, const QString &caption);
+    QWidget *parentWidget();
 
-        KMessageBoxMessageHandler *q;
+    KMessageBoxMessageHandler *q;
 };
 
-
 KMessageBoxMessageHandler::KMessageBoxMessageHandler(QWidget *parent)
- : QObject(parent), d(new KMessageBoxMessageHandlerPrivate(this))
+    : QObject(parent), d(new KMessageBoxMessageHandlerPrivate(this))
 {
 }
 
@@ -53,24 +52,23 @@ void KMessageBoxMessageHandler::message(KMessage::MessageType messageType, const
 }
 
 void KMessageBoxMessageHandlerPrivate::showMessageBox(KMessage::MessageType messageType,
-                                                      const QString &text, const QString &caption)
+        const QString &text, const QString &caption)
 {
     KMessageBox::DialogType dlgType;
 
-    switch (messageType)
-    {
-        case KMessage::Information:
-        default:
-            dlgType = KMessageBox::Information;
-            break;
-        case KMessage::Error:
-        case KMessage::Fatal:
-            dlgType = KMessageBox::Error;
-            break;
-        case KMessage::Warning:
-        case KMessage::Sorry:
-            dlgType = KMessageBox::Sorry;
-            break;
+    switch (messageType) {
+    case KMessage::Information:
+    default:
+        dlgType = KMessageBox::Information;
+        break;
+    case KMessage::Error:
+    case KMessage::Fatal:
+        dlgType = KMessageBox::Error;
+        break;
+    case KMessage::Warning:
+    case KMessage::Sorry:
+        dlgType = KMessageBox::Sorry;
+        break;
     }
 
     KMessageBox::queuedMessageBox(parentWidget(), dlgType, text, caption);
@@ -78,7 +76,6 @@ void KMessageBoxMessageHandlerPrivate::showMessageBox(KMessage::MessageType mess
 
 QWidget *KMessageBoxMessageHandlerPrivate::parentWidget()
 {
-    return qobject_cast<QWidget*>(q->parent());
+    return qobject_cast<QWidget *>(q->parent());
 }
 
-// kate: space-indent on; indent-width 4; encoding utf-8; replace-tabs on;

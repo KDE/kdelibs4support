@@ -54,7 +54,7 @@ public:
 // Shared d pointer base class definitions
 
 KCalendarSystemJulianPrivate::KCalendarSystemJulianPrivate(KCalendarSystemJulian *q)
-                            : KCalendarSystemPrivate(q)
+    : KCalendarSystemPrivate(q)
 {
 }
 
@@ -386,16 +386,15 @@ QString KCalendarSystemJulianPrivate::weekDayName(int weekDay, KLocale::DateTime
     }
 }
 
-
 KCalendarSystemJulian::KCalendarSystemJulian(const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystem(*new KCalendarSystemJulianPrivate(this), config, locale)
+    : KCalendarSystem(*new KCalendarSystemJulianPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemJulian::KCalendarSystemJulian(KCalendarSystemJulianPrivate &dd,
-                                             const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystem(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystem(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

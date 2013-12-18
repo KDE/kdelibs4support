@@ -94,8 +94,8 @@ using namespace KDEPrivate;
 using KDEPrivate::KColorTable;
 
 struct ColorCollectionNameType {
-    const char* const m_fileName;
-    const char* const m_displayName;
+    const char *const m_fileName;
+    const char *const m_displayName;
 };
 
 static const ColorCollectionNameType colorCollectionName[] = {
@@ -109,8 +109,7 @@ static const ColorCollectionNameType colorCollectionName[] = {
     { 0, 0 } // end of data
 };
 
-enum ColorCollectionIndices
-{
+enum ColorCollectionIndices {
     recentColorIndex,
     customColorIndex,
     fortyColorIndex
@@ -121,7 +120,8 @@ enum ColorCollectionIndices
 class KColorCells::KColorCellsPrivate
 {
 public:
-    KColorCellsPrivate(KColorCells *q): q(q) {
+    KColorCellsPrivate(KColorCells *q): q(q)
+    {
         inMouse = false;
         selected = -1;
         shade = false;
@@ -138,10 +138,10 @@ class KColorCellsItemDelegate: public QStyledItemDelegate
 {
 public:
     KColorCellsItemDelegate(KColorCells *parent): QStyledItemDelegate(parent) {}
-    virtual void paint(QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index) const
+    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
     {
         QStyleOptionViewItemV4 opt(option);
-        initStyleOption(&opt,index);
+        initStyleOption(&opt, index);
 
         //Get the current cell color
         QColor backgroundColor = index.data(Qt::BackgroundRole).value<QColor>();
@@ -161,7 +161,7 @@ public:
                 painter->setRenderHint(QPainter::HighQualityAntialiasing, true);
                 painter->setPen(QPen(color, 1.2, Qt::SolidLine));
                 painter->setBrush(QBrush());
-                painter->drawEllipse(opt.rect.adjusted(2,2,-2,-2));
+                painter->drawEllipse(opt.rect.adjusted(2, 2, -2, -2));
                 painter->restore();
             }
         } else {
@@ -170,7 +170,7 @@ public:
             painter->fillRect(opt.rect, backgroundColor);
             painter->save();
             QColor crossColor = qGray(backgroundColor.rgb()) > 192 ? backgroundColor.darker(106) :
-                                                                     backgroundColor.lighter(106);
+                                backgroundColor.lighter(106);
             painter->setPen(QPen(crossColor, 1.5));
             painter->drawLine(opt.rect.topLeft(), opt.rect.bottomRight());
             painter->drawLine(opt.rect.topRight(), opt.rect.bottomLeft());
@@ -180,7 +180,7 @@ public:
 };
 
 KColorCells::KColorCells(QWidget *parent, int rows, int cols)
-        : QTableWidget(parent), d(new KColorCellsPrivate(this))
+    : QTableWidget(parent), d(new KColorCellsPrivate(this))
 {
     setItemDelegate(new KColorCellsItemDelegate(this));
 
@@ -203,7 +203,6 @@ KColorCells::KColorCells(QWidget *parent, int rows, int cols)
     viewport()->setBackgroundRole(QPalette::Background);
     setBackgroundRole(QPalette::Background);
 
-
     setSelectionMode(QAbstractItemView::SingleSelection);
     setDragEnabled(false);
 }
@@ -215,10 +214,11 @@ KColorCells::~KColorCells()
 
 QColor KColorCells::color(int index) const
 {
-    QTableWidgetItem * tmpItem = item(index / columnCount(), index % columnCount());
+    QTableWidgetItem *tmpItem = item(index / columnCount(), index % columnCount());
 
-    if (tmpItem != 0)
+    if (tmpItem != 0) {
         return tmpItem->data(Qt::BackgroundRole).value<QColor>();
+    }
 
     return QColor();
 }
@@ -268,14 +268,14 @@ void KColorCells::setColor(int column, const QColor &color)
     Q_ASSERT(tableRow >= 0 && tableRow < rowCount());
     Q_ASSERT(tableColumn >= 0 && tableColumn < columnCount());
 
-    QTableWidgetItem * tableItem = item(tableRow, tableColumn);
+    QTableWidgetItem *tableItem = item(tableRow, tableColumn);
 
     if (tableItem == 0) {
         tableItem = new QTableWidgetItem();
         setItem(tableRow, tableColumn, tableItem);
     }
 
-    tableItem->setData(Qt::BackgroundRole , color);
+    tableItem->setData(Qt::BackgroundRole, color);
 }
 
 /*void KColorCells::paintCell( QPainter *painter, int row, int col )
@@ -308,7 +308,7 @@ void KColorCells::setColor(int column, const QColor &color)
  }
 }*/
 
-void KColorCells::resizeEvent(QResizeEvent*)
+void KColorCells::resizeEvent(QResizeEvent *)
 {
     // According to the Qt doc:
     //   If you need to set the width of a given column to a fixed value, call
@@ -317,20 +317,22 @@ void KColorCells::resizeEvent(QResizeEvent*)
     // Therefore we iterate over each row and column and set the header section
     // size, as the sizeHint does indeed appear to be ignored in favor of a
     // minimum size that is larger than what we want.
-    for (int index = 0 ; index < columnCount() ; index++)
+    for (int index = 0; index < columnCount(); index++) {
         horizontalHeader()->resizeSection(index, sizeHintForColumn(index));
-    for (int index = 0 ; index < rowCount() ; index++)
+    }
+    for (int index = 0; index < rowCount(); index++) {
         verticalHeader()->resizeSection(index, sizeHintForRow(index));
+    }
 }
 
 int KColorCells::sizeHintForColumn(int /*column*/) const
 {
-    return width() / columnCount() ;
+    return width() / columnCount();
 }
 
 int KColorCells::sizeHintForRow(int /*row*/) const
 {
-    return height() / rowCount() ;
+    return height() / rowCount();
 }
 
 void KColorCells::mousePressEvent(QMouseEvent *e)
@@ -341,16 +343,16 @@ void KColorCells::mousePressEvent(QMouseEvent *e)
     QTableWidget::mousePressEvent(e);
 }
 
-
 int KColorCells::positionToCell(const QPoint &pos, bool ignoreBorders) const
 {
     //TODO ignoreBorders not yet handled
     Q_UNUSED(ignoreBorders)
 
-    QTableWidgetItem* tableItem = itemAt(pos);
+    QTableWidgetItem *tableItem = itemAt(pos);
 
-    if (!tableItem)
+    if (!tableItem) {
         return -1;
+    }
 
     const int itemRow = row(tableItem);
     const int itemColumn = column(tableItem);
@@ -372,33 +374,37 @@ int KColorCells::positionToCell(const QPoint &pos, bool ignoreBorders) const
 void KColorCells::mouseMoveEvent(QMouseEvent *e)
 {
     if (this->dragEnabled() || this->acceptDrops()) {
-        if (!(e->buttons() & Qt::LeftButton)) return;
+        if (!(e->buttons() & Qt::LeftButton)) {
+            return;
+        }
 
         if (d->inMouse) {
             int delay = QApplication::startDragDistance();
             if (e->x() > d->mousePos.x() + delay || e->x() < d->mousePos.x() - delay ||
                     e->y() > d->mousePos.y() + delay || e->y() < d->mousePos.y() - delay) {
                 // Drag color object
-                QTableWidgetItem * tableItem = itemAt(d->mousePos);
+                QTableWidgetItem *tableItem = itemAt(d->mousePos);
 
                 if (tableItem) {
                     QVariant var = tableItem->data(Qt::BackgroundRole);
                     QColor tmpCol = var.value<QColor>();
-                    if (tmpCol.isValid())
+                    if (tmpCol.isValid()) {
                         KColorMimeData::createDrag(tmpCol, this)->start();
+                    }
                 }
             }
         }
-    } else
+    } else {
         QTableWidget::mouseMoveEvent(e);
+    }
 }
 
 void KColorCells::dragEnterEvent(QDragEnterEvent *event)
 {
     kDebug() << "KColorCells::dragEnterEvent() acceptDrags="
-    << this->dragEnabled()
-    << " canDecode=" << KColorMimeData::canDecode(event->mimeData())
-    << endl;
+             << this->dragEnabled()
+             << " canDecode=" << KColorMimeData::canDecode(event->mimeData())
+             << endl;
     event->setAccepted(this->dragEnabled() && KColorMimeData::canDecode(event->mimeData()));
 }
 
@@ -406,9 +412,9 @@ void KColorCells::dragEnterEvent(QDragEnterEvent *event)
 void KColorCells::dragMoveEvent(QDragMoveEvent *event)
 {
     kDebug() << "KColorCells::dragMoveEvent() acceptDrags="
-    << this->dragEnabled()
-    << " canDecode=" << KColorMimeData::canDecode(event->mimeData())
-    << endl;
+             << this->dragEnabled()
+             << " canDecode=" << KColorMimeData::canDecode(event->mimeData())
+             << endl;
     event->setAccepted(this->dragEnabled() && KColorMimeData::canDecode(event->mimeData()));
 }
 
@@ -418,10 +424,11 @@ void KColorCells::dropEvent(QDropEvent *event)
 
     kDebug() << "KColorCells::dropEvent() color.isValid=" << c.isValid();
     if (c.isValid()) {
-        QTableWidgetItem * tableItem = itemAt(event->pos());
+        QTableWidgetItem *tableItem = itemAt(event->pos());
 
-        if (tableItem)
-            tableItem->setData(Qt::BackgroundRole , c);
+        if (tableItem) {
+            tableItem->setData(Qt::BackgroundRole, c);
+        }
     }
 }
 
@@ -433,8 +440,9 @@ void KColorCells::mouseReleaseEvent(QMouseEvent *e)
 
         // If we release the mouse in another cell and we don't have
         // a drag we should ignore this event.
-        if (currentCell != cell)
+        if (currentCell != cell) {
             cell = -1;
+        }
 
         if ((cell != -1) && (d->selected != cell)) {
             d->selected = cell;
@@ -448,8 +456,9 @@ void KColorCells::mouseReleaseEvent(QMouseEvent *e)
         }
 
         d->inMouse = false;
-        if (cell != -1)
-            emit colorSelected(cell , color(cell));
+        if (cell != -1) {
+            emit colorSelected(cell, color(cell));
+        }
     }
 
     QTableWidget::mouseReleaseEvent(e);
@@ -459,10 +468,10 @@ void KColorCells::mouseDoubleClickEvent(QMouseEvent * /*e*/)
 {
     int cell = positionToCell(d->mousePos);
 
-    if (cell != -1)
-        emit colorDoubleClicked(cell , color(cell));
+    if (cell != -1) {
+        emit colorDoubleClicked(cell, color(cell));
+    }
 }
-
 
 //-----------------------------------------------------------------------------
 
@@ -499,7 +508,7 @@ void KColorPatch::setColor(const QColor &col)
     update();
 }
 
-void KColorPatch::paintEvent(QPaintEvent* pe)
+void KColorPatch::paintEvent(QPaintEvent *pe)
 {
     QFrame::paintEvent(pe);
     QPainter painter(this);
@@ -510,8 +519,9 @@ void KColorPatch::paintEvent(QPaintEvent* pe)
 void KColorPatch::mouseMoveEvent(QMouseEvent *e)
 {
     // Drag color object
-    if (!(e->buttons() & Qt::LeftButton))
+    if (!(e->buttons() & Qt::LeftButton)) {
         return;
+    }
     KColorMimeData::createDrag(d->color, this)->start();
 }
 
@@ -534,8 +544,8 @@ class KColorTable::KColorTablePrivate
 public:
     KColorTablePrivate(KColorTable *q): q(q) {}
 
-    void slotColorCellSelected(int index , const QColor&);
-    void slotColorCellDoubleClicked(int index , const QColor&);
+    void slotColorCellSelected(int index, const QColor &);
+    void slotColorCellDoubleClicked(int index, const QColor &);
     void slotColorTextSelected(const QString &colorText);
     void slotSetColors(const QString &_collectionName);
     void slotShowNamedColorReadError(void);
@@ -553,7 +563,7 @@ public:
 };
 
 KColorTable::KColorTable(QWidget *parent, int minWidth, int cols)
-        : QWidget(parent), d(new KColorTablePrivate(this))
+    : QWidget(parent), d(new KColorTablePrivate(this))
 {
     d->cells = 0;
     d->mPalette = 0;
@@ -614,8 +624,7 @@ KColorTable::name() const
     return d->combo->currentText();
 }
 
-
-static const char * const *namedColorFilePath(void)
+static const char *const *namedColorFilePath(void)
 {
     //
     // 2000-02-05 Espen Sand.
@@ -626,7 +635,7 @@ static const char * const *namedColorFilePath(void)
     // You can specify either absolute paths or relative locations.
     // Relative locations are relative to GenericDataLocation (XDG_DATA_DIRS).
     //
-    static const char * const path[] = {
+    static const char *const path[] = {
 #if HAVE_X11
 #ifdef X11_RGBFILE
         X11_RGBFILE,
@@ -642,9 +651,6 @@ static const char * const *namedColorFilePath(void)
     return path;
 }
 
-
-
-
 void
 KColorTable::readNamedColor(void)
 {
@@ -656,7 +662,7 @@ KColorTable::readNamedColor(void)
     // Code somewhat inspired by KColorCollection.
     //
 
-    const char * const *path = namedColorFilePath();
+    const char *const *path = namedColorFilePath();
     for (int i = 0; path[i]; ++i) {
         QString file;
         if (path[i][0] != '/') { // relative path
@@ -719,7 +725,6 @@ KColorTable::readNamedColor(void)
     }
 }
 
-
 void
 KColorTable::KColorTablePrivate::slotShowNamedColorReadError(void)
 {
@@ -727,7 +732,7 @@ KColorTable::KColorTablePrivate::slotShowNamedColorReadError(void)
         QString pathMsg;
         int pathCount = 0;
 
-        const char * const *path = namedColorFilePath();
+        const char *const *path = namedColorFilePath();
         for (int i = 0; path[i]; i += 2, ++pathCount) {
             if (path[i + 1]) {
                 pathMsg += QLatin1String(path[i + 1]) + ", " + QString::fromLatin1(path[i]);
@@ -742,12 +747,11 @@ KColorTable::KColorTablePrivate::slotShowNamedColorReadError(void)
                                    "file location was examined:\n%2",
                                    "Unable to read X11 RGB color strings. The following "
                                    "file locations were examined:\n%2",
-                                   pathCount, pathMsg );
+                                   pathCount, pathMsg);
 
         KMessageBox::sorry(q, finalMsg);
     }
 }
-
 
 //
 // 2000-02-12 Espen Sand
@@ -771,7 +775,6 @@ KColorTable::KColorTablePrivate::slotSetColors(const QString &_collectionName)
         slotColorCellSelected(0, QColor()); // FIXME: We need to save the current value!!
     }
 }
-
 
 void
 KColorTable::setColors(const QString &_collectionName)
@@ -801,7 +804,6 @@ KColorTable::setColors(const QString &_collectionName)
         }
     }
 
-
     //
     // 2000-02-12 Espen Sand
     // The palette mode "i18n_namedColors" does not use the KColorCollection
@@ -827,7 +829,9 @@ KColorTable::setColors(const QString &_collectionName)
             delete d->mPalette;
             d->mPalette = new KColorCollection(collectionName);
             int rows = (d->mPalette->count() + d->mCols - 1) / d->mCols;
-            if (rows < 1) rows = 1;
+            if (rows < 1) {
+                rows = 1;
+            }
             d->cells = new KColorCells(d->sv->viewport(), rows, d->mCols);
             d->cells->setShading(false);
             d->cells->setAcceptDrags(false);
@@ -848,31 +852,29 @@ KColorTable::setColors(const QString &_collectionName)
     }
 }
 
-
-
 void
-KColorTable::KColorTablePrivate::slotColorCellSelected(int index , const QColor& /*color*/)
+KColorTable::KColorTablePrivate::slotColorCellSelected(int index, const QColor & /*color*/)
 {
-    if (!mPalette || (index >= mPalette->count()))
+    if (!mPalette || (index >= mPalette->count())) {
         return;
+    }
     emit q->colorSelected(mPalette->color(index), mPalette->name(index));
 }
 
 void
-KColorTable::KColorTablePrivate::slotColorCellDoubleClicked(int index , const QColor& /*color*/)
+KColorTable::KColorTablePrivate::slotColorCellDoubleClicked(int index, const QColor & /*color*/)
 {
-    if (!mPalette || (index >= mPalette->count()))
+    if (!mPalette || (index >= mPalette->count())) {
         return;
+    }
     emit q->colorDoubleClicked(mPalette->color(index), mPalette->name(index));
 }
-
 
 void
 KColorTable::KColorTablePrivate::slotColorTextSelected(const QString &colorText)
 {
     emit q->colorSelected(m_namedColorMap[ colorText ], colorText);
 }
-
 
 void
 KColorTable::addToCustomColors(const QColor &color)
@@ -904,8 +906,9 @@ KColorTable::addToRecentColors(const QColor &color)
         recentPal->save();
     }
     delete recentPal;
-    if (recentIsSelected)
+    if (recentIsSelected) {
         setColors(i18nc("palette name", colorCollectionName[ recentColorIndex ].m_displayName));
+    }
 }
 
 class KCDPickerFilter;
@@ -981,15 +984,15 @@ public:
     KColorCollection *palette;
     KColorValueSelector *valuePal;
     KGradientSelector *alphaSelector;
-    QVBoxLayout* l_right;
-    QGridLayout* tl_layout;
+    QVBoxLayout *l_right;
+    QGridLayout *tl_layout;
     QCheckBox *cbDefaultColor;
     QColor defaultColor;
     QColor selColor;
 };
 
 KColorDialog::KColorDialog(QWidget *parent, bool modal)
-        : KDialog(parent), d(new KColorDialogPrivate(this))
+    : KDialog(parent), d(new KColorDialogPrivate(this))
 {
     setCaption(i18n("Select Color"));
     setButtons(modal ? Ok | Cancel : Close);
@@ -1013,7 +1016,7 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
     QGridLayout *tl_layout = new QGridLayout(page);
     tl_layout->setMargin(0);
     d->tl_layout = tl_layout;
-    tl_layout->addItem(new QSpacerItem(spacingHint()*2, 0), 0, 1);
+    tl_layout->addItem(new QSpacerItem(spacingHint() * 2, 0), 0, 1);
 
     //
     // the more complicated part: the left side
@@ -1102,7 +1105,6 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
     connect(d->vedit, SIGNAL(valueChanged(int)),
             SLOT(slotHSVChanged()));
 
-
     //
     // add the RGB fields
     //
@@ -1137,13 +1139,13 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
             SLOT(slotRGBChanged()));
 
     //the layout
-    QHBoxLayout* layout = new QHBoxLayout( this );
-    layout->setSpacing( 0 );
-    layout->setMargin( 0 );
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->setSpacing(0);
+    layout->setMargin(0);
 
     //the frame
     QFrame *frame = new QFrame(page);
-    frame->setLayout( layout );
+    frame->setLayout(layout);
 
     d->alphaLabel = frame;
     QWidget *spacer = new QWidget(d->alphaLabel);
@@ -1208,7 +1210,7 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
     //
     // The color picker button
     //
-    QPushButton* button = new QPushButton(page);
+    QPushButton *button = new QPushButton(page);
     button->setIcon(QIcon::fromTheme("color-picker"));
     int commonHeight = addButton->sizeHint().height();
     button->setFixedSize(commonHeight, commonHeight);
@@ -1312,7 +1314,7 @@ KColorDialog::eventFilter(QObject *obj, QEvent *ev)
 }
 
 void
-KColorDialog::setDefaultColor(const QColor& col)
+KColorDialog::setDefaultColor(const QColor &col)
 {
     if (!d->cbDefaultColor) {
         //
@@ -1365,7 +1367,6 @@ bool KColorDialog::isAlphaChannelEnabled() const
     return d->bAlphaEnabled;
 }
 
-
 void KColorDialog::KColorDialogPrivate::setChooserMode(KColorChooserMode c)
 {
     _mode = c;
@@ -1379,7 +1380,6 @@ void KColorDialog::KColorDialogPrivate::setChooserMode(KColorChooserMode c)
     hsSelector->update();
     slotHSVChanged();
 }
-
 
 KColorChooserMode KColorDialog::KColorDialogPrivate::chooserMode()
 {
@@ -1446,10 +1446,12 @@ KColorDialog::KColorDialogPrivate::slotWriteSettings()
 QColor
 KColorDialog::color() const
 {
-    if (d->cbDefaultColor && d->cbDefaultColor->isChecked())
+    if (d->cbDefaultColor && d->cbDefaultColor->isChecked()) {
         return QColor();
-    if (d->selColor.isValid())
+    }
+    if (d->selColor.isValid()) {
         d->table->addToRecentColors(d->selColor);
+    }
     return d->selColor;
 }
 
@@ -1465,8 +1467,9 @@ int KColorDialog::getColor(QColor &theColor, QWidget *parent)
 {
     KColorDialog dlg(parent, true);
     dlg.setObjectName("Color Selector");
-    if (theColor.isValid())
+    if (theColor.isValid()) {
         dlg.setColor(theColor);
+    }
     int result = dlg.exec();
 
     if (result == Accepted) {
@@ -1479,7 +1482,7 @@ int KColorDialog::getColor(QColor &theColor, QWidget *parent)
 //
 // static function to display dialog and return color
 //
-int KColorDialog::getColor(QColor &theColor, const QColor& defaultCol, QWidget *parent)
+int KColorDialog::getColor(QColor &theColor, const QColor &defaultCol, QWidget *parent)
 {
     KColorDialog dlg(parent, true);
     dlg.setObjectName("Color Selector");
@@ -1487,22 +1490,31 @@ int KColorDialog::getColor(QColor &theColor, const QColor& defaultCol, QWidget *
     dlg.setColor(theColor);
     int result = dlg.exec();
 
-    if (result == Accepted)
+    if (result == Accepted) {
         theColor = dlg.color();
+    }
 
     return result;
 }
 
 void KColorDialog::KColorDialogPrivate::slotRGBChanged(void)
 {
-    if (bRecursion) return;
+    if (bRecursion) {
+        return;
+    }
     int red = redit->value();
     int grn = gedit->value();
     int blu = bedit->value();
 
-    if (red > 255 || red < 0) return;
-    if (grn > 255 || grn < 0) return;
-    if (blu > 255 || blu < 0) return;
+    if (red > 255 || red < 0) {
+        return;
+    }
+    if (grn > 255 || grn < 0) {
+        return;
+    }
+    if (blu > 255 || blu < 0) {
+        return;
+    }
 
     QColor col;
     col.setRgb(red, grn, blu, aedit->value());
@@ -1513,10 +1525,14 @@ void KColorDialog::KColorDialogPrivate::slotRGBChanged(void)
 
 void KColorDialog::KColorDialogPrivate::slotAlphaChanged(void)
 {
-    if (bRecursion) return;
+    if (bRecursion) {
+        return;
+    }
     int alpha = aedit->value();
 
-    if (alpha > 255 || alpha < 0) return;
+    if (alpha > 255 || alpha < 0) {
+        return;
+    }
 
     QColor col = selColor;
     col.setAlpha(alpha);
@@ -1525,7 +1541,9 @@ void KColorDialog::KColorDialogPrivate::slotAlphaChanged(void)
 
 void KColorDialog::KColorDialogPrivate::slotHtmlChanged(void)
 {
-    if (bRecursion || htmlName->text().isEmpty()) return;
+    if (bRecursion || htmlName->text().isEmpty()) {
+        return;
+    }
 
     QString strColor(htmlName->text());
 
@@ -1549,14 +1567,22 @@ void KColorDialog::KColorDialogPrivate::slotHtmlChanged(void)
 
 void KColorDialog::KColorDialogPrivate::slotHSVChanged(void)
 {
-    if (bRecursion) return;
+    if (bRecursion) {
+        return;
+    }
     int hue = hedit->value();
     int sat = sedit->value();
     int val = vedit->value();
 
-    if (hue > 359 || hue < 0) return;
-    if (sat > 255 || sat < 0) return;
-    if (val > 255 || val < 0) return;
+    if (hue > 359 || hue < 0) {
+        return;
+    }
+    if (sat > 255 || sat < 0) {
+        return;
+    }
+    if (val > 255 || val < 0) {
+        return;
+    }
 
     QColor col;
     col.setHsv(hue, sat, val, aedit->value());
@@ -1606,8 +1632,8 @@ void KColorDialog::KColorDialogPrivate::slotColorSelected(const QColor &color, c
 
 void KColorDialog::KColorDialogPrivate::slotColorDoubleClicked
 (
-    const QColor  & color,
-    const QString & name
+    const QColor   &color,
+    const QString &name
 )
 {
     _setColor(color, name);
@@ -1617,12 +1643,14 @@ void KColorDialog::KColorDialogPrivate::slotColorDoubleClicked
 void KColorDialog::KColorDialogPrivate::_setColor(const QColor &color, const QString &name)
 {
     if (color.isValid()) {
-        if (cbDefaultColor && cbDefaultColor->isChecked())
+        if (cbDefaultColor && cbDefaultColor->isChecked()) {
             cbDefaultColor->setChecked(false);
+        }
         selColor = color;
     } else {
-        if (cbDefaultColor && cbDefaultColor->isChecked())
+        if (cbDefaultColor && cbDefaultColor->isChecked()) {
             cbDefaultColor->setChecked(true);
+        }
         selColor = defaultColor;
     }
 
@@ -1636,10 +1664,11 @@ void KColorDialog::KColorDialogPrivate::showColor(const QColor &color, const QSt
 {
     bRecursion = true;
 
-    if (name.isEmpty())
+    if (name.isEmpty()) {
         colorName->setText(i18n("-unnamed-"));
-    else
+    } else {
         colorName->setText(name);
+    }
 
     patch->setColor(color);
 
@@ -1685,8 +1714,6 @@ void KColorDialog::KColorDialogPrivate::showColor(const QColor &color, const QSt
     bRecursion = false;
 }
 
-
-
 void
 KColorDialog::KColorDialogPrivate::slotColorPicker()
 {
@@ -1726,8 +1753,9 @@ KColorDialog::grabColor(const QPoint &p)
     // we use the X11 API directly in this case as we are not getting back a valid
     // return from QPixmap::grabWindow in the case where the application is using
     // an argb visual
-    if( !qApp->desktop()->geometry().contains( p ))
+    if (!qApp->desktop()->geometry().contains(p)) {
         return QColor();
+    }
     Window root = RootWindow(QX11Info::display(), QX11Info::appScreen());
     XImage *ximg = XGetImage(QX11Info::display(), root, p.x(), p.y(), 1, 1, -1, ZPixmap);
     unsigned long xpixel = XGetPixel(ximg, 0, 0);
@@ -1764,7 +1792,9 @@ KColorDialog::keyPressEvent(QKeyEvent *e)
 
 void KColorDialog::KColorDialogPrivate::setRgbEdit(const QColor &col)
 {
-    if (bEditRgb) return;
+    if (bEditRgb) {
+        return;
+    }
     int r, g, b;
     col.getRgb(&r, &g, &b);
 
@@ -1775,7 +1805,9 @@ void KColorDialog::KColorDialogPrivate::setRgbEdit(const QColor &col)
 
 void KColorDialog::KColorDialogPrivate::setHtmlEdit(const QColor &col)
 {
-    if (bEditHtml) return;
+    if (bEditHtml) {
+        return;
+    }
     int r, g, b;
     col.getRgb(&r, &g, &b);
     QString num;
@@ -1784,10 +1816,11 @@ void KColorDialog::KColorDialogPrivate::setHtmlEdit(const QColor &col)
     htmlName->setText(num);
 }
 
-
 void KColorDialog::KColorDialogPrivate::setHsvEdit(const QColor &col)
 {
-    if (bEditHsv) return;
+    if (bEditHsv) {
+        return;
+    }
     int h, s, v;
     col.getHsv(&h, &s, &v);
 

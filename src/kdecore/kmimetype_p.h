@@ -24,7 +24,7 @@
 class KMimeTypePrivate
 {
 public:
-    KMimeTypePrivate(const QMimeType& mime)
+    KMimeTypePrivate(const QMimeType &mime)
         : m_qmime(mime)
     {
     }

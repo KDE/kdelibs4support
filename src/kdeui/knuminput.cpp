@@ -71,25 +71,25 @@ public:
         }
     }
 
-    static KNumInputPrivate *get(const KNumInput *i) {
+    static KNumInputPrivate *get(const KNumInput *i)
+    {
         return i->d;
     }
 
     KNumInput *q;
-    KNumInput* previousNumInput, *nextNumInput;
+    KNumInput *previousNumInput, *nextNumInput;
     int column1Width, column2Width;
 
-    QLabel*  label;
-    QSlider* slider;
+    QLabel  *label;
+    QSlider *slider;
     QSize    sliderSize, labelSize;
 
     Qt::Alignment labelAlignment;
 };
 
-
 #define K_USING_KNUMINPUT_P(_d) KNumInputPrivate *_d = KNumInputPrivate::get(this)
 
-KNumInput::KNumInput(QWidget* parent)
+KNumInput::KNumInput(QWidget *parent)
     : QWidget(parent), d(new KNumInputPrivate(this))
 {
     setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed));
@@ -100,7 +100,7 @@ KNumInput::KNumInput(QWidget* parent)
 }
 
 #ifndef KDE_NO_DEPRECATED
-KNumInput::KNumInput(QWidget* parent, KNumInput* below)
+KNumInput::KNumInput(QWidget *parent, KNumInput *below)
     : QWidget(parent), d(new KNumInputPrivate(this, below))
 {
     setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed));
@@ -131,7 +131,7 @@ bool KNumInput::showSlider() const
     return d->slider;
 }
 
-void KNumInput::setLabel(const QString & label, Qt::Alignment a)
+void KNumInput::setLabel(const QString &label, Qt::Alignment a)
 {
     if (label.isEmpty()) {
         delete d->label;
@@ -186,7 +186,7 @@ void KNumInput::layout(bool deep)
 
     w2 = d->column2Width;
 
-    KNumInput* p = d->previousNumInput;
+    KNumInput *p = d->previousNumInput;
     while (p) {
         p->doLayout();
         w1 = qMax(w1, p->d->column1Width);
@@ -231,7 +231,6 @@ void KNumInput::setSteps(int minor, int major)
         d->slider->setPageStep(major);
     }
 }
-
 
 // ----------------------------------------------------------------------------
 
@@ -280,7 +279,6 @@ void KIntSpinBox::setBase(int base)
     d->val_base = base;
 }
 
-
 int KIntSpinBox::base() const
 {
     return d->val_base;
@@ -312,13 +310,14 @@ void KIntSpinBox::setEditFocus(bool mark)
     }
 }
 
-void KIntSpinBox::setSuffix(const KLocalizedString& suffix)
+void KIntSpinBox::setSuffix(const KLocalizedString &suffix)
 {
     d->pluralSuffix = suffix;
-    if (suffix.isEmpty())
+    if (suffix.isEmpty()) {
         setSuffix(QString());
-    else
+    } else {
         d->updateSuffix(value());
+    }
 }
 
 // ----------------------------------------------------------------------------
@@ -329,18 +328,17 @@ public:
     KIntNumInput *q;
     int referencePoint;
     short blockRelative;
-    KIntSpinBox* intSpinBox;
+    KIntSpinBox *intSpinBox;
     QSize        intSpinBoxSize;
 
     KIntNumInputPrivate(KIntNumInput *q, int r)
-            : q(q),
-            referencePoint(r),
-            blockRelative(0) {}
+        : q(q),
+          referencePoint(r),
+          blockRelative(0) {}
 };
 
-
 #ifndef KDE_NO_DEPRECATED
-KIntNumInput::KIntNumInput(KNumInput* below, int val, QWidget *parent, int _base)
+KIntNumInput::KIntNumInput(KNumInput *below, int val, QWidget *parent, int _base)
     : KNumInput(parent, below)
     , d(new KIntNumInputPrivate(this, val))
 {
@@ -519,7 +517,7 @@ void KIntNumInput::setSuffix(const QString &suffix)
     layout(true);
 }
 
-void KIntNumInput::setSuffix(const KLocalizedString& suffix)
+void KIntNumInput::setSuffix(const KLocalizedString &suffix)
 {
     d->intSpinBox->setSuffix(suffix);
     layout(true);
@@ -588,7 +586,7 @@ void KIntNumInput::doLayout()
     }
 }
 
-void KIntNumInput::resizeEvent(QResizeEvent* e)
+void KIntNumInput::resizeEvent(QResizeEvent *e)
 {
     K_USING_KNUMINPUT_P(priv);
 
@@ -660,7 +658,7 @@ int KIntNumInput::value() const
     return d->intSpinBox->value();
 }
 
-void KIntNumInput::setSpecialValueText(const QString& text)
+void KIntNumInput::setSpecialValueText(const QString &text)
 {
     d->intSpinBox->setSpecialValueText(text);
     layout(true);
@@ -671,7 +669,7 @@ QString KIntNumInput::specialValueText() const
     return d->intSpinBox->specialValueText();
 }
 
-void KIntNumInput::setLabel(const QString & label, Qt::Alignment a)
+void KIntNumInput::setLabel(const QString &label, Qt::Alignment a)
 {
     K_USING_KNUMINPUT_P(priv);
 
@@ -688,11 +686,11 @@ class KDoubleNumInput::KDoubleNumInputPrivate
 {
 public:
     KDoubleNumInputPrivate(double r)
-            : spin(0),
-            referencePoint(r),
-            blockRelative(0),
-            exponentRatio(1.0) {}
-    QDoubleSpinBox * spin;
+        : spin(0),
+          referencePoint(r),
+          blockRelative(0),
+          exponentRatio(1.0) {}
+    QDoubleSpinBox *spin;
     double referencePoint;
     short blockRelative;
     QSize editSize;
@@ -737,9 +735,8 @@ QString KDoubleNumInput::specialValueText() const
     return d->specialValue;
 }
 
-
 void KDoubleNumInput::initWidget(double value, double lower, double upper,
-                           double singleStep, int precision)
+                                 double singleStep, int precision)
 {
     d->spin = new QDoubleSpinBox(this);
     d->spin->setRange(lower, upper);
@@ -775,7 +772,7 @@ double KDoubleNumInput::mapSliderToSpin(int val) const
     const double slidemax = priv->slider->maximum(); // overflow in rel denominator
     const double rel = (double(val) - slidemin) / (slidemax - slidemin);
     Q_ASSERT(d->exponentRatio > 0.0);
-    return spinmin + pow(rel, d->exponentRatio ) * (spinmax - spinmin);
+    return spinmin + pow(rel, d->exponentRatio) * (spinmax - spinmin);
 }
 
 void KDoubleNumInput::sliderMoved(int val)
@@ -793,7 +790,7 @@ void KDoubleNumInput::spinBoxChanged(double val)
     const double slidemax = priv->slider->maximum(); // overflow in rel denominator
 
     Q_ASSERT(d->exponentRatio > 0.0);
-    const double rel = pow((val - spinmin) / (spinmax - spinmin) , 1.0 / d->exponentRatio);
+    const double rel = pow((val - spinmin) / (spinmax - spinmin), 1.0 / d->exponentRatio);
 
     if (priv->slider) {
         priv->slider->blockSignals(true);
@@ -840,7 +837,7 @@ QSize KDoubleNumInput::minimumSizeHint() const
     return QSize(w, h);
 }
 
-void KDoubleNumInput::resizeEvent(QResizeEvent* e)
+void KDoubleNumInput::resizeEvent(QResizeEvent *e)
 {
     K_USING_KNUMINPUT_P(priv);
 
@@ -862,12 +859,13 @@ void KDoubleNumInput::resizeEvent(QResizeEvent* e)
                              : e->size().width() - w, d->editSize.height());
         w += priv->column2Width + spacingHint;
 
-        if (priv->slider)
+        if (priv->slider) {
             priv->slider->setGeometry(w, h, e->size().width() - w, d->editSize.height() + spacingHint);
+        }
     } else if (priv->slider) {
         priv->slider->setGeometry(w, h, e->size().width() -
-                                    (priv->column1Width + priv->column2Width + spacingHint),
-                                    d->editSize.height() + spacingHint);
+                                  (priv->column1Width + priv->column2Width + spacingHint),
+                                  d->editSize.height() + spacingHint);
         d->spin->setGeometry(w + priv->slider->width() + spacingHint, h,
                              priv->column2Width, d->editSize.height());
     } else {
@@ -918,7 +916,7 @@ void KDoubleNumInput::setRange(double lower, double upper, double singleStep,
 
     if (priv->slider) {
         // don't update the slider to avoid an endless recursion
-        QDoubleSpinBox * spin = d->spin;
+        QDoubleSpinBox *spin = d->spin;
         disconnect(spin, SIGNAL(valueChanged(double)),
                    priv->slider, SLOT(setValue(int)));
     }
@@ -937,7 +935,7 @@ void KDoubleNumInput::setSliderEnabled(bool enabled)
 {
     K_USING_KNUMINPUT_P(priv);
     if (enabled) {
-        QDoubleSpinBox * spin = d->spin;
+        QDoubleSpinBox *spin = d->spin;
         const double range = spin->maximum() - spin->minimum();
         const double steps = range * pow(10.0, spin->decimals());
         if (!priv->slider) {
@@ -970,7 +968,6 @@ void KDoubleNumInput::setSliderEnabled(bool enabled)
     }
 }
 
-
 void KDoubleNumInput::setMinimum(double min)
 {
     K_USING_KNUMINPUT_P(priv);
@@ -995,12 +992,12 @@ double KDoubleNumInput::maximum() const
 
 double KDoubleNumInput::singleStep() const
 {
-  return d->spin->singleStep();
+    return d->spin->singleStep();
 }
 
 void KDoubleNumInput::setSingleStep(double singleStep)
 {
-  d->spin->setSingleStep(singleStep);
+    d->spin->setSingleStep(singleStep);
 }
 
 double KDoubleNumInput::value() const
@@ -1057,7 +1054,7 @@ int KDoubleNumInput::decimals() const
     return d->spin->decimals();
 }
 
-void KDoubleNumInput::setSpecialValueText(const QString& text)
+void KDoubleNumInput::setSpecialValueText(const QString &text)
 {
     d->spin->setSpecialValueText(text);
 
@@ -1065,7 +1062,7 @@ void KDoubleNumInput::setSpecialValueText(const QString& text)
     updateLegacyMembers();
 }
 
-void KDoubleNumInput::setLabel(const QString & label, Qt::Alignment a)
+void KDoubleNumInput::setLabel(const QString &label, Qt::Alignment a)
 {
     K_USING_KNUMINPUT_P(priv);
 
@@ -1084,13 +1081,12 @@ double KDoubleNumInput::exponentRatio() const
 void KDoubleNumInput::setExponentRatio(double dbl)
 {
     Q_ASSERT(dbl > 0.0);
-    if(dbl > 0.0) {
+    if (dbl > 0.0) {
         d->exponentRatio = dbl;
-        spinBoxChanged( d->spin->value() ); // used to reset the value of the slider
+        spinBoxChanged(d->spin->value());   // used to reset the value of the slider
     } else {
         kError() << "ExponentRatio need to be strictly positive.";
     }
 }
-
 
 #include "moc_knuminput.cpp"

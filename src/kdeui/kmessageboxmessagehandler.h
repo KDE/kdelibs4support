@@ -52,8 +52,7 @@ public:
     virtual void message(KMessage::MessageType messageType, const QString &text, const QString &caption);
 
 private:
-    KMessageBoxMessageHandlerPrivate * const d;
+    KMessageBoxMessageHandlerPrivate *const d;
 };
 
 #endif
-// kate: space-indent on; indent-width 4; encoding utf-8; replace-tabs on;

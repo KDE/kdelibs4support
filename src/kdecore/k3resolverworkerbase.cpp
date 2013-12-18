@@ -30,7 +30,6 @@
 
 #include <QByteArray>
 
-
 #include "k3resolver.h"
 #include "k3resolver_p.h"
 
@@ -38,7 +37,7 @@ using namespace KNetwork;
 using namespace KNetwork::Internal;
 
 KResolverWorkerBase::KResolverWorkerBase()
-  : th(0L), input(0L), m_finished(0), m_reserved(0)
+    : th(0L), input(0L), m_finished(0), m_reserved(0)
 {
 }
 
@@ -48,104 +47,111 @@ KResolverWorkerBase::~KResolverWorkerBase()
 
 QString KResolverWorkerBase::nodeName() const
 {
-  if (input)
-    return input->node;
-  return QString();
+    if (input) {
+        return input->node;
+    }
+    return QString();
 }
 
 QString KResolverWorkerBase::serviceName() const
 {
-  if (input)
-    return input->service;
-  return QString();
+    if (input) {
+        return input->service;
+    }
+    return QString();
 }
 
 int KResolverWorkerBase::flags() const
 {
-  if (input)
-    return input->flags;
-  return 0;
+    if (input) {
+        return input->flags;
+    }
+    return 0;
 }
 
 int KResolverWorkerBase::familyMask() const
 {
-  if (input)
-    return input->familyMask;
-  return 0;
+    if (input) {
+        return input->familyMask;
+    }
+    return 0;
 }
 
 int KResolverWorkerBase::socketType() const
 {
-  if (input)
-    return input->socktype;
-  return 0;
+    if (input) {
+        return input->socktype;
+    }
+    return 0;
 }
 
 int KResolverWorkerBase::protocol() const
 {
-  if (input)
-    return input->protocol;
-  return 0;
+    if (input) {
+        return input->protocol;
+    }
+    return 0;
 }
 
 QByteArray KResolverWorkerBase::protocolName() const
 {
-  QByteArray res;
-  if (input)
-    res = input->protocolName;
-  return res;
+    QByteArray res;
+    if (input) {
+        res = input->protocolName;
+    }
+    return res;
 }
 
 void KResolverWorkerBase::finished()
 {
-  m_finished = true;
+    m_finished = true;
 }
 
 bool KResolverWorkerBase::postprocess()
 {
-  return true;			// no post-processing is a always successful postprocessing
+    return true;          // no post-processing is a always successful postprocessing
 }
 
-bool KResolverWorkerBase::enqueue(KResolver* res)
+bool KResolverWorkerBase::enqueue(KResolver *res)
 {
-  KResolverManager::manager()->enqueue(res, th->data);
-  return true;
+    KResolverManager::manager()->enqueue(res, th->data);
+    return true;
 }
 
-bool KResolverWorkerBase::enqueue(KResolverWorkerBase* worker)
+bool KResolverWorkerBase::enqueue(KResolverWorkerBase *worker)
 {
-  RequestData *myself = th->data;
-  RequestData *newrequest = new RequestData;
-  newrequest->obj = 0;
-  newrequest->input = input; // same input
-  newrequest->requestor = myself;
-  newrequest->nRequests = 0;
-  newrequest->worker = worker;
-  myself->nRequests++;
-  KResolverManager::manager()->dispatch(newrequest);
-  return true;
+    RequestData *myself = th->data;
+    RequestData *newrequest = new RequestData;
+    newrequest->obj = 0;
+    newrequest->input = input; // same input
+    newrequest->requestor = myself;
+    newrequest->nRequests = 0;
+    newrequest->worker = worker;
+    myself->nRequests++;
+    KResolverManager::manager()->dispatch(newrequest);
+    return true;
 }
 
 bool KResolverWorkerBase::checkResolver()
 {
-  assert(th != 0L);
-  return th->checkResolver();
+    assert(th != 0L);
+    return th->checkResolver();
 }
 
 void KResolverWorkerBase::acquireResolver()
 {
-  assert(th != 0L);
-  th->acquireResolver();
+    assert(th != 0L);
+    th->acquireResolver();
 }
 
 void KResolverWorkerBase::releaseResolver()
 {
-  assert(th != 0L);
-  th->releaseResolver();
+    assert(th != 0L);
+    th->releaseResolver();
 }
 
-void KResolverWorkerFactoryBase::registerNewWorker(KResolverWorkerFactoryBase* factory)
+void KResolverWorkerFactoryBase::registerNewWorker(KResolverWorkerFactoryBase *factory)
 {
-  KResolverManager::manager()->registerNewWorker(factory);
+    KResolverManager::manager()->registerNewWorker(factory);
 }
 

@@ -34,26 +34,25 @@
 
 #include <config-kde4support.h>
 #if ! KIO_NO_NEPOMUK
-    #define DISABLE_NEPOMUK_LEGACY
+#define DISABLE_NEPOMUK_LEGACY
 
-    #include <property.h>
-    #include <tag.h>
+#include <property.h>
+#include <tag.h>
 
-    #include <QSpacerItem>
+#include <QSpacerItem>
 
-    #include "kfilemetadataprovider_p.h"
+#include "kfilemetadataprovider_p.h"
 #endif
 
 class KFileMetaDataWidget::Private
 {
 public:
-    struct Row
-    {
-        QLabel* label;
-        QWidget* value;
+    struct Row {
+        QLabel *label;
+        QWidget *value;
     };
 
-    Private(KFileMetaDataWidget* parent);
+    Private(KFileMetaDataWidget *parent);
     ~Private();
 
     /**
@@ -73,12 +72,12 @@ public:
     void deleteRows();
 
     void slotLoadingFinished();
-    void slotLinkActivated(const QString& link);
+    void slotLinkActivated(const QString &link);
     void slotDataChangeStarted();
     void slotDataChangeFinished();
 
 #if ! KIO_NO_NEPOMUK
-    QList<QUrl> sortedKeys(const QHash<QUrl, Nepomuk::Variant>& data) const;
+    QList<QUrl> sortedKeys(const QHash<QUrl, Nepomuk::Variant> &data) const;
 
     /**
      * @return True, if at least one of the file items \a m_fileItems has
@@ -89,15 +88,15 @@ public:
 
     QList<Row> m_rows;
 #if ! KIO_NO_NEPOMUK
-    KFileMetaDataProvider* m_provider;
+    KFileMetaDataProvider *m_provider;
 #endif
-    QGridLayout* m_gridLayout;
+    QGridLayout *m_gridLayout;
 
 private:
-    KFileMetaDataWidget* const q;
+    KFileMetaDataWidget *const q;
 };
 
-KFileMetaDataWidget::Private::Private(KFileMetaDataWidget* parent) :
+KFileMetaDataWidget::Private::Private(KFileMetaDataWidget *parent) :
     m_rows(),
 #if ! KIO_NO_NEPOMUK
     m_provider(0),
@@ -123,7 +122,7 @@ KFileMetaDataWidget::Private::~Private()
 void KFileMetaDataWidget::Private::initMetaInfoSettings()
 {
     const int currentVersion = 3; // increase version, if the blacklist of disabled
-                                  // properties should be updated
+    // properties should be updated
 
     KConfig config("kmetainformationrc", KConfig::NoGlobals);
     if (config.group("Misc").readEntry("version", 0) < currentVersion) {
@@ -134,7 +133,7 @@ void KFileMetaDataWidget::Private::initMetaInfoSettings()
         config.deleteGroup("Show");
         KConfigGroup settings = config.group("Show");
 
-        static const char* const disabledProperties[] = {
+        static const char *const disabledProperties[] = {
             "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#comment",
             "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#contentSize",
             "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#depends",
@@ -179,7 +178,7 @@ void KFileMetaDataWidget::Private::initMetaInfoSettings()
 
 void KFileMetaDataWidget::Private::deleteRows()
 {
-    foreach (const Row& row, m_rows) {
+    foreach (const Row &row, m_rows) {
         delete row.label;
         delete row.value;
     }
@@ -212,7 +211,7 @@ void KFileMetaDataWidget::Private::slotLoadingFinished()
     while (it != data.end()) {
         const QString uriString = it.key().url();
         if (!settings.readEntry(uriString, true) ||
-            !Nepomuk::Types::Property(it.key()).userVisible()) {
+                !Nepomuk::Types::Property(it.key()).userVisible()) {
             it = data.erase(it);
         } else {
             ++it;
@@ -223,13 +222,13 @@ void KFileMetaDataWidget::Private::slotLoadingFinished()
     // and the value as new row in the widget
     int rowIndex = 0;
     const QList<QUrl> keys = sortedKeys(data);
-    foreach (const QUrl& key, keys) {
+    foreach (const QUrl &key, keys) {
         const Nepomuk::Variant value = data[key];
         QString itemLabel = m_provider->label(key);
         itemLabel.append(QLatin1Char(':'));
 
         // Create label
-        QLabel* label = new QLabel(itemLabel, q);
+        QLabel *label = new QLabel(itemLabel, q);
         label->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
         label->setForegroundRole(q->foregroundRole());
         label->setFont(q->font());
@@ -237,7 +236,7 @@ void KFileMetaDataWidget::Private::slotLoadingFinished()
         label->setAlignment(Qt::AlignTop | Qt::AlignRight);
 
         // Create value-widget
-        QWidget* valueWidget = m_provider->createValueWidget(key, value, q);
+        QWidget *valueWidget = m_provider->createValueWidget(key, value, q);
 
         // Add the label and value-widget to grid layout
         m_gridLayout->addWidget(label, rowIndex, 0, Qt::AlignRight);
@@ -261,7 +260,7 @@ void KFileMetaDataWidget::Private::slotLoadingFinished()
 #endif
 }
 
-void KFileMetaDataWidget::Private::slotLinkActivated(const QString& link)
+void KFileMetaDataWidget::Private::slotLinkActivated(const QString &link)
 {
     const QUrl url(link);
     if (url.isValid()) {
@@ -280,7 +279,7 @@ void KFileMetaDataWidget::Private::slotDataChangeFinished()
 }
 
 #if ! KIO_NO_NEPOMUK
-QList<QUrl> KFileMetaDataWidget::Private::sortedKeys(const QHash<QUrl, Nepomuk::Variant>& data) const
+QList<QUrl> KFileMetaDataWidget::Private::sortedKeys(const QHash<QUrl, Nepomuk::Variant> &data) const
 {
     // Create a map, where the translated label prefixed with the
     // sort priority acts as key. The data of each entry is the URI
@@ -312,7 +311,7 @@ QList<QUrl> KFileMetaDataWidget::Private::sortedKeys(const QHash<QUrl, Nepomuk::
 
 bool KFileMetaDataWidget::Private::hasNepomukUris() const
 {
-    foreach (const KFileItem& fileItem, m_provider->items()) {
+    foreach (const KFileItem &fileItem, m_provider->items()) {
         if (fileItem.nepomukUri().isValid()) {
             return true;
         }
@@ -321,7 +320,7 @@ bool KFileMetaDataWidget::Private::hasNepomukUris() const
 }
 #endif
 
-KFileMetaDataWidget::KFileMetaDataWidget(QWidget* parent) :
+KFileMetaDataWidget::KFileMetaDataWidget(QWidget *parent) :
     QWidget(parent),
     d(new Private(this))
 {
@@ -332,7 +331,7 @@ KFileMetaDataWidget::~KFileMetaDataWidget()
     delete d;
 }
 
-void KFileMetaDataWidget::setItems(const KFileItemList& items)
+void KFileMetaDataWidget::setItems(const KFileItemList &items)
 {
 #if KIO_NO_NEPOMUK
     Q_UNUSED(items)
@@ -378,8 +377,8 @@ QSize KFileMetaDataWidget::sizeHint() const
     int leftWidthMax = 0;
     int rightWidthMax = 0;
     int rightWidthAverage = 0;
-    foreach (const Private::Row& row, d->m_rows) {
-        const QWidget* valueWidget = row.value;
+    foreach (const Private::Row &row, d->m_rows) {
+        const QWidget *valueWidget = row.value;
         const int rightWidth = valueWidget->sizeHint().width();
         rightWidthAverage += rightWidth;
         if (rightWidth > rightWidthMax) {
@@ -404,8 +403,8 @@ QSize KFileMetaDataWidget::sizeHint() const
 
     // Based on the available width calculate the required height
     int height = d->m_gridLayout->margin() * 2 + d->m_gridLayout->spacing() * (d->m_rows.count() - 1);
-    foreach (const Private::Row& row, d->m_rows) {
-        const QWidget* valueWidget = row.value;
+    foreach (const Private::Row &row, d->m_rows) {
+        const QWidget *valueWidget = row.value;
         const int rowHeight = qMax(row.label->heightForWidth(leftWidthMax),
                                    valueWidget->heightForWidth(rightWidthMax));
         height += rowHeight;
@@ -417,7 +416,7 @@ QSize KFileMetaDataWidget::sizeHint() const
     return QSize(width, height);
 }
 
-bool KFileMetaDataWidget::event(QEvent* event)
+bool KFileMetaDataWidget::event(QEvent *event)
 {
     return QWidget::event(event);
 }

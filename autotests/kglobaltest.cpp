@@ -27,7 +27,7 @@
 
 static QString testMethod()
 {
-    return QLatin1String( "application/octet-stream" );
+    return QLatin1String("application/octet-stream");
 }
 
 class KGlobalTest : public QObject
@@ -43,8 +43,8 @@ private Q_SLOTS:
     {
         QTimer child(this);
         QCOMPARE(KGlobal::findDirectChild<QTimer *>(this), &child);
-        QCOMPARE(KGlobal::findDirectChild<QTimer *>(&child), (QTimer*)0);
-        QCOMPARE(KGlobal::findDirectChild<QEventLoop *>(this), (QEventLoop*)0);
+        QCOMPARE(KGlobal::findDirectChild<QTimer *>(&child), (QTimer *)0);
+        QCOMPARE(KGlobal::findDirectChild<QEventLoop *>(this), (QEventLoop *)0);
     }
 
     // The former implementation of QTest::kWaitForSignal would return
@@ -98,6 +98,6 @@ Q_SIGNALS:
     void sigFoo();
 };
 
-QTEST_MAIN( KGlobalTest )
+QTEST_MAIN(KGlobalTest)
 
 #include "kglobaltest.moc"

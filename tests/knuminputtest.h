@@ -18,13 +18,13 @@ class TopLevel : public QWidget
     Q_OBJECT
 public:
 
-    TopLevel( QWidget *parent=0 );
+    TopLevel(QWidget *parent = 0);
 protected:
-    KIntNumInput* i1, *i2, *i3, *i4, *i5, *i6, *i7, *i8;
-    KDoubleNumInput* d1, *d2, *d3, *d4, *d5, *d6, *d7;
+    KIntNumInput *i1, *i2, *i3, *i4, *i5, *i6, *i7, *i8;
+    KDoubleNumInput *d1, *d2, *d3, *d4, *d5, *d6, *d7;
 protected Q_SLOTS:
-    void slotPrint( int );
-    void slotPrint( double ); 
+    void slotPrint(int);
+    void slotPrint(double);
 };
 
 #endif

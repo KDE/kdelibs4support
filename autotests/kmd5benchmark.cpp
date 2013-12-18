@@ -24,16 +24,18 @@
 
 #include <QCryptographicHash>
 
-class KMd5Benchmark : public QObject {
+class KMd5Benchmark : public QObject
+{
     Q_OBJECT
 
 private:
-    static QByteArray makeByteArray( int size )
+    static QByteArray makeByteArray(int size)
     {
         QByteArray b;
-        b.resize( size );
-        for ( int i = 0; i < size; ++i )
-            b[i] = static_cast<char>( i % 255 );
+        b.resize(size);
+        for (int i = 0; i < size; ++i) {
+            b[i] = static_cast<char>(i % 255);
+        }
         return b;
     }
 
@@ -42,10 +44,10 @@ private:
         QTest::addColumn<QByteArray>("input");
         QTest::newRow("empty") << QByteArray();
         QTest::newRow("32") << makeByteArray(32);
-	QTest::newRow("128") << makeByteArray(128);
-	QTest::newRow("1024") << makeByteArray(1 << 10);
-	QTest::newRow("1M") << makeByteArray(1 << 20);
-	QTest::newRow("16M") << makeByteArray(1 << 24);
+        QTest::newRow("128") << makeByteArray(128);
+        QTest::newRow("1024") << makeByteArray(1 << 10);
+        QTest::newRow("1M") << makeByteArray(1 << 20);
+        QTest::newRow("16M") << makeByteArray(1 << 24);
     }
 
 private Q_SLOTS:
@@ -53,12 +55,12 @@ private Q_SLOTS:
     {
         makeData();
     }
-    
+
     void benchmarkKMd5()
     {
-        QFETCH( QByteArray, input );
+        QFETCH(QByteArray, input);
         QBENCHMARK {
-            KMD5 md5( input );
+            KMD5 md5(input);
             md5.rawDigest();
         }
     }
@@ -70,12 +72,12 @@ private Q_SLOTS:
 
     void benchmarkKMd5WithReset()
     {
-        QFETCH( QByteArray, input );
+        QFETCH(QByteArray, input);
         KMD5 md5;
         QBENCHMARK {
             md5.reset();
-            md5.update( input );
-	    md5.rawDigest();
+            md5.update(input);
+            md5.rawDigest();
         }
     }
 
@@ -86,10 +88,10 @@ private Q_SLOTS:
 
     void benchmarkQCH()
     {
-        QFETCH( QByteArray, input );
+        QFETCH(QByteArray, input);
         QBENCHMARK {
-            QCryptographicHash h( QCryptographicHash::Md5 );
-            h.addData( input );
+            QCryptographicHash h(QCryptographicHash::Md5);
+            h.addData(input);
             h.result();
         }
     }
@@ -101,17 +103,17 @@ private Q_SLOTS:
 
     void benchmarkQCHWithReset()
     {
-        QFETCH( QByteArray, input );
-        QCryptographicHash h( QCryptographicHash::Md5 );
+        QFETCH(QByteArray, input);
+        QCryptographicHash h(QCryptographicHash::Md5);
         QBENCHMARK {
             h.reset();
-            h.addData( input );
+            h.addData(input);
             h.result();
         }
     }
 
 };
 
-QTEST_KDEMAIN_CORE( KMd5Benchmark )
+QTEST_KDEMAIN_CORE(KMd5Benchmark)
 
 #include "kmd5benchmark.moc"

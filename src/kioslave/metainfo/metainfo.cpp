@@ -39,8 +39,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
 
     //KApplication app(argc, argv, "kio_metainfo", false, true);
 
-    if (argc != 4)
-    {
+    if (argc != 4) {
         qCritical() << "Usage: kio_metainfo protocol domain-socket1 domain-socket2" << endl;
         exit(-1);
     }
@@ -74,7 +73,7 @@ void MetaInfoProtocol::get(const QUrl &url)
     finished();
 }
 
-void MetaInfoProtocol::put(const QUrl& url, int, KIO::JobFlags)
+void MetaInfoProtocol::put(const QUrl &url, int, KIO::JobFlags)
 {
     QString mimeType = metaData("mimeType");
     KFileMetaInfo info;
@@ -85,12 +84,9 @@ void MetaInfoProtocol::put(const QUrl& url, int, KIO::JobFlags)
 
     stream >> info;
 
-    if (info.isValid())
-    {
+    if (info.isValid()) {
         info.applyChanges();
-    }
-    else
-    {
+    } else {
         error(ERR_NO_CONTENT, i18n("No metainfo for %1", url.path()));
         return;
     }

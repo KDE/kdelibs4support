@@ -42,7 +42,7 @@ Q_GLOBAL_STATIC(KLibLoaderPrivate, kLibLoaderPrivate)
 
 #define KLIBLOADER_PRIVATE KLibLoaderPrivate *const d = kLibLoaderPrivate
 
-KLibLoader* KLibLoader::self()
+KLibLoader *KLibLoader::self()
 {
     return &kLibLoaderPrivate()->instance;
 }
@@ -56,26 +56,27 @@ KLibLoader::~KLibLoader()
 {
 }
 
-extern QString makeLibName( const QString &libname );
+extern QString makeLibName(const QString &libname);
 
 extern KDE4SUPPORT_DEPRECATED_EXPORT QString findLibrary(const QString &name);
 
 #ifdef Q_OS_WIN
 // removes "lib" prefix, if present
-QString fixLibPrefix(const QString& libname)
+QString fixLibPrefix(const QString &libname)
 {
-    int pos = libname.lastIndexOf( QLatin1Char('/') );
-    if ( pos >= 0 )
-    {
-        QString file = libname.mid( pos + 1 );
-        QString path = libname.left( pos );
-        if( !file.startsWith( QLatin1String("lib") ) )
+    int pos = libname.lastIndexOf(QLatin1Char('/'));
+    if (pos >= 0) {
+        QString file = libname.mid(pos + 1);
+        QString path = libname.left(pos);
+        if (!file.startsWith(QLatin1String("lib"))) {
             return libname;
-        return path + QLatin1Char('/') + file.mid( 3 );
+        }
+        return path + QLatin1Char('/') + file.mid(3);
     }
-    if( !libname.startsWith( QLatin1String("lib") ) )
+    if (!libname.startsWith(QLatin1String("lib"))) {
         return libname;
-    return libname.mid( 3 );
+    }
+    return libname.mid(3);
 }
 #endif
 
@@ -86,16 +87,17 @@ QString KLibLoader::findLibrary(const QString &_name, const KComponentData &cDat
     return ::findLibrary(_name);
 }
 
-KLibrary* KLibLoader::library( const QString &_name, QLibrary::LoadHints hint )
+KLibrary *KLibLoader::library(const QString &_name, QLibrary::LoadHints hint)
 {
-    if (_name.isEmpty())
+    if (_name.isEmpty()) {
         return 0;
+    }
 
     KLibrary *lib = new KLibrary(_name);
 
     // Klibrary search magic did work?
     if (lib->fileName().isEmpty()) {
-        kLibLoaderPrivate()->errorString = i18n("Library \"%1\" not found",_name);
+        kLibLoaderPrivate()->errorString = i18n("Library \"%1\" not found", _name);
         delete lib;
         return 0;
     }
@@ -120,41 +122,41 @@ QString KLibLoader::lastErrorMessage() const
     return kLibLoaderPrivate()->errorString;
 }
 
-void KLibLoader::unloadLibrary( const QString &)
+void KLibLoader::unloadLibrary(const QString &)
 {
 }
 
-KPluginFactory* KLibLoader::factory( const QString &_name, QLibrary::LoadHints hint )
+KPluginFactory *KLibLoader::factory(const QString &_name, QLibrary::LoadHints hint)
 {
-    KLibrary* lib = library( _name, hint);
-    if ( !lib )
+    KLibrary *lib = library(_name, hint);
+    if (!lib) {
         return 0;
+    }
 
-    KPluginFactory* fac = lib->factory();
-    if ( !fac ) {
-        kLibLoaderPrivate()->errorString = errorString( ErrNoFactory );
+    KPluginFactory *fac = lib->factory();
+    if (!fac) {
+        kLibLoaderPrivate()->errorString = errorString(ErrNoFactory);
         return 0;
     }
 
     return fac;
 }
 
-QString KLibLoader::errorString( int componentLoadingError )
+QString KLibLoader::errorString(int componentLoadingError)
 {
-    switch ( componentLoadingError ) {
+    switch (componentLoadingError) {
     case ErrNoServiceFound:
-        return i18n( "No service matching the requirements was found." );
+        return i18n("No service matching the requirements was found.");
     case ErrServiceProvidesNoLibrary:
-        return i18n( "The service provides no library, the Library key is missing in the .desktop file." );
+        return i18n("The service provides no library, the Library key is missing in the .desktop file.");
     case ErrNoLibrary:
         return kLibLoaderPrivate()->instance.lastErrorMessage();
     case ErrNoFactory:
-        return i18n( "The library does not export a factory for creating components." );
+        return i18n("The library does not export a factory for creating components.");
     case ErrNoComponent:
-        return i18n( "The factory does not support creating components of the specified type." );
+        return i18n("The factory does not support creating components of the specified type.");
     default:
-        return i18n( "KLibLoader: Unknown error" );
+        return i18n("KLibLoader: Unknown error");
     }
 }
 
-// vim: sw=4 sts=4 et

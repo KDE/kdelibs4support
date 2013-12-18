@@ -58,62 +58,58 @@ KLockFile::~KLockFile()
 int
 KLockFile::staleTime() const
 {
-  return d->staleTime;
+    return d->staleTime;
 }
-
 
 void
 KLockFile::setStaleTime(int _staleTime)
 {
-  d->staleTime = _staleTime;
+    d->staleTime = _staleTime;
 }
 
 KLockFile::LockResult
 KLockFile::lock(LockFlags options)
 {
-    if (d->isLocked)
+    if (d->isLocked) {
         return LockOK;
+    }
 
     LockResult result;
 
     d->h = CreateFileW(
-                (WCHAR *)d->file.utf16(),
-                GENERIC_READ | GENERIC_WRITE,
-                0,
-                0,
-                CREATE_ALWAYS,
-                FILE_ATTRIBUTE_NORMAL,
-                0
+               (WCHAR *)d->file.utf16(),
+               GENERIC_READ | GENERIC_WRITE,
+               0,
+               0,
+               CREATE_ALWAYS,
+               FILE_ATTRIBUTE_NORMAL,
+               0
            );
-    if (!d->h)
+    if (!d->h) {
         result = LockError;
+    }
 
-    else if (GetLastError() == NO_ERROR)
-	{
+    else if (GetLastError() == NO_ERROR) {
 //        qDebug() << "'" << d->file << "' locked";
         result = LockOK;
-    }
-    else if (GetLastError() == ERROR_ALREADY_EXISTS)
-	{
+    } else if (GetLastError() == ERROR_ALREADY_EXISTS) {
         // handle stale lock file
         //qDebug() << "stale lock file '" << d->file << "' found, reused file";
         // we reuse this file
         result = LockOK;
-    }
-    else if (GetLastError() == ERROR_SHARING_VIOLATION)
-	{
+    } else if (GetLastError() == ERROR_SHARING_VIOLATION) {
         CloseHandle(d->h);
         d->h = 0;
         //qDebug() << "could not lock file '" << d->file << "' it is locked by another process";
         result = LockFail;
-    }
-    else {
+    } else {
         //qDebug() << "could not lock '" << d->file << "' error= " << GetLastError();
         result = LockError;
     }
 
-    if (result == LockOK)
+    if (result == LockOK) {
         d->isLocked = true;
+    }
     return result;
 }
 
@@ -126,18 +122,17 @@ KLockFile::isLocked() const
 void
 KLockFile::unlock()
 {
-    if (d->isLocked)
-    {
-         //qDebug() << "lock removed for file '" << d->file << "'";
-         CloseHandle(d->h);
-         DeleteFileW((WCHAR *)d->file.utf16());
-         d->h = 0;
-         d->isLocked = false;
+    if (d->isLocked) {
+        //qDebug() << "lock removed for file '" << d->file << "'";
+        CloseHandle(d->h);
+        DeleteFileW((WCHAR *)d->file.utf16());
+        d->h = 0;
+        d->isLocked = false;
     }
 }
 
 bool
 KLockFile::getLockInfo(int &pid, QString &hostname, QString &appname)
 {
-  return false;
+    return false;
 }

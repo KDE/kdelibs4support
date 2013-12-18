@@ -34,19 +34,23 @@ class TestApp : public KUniqueApplication
 public:
     TestApp() : KUniqueApplication("TestApp"), m_callCount(0) { }
     virtual int newInstance();
-    int callCount() const { return m_callCount; }
+    int callCount() const
+    {
+        return m_callCount;
+    }
 
 private Q_SLOTS:
-    void executeNewChild() {
+    void executeNewChild()
+    {
         // Duplicated from kglobalsettingstest.cpp - make a shared helper method?
-        QProcess* proc = new QProcess(this);
+        QProcess *proc = new QProcess(this);
         QString appName = "kuniqueapptest";
 #ifdef Q_OS_WIN
         appName = appName + ".exe";
 #else
-        if (QFile::exists(appName+".shell"))
-            appName = "./" + appName+".shell";
-        else {
+        if (QFile::exists(appName + ".shell")) {
+            appName = "./" + appName + ".shell";
+        } else {
             Q_ASSERT(QFile::exists(appName));
             appName = "./" + appName;
         }
@@ -57,14 +61,12 @@ private:
     int m_callCount;
 };
 
-
 int TestApp::newInstance()
 {
     ++m_callCount;
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     kDebug() << "NewInstance";
-    for ( int i = 0; i < args->count(); i++ )
-    {
+    for (int i = 0; i < args->count(); i++) {
         kDebug() << "argument " << i << " : " << args->arg(i);
     }
 
@@ -82,11 +84,10 @@ int main(int argc, char *argv[])
 
     K4AboutData about("kuniqueapptest", 0, ki18n("kuniqueapptest"), "version");
     KCmdLineArgs::init(argc, argv, &about);
-    KCmdLineArgs::addCmdLineOptions( options );
+    KCmdLineArgs::addCmdLineOptions(options);
     KUniqueApplication::addCmdLineOptions();
 
-    if (!TestApp::start())
-    {
+    if (!TestApp::start()) {
         return 1;
     }
     TestApp a;
@@ -97,7 +98,7 @@ int main(int argc, char *argv[])
     //printf("Sleeping.\n");
     //sleep(200);
 
-    QTimer::singleShot( 400, &a, SLOT(executeNewChild()) );
+    QTimer::singleShot(400, &a, SLOT(executeNewChild()));
 
     printf("Running.\n");
     kapp->exec();

@@ -33,15 +33,16 @@ class KDeviceListModel::Private
 {
 public:
     Private(KDeviceListModel *self) : q(self), rootItem(new KDeviceListItem()) {}
-    ~Private() { delete rootItem; }
-
+    ~Private()
+    {
+        delete rootItem;
+    }
 
     KDeviceListModel *q;
 
     KDeviceListItem *rootItem;
-    QMap<QString, KDeviceListItem*> deviceItems;
+    QMap<QString, KDeviceListItem *> deviceItems;
     Solid::Predicate predicate;
-
 
     void initialize(const Solid::Predicate &p);
     QModelIndex indexForItem(KDeviceListItem *item) const;
@@ -83,15 +84,16 @@ void KDeviceListModel::Private::initialize(const Solid::Predicate &p)
     predicate = p;
 
     // Delay load of hardware list when the event loop start
-    QTimer::singleShot( 0, q, SLOT(_k_initDeviceList()) );
+    QTimer::singleShot(0, q, SLOT(_k_initDeviceList()));
 }
 
 QVariant KDeviceListModel::data(const QModelIndex &index, int role) const
 {
-    if( !index.isValid() )
+    if (!index.isValid()) {
         return QVariant();
+    }
 
-    KDeviceListItem *deviceItem = static_cast<KDeviceListItem*>(index.internalPointer());
+    KDeviceListItem *deviceItem = static_cast<KDeviceListItem *>(index.internalPointer());
     Solid::Device device = deviceItem->device();
 
     QVariant returnData;
@@ -110,8 +112,7 @@ QVariant KDeviceListModel::headerData(int section, Qt::Orientation orientation, 
 {
     Q_UNUSED(section)
 
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
-    {
+    if (orientation == Qt::Horizontal && role == Qt::DisplayRole) {
         return i18n("Device name");
     }
 
@@ -120,12 +121,13 @@ QVariant KDeviceListModel::headerData(int section, Qt::Orientation orientation, 
 
 QModelIndex KDeviceListModel::index(int row, int column, const QModelIndex &parent) const
 {
-    if (row<0 || column!=0)
+    if (row < 0 || column != 0) {
         return QModelIndex();
+    }
 
     KDeviceListItem *parentItem;
     if (parent.isValid()) {
-        parentItem = static_cast<KDeviceListItem*>(parent.internalPointer());
+        parentItem = static_cast<KDeviceListItem *>(parent.internalPointer());
     } else {
         parentItem = d->rootItem;
     }
@@ -146,24 +148,27 @@ QModelIndex KDeviceListModel::rootIndex() const
 
 QModelIndex KDeviceListModel::parent(const QModelIndex &child) const
 {
-    if (!child.isValid())
+    if (!child.isValid()) {
         return QModelIndex();
+    }
 
-    KDeviceListItem *childItem = static_cast<KDeviceListItem*>(child.internalPointer());
+    KDeviceListItem *childItem = static_cast<KDeviceListItem *>(child.internalPointer());
     KDeviceListItem *parentItem = childItem->parent();
 
-    if (!parentItem)
+    if (!parentItem) {
         return QModelIndex();
-    else
+    } else {
         return d->indexForItem(parentItem);
+    }
 }
 
 int KDeviceListModel::rowCount(const QModelIndex &parent) const
 {
-    if( !parent.isValid() )
+    if (!parent.isValid()) {
         return d->rootItem->childCount();
+    }
 
-    KDeviceListItem *item = static_cast<KDeviceListItem*>(parent.internalPointer());
+    KDeviceListItem *item = static_cast<KDeviceListItem *>(parent.internalPointer());
 
     return item->childCount();
 }
@@ -175,9 +180,9 @@ int KDeviceListModel::columnCount(const QModelIndex &parent) const
     return 1;
 }
 
-Solid::Device KDeviceListModel::deviceForIndex(const QModelIndex& index) const
+Solid::Device KDeviceListModel::deviceForIndex(const QModelIndex &index) const
 {
-    KDeviceListItem *deviceItem = static_cast<KDeviceListItem*>(index.internalPointer());
+    KDeviceListItem *deviceItem = static_cast<KDeviceListItem *>(index.internalPointer());
     return deviceItem->device();
 }
 
@@ -192,12 +197,11 @@ void KDeviceListModel::Private::_k_initDeviceList()
 
     // Use allDevices() from the manager if the predicate is not valid
     // otherwise the returned list is empty
-    const QList<Solid::Device> &deviceList = predicate.isValid()?
-                                             Solid::Device::listFromQuery(predicate)
-                                           : Solid::Device::allDevices();
+    const QList<Solid::Device> &deviceList = predicate.isValid() ?
+            Solid::Device::listFromQuery(predicate)
+            : Solid::Device::allDevices();
 
-    foreach(const Solid::Device &device, deviceList)
-    {
+    foreach (const Solid::Device &device, deviceList) {
         addDevice(device);
     }
 
@@ -207,12 +211,14 @@ void KDeviceListModel::Private::_k_initDeviceList()
 void KDeviceListModel::Private::addDevice(const Solid::Device &device)
 {
     // Don't insert invalid devices
-    if (!device.isValid()) return;
+    if (!device.isValid()) {
+        return;
+    }
 
     // Don't insert devices that doesn't match the predicate set
     // (except for the root)
     if (!device.parentUdi().isEmpty()
-        && predicate.isValid() && !predicate.matches(device)) {
+            && predicate.isValid() && !predicate.matches(device)) {
         return;
     }
 
@@ -227,13 +233,15 @@ void KDeviceListModel::Private::addDevice(const Solid::Device &device)
 
     KDeviceListItem *parent = rootItem;
 
-    if (!deviceItems.contains(device.parentUdi()) ) // The parent was not present, try to insert it in the model
-        addDevice( Solid::Device(device.parentUdi()) );
+    if (!deviceItems.contains(device.parentUdi())) { // The parent was not present, try to insert it in the model
+        addDevice(Solid::Device(device.parentUdi()));
+    }
 
-    if (deviceItems.contains(device.parentUdi())) // Update the parent if the device is now present
+    if (deviceItems.contains(device.parentUdi())) { // Update the parent if the device is now present
         parent = deviceItems[device.parentUdi()];
+    }
 
-    if (item->parent()!=parent) { // If it's already our parent no need to signal the new row
+    if (item->parent() != parent) { // If it's already our parent no need to signal the new row
         q->beginInsertRows(indexForItem(parent), parent->childCount(), parent->childCount());
         item->setParent(parent);
         q->endInsertRows();
@@ -242,14 +250,16 @@ void KDeviceListModel::Private::addDevice(const Solid::Device &device)
 
 void KDeviceListModel::Private::removeBranch(const QString &udi)
 {
-    if (!deviceItems.contains(udi)) return;
+    if (!deviceItems.contains(udi)) {
+        return;
+    }
 
     KDeviceListItem *item = deviceItems[udi];
     KDeviceListItem *parent = item->parent();
 
-    QList<KDeviceListItem*> children = item->children();
+    QList<KDeviceListItem *> children = item->children();
 
-    foreach(KDeviceListItem *child, children) {
+    foreach (KDeviceListItem *child, children) {
         removeBranch(child->device().udi());
     }
 
@@ -276,7 +286,7 @@ void KDeviceListModel::Private::_k_deviceRemoved(const QString &udi)
 
 QModelIndex KDeviceListModel::Private::indexForItem(KDeviceListItem *item) const
 {
-    if (item==rootItem) {
+    if (item == rootItem) {
         return QModelIndex();
     } else {
         return q->createIndex(item->row(), 0, item);

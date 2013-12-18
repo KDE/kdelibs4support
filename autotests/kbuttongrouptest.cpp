@@ -31,16 +31,16 @@
 #include "kbuttongrouptest.h"
 #include "kbuttongroup.h"
 
-KButtonGroup* kbuttongroup;
-QList<QRadioButton*> buttons;
+KButtonGroup *kbuttongroup;
+QList<QRadioButton *> buttons;
 
 void KButtonGroupTest::initTestCase()
 {
     kbuttongroup = new KButtonGroup();
-    QVBoxLayout* lay2 = new QVBoxLayout(kbuttongroup);
+    QVBoxLayout *lay2 = new QVBoxLayout(kbuttongroup);
 
     for (int i = 0; i < 8; ++i) {
-        QRadioButton* r = new QRadioButton(kbuttongroup);
+        QRadioButton *r = new QRadioButton(kbuttongroup);
         r->setText(QString("radio%1").arg(i));
         lay2->addWidget(r);
         buttons << r;
@@ -53,12 +53,12 @@ void KButtonGroupTest::directSelectionTestCase()
 {
     // test where setSelected is called before the
     // ensurePolished() is called.
-    KButtonGroup* kbuttongroup2 = new KButtonGroup();
+    KButtonGroup *kbuttongroup2 = new KButtonGroup();
     kbuttongroup2->setSelected(3);
 
-    QVBoxLayout* lay2 = new QVBoxLayout(kbuttongroup2);
+    QVBoxLayout *lay2 = new QVBoxLayout(kbuttongroup2);
     for (int i = 0; i < 8; ++i) {
-        QRadioButton* r = new QRadioButton(kbuttongroup2);
+        QRadioButton *r = new QRadioButton(kbuttongroup2);
         r->setText(QString("radio%1").arg(i));
         lay2->addWidget(r);
         buttons << r;
@@ -132,11 +132,12 @@ void KButtonGroupTest::testManualSelection()
     QCOMPARE(kbuttongroup->selected(), 2);
 }
 
-void KButtonGroupTest::testSignals() {
+void KButtonGroupTest::testSignals()
+{
     QSignalSpy spyClicked(kbuttongroup, SIGNAL(clicked(int)));
     QSignalSpy spyPressed(kbuttongroup, SIGNAL(pressed(int)));
     QSignalSpy spyReleased(kbuttongroup, SIGNAL(released(int)));
-    QSignalSpy spyChanged( kbuttongroup, SIGNAL(changed(int)));
+    QSignalSpy spyChanged(kbuttongroup, SIGNAL(changed(int)));
 
     QTest::mouseClick(buttons[2], Qt::LeftButton, 0, QPoint(), 10);
     QCOMPARE(spyClicked.count(), 1);

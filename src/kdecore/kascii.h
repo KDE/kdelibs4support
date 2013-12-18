@@ -29,7 +29,7 @@
  * This is fixed in Qt4/Qt5.
  * @deprecated use qstricmp
  */
-KDE4SUPPORT_DEPRECATED_EXPORT int kasciistricmp( const char *str1, const char *str2 );
+KDE4SUPPORT_DEPRECATED_EXPORT int kasciistricmp(const char *str1, const char *str2);
 
 /**
   Locale-independent function to convert ASCII strings to lower case ASCII
@@ -39,7 +39,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT int kasciistricmp( const char *str1, const char *s
   @return     pointer to the converted string (same as @a str)
   @deprecated use QChar::toLower or QByteArray::toLower
 */
-KDE4SUPPORT_DEPRECATED_EXPORT char * kAsciiToLower( char *str );
+KDE4SUPPORT_DEPRECATED_EXPORT char *kAsciiToLower(char *str);
 
 /**
   Locale-independent function to convert ASCII strings to upper case ASCII
@@ -49,6 +49,6 @@ KDE4SUPPORT_DEPRECATED_EXPORT char * kAsciiToLower( char *str );
   @return     pointer to the converted string (same as @a str)
   @deprecated use QChar::toUpper or QByteArray::toUpper
 */
-KDE4SUPPORT_DEPRECATED_EXPORT char * kAsciiToUpper( char *str );
+KDE4SUPPORT_DEPRECATED_EXPORT char *kAsciiToUpper(char *str);
 
 #endif

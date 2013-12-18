@@ -25,7 +25,8 @@ class QPainter;
 class QRect;
 class QBrush;
 
-namespace KDEPrivate {
+namespace KDEPrivate
+{
 
 //  fill a rectangle with a brush over chessboard pattern
 void fillOpaqueRect(QPainter *painter, const QRect &rect, const QBrush &brush);

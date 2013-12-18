@@ -76,64 +76,130 @@ public:
      * Creates a new pointer.
      * @param p the pointer
      */
-    inline explicit KSharedPtr( T* p )
-        : d(p) { if(d) d->ref.ref(); }
+    inline explicit KSharedPtr(T *p)
+        : d(p)
+    {
+        if (d) {
+            d->ref.ref();
+        }
+    }
 
     /**
      * Copies a pointer.
      * @param o the pointer to copy
      */
-    inline KSharedPtr( const KSharedPtr& o )
-        : d(o.d) { if(d) d->ref.ref(); }
+    inline KSharedPtr(const KSharedPtr &o)
+        : d(o.d)
+    {
+        if (d) {
+            d->ref.ref();
+        }
+    }
 
     /**
      * Unreferences the object that this pointer points to. If it was
      * the last reference, the object will be deleted.
      */
-    inline ~KSharedPtr() { if (d && !d->ref.deref()) delete d; }
+    inline ~KSharedPtr()
+    {
+        if (d && !d->ref.deref()) {
+            delete d;
+        }
+    }
 
-    inline KSharedPtr<T>& operator= ( const KSharedPtr& o ) { attach(o.d); return *this; }
-    inline bool operator== ( const KSharedPtr& o ) const { return ( d == o.d ); }
-    inline bool operator!= ( const KSharedPtr& o ) const { return ( d != o.d ); }
-    inline bool operator< ( const KSharedPtr& o ) const { return ( d < o.d ); }
+    inline KSharedPtr<T> &operator= (const KSharedPtr &o)
+    {
+        attach(o.d);
+        return *this;
+    }
+    inline bool operator== (const KSharedPtr &o) const
+    {
+        return (d == o.d);
+    }
+    inline bool operator!= (const KSharedPtr &o) const
+    {
+        return (d != o.d);
+    }
+    inline bool operator< (const KSharedPtr &o) const
+    {
+        return (d < o.d);
+    }
 
-    inline KSharedPtr<T>& operator= ( T* p ) { attach(p); return *this; }
-    inline bool operator== ( const T* p ) const { return ( d == p ); }
-    inline bool operator!= ( const T* p ) const { return ( d != p ); }
+    inline KSharedPtr<T> &operator= (T *p)
+    {
+        attach(p);
+        return *this;
+    }
+    inline bool operator== (const T *p) const
+    {
+        return (d == p);
+    }
+    inline bool operator!= (const T *p) const
+    {
+        return (d != p);
+    }
 
     /**
      * Test if the shared pointer is NOT null.
      * @return true if the shared pointer is NOT null, false otherwise.
      * @see isNull
      */
-    inline operator bool() const { return ( d != 0 ); }
+    inline operator bool() const
+    {
+        return (d != 0);
+    }
 
     /**
      * @return the pointer
      */
-    inline T* data() { return d; }
+    inline T *data()
+    {
+        return d;
+    }
 
     /**
      * @return the pointer
      */
-    inline const T* data() const { return d; }
+    inline const T *data() const
+    {
+        return d;
+    }
 
     /**
      * @return a const pointer to the shared object.
      */
-    inline const T* constData() const { return d; }
+    inline const T *constData() const
+    {
+        return d;
+    }
 
-    inline const T& operator*() const { Q_ASSERT(d); return *d; }
-    inline T& operator*() { Q_ASSERT(d); return *d; }
-    inline const T* operator->() const { Q_ASSERT(d); return d; }
-    inline T* operator->() { Q_ASSERT(d); return d; }
+    inline const T &operator*() const
+    {
+        Q_ASSERT(d);
+        return *d;
+    }
+    inline T &operator*()
+    {
+        Q_ASSERT(d);
+        return *d;
+    }
+    inline const T *operator->() const
+    {
+        Q_ASSERT(d);
+        return d;
+    }
+    inline T *operator->()
+    {
+        Q_ASSERT(d);
+        return d;
+    }
 
     /**
      * Attach the given pointer to the current KSharedPtr.
      * If the previous shared pointer is not owned by any KSharedPtr,
      * it is deleted.
      */
-    void attach(T* p);
+    void attach(T *p);
 
     /**
      * Clear the pointer, i.e. make it a null pointer.
@@ -144,23 +210,32 @@ public:
      * Returns the number of references.
      * @return the number of references
      */
-    inline int count() const { return d ?
-        d->ref.load()
-        : 0; } // for debugging purposes
+    inline int count() const
+    {
+        return d ?
+               d->ref.load()
+               : 0;
+    } // for debugging purposes
 
     /**
      * Test if the shared pointer is null.
      * @return true if the pointer is null, false otherwise.
      * @see opertor (bool)
      */
-    inline bool isNull() const { return (d == 0); }
+    inline bool isNull() const
+    {
+        return (d == 0);
+    }
 
     /**
      * @return Whether this is the only shared pointer pointing to
      * to the pointee, or whether it's shared among multiple
      * shared pointers.
      */
-    inline bool isUnique() const { return count() == 1; }
+    inline bool isUnique() const
+    {
+        return count() == 1;
+    }
 
     template <class U> friend class KSharedPtr;
 
@@ -175,8 +250,9 @@ public:
      * </code>
      */
     template <class U>
-    static KSharedPtr<T> staticCast( const KSharedPtr<U>& o ) {
-        return KSharedPtr<T>( static_cast<T *>( o.d ) );
+    static KSharedPtr<T> staticCast(const KSharedPtr<U> &o)
+    {
+        return KSharedPtr<T>(static_cast<T *>(o.d));
     }
     /**
      * Convert KSharedPtr<U> to KSharedPtr<T>, using a dynamic_cast.
@@ -190,33 +266,37 @@ public:
      * Since a dynamic_cast is used, if U derives from T, and tPtr isn't an instance of U, uPtr will be 0.
      */
     template <class U>
-    static KSharedPtr<T> dynamicCast( const KSharedPtr<U>& o ) {
-        return KSharedPtr<T>( dynamic_cast<T *>( o.d ) );
+    static KSharedPtr<T> dynamicCast(const KSharedPtr<U> &o)
+    {
+        return KSharedPtr<T>(dynamic_cast<T *>(o.d));
     }
 
 protected:
-    T* d;
+    T *d;
 };
 
 template <class T>
-Q_INLINE_TEMPLATE bool operator== (const T* p, const KSharedPtr<T>& o)
+Q_INLINE_TEMPLATE bool operator== (const T *p, const KSharedPtr<T> &o)
 {
-    return ( o == p );
+    return (o == p);
 }
 
 template <class T>
-Q_INLINE_TEMPLATE bool operator!= (const T* p, const KSharedPtr<T>& o)
+Q_INLINE_TEMPLATE bool operator!= (const T *p, const KSharedPtr<T> &o)
 {
-    return ( o != p );
+    return (o != p);
 }
 
 template <class T>
-Q_INLINE_TEMPLATE void KSharedPtr<T>::attach(T* p)
+Q_INLINE_TEMPLATE void KSharedPtr<T>::attach(T *p)
 {
     if (d != p) {
-        if (p) p->ref.ref();
-        if (d && !d->ref.deref())
+        if (p) {
+            p->ref.ref();
+        }
+        if (d && !d->ref.deref()) {
             delete d;
+        }
         d = p;
     }
 }
@@ -224,7 +304,7 @@ Q_INLINE_TEMPLATE void KSharedPtr<T>::attach(T* p)
 template <class T>
 Q_INLINE_TEMPLATE void KSharedPtr<T>::clear()
 {
-    attach(static_cast<T*>(0));
+    attach(static_cast<T *>(0));
 }
 
 #endif

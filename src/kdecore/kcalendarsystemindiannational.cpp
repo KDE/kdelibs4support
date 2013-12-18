@@ -51,7 +51,7 @@ public:
 // Shared d pointer base class definitions
 
 KCalendarSystemIndianNationalPrivate::KCalendarSystemIndianNationalPrivate(KCalendarSystemIndianNational *q)
-                                    : KCalendarSystemPrivate(q)
+    : KCalendarSystemPrivate(q)
 {
 }
 
@@ -372,17 +372,16 @@ QString KCalendarSystemIndianNationalPrivate::weekDayName(int weekDay, KLocale::
     }
 }
 
-
 KCalendarSystemIndianNational::KCalendarSystemIndianNational(const KSharedConfig::Ptr config, const KLocale *locale)
-                             : KCalendarSystem(*new KCalendarSystemIndianNationalPrivate(this), config, locale)
+    : KCalendarSystem(*new KCalendarSystemIndianNationalPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemIndianNational::KCalendarSystemIndianNational(KCalendarSystemIndianNationalPrivate &dd,
-                                                             const KSharedConfig::Ptr config,
-                                                             const KLocale *locale)
-                             : KCalendarSystem(dd, config, locale)
+        const KSharedConfig::Ptr config,
+        const KLocale *locale)
+    : KCalendarSystem(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

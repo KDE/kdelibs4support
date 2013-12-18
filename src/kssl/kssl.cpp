@@ -48,45 +48,48 @@
 
 #define sk_dup d->kossl->sk_dup
 
-class KSSLPrivate {
+class KSSLPrivate
+{
 public:
-	KSSLPrivate() {
-		kossl = KOpenSSLProxy::self();
-	}
+    KSSLPrivate()
+    {
+        kossl = KOpenSSLProxy::self();
+    }
 
-	~KSSLPrivate() {}
+    ~KSSLPrivate() {}
 
 #if KSSL_HAVE_SSL
-	SSL *m_ssl;
-	SSL_CTX *m_ctx;
-	SSL_METHOD *m_meth;
+    SSL *m_ssl;
+    SSL_CTX *m_ctx;
+    SSL_METHOD *m_meth;
 #endif
-	KOSSL *kossl;
+    KOSSL *kossl;
 };
 
-
-KSSL::KSSL(bool init) {
-	d = new KSSLPrivate;
-	m_bInit = false;
-	m_bAutoReconfig = true;
-	m_cfg = new KSSLSettings();
+KSSL::KSSL(bool init)
+{
+    d = new KSSLPrivate;
+    m_bInit = false;
+    m_bAutoReconfig = true;
+    m_cfg = new KSSLSettings();
 #if KSSL_HAVE_SSL
-	d->m_ssl = 0L;
+    d->m_ssl = 0L;
 #endif
 
-	if (init)
-		initialize();
+    if (init) {
+        initialize();
+    }
 }
 
-
-KSSL::~KSSL() {
-	close();
-	delete m_cfg;
-	delete d;
+KSSL::~KSSL()
+{
+    close();
+    delete m_cfg;
+    delete d;
 }
 
-
-int KSSL::seedWithEGD() {
+int KSSL::seedWithEGD()
+{
     int rc = 0;
 #if KSSL_HAVE_SSL
     if (m_cfg->useEGD() && !m_cfg->getEGDPath().isEmpty()) {
@@ -101,97 +104,100 @@ int KSSL::seedWithEGD() {
         if (rc < 0) {
             qWarning() << "KSSL: Error seeding PRNG with the entropy file.";
         } else {
-           //qDebug() << "KSSL: PRNG was seeded with" << rc << "bytes from the entropy file.";
+            //qDebug() << "KSSL: PRNG was seeded with" << rc << "bytes from the entropy file.";
         }
     }
 #endif
     return rc;
 }
 
-
-bool KSSL::initialize() {
+bool KSSL::initialize()
+{
 #if KSSL_HAVE_SSL
     //qDebug() << "KSSL initialize";
-	if (m_bInit)
-		return false;
+    if (m_bInit) {
+        return false;
+    }
 
-	if (m_bAutoReconfig)
-		m_cfg->load();
+    if (m_bAutoReconfig) {
+        m_cfg->load();
+    }
 
-	seedWithEGD();
+    seedWithEGD();
 
-	d->m_meth = d->kossl->SSLv23_client_method();
-	d->m_ctx = d->kossl->SSL_CTX_new(d->m_meth);
-	if (d->m_ctx == 0L) {
-		return false;
-	}
+    d->m_meth = d->kossl->SSLv23_client_method();
+    d->m_ctx = d->kossl->SSL_CTX_new(d->m_meth);
+    if (d->m_ctx == 0L) {
+        return false;
+    }
 
-	// set cipher list
-	QString clist = m_cfg->getCipherList();
-	//qDebug() << "Cipher list: " << clist;
-	if (!clist.isEmpty())
-		d->kossl->SSL_CTX_set_cipher_list(d->m_ctx, const_cast<char *>(clist.toLatin1().constData()));
+    // set cipher list
+    QString clist = m_cfg->getCipherList();
+    //qDebug() << "Cipher list: " << clist;
+    if (!clist.isEmpty()) {
+        d->kossl->SSL_CTX_set_cipher_list(d->m_ctx, const_cast<char *>(clist.toLatin1().constData()));
+    }
 
-	m_bInit = true;
-return true;
+    m_bInit = true;
+    return true;
 #else
-return false;
+    return false;
 #endif
 }
 
-
-void KSSL::close() {
+void KSSL::close()
+{
 #if KSSL_HAVE_SSL
     //qDebug() << "KSSL close";
-	if (!m_bInit)
-		return;
+    if (!m_bInit) {
+        return;
+    }
 
-	if (d->m_ssl) {
-		d->kossl->SSL_shutdown(d->m_ssl);
-		d->kossl->SSL_free(d->m_ssl);
-		d->m_ssl = 0L;
-	}
+    if (d->m_ssl) {
+        d->kossl->SSL_shutdown(d->m_ssl);
+        d->kossl->SSL_free(d->m_ssl);
+        d->m_ssl = 0L;
+    }
 
-	d->kossl->SSL_CTX_free(d->m_ctx);
-	if (m_cfg->useEFile() && !m_cfg->getEGDPath().isEmpty()) {
-		d->kossl->RAND_write_file(m_cfg->getEGDPath().toLatin1().constData());
-	}
+    d->kossl->SSL_CTX_free(d->m_ctx);
+    if (m_cfg->useEFile() && !m_cfg->getEGDPath().isEmpty()) {
+        d->kossl->RAND_write_file(m_cfg->getEGDPath().toLatin1().constData());
+    }
 
-	m_bInit = false;
+    m_bInit = false;
 #endif
 }
 
-
-bool KSSL::reInitialize() {
-	close();
-return initialize();
+bool KSSL::reInitialize()
+{
+    close();
+    return initialize();
 }
 
 // get the callback file - it's hidden away in here
 //#include "ksslcallback.c"
 
-
-bool KSSL::reconfig() {
-	return reInitialize();
+bool KSSL::reconfig()
+{
+    return reInitialize();
 }
 
-
-void KSSL::setAutoReconfig(bool ar) {
-	m_bAutoReconfig = ar;
+void KSSL::setAutoReconfig(bool ar)
+{
+    m_bAutoReconfig = ar;
 }
 
-
-bool KSSL::setSettings(KSSLSettings *settings) {
-	delete m_cfg;
-	m_cfg = settings;
-	return reconfig();
+bool KSSL::setSettings(KSSLSettings *settings)
+{
+    delete m_cfg;
+    m_cfg = settings;
+    return reconfig();
 }
 
-KSSLSettings * KSSL::settings()
+KSSLSettings *KSSL::settings()
 {
     return m_cfg;
 }
-
 
 #if KSSL_HAVE_SSL
 bool KSSL::m_bSSLWorks = true;
@@ -199,8 +205,9 @@ bool KSSL::m_bSSLWorks = true;
 bool KSSL::m_bSSLWorks = false;
 #endif
 
-bool KSSL::doesSSLWork() {
-	return m_bSSLWorks;
+bool KSSL::doesSSLWork()
+{
+    return m_bSSLWorks;
 }
 
 #undef sk_dup

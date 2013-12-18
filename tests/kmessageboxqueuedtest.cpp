@@ -37,16 +37,16 @@ public Q_SLOTS:
 
         for (int i = 0; i < total; i++) {
             QString message = "You should see only one of these (%1/%2)";
-            KMessageBox::queuedMessageBox(m_widget, KMessageBox::Information, message.arg(i+1).arg(total));
-            qDebug() << message.arg(i+1).arg(total);
+            KMessageBox::queuedMessageBox(m_widget, KMessageBox::Information, message.arg(i + 1).arg(total));
+            qDebug() << message.arg(i + 1).arg(total);
         }
     }
 
 private:
-    QWidget * const m_widget;
+    QWidget *const m_widget;
 };
 
-int main( int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 

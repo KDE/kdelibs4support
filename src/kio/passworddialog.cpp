@@ -28,52 +28,55 @@
 
 using namespace KIO;
 
-PasswordDialog::PasswordDialog( const QString& prompt, const QString& user,
-                                bool enableKeep, bool modal, QWidget* parent )
-   :KPasswordDialog( parent , enableKeep ? (ShowUsernameLine | ShowKeepPassword) : ShowUsernameLine )
+PasswordDialog::PasswordDialog(const QString &prompt, const QString &user,
+                               bool enableKeep, bool modal, QWidget *parent)
+    : KPasswordDialog(parent, enableKeep ? (ShowUsernameLine | ShowKeepPassword) : ShowUsernameLine)
 {
-    setModal( modal );
+    setModal(modal);
     setPrompt(prompt);
-    setUsername( user );
+    setUsername(user);
 }
 
 PasswordDialog::~PasswordDialog()
 {
 }
 
-
-int PasswordDialog::getNameAndPassword( QString& user, QString& pass, bool* keep,
-                                        const QString& prompt, bool readOnly,
-                                        const QString& caption,
-                                        const QString& comment,
-                                        const QString& label )
+int PasswordDialog::getNameAndPassword(QString &user, QString &pass, bool *keep,
+                                       const QString &prompt, bool readOnly,
+                                       const QString &caption,
+                                       const QString &comment,
+                                       const QString &label)
 {
-    PasswordDialog* dlg;
-    dlg = new PasswordDialog( prompt, user, keep );
+    PasswordDialog *dlg;
+    dlg = new PasswordDialog(prompt, user, keep);
 
-    if ( !caption.isEmpty() )
-        dlg->setWindowTitle( caption );
-    else
-        dlg->setWindowTitle( i18n("Authorization Dialog") );
+    if (!caption.isEmpty()) {
+        dlg->setWindowTitle(caption);
+    } else {
+        dlg->setWindowTitle(i18n("Authorization Dialog"));
+    }
 
-    if ( !comment.isEmpty() )
-        dlg->addCommentLine( label, comment );
+    if (!comment.isEmpty()) {
+        dlg->addCommentLine(label, comment);
+    }
 
-    if ( readOnly )
-        dlg->setUsernameReadOnly( readOnly );
+    if (readOnly) {
+        dlg->setUsernameReadOnly(readOnly);
+    }
 
-    if ( keep )
-        dlg->setKeepPassword( *keep );
+    if (keep) {
+        dlg->setKeepPassword(*keep);
+    }
 
     int ret = dlg->exec();
-    if ( ret == Accepted )
-    {
+    if (ret == Accepted) {
         user = dlg->username();
         pass = dlg->password();
-        if ( keep ) { (*keep) = dlg->keepPassword(); }
+        if (keep) {
+            (*keep) = dlg->keepPassword();
+        }
     }
     delete dlg;
     return ret;
- }
-
+}
 

@@ -32,7 +32,7 @@
 #include <QVBoxLayout>
 #include <ksharedconfig.h>
 
-KCommentWidget::KCommentWidget(QWidget* parent) :
+KCommentWidget::KCommentWidget(QWidget *parent) :
     QWidget(parent),
     m_readOnly(false),
     m_label(0),
@@ -43,11 +43,11 @@ KCommentWidget::KCommentWidget(QWidget* parent) :
     m_label->setWordWrap(true);
     m_label->setAlignment(Qt::AlignTop);
     connect(m_label, SIGNAL(linkActivated(QString)), this, SLOT(slotLinkActivated(QString)));
-    
+
     m_sizeHintHelper = new QLabel(this);
     m_sizeHintHelper->hide();
 
-    QVBoxLayout* layout = new QVBoxLayout(this);
+    QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setMargin(0);
     layout->addWidget(m_label);
 
@@ -58,7 +58,7 @@ KCommentWidget::~KCommentWidget()
 {
 }
 
-void KCommentWidget::setText(const QString& comment)
+void KCommentWidget::setText(const QString &comment)
 {
     QString text;
     if (comment.isEmpty()) {
@@ -106,7 +106,7 @@ QSize KCommentWidget::sizeHint() const
     return m_sizeHintHelper->sizeHint();
 }
 
-bool KCommentWidget::event(QEvent* event)
+bool KCommentWidget::event(QEvent *event)
 {
     if (event->type() == QEvent::Polish) {
         m_label->setForegroundRole(foregroundRole());
@@ -114,13 +114,13 @@ bool KCommentWidget::event(QEvent* event)
     return QWidget::event(event);
 }
 
-void KCommentWidget::slotLinkActivated(const QString& link)
+void KCommentWidget::slotLinkActivated(const QString &link)
 {
     QPointer<QDialog> dialog = new QDialog(this);
     QVBoxLayout *layout = new QVBoxLayout;
     dialog->setLayout(layout);
 
-    QTextEdit* editor = new QTextEdit(dialog);
+    QTextEdit *editor = new QTextEdit(dialog);
     editor->setText(m_comment);
     layout->addWidget(editor);
 

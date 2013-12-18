@@ -31,40 +31,41 @@ public:
     {
     }
 
-   void _k_newInstanceNoFork();
+    void _k_newInstanceNoFork();
 
-   static KComponentData initHack(bool configUnique);
+    static KComponentData initHack(bool configUnique);
 
-   KUniqueApplication *q;
-   bool processingRequest;
-   bool firstInstance;
+    KUniqueApplication *q;
+    bool processingRequest;
+    bool firstInstance;
 
-   static bool s_nofork;
-   static bool s_multipleInstances;
-   static bool s_handleAutoStarted;
+    static bool s_nofork;
+    static bool s_multipleInstances;
+    static bool s_handleAutoStarted;
 };
 
 class KUniqueApplicationAdaptor: public QDBusAbstractAdaptor
 {
-  Q_OBJECT
-  Q_CLASSINFO("D-Bus Interface", "org.kde.KUniqueApplication")
+    Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.KUniqueApplication")
 public:
-  KUniqueApplicationAdaptor(KUniqueApplication *parent)
-    : QDBusAbstractAdaptor(parent)
-  { }
+    KUniqueApplicationAdaptor(KUniqueApplication *parent)
+        : QDBusAbstractAdaptor(parent)
+    { }
 
-  inline KUniqueApplication *parent() const
-  { return static_cast<KUniqueApplication *>(QDBusAbstractAdaptor::parent()); }
+    inline KUniqueApplication *parent() const
+    {
+        return static_cast<KUniqueApplication *>(QDBusAbstractAdaptor::parent());
+    }
 
 public Q_SLOTS:
-  int newInstance(const QByteArray &asn_id = QByteArray(), const QByteArray &args = QByteArray());
+    int newInstance(const QByteArray &asn_id = QByteArray(), const QByteArray &args = QByteArray());
 };
 
 #endif
 
 /*
  * Local variables:
- *  c-basic-offset: 2
  *  indent-tabs-mode: nil
  * End:
  */

@@ -53,16 +53,16 @@ public:
     bool          mAllowCancel : 1;
     bool          mShown : 1;
     QString       mCancelText;
-    QLabel*       mLabel;
-    QProgressBar* mProgressBar;
-    QTimer*       mShowTimer;
+    QLabel       *mLabel;
+    QProgressBar *mProgressBar;
+    QTimer       *mShowTimer;
     int           mMinDuration;
 };
 
-KProgressDialog::KProgressDialog(QWidget* parent, const QString& caption,
-                                 const QString& text, Qt::WindowFlags flags)
-  : KDialog(parent, flags),
-    d(new KProgressDialogPrivate(this))
+KProgressDialog::KProgressDialog(QWidget *parent, const QString &caption,
+                                 const QString &text, Qt::WindowFlags flags)
+    : KDialog(parent, flags),
+      d(new KProgressDialogPrivate(this))
 {
     setCaption(caption);
     setButtons(KDialog::Cancel);
@@ -72,7 +72,7 @@ KProgressDialog::KProgressDialog(QWidget* parent, const QString& caption,
     d->mCancelText = KDialog::buttonText(KDialog::Cancel);
 
     QWidget *mainWidget = new QWidget(this);
-    QVBoxLayout* layout = new QVBoxLayout(mainWidget);
+    QVBoxLayout *layout = new QVBoxLayout(mainWidget);
     layout->setMargin(10);
 
     d->mLabel = new QLabel(text, mainWidget);
@@ -97,8 +97,7 @@ KProgressDialog::~KProgressDialog()
 
 void KProgressDialog::KProgressDialogPrivate::slotAutoShow()
 {
-    if (mShown || mCancelled)
-    {
+    if (mShown || mCancelled) {
         return;
     }
 
@@ -115,8 +114,7 @@ void KProgressDialog::reject()
 {
     d->mCancelled = true;
 
-    if (d->mAllowCancel)
-    {
+    if (d->mAllowCancel) {
         KDialog::reject();
     }
 }
@@ -134,8 +132,7 @@ void KProgressDialog::ignoreCancel()
 void KProgressDialog::setMinimumDuration(int ms)
 {
     d->mMinDuration = ms;
-    if (!d->mShown)
-    {
+    if (!d->mShown) {
         d->mShowTimer->stop();
         d->mShowTimer->setSingleShot(true);
         d->mShowTimer->start(d->mMinDuration);
@@ -158,17 +155,17 @@ bool KProgressDialog::allowCancel() const
     return d->mAllowCancel;
 }
 
-QProgressBar* KProgressDialog::progressBar()
+QProgressBar *KProgressDialog::progressBar()
 {
     return d->mProgressBar;
 }
 
-const QProgressBar* KProgressDialog::progressBar() const
+const QProgressBar *KProgressDialog::progressBar() const
 {
     return d->mProgressBar;
 }
 
-void KProgressDialog::setLabelText(const QString& text)
+void KProgressDialog::setLabelText(const QString &text)
 {
     d->mLabel->setText(text);
 }
@@ -203,7 +200,7 @@ void KProgressDialog::setAutoReset(bool autoReset)
     d->mAutoReset = autoReset;
 }
 
-void KProgressDialog::setButtonText(const QString& text)
+void KProgressDialog::setButtonText(const QString &text)
 {
     d->mCancelText = text;
     setButtonGuiItem(Cancel, KGuiItem(text));
@@ -217,10 +214,8 @@ QString KProgressDialog::buttonText() const
 void KProgressDialog::KProgressDialogPrivate::slotAutoActions(int percentage)
 {
     if (percentage < mProgressBar->maximum() ||
-        (mProgressBar->minimum() == mProgressBar->maximum())) // progress dialogs with busy indicators (see #178648)
-    {
-        if (!cancelButtonShown)
-        {
+            (mProgressBar->minimum() == mProgressBar->maximum())) { // progress dialogs with busy indicators (see #178648)
+        if (!cancelButtonShown) {
             q->setButtonGuiItem(KDialog::Cancel, KGuiItem(mCancelText));
             cancelButtonShown = true;
         }
@@ -229,25 +224,18 @@ void KProgressDialog::KProgressDialogPrivate::slotAutoActions(int percentage)
 
     mShowTimer->stop();
 
-    if (mAutoReset)
-    {
+    if (mAutoReset) {
         mProgressBar->setValue(0);
-    }
-    else
-    {
+    } else {
         q->setAllowCancel(true);
         q->setButtonGuiItem(Cancel, KStandardGuiItem::close());
         cancelButtonShown = false;
     }
 
-    if (mAutoClose)
-    {
-        if (mShown)
-        {
+    if (mAutoClose) {
+        if (mShown) {
             q->hide();
-        }
-        else
-        {
+        } else {
             emit q->finished();
         }
     }

@@ -18,9 +18,9 @@
 
 #include "kvbox.h"
 
-KVBox::KVBox( QWidget* parent )
-  : KHBox( true, parent ),
-    d( 0 )
+KVBox::KVBox(QWidget *parent)
+    : KHBox(true, parent),
+      d(0)
 {
 }
 

@@ -109,7 +109,7 @@
 #include <QActionEvent>
 #include <kcomponentdata.h>
 
-KApplication* KApplication::KApp = 0L;
+KApplication *KApplication::KApp = 0L;
 
 #if HAVE_X11
 static Atom atom_DesktopWindow;
@@ -117,13 +117,13 @@ static Atom atom_NetSupported;
 static Atom kde_xdnd_drop;
 #endif
 
-template class QList<KSessionManager*>;
+template class QList<KSessionManager *>;
 
 #ifdef Q_OS_WIN
 void KApplication_init_windows();
 #endif
 
-static KApplicationPrivate* kapp_priv = 0;
+static KApplicationPrivate *kapp_priv = 0;
 
 /*
   Private data to make keeping binary compatibility easier
@@ -131,105 +131,108 @@ static KApplicationPrivate* kapp_priv = 0;
 class KApplicationPrivate
 {
 public:
-  KApplicationPrivate(KApplication* q, const QByteArray &cName)
-      : q(q)
-      , componentData(cName)
-      , app_started_timer(0)
-      , session_save(false)
+    KApplicationPrivate(KApplication *q, const QByteArray &cName)
+        : q(q)
+        , componentData(cName)
+        , app_started_timer(0)
+        , session_save(false)
 #if HAVE_X11
-      , oldIceIOErrorHandler(0)
-      , oldXErrorHandler(0)
-      , oldXIOErrorHandler(0)
+        , oldIceIOErrorHandler(0)
+        , oldXErrorHandler(0)
+        , oldXIOErrorHandler(0)
 #endif
-      , pSessionConfig( 0 )
-      , bSessionManagement( true )
-  {
-      kapp_priv = this;
-  }
+        , pSessionConfig(0)
+        , bSessionManagement(true)
+    {
+        kapp_priv = this;
+    }
 
-  KApplicationPrivate(KApplication* q, const KComponentData &cData)
-      : q(q)
-      , componentData(cData)
-      , app_started_timer(0)
-      , session_save(false)
+    KApplicationPrivate(KApplication *q, const KComponentData &cData)
+        : q(q)
+        , componentData(cData)
+        , app_started_timer(0)
+        , session_save(false)
 #if HAVE_X11
-      , oldIceIOErrorHandler(0)
-      , oldXErrorHandler(0)
-      , oldXIOErrorHandler(0)
+        , oldIceIOErrorHandler(0)
+        , oldXErrorHandler(0)
+        , oldXIOErrorHandler(0)
 #endif
-      , pSessionConfig( 0 )
-      , bSessionManagement( true )
-  {
-      kapp_priv = this;
-  }
+        , pSessionConfig(0)
+        , bSessionManagement(true)
+    {
+        kapp_priv = this;
+    }
 
-  KApplicationPrivate(KApplication *q)
-      : q(q)
-      , componentData(KCmdLineArgs::aboutData())
-      , app_started_timer( 0 )
-      , session_save( false )
+    KApplicationPrivate(KApplication *q)
+        : q(q)
+        , componentData(KCmdLineArgs::aboutData())
+        , app_started_timer(0)
+        , session_save(false)
 #if HAVE_X11
-      , oldIceIOErrorHandler( 0 )
-      , oldXErrorHandler( 0 )
-      , oldXIOErrorHandler( 0 )
+        , oldIceIOErrorHandler(0)
+        , oldXErrorHandler(0)
+        , oldXIOErrorHandler(0)
 #endif
-      , pSessionConfig( 0 )
-      , bSessionManagement( true )
-  {
-      kapp_priv = this;
-  }
+        , pSessionConfig(0)
+        , bSessionManagement(true)
+    {
+        kapp_priv = this;
+    }
 
-  ~KApplicationPrivate()
-  {
-  }
+    ~KApplicationPrivate()
+    {
+    }
 
 #ifndef KDE3_SUPPORT
-  KConfig *config() { return KSharedConfig::openConfig().data(); }
+    KConfig *config()
+    {
+        return KSharedConfig::openConfig().data();
+    }
 #endif
 
 #if HAVE_X11
-  int xErrhandler( Display*, void* );
-  int xioErrhandler( Display* );
-  void iceIOErrorHandler( _IceConn *conn );
+    int xErrhandler(Display *, void *);
+    int xioErrhandler(Display *);
+    void iceIOErrorHandler(_IceConn *conn);
 #endif
 
-  void _k_x11FilterDestroyed();
-  void _k_checkAppStartedSlot();
-  void _k_slot_KToolInvocation_hook(QStringList&, QByteArray&);
+    void _k_x11FilterDestroyed();
+    void _k_checkAppStartedSlot();
+    void _k_slot_KToolInvocation_hook(QStringList &, QByteArray &);
 
-  void init(bool GUIenabled=true);
-  void parseCommandLine( ); // Handle KDE arguments (Using KCmdLineArgs)
+    void init(bool GUIenabled = true);
+    void parseCommandLine();  // Handle KDE arguments (Using KCmdLineArgs)
 
-  KApplication *q;
-  KComponentData componentData;
-  QTimer* app_started_timer;
-  bool session_save;
+    KApplication *q;
+    KComponentData componentData;
+    QTimer *app_started_timer;
+    bool session_save;
 
 #if HAVE_X11
-  IceIOErrorHandler oldIceIOErrorHandler;
-  int (*oldXErrorHandler)(Display*,XErrorEvent*);
-  int (*oldXIOErrorHandler)(Display*);
+    IceIOErrorHandler oldIceIOErrorHandler;
+    int (*oldXErrorHandler)(Display *, XErrorEvent *);
+    int (*oldXIOErrorHandler)(Display *);
 #endif
 
-  QString sessionKey;
-  QString pSessionConfigFile;
+    QString sessionKey;
+    QString pSessionConfigFile;
 
-  KConfig* pSessionConfig; //instance specific application config object
-  bool bSessionManagement;
+    KConfig *pSessionConfig; //instance specific application config object
+    bool bSessionManagement;
 };
 
 #if HAVE_X11
 
 extern "C" {
-static int kde_xio_errhandler( Display * dpy )
-{
-  return kapp_priv->xioErrhandler( dpy );
-}
+    static int kde_xio_errhandler(Display *dpy)
+    {
+        return kapp_priv->xioErrhandler(dpy);
+    }
 
-static int kde_x_errhandler( Display *dpy, XErrorEvent *err )
-{
-  return kapp_priv->xErrhandler( dpy, err );
-}
+    static int kde_x_errhandler(Display *dpy, XErrorEvent *err)
+    {
+        return kapp_priv->xErrhandler(dpy, err);
+    }
 }
 #endif
 
@@ -247,41 +250,45 @@ static void installSigpipeHandler()
 #ifdef Q_OS_UNIX
     struct sigaction act;
     act.sa_handler = SIG_IGN;
-    sigemptyset( &act.sa_mask );
+    sigemptyset(&act.sa_mask);
     act.sa_flags = 0;
-    sigaction( SIGPIPE, &act, 0 );
+    sigaction(SIGPIPE, &act, 0);
 #endif
 }
 
-void KApplication::installX11EventFilter( QWidget* filter )
+void KApplication::installX11EventFilter(QWidget *filter)
 {
-    if ( !filter )
+    if (!filter) {
         return;
-    if (!x11Filter)
+    }
+    if (!x11Filter) {
         x11Filter = new QList< QPointer< QWidget > >;
-    connect ( filter, SIGNAL(destroyed()), this, SLOT(_k_x11FilterDestroyed()) );
-    x11Filter->append( filter );
+    }
+    connect(filter, SIGNAL(destroyed()), this, SLOT(_k_x11FilterDestroyed()));
+    x11Filter->append(filter);
 }
 
 void KApplicationPrivate::_k_x11FilterDestroyed()
 {
-    q->removeX11EventFilter( static_cast< const QWidget* >(q->sender()));
+    q->removeX11EventFilter(static_cast< const QWidget * >(q->sender()));
 }
 
-void KApplication::removeX11EventFilter( const QWidget* filter )
+void KApplication::removeX11EventFilter(const QWidget *filter)
 {
-    if ( !x11Filter || !filter )
+    if (!x11Filter || !filter) {
         return;
+    }
     // removeAll doesn't work, creating QPointer to something that's about to be deleted aborts
     // x11Filter->removeAll( const_cast< QWidget* >( filter ));
-    for( QMutableListIterator< QPointer< QWidget > > it( *x11Filter );
-         it.hasNext();
-         ) {
-        QWidget* w = it.next().data();
-        if( w == filter || w == NULL )
+    for (QMutableListIterator< QPointer< QWidget > > it(*x11Filter);
+            it.hasNext();
+        ) {
+        QWidget *w = it.next().data();
+        if (w == filter || w == NULL) {
             it.remove();
+        }
     }
-    if ( x11Filter->isEmpty() ) {
+    if (x11Filter->isEmpty()) {
         delete x11Filter;
         x11Filter = 0;
     }
@@ -290,23 +297,21 @@ void KApplication::removeX11EventFilter( const QWidget* filter )
 bool KApplication::notify(QObject *receiver, QEvent *event)
 {
     QEvent::Type t = event->type();
-    if( t == QEvent::Show && receiver->isWidgetType())
-    {
-        QWidget* w = static_cast< QWidget* >( receiver );
+    if (t == QEvent::Show && receiver->isWidgetType()) {
+        QWidget *w = static_cast< QWidget * >(receiver);
 #if HAVE_X11
-        if( w->isTopLevel() && !KStartupInfo::startupId().isEmpty()) // TODO better done using window group leader?
-            KStartupInfo::setWindowStartupId( w->winId(), KStartupInfo::startupId());
+        if (w->isTopLevel() && !KStartupInfo::startupId().isEmpty()) { // TODO better done using window group leader?
+            KStartupInfo::setWindowStartupId(w->winId(), KStartupInfo::startupId());
+        }
 #endif
-        if( w->isTopLevel() && !( w->windowFlags() & Qt::X11BypassWindowManagerHint ) && w->windowType() != Qt::Popup && !event->spontaneous())
-        {
-            if( d->app_started_timer == NULL )
-            {
-                d->app_started_timer = new QTimer( this );
-                connect( d->app_started_timer, SIGNAL(timeout()), SLOT(_k_checkAppStartedSlot()));
+        if (w->isTopLevel() && !(w->windowFlags() & Qt::X11BypassWindowManagerHint) && w->windowType() != Qt::Popup && !event->spontaneous()) {
+            if (d->app_started_timer == NULL) {
+                d->app_started_timer = new QTimer(this);
+                connect(d->app_started_timer, SIGNAL(timeout()), SLOT(_k_checkAppStartedSlot()));
             }
-            if( !d->app_started_timer->isActive()) {
-                d->app_started_timer->setSingleShot( true );
-                d->app_started_timer->start( 0 );
+            if (!d->app_started_timer->isActive()) {
+                d->app_started_timer->setSingleShot(true);
+                d->app_started_timer->start(0);
             }
         }
     }
@@ -329,7 +334,7 @@ static SmcConn mySmcConnection = 0;
 
 KApplication::KApplication(bool GUIenabled)
     : QApplication(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv(), GUIenabled),
-    d(new KApplicationPrivate(this))
+      d(new KApplicationPrivate(this))
 {
     setApplicationName(d->componentData.componentName());
     setOrganizationDomain(d->componentData.aboutData()->organizationDomain());
@@ -339,7 +344,7 @@ KApplication::KApplication(bool GUIenabled)
 
 KApplication::KApplication(bool GUIenabled, const KComponentData &cData)
     : QApplication(KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv(), GUIenabled),
-    d (new KApplicationPrivate(this, cData))
+      d(new KApplicationPrivate(this, cData))
 {
     setApplicationName(d->componentData.componentName());
     setOrganizationDomain(d->componentData.aboutData()->organizationDomain());
@@ -348,20 +353,19 @@ KApplication::KApplication(bool GUIenabled, const KComponentData &cData)
 }
 
 #if HAVE_X11
-int KApplicationPrivate::xioErrhandler( Display* dpy )
+int KApplicationPrivate::xioErrhandler(Display *dpy)
 {
-    oldXIOErrorHandler( dpy );
-    exit( 1 );
+    oldXIOErrorHandler(dpy);
+    exit(1);
     return 0;
 }
 
-int KApplicationPrivate::xErrhandler( Display* dpy, void* err_ )
+int KApplicationPrivate::xErrhandler(Display *dpy, void *err_)
 {
-    XErrorEvent* err = static_cast< XErrorEvent* >( err_ );
-    if(kapp)
-    {
+    XErrorEvent *err = static_cast< XErrorEvent * >(err_);
+    if (kapp) {
         // add KDE specific stuff here
-        oldXErrorHandler( dpy, err );
+        oldXErrorHandler(dpy, err);
     }
     const QByteArray fatalXError = qgetenv("KDE_FATAL_X_ERROR");
     if (!fatalXError.isEmpty()) {
@@ -370,16 +374,17 @@ int KApplicationPrivate::xErrhandler( Display* dpy, void* err_ )
     return 0;
 }
 
-void KApplicationPrivate::iceIOErrorHandler( _IceConn *conn )
+void KApplicationPrivate::iceIOErrorHandler(_IceConn *conn)
 {
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-    http://thread.gmane.org/gmane.comp.kde.devel.frameworks/1122
+http://thread.gmane.org/gmane.comp.kde.devel.frameworks/1122
     emit kapp->aboutToQuit();
 #endif
 
-    if ( oldIceIOErrorHandler != NULL )
-      (*oldIceIOErrorHandler)( conn );
-    exit( 1 );
+    if (oldIceIOErrorHandler != NULL) {
+        (*oldIceIOErrorHandler)(conn);
+    }
+    exit(1);
 }
 #endif
 
@@ -388,143 +393,139 @@ bool s_kuniqueapplication_startCalled = false;
 
 void KApplicationPrivate::init(bool GUIenabled)
 {
-  Q_UNUSED(GUIenabled)
-  if ((getuid() != geteuid()) ||
-      (getgid() != getegid()))
-  {
-     fprintf(stderr, "The KDE libraries are not designed to run with suid privileges.\n");
-     ::exit(127);
-  }
+    Q_UNUSED(GUIenabled)
+    if ((getuid() != geteuid()) ||
+            (getgid() != getegid())) {
+        fprintf(stderr, "The KDE libraries are not designed to run with suid privileges.\n");
+        ::exit(127);
+    }
 
 #ifdef Q_OS_MAC
-  mac_initialize_dbus();
+    mac_initialize_dbus();
 #endif
 
-  KApplication::KApp = q;
+    KApplication::KApp = q;
 
-  extern KDE4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface;
-  kde_kdebug_enable_dbus_interface = true;
+    extern KDE4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface;
+    kde_kdebug_enable_dbus_interface = true;
 
-  parseCommandLine();
+    parseCommandLine();
 
-  QApplication::setDesktopSettingsAware( false );
+    QApplication::setDesktopSettingsAware(false);
 
 #if HAVE_X11
-  // create all required atoms in _one_ roundtrip to the X server
-      const int max = 20;
-      Atom* atoms[max];
-      char* names[max];
-      Atom atoms_return[max];
-      int n = 0;
+    // create all required atoms in _one_ roundtrip to the X server
+    const int max = 20;
+    Atom *atoms[max];
+    char *names[max];
+    Atom atoms_return[max];
+    int n = 0;
 
-      atoms[n] = &atom_DesktopWindow;
-      names[n++] = (char *) "KDE_DESKTOP_WINDOW";
+    atoms[n] = &atom_DesktopWindow;
+    names[n++] = (char *) "KDE_DESKTOP_WINDOW";
 
-      atoms[n] = &atom_NetSupported;
-      names[n++] = (char *) "_NET_SUPPORTED";
+    atoms[n] = &atom_NetSupported;
+    names[n++] = (char *) "_NET_SUPPORTED";
 
-      atoms[n] = &kde_xdnd_drop;
-      names[n++] = (char *) "XdndDrop";
+    atoms[n] = &kde_xdnd_drop;
+    names[n++] = (char *) "XdndDrop";
 
-      XInternAtoms( QX11Info::display(), names, n, false, atoms_return );
+    XInternAtoms(QX11Info::display(), names, n, false, atoms_return);
 
-      for (int i = 0; i < n; i++ )
+    for (int i = 0; i < n; i++) {
         *atoms[i] = atoms_return[i];
+    }
 #endif
 
+    // sanity checking, to make sure we've connected
+    extern void qDBusBindToApplication();
+    qDBusBindToApplication();
+    QDBusConnectionInterface *bus = 0;
+    if (!QDBusConnection::sessionBus().isConnected() || !(bus = QDBusConnection::sessionBus().interface())) {
+        kFatal(240) << "Session bus not found" << endl <<
+                    "To circumvent this problem try the following command (with Linux and bash)" << endl <<
+                    "export $(dbus-launch)";
+        ::exit(125);
+    }
 
-  // sanity checking, to make sure we've connected
-  extern void qDBusBindToApplication();
-  qDBusBindToApplication();
-  QDBusConnectionInterface *bus = 0;
-  if (!QDBusConnection::sessionBus().isConnected() || !(bus = QDBusConnection::sessionBus().interface())) {
-      kFatal(240) << "Session bus not found" << endl <<
-                  "To circumvent this problem try the following command (with Linux and bash)" << endl <<
-                  "export $(dbus-launch)";
-      ::exit(125);
-  }
+    if (bus && !s_kuniqueapplication_startCalled) { // don't register again if KUniqueApplication did so already
+        QStringList parts = q->organizationDomain().split(QLatin1Char('.'), QString::SkipEmptyParts);
+        QString reversedDomain;
+        if (parts.isEmpty()) {
+            reversedDomain = QLatin1String("local.");
+        } else
+            foreach (const QString &s, parts) {
+                reversedDomain.prepend(QLatin1Char('.'));
+                reversedDomain.prepend(s);
+            }
+        const QString pidSuffix = QString::number(getpid()).prepend(QLatin1String("-"));
+        const QString serviceName = reversedDomain + q->applicationName() + pidSuffix;
+        if (bus->registerService(serviceName) == QDBusConnectionInterface::ServiceNotRegistered) {
+            kError(240) << "Couldn't register name '" << serviceName << "' with DBUS - another process owns it already!" << endl;
+            ::exit(126);
+        }
+    }
+    QDBusConnection::sessionBus().registerObject(QLatin1String("/MainApplication"), q,
+            QDBusConnection::ExportScriptableSlots |
+            QDBusConnection::ExportScriptableProperties |
+            QDBusConnection::ExportAdaptors);
 
-  if ( bus && !s_kuniqueapplication_startCalled ) // don't register again if KUniqueApplication did so already
-  {
-      QStringList parts = q->organizationDomain().split(QLatin1Char('.'), QString::SkipEmptyParts);
-      QString reversedDomain;
-      if (parts.isEmpty())
-          reversedDomain = QLatin1String("local.");
-      else
-          foreach (const QString& s, parts)
-          {
-              reversedDomain.prepend(QLatin1Char('.'));
-              reversedDomain.prepend(s);
-          }
-      const QString pidSuffix = QString::number( getpid() ).prepend( QLatin1String("-") );
-      const QString serviceName = reversedDomain + q->applicationName() + pidSuffix;
-      if ( bus->registerService(serviceName) == QDBusConnectionInterface::ServiceNotRegistered ) {
-          kError(240) << "Couldn't register name '" << serviceName << "' with DBUS - another process owns it already!" << endl;
-          ::exit(126);
-      }
-  }
-  QDBusConnection::sessionBus().registerObject(QLatin1String("/MainApplication"), q,
-                                               QDBusConnection::ExportScriptableSlots |
-                                               QDBusConnection::ExportScriptableProperties |
-                                               QDBusConnection::ExportAdaptors);
+    // Trigger creation of locale.
+    (void) KLocale::global();
 
-  // Trigger creation of locale.
-  (void) KLocale::global();
-
-  KSharedConfig::Ptr config = componentData.config();
-  QByteArray readOnly = qgetenv("KDE_HOME_READONLY");
-  if (readOnly.isEmpty() && q->applicationName() != QLatin1String("kdialog"))
-  {
-    if (KAuthorized::authorize(QLatin1String("warn_unwritable_config")))
-       config->isConfigWritable(true);
-  }
+    KSharedConfig::Ptr config = componentData.config();
+    QByteArray readOnly = qgetenv("KDE_HOME_READONLY");
+    if (readOnly.isEmpty() && q->applicationName() != QLatin1String("kdialog")) {
+        if (KAuthorized::authorize(QLatin1String("warn_unwritable_config"))) {
+            config->isConfigWritable(true);
+        }
+    }
 
 #if HAVE_X11
     // this is important since we fork() to launch the help (Matthias)
     fcntl(ConnectionNumber(QX11Info::display()), F_SETFD, FD_CLOEXEC);
     // set up the fancy (=robust and error ignoring ) KDE xio error handlers (Matthias)
-    oldXErrorHandler = XSetErrorHandler( kde_x_errhandler );
-    oldXIOErrorHandler = XSetIOErrorHandler( kde_xio_errhandler );
+    oldXErrorHandler = XSetErrorHandler(kde_x_errhandler);
+    oldXIOErrorHandler = XSetIOErrorHandler(kde_xio_errhandler);
 #endif
 
     // Trigger initial settings
     KGlobalSettings::self()->activate();
 
-    KMessage::setMessageHandler( new KMessageBoxMessageHandler(0) );
+    KMessage::setMessageHandler(new KMessageBoxMessageHandler(0));
 
-    KGestureMap::self()->installEventFilterOnMe( q );
+    KGestureMap::self()->installEventFilterOnMe(q);
 
     q->connect(KToolInvocation::self(), SIGNAL(kapplication_hook(QStringList&,QByteArray&)),
                q, SLOT(_k_slot_KToolInvocation_hook(QStringList&,QByteArray&)));
 
 #ifdef Q_OS_MAC
-      // This is a QSystemTrayIcon instead of K* because we can't be sure q is a QWidget
-      QSystemTrayIcon *trayIcon; //krazy:exclude=qclasses
-      if (QSystemTrayIcon::isSystemTrayAvailable()) //krazy:exclude=qclasses
-      {
-          trayIcon = new QSystemTrayIcon(q); //krazy:exclude=qclasses
-          trayIcon->setIcon(q->windowIcon());
-          /* it's counter-intuitive, but once you do setIcon it's already set the
-             dock icon... ->show actually shows an icon in the menu bar too  :P */
-          // trayIcon->show();
-      }
+    // This is a QSystemTrayIcon instead of K* because we can't be sure q is a QWidget
+    QSystemTrayIcon *trayIcon; //krazy:exclude=qclasses
+    if (QSystemTrayIcon::isSystemTrayAvailable()) { //krazy:exclude=qclasses
+        trayIcon = new QSystemTrayIcon(q); //krazy:exclude=qclasses
+        trayIcon->setIcon(q->windowIcon());
+        /* it's counter-intuitive, but once you do setIcon it's already set the
+           dock icon... ->show actually shows an icon in the menu bar too  :P */
+        // trayIcon->show();
+    }
 #endif
 
-  qRegisterMetaType<KUrl>();
-  qRegisterMetaType<QList<KUrl> >();
-  qRegisterMetaType<QList<QUrl> >();
+    qRegisterMetaType<KUrl>();
+    qRegisterMetaType<QList<KUrl> >();
+    qRegisterMetaType<QList<QUrl> >();
 
 #ifdef Q_OS_WIN
-  KApplication_init_windows();
+    KApplication_init_windows();
 #endif
 }
 
-KApplication* KApplication::kApplication()
+KApplication *KApplication::kApplication()
 {
     return KApp;
 }
 
-KConfig* KApplication::sessionConfig()
+KConfig *KApplication::sessionConfig()
 {
     return KConfigGui::sessionConfig();
 }
@@ -539,68 +540,75 @@ void KApplication::quit()
     QApplication::quit();
 }
 
-void KApplication::disableSessionManagement() {
-  d->bSessionManagement = false;
+void KApplication::disableSessionManagement()
+{
+    d->bSessionManagement = false;
 }
 
-void KApplication::enableSessionManagement() {
-  d->bSessionManagement = true;
+void KApplication::enableSessionManagement()
+{
+    d->bSessionManagement = true;
 #if HAVE_X11
-  // Session management support in Qt/KDE is awfully broken.
-  // If konqueror disables session management right after its startup,
-  // and enables it later (preloading stuff), it won't be properly
-  // saved on session shutdown.
-  // I'm not actually sure why it doesn't work, but saveState()
-  // doesn't seem to be called on session shutdown, possibly
-  // because disabling session management after konqueror startup
-  // disabled it somehow. Forcing saveState() here for this application
-  // seems to fix it.
-  if( mySmcConnection ) {
-        SmcRequestSaveYourself( mySmcConnection, SmSaveLocal, False,
-                SmInteractStyleAny,
-                False, False );
+    // Session management support in Qt/KDE is awfully broken.
+    // If konqueror disables session management right after its startup,
+    // and enables it later (preloading stuff), it won't be properly
+    // saved on session shutdown.
+    // I'm not actually sure why it doesn't work, but saveState()
+    // doesn't seem to be called on session shutdown, possibly
+    // because disabling session management after konqueror startup
+    // disabled it somehow. Forcing saveState() here for this application
+    // seems to fix it.
+    if (mySmcConnection) {
+        SmcRequestSaveYourself(mySmcConnection, SmSaveLocal, False,
+                               SmInteractStyleAny,
+                               False, False);
 
-    // flush the request
-    IceFlush(SmcGetIceConnection(mySmcConnection));
-  }
+        // flush the request
+        IceFlush(SmcGetIceConnection(mySmcConnection));
+    }
 #endif
 }
 
-void KApplication::commitData( QSessionManager& sm )
+void KApplication::commitData(QSessionManager &sm)
 {
     d->session_save = true;
     bool canceled = false;
 
     foreach (KSessionManager *it, KSessionManager::sessionClients()) {
-        if ( ( canceled = !it->commitData( sm ) ) )
+        if ((canceled = !it->commitData(sm))) {
             break;
+        }
     }
 
-    if ( canceled )
+    if (canceled) {
         sm.cancel();
+    }
 
-    if ( sm.allowsInteraction() ) {
+    if (sm.allowsInteraction()) {
         QWidgetList donelist, todolist;
-        QWidget* w;
+        QWidget *w;
 
-commitDataRestart:
+    commitDataRestart:
         todolist = QApplication::topLevelWidgets();
 
-        for ( int i = 0; i < todolist.size(); ++i ) {
-            w = todolist.at( i );
-            if( !w )
+        for (int i = 0; i < todolist.size(); ++i) {
+            w = todolist.at(i);
+            if (!w) {
                 break;
+            }
 
-            if ( donelist.contains( w ) )
+            if (donelist.contains(w)) {
                 continue;
+            }
 
-            if ( !w->isHidden() && !w->inherits( "KMainWindow" ) ) {
+            if (!w->isHidden() && !w->inherits("KMainWindow")) {
                 QCloseEvent e;
-                sendEvent( w, &e );
-                if ( !e.isAccepted() )
-                    break; //canceled
+                sendEvent(w, &e);
+                if (!e.isAccepted()) {
+                    break;    //canceled
+                }
 
-                donelist.append( w );
+                donelist.append(w);
 
                 //grab the new list that was just modified by our closeevent
                 goto commitDataRestart;
@@ -608,48 +616,50 @@ commitDataRestart:
         }
     }
 
-    if ( !d->bSessionManagement )
-        sm.setRestartHint( QSessionManager::RestartNever );
-    else
-        sm.setRestartHint( QSessionManager::RestartIfRunning );
+    if (!d->bSessionManagement) {
+        sm.setRestartHint(QSessionManager::RestartNever);
+    } else {
+        sm.setRestartHint(QSessionManager::RestartIfRunning);
+    }
     d->session_save = false;
 }
 
 #if HAVE_X11
-static void checkRestartVersion( QSessionManager& sm )
+static void checkRestartVersion(QSessionManager &sm)
 {
-    Display* dpy = QX11Info::display();
+    Display *dpy = QX11Info::display();
     Atom type;
     int format;
     unsigned long nitems, after;
-    unsigned char* data;
-    if( dpy != NULL && XGetWindowProperty( dpy, RootWindow( dpy, 0 ), XInternAtom( dpy, "KDE_SESSION_VERSION", False ),
-        0, 1, False, AnyPropertyType, &type, &format, &nitems, &after, &data ) == Success ) {
-        if( type == XA_CARDINAL && format == 32 ) {
-            int version = *( long* ) data;
-            if( version == KDE_VERSION_MAJOR ) { // we run in our native session
-                XFree( data );
+    unsigned char *data;
+    if (dpy != NULL && XGetWindowProperty(dpy, RootWindow(dpy, 0), XInternAtom(dpy, "KDE_SESSION_VERSION", False),
+                                          0, 1, False, AnyPropertyType, &type, &format, &nitems, &after, &data) == Success) {
+        if (type == XA_CARDINAL && format == 32) {
+            int version = *(long *) data;
+            if (version == KDE_VERSION_MAJOR) {  // we run in our native session
+                XFree(data);
                 return; // no need to wrap
             }
         }
-        XFree( data );
+        XFree(data);
     }
-    if( getenv( "KDE_SESSION_VERSION" ) != NULL && atoi( getenv( "KDE_SESSION_VERSION" )) == KDE_VERSION_MAJOR )
-        return; // we run in our native session, no need to wrap
+    if (getenv("KDE_SESSION_VERSION") != NULL && atoi(getenv("KDE_SESSION_VERSION")) == KDE_VERSION_MAJOR) {
+        return;    // we run in our native session, no need to wrap
+    }
 #define NUM_TO_STRING2( num ) #num
 #define NUM_TO_STRING( num ) NUM_TO_STRING2( num )
-    QString wrapper = QStandardPaths::findExecutable( "kde" NUM_TO_STRING( KDE_VERSION_MAJOR ) ); // "kde4", etc.
+    QString wrapper = QStandardPaths::findExecutable("kde" NUM_TO_STRING(KDE_VERSION_MAJOR));     // "kde4", etc.
 #undef NUM_TO_STRING
 #undef NUM_TO_STRING2
-    if( !wrapper.isEmpty()) {
+    if (!wrapper.isEmpty()) {
         QStringList restartCommand = sm.restartCommand();
-        restartCommand.prepend( wrapper );
-        sm.setRestartCommand( restartCommand );
+        restartCommand.prepend(wrapper);
+        sm.setRestartCommand(restartCommand);
     }
 }
 #endif // HAVE_X11
 
-void KApplication::saveState( QSessionManager& sm )
+void KApplication::saveState(QSessionManager &sm)
 {
     d->session_save = true;
 #ifdef __GNUC__
@@ -659,17 +669,17 @@ void KApplication::saveState( QSessionManager& sm )
     static bool firstTime = true;
     mySmcConnection = (SmcConn) sm.handle();
 
-    if ( !d->bSessionManagement ) {
-        sm.setRestartHint( QSessionManager::RestartNever );
-    d->session_save = false;
+    if (!d->bSessionManagement) {
+        sm.setRestartHint(QSessionManager::RestartNever);
+        d->session_save = false;
         return;
+    } else {
+        sm.setRestartHint(QSessionManager::RestartIfRunning);
     }
-    else
-    sm.setRestartHint( QSessionManager::RestartIfRunning );
 
-    if ( firstTime ) {
+    if (firstTime) {
         firstTime = false;
-    d->session_save = false;
+        d->session_save = false;
         return; // no need to save the state.
     }
 
@@ -700,31 +710,34 @@ void KApplication::saveState( QSessionManager& sm )
             restartCommand.append(QLatin1String("-display"));
             restartCommand.append(QLatin1String(displayname));
         }
-        sm.setRestartCommand( restartCommand );
+        sm.setRestartCommand(restartCommand);
     }
 
-    checkRestartVersion( sm );
+    checkRestartVersion(sm);
 
     // finally: do session management
     emit saveYourself(); // for compatibility
     bool canceled = false;
-    foreach(KSessionManager* it, KSessionManager::sessionClients()) {
-      if(canceled) break;
-      canceled = !it->saveState( sm );
+    foreach (KSessionManager *it, KSessionManager::sessionClients()) {
+        if (canceled) {
+            break;
+        }
+        canceled = !it->saveState(sm);
     }
 
     // if we created a new session config object, register a proper discard command
-    if ( KConfigGui::hasSessionConfig() ) {
+    if (KConfigGui::hasSessionConfig()) {
         KConfigGui::sessionConfig()->sync();
         QStringList discard;
         discard  << QLatin1String("rm") << QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + '/' + KConfigGui::sessionConfigName();
-        sm.setDiscardCommand( discard );
+        sm.setDiscardCommand(discard);
     } else {
-    sm.setDiscardCommand( QStringList( QLatin1String("") ) );
+        sm.setDiscardCommand(QStringList(QLatin1String("")));
     }
 
-    if ( canceled )
+    if (canceled) {
         sm.cancel();
+    }
 #endif
     d->session_save = false;
 }
@@ -734,22 +747,21 @@ bool KApplication::sessionSaving() const
     return d->session_save;
 }
 
-void KApplicationPrivate::parseCommandLine( )
+void KApplicationPrivate::parseCommandLine()
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs("kde");
 
-    if (args && args->isSet("style"))
-    {
+    if (args && args->isSet("style")) {
         extern QString kde_overrideStyle; // see KGlobalSettings
         QString reqStyle(args->getOption("style").toLower());
-        if (QStyleFactory::keys().contains(reqStyle, Qt::CaseInsensitive))
+        if (QStyleFactory::keys().contains(reqStyle, Qt::CaseInsensitive)) {
             kde_overrideStyle = reqStyle;
-        else
+        } else {
             qWarning() << i18n("The style '%1' was not found", reqStyle);
+        }
     }
 
-    if (args && args->isSet("config"))
-    {
+    if (args && args->isSet("config")) {
         QString config = args->getOption("config");
         componentData.setConfigName(config);
     }
@@ -760,12 +772,12 @@ void KApplicationPrivate::parseCommandLine( )
         q->setWindowIcon(QIcon::fromTheme(componentData.aboutData()->programIconName()));
     }
 
-    if (!args)
+    if (!args) {
         return;
+    }
 
     bool nocrashhandler = (!qgetenv("KDE_DEBUG").isEmpty());
-    if (!nocrashhandler && args->isSet("crashhandler"))
-    {
+    if (!nocrashhandler && args->isSet("crashhandler")) {
         // enable drkonqi
         KCrash::setDrKonqiEnabled(true);
     }
@@ -776,28 +788,29 @@ void KApplicationPrivate::parseCommandLine( )
     }
 
 #if HAVE_X11
-    if ( args->isSet( "waitforwm" ) ) {
+    if (args->isSet("waitforwm")) {
         Atom type;
         (void) q->desktop(); // trigger desktop creation, we need PropertyNotify events for the root window
         int format;
         unsigned long length, after;
         unsigned char *data;
-        while ( XGetWindowProperty( QX11Info::display(), QX11Info::appRootWindow(), atom_NetSupported,
-                    0, 1, false, AnyPropertyType, &type, &format,
-                                    &length, &after, &data ) != Success || !length ) {
-            if ( data )
-                XFree( data );
+        while (XGetWindowProperty(QX11Info::display(), QX11Info::appRootWindow(), atom_NetSupported,
+                                  0, 1, false, AnyPropertyType, &type, &format,
+                                  &length, &after, &data) != Success || !length) {
+            if (data) {
+                XFree(data);
+            }
             XEvent event;
-            XWindowEvent( QX11Info::display(), QX11Info::appRootWindow(), PropertyChangeMask, &event );
+            XWindowEvent(QX11Info::display(), QX11Info::appRootWindow(), PropertyChangeMask, &event);
         }
-        if ( data )
-            XFree( data );
+        if (data) {
+            XFree(data);
+        }
     }
 #endif
 
 #ifndef Q_OS_WIN
-    if (args->isSet("smkey"))
-    {
+    if (args->isSet("smkey")) {
         sessionKey = args->getOption("smkey");
     }
 #endif
@@ -808,19 +821,22 @@ extern void kDebugCleanup();
 KApplication::~KApplication()
 {
 #if HAVE_X11
-  if ( d->oldXErrorHandler != NULL )
-      XSetErrorHandler( d->oldXErrorHandler );
-  if ( d->oldXIOErrorHandler != NULL )
-      XSetIOErrorHandler( d->oldXIOErrorHandler );
-  if ( d->oldIceIOErrorHandler != NULL )
-      IceSetIOErrorHandler( d->oldIceIOErrorHandler );
+    if (d->oldXErrorHandler != NULL) {
+        XSetErrorHandler(d->oldXErrorHandler);
+    }
+    if (d->oldXIOErrorHandler != NULL) {
+        XSetIOErrorHandler(d->oldXIOErrorHandler);
+    }
+    if (d->oldIceIOErrorHandler != NULL) {
+        IceSetIOErrorHandler(d->oldIceIOErrorHandler);
+    }
 #endif
 
-  delete d;
-  KApp = 0;
+    delete d;
+    KApp = 0;
 
 #if HAVE_X11
-  mySmcConnection = 0;
+    mySmcConnection = 0;
 #endif
 }
 
@@ -831,15 +847,19 @@ KApplication::~KApplication()
 class KAppX11HackWidget: public QWidget
 {
 public:
-    bool publicx11Event( XEvent * e) { return x11Event( e ); } // no such method anymore!
+    bool publicx11Event(XEvent *e)
+    {
+        return x11Event(e);    // no such method anymore!
+    }
 };
-bool KApplication::x11EventFilter( XEvent *_event )
+bool KApplication::x11EventFilter(XEvent *_event)
 {
     if (x11Filter) {
-        foreach (const QPointer< QWidget >& wp, *x11Filter) {
-            if( QWidget* w = wp.data())
-                if ( static_cast<KAppX11HackWidget*>( w )->publicx11Event(_event))
+        foreach (const QPointer< QWidget > &wp, *x11Filter) {
+            if (QWidget *w = wp.data())
+                if (static_cast<KAppX11HackWidget *>(w)->publicx11Event(_event)) {
                     return true;
+                }
         }
     }
 
@@ -847,7 +867,7 @@ bool KApplication::x11EventFilter( XEvent *_event )
 }
 #endif
 
-void KApplication::updateUserTimestamp( int time )
+void KApplication::updateUserTimestamp(int time)
 {
     KUserTimestamp::updateUserTimestamp(time);
 }
@@ -857,101 +877,91 @@ unsigned long KApplication::userTimestamp() const
     return KUserTimestamp::userTimestamp();
 }
 
-void KApplication::updateRemoteUserTimestamp( const QString& service, int time )
+void KApplication::updateRemoteUserTimestamp(const QString &service, int time)
 {
 #if HAVE_X11
     Q_ASSERT(service.contains('.'));
-    if( time == 0 )
+    if (time == 0) {
         time = QX11Info::appUserTime();
+    }
     QDBusInterface(service, QLatin1String("/MainApplication"),
-            QString(QLatin1String("org.kde.KApplication")))
-        .call(QLatin1String("updateUserTimestamp"), time);
+                   QString(QLatin1String("org.kde.KApplication")))
+    .call(QLatin1String("updateUserTimestamp"), time);
 #endif
 }
 
-
 #ifndef KDE_NO_DEPRECATED
-QString KApplication::tempSaveName( const QString& pFilename )
+QString KApplication::tempSaveName(const QString &pFilename)
 {
-  QString aFilename;
+    QString aFilename;
 
-  if( QDir::isRelativePath(pFilename) )
-    {
-      kWarning(240) << "Relative filename passed to KApplication::tempSaveName";
-      aFilename = QFileInfo( QDir( QLatin1String(".") ), pFilename ).absoluteFilePath();
+    if (QDir::isRelativePath(pFilename)) {
+        kWarning(240) << "Relative filename passed to KApplication::tempSaveName";
+        aFilename = QFileInfo(QDir(QLatin1String(".")), pFilename).absoluteFilePath();
+    } else {
+        aFilename = pFilename;
     }
-  else
-    aFilename = pFilename;
 
-  QDir aAutosaveDir( QDir::homePath() + QLatin1String("/autosave/") );
-  if( !aAutosaveDir.exists() )
-    {
-      if( !aAutosaveDir.mkdir( aAutosaveDir.absolutePath() ) )
-        {
-          // Last chance: use temp dir
+    QDir aAutosaveDir(QDir::homePath() + QLatin1String("/autosave/"));
+    if (!aAutosaveDir.exists()) {
+        if (!aAutosaveDir.mkdir(aAutosaveDir.absolutePath())) {
+            // Last chance: use temp dir
             aAutosaveDir.setPath(QDir::tempPath());
         }
     }
 
-  aFilename.replace( '/', QLatin1String("\\!") )
-    .prepend( QLatin1Char('#') )
-    .append( QLatin1Char('#') )
-    .prepend( QLatin1Char('/') ).prepend( aAutosaveDir.absolutePath() );
+    aFilename.replace('/', QLatin1String("\\!"))
+    .prepend(QLatin1Char('#'))
+    .append(QLatin1Char('#'))
+    .prepend(QLatin1Char('/')).prepend(aAutosaveDir.absolutePath());
 
-  return aFilename;
+    return aFilename;
 }
 #endif
 
-
-QString KApplication::checkRecoverFile( const QString& pFilename,
-        bool& bRecover )
+QString KApplication::checkRecoverFile(const QString &pFilename,
+                                       bool &bRecover)
 {
-  QString aFilename;
+    QString aFilename;
 
-  if( QDir::isRelativePath(pFilename) )
-    {
-      kWarning(240) << "Relative filename passed to KApplication::tempSaveName";
-      aFilename = QFileInfo( QDir( QLatin1String(".") ), pFilename ).absoluteFilePath();
+    if (QDir::isRelativePath(pFilename)) {
+        kWarning(240) << "Relative filename passed to KApplication::tempSaveName";
+        aFilename = QFileInfo(QDir(QLatin1String(".")), pFilename).absoluteFilePath();
+    } else {
+        aFilename = pFilename;
     }
-  else
-    aFilename = pFilename;
 
-  QDir aAutosaveDir( QDir::homePath() + QLatin1String("/autosave/") );
-  if( !aAutosaveDir.exists() )
-    {
-      if( !aAutosaveDir.mkdir( aAutosaveDir.absolutePath() ) )
-        {
-          // Last chance: use temp dir
-          aAutosaveDir.setPath( QDir::tempPath() );
+    QDir aAutosaveDir(QDir::homePath() + QLatin1String("/autosave/"));
+    if (!aAutosaveDir.exists()) {
+        if (!aAutosaveDir.mkdir(aAutosaveDir.absolutePath())) {
+            // Last chance: use temp dir
+            aAutosaveDir.setPath(QDir::tempPath());
         }
     }
 
-  aFilename.replace( QLatin1String("/"), QLatin1String("\\!") )
-      .prepend( QLatin1Char('#') )
-      .append( QLatin1Char('#') )
-      .prepend( QLatin1Char('/') )
-      .prepend( aAutosaveDir.absolutePath() );
+    aFilename.replace(QLatin1String("/"), QLatin1String("\\!"))
+    .prepend(QLatin1Char('#'))
+    .append(QLatin1Char('#'))
+    .prepend(QLatin1Char('/'))
+    .prepend(aAutosaveDir.absolutePath());
 
-  if( QFile( aFilename ).exists() )
-    {
-      bRecover = true;
-      return aFilename;
-    }
-  else
-    {
-      bRecover = false;
-      return pFilename;
+    if (QFile(aFilename).exists()) {
+        bRecover = true;
+        return aFilename;
+    } else {
+        bRecover = false;
+        return pFilename;
     }
 }
 
-
-void KApplication::setTopWidget( QWidget *topWidget )
+void KApplication::setTopWidget(QWidget *topWidget)
 {
-    if( !topWidget )
-      return;
+    if (!topWidget) {
+        return;
+    }
 
     // set the specified caption
-    if ( !topWidget->inherits("KMainWindow") ) { // KMainWindow does this already for us
+    if (!topWidget->inherits("KMainWindow")) {   // KMainWindow does this already for us
         topWidget->setWindowTitle(KGlobal::caption());
     }
 
@@ -966,31 +976,33 @@ QByteArray KApplication::startupId() const
     return KStartupInfo::startupId();
 }
 
-void KApplication::setStartupId( const QByteArray& startup_id )
+void KApplication::setStartupId(const QByteArray &startup_id)
 {
-    KStartupInfo::setStartupId( startup_id );
+    KStartupInfo::setStartupId(startup_id);
 }
 
 void KApplication::clearStartupId()
 {
-    KStartupInfo::setStartupId( "0" );
+    KStartupInfo::setStartupId("0");
 }
 
 // Hook called by KToolInvocation
-void KApplicationPrivate::_k_slot_KToolInvocation_hook(QStringList& envs,QByteArray& startup_id)
+void KApplicationPrivate::_k_slot_KToolInvocation_hook(QStringList &envs, QByteArray &startup_id)
 {
 #if HAVE_X11
     if (QX11Info::display()) {
         QByteArray dpystring(XDisplayString(QX11Info::display()));
         envs << QLatin1String("DISPLAY=") + dpystring;
     } else {
-        const QByteArray dpystring( qgetenv( "DISPLAY" ));
-        if(!dpystring.isEmpty())
+        const QByteArray dpystring(qgetenv("DISPLAY"));
+        if (!dpystring.isEmpty()) {
             envs << QLatin1String("DISPLAY=") + dpystring;
+        }
     }
 
-    if(startup_id.isEmpty())
+    if (startup_id.isEmpty()) {
         startup_id = KStartupInfo::createNewStartupId();
+    }
 #else
     Q_UNUSED(envs);
     Q_UNUSED(startup_id);

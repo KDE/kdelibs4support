@@ -20,15 +20,15 @@
 #include <kgenericfactory.h>
 
 typedef KGenericFactory<KLibLoaderTestObject> KLibLoaderTestFactory;
-K_EXPORT_COMPONENT_FACTORY( klibloadertestmodule, KLibLoaderTestFactory("klibloadertestfactory") )
+K_EXPORT_COMPONENT_FACTORY(klibloadertestmodule, KLibLoaderTestFactory("klibloadertestfactory"))
 
-KLibLoaderTestObject::KLibLoaderTestObject( QObject* parent, const QStringList& )
-    : QObject( parent )
+KLibLoaderTestObject::KLibLoaderTestObject(QObject *parent, const QStringList &)
+    : QObject(parent)
 {
-    qDebug( "KLibLoaderTestObject created" );
+    qDebug("KLibLoaderTestObject created");
 }
 
 KLibLoaderTestObject::~KLibLoaderTestObject()
 {
-    qDebug( "KLibLoaderTestObject deleted" );
+    qDebug("KLibLoaderTestObject deleted");
 }

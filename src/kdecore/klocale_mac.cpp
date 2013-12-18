@@ -21,19 +21,21 @@
 #include <CoreFoundation/CFString.h>
 
 // Copied from kkernel_mac.cpp
-QString convert_CFString_to_QString(CFStringRef str) {
-	CFIndex length = CFStringGetLength(str);
-	const UniChar *chars = CFStringGetCharactersPtr(str);
-	if (chars)
-		return QString(reinterpret_cast<const QChar *>(chars), length);
+QString convert_CFString_to_QString(CFStringRef str)
+{
+    CFIndex length = CFStringGetLength(str);
+    const UniChar *chars = CFStringGetCharactersPtr(str);
+    if (chars) {
+        return QString(reinterpret_cast<const QChar *>(chars), length);
+    }
 
-	QVarLengthArray<UniChar> buffer(length);
-	CFStringGetCharacters(str, CFRangeMake(0, length), buffer.data());
-	return QString(reinterpret_cast<const QChar *>(buffer.constData()), length);
+    QVarLengthArray<UniChar> buffer(length);
+    CFStringGetCharacters(str, CFRangeMake(0, length), buffer.data());
+    return QString(reinterpret_cast<const QChar *>(buffer.constData()), length);
 }
 
 KLocaleMacPrivate::KLocaleMacPrivate(KLocale *q_ptr, KSharedConfig::Ptr config)
-                  :KLocalePrivate(q_ptr)
+    : KLocalePrivate(q_ptr)
 {
     // Lock in the current Mac Locale settings
     m_macLocale = CFLocaleCopyCurrent();
@@ -42,23 +44,23 @@ KLocaleMacPrivate::KLocaleMacPrivate(KLocale *q_ptr, KSharedConfig::Ptr config)
 
 KLocaleMacPrivate::KLocaleMacPrivate(KLocale *q_ptr,
                                      const QString &language, const QString &country, KConfig *config)
-                  :KLocalePrivate(q_ptr)
+    : KLocalePrivate(q_ptr)
 {
     // Lock in the current Mac Locale settings
     m_macLocale = CFLocaleCopyCurrent();
     init(language, country, KSharedConfig::Ptr(), config);
 }
 
-KLocaleMacPrivate::KLocaleMacPrivate( const KLocaleMacPrivate &rhs )
-                  :KLocalePrivate( rhs )
+KLocaleMacPrivate::KLocaleMacPrivate(const KLocaleMacPrivate &rhs)
+    : KLocalePrivate(rhs)
 {
-    KLocalePrivate::copy( rhs );
+    KLocalePrivate::copy(rhs);
     m_macLocale = rhs.m_macLocale;
 }
 
-KLocaleMacPrivate &KLocaleMacPrivate::operator=( const KLocaleMacPrivate &rhs )
+KLocaleMacPrivate &KLocaleMacPrivate::operator=(const KLocaleMacPrivate &rhs)
 {
-    KLocalePrivate::copy( rhs );
+    KLocalePrivate::copy(rhs);
     m_macLocale = rhs.m_macLocale;
     return *this;
 }
@@ -67,19 +69,19 @@ KLocaleMacPrivate::~KLocaleMacPrivate()
 {
 }
 
-QString KLocaleMacPrivate::macLocaleValue( CFStringRef key ) const
+QString KLocaleMacPrivate::macLocaleValue(CFStringRef key) const
 {
-    return convert_CFString_to_QString( CFStringRef( CFLocaleGetValue( m_macLocale, key ) ) );
+    return convert_CFString_to_QString(CFStringRef(CFLocaleGetValue(m_macLocale, key)));
 }
 
 QString KLocaleMacPrivate::systemCountry() const
 {
-    return macLocaleValue( kCFLocaleCountryCode );
+    return macLocaleValue(kCFLocaleCountryCode);
 }
 
 QByteArray KLocaleMacPrivate::systemCodeset() const
 {
-    return QByteArray( "UTF-8" );
+    return QByteArray("UTF-8");
 }
 
 /*

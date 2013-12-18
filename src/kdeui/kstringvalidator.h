@@ -60,12 +60,12 @@
  **/
 class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
 {
-  Q_OBJECT
-  Q_PROPERTY( QStringList stringList READ stringList WRITE setStringList )
-  Q_PROPERTY( bool rejecting READ isRejecting WRITE setRejecting )
-  Q_PROPERTY( bool fixupEnabled READ isFixupEnabled WRITE setFixupEnabled )
+    Q_OBJECT
+    Q_PROPERTY(QStringList stringList READ stringList WRITE setStringList)
+    Q_PROPERTY(bool rejecting READ isRejecting WRITE setRejecting)
+    Q_PROPERTY(bool fixupEnabled READ isFixupEnabled WRITE setFixupEnabled)
 
-  public:
+public:
     /**
      * Creates a new string validator.
      *
@@ -76,9 +76,9 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
      * @param parent Passed to lower level constructor.
      *
      **/
-    explicit KStringListValidator( const QStringList &list = QStringList(),
-                                   bool rejecting = true, bool fixupEnabled = false,
-                                   QObject *parent = 0 );
+    explicit KStringListValidator(const QStringList &list = QStringList(),
+                                  bool rejecting = true, bool fixupEnabled = false,
+                                  QObject *parent = 0);
 
     /**
      * Destroys the string validator.
@@ -90,7 +90,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
      * If in rejecting mode, the strings from @see stringList are not
      * allowed to appear in the validation string.
      */
-    void setRejecting( bool rejecting );
+    void setRejecting(bool rejecting);
 
     /**
      * Returns whether the string validator is in rejecting mode.
@@ -101,7 +101,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
      * Sets the fixup flag. If enabled, wrong input is corrected
      * automatically.
      */
-    void setFixupEnabled( bool fixupEnabled );
+    void setFixupEnabled(bool fixupEnabled);
 
     /**
      * Returns whether the fixup flag is set.
@@ -112,7 +112,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
      * Sets the @param list of string which is used as black or
      * white list, depending on the rejecting mode (@see isRejecting()).
      */
-    void setStringList( const QStringList & list );
+    void setStringList(const QStringList &list);
 
     /**
      * Returns the string list of the validator.
@@ -122,16 +122,16 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
     /**
      * Reimplemented from @see QValidator.
      */
-    virtual State validate( QString & input, int & pos ) const;
+    virtual State validate(QString &input, int &pos) const;
 
     /**
      * Reimplemented from @see QValidator.
      */
-    virtual void fixup( QString & input ) const;
+    virtual void fixup(QString &input) const;
 
-  private:
+private:
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 #endif // KSTRINGVALIDATOR_H

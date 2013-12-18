@@ -25,7 +25,6 @@
 
 #include <QWidget>
 
-
 /**
  * @deprecated since 4.12, use Nepomuk2::FileMetaDataConfigurationWidget
  *
@@ -48,7 +47,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaDataConfigurationWidget : public QW
     Q_OBJECT
 
 public:
-    explicit KFileMetaDataConfigurationWidget(QWidget* parent = 0);
+    explicit KFileMetaDataConfigurationWidget(QWidget *parent = 0);
     virtual ~KFileMetaDataConfigurationWidget();
 
     /**
@@ -60,7 +59,7 @@ public:
      * shown. If an audio file is set as item, it will be configurable
      * whether the artist, album name, ... should be shown.
      */
-    void setItems(const KFileItemList& items);
+    void setItems(const KFileItemList &items);
     KFileItemList items() const;
 
     /**
@@ -72,11 +71,11 @@ public:
     virtual QSize sizeHint() const;
 
 protected:
-    virtual bool event(QEvent* event);
+    virtual bool event(QEvent *event);
 
 private:
     class Private;
-    Private* const d;
+    Private *const d;
 
     Q_PRIVATE_SLOT(d, void loadMetaData())
     Q_PRIVATE_SLOT(d, void slotLoadingFinished())

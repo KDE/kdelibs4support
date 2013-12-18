@@ -1,16 +1,16 @@
 /* This file is part of the KDE libraries
     Copyright (C) 2001 Waldo Bastian (bastian@kde.org)
     Copyright (c) 2007 John Layt <john@layt.net>
- 
+
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
     License version 2 as published by the Free Software Foundation.
- 
+
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
     Library General Public License for more details.
- 
+
     You should have received a copy of the GNU Library General Public License
     along with this library; see the file COPYING.LIB.  If not, write to
     the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
@@ -44,19 +44,19 @@ class QDate;
 class KDE4SUPPORT_EXPORT KDateWidget : public QWidget
 {
     Q_OBJECT
-    Q_PROPERTY( QDate date READ date WRITE setDate NOTIFY changed USER true )
+    Q_PROPERTY(QDate date READ date WRITE setDate NOTIFY changed USER true)
 //FIXME    Q_PROPERTY( KCalendarSystem calendar READ calendar WRITE setCalendar USER true )
 
 public:
     /**
      * Constructs a date selection widget.
      */
-    explicit KDateWidget( QWidget *parent = 0 );
+    explicit KDateWidget(QWidget *parent = 0);
 
     /**
      * Constructs a date selection widget with the initial date set to @p date.
      */
-    explicit KDateWidget( const QDate &date, QWidget *parent = 0 );
+    explicit KDateWidget(const QDate &date, QWidget *parent = 0);
 
     /**
      * Destructs the date selection widget.
@@ -67,30 +67,30 @@ public:
     /**
      * Returns the currently selected date.
      */
-    const QDate& date() const;
+    const QDate &date() const;
 
     /**
      * Changes the selected date to @p date.
-     * 
+     *
      * @return @c true if the date was successfully set, @c false otherwise
      */
-    bool setDate( const QDate &date );
+    bool setDate(const QDate &date);
 
     /**
      * Returns the currently selected calendar system.
-     * 
+     *
      * @return a KCalendarSystem object
      */
     const KCalendarSystem *calendar() const;
 
     /**
      * Changes the calendar system to use.  Can use its own local locale if set.
-     * 
+     *
      * @param calendar the calendar system object to use, defaults to global
-     * 
+     *
      * @return @c true if the calendar system was successfully set, @c false otherwise
      */
-    bool setCalendar( KCalendarSystem *calendar = 0 );
+    bool setCalendar(KCalendarSystem *calendar = 0);
 
     /**
      * @since 4.6
@@ -100,24 +100,24 @@ public:
      * @param calendarSystem the calendar system to use
      * @return @c true if the calendar system was successfully set, @c false otherwise
      */
-    bool setCalendarSystem( KLocale::CalendarSystem calendarSystem );
+    bool setCalendarSystem(KLocale::CalendarSystem calendarSystem);
 
 Q_SIGNALS:
     /**
      * Emitted whenever the date of the widget
      * is changed, either with setDate() or via user selection.
      */
-    void changed( const QDate& date );
+    void changed(const QDate &date);
 
 protected:
-    void initWidget( const QDate& date );
+    void initWidget(const QDate &date);
 
 protected Q_SLOTS:
     void slotDateChanged();
 
 private:
     class KDateWidgetPrivate;
-    KDateWidgetPrivate * const d;
+    KDateWidgetPrivate *const d;
 };
 
 #endif // KDATEWIDGET_H

@@ -29,8 +29,8 @@
 
 using namespace KParts;
 
-Factory::Factory( QObject *parent )
-: KPluginFactory( 0, parent )
+Factory::Factory(QObject *parent)
+    : KPluginFactory(0, parent)
 {
 }
 
@@ -38,11 +38,12 @@ Factory::~Factory()
 {
 }
 
-Part *Factory::createPart( QWidget *parentWidget, QObject *parent, const char *classname, const QStringList &args )
+Part *Factory::createPart(QWidget *parentWidget, QObject *parent, const char *classname, const QStringList &args)
 {
-    Part* part = createPartObject( parentWidget, parent, classname, args );
-    if ( part )
-	emit objectCreated( part );
+    Part *part = createPartObject(parentWidget, parent, classname, args);
+    if (part) {
+        emit objectCreated(part);
+    }
     return part;
 }
 
@@ -51,27 +52,29 @@ KComponentData Factory::partComponentData()
     return KComponentData();
 }
 
-KComponentData Factory::partComponentDataFromLibrary( const QString &libraryName )
+KComponentData Factory::partComponentDataFromLibrary(const QString &libraryName)
 {
-    KPluginLoader loader( libraryName );
+    KPluginLoader loader(libraryName);
 
     KPluginFactory *factory = loader.factory();
-    if ( !factory )
+    if (!factory) {
         return KComponentData();
-    KParts::Factory *pfactory = dynamic_cast<KParts::Factory *>( factory );
-    if ( !pfactory )
+    }
+    KParts::Factory *pfactory = dynamic_cast<KParts::Factory *>(factory);
+    if (!pfactory) {
         return KComponentData();
+    }
     return pfactory->partComponentData();
 }
 
-Part *Factory::createPartObject( QWidget *, QObject *, const char *, const QStringList & )
+Part *Factory::createPartObject(QWidget *, QObject *, const char *, const QStringList &)
 {
     return 0;
 }
 
-QObject *Factory::createObject( QObject *parent, const char *classname, const QStringList &args )
+QObject *Factory::createObject(QObject *parent, const char *classname, const QStringList &args)
 {
-  assert( !parent || parent->isWidgetType() );
-  return createPart( static_cast<QWidget *>( parent ), parent, classname, args );
+    assert(!parent || parent->isWidgetType());
+    return createPart(static_cast<QWidget *>(parent), parent, classname, args);
 }
 

@@ -89,7 +89,7 @@ void KMimeTypeTest::initTestCase()
         group.writeEntry("X-KDE-Library", "faketextpart");
         group.writeEntry("ServiceTypes", "KParts/ReadOnlyPart");
         group.writeEntry("MimeType", "text/plain;");
-        group.writeEntry("InitialPreference",100);
+        group.writeEntry("InitialPreference", 100);
     }
 
     // Create fake text/plain ktexteditor plugin.
@@ -137,7 +137,7 @@ void KMimeTypeTest::initTestCase()
         group.writeEntry("Categories", "Qt;KDE;");
     }
 
-    if ( mustUpdateKSycoca ) {
+    if (mustUpdateKSycoca) {
         // Update ksycoca in ~/.kde-unit-test after creating the above
         QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
     }
@@ -166,26 +166,26 @@ void KMimeTypeTest::cleanupTestCase()
     proc.waitForFinished();
 }
 
-QTEST_KDEMAIN_CORE( KMimeTypeTest )
+QTEST_KDEMAIN_CORE(KMimeTypeTest)
 
 void KMimeTypeTest::testByName()
 {
     KMimeType::Ptr s0 = KMimeType::mimeType("application/x-zerosize");
-    QVERIFY( s0 );
-    QCOMPARE( s0->name(), QString::fromLatin1("application/x-zerosize") );
-    QCOMPARE( s0->comment(), QString::fromLatin1("empty document") );
+    QVERIFY(s0);
+    QCOMPARE(s0->name(), QString::fromLatin1("application/x-zerosize"));
+    QCOMPARE(s0->comment(), QString::fromLatin1("empty document"));
 
     KMimeType::Ptr s0Again = KMimeType::mimeType("application/x-zerosize");
     QCOMPARE(s0Again->name(), s0->name());
     QVERIFY(s0Again != s0);
 
     KMimeType::Ptr s1 = KMimeType::mimeType("text/plain");
-    QVERIFY( s1 );
-    QCOMPARE( s1->name(), QString::fromLatin1("text/plain") );
+    QVERIFY(s1);
+    QCOMPARE(s1->name(), QString::fromLatin1("text/plain"));
     //qDebug("Comment is %s", qPrintable(s1->comment()) );
 
     KMimeType::Ptr krita = KMimeType::mimeType("application/x-krita");
-    QVERIFY( krita );
+    QVERIFY(krita);
 
     // Test <comment> parsing with application/rdf+xml which has the english comment after the other ones
     KMimeType::Ptr rdf = KMimeType::mimeType("application/rdf+xml");
@@ -193,7 +193,7 @@ void KMimeTypeTest::testByName()
     QCOMPARE(rdf->comment(), QString::fromLatin1("RDF file"));
 
     KMimeType::Ptr bzip2 = KMimeType::mimeType("application/x-bzip2");
-    QVERIFY( bzip2 );
+    QVERIFY(bzip2);
     QCOMPARE(bzip2->comment(), QString::fromLatin1("Bzip archive"));
 
     KMimeType::Ptr defaultMime = KMimeType::mimeType("application/octet-stream");
@@ -203,18 +203,16 @@ void KMimeTypeTest::testByName()
 
 void KMimeTypeTest::testIcons()
 {
-    if ( !KUser().isSuperUser() ) // Can't test this one if running as root
-    {
+    if (!KUser().isSuperUser()) { // Can't test this one if running as root
         QString emptyString; // gcc-3.3 workaround
-	QTemporaryDir tmp (emptyString);
-	QFile(tmp.path()).setPermissions(0);
-        tmp.setAutoRemove( true );
+        QTemporaryDir tmp(emptyString);
+        QFile(tmp.path()).setPermissions(0);
+        tmp.setAutoRemove(true);
         //KUrl url( tmp.path() );
         //QCOMPARE(KIO::iconNameForUrl(url), "inode-directory"); // was folder_locked, but we don't have that anymore - TODO
-	QFile(tmp.path()).setPermissions(QFile::ReadOwner|QFile::ExeOwner); // so we can 'rm -rf' it
+        QFile(tmp.path()).setPermissions(QFile::ReadOwner | QFile::ExeOwner); // so we can 'rm -rf' it
     }
 }
-
 
 void KMimeTypeTest::testFindByPathUsingFileName_data()
 {
@@ -256,8 +254,8 @@ void KMimeTypeTest::testFindByPathUsingFileName_data()
     if (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("icons/") + "oxygen", QStandardPaths::LocateDirectory).isEmpty()) {
         kWarning() << "oxygen not found";
     } else {
-        QString fh = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("icons/") + "oxygen/22x22/places/folder.png" );
-        QVERIFY( !fh.isEmpty() ); // if the file doesn't exist, please fix the above to point to an existing icon
+        QString fh = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("icons/") + "oxygen/22x22/places/folder.png");
+        QVERIFY(!fh.isEmpty());   // if the file doesn't exist, please fix the above to point to an existing icon
         QTest::newRow("png image") << fh << "image/png";
     }
 
@@ -276,7 +274,7 @@ void KMimeTypeTest::testFindByPathUsingFileName()
     QFETCH(QString, fileName);
     QFETCH(QString, expectedMimeType);
     KMimeType::Ptr mime = KMimeType::findByPath(fileName);
-    QVERIFY( mime );
+    QVERIFY(mime);
     QCOMPARE(mime->name(), expectedMimeType);
 
 }
@@ -318,12 +316,12 @@ void KMimeTypeTest::testFindByPathWithContent()
     QString tempFileName = tempFile.fileName();
     tempFile.write("%PDF-");
     tempFile.close();
-    mime = KMimeType::findByPath( tempFileName );
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1( "application/pdf" ) );
+    mime = KMimeType::findByPath(tempFileName);
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("application/pdf"));
     // fast mode cannot find the mimetype
-    mime = KMimeType::findByPath( tempFileName, 0, true );
-    QVERIFY( mime );
+    mime = KMimeType::findByPath(tempFileName, 0, true);
+    QVERIFY(mime);
     QCOMPARE(mime->name(), QString::fromLatin1("application/octet-stream"));
 
     // Test the case where the extension doesn't match the contents: extension wins
@@ -333,13 +331,13 @@ void KMimeTypeTest::testFindByPathWithContent()
         txtTempFile.write("%PDF-");
         QString txtTempFileName = txtTempFile.fileName();
         txtTempFile.close();
-        mime = KMimeType::findByPath( txtTempFileName );
-        QVERIFY( mime );
-        QCOMPARE( mime->name(), QString::fromLatin1( "text/plain" ) );
+        mime = KMimeType::findByPath(txtTempFileName);
+        QVERIFY(mime);
+        QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
         // fast mode finds the same
-        mime = KMimeType::findByPath( txtTempFileName, 0, true );
-        QVERIFY( mime );
-        QCOMPARE( mime->name(), QString::fromLatin1( "text/plain" ) );
+        mime = KMimeType::findByPath(txtTempFileName, 0, true);
+        QVERIFY(mime);
+        QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
     }
 
     // Now the case where extension differs from contents, but contents has >80 magic rule
@@ -351,9 +349,9 @@ void KMimeTypeTest::testFindByPathWithContent()
         txtTempFile.write("<smil");
         QString txtTempFileName = txtTempFile.fileName();
         txtTempFile.close();
-        mime = KMimeType::findByPath( txtTempFileName );
-        QVERIFY( mime );
-        QCOMPARE( mime->name(), QString::fromLatin1( "text/plain" ) );
+        mime = KMimeType::findByPath(txtTempFileName);
+        QVERIFY(mime);
+        QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
     }
 }
 
@@ -362,25 +360,26 @@ void KMimeTypeTest::testFindByUrl()
     // Tests with local files are already done in testFindByPath,
     // here we test for remote urls only.
     KMimeType::Ptr mime;
-    mime = KMimeType::findByUrl( KUrl("http://foo/bar.png") );
-    QVERIFY( mime );
+    mime = KMimeType::findByUrl(KUrl("http://foo/bar.png"));
+    QVERIFY(mime);
 
-    QCOMPARE( mime->name(), QString::fromLatin1( "application/octet-stream" ) ); // HTTP can't know before downloading
+    QCOMPARE(mime->name(), QString::fromLatin1("application/octet-stream"));     // HTTP can't know before downloading
 
     mime = KMimeType::findByUrl(KUrl("http://foo/s0/"));
-    QCOMPARE( mime->name(), QString::fromLatin1( "application/octet-stream" ) ); // HTTP can't know before downloading
+    QCOMPARE(mime->name(), QString::fromLatin1("application/octet-stream"));     // HTTP can't know before downloading
 
 #if 0 // no such logic in QMimeType, we get default mimetype, KRun will figure it out
-    if ( !KProtocolInfo::isKnownProtocol(KUrl("man:/")) )
-        QSKIP( "man protocol not installed" );
+    if (!KProtocolInfo::isKnownProtocol(KUrl("man:/"))) {
+        QSKIP("man protocol not installed");
+    }
 
-    mime = KMimeType::findByUrl( KUrl("man:/ls") );
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("text/html") );
+    mime = KMimeType::findByUrl(KUrl("man:/ls"));
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("text/html"));
 
-    mime = KMimeType::findByUrl( KUrl("man:/ls/") );
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("text/html") );
+    mime = KMimeType::findByUrl(KUrl("man:/ls/"));
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("text/html"));
 #endif
 
     mime = KMimeType::findByUrl(KUrl("fish://host/test1")); // like fish does, to test for known extensions
@@ -395,57 +394,57 @@ void KMimeTypeTest::testFindByNameAndContent()
     QByteArray textData = "Hello world";
     // textfile -> text/plain. No extension -> mimetype is found from the contents.
     mime = KMimeType::findByNameAndContent("textfile", textData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("text/plain") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
 
     // textfile.foo -> text/plain. Unknown extension -> mimetype is found from the contents.
     mime = KMimeType::findByNameAndContent("textfile.foo", textData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("text/plain") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
 
     // textfile.doc -> text/plain. We added this to the mimetype database so that it can be handled.
     mime = KMimeType::findByNameAndContent("textfile.doc", textData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("text/plain") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
 
     // mswordfile.doc -> application/msword. Found by contents, because of the above case.
     // Note that it's application/msword, not application/vnd.ms-word, since it's the former that is registered to IANA.
     QByteArray mswordData = "\320\317\021\340\241\261\032\341";
     mime = KMimeType::findByNameAndContent("mswordfile.doc", mswordData);
-    QVERIFY( mime );
+    QVERIFY(mime);
     if (mime->name() == "application/vnd.ms-word") { // this comes from /usr/share/mime/packages/libreoffice.xml....
         QEXPECT_FAIL("", "libreoffice.xml is messing with us", Continue);
     }
     // If you get powerpoint instead, then you're hit by https://bugs.freedesktop.org/show_bug.cgi?id=435 - upgrade to shared-mime-info >= 0.22
-    QCOMPARE( mime->name(), QString::fromLatin1("application/msword") );
+    QCOMPARE(mime->name(), QString::fromLatin1("application/msword"));
 
     // excelfile.xls -> application/vnd.ms-excel. Found by extension.
     mime = KMimeType::findByNameAndContent("excelfile.xls", mswordData /*same magic*/);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("application/vnd.ms-excel") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("application/vnd.ms-excel"));
 
     // textfile.xls -> application/vnd.ms-excel. Found by extension. User shouldn't rename a text file to .xls ;)
     mime = KMimeType::findByNameAndContent("textfile.xls", textData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("application/vnd.ms-excel") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("application/vnd.ms-excel"));
 
 #if 0   // needs shared-mime-info >= 0.20
     QByteArray tnefData = "\x78\x9f\x3e\x22";
     mime = KMimeType::findByNameAndContent("tneffile", mswordData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("application/vnd.ms-tnef") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("application/vnd.ms-tnef"));
 #endif
 
     QByteArray pdfData = "%PDF-";
     mime = KMimeType::findByNameAndContent("foo", pdfData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("application/pdf") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("application/pdf"));
 
     // High-priority rule (80)
     QByteArray phpData = "<?php";
     mime = KMimeType::findByNameAndContent("foo", phpData);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), QString::fromLatin1("application/x-php") );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), QString::fromLatin1("application/x-php"));
 }
 
 void KMimeTypeTest::testFindByContent_data()
@@ -477,8 +476,8 @@ void KMimeTypeTest::testFindByContent()
     QFETCH(QString, expectedMimeType);
 
     KMimeType::Ptr mime = KMimeType::findByContent(data);
-    QVERIFY( mime );
-    QCOMPARE( mime->name(), expectedMimeType );
+    QVERIFY(mime);
+    QCOMPARE(mime->name(), expectedMimeType);
 }
 
 void KMimeTypeTest::testFindByFileContent()
@@ -503,24 +502,24 @@ void KMimeTypeTest::testFindByFileContent()
 void KMimeTypeTest::testAllMimeTypes()
 {
     const KMimeType::List lst = KMimeType::allMimeTypes(); // does NOT include aliases
-    QVERIFY( !lst.isEmpty() );
+    QVERIFY(!lst.isEmpty());
 
-    for ( KMimeType::List::ConstIterator it = lst.begin();
-          it != lst.end(); ++it ) {
+    for (KMimeType::List::ConstIterator it = lst.begin();
+            it != lst.end(); ++it) {
         const KMimeType::Ptr mime = (*it);
         const QString name = mime->name();
         //qDebug( "%s", qPrintable( name ) );
-        QVERIFY( !name.isEmpty() );
-        QCOMPARE( name.count( '/' ), 1 );
+        QVERIFY(!name.isEmpty());
+        QCOMPARE(name.count('/'), 1);
 
-        const KMimeType::Ptr lookedupMime = KMimeType::mimeType( name );
-        QVERIFY( lookedupMime ); // not null
+        const KMimeType::Ptr lookedupMime = KMimeType::mimeType(name);
+        QVERIFY(lookedupMime);   // not null
         if (name != "application/vnd.ms-word" && name != "application/x-pkcs7-certificates"
                 && name != "application/x-x509-ca-cert"
                 && name != "application/x-vnd.kde.kexi" // due to /usr/share/mime/packages/kde.xml from KDE4
                 && name != "application/x-kexiproject-sqlite" // due to /usr/share/mime/packages/kde.xml from KDE4
-                ) {
-            QCOMPARE( lookedupMime->name(), name );
+           ) {
+            QCOMPARE(lookedupMime->name(), name);
             // if this fails, you have an alias defined as a real mimetype too!
             //
             // Note: this also happens with x-win-lnk when your kde.xml defines it as an alias, while
@@ -536,11 +535,11 @@ void KMimeTypeTest::testAllMimeTypes()
 
 void KMimeTypeTest::testAlias()
 {
-    const KMimeType::Ptr canonical = KMimeType::mimeType( "application/xml" );
-    QVERIFY( canonical );
-    KMimeType::Ptr alias = KMimeType::mimeType( "text/xml" );
-    QVERIFY( alias );
-    QCOMPARE( alias->name(), QString("application/xml") );
+    const KMimeType::Ptr canonical = KMimeType::mimeType("application/xml");
+    QVERIFY(canonical);
+    KMimeType::Ptr alias = KMimeType::mimeType("text/xml");
+    QVERIFY(alias);
+    QCOMPARE(alias->name(), QString("application/xml"));
 
     QVERIFY(alias->is("application/xml"));
     QVERIFY(canonical->is("text/xml"));
@@ -574,12 +573,12 @@ void KMimeTypeTest::testMimeTypeParent()
     QVERIFY(!directory->is("application/octet-stream"));
 
     // Check that text/x-patch knows that it inherits from text/plain (it says so explicitly)
-    const KMimeType::Ptr plain = KMimeType::mimeType( "text/plain" );
-    const KMimeType::Ptr derived = KMimeType::mimeType( "text/x-patch" );
-    QVERIFY( derived );
-    QCOMPARE( derived->parentMimeTypes().join(","), plain->name() );
-    QVERIFY( derived->is("text/plain") );
-    QVERIFY( derived->is("application/octet-stream") );
+    const KMimeType::Ptr plain = KMimeType::mimeType("text/plain");
+    const KMimeType::Ptr derived = KMimeType::mimeType("text/x-patch");
+    QVERIFY(derived);
+    QCOMPARE(derived->parentMimeTypes().join(","), plain->name());
+    QVERIFY(derived->is("text/plain"));
+    QVERIFY(derived->is("application/octet-stream"));
 
     // Check that application/x-shellscript inherits from application/x-executable
     // (Otherwise KRun cannot start shellscripts...)
@@ -601,8 +600,9 @@ void KMimeTypeTest::testMimeTypeParent()
 
     // Check that text/x-mrml knows that it inherits from text/plain (implicitly)
     const KMimeType::Ptr mrml = KMimeType::mimeType("text/x-mrml");
-    if (!mrml)
+    if (!mrml) {
         QSKIP("kdelibs not installed");
+    }
     QVERIFY(mrml->is("text/plain"));
     QVERIFY(mrml->is("application/octet-stream"));
 }
@@ -622,7 +622,8 @@ void KMimeTypeTest::testMimeTypeInheritancePerformance()
     QTime dt; dt.start();
     QBENCHMARK {
         QString match;
-        foreach (const QString& mt, mimeTypes) {
+        foreach (const QString &mt, mimeTypes)
+        {
             if (mime->is(mt)) {
                 match = mt;
                 // of course there would normally be a "break" here, but we're testing worse-case
@@ -643,16 +644,15 @@ void KMimeTypeTest::testMimeTypeInheritancePerformance()
 }
 
 // Helper method for all the trader tests
-static bool offerListHasService( const KService::List& offers,
-                                 const QString& entryPath )
+static bool offerListHasService(const KService::List &offers,
+                                const QString &entryPath)
 {
     bool found = false;
     KService::List::const_iterator it = offers.begin();
-    for ( ; it != offers.end() ; ++it )
-    {
-        if ( (*it)->entryPath() == entryPath ) {
-            if( found ) { // should be there only once
-                qWarning( "ERROR: %s was found twice in the list", qPrintable( entryPath ) );
+    for (; it != offers.end(); ++it) {
+        if ((*it)->entryPath() == entryPath) {
+            if (found) {  // should be there only once
+                qWarning("ERROR: %s was found twice in the list", qPrintable(entryPath));
                 return false; // make test fail
             }
             found = true;
@@ -663,8 +663,9 @@ static bool offerListHasService( const KService::List& offers,
 
 void KMimeTypeTest::testMimeTypeTraderForTextPlain()
 {
-    if ( !KSycoca::isAvailable() )
-        QSKIP( "ksycoca not available" );
+    if (!KSycoca::isAvailable()) {
+        QSKIP("ksycoca not available");
+    }
 
     // Querying mimetype trader for services associated with text/plain
     KService::List offers = KMimeTypeTrader::self()->query("text/plain", "KParts/ReadOnlyPart");
@@ -672,59 +673,62 @@ void KMimeTypeTest::testMimeTypeTraderForTextPlain()
     QVERIFY(offerListHasService(offers, "faketextpart.desktop"));
 
     offers = KMimeTypeTrader::self()->query("text/plain", "KPluginInfo");
-    QVERIFY( offers.count() > 0 );
+    QVERIFY(offers.count() > 0);
 
     // We should have at least the fake text plugin that we created for this.
     // (The actual plugins from kdelibs don't mention text/plain anymore)
-    QVERIFY( offerListHasService( offers, "faketextplugin.desktop" ) );
+    QVERIFY(offerListHasService(offers, "faketextplugin.desktop"));
 
     // We shouldn't have non-plugins
-    QVERIFY( !offerListHasService( offers, "fakepatchpart.desktop" ) );
-    QVERIFY( !offerListHasService( offers, "faketextpart.desktop" ) );
+    QVERIFY(!offerListHasService(offers, "fakepatchpart.desktop"));
+    QVERIFY(!offerListHasService(offers, "faketextpart.desktop"));
 }
 
 void KMimeTypeTest::testMimeTypeTraderForDerivedMimeType()
 {
-    if ( !KSycoca::isAvailable() )
-        QSKIP( "ksycoca not available" );
+    if (!KSycoca::isAvailable()) {
+        QSKIP("ksycoca not available");
+    }
 
     // Querying mimetype trader for services associated with text/x-patch, which inherits from text/plain
     KService::List offers = KMimeTypeTrader::self()->query("text/x-patch", "KParts/ReadOnlyPart");
-    QVERIFY( offerListHasService( offers, "fakepatchpart.desktop" ) );
-    QVERIFY( offerListHasService( offers, "faketextpart.desktop" ) );
-    QVERIFY( (*offers.begin())->entryPath() != "faketextpart.desktop" ); // in the list, but not preferred
+    QVERIFY(offerListHasService(offers, "fakepatchpart.desktop"));
+    QVERIFY(offerListHasService(offers, "faketextpart.desktop"));
+    QVERIFY((*offers.begin())->entryPath() != "faketextpart.desktop");   // in the list, but not preferred
 
     offers = KMimeTypeTrader::self()->query("text/x-patch", "KPluginInfo");
-    QVERIFY( offers.count() > 0 );
+    QVERIFY(offers.count() > 0);
 
     // We should have at least the fake text plugin that we created for this.
     // (The actual plugins from kdelibs don't mention text/plain anymore)
-    QVERIFY( offerListHasService( offers, "faketextplugin.desktop" ) );
+    QVERIFY(offerListHasService(offers, "faketextplugin.desktop"));
 
     offers = KMimeTypeTrader::self()->query("text/x-patch", "Application");
-    QVERIFY( !offerListHasService( offers, "faketextpart.desktop" ) );
+    QVERIFY(!offerListHasService(offers, "faketextpart.desktop"));
 
     // We shouldn't have non-kde apps
-    Q_FOREACH( KService::Ptr service, offers )
+    Q_FOREACH (KService::Ptr service, offers) {
         kDebug() << service->name() << service->entryPath();
+    }
 
-    QVERIFY( !offerListHasService( offers, m_nonKdeApp ) );
+    QVERIFY(!offerListHasService(offers, m_nonKdeApp));
 }
 
 void KMimeTypeTest::testPreferredService()
 {
     // The "NotShowIn=KDE" service should not be the preferred one!
     KService::Ptr serv = KMimeTypeTrader::self()->preferredService("text/plain");
-    QVERIFY( serv );
+    QVERIFY(serv);
     qDebug() << serv->entryPath();
-    QVERIFY( serv->entryPath() != m_nonKdeApp );
+    QVERIFY(serv->entryPath() != m_nonKdeApp);
     QCOMPARE(serv->entryPath(), m_textPlainApp);
 }
 
 void KMimeTypeTest::testMimeTypeTraderForAlias()
 {
-    if ( !KSycoca::isAvailable() )
-        QSKIP( "ksycoca not available" );
+    if (!KSycoca::isAvailable()) {
+        QSKIP("ksycoca not available");
+    }
 
     const KService::List referenceOffers = KMimeTypeTrader::self()->query("application/xml", "KParts/ReadOnlyPart");
     QVERIFY(offerListHasService(referenceOffers, "faketextpart.desktop"));
@@ -740,38 +744,38 @@ void KMimeTypeTest::testMimeTypeTraderForAlias()
 
 void KMimeTypeTest::testHasServiceType1() // with services constructed with a full path (rare)
 {
-    QString faketextpartPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kde5/services/") + "faketextpart.desktop" );
-    QVERIFY( !faketextpartPath.isEmpty() );
-    KService faketextpart( faketextpartPath );
-    QVERIFY( faketextpart.hasMimeType( "text/plain" ) );
+    QString faketextpartPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kde5/services/") + "faketextpart.desktop");
+    QVERIFY(!faketextpartPath.isEmpty());
+    KService faketextpart(faketextpartPath);
+    QVERIFY(faketextpart.hasMimeType("text/plain"));
     QVERIFY(!faketextpart.hasMimeType("text/x-patch")); // inherited mimetype; fails
-    QVERIFY( !faketextpart.hasMimeType( "image/png" ) );
-    QVERIFY( faketextpart.hasServiceType( "KParts/ReadOnlyPart" ) );
-    QVERIFY( !faketextpart.hasServiceType( "KParts/ReadWritePart" ) );
-    QVERIFY( !faketextpart.hasServiceType( "KPluginInfo" ) );
+    QVERIFY(!faketextpart.hasMimeType("image/png"));
+    QVERIFY(faketextpart.hasServiceType("KParts/ReadOnlyPart"));
+    QVERIFY(!faketextpart.hasServiceType("KParts/ReadWritePart"));
+    QVERIFY(!faketextpart.hasServiceType("KPluginInfo"));
 
-    QString textPluginPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kde5/services/") + "faketextplugin.desktop" );
-    QVERIFY( !textPluginPath.isEmpty() );
-    KService textPlugin( textPluginPath );
-    QVERIFY( textPlugin.hasServiceType( "KPluginInfo" ) );
-    QVERIFY( !textPlugin.hasServiceType( "KParts/ReadOnlyPart" ) );
+    QString textPluginPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kde5/services/") + "faketextplugin.desktop");
+    QVERIFY(!textPluginPath.isEmpty());
+    KService textPlugin(textPluginPath);
+    QVERIFY(textPlugin.hasServiceType("KPluginInfo"));
+    QVERIFY(!textPlugin.hasServiceType("KParts/ReadOnlyPart"));
 }
 
 void KMimeTypeTest::testHasServiceType2() // with services coming from ksycoca
 {
-    KService::Ptr faketextpart = KService::serviceByDesktopPath( "faketextpart.desktop" );
-    QVERIFY( faketextpart );
-    QVERIFY( faketextpart->hasMimeType( "text/plain" ) );
-    QVERIFY( faketextpart->hasMimeType( "text/x-patch" ) ); // due to inheritance
-    QVERIFY( !faketextpart->hasMimeType( "image/png" ) );
-    QVERIFY( faketextpart->hasServiceType( "KParts/ReadOnlyPart" ) );
-    QVERIFY( !faketextpart->hasServiceType( "KParts/ReadWritePart" ) );
-    QVERIFY( !faketextpart->hasServiceType( "KPluginInfo" ) );
+    KService::Ptr faketextpart = KService::serviceByDesktopPath("faketextpart.desktop");
+    QVERIFY(faketextpart);
+    QVERIFY(faketextpart->hasMimeType("text/plain"));
+    QVERIFY(faketextpart->hasMimeType("text/x-patch"));     // due to inheritance
+    QVERIFY(!faketextpart->hasMimeType("image/png"));
+    QVERIFY(faketextpart->hasServiceType("KParts/ReadOnlyPart"));
+    QVERIFY(!faketextpart->hasServiceType("KParts/ReadWritePart"));
+    QVERIFY(!faketextpart->hasServiceType("KPluginInfo"));
 
-    KService::Ptr textPlugin= KService::serviceByDesktopPath( "faketextplugin.desktop" );
-    QVERIFY( textPlugin );
-    QVERIFY( textPlugin->hasServiceType( "KPluginInfo" ) );
-    QVERIFY( !textPlugin->hasServiceType( "KParts/ReadOnlyPart" ) );
+    KService::Ptr textPlugin = KService::serviceByDesktopPath("faketextplugin.desktop");
+    QVERIFY(textPlugin);
+    QVERIFY(textPlugin->hasServiceType("KPluginInfo"));
+    QVERIFY(!textPlugin->hasServiceType("KParts/ReadOnlyPart"));
 }
 
 void KMimeTypeTest::testPatterns_data()
@@ -796,7 +800,7 @@ void KMimeTypeTest::testPatterns()
     QFETCH(QString, mimeType);
     QFETCH(QString, patterns);
     QFETCH(QString, mainExtension);
-    KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
+    KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
     QVERIFY(mime);
     // Sort both lists; order is unreliable since shared-mime-info uses hashes internally.
     QStringList expectedPatterns = patterns.split(';', QString::SkipEmptyParts);
@@ -813,8 +817,9 @@ void KMimeTypeTest::testPatterns()
 
     // shared-mime-info 0.30 adds *,v to text/plain, let's add it from this test so that it works
     // with older versions too.
-    if (mimeType == "text/plain" && !mimePatterns.contains("*,v"))
+    if (mimeType == "text/plain" && !mimePatterns.contains("*,v")) {
         mimePatterns.append("*,v");
+    }
     mimePatterns.sort();
     // Not robust enough, other packages can add additional patterns, like libfm.xml adds *.inf to text/plain
     //QCOMPARE(mimePatterns.join(";"), expectedPatterns.join(";"));
@@ -842,9 +847,8 @@ void KMimeTypeTest::testExtractKnownExtension()
     QCOMPARE(KMimeType::extractKnownExtension(fileName), extension);
 }
 
-struct LessMimeType_ByComment
-{
-    bool operator()(const KMimeType::Ptr& lhs, const KMimeType::Ptr& rhs) const
+struct LessMimeType_ByComment {
+    bool operator()(const KMimeType::Ptr &lhs, const KMimeType::Ptr &rhs) const
     {
         return lhs->comment() < rhs->comment();
     }
@@ -854,7 +858,7 @@ void KMimeTypeTest::testSortByComment()
 {
     QBENCHMARK {
         KMimeType::List sortedList = KMimeType::allMimeTypes();
-        qSort( sortedList.begin(), sortedList.end(), LessMimeType_ByComment() );
+        qSort(sortedList.begin(), sortedList.end(), LessMimeType_ByComment());
     }
 }
 
@@ -881,8 +885,9 @@ void KMimeTypeTest::testThreads()
     futures << QtConcurrent::run(this, &KMimeTypeTest::testPreferredService);
     futures << QtConcurrent::run(this, &KMimeTypeTest::testFromThread);
     kDebug() << "Joining all threads";
-    Q_FOREACH(QFuture<void> f, futures) // krazy:exclude=foreach
+    Q_FOREACH (QFuture<void> f, futures) { // krazy:exclude=foreach
         f.waitForFinished();
+    }
 }
 
 void KMimeTypeTest::testProperties()

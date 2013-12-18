@@ -18,9 +18,9 @@
 
  Simon: Actually we could put a lot more of typelist stuff in here, like
         real list management (append, erase, ...) or other things, but
-	for now I just added the basic typelist and a length template,
-	to keep compile time at a minimum. If we really need more we can
-	still add it :)
+    for now I just added the basic typelist and a length template,
+    to keep compile time at a minimum. If we really need more we can
+    still add it :)
  Holger: Now we add a Template to create the TypeList
 */
 
@@ -132,304 +132,304 @@
 
 #define K_TYPELIST_12(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12) \
     KTypeList<T1, K_TYPELIST_11(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12) >
+                                T11, T12) >
 
 #define K_TYPELIST_13(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13) \
     KTypeList<T1, K_TYPELIST_12(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13) >
+                                T11, T12, T13) >
 
 #define K_TYPELIST_14(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14) \
-    KTypeList<T1, K_TYPELIST_13(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14) >
+                      T11, T12, T13, T14) \
+KTypeList<T1, K_TYPELIST_13(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14) >
 
 #define K_TYPELIST_15(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15) \
-    KTypeList<T1, K_TYPELIST_14(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15) >
+                      T11, T12, T13, T14, T15) \
+KTypeList<T1, K_TYPELIST_14(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15) >
 
 #define K_TYPELIST_16(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16) \
-    KTypeList<T1, K_TYPELIST_15(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16) >
+                      T11, T12, T13, T14, T15, T16) \
+KTypeList<T1, K_TYPELIST_15(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16) >
 
 #define K_TYPELIST_17(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17) \
-    KTypeList<T1, K_TYPELIST_16(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17) >
+                      T11, T12, T13, T14, T15, T16, T17) \
+KTypeList<T1, K_TYPELIST_16(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17) >
 
 #define K_TYPELIST_18(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18) \
-    KTypeList<T1, K_TYPELIST_17(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18) >
+                      T11, T12, T13, T14, T15, T16, T17, T18) \
+KTypeList<T1, K_TYPELIST_17(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18) >
 
 #define K_TYPELIST_19(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19) \
-    KTypeList<T1, K_TYPELIST_18(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19) \
+KTypeList<T1, K_TYPELIST_18(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19) >
 
 #define K_TYPELIST_20(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) \
-    KTypeList<T1, K_TYPELIST_19(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) \
+KTypeList<T1, K_TYPELIST_19(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20) >
 
 #define K_TYPELIST_21(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) \
-    KTypeList<T1, K_TYPELIST_20(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) \
+KTypeList<T1, K_TYPELIST_20(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21) >
 
 #define K_TYPELIST_22(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) \
-    KTypeList<T1, K_TYPELIST_21(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) \
+KTypeList<T1, K_TYPELIST_21(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22) >
 
 #define K_TYPELIST_23(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) \
-    KTypeList<T1, K_TYPELIST_22(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) \
+KTypeList<T1, K_TYPELIST_22(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23) >
 
 #define K_TYPELIST_24(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) \
-    KTypeList<T1, K_TYPELIST_23(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) \
+KTypeList<T1, K_TYPELIST_23(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24) >
 
 #define K_TYPELIST_25(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25) \
-    KTypeList<T1, K_TYPELIST_24(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25) \
+KTypeList<T1, K_TYPELIST_24(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25) >
 
 #define K_TYPELIST_26(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26) \
-    KTypeList<T1, K_TYPELIST_25(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26) \
+KTypeList<T1, K_TYPELIST_25(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26) >
 
 #define K_TYPELIST_27(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27) \
-    KTypeList<T1, K_TYPELIST_26(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27) \
+KTypeList<T1, K_TYPELIST_26(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27) >
 
 #define K_TYPELIST_28(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28) \
-    KTypeList<T1, K_TYPELIST_27(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28) \
+KTypeList<T1, K_TYPELIST_27(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28) >
 
 #define K_TYPELIST_29(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29) \
-    KTypeList<T1, K_TYPELIST_28(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29) \
+KTypeList<T1, K_TYPELIST_28(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29) >
 
 #define K_TYPELIST_30(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) \
-    KTypeList<T1, K_TYPELIST_29(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) \
+KTypeList<T1, K_TYPELIST_29(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30) >
 
 #define K_TYPELIST_31(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) \
-    KTypeList<T1, K_TYPELIST_30(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) \
+KTypeList<T1, K_TYPELIST_30(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31) >
 
 #define K_TYPELIST_32(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32) \
-    KTypeList<T1, K_TYPELIST_31(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32) \
+KTypeList<T1, K_TYPELIST_31(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32) >
 
 #define K_TYPELIST_33(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33) \
-    KTypeList<T1, K_TYPELIST_32(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33) \
+KTypeList<T1, K_TYPELIST_32(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33) >
 
 #define K_TYPELIST_34(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34) \
-    KTypeList<T1, K_TYPELIST_33(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34) \
+KTypeList<T1, K_TYPELIST_33(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34) >
 
 #define K_TYPELIST_35(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35) \
-    KTypeList<T1, K_TYPELIST_34(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35) \
+KTypeList<T1, K_TYPELIST_34(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35) >
 
 #define K_TYPELIST_36(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36) \
-    KTypeList<T1, K_TYPELIST_35(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36) \
+KTypeList<T1, K_TYPELIST_35(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36) >
 
 #define K_TYPELIST_37(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37) \
-    KTypeList<T1, K_TYPELIST_36(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37) \
+KTypeList<T1, K_TYPELIST_36(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37) >
 
 #define K_TYPELIST_38(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38) \
-    KTypeList<T1, K_TYPELIST_37(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38) \
+KTypeList<T1, K_TYPELIST_37(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38) >
 
 #define K_TYPELIST_39(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39) \
-    KTypeList<T1, K_TYPELIST_38(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39) \
+KTypeList<T1, K_TYPELIST_38(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39) >
 
 #define K_TYPELIST_40(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40) \
-    KTypeList<T1, K_TYPELIST_39(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40) \
+KTypeList<T1, K_TYPELIST_39(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40) >
 
 #define K_TYPELIST_41(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41) \
-    KTypeList<T1, K_TYPELIST_40(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41) \
+KTypeList<T1, K_TYPELIST_40(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41) >
 
 #define K_TYPELIST_42(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42) \
-    KTypeList<T1, K_TYPELIST_41(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42) \
+KTypeList<T1, K_TYPELIST_41(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42) >
 
 #define K_TYPELIST_43(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43) \
-    KTypeList<T1, K_TYPELIST_42(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43) \
+KTypeList<T1, K_TYPELIST_42(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43) >
 
 #define K_TYPELIST_44(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44) \
-    KTypeList<T1, K_TYPELIST_43(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44) \
+KTypeList<T1, K_TYPELIST_43(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44) >
 
 #define K_TYPELIST_45(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45) \
-    KTypeList<T1, K_TYPELIST_44(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                      T41, T42, T43, T44, T45) \
+KTypeList<T1, K_TYPELIST_44(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                            T41, T42, T43, T44, T45) >
 
 #define K_TYPELIST_46(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46) \
-    KTypeList<T1, K_TYPELIST_45(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                      T41, T42, T43, T44, T45, T46) \
+KTypeList<T1, K_TYPELIST_45(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                            T41, T42, T43, T44, T45, T46) >
 
 #define K_TYPELIST_47(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47) \
-    KTypeList<T1, K_TYPELIST_46(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                      T41, T42, T43, T44, T45, T46, T47) \
+KTypeList<T1, K_TYPELIST_46(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                            T41, T42, T43, T44, T45, T46, T47) >
 
 #define K_TYPELIST_48(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47, T48) \
-    KTypeList<T1, K_TYPELIST_47(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47, T48) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                      T41, T42, T43, T44, T45, T46, T47, T48) \
+KTypeList<T1, K_TYPELIST_47(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                            T41, T42, T43, T44, T45, T46, T47, T48) >
 
 #define K_TYPELIST_49(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47, T48, T49) \
-    KTypeList<T1, K_TYPELIST_48(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47, T48, T49) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                      T41, T42, T43, T44, T45, T46, T47, T48, T49) \
+KTypeList<T1, K_TYPELIST_48(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                            T41, T42, T43, T44, T45, T46, T47, T48, T49) >
 
 #define K_TYPELIST_50(T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47, T48, T49, T50) \
-    KTypeList<T1, K_TYPELIST_49(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
-        T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
-        T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
-        T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
-        T41, T42, T43, T44, T45, T46, T47, T48, T49, T50) >
+                      T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                      T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                      T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                      T41, T42, T43, T44, T45, T46, T47, T48, T49, T50) \
+KTypeList<T1, K_TYPELIST_49(T2, T3, T4, T5, T6, T7, T8, T9, T10, \
+                            T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, \
+                            T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, \
+                            T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, \
+                            T41, T42, T43, T44, T45, T46, T47, T48, T49, T50) >
 //@}
 
 namespace KDE
 {
-    /**
-     * @class KDE::NullType
-     *
-     * This empty class serves as a terminal marker for typelists.
-     * The last element in a KTypeList is always this class.
-     *
-     * @ingroup ktypelist
-     */
-    class NullType;
+/**
+ * @class KDE::NullType
+ *
+ * This empty class serves as a terminal marker for typelists.
+ * The last element in a KTypeList is always this class.
+ *
+ * @ingroup ktypelist
+ */
+class NullType;
 }
 
 /**
@@ -450,12 +450,11 @@ namespace KDE
  * @ingroup ktypelist
  */
 template <class T, class U>
-struct KTypeList
-{
-  /// first element, a non-typelist type by convention
-   typedef T Head;
-  /// second element, must be either another typelist or KDE::NullType
-   typedef U Tail;
+struct KTypeList {
+    /// first element, a non-typelist type by convention
+    typedef T Head;
+    /// second element, must be either another typelist or KDE::NullType
+    typedef U Tail;
 };
 
 // forward decl.
@@ -485,17 +484,15 @@ struct KTypeList
 template <class TList> struct KTypeListLength;
 
 template <>
-struct KTypeListLength<KDE::NullType>
-{
-/**
- * Zero length type list.
- */
+struct KTypeListLength<KDE::NullType> {
+    /**
+     * Zero length type list.
+     */
     enum { Value = 0 };
 };
 
 template <class T, class U>
-struct KTypeListLength< KTypeList<T, U> >
-{
+struct KTypeListLength< KTypeList<T, U> > {
     /**
      * The length of the type list.
      */
@@ -535,27 +532,22 @@ struct KTypeListLength< KTypeList<T, U> >
 template <class TList, class T> struct KTypeListIndexOf;
 
 template <class T>
-struct KTypeListIndexOf<KDE::NullType, T>
-{
+struct KTypeListIndexOf<KDE::NullType, T> {
     enum { value = -1 };
 };
 
 template <class T, class Tail>
-struct KTypeListIndexOf< KTypeList<T, Tail>, T >
-{
+struct KTypeListIndexOf< KTypeList<T, Tail>, T > {
     enum { value = 0 };
 };
 
 template <class Head, class Tail, class T>
-struct KTypeListIndexOf< KTypeList<Head, Tail>, T >
-{
+struct KTypeListIndexOf< KTypeList<Head, Tail>, T > {
 private:
     enum { temp = KTypeListIndexOf<Tail, T>::value };
 public:
     enum { value = (temp == -1 ? -1 : 1 + temp) };
 };
-
-
 
 /**
  * This class template implements a compile-time algorithm
@@ -569,12 +561,12 @@ public:
  * \code
  * typedef KMakeTypeList<MyType1,MyWidget,MyQobject,MyKoffice>::Result Products;
  * K_EXPORT_COMPONENT_FACTORY( libmyplugin, KGenericFactory<Products> )
- * \endcode 
+ * \endcode
  *
  * @author Holger Freyther based on the Loki library. See copyright statement at the top
  * @ingroup ktypelist
  */
-template<
+template <
     typename T1  = KDE::NullType, typename T2  = KDE::NullType, typename T3  = KDE::NullType,
     typename T4  = KDE::NullType, typename T5  = KDE::NullType, typename T6  = KDE::NullType,
     typename T7  = KDE::NullType, typename T8  = KDE::NullType, typename T9  = KDE::NullType,
@@ -582,17 +574,17 @@ template<
     typename T13 = KDE::NullType, typename T14 = KDE::NullType, typename T15 = KDE::NullType,
     typename T16 = KDE::NullType, typename T17 = KDE::NullType, typename T18 = KDE::NullType
     >
-struct KMakeTypeList{
+struct KMakeTypeList {
 private:
-typedef typename KMakeTypeList
-<
-  T2 , T3 , T4 ,
-  T5 , T6 , T7 ,
-  T8 , T9 , T10,
-  T11, T12, T13,
-  T14, T15, T16,
-  T17, T18
->::Result TailResult;
+    typedef typename KMakeTypeList
+    <
+    T2, T3, T4,
+    T5, T6, T7,
+    T8, T9, T10,
+    T11, T12, T13,
+    T14, T15, T16,
+    T17, T18
+    >::Result TailResult;
 
 public:
     /**
@@ -602,25 +594,22 @@ public:
     typedef KTypeList<T1, TailResult> Result;
 };
 
-template<
-                   typename T2 , typename T3 ,
-    typename T4 , typename T5 , typename T6 ,
-    typename T7 , typename T8 , typename T9 ,
+template <
+    typename T2, typename T3,
+    typename T4, typename T5, typename T6,
+    typename T7, typename T8, typename T9,
     typename T10, typename T11, typename T12,
     typename T13, typename T14, typename T15,
     typename T16, typename T17, typename T18
     >
-struct KMakeTypeList<KDE::NullType, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18>
-{
+struct KMakeTypeList<KDE::NullType, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18> {
     typedef KDE::NullType Result;
 };
 
 template<>
-struct KMakeTypeList<>
-{
+struct KMakeTypeList<> {
     typedef KDE::NullType Result;
 };
-
 
 #endif
 

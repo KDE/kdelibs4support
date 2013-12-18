@@ -25,7 +25,7 @@
 
 namespace Solid
 {
-    class Device;
+class Device;
 }
 
 /**
@@ -61,7 +61,7 @@ public:
      * @brief Get all the children of this item.
      * @return list of children.
      */
-    QList<KDeviceListItem*> children();
+    QList<KDeviceListItem *> children();
 
     /**
      * @brief Returns the index position of a child in the list.
@@ -120,7 +120,7 @@ private:
     void removeChild(KDeviceListItem *child);
 
     class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif

@@ -36,7 +36,8 @@
 
 class KFileWritePlugin;
 
-class KFileMetaInfoItemPrivate : public QSharedData {
+class KFileMetaInfoItemPrivate : public QSharedData
+{
 public:
     KFileMetaInfoItemPrivate() : writer(0) {}
 #ifndef KDE_NO_DEPRECATED
@@ -47,7 +48,7 @@ public:
 #endif
 #endif
     QVariant value;
-    KFileWritePlugin* writer;
+    KFileWritePlugin *writer;
     bool embedded;
     bool modified;
 };

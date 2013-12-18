@@ -29,7 +29,6 @@
 #include "kdebug.h"
 #include "klocalizedstring.h"
 
-
 class KShortcutPrivate
 {
 public:
@@ -39,22 +38,21 @@ public:
     QKeySequence alternate;
 };
 
-
 KShortcut::KShortcut()
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     qRegisterMetaType<KShortcut>();
 }
 
 KShortcut::KShortcut(const QKeySequence &primary)
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     qRegisterMetaType<KShortcut>();
     d->primary = primary;
 }
 
 KShortcut::KShortcut(const QKeySequence &primary, const QKeySequence &alternate)
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     qRegisterMetaType<KShortcut>();
     d->primary = primary;
@@ -62,7 +60,7 @@ KShortcut::KShortcut(const QKeySequence &primary, const QKeySequence &alternate)
 }
 
 KShortcut::KShortcut(int keyQtPri, int keyQtAlt)
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     qRegisterMetaType<KShortcut>();
     d->primary = keyQtPri;
@@ -70,41 +68,46 @@ KShortcut::KShortcut(int keyQtPri, int keyQtAlt)
 }
 
 KShortcut::KShortcut(const KShortcut &other)
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     d->primary = other.d->primary;
     d->alternate = other.d->alternate;
 }
 
 KShortcut::KShortcut(const QList<QKeySequence> &seqs)
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     qRegisterMetaType<KShortcut>();
-    if (seqs.count() >= 1)
+    if (seqs.count() >= 1) {
         d->primary = seqs.at(0);
-    if (seqs.count() >= 2)
+    }
+    if (seqs.count() >= 2) {
         d->alternate = seqs.at(1);
+    }
 }
 
 KShortcut::KShortcut(const QString &s)
- : d(new KShortcutPrivate)
+    : d(new KShortcutPrivate)
 {
     qRegisterMetaType<KShortcut>();
-    if (s == QLatin1String("none"))
+    if (s == QLatin1String("none")) {
         return;
+    }
 
     QStringList sCuts = s.split("; ");
-    if (sCuts.count() > 2)
+    if (sCuts.count() > 2) {
         kWarning() << "asked to store more than two key sequences but can only hold two.";
+    }
 
     //TODO: what is the "(default)" thingie used for?
-    for( int i=0; i < sCuts.count(); i++)
-        if( sCuts[i].startsWith( QLatin1String("default(") ) )
-            sCuts[i] = sCuts[i].mid( 8, sCuts[i].length() - 9 );
+    for (int i = 0; i < sCuts.count(); i++)
+        if (sCuts[i].startsWith(QLatin1String("default("))) {
+            sCuts[i] = sCuts[i].mid(8, sCuts[i].length() - 9);
+        }
 
     if (sCuts.count() >= 1) {
         QString k = sCuts.at(0);
-        k.replace( "Win+", "Meta+" ); // workaround for KDE3-style shortcuts
+        k.replace("Win+", "Meta+");   // workaround for KDE3-style shortcuts
         k.replace("Plus", "+"); // workaround for KDE3-style "Alt+Plus"
         k.replace("Minus", "-"); // workaround for KDE3-style "Alt+Plus"
         d->primary = QKeySequence::fromString(k);
@@ -117,7 +120,7 @@ KShortcut::KShortcut(const QString &s)
 
     if (sCuts.count() >= 2) {
         QString k = sCuts.at(1);
-        k.replace( "Win+", "Meta+" ); // workaround for KDE3-style shortcuts
+        k.replace("Win+", "Meta+");   // workaround for KDE3-style shortcuts
         d->alternate = QKeySequence::fromString(k);
         if (d->alternate.isEmpty()) {
             qDebug() << "unusable alternate shortcut sequence " << sCuts[1];
@@ -147,38 +150,39 @@ bool KShortcut::isEmpty() const
 
 bool KShortcut::contains(const QKeySequence &needle) const
 {
-    if (needle.isEmpty())
+    if (needle.isEmpty()) {
         return false;
+    }
     return d->primary == needle || d->alternate == needle;
 }
 
 bool KShortcut::conflictsWith(const QKeySequence &needle) const
 {
-    if (needle.isEmpty())
+    if (needle.isEmpty()) {
         return false;
+    }
 
     bool primaryConflicts = false;
     bool alternateConflicts = false;
 
     if (!d->primary.isEmpty()) {
         primaryConflicts =
-            (    d->primary.matches(needle) == QKeySequence::NoMatch
-              && needle.matches(d->primary) == QKeySequence::NoMatch )
+            (d->primary.matches(needle) == QKeySequence::NoMatch
+             && needle.matches(d->primary) == QKeySequence::NoMatch)
             ? false
             : true;
     }
 
     if (!d->alternate.isEmpty()) {
-        alternateConflicts=
-            (    d->alternate.matches(needle) == QKeySequence::NoMatch
-              && needle.matches(d->alternate) == QKeySequence::NoMatch )
+        alternateConflicts =
+            (d->alternate.matches(needle) == QKeySequence::NoMatch
+             && needle.matches(d->alternate) == QKeySequence::NoMatch)
             ? false
             : true;
     }
 
     return primaryConflicts || alternateConflicts;
 }
-
 
 void KShortcut::setPrimary(const QKeySequence &newPrimary)
 {
@@ -192,19 +196,21 @@ void KShortcut::setAlternate(const QKeySequence &newAlternate)
 
 void KShortcut::remove(const QKeySequence &keySeq, enum EmptyHandling handleEmpty)
 {
-    if (keySeq.isEmpty())
+    if (keySeq.isEmpty()) {
         return;
+    }
 
     if (d->primary == keySeq) {
-        if (handleEmpty == KeepEmpty)
+        if (handleEmpty == KeepEmpty) {
             d->primary = QKeySequence();
-        else {
+        } else {
             d->primary = d->alternate;
             d->alternate = QKeySequence();
         }
     }
-    if (d->alternate == keySeq)
+    if (d->alternate == keySeq) {
         d->alternate = QKeySequence();
+    }
 }
 
 KShortcut &KShortcut::operator=(const KShortcut &other)
@@ -233,10 +239,12 @@ QList<QKeySequence> KShortcut::toList(enum EmptyHandling handleEmpty) const
 {
     QList<QKeySequence> ret;
     if (handleEmpty == RemoveEmpty) {
-        if (!d->primary.isEmpty())
+        if (!d->primary.isEmpty()) {
             ret.append(d->primary);
-        if (!d->alternate.isEmpty())
+        }
+        if (!d->alternate.isEmpty()) {
             ret.append(d->alternate);
+        }
     } else {
         ret.append(d->primary);
         ret.append(d->alternate);
@@ -253,7 +261,7 @@ QString KShortcut::toString() const
 QString KShortcut::toString(QKeySequence::SequenceFormat format) const
 {
     QString ret;
-    foreach(const QKeySequence &seq, toList()) {
+    foreach (const QKeySequence &seq, toList()) {
         ret.append(seq.toString(format));
         ret.append("; ");
     }

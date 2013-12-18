@@ -35,7 +35,7 @@ KdeUiProxyStyle::~KdeUiProxyStyle()
 
 QStyle *KdeUiProxyStyle::style() const
 {
-    QStyle* baseStyle;
+    QStyle *baseStyle;
     if (m_referenceWidget && m_referenceWidget->parentWidget()) {
         baseStyle = m_referenceWidget->parentWidget()->style();
     } else {
@@ -45,43 +45,43 @@ QStyle *KdeUiProxyStyle::style() const
 }
 
 void KdeUiProxyStyle::drawComplexControl(ComplexControl control, const QStyleOptionComplex *option,
-                                        QPainter *painter, const QWidget *widget) const
+        QPainter *painter, const QWidget *widget) const
 {
     style()->drawComplexControl(control, option, painter, widget);
 }
 
 void KdeUiProxyStyle::drawControl(ControlElement element, const QStyleOption *option, QPainter *painter,
-                                 const QWidget *widget) const
+                                  const QWidget *widget) const
 {
     style()->drawControl(element, option, painter, widget);
 }
 
 void KdeUiProxyStyle::drawItemPixmap(QPainter *painter, const QRect &rectangle, int alignment,
-                                    const QPixmap &pixmap) const
+                                     const QPixmap &pixmap) const
 {
     style()->drawItemPixmap(painter, rectangle, alignment, pixmap);
 }
 
 void KdeUiProxyStyle::drawItemText(QPainter *painter, const QRect &rectangle, int alignment, const QPalette &palette,
-                                  bool enabled, const QString &text, QPalette::ColorRole textRole) const
+                                   bool enabled, const QString &text, QPalette::ColorRole textRole) const
 {
     style()->drawItemText(painter, rectangle, alignment, palette, enabled, text, textRole);
 }
 
 void KdeUiProxyStyle::drawPrimitive(PrimitiveElement element, const QStyleOption *option, QPainter *painter,
-                                   const QWidget *widget) const
+                                    const QWidget *widget) const
 {
     style()->drawPrimitive(element, option, painter, widget);
 }
 
 QPixmap KdeUiProxyStyle::generatedIconPixmap(QIcon::Mode iconMode, const QPixmap &pixmap,
-                                            const QStyleOption *option) const
+        const QStyleOption *option) const
 {
     return style()->generatedIconPixmap(iconMode, pixmap, option);
 }
 
 QStyle::SubControl KdeUiProxyStyle::hitTestComplexControl(ComplexControl control, const QStyleOptionComplex *option,
-                                                         const QPoint &position, const QWidget *widget) const
+        const QPoint &position, const QWidget *widget) const
 {
     return style()->hitTestComplexControl(control, option, position, widget);
 }
@@ -92,7 +92,7 @@ QRect KdeUiProxyStyle::itemPixmapRect(const QRect &rectangle, int alignment, con
 }
 
 QRect KdeUiProxyStyle::itemTextRect(const QFontMetrics &metrics, const QRect &rectangle, int alignment,
-                                   bool enabled, const QString &text) const
+                                    bool enabled, const QString &text) const
 {
     return style()->itemTextRect(metrics, rectangle, alignment, enabled, text);
 }
@@ -123,19 +123,19 @@ void KdeUiProxyStyle::polish(QPalette &palette)
 }
 
 QSize KdeUiProxyStyle::sizeFromContents(ContentsType type, const QStyleOption *option,
-                                       const QSize &contentsSize, const QWidget *widget) const
+                                        const QSize &contentsSize, const QWidget *widget) const
 {
     return style()->sizeFromContents(type, option, contentsSize, widget);
 }
 
 QIcon KdeUiProxyStyle::standardIcon(StandardPixmap standardIcon, const QStyleOption *option,
-                                   const QWidget *widget) const
+                                    const QWidget *widget) const
 {
     return style()->standardIcon(standardIcon, option, widget);
 }
 
 QPixmap KdeUiProxyStyle::standardPixmap(StandardPixmap standardPixmap, const QStyleOption *option,
-                                       const QWidget *widget) const
+                                        const QWidget *widget) const
 {
     return style()->standardPixmap(standardPixmap, option, widget);
 }
@@ -146,19 +146,19 @@ QPalette KdeUiProxyStyle::standardPalette() const
 }
 
 int KdeUiProxyStyle::styleHint(StyleHint hint, const QStyleOption *option, const QWidget *widget,
-                              QStyleHintReturn *returnData) const
+                               QStyleHintReturn *returnData) const
 {
     return style()->styleHint(hint, option, widget, returnData);
 }
 
 QRect KdeUiProxyStyle::subControlRect(ComplexControl control, const QStyleOptionComplex *option,
-                                     SubControl subControl, const QWidget *widget) const
+                                      SubControl subControl, const QWidget *widget) const
 {
     return style()->subControlRect(control, option, subControl, widget);
 }
 
 QRect KdeUiProxyStyle::subElementRect(SubElement element, const QStyleOption *option,
-                                     const QWidget *widget) const
+                                      const QWidget *widget) const
 {
     return style()->subElementRect(element, option, widget);
 }

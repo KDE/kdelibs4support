@@ -26,7 +26,7 @@
 
 class KButtonGroupTest : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 
 private Q_SLOTS:
     void initTestCase();

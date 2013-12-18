@@ -30,7 +30,7 @@ private Q_SLOTS:
     void naturalCompare();
 };
 
-QTEST_MAIN( NaturalCompareTest )
+QTEST_MAIN(NaturalCompareTest)
 
 void NaturalCompareTest::naturalCompare()
 {
@@ -111,7 +111,7 @@ void NaturalCompareTest::naturalCompare()
     QCOMPARE(KStringHandler::naturalCompare("sysvinit-2.86-i486-6.txz.asc", "sysvinit-scripts-1.2-noarch-31.txz", Qt::CaseSensitive), -1);
 
     // bug 237541
-    QCOMPARE(KStringHandler::naturalCompare("Car and Driver 2008-10","Car and Driver Buyer's Guide 2010", Qt::CaseSensitive), -1);
+    QCOMPARE(KStringHandler::naturalCompare("Car and Driver 2008-10", "Car and Driver Buyer's Guide 2010", Qt::CaseSensitive), -1);
     QCOMPARE(KStringHandler::naturalCompare("Car and Driver 2008-10", "Car and Driver 2009-11", Qt::CaseSensitive), -1);
     QCOMPARE(KStringHandler::naturalCompare("Car and Driver 2009-11", "Car and Driver 2010-05", Qt::CaseSensitive), -1);
 

@@ -30,10 +30,11 @@ class QVariant;
 class PredicateProperties;
 
 class KFileMetaInfoItemPrivate;
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoItem {
-friend class KFileMetaInfo;
-friend class KFileMetaInfoPrivate;
-friend class KMetaInfoWriter;
+class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoItem
+{
+    friend class KFileMetaInfo;
+    friend class KFileMetaInfoPrivate;
+    friend class KMetaInfoWriter;
 public:
     /**
      * @brief Default constructor
@@ -42,7 +43,7 @@ public:
     /**
      * @brief Copy constructor
      **/
-    KFileMetaInfoItem(const KFileMetaInfoItem& item);
+    KFileMetaInfoItem(const KFileMetaInfoItem &item);
     /**
      * @brief Destructor
      **/
@@ -50,7 +51,7 @@ public:
     /**
      * @brief Copy operator
      **/
-    const KFileMetaInfoItem& operator=(const KFileMetaInfoItem& item);
+    const KFileMetaInfoItem &operator=(const KFileMetaInfoItem &item);
     /**
      * @brief Can this item be edited.
      **/
@@ -70,15 +71,15 @@ public:
     /**
      * @brief Retrieve the current value of this item
      **/
-    const QVariant& value() const;
+    const QVariant &value() const;
     /**
      * @brief Set the value of this field.
      **/
-    bool setValue(const QVariant& value);
+    bool setValue(const QVariant &value);
     /**
      * @brief Append a value to the properties in this file.
      **/
-    bool addValue(const QVariant&);
+    bool addValue(const QVariant &);
     /**
      * @brief Is this a valid item.
      **/
@@ -89,12 +90,12 @@ public:
      * @deprecated
      **/
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED const PredicateProperties& properties() const;
+    KDE4SUPPORT_DEPRECATED const PredicateProperties &properties() const;
 #endif
     /**
      * Localized name of the predicate.
      **/
-    const QString& name() const;
+    const QString &name() const;
     /**
      * This method returns a translated suffix to be displayed after the
      * value. Think of the kbps in 128kbps
@@ -112,8 +113,8 @@ public:
 private:
     QSharedDataPointer<KFileMetaInfoItemPrivate> d;
 
-    KFileMetaInfoItem(const QString& p,
-        const QVariant& v, KFileWritePlugin* w, bool e);
+    KFileMetaInfoItem(const QString &p,
+                      const QVariant &v, KFileWritePlugin *w, bool e);
 };
 
 #endif

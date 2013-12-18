@@ -47,7 +47,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaDataWidget : public QWidget
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 
 public:
-    explicit KFileMetaDataWidget(QWidget* parent = 0);
+    explicit KFileMetaDataWidget(QWidget *parent = 0);
     virtual ~KFileMetaDataWidget();
 
     /**
@@ -55,7 +55,7 @@ public:
      * The signal metaDataRequestFinished() will be emitted,
      * as soon as the meta data for the items has been received.
      */
-    void setItems(const KFileItemList& items);
+    void setItems(const KFileItemList &items);
     KFileItemList items() const;
 
     /**
@@ -73,21 +73,21 @@ Q_SIGNALS:
      * Is emitted, if a meta data represents an URL that has
      * been clicked by the user.
      */
-    void urlActivated(const QUrl& url);
+    void urlActivated(const QUrl &url);
 
     /**
      * Is emitted after the meta data has been received for the items
      * set by KFileMetaDataWidget::setItems().
      * @since 4.6
      */
-    void metaDataRequestFinished(const KFileItemList& items);
+    void metaDataRequestFinished(const KFileItemList &items);
 
 protected:
-    virtual bool event(QEvent* event);
+    virtual bool event(QEvent *event);
 
 private:
     class Private;
-    Private* d;
+    Private *d;
 
     Q_PRIVATE_SLOT(d, void slotLoadingFinished())
     Q_PRIVATE_SLOT(d, void slotLinkActivated(QString))

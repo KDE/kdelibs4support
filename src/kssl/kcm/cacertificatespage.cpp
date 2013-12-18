@@ -38,14 +38,13 @@ enum Columns {
     HiddenSortColumn
 };
 
-
 static QString nonemptyIssuer(const QSslCertificate &cert)
 {
     QString issuerText;
     static const QSslCertificate::SubjectInfo fields[3] = {
-                     QSslCertificate::Organization,
-                     QSslCertificate::CommonName,
-                     QSslCertificate::OrganizationalUnitName
+        QSslCertificate::Organization,
+        QSslCertificate::CommonName,
+        QSslCertificate::OrganizationalUnitName
     };
     for (int i = 0; i < 3; i++) {
 #warning QT5 PORT TO NEW API
@@ -58,15 +57,14 @@ static QString nonemptyIssuer(const QSslCertificate &cert)
     return issuerText;
 }
 
-
 class CaCertificateItem : public QTreeWidgetItem
 {
 public:
     CaCertificateItem(QTreeWidgetItem *parent, const QSslCertificate &cert, bool isEnabled)
-     : QTreeWidgetItem(parent, m_type),
-       m_cert(cert)
+        : QTreeWidgetItem(parent, m_type),
+          m_cert(cert)
     {
-       setEnabled(isEnabled);
+        setEnabled(isEnabled);
     }
 
     QVariant data(int column, int role) const
@@ -81,7 +79,8 @@ public:
                 if (column == HiddenSortColumn) {
                     return subjectText.toLower();
                 }
-                return subjectText; }
+                return subjectText;
+            }
             case OrgUnitColumn:
                 return m_cert.issuerInfo(QSslCertificate::OrganizationalUnitName);
             }
@@ -105,9 +104,9 @@ public:
 };
 
 CaCertificatesPage::CaCertificatesPage(QWidget *parent)
- : QWidget(parent),
-   m_firstShowEvent(true),
-   m_blockItemChanged(false)
+    : QWidget(parent),
+      m_firstShowEvent(true),
+      m_blockItemChanged(false)
 {
     m_ui.setupUi(this);
     connect(m_ui.displaySelection, SIGNAL(clicked()), SLOT(displaySelectionClicked()));
@@ -123,7 +122,6 @@ CaCertificatesPage::CaCertificatesPage(QWidget *parent)
     m_ui.treeWidget->setColumnCount(HiddenSortColumn + 1);
     m_ui.treeWidget->setColumnHidden(HiddenSortColumn, true);
 }
-
 
 void CaCertificatesPage::load()
 {
@@ -188,7 +186,6 @@ void CaCertificatesPage::save()
     emit changed(false);
 }
 
-
 void CaCertificatesPage::defaults()
 {
     //### is that all?
@@ -203,7 +200,7 @@ void CaCertificatesPage::itemSelectionChanged()
     int numRemovable = 0;
     int numEnabled = 0;
     int numDisplayable = 0;
-    foreach(const QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
+    foreach (const QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
         const CaCertificateItem *item = dynamic_cast<const CaCertificateItem *>(twItem);
         Q_ASSERT(item);
         if (item) {
@@ -226,7 +223,7 @@ void CaCertificatesPage::itemSelectionChanged()
 void CaCertificatesPage::displaySelectionClicked()
 {
     QList<QSslCertificate> certs;
-    foreach(const QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
+    foreach (const QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
         const CaCertificateItem *item = dynamic_cast<const CaCertificateItem *>(twItem);
         Q_ASSERT(item);
         if (item) {
@@ -254,7 +251,7 @@ void CaCertificatesPage::enableDisableSelectionClicked(bool isEnable)
 {
     const bool prevBlockItemChanged = m_blockItemChanged;
     m_blockItemChanged = true;
-    foreach(QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
+    foreach (QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
         CaCertificateItem *item = dynamic_cast<CaCertificateItem *>(twItem);
         Q_ASSERT(item);
         if (item) {
@@ -267,12 +264,11 @@ void CaCertificatesPage::enableDisableSelectionClicked(bool isEnable)
     itemSelectionChanged();
 }
 
-
 // private slot
 void CaCertificatesPage::removeSelectionClicked()
 {
     bool didRemove = false;
-    foreach(QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
+    foreach (QTreeWidgetItem *twItem, m_ui.treeWidget->selectedItems()) {
         const CaCertificateItem *item = dynamic_cast<const CaCertificateItem *>(twItem);
         Q_ASSERT(item);
         if (!item || item->parent()->parent() != m_userCertificatesParent) {
@@ -371,7 +367,7 @@ bool CaCertificatesPage::addCertificateItem(const KSslCaCertificate &caCert)
     const bool prevBlockItemChanged = m_blockItemChanged;
     m_blockItemChanged = true;
     QTreeWidgetItem *grandParent = caCert.store == KSslCaCertificate::SystemStore ?
-                                            m_systemCertificatesParent : m_userCertificatesParent;
+                                   m_systemCertificatesParent : m_userCertificatesParent;
     const QString issuerOrganization = nonemptyIssuer(caCert.cert);
 
     QTreeWidgetItem *parent = findImmediateChild(grandParent, issuerOrganization);

@@ -27,14 +27,17 @@
 #include <config-nepomuk.h>
 #endif
 
-KFileMetaInfoItem::KFileMetaInfoItem() : d(new KFileMetaInfoItemPrivate()) {
+KFileMetaInfoItem::KFileMetaInfoItem() : d(new KFileMetaInfoItemPrivate())
+{
 }
 
-KFileMetaInfoItem::KFileMetaInfoItem(const KFileMetaInfoItem& item) : d(item.d) {
+KFileMetaInfoItem::KFileMetaInfoItem(const KFileMetaInfoItem &item) : d(item.d)
+{
 }
-KFileMetaInfoItem::KFileMetaInfoItem(const QString& pp,
-                                     const QVariant& v, KFileWritePlugin* w, bool e)
-    : d(new KFileMetaInfoItemPrivate()) {
+KFileMetaInfoItem::KFileMetaInfoItem(const QString &pp,
+                                     const QVariant &v, KFileWritePlugin *w, bool e)
+    : d(new KFileMetaInfoItemPrivate())
+{
 #ifndef KDE_NO_DEPRECATED
     d->pp = pp;
 #else
@@ -47,39 +50,45 @@ KFileMetaInfoItem::KFileMetaInfoItem(const QString& pp,
     d->embedded = e;
     d->modified = false;
 }
-KFileMetaInfoItem::~KFileMetaInfoItem() {
+KFileMetaInfoItem::~KFileMetaInfoItem()
+{
 }
-const KFileMetaInfoItem&
-KFileMetaInfoItem::operator=(const KFileMetaInfoItem& item) {
+const KFileMetaInfoItem &
+KFileMetaInfoItem::operator=(const KFileMetaInfoItem &item)
+{
     d = item.d;
     return item;
 }
-const QString&
-KFileMetaInfoItem::name() const {
+const QString &
+KFileMetaInfoItem::name() const
+{
 #ifndef KDE_NO_DEPRECATED
     return d->pp.name();
 #else
-    #if ! KIO_NO_NEPOMUK
-        return d->pp.name();
-    #else
-        return QString::null;
-    #endif
-#endif	
+#if ! KIO_NO_NEPOMUK
+    return d->pp.name();
+#else
+    return QString::null;
+#endif
+#endif
 }
-const QVariant&
-KFileMetaInfoItem::value() const {
+const QVariant &
+KFileMetaInfoItem::value() const
+{
     return d->value;
 }
 bool
-KFileMetaInfoItem::setValue(const QVariant& value) {
+KFileMetaInfoItem::setValue(const QVariant &value)
+{
     bool changed = d->value != value;
     d->value = value;
     d->modified |= changed;
     return changed;
 }
 bool
-KFileMetaInfoItem::addValue(const QVariant& value) {
-    QVariant& v = d->value;
+KFileMetaInfoItem::addValue(const QVariant &value)
+{
+    QVariant &v = d->value;
     if (v.type() == QVariant::List) {
         QVariantList vl = v.toList();
         vl.append(value);
@@ -88,40 +97,48 @@ KFileMetaInfoItem::addValue(const QVariant& value) {
     return false;
 }
 bool
-KFileMetaInfoItem::isModified() const {
+KFileMetaInfoItem::isModified() const
+{
     return d->modified;
 }
 bool
-KFileMetaInfoItem::isRemoved() const {
+KFileMetaInfoItem::isRemoved() const
+{
     return d->modified && d->value.isNull();
 }
 bool
-KFileMetaInfoItem::isValid() const {
+KFileMetaInfoItem::isValid() const
+{
     return true;
 }
 bool
-KFileMetaInfoItem::isSkipped() const {
+KFileMetaInfoItem::isSkipped() const
+{
     // ########## TODO implement (vandenoever)
     return false;
 }
 #ifndef KDE_NO_DEPRECATED
-const PredicateProperties&
-KFileMetaInfoItem::properties() const {
+const PredicateProperties &
+KFileMetaInfoItem::properties() const
+{
     return d->pp;
 }
 #endif
 bool
-KFileMetaInfoItem::isEditable() const {
+KFileMetaInfoItem::isEditable() const
+{
     return d->writer != 0;
 }
 QString
-KFileMetaInfoItem::suffix() const {
+KFileMetaInfoItem::suffix() const
+{
     // ########## TODO implement (vandenoever)
     return QString();
 }
 
 QString
-KFileMetaInfoItem::prefix() const {
+KFileMetaInfoItem::prefix() const
+{
     // ########## TODO implement (vandenoever)
     return QString();
 }

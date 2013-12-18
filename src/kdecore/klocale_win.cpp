@@ -24,7 +24,7 @@
 #include <QtCore/QTextCodec>
 
 KLocaleWindowsPrivate::KLocaleWindowsPrivate(KLocale *q_ptr, KSharedConfig::Ptr config)
-                      :KLocalePrivate(q_ptr)
+    : KLocalePrivate(q_ptr)
 {
     // Lock in the current Windows Locale ID
     // Can we also lock in the actual settings like we do for Mac?
@@ -33,8 +33,8 @@ KLocaleWindowsPrivate::KLocaleWindowsPrivate(KLocale *q_ptr, KSharedConfig::Ptr 
 }
 
 KLocaleWindowsPrivate::KLocaleWindowsPrivate(KLocale *q_ptr,
-                                             const QString &language, const QString &country, KConfig *config)
-                      :KLocalePrivate(q_ptr)
+        const QString &language, const QString &country, KConfig *config)
+    : KLocalePrivate(q_ptr)
 {
     // Lock in the current Windows Locale ID
     // Can we also lock in the actual settings like we do for Mac?
@@ -42,19 +42,19 @@ KLocaleWindowsPrivate::KLocaleWindowsPrivate(KLocale *q_ptr,
     init(language, country, KSharedConfig::Ptr(), config);
 }
 
-KLocaleWindowsPrivate::KLocaleWindowsPrivate( const KLocaleWindowsPrivate &rhs )
-                      :KLocalePrivate( rhs )
+KLocaleWindowsPrivate::KLocaleWindowsPrivate(const KLocaleWindowsPrivate &rhs)
+    : KLocalePrivate(rhs)
 {
-    KLocalePrivate::copy( rhs );
+    KLocalePrivate::copy(rhs);
     m_winLocaleId = rhs.m_winLocaleId;
-    strcpy( m_win32SystemEncoding, rhs.m_win32SystemEncoding );
+    strcpy(m_win32SystemEncoding, rhs.m_win32SystemEncoding);
 }
 
-KLocaleWindowsPrivate &KLocaleWindowsPrivate::operator=( const KLocaleWindowsPrivate &rhs )
+KLocaleWindowsPrivate &KLocaleWindowsPrivate::operator=(const KLocaleWindowsPrivate &rhs)
 {
-    KLocalePrivate::copy( rhs );
+    KLocalePrivate::copy(rhs);
     m_winLocaleId = rhs.m_winLocaleId;
-    strcpy( m_win32SystemEncoding, rhs.m_win32SystemEncoding );
+    strcpy(m_win32SystemEncoding, rhs.m_win32SystemEncoding);
     return *this;
 }
 
@@ -62,16 +62,17 @@ KLocaleWindowsPrivate::~KLocaleWindowsPrivate()
 {
 }
 
-QString KLocaleWindowsPrivate::windowsLocaleValue( LCTYPE key ) const
+QString KLocaleWindowsPrivate::windowsLocaleValue(LCTYPE key) const
 {
     // Find out how big the buffer needs to be
-    int size = GetLocaleInfoW( m_winLocaleId, key, 0, 0 );
+    int size = GetLocaleInfoW(m_winLocaleId, key, 0, 0);
 
     QString result;
-    if ( size ) {
-        wchar_t* buffer = new wchar_t[size];
-        if ( GetLocaleInfoW( m_winLocaleId, key, buffer, size ) )
-            result = QString::fromWCharArray( buffer );
+    if (size) {
+        wchar_t *buffer = new wchar_t[size];
+        if (GetLocaleInfoW(m_winLocaleId, key, buffer, size)) {
+            result = QString::fromWCharArray(buffer);
+        }
         delete[] buffer;
     }
     return result;
@@ -79,13 +80,13 @@ QString KLocaleWindowsPrivate::windowsLocaleValue( LCTYPE key ) const
 
 QString KLocaleWindowsPrivate::systemCountry() const
 {
-    return windowsLocaleValue( LOCALE_SISO3166CTRYNAME );
+    return windowsLocaleValue(LOCALE_SISO3166CTRYNAME);
 }
 
 QStringList KLocaleWindowsPrivate::systemLanguageList() const
 {
     QStringList list;
-    getLanguagesFromVariable( list, QLocale::system().name().toLocal8Bit().data() );
+    getLanguagesFromVariable(list, QLocale::system().name().toLocal8Bit().data());
     return list;
 }
 
@@ -96,14 +97,14 @@ QByteArray KLocaleWindowsPrivate::systemCodeset() const
 
 const QByteArray KLocaleWindowsPrivate::encoding()
 {
-    if ( qstrcmp( codecForEncoding()->name(), "System" ) == 0 ) {
+    if (qstrcmp(codecForEncoding()->name(), "System") == 0) {
         //win32 returns "System" codec name here but KDE apps expect a real name:
-        strcpy( m_win32SystemEncoding, "cp " );
+        strcpy(m_win32SystemEncoding, "cp ");
         // MSDN says the returned string for LOCALE_IDEFAULTANSICODEPAGE is max 6 char including '\0'
         char buffer[6];
-        if ( GetLocaleInfoA( MAKELCID( MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT ), SORT_DEFAULT ),
-                             LOCALE_IDEFAULTANSICODEPAGE, buffer, sizeof( buffer ) ) ) {
-            strcpy( m_win32SystemEncoding + 3, buffer );
+        if (GetLocaleInfoA(MAKELCID(MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), SORT_DEFAULT),
+                           LOCALE_IDEFAULTANSICODEPAGE, buffer, sizeof(buffer))) {
+            strcpy(m_win32SystemEncoding + 3, buffer);
             return m_win32SystemEncoding;
         }
     }

@@ -45,15 +45,15 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
 {
     Q_OBJECT
 #ifndef KDE_NO_DEPRECATED
-    Q_PROPERTY( bool tabReorderingEnabled READ isTabReorderingEnabled WRITE setTabReorderingEnabled )
-    Q_PROPERTY( bool hoverCloseButton READ hoverCloseButton WRITE setHoverCloseButton )
-    Q_PROPERTY( bool hoverCloseButtonDelayed READ hoverCloseButtonDelayed WRITE setHoverCloseButtonDelayed )
-    Q_PROPERTY( bool closeButtonEnabled READ isCloseButtonEnabled WRITE setCloseButtonEnabled )
-    Q_PROPERTY( bool tabCloseActivatePrevious READ tabCloseActivatePrevious WRITE setTabCloseActivatePrevious )
+    Q_PROPERTY(bool tabReorderingEnabled READ isTabReorderingEnabled WRITE setTabReorderingEnabled)
+    Q_PROPERTY(bool hoverCloseButton READ hoverCloseButton WRITE setHoverCloseButton)
+    Q_PROPERTY(bool hoverCloseButtonDelayed READ hoverCloseButtonDelayed WRITE setHoverCloseButtonDelayed)
+    Q_PROPERTY(bool closeButtonEnabled READ isCloseButtonEnabled WRITE setCloseButtonEnabled)
+    Q_PROPERTY(bool tabCloseActivatePrevious READ tabCloseActivatePrevious WRITE setTabCloseActivatePrevious)
 #endif
-    Q_PROPERTY( bool automaticResizeTabs READ automaticResizeTabs WRITE setAutomaticResizeTabs )
+    Q_PROPERTY(bool automaticResizeTabs READ automaticResizeTabs WRITE setAutomaticResizeTabs)
 
-  public:
+public:
 
     /**
      * Creates a new tab widget.
@@ -61,7 +61,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * @param parent The parent widgets.
      * @param flags The Qt window flags @see QWidget.
      */
-    explicit KTabWidget( QWidget *parent = 0, Qt::WindowFlags flags = 0 );
+    explicit KTabWidget(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
     /**
      * Destroys the tab widget.
@@ -72,13 +72,13 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * Set the tab of the given widget to \a color.
      * This is simply a convenience method for QTabBar::setTabTextColor.
      */
-    void setTabTextColor( int index, const QColor& color );
+    void setTabTextColor(int index, const QColor &color);
 
     /**
      * Returns the tab color for the given widget.
      * This is simply a convenience method for QTabBar::tabTextColor.
      */
-    QColor tabTextColor( int index ) const;
+    QColor tabTextColor(int index) const;
 
     /**
      * Returns true if tab ordering with the middle mouse button
@@ -144,7 +144,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * @deprecated since 5.0, use tabBar()->hide() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setTabBarHidden( bool hide );
+    KDE4SUPPORT_DEPRECATED void setTabBarHidden(bool hide);
 #endif
 
     /**
@@ -176,51 +176,60 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
     /**
      * Reimplemented for internal reasons.
      */
-    QString tabText( int ) const; // but it's not virtual...
+    QString tabText(int) const;   // but it's not virtual...
 
 #ifdef KDE3_SUPPORT
     /**
      * @deprecated use tabText
      */
 #ifndef KDE_NO_DEPRECATED
-    inline KDE4SUPPORT_DEPRECATED QString label( int index ) const { return tabText( index ); }
+    inline KDE4SUPPORT_DEPRECATED QString label(int index) const
+    {
+        return tabText(index);
+    }
 #endif
 
     /**
      * @deprecated use tabText
      */
 #ifndef KDE_NO_DEPRECATED
-    inline KDE4SUPPORT_DEPRECATED QString tabLabel( QWidget *w ) const { return tabText( indexOf( w ) ); }
+    inline KDE4SUPPORT_DEPRECATED QString tabLabel(QWidget *w) const
+    {
+        return tabText(indexOf(w));
+    }
 #endif
 
     /**
      * @deprecated use setTabText
      */
 #ifndef KDE_NO_DEPRECATED
-    inline KDE4SUPPORT_DEPRECATED void setTabLabel( QWidget *w, const QString &l ) { setTabText( indexOf( w ),l ); }
+    inline KDE4SUPPORT_DEPRECATED void setTabLabel(QWidget *w, const QString &l)
+    {
+        setTabText(indexOf(w), l);
+    }
 #endif
 #endif
 
     /**
      * Reimplemented for internal reasons.
      */
-    void setTabText( int , const QString & );
+    void setTabText(int, const QString &);
 
     using QTabWidget::tabBar;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     /**
      * Move a widget's tab from first to second specified index and emit
      * signal movedTab( int, int ) afterwards.
      */
-    virtual void moveTab( int, int );
+    virtual void moveTab(int, int);
 
     /**
      * Removes the widget, reimplemented for
      * internal reasons (keeping labels in sync).
      * @deprecated since 4.0
      */
-    virtual QT_MOC_COMPAT void removePage ( QWidget * w );
+    virtual QT_MOC_COMPAT void removePage(QWidget *w);
 
     /**
      * Removes the widget, reimplemented for
@@ -244,7 +253,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * URL from Konqueror to another application)!
      */
 #ifndef KDE_NO_DEPRECATED
-    QT_MOC_COMPAT void setTabReorderingEnabled( bool enable );
+    QT_MOC_COMPAT void setTabReorderingEnabled(bool enable);
 #endif
 
     /**
@@ -255,7 +264,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    QT_MOC_COMPAT void setHoverCloseButton( bool enable );
+    QT_MOC_COMPAT void setHoverCloseButton(bool enable);
 #endif
 
     /**
@@ -265,7 +274,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    QT_MOC_COMPAT void setHoverCloseButtonDelayed( bool delayed );
+    QT_MOC_COMPAT void setHoverCloseButtonDelayed(bool delayed);
 #endif
 
     /**
@@ -278,7 +287,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    QT_MOC_COMPAT void setCloseButtonEnabled( bool );
+    QT_MOC_COMPAT void setCloseButtonEnabled(bool);
 #endif
 
     /**
@@ -288,7 +297,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * @deprecated Use tabBar()->setSelectionBehaviorOnRemove() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    QT_MOC_COMPAT void setTabCloseActivatePrevious( bool previous );
+    QT_MOC_COMPAT void setTabCloseActivatePrevious(bool previous);
 #endif
 
     /**
@@ -297,9 +306,9 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * Does not work reliably with "QTabWidget* foo=new KTabWidget()" and if
      * you change tabs via the tabbar or by accessing tabs directly.
      */
-    void setAutomaticResizeTabs( bool enable );
+    void setAutomaticResizeTabs(bool enable);
 
-  Q_SIGNALS:
+Q_SIGNALS:
     /**
      * Connect to this and set accept to true if you can and want to decode the event.
      */
@@ -309,35 +318,35 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * Received an event in the empty space beside tabbar. Usually creates a new tab.
      * This signal is only possible after testCanDecode and positive accept result.
      */
-    void receivedDropEvent( QDropEvent * );
+    void receivedDropEvent(QDropEvent *);
 
     /**
      * Received an drop event on given widget's tab.
      * This signal is only possible after testCanDecode and positive accept result.
      */
-    void receivedDropEvent( QWidget *, QDropEvent * );
+    void receivedDropEvent(QWidget *, QDropEvent *);
 
     /**
      * Request to start a drag operation on the given tab.
      */
-    void initiateDrag( QWidget * );
+    void initiateDrag(QWidget *);
 
     /**
      * The right mouse button was pressed over empty space besides tabbar.
      */
-    void contextMenu( const QPoint & );
+    void contextMenu(const QPoint &);
 
     /**
      * The right mouse button was pressed over a widget.
      */
-    void contextMenu( QWidget *, const QPoint & );
+    void contextMenu(QWidget *, const QPoint &);
 
 #ifndef KDE_NO_DEPRECATED
     /**
      * A tab was moved from first to second index. This signal is only
      * possible after you have called setTabReorderingEnabled( true ).
      */
-    void movedTab( int, int );
+    void movedTab(int, int);
 #endif
 
     /**
@@ -350,7 +359,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * A double left mouse button click was performed over the widget.
      * The signal is emitted on the second press of the mouse button, before the release.
      */
-    void mouseDoubleClick( QWidget * );
+    void mouseDoubleClick(QWidget *);
 
     /**
      * A middle mouse button click was performed over empty space besides tabbar.
@@ -362,50 +371,50 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclu
      * A middle mouse button click was performed over the widget.
      * The signal is emitted on the release of the mouse button.
      */
-    void mouseMiddleClick( QWidget * );
+    void mouseMiddleClick(QWidget *);
 
     /**
      * The close button of a widget's tab was clicked. This signal is
      * only possible after you have called setCloseButtonEnabled( true ).
      */
-    void closeRequest( QWidget * );
+    void closeRequest(QWidget *);
 
-  protected:
-    virtual void mouseDoubleClickEvent( QMouseEvent* );
-    virtual void mousePressEvent( QMouseEvent* );
-    virtual void mouseReleaseEvent( QMouseEvent* );
-    virtual void dragEnterEvent( QDragEnterEvent* );
-    virtual void dragMoveEvent( QDragMoveEvent* );
-    virtual void dropEvent( QDropEvent* );
-    int tabBarWidthForMaxChars( int );
+protected:
+    virtual void mouseDoubleClickEvent(QMouseEvent *);
+    virtual void mousePressEvent(QMouseEvent *);
+    virtual void mouseReleaseEvent(QMouseEvent *);
+    virtual void dragEnterEvent(QDragEnterEvent *);
+    virtual void dragMoveEvent(QDragMoveEvent *);
+    virtual void dropEvent(QDropEvent *);
+    int tabBarWidthForMaxChars(int);
 #ifndef QT_NO_WHEELEVENT
-    virtual void wheelEvent( QWheelEvent* );
+    virtual void wheelEvent(QWheelEvent *);
 #endif
-    virtual void resizeEvent( QResizeEvent* );
-    virtual void tabInserted( int );
-    virtual void tabRemoved ( int );
+    virtual void resizeEvent(QResizeEvent *);
+    virtual void tabInserted(int);
+    virtual void tabRemoved(int);
 
     /**
      * @deprecated  This method has no effect and should not be called
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void currentChanged( int );
+    KDE4SUPPORT_DEPRECATED void currentChanged(int);
 #endif
 
-  protected Q_SLOTS:
-    virtual void receivedDropEvent( int, QDropEvent* );
-    virtual void initiateDrag( int );
-    virtual void contextMenu( int, const QPoint& );
-    virtual void mouseDoubleClick( int );
-    virtual void mouseMiddleClick( int );
-    virtual void closeRequest( int );
+protected Q_SLOTS:
+    virtual void receivedDropEvent(int, QDropEvent *);
+    virtual void initiateDrag(int);
+    virtual void contextMenu(int, const QPoint &);
+    virtual void mouseDoubleClick(int);
+    virtual void mouseMiddleClick(int);
+    virtual void closeRequest(int);
 #ifndef QT_NO_WHEELEVENT
-    virtual void wheelDelta( int );
+    virtual void wheelDelta(int);
 #endif
 
-  private:
+private:
     class Private;
-    Private * const d;
+    Private *const d;
 
     Q_PRIVATE_SLOT(d, void slotTabMoved(int, int))
 };

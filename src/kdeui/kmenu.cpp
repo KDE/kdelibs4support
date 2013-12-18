@@ -45,11 +45,11 @@ class KMenu::KMenuPrivate
     : public QObject
 {
 public:
-    KMenuPrivate (KMenu *_parent);
-    ~KMenuPrivate ();
+    KMenuPrivate(KMenu *_parent);
+    ~KMenuPrivate();
 
     void resetKeyboardVars(bool noMatches = false);
-    void actionHovered(QAction* action);
+    void actionHovered(QAction *action);
     void showCtxMenu(const QPoint &pos);
     void skipTitles(QKeyEvent *event);
 
@@ -68,8 +68,8 @@ public:
         Q_UNUSED(object);
 
         if (event->type() == QEvent::Paint ||
-            event->type() == QEvent::KeyPress ||
-            event->type() == QEvent::KeyRelease) {
+                event->type() == QEvent::KeyPress ||
+                event->type() == QEvent::KeyRelease) {
             return false;
         }
 
@@ -89,18 +89,18 @@ public:
     QString keySeq;
     QString originalText;
 
-    QAction* lastHitAction;
-    QAction* lastHoveredAction;
+    QAction *lastHitAction;
+    QAction *lastHoveredAction;
     Qt::MouseButtons mouseButtons;
     Qt::KeyboardModifiers keyboardModifiers;
 
     // support for RMB menus on menus
-    QMenu* ctxMenu;
+    QMenu *ctxMenu;
     QPointer<QAction> highlightedAction;
 
 };
 
-KMenu::KMenuPrivate::KMenuPrivate (KMenu *_parent)
+KMenu::KMenuPrivate::KMenuPrivate(KMenu *_parent)
     : parent(_parent)
     , noMatches(false)
     , shortcuts(false)
@@ -116,34 +116,37 @@ KMenu::KMenuPrivate::KMenuPrivate (KMenu *_parent)
     KAcceleratorManager::manage(parent);
 }
 
-KMenu::KMenuPrivate::~KMenuPrivate ()
+KMenu::KMenuPrivate::~KMenuPrivate()
 {
     delete ctxMenu;
 }
-
 
 /**
  * custom variant type for QAction::data of kmenu context menus
  * @author Joseph Wenninger <jowenn@kde.org>
  */
-class KMenuContext {
+class KMenuContext
+{
 public:
     KMenuContext();
-    KMenuContext(const KMenuContext& o);
-    KMenuContext(QPointer<KMenu> menu,QPointer<QAction> action);
+    KMenuContext(const KMenuContext &o);
+    KMenuContext(QPointer<KMenu> menu, QPointer<QAction> action);
 
-    inline QPointer<KMenu> menu() const { return m_menu; }
-    inline QPointer<QAction> action() const { return m_action; }
+    inline QPointer<KMenu> menu() const
+    {
+        return m_menu;
+    }
+    inline QPointer<QAction> action() const
+    {
+        return m_action;
+    }
 
 private:
     QPointer<KMenu> m_menu;
     QPointer<QAction> m_action;
 };
 
-
 Q_DECLARE_METATYPE(KMenuContext)
-
-
 
 KMenu::KMenu(QWidget *parent)
     : QMenu(parent)
@@ -152,7 +155,7 @@ KMenu::KMenu(QWidget *parent)
     connect(&(d->clearTimer), SIGNAL(timeout()), SLOT(resetKeyboardVars()));
 }
 
-KMenu::KMenu( const QString & title, QWidget * parent )
+KMenu::KMenu(const QString &title, QWidget *parent)
     : QMenu(title, parent)
     , d(new KMenuPrivate(this))
 {
@@ -164,12 +167,12 @@ KMenu::~KMenu()
     delete d;
 }
 
-QAction* KMenu::addTitle(const QString &text, QAction* before)
+QAction *KMenu::addTitle(const QString &text, QAction *before)
 {
     return addTitle(QIcon(), text, before);
 }
 
-QAction* KMenu::addTitle(const QIcon &icon, const QString &text, QAction* before)
+QAction *KMenu::addTitle(const QIcon &icon, const QString &text, QAction *before)
 {
     QAction *buttonAction = new QAction(this);
     QFont font = buttonAction->font();
@@ -194,10 +197,11 @@ QAction* KMenu::addTitle(const QIcon &icon, const QString &text, QAction* before
 /**
  * This is re-implemented for keyboard navigation.
  */
-void KMenu::closeEvent(QCloseEvent*e)
+void KMenu::closeEvent(QCloseEvent *e)
 {
-    if (d->shortcuts)
+    if (d->shortcuts) {
         d->resetKeyboardVars();
+    }
     QMenu::closeEvent(e);
 }
 
@@ -211,7 +215,7 @@ Qt::KeyboardModifiers KMenu::keyboardModifiers() const
     return d->keyboardModifiers;
 }
 
-void KMenu::keyPressEvent(QKeyEvent* e)
+void KMenu::keyPressEvent(QKeyEvent *e)
 {
     d->mouseButtons = Qt::NoButton;
     d->keyboardModifiers = Qt::NoModifier;
@@ -227,7 +231,7 @@ void KMenu::keyPressEvent(QKeyEvent* e)
         return;
     }
 
-    QAction* a = 0L;
+    QAction *a = 0L;
     bool firstpass = true;
     QString keyString = e->text();
 
@@ -248,8 +252,9 @@ void KMenu::keyPressEvent(QKeyEvent* e)
             d->skipTitles(e);
         }
         return;
-    } else if ( key == Qt::Key_Shift || key == Qt::Key_Control || key == Qt::Key_Alt || key == Qt::Key_Meta )
+    } else if (key == Qt::Key_Shift || key == Qt::Key_Control || key == Qt::Key_Alt || key == Qt::Key_Meta) {
         return QMenu::keyPressEvent(e);
+    }
 
     // check to see if the user wants to remove a key from the sequence (backspace)
     // or clear the sequence (delete)
@@ -299,17 +304,19 @@ void KMenu::keyPressEvent(QKeyEvent* e)
 
     foreach (a, actions()) {
         // don't search disabled entries
-        if (!a->isEnabled())
+        if (!a->isEnabled()) {
             continue;
+        }
 
         QString thisText;
 
         // retrieve the right text
         // (the last selected item one may have additional ampersands)
-        if (a == d->lastHitAction)
+        if (a == d->lastHitAction) {
             thisText = d->originalText;
-        else
+        } else {
             thisText = a->text();
+        }
 
         // if there is an accelerator present, remove it
         thisText = KLocalizedString::removeAcceleratorMarker(thisText);
@@ -327,11 +334,14 @@ void KMenu::keyPressEvent(QKeyEvent* e)
                 // check to see if we're underlining a different item
                 if (d->lastHitAction && d->lastHitAction != a)
                     // yes; revert the underlining
+                {
                     d->lastHitAction->setText(d->originalText);
+                }
 
                 // set the original text if it's a different item
-                if (d->lastHitAction != a || d->lastHitAction == 0L)
+                if (d->lastHitAction != a || d->lastHitAction == 0L) {
                     d->originalText = a->text();
+                }
 
                 // underline the currently selected item
                 a->setText(underlineText(d->originalText, d->keySeq.length()));
@@ -375,18 +385,19 @@ void KMenu::keyPressEvent(QKeyEvent* e)
     QMenu::keyPressEvent(e);
 }
 
-bool KMenu::focusNextPrevChild( bool next )
+bool KMenu::focusNextPrevChild(bool next)
 {
     d->resetKeyboardVars();
-    return QMenu::focusNextPrevChild( next );
+    return QMenu::focusNextPrevChild(next);
 }
 
-QString KMenu::underlineText(const QString& text, uint length)
+QString KMenu::underlineText(const QString &text, uint length)
 {
     QString ret = text;
     for (uint i = 0; i < length; i++) {
-        if (ret[2*i] != '&')
-            ret.insert(2*i, '&');
+        if (ret[2 * i] != '&') {
+            ret.insert(2 * i, '&');
+        }
     }
     return ret;
 }
@@ -423,48 +434,48 @@ void KMenu::setKeyboardShortcutsExecute(bool enable)
  * RMB menus on menus
  */
 
-void KMenu::mousePressEvent(QMouseEvent* e)
+void KMenu::mousePressEvent(QMouseEvent *e)
 {
-    if (d->ctxMenu && d->ctxMenu->isVisible())
-    {
+    if (d->ctxMenu && d->ctxMenu->isVisible()) {
         // hide on a second context menu event
         d->ctxMenu->hide();
     }
 
-    if( e->button() == Qt::MidButton)
-      return;
+    if (e->button() == Qt::MidButton) {
+        return;
+    }
 
     QMenu::mousePressEvent(e);
 }
 
-void KMenu::mouseReleaseEvent(QMouseEvent* e)
+void KMenu::mouseReleaseEvent(QMouseEvent *e)
 {
     // Save the button, and the modifiers
     d->keyboardModifiers = e->modifiers();
     d->mouseButtons = e->buttons();
 
-    if ( e->button() == Qt::MidButton) {
-      if(activeAction() ) {
-        const QMetaObject *metaObject = activeAction()->metaObject();
-        const int index = metaObject->indexOfMethod("triggered(Qt::MouseButtons,Qt::KeyboardModifiers)");
-        if (index != -1) {
-          const QMetaMethod method = metaObject->method(index);
-          method.invoke(activeAction(), Qt::DirectConnection,
-              Q_ARG(Qt::MouseButtons, e->button()),
-              Q_ARG(Qt::KeyboardModifiers, QApplication::keyboardModifiers() ));
+    if (e->button() == Qt::MidButton) {
+        if (activeAction()) {
+            const QMetaObject *metaObject = activeAction()->metaObject();
+            const int index = metaObject->indexOfMethod("triggered(Qt::MouseButtons,Qt::KeyboardModifiers)");
+            if (index != -1) {
+                const QMetaMethod method = metaObject->method(index);
+                method.invoke(activeAction(), Qt::DirectConnection,
+                              Q_ARG(Qt::MouseButtons, e->button()),
+                              Q_ARG(Qt::KeyboardModifiers, QApplication::keyboardModifiers()));
+            }
         }
-      }
-      return;
+        return;
     }
 
-    if ( !d->ctxMenu || !d->ctxMenu->isVisible() )
+    if (!d->ctxMenu || !d->ctxMenu->isVisible()) {
         QMenu::mouseReleaseEvent(e);
+    }
 }
 
-QMenu* KMenu::contextMenu()
+QMenu *KMenu::contextMenu()
 {
-    if (!d->ctxMenu)
-    {
+    if (!d->ctxMenu) {
         d->ctxMenu = new QMenu(this);
         connect(this, SIGNAL(hovered(QAction*)), SLOT(actionHovered(QAction*)));
     }
@@ -472,32 +483,32 @@ QMenu* KMenu::contextMenu()
     return d->ctxMenu;
 }
 
-const QMenu* KMenu::contextMenu() const
+const QMenu *KMenu::contextMenu() const
 {
-    return const_cast< KMenu* >( this )->contextMenu();
+    return const_cast< KMenu * >(this)->contextMenu();
 }
 
 void KMenu::hideContextMenu()
 {
-    if (!d->ctxMenu || !d->ctxMenu->isVisible())
-    {
+    if (!d->ctxMenu || !d->ctxMenu->isVisible()) {
         return;
     }
 
     d->ctxMenu->hide();
 }
 
-void KMenu::KMenuPrivate::actionHovered(QAction* action)
+void KMenu::KMenuPrivate::actionHovered(QAction *action)
 {
     lastHoveredAction = action;
     parent->hideContextMenu();
 }
 
-static void KMenuSetActionData(QMenu *menu,KMenu* contextedMenu, QAction* contextedAction) {
-    const QList<QAction*> actions=menu->actions();
+static void KMenuSetActionData(QMenu *menu, KMenu *contextedMenu, QAction *contextedAction)
+{
+    const QList<QAction *> actions = menu->actions();
     QVariant v;
-    v.setValue(KMenuContext(contextedMenu,contextedAction));
-    for(int i=0;i<actions.count();i++) {
+    v.setValue(KMenuContext(contextedMenu, contextedAction));
+    for (int i = 0; i < actions.count(); i++) {
         actions[i]->setData(v);
     }
 }
@@ -506,33 +517,28 @@ void KMenu::KMenuPrivate::showCtxMenu(const QPoint &pos)
 {
     highlightedAction = parent->activeAction();
 
-    if (!highlightedAction)
-    {
-        KMenuSetActionData(parent,0,0);
+    if (!highlightedAction) {
+        KMenuSetActionData(parent, 0, 0);
         return;
     }
 
     emit parent->aboutToShowContextMenu(parent, highlightedAction, ctxMenu);
-    KMenuSetActionData(parent,parent,highlightedAction);
+    KMenuSetActionData(parent, parent, highlightedAction);
 
-
-    if (QMenu* subMenu = highlightedAction->menu())
-    {
+    if (QMenu *subMenu = highlightedAction->menu()) {
         QTimer::singleShot(100, subMenu, SLOT(hide()));
     }
-
 
     ctxMenu->popup(parent->mapToGlobal(pos));
 }
 
 void KMenu::KMenuPrivate::skipTitles(QKeyEvent *event)
 {
-    QWidgetAction *action = qobject_cast<QWidgetAction*>(parent->activeAction());
+    QWidgetAction *action = qobject_cast<QWidgetAction *>(parent->activeAction());
     QWidgetAction *firstAction = action;
-    while (action && action->objectName() == KMENU_TITLE)
-    {
+    while (action && action->objectName() == KMENU_TITLE) {
         parent->keyPressEvent(event);
-        action = qobject_cast<QWidgetAction*>(parent->activeAction());
+        action = qobject_cast<QWidgetAction *>(parent->activeAction());
         if (firstAction == action) { // we looped and only found titles
             parent->setActiveAction(0);
             break;
@@ -540,36 +546,32 @@ void KMenu::KMenuPrivate::skipTitles(QKeyEvent *event)
     }
 }
 
-KMenu * KMenu::contextMenuFocus( )
+KMenu *KMenu::contextMenuFocus()
 {
-  return qobject_cast<KMenu*>(QApplication::activePopupWidget());
+    return qobject_cast<KMenu *>(QApplication::activePopupWidget());
 }
 
-QAction * KMenu::contextMenuFocusAction( )
+QAction *KMenu::contextMenuFocusAction()
 {
-  if (KMenu* menu = qobject_cast<KMenu*>(QApplication::activePopupWidget())) {
-    if (!menu->d->lastHoveredAction) {
-      return 0;
-    }
-    QVariant var = menu->d->lastHoveredAction->data();
-    KMenuContext ctx = var.value<KMenuContext>();
-    Q_ASSERT(ctx.menu() == menu);
-    return ctx.action();
-  }
-
-  return 0L;
-}
-
-void KMenu::contextMenuEvent(QContextMenuEvent* e)
-{
-    if (d->ctxMenu)
-    {
-        if (e->reason() == QContextMenuEvent::Mouse)
-        {
-            d->showCtxMenu(e->pos());
+    if (KMenu *menu = qobject_cast<KMenu *>(QApplication::activePopupWidget())) {
+        if (!menu->d->lastHoveredAction) {
+            return 0;
         }
-        else if (activeAction())
-        {
+        QVariant var = menu->d->lastHoveredAction->data();
+        KMenuContext ctx = var.value<KMenuContext>();
+        Q_ASSERT(ctx.menu() == menu);
+        return ctx.action();
+    }
+
+    return 0L;
+}
+
+void KMenu::contextMenuEvent(QContextMenuEvent *e)
+{
+    if (d->ctxMenu) {
+        if (e->reason() == QContextMenuEvent::Mouse) {
+            d->showCtxMenu(e->pos());
+        } else if (activeAction()) {
             d->showCtxMenu(actionGeometry(activeAction()).center());
         }
 
@@ -582,8 +584,7 @@ void KMenu::contextMenuEvent(QContextMenuEvent* e)
 
 void KMenu::hideEvent(QHideEvent *e)
 {
-    if (d->ctxMenu && d->ctxMenu->isVisible())
-    {
+    if (d->ctxMenu && d->ctxMenu->isVisible()) {
         // we need to block signals here when the ctxMenu is showing
         // to prevent the QPopupMenu::activated(int) signal from emitting
         // when hiding with a context menu, the user doesn't expect the
@@ -602,25 +603,21 @@ void KMenu::hideEvent(QHideEvent *e)
  * end of RMB menus on menus support
  */
 
-
-
-
-
-KMenuContext::KMenuContext( )
-  : m_menu(0L)
-  , m_action(0L)
+KMenuContext::KMenuContext()
+    : m_menu(0L)
+    , m_action(0L)
 {
 }
 
-KMenuContext::KMenuContext( const KMenuContext & o )
-  : m_menu(o.m_menu)
-  , m_action(o.m_action)
+KMenuContext::KMenuContext(const KMenuContext &o)
+    : m_menu(o.m_menu)
+    , m_action(o.m_action)
 {
 }
 
-KMenuContext::KMenuContext(QPointer<KMenu> menu,QPointer<QAction> action)
-  : m_menu(menu)
-  , m_action(action)
+KMenuContext::KMenuContext(QPointer<KMenu> menu, QPointer<QAction> action)
+    : m_menu(menu)
+    , m_action(action)
 {
 }
 

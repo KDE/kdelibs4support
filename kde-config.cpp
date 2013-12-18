@@ -22,7 +22,6 @@
  * Boston, MA 02110-1301, USA.
  */
 
-
 #include <kcmdlineargs.h>
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
@@ -44,10 +43,10 @@
 
 static void printResult(const QString &s)
 {
-    if (s.isEmpty())
+    if (s.isEmpty()) {
         printf("\n");
-    else {
-        const QString path = QDir::toNativeSeparators( s );
+    } else {
+        const QString path = QDir::toNativeSeparators(s);
         printf("%s\n", path.toLocal8Bit().constData());
     }
 }
@@ -56,10 +55,10 @@ int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
     K4AboutData about("kf5-config", "kdelibs4", ki18n("kf5-config"), "1.0",
-                     ki18n("A little program to output installation paths"),
-                     K4AboutData::License_GPL,
-                     ki18n("(C) 2000 Stephan Kulow"));
-    KCmdLineArgs::init( argc, argv, &about);
+                      ki18n("A little program to output installation paths"),
+                      K4AboutData::License_GPL,
+                      ki18n("(C) 2000 Stephan Kulow"));
+    KCmdLineArgs::init(argc, argv, &about);
 
     KCmdLineOptions options;
     options.add("expandvars",  ki18n("Left for legacy support"));
@@ -77,7 +76,7 @@ int main(int argc, char **argv)
     options.add("qt-binaries", ki18n("Location of installed Qt binaries"));
     options.add("qt-libraries", ki18n("Location of installed Qt libraries"));
     options.add("qt-plugins", ki18n("Location of installed Qt plugins"));
-    KCmdLineArgs::addCmdLineOptions( options ); // Add my own options.
+    KCmdLineArgs::addCmdLineOptions(options);   // Add my own options.
 
     (void)KGlobal::dirs(); // trigger the creation
     (void)KSharedConfig::openConfig();
@@ -85,21 +84,18 @@ int main(int argc, char **argv)
     // Get application specific arguments
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    if (args->isSet("prefix"))
-    {
+    if (args->isSet("prefix")) {
         printResult(QFile::decodeName(CMAKE_INSTALL_PREFIX));
         return 0;
     }
 
-    if (args->isSet("exec-prefix"))
-    {
+    if (args->isSet("exec-prefix")) {
         printResult(QFile::decodeName(EXEC_INSTALL_PREFIX));
         return 0;
     }
 
 #if 0
-    if (args->isSet("libsuffix"))
-    {
+    if (args->isSet("libsuffix")) {
         QString tmp(QFile::decodeName(KDELIBSUFF));
         tmp.remove(QLatin1Char('"'));
         printResult(tmp);
@@ -108,21 +104,18 @@ int main(int argc, char **argv)
 #endif
 
 #if 0
-    if (args->isSet("localprefix"))
-    {
+    if (args->isSet("localprefix")) {
         printResult(KGlobal::dirs()->localkdedir());
         return 0;
     }
 #endif
 
-    if (args->isSet("kde-version"))
-    {
+    if (args->isSet("kde-version")) {
         printf("%s\n", KDE_VERSION_STRING);
         return 0;
     }
 
-    if (args->isSet("types"))
-    {
+    if (args->isSet("types")) {
         QStringList types = KGlobal::dirs()->allTypes();
         types.sort();
         const char *helptexts[] = {
@@ -160,14 +153,13 @@ int main(int argc, char **argv)
             "socket", I18N_NOOP("UNIX Sockets (specific for both current host and current user)"),
             0, 0
         };
-        Q_FOREACH(const QString &type, types)
-        {
+        Q_FOREACH (const QString &type, types) {
             int index = 0;
             while (helptexts[index] && type != QLatin1String(helptexts[index])) {
                 index += 2;
             }
             if (helptexts[index]) {
-                printf("%s - %s\n", helptexts[index], i18n(helptexts[index+1]).toLocal8Bit().constData());
+                printf("%s - %s\n", helptexts[index], i18n(helptexts[index + 1]).toLocal8Bit().constData());
             } else {
                 printf("%s", i18n("%1 - unknown type\n", type).toLocal8Bit().constData());
             }
@@ -176,22 +168,21 @@ int main(int argc, char **argv)
     }
 
     QString type = args->getOption("path");
-    if (!type.isEmpty())
-    {
+    if (!type.isEmpty()) {
         QString fileName = args->getOption("locate");
-        if (!fileName.isEmpty())
-        {
+        if (!fileName.isEmpty()) {
             QString result = KStandardDirs::locate(type.toLatin1(), fileName);
-            if (!result.isEmpty())
+            if (!result.isEmpty()) {
                 printf("%s\n", result.toLocal8Bit().constData());
+            }
             return result.isEmpty() ? 1 : 0;
         }
 
         // ### maybe Qt should have a QDir::pathSeparator() to avoid ifdefs..
 #ifdef Q_OS_WIN
-        #define KPATH_SEPARATOR ';'
+#define KPATH_SEPARATOR ';'
 #else
-        #define KPATH_SEPARATOR ':'
+#define KPATH_SEPARATOR ':'
 #endif
 
         printResult(KGlobal::dirs()->resourceDirs(type.toLatin1()).join(QString(QChar::fromLatin1(KPATH_SEPARATOR))));
@@ -199,60 +190,52 @@ int main(int argc, char **argv)
     }
 
     type = args->getOption("userpath");
-    if (!type.isEmpty())
-    {
+    if (!type.isEmpty()) {
         //code duplicated with KGlobalSettings
-        if (type == QLatin1String("desktop"))
-        {
+        if (type == QLatin1String("desktop")) {
             QString path = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
             printResult(path.isEmpty() ? QDir::homePath() : path);
         }
 #if 0 // See KGlobalSettings::autostartPath
-        else if (type == QLatin1String("autostart"))
-        {
-            KConfigGroup g( KSharedConfig::openConfig(), "Paths" );
+        else if (type == QLatin1String("autostart")) {
+            KConfigGroup g(KSharedConfig::openConfig(), "Paths");
             QString path = QDir::homePath() + QLatin1String("/Autostart/");
-            path = g.readPathEntry( "Autostart", path);
-            path = QDir::cleanPath( path );
-            if (!path.endsWith(QLatin1Char('/')))
-              path.append(QLatin1Char(QLatin1Char('/')));
+            path = g.readPathEntry("Autostart", path);
+            path = QDir::cleanPath(path);
+            if (!path.endsWith(QLatin1Char('/'))) {
+                path.append(QLatin1Char(QLatin1Char('/')));
+            }
             printResult(path);
 
         }
 #endif
-        else if (type == QLatin1String("document"))
-        {
+        else if (type == QLatin1String("document")) {
             QString path = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
             printResult(path.isEmpty() ? QDir::homePath() : path);
+        } else {
+            fprintf(stderr, "%s", i18n("%1 - unknown type of userpath\n", type).toLocal8Bit().data());
         }
-        else
-            fprintf(stderr, "%s", i18n("%1 - unknown type of userpath\n", type).toLocal8Bit().data() );
         return 0;
     }
 
     type = args->getOption("install");
-    if (!type.isEmpty())
-    {
-        printResult( KGlobal::dirs()->installPath(type.toLocal8Bit()) );
+    if (!type.isEmpty()) {
+        printResult(KGlobal::dirs()->installPath(type.toLocal8Bit()));
     }
 
-    if (args->isSet("qt-prefix"))
-    {
+    if (args->isSet("qt-prefix")) {
         printResult(QLibraryInfo::location(QLibraryInfo::PrefixPath));
         return 0;
     }
-    if (args->isSet("qt-binaries"))
-    {
+    if (args->isSet("qt-binaries")) {
         printResult(QLibraryInfo::location(QLibraryInfo::BinariesPath));
         return 0;
     }
-    if (args->isSet("qt-libraries"))
-    {
+    if (args->isSet("qt-libraries")) {
         printResult(QLibraryInfo::location(QLibraryInfo::LibrariesPath));
         return 0;
     }
-    if (args->isSet("qt-plugins"))
-    {
+    if (args->isSet("qt-plugins")) {
         printResult(QLibraryInfo::location(QLibraryInfo::PluginsPath));
         return 0;
     }

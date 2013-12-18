@@ -29,13 +29,13 @@
 class KRestrictedLinePrivate
 {
 public:
-  /// QString of valid characters for this line
-  QString qsValidChars;
+    /// QString of valid characters for this line
+    QString qsValidChars;
 };
 
-KRestrictedLine::KRestrictedLine( QWidget *parent )
-  : KLineEdit( parent )
-  , d( new KRestrictedLinePrivate )
+KRestrictedLine::KRestrictedLine(QWidget *parent)
+    : KLineEdit(parent)
+    , d(new KRestrictedLinePrivate)
 {
 }
 
@@ -44,16 +44,14 @@ KRestrictedLine::~KRestrictedLine()
     delete d;
 }
 
-
-void KRestrictedLine::keyPressEvent( QKeyEvent *e )
+void KRestrictedLine::keyPressEvent(QKeyEvent *e)
 {
     // let KLineEdit process "special" keys and return/enter
     // so that we still can use the default key binding
     if (e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return || e->key() == Qt::Key_Delete
-        || e->key() == Qt::Key_Backspace
-        || (e->modifiers() & (Qt::ControlModifier | Qt::AltModifier
-                              | Qt::MetaModifier | Qt::GroupSwitchModifier)))
-    {
+            || e->key() == Qt::Key_Backspace
+            || (e->modifiers() & (Qt::ControlModifier | Qt::AltModifier
+                                  | Qt::MetaModifier | Qt::GroupSwitchModifier))) {
         KLineEdit::keyPressEvent(e);
         return;
     }
@@ -74,7 +72,7 @@ void KRestrictedLine::inputMethodEvent(QInputMethodEvent *e)
     const QString str = e->commitString();
     if (!d->qsValidChars.isEmpty() && !str.isEmpty()) {
         bool allOK = true;
-        Q_FOREACH(QChar ch, str) {
+        Q_FOREACH (QChar ch, str) {
             if (!d->qsValidChars.contains(ch)) {
                 emit invalidChar(ch.unicode());
                 allOK = false;
@@ -84,20 +82,21 @@ void KRestrictedLine::inputMethodEvent(QInputMethodEvent *e)
         // we really need a validator (with a different signal like invalidChar(QChar)
         // or invalidCharacters(QString) maybe.
 
-        if (!allOK)
+        if (!allOK) {
             return;
+        }
     }
 
     KLineEdit::inputMethodEvent(e);
 }
 
-void KRestrictedLine::setValidChars( const QString& valid)
+void KRestrictedLine::setValidChars(const QString &valid)
 {
-  d->qsValidChars = valid;
+    d->qsValidChars = valid;
 }
 
 QString KRestrictedLine::validChars() const
 {
-  return d->qsValidChars;
+    return d->qsValidChars;
 }
 

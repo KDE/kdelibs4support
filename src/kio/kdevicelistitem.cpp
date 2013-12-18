@@ -34,7 +34,7 @@ public:
     Solid::Device device;
     KDeviceListItem *parent;
 
-    QList<KDeviceListItem*> children;
+    QList<KDeviceListItem *> children;
 };
 
 KDeviceListItem::KDeviceListItem()
@@ -52,7 +52,7 @@ KDeviceListItem *KDeviceListItem::child(int row)
     return d->children.value(row);
 }
 
-QList<KDeviceListItem*> KDeviceListItem::children()
+QList<KDeviceListItem *> KDeviceListItem::children()
 {
     return d->children;
 }
@@ -70,7 +70,7 @@ int KDeviceListItem::childCount() const
 int KDeviceListItem::row() const
 {
     if (d->parent) {
-        return d->parent->indexOf(const_cast<KDeviceListItem*>(this));
+        return d->parent->indexOf(const_cast<KDeviceListItem *>(this));
     } else {
         return 0;
     }

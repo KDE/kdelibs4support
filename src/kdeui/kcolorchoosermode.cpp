@@ -21,7 +21,8 @@
 
 #include <QColor>
 
-namespace KDEPrivate {
+namespace KDEPrivate
+{
 
 qreal getComponentValue(const QColor &color, KColorChooserMode chooserMode)
 {

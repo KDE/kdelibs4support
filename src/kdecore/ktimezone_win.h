@@ -26,7 +26,7 @@
 #include <ktimezone.h>
 #include <ksystemtimezone.h>
 #include <windows.h>
-  
+
 class KSystemTimeZoneSourceWindowsPrivate;
 
 /**
@@ -43,25 +43,24 @@ class KSystemTimeZoneSourceWindowsPrivate;
 class KDE4SUPPORT_EXPORT KSystemTimeZoneSourceWindows : public KSystemTimeZoneSource
 {
 public:
-   /**
-     * Constructs a time zone source.
+    /**
+      * Constructs a time zone source.
+      */
+    KSystemTimeZoneSourceWindows();
+
+    /**
+     * Retrieves and parses the Windows registry information to extract
+     * detailed information for one time zone.
+     *
+     * @param zone the time zone for which data is to be extracted
+     * @return a KSystemTimeZoneDataWindows instance containing the parsed data.
+     *         The caller is responsible for deleting the KTimeZoneData instance.
+     *         Null is returned on error.
      */
-  KSystemTimeZoneSourceWindows();
-
-   /**
-    * Retrieves and parses the Windows registry information to extract
-    * detailed information for one time zone.
-    *
-    * @param zone the time zone for which data is to be extracted
-    * @return a KSystemTimeZoneDataWindows instance containing the parsed data.
-    *         The caller is responsible for deleting the KTimeZoneData instance.
-    *         Null is returned on error.
-    */
-  KTimeZoneData* parse(const KTimeZone &zone) const;
+    KTimeZoneData *parse(const KTimeZone &zone) const;
 private:
-  KSystemTimeZoneSourceWindowsPrivate * const d;
+    KSystemTimeZoneSourceWindowsPrivate *const d;
 };
-
 
 /**
  * The KSystemTimeZoneWindows class represents a time zone defined in the Windows registry.
@@ -69,7 +68,7 @@ private:
  * It works in partnership with the KSystemTimeZoneSourceWindows class which reads and parses the
  * time zone definitions from the Windows registry.
  *
- * @short Represents a time zone defined in the Windows registry 
+ * @short Represents a time zone defined in the Windows registry
  * @see KSystemTimeZoneBackendWindows, KSystemTimeZoneSourceWindows, KSystemTimeZoneDataWindows
  * @ingroup timezones
  * @author Marc Mutz <mutz@kde.org>, Till Adam <adam@kde.org>.
@@ -77,25 +76,25 @@ private:
 class KDE4SUPPORT_EXPORT KSystemTimeZoneWindows : public KTimeZone  //krazy:exclude=dpointer (no d-pointer for KTimeZone derived classes)
 {
 public:
-   /**
-    * Creates a time zone.
-    *
-    * @param source      Windows registry reader and parser
-    * @param name        time zone's unique name, which must be the tzfile path relative
-    *                    to the location specified for @p source
-    */
-  KSystemTimeZoneWindows(KTimeZoneSource *source, const QString &name);
-    
-  ~KSystemTimeZoneWindows() {}
+    /**
+     * Creates a time zone.
+     *
+     * @param source      Windows registry reader and parser
+     * @param name        time zone's unique name, which must be the tzfile path relative
+     *                    to the location specified for @p source
+     */
+    KSystemTimeZoneWindows(KTimeZoneSource *source, const QString &name);
 
-  /**
-   * Static helper method that lists all availalbe timezones on the system
-   * as per the information in the Windows registry.
-   */
-  static QStringList listTimeZones();
+    ~KSystemTimeZoneWindows() {}
+
+    /**
+     * Static helper method that lists all availalbe timezones on the system
+     * as per the information in the Windows registry.
+     */
+    static QStringList listTimeZones();
 private:
-   // d-pointer is in backend class.
-   // This is a requirement for classes inherited from KTimeZone.
+    // d-pointer is in backend class.
+    // This is a requirement for classes inherited from KTimeZone.
 };
 
 #endif // _KTIMEZONE_WINDOWS_H

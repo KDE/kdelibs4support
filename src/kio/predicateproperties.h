@@ -33,21 +33,21 @@ class QValidator;
  *
  * @deprecated use Nepomuk::Types::Property instead
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT PredicateProperties {
-friend class PredicatePropertyProvider;
+class KDE4SUPPORT_DEPRECATED_EXPORT PredicateProperties
+{
+    friend class PredicatePropertyProvider;
 public:
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED PredicateProperties(const QString& predicate = QString());
+    KDE4SUPPORT_DEPRECATED PredicateProperties(const QString &predicate = QString());
 #endif
-    PredicateProperties(const PredicateProperties& p);
+    PredicateProperties(const PredicateProperties &p);
     ~PredicateProperties();
-    const PredicateProperties& operator=(const PredicateProperties& p);
+    const PredicateProperties &operator=(const PredicateProperties &p);
     /**
      * This enum is used to specify some attributes that an item can have,
      * which fit neither in the Hint nor in the Unit enum.
      */
-    enum Attributes
-    {
+    enum Attributes {
         Addable     =  1, ///< The item or group can be added by a user
         Removable   =  2, ///< It can be removed
         Modifiable  =  4, ///< The value can be edited (no meaning for a group)
@@ -74,7 +74,7 @@ public:
     /**
      * Key associated with this value.
      **/
-    const QString& key() const;
+    const QString &key() const;
     /**
      * The type for this field.
      **/
@@ -82,21 +82,21 @@ public:
     /**
      * Localized name of the predicate.
      **/
-    const QString& name() const;
+    const QString &name() const;
     /**
      * Localized description of the predicate.
      **/
-    const QString& description() const;
-    QValidator* createValidator() const;
-    const QStringList& suggestedValues() const;
+    const QString &description() const;
+    QValidator *createValidator() const;
+    const QStringList &suggestedValues() const;
     uint minCardinality() const;
     uint maxCardinality() const;
-    const PredicateProperties& parent() const;
+    const PredicateProperties &parent() const;
     /**
      * Return a url that identifies the unit in which this property
      * is expressed.
      **/
-    const QString& unit() const;
+    const QString &unit() const;
     bool isValid() const;
 private:
     class Private;

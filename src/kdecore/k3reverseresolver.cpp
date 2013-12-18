@@ -53,18 +53,20 @@ using namespace KNetwork::Internal;
 
 namespace
 {
-  class ReverseThread: public KResolverWorkerBase
-  {
-  public:
-    ReverseThread(const KSocketAddress& addr, int flags)
-      : m_addr(addr), m_flags(flags), m_parent(0L)
+class ReverseThread: public KResolverWorkerBase
+{
+public:
+    ReverseThread(const KSocketAddress &addr, int flags)
+        : m_addr(addr), m_flags(flags), m_parent(0L)
     { }
 
     virtual ~ReverseThread()
     { }
 
     virtual bool preprocess()
-    { return true; }
+    {
+        return true;
+    }
     virtual bool run();
     virtual bool postprocess();
 
@@ -77,188 +79,192 @@ namespace
     QString node;
     QString service;
     bool success;
-  };
+};
 
-  class KReverseResolverEvent: public QEvent
-  {
-  public:
+class KReverseResolverEvent: public QEvent
+{
+public:
     static const int myType = QEvent::User + 63; // arbitrary value
     QString node;
     QString service;
     bool success;
 
-    KReverseResolverEvent(const QString& _node, const QString& _service,
-			  bool _success)
-      : QEvent((Type)myType), node(_node),
-	service(_service), success(_success)
+    KReverseResolverEvent(const QString &_node, const QString &_service,
+                          bool _success)
+        : QEvent((Type)myType), node(_node),
+          service(_service), success(_success)
     { }
-  };
+};
 }
 
 class KNetwork::KReverseResolverPrivate
 {
 public:
-  QString node;
-  QString service;
-  KSocketAddress addr;
-  int flags;
+    QString node;
+    QString service;
+    KSocketAddress addr;
+    int flags;
 
-  ReverseThread* worker;
-  bool success;
+    ReverseThread *worker;
+    bool success;
 
-  inline KReverseResolverPrivate(const KSocketAddress& _addr)
-    : addr(_addr), worker(0L), success(false)
-  { }
+    inline KReverseResolverPrivate(const KSocketAddress &_addr)
+        : addr(_addr), worker(0L), success(false)
+    { }
 };
 
-KReverseResolver::KReverseResolver(const KSocketAddress& addr, int flags,
-				   QObject *parent)
-  : QObject(parent), d(new KReverseResolverPrivate(addr))
+KReverseResolver::KReverseResolver(const KSocketAddress &addr, int flags,
+                                   QObject *parent)
+    : QObject(parent), d(new KReverseResolverPrivate(addr))
 {
-  d->flags = flags;
+    d->flags = flags;
 }
 
 KReverseResolver::~KReverseResolver()
 {
-  if (d->worker)
-    d->worker->m_parent = 0L;
-  delete d;
+    if (d->worker) {
+        d->worker->m_parent = 0L;
+    }
+    delete d;
 }
 
 bool KReverseResolver::isRunning() const
 {
-  return d->worker != 0L;
+    return d->worker != 0L;
 }
 
 bool KReverseResolver::success() const
 {
-  return !isRunning() && d->success;
+    return !isRunning() && d->success;
 }
 
 bool KReverseResolver::failure() const
 {
-  return !isRunning() && !d->success;
+    return !isRunning() && !d->success;
 }
 
 QString KReverseResolver::node() const
 {
-  return d->node;
+    return d->node;
 }
 
 QString KReverseResolver::service() const
 {
-  return d->service;
+    return d->service;
 }
 
-const KSocketAddress& KReverseResolver::address() const
+const KSocketAddress &KReverseResolver::address() const
 {
-  return d->addr;
+    return d->addr;
 }
 
 bool KReverseResolver::start()
 {
-  if (d->worker != 0L)
-    return true;		// already started
+    if (d->worker != 0L) {
+        return true;    // already started
+    }
 
-  d->worker = new ReverseThread(d->addr, d->flags);
-  d->worker->m_parent = this;
+    d->worker = new ReverseThread(d->addr, d->flags);
+    d->worker->m_parent = this;
 
-  RequestData *req = new RequestData;
-  req->obj = 0L;
-  req->input = 0L;
-  req->requestor = 0L;
-  req->worker = d->worker;
-  KResolverManager::manager()->dispatch(req);
-  return true;
+    RequestData *req = new RequestData;
+    req->obj = 0L;
+    req->input = 0L;
+    req->requestor = 0L;
+    req->worker = d->worker;
+    KResolverManager::manager()->dispatch(req);
+    return true;
 }
 
 bool KReverseResolver::event(QEvent *e)
 {
-  if (e->type() != KReverseResolverEvent::myType)
-    return QObject::event(e);	// call parent
-
-  KReverseResolverEvent *re = static_cast<KReverseResolverEvent*>(e);
-  d->node = re->node;
-  d->service = re->service;
-  d->success = re->success;
-
-  // don't delete d->worker!
-  // KResolverManager::doNotifying takes care of that, if it hasn't already
-  d->worker = 0L;
-
-  // emit signal
-  emit finished(*this);
-
-  return true;
-}
-
-bool KReverseResolver::resolve(const KSocketAddress& addr, QString& node,
-			       QString& serv, int flags)
-{
-  ReverseThread th(addr, flags);
-  if (th.run())
-    {
-      node = th.node;
-      serv = th.service;
-      return true;
+    if (e->type() != KReverseResolverEvent::myType) {
+        return QObject::event(e);    // call parent
     }
-  return false;
+
+    KReverseResolverEvent *re = static_cast<KReverseResolverEvent *>(e);
+    d->node = re->node;
+    d->service = re->service;
+    d->success = re->success;
+
+    // don't delete d->worker!
+    // KResolverManager::doNotifying takes care of that, if it hasn't already
+    d->worker = 0L;
+
+    // emit signal
+    emit finished(*this);
+
+    return true;
 }
 
-bool KReverseResolver::resolve(const struct sockaddr* sa, quint16 salen,
-			       QString& node, QString& serv, int flags)
+bool KReverseResolver::resolve(const KSocketAddress &addr, QString &node,
+                               QString &serv, int flags)
 {
-  return resolve(KSocketAddress(sa, salen), node, serv, flags);
+    ReverseThread th(addr, flags);
+    if (th.run()) {
+        node = th.node;
+        serv = th.service;
+        return true;
+    }
+    return false;
+}
+
+bool KReverseResolver::resolve(const struct sockaddr *sa, quint16 salen,
+                               QString &node, QString &serv, int flags)
+{
+    return resolve(KSocketAddress(sa, salen), node, serv, flags);
 }
 
 bool ReverseThread::run()
 {
-  int err;
-  char h[NI_MAXHOST], s[NI_MAXSERV];
-  int niflags = 0;
+    int err;
+    char h[NI_MAXHOST], s[NI_MAXSERV];
+    int niflags = 0;
 
-  h[0] = s[0] = '\0';
+    h[0] = s[0] = '\0';
 
-  if (m_flags & KReverseResolver::NumericHost)
-    niflags |= NI_NUMERICHOST;
-  if (m_flags & KReverseResolver::NumericService)
-    niflags |= NI_NUMERICSERV;
-  if (m_flags & KReverseResolver::NodeNameOnly)
-    niflags |= NI_NOFQDN;
-  if (m_flags & KReverseResolver::Datagram)
-    niflags |= NI_DGRAM;
-  if (m_flags & KReverseResolver::ResolutionRequired)
-    niflags |= NI_NAMEREQD;
+    if (m_flags & KReverseResolver::NumericHost) {
+        niflags |= NI_NUMERICHOST;
+    }
+    if (m_flags & KReverseResolver::NumericService) {
+        niflags |= NI_NUMERICSERV;
+    }
+    if (m_flags & KReverseResolver::NodeNameOnly) {
+        niflags |= NI_NOFQDN;
+    }
+    if (m_flags & KReverseResolver::Datagram) {
+        niflags |= NI_DGRAM;
+    }
+    if (m_flags & KReverseResolver::ResolutionRequired) {
+        niflags |= NI_NAMEREQD;
+    }
 
-  {
+    {
 #ifdef NEED_MUTEX
-    QMutexLocker locker(&::getXXbyYYmutex);
+        QMutexLocker locker(&::getXXbyYYmutex);
 #endif
-    err = ::getnameinfo(m_addr, m_addr.length(),
-			h, sizeof(h) - 1, s, sizeof(s) - 1, niflags);
-  }
-
-  if (err == 0)
-    {
-      node = KResolver::domainToUnicode(QLatin1String(h));
-      service = QLatin1String(s);
-      success = true;
-    }
-  else
-    {
-      node.clear(); service.clear();
-      success = false;
+        err = ::getnameinfo(m_addr, m_addr.length(),
+                            h, sizeof(h) - 1, s, sizeof(s) - 1, niflags);
     }
 
-  return success;
+    if (err == 0) {
+        node = KResolver::domainToUnicode(QLatin1String(h));
+        service = QLatin1String(s);
+        success = true;
+    } else {
+        node.clear(); service.clear();
+        success = false;
+    }
+
+    return success;
 }
 
 bool ReverseThread::postprocess()
 {
-  // post an event
-  if (m_parent)
-    QCoreApplication::postEvent(m_parent,
-				new KReverseResolverEvent(node, service, success));
-  return true;
+    // post an event
+    if (m_parent)
+        QCoreApplication::postEvent(m_parent,
+                                    new KReverseResolverEvent(node, service, success));
+    return true;
 }
 

@@ -36,7 +36,7 @@
 class KPushButton::KPushButtonPrivate
 {
 public:
-    KPushButtonPrivate(KPushButton *_parent) : parent(_parent), m_dragEnabled( false ), decorator(0)
+    KPushButtonPrivate(KPushButton *_parent) : parent(_parent), m_dragEnabled(false), decorator(0)
     {
     }
 
@@ -44,7 +44,7 @@ public:
 
     KStandardGuiItem::StandardItem itemType;
     QPointer<QMenu> delayedMenu;
-    QTimer * delayedMenuTimer;
+    QTimer *delayedMenuTimer;
     bool m_dragEnabled;
     QPoint startPos;
     KAuth::ObjectDecorator *decorator;
@@ -58,23 +58,25 @@ public:
 void KPushButton::KPushButtonPrivate::slotPressedInternal()
 {
     if (!delayedMenu.isNull()) {
-        if (delayedMenuTimer==0) {
-            delayedMenuTimer=new QTimer(parent);
+        if (delayedMenuTimer == 0) {
+            delayedMenuTimer = new QTimer(parent);
             delayedMenuTimer->setSingleShot(true);
-            connect(delayedMenuTimer,SIGNAL(timeout()),parent,SLOT(slotDelayedMenuTimeout()));
+            connect(delayedMenuTimer, SIGNAL(timeout()), parent, SLOT(slotDelayedMenuTimeout()));
         }
-        const int delay=parent->style()->styleHint(QStyle::SH_ToolButton_PopupDelay, 0, parent);
-        delayedMenuTimer->start((delay<=0) ? 150:delay);
+        const int delay = parent->style()->styleHint(QStyle::SH_ToolButton_PopupDelay, 0, parent);
+        delayedMenuTimer->start((delay <= 0) ? 150 : delay);
     }
 }
 
 void KPushButton::KPushButtonPrivate::slotClickedInternal()
 {
-    if (delayedMenuTimer)
+    if (delayedMenuTimer) {
         delayedMenuTimer->stop();
+    }
 }
 
-void KPushButton::KPushButtonPrivate::slotDelayedMenuTimeout() {
+void KPushButton::KPushButtonPrivate::slotDelayedMenuTimeout()
+{
     delayedMenuTimer->stop();
     if (!delayedMenu.isNull()) {
         parent->setMenu(delayedMenu);
@@ -83,30 +85,29 @@ void KPushButton::KPushButtonPrivate::slotDelayedMenuTimeout() {
     }
 }
 
-
-KPushButton::KPushButton( QWidget *parent )
-    : QPushButton( parent ), d( new KPushButtonPrivate(this) )
+KPushButton::KPushButton(QWidget *parent)
+    : QPushButton(parent), d(new KPushButtonPrivate(this))
 {
-    initWidget( KGuiItem( "" ) );
+    initWidget(KGuiItem(""));
 }
 
-KPushButton::KPushButton( const QString &text, QWidget *parent )
-    : QPushButton( parent ), d( new KPushButtonPrivate(this) )
+KPushButton::KPushButton(const QString &text, QWidget *parent)
+    : QPushButton(parent), d(new KPushButtonPrivate(this))
 {
-    initWidget( KGuiItem( text ) );
+    initWidget(KGuiItem(text));
 }
 
-KPushButton::KPushButton( const QIcon &icon, const QString &text,
-                          QWidget *parent )
-    : QPushButton( text, parent ), d( new KPushButtonPrivate(this) )
+KPushButton::KPushButton(const QIcon &icon, const QString &text,
+                         QWidget *parent)
+    : QPushButton(text, parent), d(new KPushButtonPrivate(this))
 {
-    initWidget( KGuiItem( text, icon ) );
+    initWidget(KGuiItem(text, icon));
 }
 
-KPushButton::KPushButton( const KGuiItem &item, QWidget *parent )
-    : QPushButton( parent ), d( new KPushButtonPrivate(this) )
+KPushButton::KPushButton(const KGuiItem &item, QWidget *parent)
+    : QPushButton(parent), d(new KPushButtonPrivate(this))
 {
-    initWidget( item );
+    initWidget(item);
 }
 
 KPushButton::~KPushButton()
@@ -114,17 +115,17 @@ KPushButton::~KPushButton()
     delete d;
 }
 
-void KPushButton::initWidget( const KGuiItem &item )
+void KPushButton::initWidget(const KGuiItem &item)
 {
     d->decorator = new KAuth::ObjectDecorator(this);
     connect(d->decorator, SIGNAL(authorized(KAuth::Action)),
             this, SIGNAL(authorized(KAuth::Action)));
 
     d->itemType = (KStandardGuiItem::StandardItem) 0;
-    d->delayedMenuTimer=0;
+    d->delayedMenuTimer = 0;
 
-    connect(this,SIGNAL(pressed()), this, SLOT(slotPressedInternal()));
-    connect(this,SIGNAL(clicked()), this, SLOT(slotClickedInternal()));
+    connect(this, SIGNAL(pressed()), this, SLOT(slotPressedInternal()));
+    connect(this, SIGNAL(clicked()), this, SLOT(slotClickedInternal()));
     KGuiItem::assign(this, item);
 }
 
@@ -133,14 +134,14 @@ bool KPushButton::isDragEnabled() const
     return d->m_dragEnabled;
 }
 
-void KPushButton::setGuiItem( const KGuiItem& item )
+void KPushButton::setGuiItem(const KGuiItem &item)
 {
     KGuiItem::assign(this, item);
 }
 
-void KPushButton::setGuiItem( KStandardGuiItem::StandardItem item )
+void KPushButton::setGuiItem(KStandardGuiItem::StandardItem item)
 {
-    setGuiItem( KStandardGuiItem::guiItem(item) );
+    setGuiItem(KStandardGuiItem::guiItem(item));
     d->itemType = item;
 }
 
@@ -149,50 +150,50 @@ KStandardGuiItem::StandardItem KPushButton::guiItem() const
     return d->itemType;
 }
 
-void KPushButton::setText( const QString &text )
+void KPushButton::setText(const QString &text)
 {
     QPushButton::setText(text);
 }
 
-void KPushButton::setIcon( const QIcon &icon )
+void KPushButton::setIcon(const QIcon &icon)
 {
     const bool useIcons = style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons, 0, this);
-    if (useIcons || text().isEmpty())
-        QPushButton::setIcon( icon );
-    else
-        QPushButton::setIcon( QIcon() );
+    if (useIcons || text().isEmpty()) {
+        QPushButton::setIcon(icon);
+    } else {
+        QPushButton::setIcon(QIcon());
+    }
 }
 
-void KPushButton::setDragEnabled( bool enable )
+void KPushButton::setDragEnabled(bool enable)
 {
     d->m_dragEnabled = enable;
 }
 
-void KPushButton::mousePressEvent( QMouseEvent *e )
+void KPushButton::mousePressEvent(QMouseEvent *e)
 {
-    if ( d->m_dragEnabled )
+    if (d->m_dragEnabled) {
         d->startPos = e->pos();
-    QPushButton::mousePressEvent( e );
+    }
+    QPushButton::mousePressEvent(e);
 }
 
-void KPushButton::mouseMoveEvent( QMouseEvent *e )
+void KPushButton::mouseMoveEvent(QMouseEvent *e)
 {
-    if ( !d->m_dragEnabled )
-    {
-        QPushButton::mouseMoveEvent( e );
+    if (!d->m_dragEnabled) {
+        QPushButton::mouseMoveEvent(e);
         return;
     }
 
-    if ( (e->buttons() & Qt::LeftButton) &&
-         (e->pos() - d->startPos).manhattanLength() >
-         QApplication::startDragDistance() )
-    {
+    if ((e->buttons() & Qt::LeftButton) &&
+            (e->pos() - d->startPos).manhattanLength() >
+            QApplication::startDragDistance()) {
         startDrag();
-        setDown( false );
+        setDown(false);
     }
 }
 
-QDrag * KPushButton::dragObject()
+QDrag *KPushButton::dragObject()
 {
     return 0;
 }
@@ -200,16 +201,17 @@ QDrag * KPushButton::dragObject()
 void KPushButton::startDrag()
 {
     QDrag *d = dragObject();
-    if ( d )
+    if (d) {
         d->start();
+    }
 }
 
 void KPushButton::setDelayedMenu(QMenu *delayedMenu)
 {
-    d->delayedMenu=delayedMenu;
+    d->delayedMenu = delayedMenu;
 }
 
-QMenu* KPushButton::delayedMenu()
+QMenu *KPushButton::delayedMenu()
 {
     return d->delayedMenu;
 }
@@ -232,22 +234,25 @@ void KPushButton::setAuthAction(const KAuth::Action &action)
 QSize KPushButton::sizeHint() const
 {
     const bool tempSetMenu = !menu() && d->delayedMenu;
-    if (tempSetMenu)
+    if (tempSetMenu) {
         const_cast<KPushButton *>(this)->setMenu(d->delayedMenu);
+    }
     const QSize sz = QPushButton::sizeHint();
-    if (tempSetMenu)
+    if (tempSetMenu) {
         const_cast<KPushButton *>(this)->setMenu(0);
+    }
     return sz;
 }
 
-void KPushButton::paintEvent( QPaintEvent * )
+void KPushButton::paintEvent(QPaintEvent *)
 {
     QStylePainter p(this);
     QStyleOptionButton option;
     initStyleOption(&option);
 
-    if (d->delayedMenu)
+    if (d->delayedMenu) {
         option.features |= QStyleOptionButton::HasMenu;
+    }
 
     p.drawControl(QStyle::CE_PushButton, option);
 }

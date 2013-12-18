@@ -72,9 +72,9 @@
 #include <QUrl>
 #include <qstandardpaths.h>
 
-#include <stdlib.h>	// abort
-#include <unistd.h>	// getpid
-#include <stdarg.h>	// vararg stuff
+#include <stdlib.h> // abort
+#include <unistd.h> // getpid
+#include <stdarg.h> // vararg stuff
 #include <ctype.h>      // isprint
 #include <syslog.h>
 #include <errno.h>
@@ -101,22 +101,36 @@
 #include "kdebugdbusiface_p.h"
 #include <QMutex>
 
-
-
 KDE4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface = false;
 
 class KNoDebugStream: public QIODevice
 {
     // Q_OBJECT
 public:
-    KNoDebugStream() { open(WriteOnly); }
-    bool isSequential() const { return true; }
-    qint64 readData(char *, qint64) { return 0; /* eof */ }
-    qint64 readLineData(char *, qint64) { return 0; /* eof */ }
-    qint64 writeData(const char *, qint64 len) { return len; }
+    KNoDebugStream()
+    {
+        open(WriteOnly);
+    }
+    bool isSequential() const
+    {
+        return true;
+    }
+    qint64 readData(char *, qint64)
+    {
+        return 0; /* eof */
+    }
+    qint64 readLineData(char *, qint64)
+    {
+        return 0; /* eof */
+    }
+    qint64 writeData(const char *, qint64 len)
+    {
+        return len;
+    }
 
     void setContext(const char *debugFile, int line,
-                    const char *funcinfo, const QByteArray& areaName) {
+                    const char *funcinfo, const QByteArray &areaName)
+    {
         context.file = debugFile;
         context.line = line;
         context.function = funcinfo;
@@ -133,15 +147,18 @@ class KSyslogDebugStream: public KNoDebugStream
     // Q_OBJECT
 public:
     qint64 writeData(const char *data, qint64 len)
-        {
-            if (len) {
-                // not using fromRawData because we need a terminating NUL
-                const QByteArray buf(data, len);
-                syslog(m_priority, "%s", buf.constData());
-            }
-            return len;
+    {
+        if (len) {
+            // not using fromRawData because we need a terminating NUL
+            const QByteArray buf(data, len);
+            syslog(m_priority, "%s", buf.constData());
         }
-    void setPriority(int priority) { m_priority = priority; }
+        return len;
+    }
+    void setPriority(int priority)
+    {
+        m_priority = priority;
+    }
 private:
     int m_priority;
 };
@@ -151,25 +168,28 @@ class KFileDebugStream: public KNoDebugStream
     // Q_OBJECT
 public:
     qint64 writeData(const char *data, qint64 len)
-        {
-            if (len) {
-                QFile aOutputFile(m_fileName);
-                if (aOutputFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Unbuffered)) {
-                    QByteArray buf = QByteArray::fromRawData(data, len);
+    {
+        if (len) {
+            QFile aOutputFile(m_fileName);
+            if (aOutputFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Unbuffered)) {
+                QByteArray buf = QByteArray::fromRawData(data, len);
 
-                    // Apply QT_MESSAGE_PATTERN
-                    extern Q_CORE_EXPORT QString qMessageFormatString(QtMsgType type, const QMessageLogContext &context,
-                                                                  const QString &str);
-                    const QString formatted = qMessageFormatString(QtDebugMsg /*hack*/, context, QString::fromUtf8(buf));
-                    buf = formatted.toUtf8();
+                // Apply QT_MESSAGE_PATTERN
+                extern Q_CORE_EXPORT QString qMessageFormatString(QtMsgType type, const QMessageLogContext & context,
+                        const QString & str);
+                const QString formatted = qMessageFormatString(QtDebugMsg /*hack*/, context, QString::fromUtf8(buf));
+                buf = formatted.toUtf8();
 
-                    aOutputFile.write(buf.trimmed());
-                    aOutputFile.putChar('\n');
-                }
+                aOutputFile.write(buf.trimmed());
+                aOutputFile.putChar('\n');
             }
-            return len;
         }
-    void setFileName(const QString& fn) { m_fileName = fn; }
+        return len;
+    }
+    void setFileName(const QString &fn)
+    {
+        m_fileName = fn;
+    }
 private:
     QString m_fileName;
 };
@@ -179,15 +199,18 @@ class KMessageBoxDebugStream: public KNoDebugStream
     // Q_OBJECT
 public:
     qint64 writeData(const char *data, qint64 len)
-        {
-            if (len) {
-                // Since we are in kdecore here, we cannot use KMsgBox
-                QString msg = QString::fromLatin1(data, len);
-                KMessage::message(KMessage::Information, msg, m_caption);
-            }
-            return len;
+    {
+        if (len) {
+            // Since we are in kdecore here, we cannot use KMsgBox
+            QString msg = QString::fromLatin1(data, len);
+            KMessage::message(KMessage::Information, msg, m_caption);
         }
-    void setCaption(const QString& h) { m_caption = h; }
+        return len;
+    }
+    void setCaption(const QString &h)
+    {
+        m_caption = h;
+    }
 private:
     QString m_caption;
 };
@@ -197,17 +220,16 @@ class KLineEndStrippingDebugStream: public KNoDebugStream
     // Q_OBJECT
 public:
     qint64 writeData(const char *data, qint64 len)
-        {
-            QByteArray buf = QByteArray::fromRawData(data, len);
-            qt_message_output(QtDebugMsg,
-                              context,
-                              QString::fromLocal8Bit(buf.trimmed()));
-            return len;
-        }
+    {
+        QByteArray buf = QByteArray::fromRawData(data, len);
+        qt_message_output(QtDebugMsg,
+                          context,
+                          QString::fromLocal8Bit(buf.trimmed()));
+        return len;
+    }
 };
 
-struct KDebugPrivate
-{
+struct KDebugPrivate {
     enum OutputMode {
         FileOutput = 0,
         MessageBoxOutput = 1,
@@ -219,7 +241,10 @@ struct KDebugPrivate
     };
 
     struct Area {
-        inline Area() { clear(); }
+        inline Area()
+        {
+            clear();
+        }
         void clear(OutputMode set = Unknown)
         {
             for (int i = 0; i < 4; ++i) {
@@ -294,19 +319,21 @@ struct KDebugPrivate
             return;
         }
 
-        uint lineNumber=0;
+        uint lineNumber = 0;
 
         while (!file.atEnd()) {
             const QByteArray line = file.readLine().trimmed();
             ++lineNumber;
-            if (line.isEmpty())
+            if (line.isEmpty()) {
                 continue;
+            }
 
-            int i=0;
-            unsigned char ch=line[i];
+            int i = 0;
+            unsigned char ch = line[i];
 
-            if (ch =='#')
-                continue; // We have an eof, a comment or an empty line
+            if (ch == '#') {
+                continue;    // We have an eof, a comment or an empty line
+            }
 
             if (ch < '0' || ch > '9') {
                 qWarning("Syntax error parsing '%s': no number (line %u)", qPrintable(filename), lineNumber);
@@ -314,13 +341,14 @@ struct KDebugPrivate
             }
 
             do {
-                ch=line[++i];
+                ch = line[++i];
             } while (ch >= '0' && ch <= '9' && i < line.length());
 
             unsigned int number = line.left(i).toUInt();
 
-            while (i < line.length() && line[i] <= ' ')
+            while (i < line.length() && line[i] <= ' ') {
                 i++;
+            }
 
             Area areaData;
             areaData.name = line.mid(i);
@@ -330,7 +358,9 @@ struct KDebugPrivate
     }
 
     inline int level(QtMsgType type)
-    { return int(type) - int(QtDebugMsg); }
+    {
+        return int(type) - int(QtDebugMsg);
+    }
 
     QString groupNameForArea(unsigned int area) const
     {
@@ -343,26 +373,28 @@ struct KDebugPrivate
 
     OutputMode areaOutputMode(QtMsgType type, unsigned int area, bool enableByDefault)
     {
-        if (!configObject())
+        if (!configObject()) {
             return QtOutput;
+        }
 
         QString key;
         switch (type) {
         case QtDebugMsg:
-            key = QLatin1String( "InfoOutput" );
-            if (m_disableAll)
+            key = QLatin1String("InfoOutput");
+            if (m_disableAll) {
                 return NoOutput;
+            }
             break;
         case QtWarningMsg:
-            key = QLatin1String( "WarnOutput" );
+            key = QLatin1String("WarnOutput");
             break;
         case QtFatalMsg:
-            key = QLatin1String( "FatalOutput" );
+            key = QLatin1String("FatalOutput");
             break;
         case QtCriticalMsg:
         default:
             /* Programmer error, use "Error" as default */
-            key = QLatin1String( "ErrorOutput" );
+            key = QLatin1String("ErrorOutput");
             break;
         }
 
@@ -373,12 +405,12 @@ struct KDebugPrivate
 
     QString logFileName(QtMsgType type, unsigned int area)
     {
-        if (!configObject())
+        if (!configObject()) {
             return QString();
+        }
 
-        const char* aKey;
-        switch (type)
-        {
+        const char *aKey;
+        switch (type) {
         case QtDebugMsg:
             aKey = "InfoFilename";
             break;
@@ -398,7 +430,7 @@ struct KDebugPrivate
         return cg.readPathEntry(aKey, QLatin1String("kdebug.dbg"));
     }
 
-    KConfig* configObject()
+    KConfig *configObject()
     {
         if (!config) {
             config = new KConfig(QLatin1String("kdebugrc"), KConfig::NoGlobals);
@@ -434,10 +466,12 @@ struct KDebugPrivate
 
         const int lev = level(type);
         //qDebug() << "in cache for" << num << ":" << it->mode[lev];
-        if (it->mode[lev] == Unknown)
+        if (it->mode[lev] == Unknown) {
             it->mode[lev] = areaOutputMode(type, num, enableByDefault);
-        if (it->mode[lev] == FileOutput && it->logFileName[lev].isEmpty())
+        }
+        if (it->mode[lev] == FileOutput && it->logFileName[lev].isEmpty()) {
             it->logFileName[lev] = logFileName(type, num);
+        }
 
         Q_ASSERT(it->mode[lev] != Unknown);
 
@@ -446,8 +480,9 @@ struct KDebugPrivate
 
     QDebug setupFileWriter(const QString &fileName)
     {
-        if (!filewriter.hasLocalData())
+        if (!filewriter.hasLocalData()) {
             filewriter.setLocalData(new KFileDebugStream);
+        }
         filewriter.localData()->setFileName(fileName);
         QDebug result(filewriter.localData());
         return result;
@@ -455,8 +490,9 @@ struct KDebugPrivate
 
     QDebug setupMessageBoxWriter(QtMsgType type, const QByteArray &areaName)
     {
-        if (!messageboxwriter.hasLocalData())
+        if (!messageboxwriter.hasLocalData()) {
             messageboxwriter.setLocalData(new KMessageBoxDebugStream);
+        }
         QDebug result(messageboxwriter.localData());
         QByteArray header;
 
@@ -487,8 +523,9 @@ struct KDebugPrivate
 
     QDebug setupSyslogWriter(QtMsgType type)
     {
-        if (!syslogwriter.hasLocalData())
+        if (!syslogwriter.hasLocalData()) {
             syslogwriter.setLocalData(new KSyslogDebugStream);
+        }
         QDebug result(syslogwriter.localData());
         int level = 0;
 
@@ -551,10 +588,11 @@ struct KDebugPrivate
 #if 0 // This is in Qt now, see %{function} in QT_MESSAGE_PATTERN (qlogging.cpp). Only the coloring is missing (TODO Qt-5.1)
         if (funcinfo && printMethodName) {
             if (colored) {
-                if (type <= QtDebugMsg)
-                    s << "\033[0;34m"; //blue
-                else
-                    s << "\033[0;31m"; //red
+                if (type <= QtDebugMsg) {
+                    s << "\033[0;34m";    //blue
+                } else {
+                    s << "\033[0;31m";    //red
+                }
             }
 # ifdef Q_CC_GNU
             // strip the function info down to the base function name
@@ -566,19 +604,25 @@ struct KDebugPrivate
                        "Bug in kDebug(): I don't know how to parse this function name");
             while (info.at(pos - 1) == ' ')
                 // that '(' we matched was actually the opening of a function-pointer
+            {
                 pos = info.indexOf('(', pos + 1);
+            }
 
             info.truncate(pos);
             // gcc 4.1.2 don't put a space between the return type and
             // the function name if the function is in an anonymous namespace
             int index = 1;
             forever {
-                index = info.indexOf("<unnamed>::", index);
-                if ( index == -1 )
+            index = info.indexOf("<unnamed>::", index);
+                if (index == -1)
+                {
                     break;
+                }
 
-                if ( info.at(index-1) != ':' )
+                if (info.at(index - 1) != ':')
+                {
                     info.insert(index, ' ');
+                }
 
                 index += strlen("<unnamed>::");
             }
@@ -586,21 +630,26 @@ struct KDebugPrivate
             if (pos != -1) {
                 int startoftemplate = info.lastIndexOf('<');
                 if (startoftemplate != -1 && pos > startoftemplate &&
-                    pos < info.lastIndexOf(">::"))
+                        pos < info.lastIndexOf(">::"))
                     // we matched a space inside this function's template definition
+                {
                     pos = info.lastIndexOf(' ', startoftemplate);
+                }
             }
 
             if (pos + 1 == info.length())
                 // something went wrong, so gracefully bail out
+            {
                 s << " " << funcinfo;
-            else
+            } else {
                 s << " " << info.constData() + pos + 1;
+            }
 # else
             s << " " << funcinfo;
 # endif
-           if(colored)
-               s  << "\033[0m";
+            if (colored) {
+                s  << "\033[0m";
+            }
         }
 
         s << ":";
@@ -655,11 +704,11 @@ struct KDebugPrivate
         return printHeader(s);
     }
 
-    void writeGroupForNamedArea(const QByteArray& areaName, bool enabled)
+    void writeGroupForNamedArea(const QByteArray &areaName, bool enabled)
     {
         // Ensure that this area name appears in kdebugrc, so that users (via kdebugdialog)
         // can turn it off.
-        KConfig* cfgObj = configObject();
+        KConfig *cfgObj = configObject();
         if (cfgObj) {
             KConfigGroup cg(cfgObj, QString::fromUtf8(areaName));
             const QString key = QString::fromLatin1("InfoOutput");
@@ -678,10 +727,10 @@ struct KDebugPrivate
     int m_nullOutputYesNoCache[8];
 
     KNoDebugStream devnull;
-    QThreadStorage<QString*> m_indentString;
-    QThreadStorage<KSyslogDebugStream*> syslogwriter;
-    QThreadStorage<KFileDebugStream*> filewriter;
-    QThreadStorage<KMessageBoxDebugStream*> messageboxwriter;
+    QThreadStorage<QString *> m_indentString;
+    QThreadStorage<KSyslogDebugStream *> syslogwriter;
+    QThreadStorage<KFileDebugStream *> filewriter;
+    QThreadStorage<KMessageBoxDebugStream *> messageboxwriter;
     KLineEndStrippingDebugStream lineendstrippingwriter;
 };
 
@@ -721,22 +770,25 @@ QString kRealBacktrace(int levels)
 {
     QString s;
 #if HAVE_BACKTRACE
-    void* trace[256];
+    void *trace[256];
     int n = backtrace(trace, 256);
-    if (!n)
-	return s;
-    char** strings = backtrace_symbols (trace, n);
+    if (!n) {
+        return s;
+    }
+    char **strings = backtrace_symbols(trace, n);
 
-    if ( levels != -1 )
-        n = qMin( n, levels );
+    if (levels != -1) {
+        n = qMin(n, levels);
+    }
     s = QLatin1String("[\n");
 
     for (int i = 0; i < n; ++i)
         s += QString::number(i) + QLatin1String(": ") +
              maybeDemangledName(strings[i]) + QLatin1Char('\n');
     s += QLatin1String("]\n");
-    if (strings)
-        free (strings);
+    if (strings) {
+        free(strings);
+    }
 #endif
     return s;
 }
@@ -753,7 +805,7 @@ QDebug kDebugStream(QtMsgType level, int area, const char *file, int line, const
         qCritical().nospace() << "kDebugStream called after destruction (from "
                               << (funcinfo ? funcinfo : "")
                               << (file ? " file " : " unknown file")
-                              << (file ? file :"")
+                              << (file ? file : "")
                               << " line " << line << ")";
         return QDebug(level);
     }
@@ -770,10 +822,11 @@ QDebug perror(QDebug s, KDebugTag)
 #if 0
 QDebug operator<<(QDebug s, const KDateTime &time)
 {
-    if ( time.isDateOnly() )
+    if (time.isDateOnly()) {
         s.nospace() << "KDateTime(" << qPrintable(time.toString(KDateTime::QtTextDate)) << ")";
-    else
+    } else {
         s.nospace() << "KDateTime(" << qPrintable(time.toString(KDateTime::ISODate)) << ")";
+    }
     return s.space();
 }
 #endif
@@ -786,16 +839,19 @@ QDebug operator<<(QDebug s, const QUrl &url)
 
 void kClearDebugConfig()
 {
-    if (!kDebug_data) return;
-    KDebugPrivate* d = kDebug_data;
+    if (!kDebug_data) {
+        return;
+    }
+    KDebugPrivate *d = kDebug_data;
     QMutexLocker locker(&d->mutex);
     delete d->config;
     d->config = 0;
 
     KDebugPrivate::Cache::Iterator it = d->cache.begin(),
-                                  end = d->cache.end();
-    for ( ; it != end; ++it)
+                                   end = d->cache.end();
+    for (; it != end; ++it) {
         it->clear();
+    }
 
     for (int i = 0; i < 8; i++) {
         d->m_nullOutputYesNoCache[i] = -1;
@@ -812,7 +868,7 @@ bool KDebug::hasNullOutput(QtMsgType type,
         return true;
     }
     if (kDebug_data.isDestroyed()) {
-         // kDebugStream() will generate a warning anyway, so we don't.
+        // kDebugStream() will generate a warning anyway, so we don't.
         return false;
     }
     KDebugPrivate *const d = kDebug_data;
@@ -841,10 +897,10 @@ bool KDebug::hasNullOutput(QtMsgType type,
     return ret;
 }
 
-int KDebug::registerArea(const QByteArray& areaName, bool enabled)
+int KDebug::registerArea(const QByteArray &areaName, bool enabled)
 {
     // TODO for optimization: static int s_lastAreaNumber = 1;
-    KDebugPrivate* d = kDebug_data;
+    KDebugPrivate *d = kDebug_data;
     QMutexLocker locker(&d->mutex);
     int areaNumber = 1;
     while (d->cache.contains(areaNumber)) {
@@ -866,7 +922,7 @@ public:
     QByteArray m_label;
 };
 
-KDebug::Block::Block(const char* label, int area)
+KDebug::Block::Block(const char *label, int area)
     : m_area(area), d(0)
 {
     if (hasNullOutputQtDebugMsg(area)) {
@@ -878,7 +934,7 @@ KDebug::Block::Block(const char* label, int area)
         kDebug(area) << "BEGIN:" << label;
 
         // The indent string is per thread
-        QThreadStorage<QString*> & indentString = kDebug_data()->m_indentString;
+        QThreadStorage<QString *> &indentString = kDebug_data()->m_indentString;
         if (!indentString.hasLocalData()) {
             indentString.setLocalData(new QString);
         }
@@ -890,20 +946,20 @@ KDebug::Block::~Block()
 {
     if (d) {
         const double duration = m_startTime.elapsed() / 1000.0;
-        QThreadStorage<QString*> & indentString = kDebug_data()->m_indentString;
+        QThreadStorage<QString *> &indentString = kDebug_data()->m_indentString;
         indentString.localData()->chop(2);
 
         // Print timing information, and a special message (DELAY) if the method took longer than 5s
         if (duration < 5.0) {
             kDebug(m_area)
-                << "END__:"
-                << d->m_label.constData()
-                << qPrintable(QString::fromLatin1("[Took: %3s]").arg(QString::number(duration, 'g', 2)));
+                    << "END__:"
+                    << d->m_label.constData()
+                    << qPrintable(QString::fromLatin1("[Took: %3s]").arg(QString::number(duration, 'g', 2)));
         } else {
             kDebug(m_area)
-                << "END__:"
-                << d->m_label.constData()
-                << qPrintable(QString::fromLatin1("[DELAY Took (quite long) %3s]").arg(QString::number(duration, 'g', 2)));
+                    << "END__:"
+                    << d->m_label.constData()
+                    << qPrintable(QString::fromLatin1("[DELAY Took (quite long) %3s]").arg(QString::number(duration, 'g', 2)));
         }
         delete d;
     }

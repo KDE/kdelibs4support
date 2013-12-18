@@ -40,69 +40,69 @@
 */
 class KDE4SUPPORT_DEPRECATED_EXPORT KColorCells : public QTableWidget
 {
-  Q_OBJECT
-  Q_PROPERTY(bool acceptDrags READ acceptDrags WRITE setAcceptDrags)
-  Q_PROPERTY(bool shading READ shading WRITE setShading)
+    Q_OBJECT
+    Q_PROPERTY(bool acceptDrags READ acceptDrags WRITE setAcceptDrags)
+    Q_PROPERTY(bool shading READ shading WRITE setShading)
 
 public:
-  /** 
-   * Constructs a new table of color cells, consisting of
-   * @p rows * @p columns colors. 
-   *
-   * @param parent The parent of the new widget
-   * @param rows The number of rows in the table
-   * @param columns The number of columns in the table
-   */
-  KColorCells( QWidget *parent, int rows, int columns );
-  ~KColorCells();
+    /**
+     * Constructs a new table of color cells, consisting of
+     * @p rows * @p columns colors.
+     *
+     * @param parent The parent of the new widget
+     * @param rows The number of rows in the table
+     * @param columns The number of columns in the table
+     */
+    KColorCells(QWidget *parent, int rows, int columns);
+    ~KColorCells();
 
-  /** Sets the color in the given index in the table */
-  void setColor( int index, const QColor &col );
-  /** Returns the color at a given index in the table */
-  QColor color( int index ) const;
-  /** Returns the total number of color cells in the table */
-  int count() const;
+    /** Sets the color in the given index in the table */
+    void setColor(int index, const QColor &col);
+    /** Returns the color at a given index in the table */
+    QColor color(int index) const;
+    /** Returns the total number of color cells in the table */
+    int count() const;
 
-  void setShading(bool shade);
-  bool shading() const;
+    void setShading(bool shade);
+    bool shading() const;
 
-  void setAcceptDrags(bool acceptDrags);
-  bool acceptDrags() const;
+    void setAcceptDrags(bool acceptDrags);
+    bool acceptDrags() const;
 
-  /** Sets the currently selected cell to @p index */
-  void setSelected(int index);
-  /** Returns the index of the cell which is currently selected */
-  int  selectedIndex() const;
-  
+    /** Sets the currently selected cell to @p index */
+    void setSelected(int index);
+    /** Returns the index of the cell which is currently selected */
+    int  selectedIndex() const;
+
 Q_SIGNALS:
-  /** Emitted when a color is selected in the table */
-  void colorSelected( int index , const QColor& color );
-  /** Emitted when a color in the table is double-clicked */
-  void colorDoubleClicked( int index , const QColor& color );
+    /** Emitted when a color is selected in the table */
+    void colorSelected(int index, const QColor &color);
+    /** Emitted when a color in the table is double-clicked */
+    void colorDoubleClicked(int index, const QColor &color);
 
 protected:
-  // the three methods below are used to ensure equal column widths and row heights
-  // for all cells and to update the widths/heights when the widget is resized
-  virtual int sizeHintForColumn(int column) const;
-  virtual int sizeHintForRow(int column) const;
-  virtual void resizeEvent( QResizeEvent* event );
+    // the three methods below are used to ensure equal column widths and row heights
+    // for all cells and to update the widths/heights when the widget is resized
+    virtual int sizeHintForColumn(int column) const;
+    virtual int sizeHintForRow(int column) const;
+    virtual void resizeEvent(QResizeEvent *event);
 
-  virtual void mouseReleaseEvent( QMouseEvent * );
-  virtual void mousePressEvent( QMouseEvent * );
-  virtual void mouseMoveEvent( QMouseEvent * );
-  virtual void dragEnterEvent( QDragEnterEvent * );
-  virtual void dragMoveEvent( QDragMoveEvent * );
-  virtual void dropEvent( QDropEvent *);
-  virtual void mouseDoubleClickEvent( QMouseEvent * );
+    virtual void mouseReleaseEvent(QMouseEvent *);
+    virtual void mousePressEvent(QMouseEvent *);
+    virtual void mouseMoveEvent(QMouseEvent *);
+    virtual void dragEnterEvent(QDragEnterEvent *);
+    virtual void dragMoveEvent(QDragMoveEvent *);
+    virtual void dropEvent(QDropEvent *);
+    virtual void mouseDoubleClickEvent(QMouseEvent *);
 
-  int positionToCell(const QPoint &pos, bool ignoreBorders=false) const;
+    int positionToCell(const QPoint &pos, bool ignoreBorders = false) const;
 
 private:
-  class KColorCellsPrivate;
-  friend class KColorCellsPrivate;
-  KColorCellsPrivate *const d;
-  
-  Q_DISABLE_COPY(KColorCells)
+    class KColorCellsPrivate;
+    friend class KColorCellsPrivate;
+    KColorCellsPrivate *const d;
+
+    Q_DISABLE_COPY(KColorCells)
 };
 
 /**
@@ -118,10 +118,10 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KColorPatch : public QFrame
 {
     Q_OBJECT
     Q_PROPERTY(QColor color READ color WRITE setColor)
-  
+
 public:
-  KColorPatch( QWidget *parent );
-  virtual ~KColorPatch();
+    KColorPatch(QWidget *parent);
+    virtual ~KColorPatch();
 
     /**
      * Get the currently displayed color
@@ -133,26 +133,26 @@ public:
      *
      * @param col color to display
      */
-    void setColor( const QColor &col );
+    void setColor(const QColor &col);
 
 Q_SIGNALS:
     /**
      * This signal is emitted whenever the current color
      * changes due to a drop event
      */
-    void colorChanged(const QColor&);
+    void colorChanged(const QColor &);
 
 protected:
-  virtual void paintEvent    ( QPaintEvent * pe );
-  virtual void mouseMoveEvent( QMouseEvent * );
-  virtual void dragEnterEvent( QDragEnterEvent *);
-  virtual void dropEvent( QDropEvent *);
+    virtual void paintEvent(QPaintEvent *pe);
+    virtual void mouseMoveEvent(QMouseEvent *);
+    virtual void dragEnterEvent(QDragEnterEvent *);
+    virtual void dropEvent(QDropEvent *);
 
 private:
-  class KColorPatchPrivate;
-  KColorPatchPrivate *const d;
-  
-  Q_DISABLE_COPY(KColorPatch)
+    class KColorPatchPrivate;
+    KColorPatchPrivate *const d;
+
+    Q_DISABLE_COPY(KColorPatch)
 };
 
 /**
@@ -172,8 +172,8 @@ private:
  * Example:
  *
  * \code
- * 	QColor myColor;
- * 	int result = KColorDialog::getColor( myColor );
+ *  QColor myColor;
+ *  int result = KColorDialog::getColor( myColor );
  *         if ( result == KColorDialog::Accepted )
  *            ...
  * \endcode
@@ -210,16 +210,16 @@ private:
  **/
 class KDE4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
 {
-  Q_OBJECT
-  Q_PROPERTY(bool isAlphaChannelEnabled READ isAlphaChannelEnabled WRITE setAlphaChannelEnabled)
-  Q_PROPERTY(QColor defaultColor READ defaultColor WRITE setDefaultColor)
-  Q_PROPERTY(QColor color READ color WRITE setColor)
+    Q_OBJECT
+    Q_PROPERTY(bool isAlphaChannelEnabled READ isAlphaChannelEnabled WRITE setAlphaChannelEnabled)
+    Q_PROPERTY(QColor defaultColor READ defaultColor WRITE setDefaultColor)
+    Q_PROPERTY(QColor color READ color WRITE setColor)
 
-  public:
+public:
     /**
      * Constructs a color selection dialog.
      */
-    explicit KColorDialog( QWidget *parent = 0L, bool modal = false );
+    explicit KColorDialog(QWidget *parent = 0L, bool modal = false);
     /**
      * Destroys the color selection dialog.
      */
@@ -240,7 +240,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
      *                 return, holds the selected color.
      * @returns QDialog::result().
      */
-    static int getColor( QColor &theColor, QWidget *parent=0L );
+    static int getColor(QColor &theColor, QWidget *parent = 0L);
 
     /**
      * Creates a modal color dialog, lets the user choose a
@@ -257,7 +257,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
      * @param defaultColor color selected by the "default color" checkbox
      * @returns QDialog::result().
      */
-    static int getColor( QColor &theColor, const QColor& defaultColor, QWidget *parent=0L );
+    static int getColor(QColor &theColor, const QColor &defaultColor, QWidget *parent = 0L);
 
     /**
      * Gets the color from the pixel at point p on the screen.
@@ -270,7 +270,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
      * This can be used to mean "the default text color", for instance,
      * the one with the KDE text color on screen, but black when printing.
      */
-    void setDefaultColor( const QColor& defaultCol );
+    void setDefaultColor(const QColor &defaultCol);
 
     /**
      * @return the value passed to setDefaultColor
@@ -290,58 +290,58 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
      */
     bool isAlphaChannelEnabled() const;
 
-  public Q_SLOTS:
+public Q_SLOTS:
     /**
      * Preselects a color.
      */
-    void setColor( const QColor &col );
+    void setColor(const QColor &col);
 
-  Q_SIGNALS:
+Q_SIGNALS:
     /**
      * Emitted when a color is selected.
      * Connect to this to monitor the color as it as selected if you are
      * not running modal.
      */
-    void colorSelected( const QColor &col );
+    void colorSelected(const QColor &col);
 
-  private:
-    Q_PRIVATE_SLOT(d, void slotRGBChanged( void ))
-    Q_PRIVATE_SLOT(d, void slotAlphaChanged( void ))
-    Q_PRIVATE_SLOT(d, void slotHSVChanged( void ))
-    Q_PRIVATE_SLOT(d, void slotHtmlChanged( void ))
-    Q_PRIVATE_SLOT(d, void slotHSChanged( int, int ))
-    Q_PRIVATE_SLOT(d, void slotVChanged( int ))
-    Q_PRIVATE_SLOT(d, void slotAChanged( int ))
-    Q_PRIVATE_SLOT(d, void slotColorSelected( const QColor &col ))
-    Q_PRIVATE_SLOT(d, void slotColorSelected( const QColor &col, const QString &name ))
-    Q_PRIVATE_SLOT(d, void slotColorDoubleClicked( const QColor &col, const QString &name ))
+private:
+    Q_PRIVATE_SLOT(d, void slotRGBChanged(void))
+    Q_PRIVATE_SLOT(d, void slotAlphaChanged(void))
+    Q_PRIVATE_SLOT(d, void slotHSVChanged(void))
+    Q_PRIVATE_SLOT(d, void slotHtmlChanged(void))
+    Q_PRIVATE_SLOT(d, void slotHSChanged(int, int))
+    Q_PRIVATE_SLOT(d, void slotVChanged(int))
+    Q_PRIVATE_SLOT(d, void slotAChanged(int))
+    Q_PRIVATE_SLOT(d, void slotColorSelected(const QColor &col))
+    Q_PRIVATE_SLOT(d, void slotColorSelected(const QColor &col, const QString &name))
+    Q_PRIVATE_SLOT(d, void slotColorDoubleClicked(const QColor &col, const QString &name))
     Q_PRIVATE_SLOT(d, void slotColorPicker())
     Q_PRIVATE_SLOT(d, void slotAddToCustomColors())
     Q_PRIVATE_SLOT(d, void slotDefaultColorClicked())
-    Q_PRIVATE_SLOT(d, void slotModeChanged( int id ))
+    Q_PRIVATE_SLOT(d, void slotModeChanged(int id))
 
     /**
      * Write the settings of the dialog to config file.
      **/
     Q_PRIVATE_SLOT(d, void slotWriteSettings())
 
-  private:
+private:
     /**
      * Read the settings for the dialog from config file.
      **/
     void readSettings();
 
-  protected:
-    virtual void mouseMoveEvent( QMouseEvent * );
-    virtual void mouseReleaseEvent( QMouseEvent * );
-    virtual void keyPressEvent( QKeyEvent * );
-    virtual bool eventFilter( QObject *obj, QEvent *ev );
+protected:
+    virtual void mouseMoveEvent(QMouseEvent *);
+    virtual void mouseReleaseEvent(QMouseEvent *);
+    virtual void keyPressEvent(QKeyEvent *);
+    virtual bool eventFilter(QObject *obj, QEvent *ev);
 
-  private:
+private:
     class KColorDialogPrivate;
     KColorDialogPrivate *const d;
-    
+
     Q_DISABLE_COPY(KColorDialog)
 };
 
-#endif		// KCOLORDIALOG_H
+#endif      // KCOLORDIALOG_H

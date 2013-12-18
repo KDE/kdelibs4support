@@ -26,7 +26,8 @@
 
 class QColor;
 
-namespace KDEPrivate {
+namespace KDEPrivate
+{
 
 // get/set color component
 extern qreal getComponentValue(const QColor &color, KColorChooserMode chooserMode);

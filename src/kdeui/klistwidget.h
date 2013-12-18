@@ -43,70 +43,70 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KListWidget : public QListWidget
     Q_OBJECT
 
 public:
-  explicit KListWidget( QWidget *parent = 0 );
+    explicit KListWidget(QWidget *parent = 0);
 
-  ~KListWidget();
+    ~KListWidget();
 
 Q_SIGNALS:
 
-  /**
-   * Emitted whenever the user executes an listbox item.
-   *
-   * That means depending on the KDE wide Single Click/Double Click
-   * setting the user clicked or double clicked on that item.
-   * @param item is the pointer to the executed listbox item.
-   *
-   * Note that you may not delete any QListWidgetItem objects in slots
-   * connected to this signal.
-   */
-  void executed( QListWidgetItem *item );
+    /**
+     * Emitted whenever the user executes an listbox item.
+     *
+     * That means depending on the KDE wide Single Click/Double Click
+     * setting the user clicked or double clicked on that item.
+     * @param item is the pointer to the executed listbox item.
+     *
+     * Note that you may not delete any QListWidgetItem objects in slots
+     * connected to this signal.
+     */
+    void executed(QListWidgetItem *item);
 
-  /**
-   * Emitted whenever the user executes an listbox item.
-   *
-   * That means depending on the KDE wide Single Click/Double Click
-   * setting the user clicked or double clicked on that item.
-   * @param item is the pointer to the executed listbox item.
-   * @param pos is the position where the user has clicked
-   *
-   * Note that you may not delete any QListWidgetItem objects in slots
-   * connected to this signal.
-   */
-  void executed( QListWidgetItem *item, const QPoint &pos );
+    /**
+     * Emitted whenever the user executes an listbox item.
+     *
+     * That means depending on the KDE wide Single Click/Double Click
+     * setting the user clicked or double clicked on that item.
+     * @param item is the pointer to the executed listbox item.
+     * @param pos is the position where the user has clicked
+     *
+     * Note that you may not delete any QListWidgetItem objects in slots
+     * connected to this signal.
+     */
+    void executed(QListWidgetItem *item, const QPoint &pos);
 
-  /**
-   * This signal gets emitted whenever the user double clicks into the
-   * listbox.
-   *
-   * @param item The pointer to the clicked listbox item.
-   * @param pos The position where the user has clicked.
-   *
-   * Note that you may not delete any QListWidgetItem objects in slots
-   * connected to this signal.
-   *
-   * This signal is more or less here for the sake of completeness.
-   * You should normally not need to use this. In most cases it's better
-   * to use executed() instead.
-   */
-  void doubleClicked( QListWidgetItem *item, const QPoint &pos );
+    /**
+     * This signal gets emitted whenever the user double clicks into the
+     * listbox.
+     *
+     * @param item The pointer to the clicked listbox item.
+     * @param pos The position where the user has clicked.
+     *
+     * Note that you may not delete any QListWidgetItem objects in slots
+     * connected to this signal.
+     *
+     * This signal is more or less here for the sake of completeness.
+     * You should normally not need to use this. In most cases it's better
+     * to use executed() instead.
+     */
+    void doubleClicked(QListWidgetItem *item, const QPoint &pos);
 
 protected:
-  virtual void keyPressEvent(QKeyEvent *e);
-  virtual void focusOutEvent(QFocusEvent *e);
-  virtual void leaveEvent(QEvent *e);
-  virtual void mousePressEvent(QMouseEvent *e);
-  virtual void mouseDoubleClickEvent(QMouseEvent *e);
-  virtual void mouseReleaseEvent(QMouseEvent *e);
+    virtual void keyPressEvent(QKeyEvent *e);
+    virtual void focusOutEvent(QFocusEvent *e);
+    virtual void leaveEvent(QEvent *e);
+    virtual void mousePressEvent(QMouseEvent *e);
+    virtual void mouseDoubleClickEvent(QMouseEvent *e);
+    virtual void mouseReleaseEvent(QMouseEvent *e);
 
 private:
-  class KListWidgetPrivate;
-  KListWidgetPrivate* const d;
+    class KListWidgetPrivate;
+    KListWidgetPrivate *const d;
 
-  Q_PRIVATE_SLOT(d, void _k_slotItemEntered(QListWidgetItem*))
-  Q_PRIVATE_SLOT(d, void _k_slotOnViewport())
-  Q_PRIVATE_SLOT(d, void _k_slotSettingsChanged(int))
-  Q_PRIVATE_SLOT(d, void _k_slotAutoSelect())
-  Q_PRIVATE_SLOT(d, void _k_slotEmitExecute(QListWidgetItem*))
+    Q_PRIVATE_SLOT(d, void _k_slotItemEntered(QListWidgetItem *))
+    Q_PRIVATE_SLOT(d, void _k_slotOnViewport())
+    Q_PRIVATE_SLOT(d, void _k_slotSettingsChanged(int))
+    Q_PRIVATE_SLOT(d, void _k_slotAutoSelect())
+    Q_PRIVATE_SLOT(d, void _k_slotEmitExecute(QListWidgetItem *))
 };
 
 #endif // KLISTWIDGET_H

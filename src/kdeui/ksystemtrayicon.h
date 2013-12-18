@@ -74,26 +74,26 @@ public:
      * when the user clicks on the tray window with the left mouse
      * button.
      **/
-    explicit KSystemTrayIcon( QWidget* parent = 0 );
+    explicit KSystemTrayIcon(QWidget *parent = 0);
 
     /**
      * Same as above but allows one to define the icon by name that should
      * be used for the system tray icon.
      */
-    explicit KSystemTrayIcon( const QString& icon, QWidget* parent = 0 );
+    explicit KSystemTrayIcon(const QString &icon, QWidget *parent = 0);
 
     /**
      * Same as above but allows one to define the icon by name that should
      * be used for the system tray icon.
      */
-    explicit KSystemTrayIcon( const QIcon& icon, QWidget* parent = 0 );
+    explicit KSystemTrayIcon(const QIcon &icon, QWidget *parent = 0);
 
     /**
      * Same as above but allows one to define the movie by QMovie that should
      * be used for the system tray icon. Memory management for the movie will
      * be handled by KSystemTrayIcon.
      */
-    explicit KSystemTrayIcon(QMovie* movie, QWidget* parent);
+    explicit KSystemTrayIcon(QMovie *movie, QWidget *parent);
 
     /**
      * Destructor
@@ -106,7 +106,7 @@ public:
      * Memory management for the movie will be handled by KSystemTrayIcon.
      * @since 4.2
      */
-    void setMovie(QMovie* movie);
+    void setMovie(QMovie *movie);
 
     /**
      * Get a pointer to the movie. Use this pointer to manipulate the movie
@@ -114,13 +114,13 @@ public:
      * Will return null if no movie has been set
      * @since 4.2
      */
-    const QMovie* movie() const;
+    const QMovie *movie() const;
 
     /**
        Easy access to the actions in the context menu
        Currently includes KStandardAction::Quit and minimizeRestore
     */
-    KActionCollection* actionCollection();
+    KActionCollection *actionCollection();
 
     /**
        Returns the QWidget set by the constructor
@@ -175,15 +175,15 @@ private Q_SLOTS:
     void contextMenuAboutToShow();
     void minimizeRestoreAction();
     void maybeQuit();
-    void activateOrHide( QSystemTrayIcon::ActivationReason reasonCalled );
+    void activateOrHide(QSystemTrayIcon::ActivationReason reasonCalled);
 
 private:
-    void init( QWidget* );
-    void minimizeRestore( bool restore );
+    void init(QWidget *);
+    void minimizeRestore(bool restore);
 
-    KSystemTrayIconPrivate* const d;
+    KSystemTrayIconPrivate *const d;
 
-Q_PRIVATE_SLOT(d, void _k_slotNewFrame())
+    Q_PRIVATE_SLOT(d, void _k_slotNewFrame())
 };
 
 #endif

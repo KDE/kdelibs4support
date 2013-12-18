@@ -28,55 +28,55 @@
 #include <kpassivepopupmessagehandler.h>
 
 KMessage_Test::KMessage_Test(QWidget *parent)
- : QWidget(parent)
+    : QWidget(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
-    QPushButton *buttonError = new QPushButton( QLatin1String("Show error"), this );
+    QPushButton *buttonError = new QPushButton(QLatin1String("Show error"), this);
     connect(buttonError, SIGNAL(clicked()), this, SLOT(showError()));
 
-    QPushButton *buttonFatal = new QPushButton( QLatin1String("Show fatal"), this );
+    QPushButton *buttonFatal = new QPushButton(QLatin1String("Show fatal"), this);
     connect(buttonFatal, SIGNAL(clicked()), this, SLOT(showFatal()));
 
-    QPushButton *buttonInformation = new QPushButton( QLatin1String("Show information"), this );
+    QPushButton *buttonInformation = new QPushButton(QLatin1String("Show information"), this);
     connect(buttonInformation, SIGNAL(clicked()), this, SLOT(showInformation()));
 
-    QPushButton *buttonSorry = new QPushButton( QLatin1String("Show sorry"), this );
+    QPushButton *buttonSorry = new QPushButton(QLatin1String("Show sorry"), this);
     connect(buttonSorry, SIGNAL(clicked()), this, SLOT(showSorry()));
 
-    QPushButton *buttonWarning = new QPushButton( QLatin1String("Show warning"), this );
+    QPushButton *buttonWarning = new QPushButton(QLatin1String("Show warning"), this);
     connect(buttonWarning, SIGNAL(clicked()), this, SLOT(showWarning()));
 
-    mainLayout->addWidget( buttonError );
-    mainLayout->addWidget( buttonFatal );
-    mainLayout->addWidget( buttonInformation );
-    mainLayout->addWidget( buttonSorry );
-    mainLayout->addWidget( buttonWarning );
+    mainLayout->addWidget(buttonError);
+    mainLayout->addWidget(buttonFatal);
+    mainLayout->addWidget(buttonInformation);
+    mainLayout->addWidget(buttonSorry);
+    mainLayout->addWidget(buttonWarning);
 }
 
 void KMessage_Test::showError()
 {
-    KMessage::message( KMessage::Error, QLatin1String("Error: Destruction of the Death Star failed."), QLatin1String("KMessage_Test") );
+    KMessage::message(KMessage::Error, QLatin1String("Error: Destruction of the Death Star failed."), QLatin1String("KMessage_Test"));
 }
 
 void KMessage_Test::showFatal()
 {
-    KMessage::message( KMessage::Fatal, QLatin1String("Fatal: You have turn to the dark side of the Force."), QLatin1String("KMessage_Test") );
+    KMessage::message(KMessage::Fatal, QLatin1String("Fatal: You have turn to the dark side of the Force."), QLatin1String("KMessage_Test"));
 }
 
 void KMessage_Test::showInformation()
 {
-    KMessage::message( KMessage::Information, QLatin1String("Info: This is a demonstration of the new KMessage API for kdelibs. It abstract the display of message and you can develop custom message handle for your application"), QLatin1String("KMessage_Test") );
+    KMessage::message(KMessage::Information, QLatin1String("Info: This is a demonstration of the new KMessage API for kdelibs. It abstract the display of message and you can develop custom message handle for your application"), QLatin1String("KMessage_Test"));
 }
 
 void KMessage_Test::showSorry()
 {
-    KMessage::message( KMessage::Sorry, QLatin1String("Sorry but our princess is in another castle."), QLatin1String("KMessage_Test") );
+    KMessage::message(KMessage::Sorry, QLatin1String("Sorry but our princess is in another castle."), QLatin1String("KMessage_Test"));
 }
 
 void KMessage_Test::showWarning()
 {
-    KMessage::message( KMessage::Warning, QLatin1String("Warning: Loading failed. Your user experience will be affected."), QLatin1String("KMessage_Test") );
+    KMessage::message(KMessage::Warning, QLatin1String("Warning: Loading failed. Your user experience will be affected."), QLatin1String("KMessage_Test"));
 }
 
 int main(int argc, char **argv)
@@ -84,15 +84,14 @@ int main(int argc, char **argv)
     QApplication::setApplicationName("kmessagetest");
 
     QApplication app(argc, argv);
-    app.setQuitOnLastWindowClosed( false );
+    app.setQuitOnLastWindowClosed(false);
 
     KMessage_Test *mainWidget = new KMessage_Test;
-    mainWidget->setAttribute( static_cast<Qt::WidgetAttribute>(Qt::WA_DeleteOnClose | Qt::WA_QuitOnClose) );
-    KMessage::setMessageHandler( new KPassivePopupMessageHandler(mainWidget) );
+    mainWidget->setAttribute(static_cast<Qt::WidgetAttribute>(Qt::WA_DeleteOnClose | Qt::WA_QuitOnClose));
+    KMessage::setMessageHandler(new KPassivePopupMessageHandler(mainWidget));
 
     mainWidget->show();
 
     return app.exec();
 }
 
-// kate: space-indent on; indent-width 4; encoding utf-8; replace-tabs on;

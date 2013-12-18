@@ -28,7 +28,10 @@ class K4TimeZoneWidgetTest : public QObject
     Q_OBJECT
 
 public:
-    void init() { initTestCase(); }
+    void init()
+    {
+        initTestCase();
+    }
 
 private Q_SLOTS:
 

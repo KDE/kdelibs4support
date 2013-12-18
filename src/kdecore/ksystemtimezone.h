@@ -205,7 +205,7 @@ public:
      *           simulation
      * @since 4.3
      */
-    static void setLocalZone(const KTimeZone& tz);
+    static void setLocalZone(const KTimeZone &tz);
 
     /**
      * Check whether there is a simulated local system time zone.
@@ -253,7 +253,7 @@ private Q_SLOTS:
 private:
     KSystemTimeZones();
 
-    KSystemTimeZonesPrivate * const d;
+    KSystemTimeZonesPrivate *const d;
     friend class KSystemTimeZonesPrivate;
 };
 
@@ -294,8 +294,8 @@ public:
      * @param comment     description of the time zone, if any
      */
     KSystemTimeZone(KSystemTimeZoneSource *source, const QString &name,
-        const QString &countryCode = QString(), float latitude = UNKNOWN, float longitude = UNKNOWN,
-        const QString &comment = QString());
+                    const QString &countryCode = QString(), float latitude = UNKNOWN, float longitude = UNKNOWN,
+                    const QString &comment = QString());
 
     ~KSystemTimeZone();
 
@@ -303,7 +303,6 @@ private:
     // d-pointer is in KSystemTimeZoneBackend.
     // This is a requirement for classes inherited from KTimeZone.
 };
-
 
 /**
  * Backend class for KSystemTimeZone class.
@@ -323,7 +322,7 @@ class KDE4SUPPORT_EXPORT KSystemTimeZoneBackend : public KTimeZoneBackend  //kra
 public:
     /** Implements KSystemTimeZone::KSystemTimeZone(). */
     KSystemTimeZoneBackend(KSystemTimeZoneSource *source, const QString &name,
-        const QString &countryCode, float latitude, float longitude, const QString &comment);
+                           const QString &countryCode, float latitude, float longitude, const QString &comment);
 
     ~KSystemTimeZoneBackend();
 
@@ -427,7 +426,6 @@ private:
     KSystemTimeZonePrivate *d;   // non-const
 };
 
-
 /**
  * A class to read and parse system time zone data.
  *
@@ -476,9 +474,8 @@ public:
     static void endParseBlock();
 
 private:
-    KSystemTimeZoneSourcePrivate * const d;
+    KSystemTimeZoneSourcePrivate *const d;
 };
-
 
 /**
  * @internal
@@ -530,7 +527,7 @@ public:
     virtual QList<int> utcOffsets() const;
 
 private:
-    KSystemTimeZoneDataPrivate * const d;
+    KSystemTimeZoneDataPrivate *const d;
 };
 
 #endif

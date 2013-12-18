@@ -1,4 +1,3 @@
-/* kate: tab-indents off; replace-tabs on; tab-width 4; remove-trailing-space on; encoding utf-8;*/
 /* This file is part of the KDE libraries
  *  Copyright 2006 Jaison Lee <lee.jaison@gmail.com>
  *

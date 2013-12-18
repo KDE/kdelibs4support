@@ -20,8 +20,8 @@
 
 /*
  * kglobal.cpp -- Implementation of namespace KGlobal.
- * Author:	Sirtaj Singh Kang
- * Generated:	Sat May  1 02:08:43 EST 1999
+ * Author:  Sirtaj Singh Kang
+ * Generated:   Sat May  1 02:08:43 EST 1999
  */
 
 #undef KDE3_SUPPORT
@@ -61,27 +61,27 @@ mode_t s_umsk;
 
 class KGlobalPrivate
 {
-    public:
-        inline KGlobalPrivate()
-            : dirs(0),
-            stringDict(0)
-        {
-            // the umask is read here before any threads are created to avoid race conditions
-            mode_t tmp = 0;
-            s_umsk = umask(tmp);
-            umask(s_umsk);
-        }
+public:
+    inline KGlobalPrivate()
+        : dirs(0),
+          stringDict(0)
+    {
+        // the umask is read here before any threads are created to avoid race conditions
+        mode_t tmp = 0;
+        s_umsk = umask(tmp);
+        umask(s_umsk);
+    }
 
-        inline ~KGlobalPrivate()
-        {
-            delete dirs;
-            dirs = 0;
-            delete stringDict;
-            stringDict = 0;
-        }
+    inline ~KGlobalPrivate()
+    {
+        delete dirs;
+        dirs = 0;
+        delete stringDict;
+        stringDict = 0;
+    }
 
-        KStandardDirs *dirs;
-        KStringDict *stringDict;
+    KStandardDirs *dirs;
+    KStringDict *stringDict;
 };
 
 K_GLOBAL_STATIC(KGlobalPrivate, globalData)
@@ -171,7 +171,7 @@ const QString &KGlobal::staticQString(const QString &str)
         d->stringDict = new KStringDict;
     }
 
-   return *d->stringDict->insert(str);
+    return *d->stringDict->insert(str);
 }
 
 QString KGlobal::caption()
@@ -185,7 +185,7 @@ QString KGlobal::caption()
 #endif
     {
         // We have some about data ?
-        const KComponentData& cData = KComponentData::mainComponent();
+        const KComponentData &cData = KComponentData::mainComponent();
         if (cData.isValid() && cData.aboutData()) {
             return cData.aboutData()->programName();
         } else {
@@ -228,14 +228,15 @@ void KGlobal::setAllowQuit(bool allowQuit)
 
 #undef PRIVATE_DATA
 
-QObject* KGlobal::findDirectChild_helper(const QObject* parent, const QMetaObject& mo)
+QObject *KGlobal::findDirectChild_helper(const QObject *parent, const QMetaObject &mo)
 {
-    if (!parent)
+    if (!parent) {
         return 0;
+    }
 
     const QObjectList &children = parent->children();
     for (int i = 0; i < children.size(); ++i) {
-        QObject* obj = children.at(i);
+        QObject *obj = children.at(i);
         if (mo.cast(obj)) {
             return obj;
         }

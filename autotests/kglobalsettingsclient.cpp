@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     if (opt == "-p") {
         qDebug() << "emitChange(PaletteChanged)";
         KGlobalSettings::self()->emitChange(KGlobalSettings::PaletteChanged);
-	return 0;
+        return 0;
     } else if (opt == "-f") {
         qDebug() << "emitChange(FontChanged)";
         KGlobalSettings::self()->emitChange(KGlobalSettings::FontChanged);

@@ -31,15 +31,16 @@ class QUrl;
 typedef QList<KFileMetaInfoItem> KFileMetaInfoItemList;
 
 class KFileMetaInfoGroupPrivate;
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoGroup {
+class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoGroup
+{
 public:
     KFileMetaInfoGroup();
-    KFileMetaInfoGroup(const KFileMetaInfoGroup&);
+    KFileMetaInfoGroup(const KFileMetaInfoGroup &);
     ~KFileMetaInfoGroup();
-    const KFileMetaInfoGroup& operator=(const KFileMetaInfoGroup&);
+    const KFileMetaInfoGroup &operator=(const KFileMetaInfoGroup &);
     KFileMetaInfoItemList items() const;
-    const QString& name() const;
-    const QStringList& keys() const;
+    const QString &name() const;
+    const QStringList &keys() const;
 private:
     QSharedDataPointer<KFileMetaInfoGroupPrivate> d;
 };
@@ -54,7 +55,8 @@ class KFileMetaInfoPrivate;
  * will be retrieved and stored in the instance. The data can be inspected
  * through KFileMetaInfoItem objects.
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfo {
+class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfo
+{
 public:
     /**
      * This is used to specify what a KFileMetaInfo object should read, so
@@ -62,29 +64,28 @@ public:
      * This is like a preset which can be customized by passing additional
      * parameters to constructors.
      */
-    enum What
-    {
-      Fastest       = 0x1,  /**< do the fastest possible read and omit all items
+    enum What {
+        Fastest       = 0x1,  /**< do the fastest possible read and omit all items
                                  that might need a significantly longer time
                                  than the others */
 // Deprecated
 //      DontCare      = 0x2,  ///< let the plugin decide what to read.
 
-      TechnicalInfo = 0x4,  /**< extract technical details about the file, like
+        TechnicalInfo = 0x4,  /**< extract technical details about the file, like
                                  e.g. play time, resolution or a compressioni
                                  type */
-      ContentInfo   = 0x8,  /**< read information about the content of the file
+        ContentInfo   = 0x8,  /**< read information about the content of the file
                                  like comments or id3 tags */
-      ExternalSources = 0x10, /**<read external metadata sources such as
+        ExternalSources = 0x10, /**<read external metadata sources such as
                                  filesystem based extended attributes if
                                  they are supported for the filesystem;
                                  RDF storages etc */
-      Thumbnail     = 0x20, /**< only read the file's thumbnail, if it contains
+        Thumbnail     = 0x20, /**< only read the file's thumbnail, if it contains
                                  one */
 // Deprecated
 //      Preferred     = 0x40,  ///< get at least the preferred items
-      LinkedData    = 0x80, //< extract linked/related files like html links, source #include etc
-      Everything    = 0xffff ///< read everything, even if it might take a while
+        LinkedData    = 0x80, //< extract linked/related files like html links, source #include etc
+        Everything    = 0xffff ///< read everything, even if it might take a while
 
     };
     Q_DECLARE_FLAGS(WhatFlags, What)
@@ -95,14 +96,14 @@ public:
      *
      * When w is not Everything, a limit of 64kbytes is imposed on the file size.
      **/
-    explicit KFileMetaInfo(const QString& path, const QString& mimetype = QString(),
-        WhatFlags w = Everything);
+    explicit KFileMetaInfo(const QString &path, const QString &mimetype = QString(),
+                           WhatFlags w = Everything);
     /**
      * @brief Construct a KFileMetaInfo that contains metainformation about
      * the resource pointed to by @p url.
      * @note that c'tor is not thread-safe
      **/
-    KFileMetaInfo(const QUrl& url);
+    KFileMetaInfo(const QUrl &url);
     /**
      * @brief Construct an empty, invalid KFileMetaInfo instance.
      **/
@@ -110,7 +111,7 @@ public:
     /**
      * @brief Construct a KFileMetaInfo instance from another one.
      **/
-    KFileMetaInfo(const KFileMetaInfo&);
+    KFileMetaInfo(const KFileMetaInfo &);
     /**
      * @brief Destructor.
      **/
@@ -118,7 +119,7 @@ public:
     /**
      * @brief Copy a KFileMetaInfo instance from another one.
      **/
-    KFileMetaInfo& operator=(KFileMetaInfo const& kfmi);
+    KFileMetaInfo &operator=(KFileMetaInfo const &kfmi);
     /**
      * @brief Save the changes made to this KFileMetaInfo instance.
      */
@@ -126,9 +127,9 @@ public:
     /**
      * @brief Retrieve all the items.
      **/
-    const QHash<QString, KFileMetaInfoItem>& items() const;
-    KFileMetaInfoItem& item(const QString& key);
-    const KFileMetaInfoItem& item(const QString& key) const;
+    const QHash<QString, KFileMetaInfoItem> &items() const;
+    KFileMetaInfoItem &item(const QString &key);
+    const KFileMetaInfoItem &item(const QString &key) const;
     bool isValid() const;
     /**
      * Deprecated
@@ -138,9 +139,9 @@ public:
      * Deprecated
      **/
     QStringList supportedKeys() const;
-    KDE4SUPPORT_DEPRECATED_EXPORT friend QDataStream& operator >>(QDataStream& s, KFileMetaInfo& )
-;
-    KDE4SUPPORT_DEPRECATED_EXPORT friend QDataStream& operator <<(QDataStream& s, const KFileMetaInfo&);
+    KDE4SUPPORT_DEPRECATED_EXPORT friend QDataStream &operator >>(QDataStream &s, KFileMetaInfo &)
+    ;
+    KDE4SUPPORT_DEPRECATED_EXPORT friend QDataStream &operator <<(QDataStream &s, const KFileMetaInfo &);
     /**
      * Deprecated
      **/
@@ -162,6 +163,5 @@ private:
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(KFileMetaInfo::WhatFlags)
-
 
 #endif

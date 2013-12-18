@@ -5,7 +5,8 @@
 
 #include "kprogressdialog.h"
 
-class MyWidget : public QWidget {
+class MyWidget : public QWidget
+{
 public:
     MyWidget() : QWidget()
     {
@@ -34,7 +35,7 @@ private:
 
 void MyWidget::timerEvent(QTimerEvent *)
 {
-    Progress->progressBar()->setValue(Progress->progressBar()->value()+1);
+    Progress->progressBar()->setValue(Progress->progressBar()->value() + 1);
     Cancelled->setCheckState(Progress->wasCancelled() ? Qt::Checked : Qt::Unchecked);
 }
 

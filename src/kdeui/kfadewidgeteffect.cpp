@@ -52,19 +52,20 @@ QPixmap KFadeWidgetEffectPrivate::transition(const QPixmap &from, const QPixmap 
 {
     const int value = int(0xff * amount);
 
-    if (value == 0)
+    if (value == 0) {
         return from;
+    }
 
-    if (value == 1)
+    if (value == 1) {
         return to;
+    }
 
     QColor color;
     color.setAlphaF(amount);
 
     // If the native paint engine supports Porter/Duff compositing and CompositionMode_Plus
     if (from.paintEngine()->hasFeature(QPaintEngine::PorterDuff) &&
-        from.paintEngine()->hasFeature(QPaintEngine::BlendModes))
-    {
+            from.paintEngine()->hasFeature(QPaintEngine::BlendModes)) {
         QPixmap under = from;
         QPixmap over  = to;
 
@@ -85,8 +86,7 @@ QPixmap KFadeWidgetEffectPrivate::transition(const QPixmap &from, const QPixmap 
     }
 // Cannot use XRender with QPixmap anymore.
 #if 0 // HAVE_X11 && defined(HAVE_XRENDER)
-    else if (from.paintEngine()->hasFeature(QPaintEngine::PorterDuff)) // We have Xrender support
-    {
+    else if (from.paintEngine()->hasFeature(QPaintEngine::PorterDuff)) { // We have Xrender support
         // QX11PaintEngine doesn't implement CompositionMode_Plus in Qt 4.3,
         // which we need to be able to do a transition from one pixmap to
         // another.
@@ -132,8 +132,7 @@ QPixmap KFadeWidgetEffectPrivate::transition(const QPixmap &from, const QPixmap 
         return destination;
     }
 #endif
-    else
-    {
+    else {
         // Fall back to using QRasterPaintEngine to do the transition.
         QImage under = from.toImage();
         QImage over  = to.toImage();
@@ -157,13 +156,13 @@ QPixmap KFadeWidgetEffectPrivate::transition(const QPixmap &from, const QPixmap 
 
 KFadeWidgetEffect::KFadeWidgetEffect(QWidget *destWidget)
     : QWidget(destWidget ? destWidget->parentWidget() : 0),
-    d_ptr(new KFadeWidgetEffectPrivate(destWidget))
+      d_ptr(new KFadeWidgetEffectPrivate(destWidget))
 {
     Q_D(KFadeWidgetEffect);
     d->q_ptr = this;
     Q_ASSERT(destWidget && destWidget->parentWidget());
     if (!destWidget || !destWidget->parentWidget() || !destWidget->isVisible() ||
-        !style()->styleHint(QStyle::SH_Widget_Animate, 0, this)) {
+            !style()->styleHint(QStyle::SH_Widget_Animate, 0, this)) {
         d->disabled = true;
         hide();
         return;

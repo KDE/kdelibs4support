@@ -27,27 +27,28 @@
 
 class KAction;
 
-namespace KAuth {
-    class ObjectDecorator;
+namespace KAuth
+{
+class ObjectDecorator;
 }
 
 class KActionPrivate
 {
-    public:
-        KActionPrivate()
-            : q(0), decorator(0)
-        {
-        }
+public:
+    KActionPrivate()
+        : q(0), decorator(0)
+    {
+    }
 
-        void slotTriggered();
-        void _k_emitActionGlobalShortcutChanged(QAction *action, const QKeySequence &seq);
-        void authStatusChanged(KAuth::Action::AuthStatus status);
+    void slotTriggered();
+    void _k_emitActionGlobalShortcutChanged(QAction *action, const QKeySequence &seq);
+    void authStatusChanged(KAuth::Action::AuthStatus status);
 
-        void init(KAction *q_ptr);
+    void init(KAction *q_ptr);
 
-        KAction *q;
+    KAction *q;
 
-        KAuth::ObjectDecorator *decorator;
+    KAuth::ObjectDecorator *decorator;
 };
 
 #endif

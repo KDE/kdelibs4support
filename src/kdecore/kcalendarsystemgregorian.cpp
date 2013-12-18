@@ -33,7 +33,7 @@
 // Shared d pointer base class definitions
 
 KCalendarSystemGregorianPrivate::KCalendarSystemGregorianPrivate(KCalendarSystemGregorian *q)
-                               : KCalendarSystemPrivate(q)
+    : KCalendarSystemPrivate(q)
 {
 }
 
@@ -352,18 +352,17 @@ QString KCalendarSystemGregorianPrivate::weekDayName(int weekDay, KLocale::DateT
     }
 }
 
-
 KCalendarSystemGregorian::KCalendarSystemGregorian(const KSharedConfig::Ptr config,
-                                                                     const KLocale *locale)
-                        : KCalendarSystem(*new KCalendarSystemGregorianPrivate(this), config, locale)
+        const KLocale *locale)
+    : KCalendarSystem(*new KCalendarSystemGregorianPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemGregorian::KCalendarSystemGregorian(KCalendarSystemGregorianPrivate &dd,
-                                                                     const KSharedConfig::Ptr config,
-                                                                     const KLocale *locale)
-                        : KCalendarSystem(dd, config, locale)
+        const KSharedConfig::Ptr config,
+        const KLocale *locale)
+    : KCalendarSystem(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

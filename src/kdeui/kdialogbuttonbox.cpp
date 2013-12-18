@@ -24,33 +24,34 @@
 #include <kpushbutton.h>
 #include <QList>
 
-
 KDialogButtonBox::KDialogButtonBox(QWidget *parent, Qt::Orientation _orientation)
-  :  QDialogButtonBox(_orientation, parent) , d(0)
+    :  QDialogButtonBox(_orientation, parent), d(0)
 {
 }
 
 KDialogButtonBox::~KDialogButtonBox() {}
 
-QPushButton *KDialogButtonBox::addButton(const QString & text, ButtonRole role, QObject *receiver,  const char *slot)
+QPushButton *KDialogButtonBox::addButton(const QString &text, ButtonRole role, QObject *receiver,  const char *slot)
 {
-  QPushButton * pb = addButton(text,role);
+    QPushButton *pb = addButton(text, role);
 
-  if (pb && receiver && slot)
-    QObject::connect(pb, SIGNAL(clicked()), receiver, slot);
+    if (pb && receiver && slot) {
+        QObject::connect(pb, SIGNAL(clicked()), receiver, slot);
+    }
 
-  return pb;
+    return pb;
 }
 
-KPushButton *KDialogButtonBox::addButton(const KGuiItem& guiitem, ButtonRole role, QObject *receiver,  const char *slot)
+KPushButton *KDialogButtonBox::addButton(const KGuiItem &guiitem, ButtonRole role, QObject *receiver,  const char *slot)
 {
-  KPushButton *pb=new KPushButton(this);
-  KGuiItem::assign(pb, guiitem);
-  QDialogButtonBox::addButton(pb, role);
+    KPushButton *pb = new KPushButton(this);
+    KGuiItem::assign(pb, guiitem);
+    QDialogButtonBox::addButton(pb, role);
 
-  if (receiver && slot)
-    QObject::connect(pb, SIGNAL(clicked()), receiver, slot);
+    if (receiver && slot) {
+        QObject::connect(pb, SIGNAL(clicked()), receiver, slot);
+    }
 
-  return pb;
+    return pb;
 }
 

@@ -33,8 +33,8 @@ class QUrl;
 class KNfoTranslator
 {
 public:
-    static KNfoTranslator& instance();
-    QString translation(const QUrl& uri) const;
+    static KNfoTranslator &instance();
+    QString translation(const QUrl &uri) const;
 
 protected:
     KNfoTranslator();

@@ -42,7 +42,7 @@ public:
 //Override only a few of the Gregorian private methods
 
 KCalendarSystemMinguoPrivate::KCalendarSystemMinguoPrivate(KCalendarSystemMinguo *q)
-                            : KCalendarSystemGregorianPrivate(q)
+    : KCalendarSystemGregorianPrivate(q)
 {
 }
 
@@ -80,16 +80,15 @@ int KCalendarSystemMinguoPrivate::earliestValidYear() const
     return 1;
 }
 
-
 KCalendarSystemMinguo::KCalendarSystemMinguo(const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystemGregorian(*new KCalendarSystemMinguoPrivate(this), config, locale)
+    : KCalendarSystemGregorian(*new KCalendarSystemMinguoPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemMinguo::KCalendarSystemMinguo(KCalendarSystemMinguoPrivate &dd,
-                                             const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystemGregorian(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystemGregorian(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

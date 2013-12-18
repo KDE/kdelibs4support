@@ -49,45 +49,45 @@ class KRestrictedLinePrivate;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KRestrictedLine : public KLineEdit
 {
-  Q_OBJECT
-  Q_PROPERTY( QString validChars READ validChars WRITE setValidChars )
+    Q_OBJECT
+    Q_PROPERTY(QString validChars READ validChars WRITE setValidChars)
 
 public:
 
-  /**
-   * Constructor
-   *  @param parent   pointer to the parent widget
-   */
-  explicit KRestrictedLine( QWidget* parent = 0);
+    /**
+     * Constructor
+     *  @param parent   pointer to the parent widget
+     */
+    explicit KRestrictedLine(QWidget *parent = 0);
 
-  /**
-   * Destructs the restricted line editor.
-   */
-  ~KRestrictedLine();
+    /**
+     * Destructs the restricted line editor.
+     */
+    ~KRestrictedLine();
 
-  /**
-   * All characters in the string valid are treated as
-   * acceptable characters.
-   */
-  void setValidChars(const QString& valid);
-  /**
-   * @return the string of acceptable characters.
-   */
-  QString validChars() const;
+    /**
+     * All characters in the string valid are treated as
+     * acceptable characters.
+     */
+    void setValidChars(const QString &valid);
+    /**
+     * @return the string of acceptable characters.
+     */
+    QString validChars() const;
 
 Q_SIGNALS:
 
-  /**
-   * Emitted when an invalid character was typed.
-   */
-  void	invalidChar(int);
+    /**
+     * Emitted when an invalid character was typed.
+     */
+    void  invalidChar(int);
 
 protected:
-    void keyPressEvent( QKeyEvent *e );
+    void keyPressEvent(QKeyEvent *e);
     void inputMethodEvent(QInputMethodEvent *e);
 
 private:
-  KRestrictedLinePrivate * const d;
+    KRestrictedLinePrivate *const d;
 };
 
 #endif // KRESTRICTEDLINE_H

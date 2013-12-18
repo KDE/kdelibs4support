@@ -28,7 +28,7 @@ public:
     virtual ~MetaInfoProtocol();
 
     virtual void get(const QUrl &url);
-    virtual void put(const QUrl& url, int permissions,
+    virtual void put(const QUrl &url, int permissions,
                      KIO::JobFlags flags);
 
 };

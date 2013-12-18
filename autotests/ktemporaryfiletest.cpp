@@ -1,4 +1,3 @@
-/* kate: tab-indents off; replace-tabs on; tab-width 4; remove-trailing-space on; encoding utf-8;*/
 /*
 This file is part of the KDE libraries
 This file has been placed in the Public Domain.
@@ -15,7 +14,7 @@ This file has been placed in the Public Domain.
 
 #include "ktemporaryfile.h"
 
-QTEST_MAIN( KTemporaryFileTest )
+QTEST_MAIN(KTemporaryFileTest)
 
 /*
 Notes on these tests:
@@ -31,13 +30,13 @@ void KTemporaryFileTest::initTestCase()
     kdeTempDir = QDir::tempPath() + '/';
     componentName = QCoreApplication::instance()->applicationName();
 
-    QDir qdir ( kdeTempDir );
+    QDir qdir(kdeTempDir);
     qdir.mkdir("ktempfiletest");
 }
 
 void KTemporaryFileTest::cleanupTestCase()
 {
-    QDir qdir ( kdeTempDir );
+    QDir qdir(kdeTempDir);
     qdir.rmdir("ktempfiletest");
 }
 

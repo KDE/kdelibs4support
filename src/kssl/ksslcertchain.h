@@ -39,87 +39,87 @@ class QStringList;
  * @see KSSL, KSSLCertificate, KSSLPeerInfo
  * @short KDE X.509 Certificate Chain
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KSSLCertChain {
-friend class KSSL;
-friend class KSSLPeerInfo;
+class KDE4SUPPORT_DEPRECATED_EXPORT KSSLCertChain
+{
+    friend class KSSL;
+    friend class KSSLPeerInfo;
 
 public:
-	/**
-	 *  Construct a KSSLCertChain object
-	 */
-	KSSLCertChain();
+    /**
+     *  Construct a KSSLCertChain object
+     */
+    KSSLCertChain();
 
-	/**
-	 *  Destroy this KSSLCertChain object
-	 */
-	~KSSLCertChain();
+    /**
+     *  Destroy this KSSLCertChain object
+     */
+    ~KSSLCertChain();
 
-	/**
-	 *  Determine if this represents a valid certificate chain
-	 *
-	 *  @return true if it is a valid certificate chain
-	 */
-	bool isValid();
+    /**
+     *  Determine if this represents a valid certificate chain
+     *
+     *  @return true if it is a valid certificate chain
+     */
+    bool isValid();
 
-	/**
-	 *  Do a deep copy of the certificate chain.
-	 *
-	 *  @return pointer to a new certificate chain object
-	 *
-	 *  This is an expensive operation, and you are responsible for deleting
-	 *  the returned object yourself.
-	 */
-	KSSLCertChain *replicate();
+    /**
+     *  Do a deep copy of the certificate chain.
+     *
+     *  @return pointer to a new certificate chain object
+     *
+     *  This is an expensive operation, and you are responsible for deleting
+     *  the returned object yourself.
+     */
+    KSSLCertChain *replicate();
 
-	/**
-	 *  Set the raw chain from OpenSSL
-	 *  @internal
-	 */
-	void setChain(void *stack_of_x509);
+    /**
+     *  Set the raw chain from OpenSSL
+     *  @internal
+     */
+    void setChain(void *stack_of_x509);
 
-	/**
-	 *  Set the certificate chain as a pointer list of KSSL certificates.
-	 *
-	 *  @param chain the certificate chain
-	 *  @see KSSLCertificate
-	 */
-	void setChain(const QList<KSSLCertificate *>& chain);
+    /**
+     *  Set the certificate chain as a pointer list of KSSL certificates.
+     *
+     *  @param chain the certificate chain
+     *  @see KSSLCertificate
+     */
+    void setChain(const QList<KSSLCertificate *> &chain);
 
-	/**
-	 *  Set the certificate chain as a list of base64 encoded X.509
-	 *  certificates.
-	 *
-	 *  @param chain the certificate chain
-	 */
-	void setCertChain(const QStringList& chain);
+    /**
+     *  Set the certificate chain as a list of base64 encoded X.509
+     *  certificates.
+     *
+     *  @param chain the certificate chain
+     */
+    void setCertChain(const QStringList &chain);
 
-	/**
-	 *  Obtain a copy of the certificate chain.
-	 *  The caller is responsible for deleting all certificates in the chain.
-	 *
-	 *  @return a deep copy of the certificate chain.
-	 *  @see KSSLCertificate
-	 */
-	QList<KSSLCertificate *> getChain() const;
+    /**
+     *  Obtain a copy of the certificate chain.
+     *  The caller is responsible for deleting all certificates in the chain.
+     *
+     *  @return a deep copy of the certificate chain.
+     *  @see KSSLCertificate
+     */
+    QList<KSSLCertificate *> getChain() const;
 
-	/**
-	 *  Determine the number of entries (depth) of the chain.
-	 *
-	 *  @return the number of entries in the certificate chain
-	 */
-	int depth();
+    /**
+     *  Determine the number of entries (depth) of the chain.
+     *
+     *  @return the number of entries in the certificate chain
+     */
+    int depth();
 
-	/**
-	 *  Read the raw chain in OpenSSL format
-	 *  @internal
-	 */
-	void *rawChain();
+    /**
+     *  Read the raw chain in OpenSSL format
+     *  @internal
+     */
+    void *rawChain();
 
 private:
-	KSSLCertChainPrivate* const d;
-	void *_chain;
+    KSSLCertChainPrivate *const d;
+    void *_chain;
 };
-
 
 #endif
 

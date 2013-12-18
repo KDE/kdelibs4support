@@ -61,7 +61,7 @@ public:
      *
      * @param parent the parent widget
      */
-    explicit KFontComboBox (QWidget *parent = 0);
+    explicit KFontComboBox(QWidget *parent = 0);
 
     /**
      * Toggle selectable fonts to be only those of fixed width or all.
@@ -71,7 +71,7 @@ public:
      *
      * @deprecated use QFontComboBox::setFontFilters(QFontComboBox::MonospacedFonts)
      */
-    void setOnlyFixed (bool onlyFixed);
+    void setOnlyFixed(bool onlyFixed);
 
     /**
      * Set selectable fonts to be only those present in the list.
@@ -81,19 +81,19 @@ public:
      *                  of fonts is constructed according to the @p onlyFixed setting.
      * @since 4.9.2
      */
-    void setFontList (const QStringList &fontList);
+    void setFontList(const QStringList &fontList);
 
     /**
      * Destructor.
      */
-    virtual ~KFontComboBox ();
+    virtual ~KFontComboBox();
 
     /**
      * The font currently selected from the list.
      *
      * @return the selected font
      */
-    QFont currentFont () const;
+    QFont currentFont() const;
 
     /**
      * The recommended size of the widget.
@@ -110,7 +110,7 @@ public Q_SLOTS:
      *
      * @param font the new font
      */
-    void setCurrentFont (const QFont &font);
+    void setCurrentFont(const QFont &font);
 
 Q_SIGNALS:
     /**
@@ -119,19 +119,19 @@ Q_SIGNALS:
      *
      * @param font the new font
      */
-    void currentFontChanged (const QFont &font);
+    void currentFontChanged(const QFont &font);
 
 protected:
-    bool event (QEvent *e);
+    bool event(QEvent *e);
 
 private:
 
     friend class KFontComboBoxPrivate;
-    KFontComboBoxPrivate * const d;
+    KFontComboBoxPrivate *const d;
 
     Q_DISABLE_COPY(KFontComboBox)
 
-    Q_PRIVATE_SLOT(d, void _k_currentFontChanged (int))
+    Q_PRIVATE_SLOT(d, void _k_currentFontChanged(int))
 };
 
 #endif

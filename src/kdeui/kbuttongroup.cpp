@@ -28,8 +28,8 @@
 
 class KButtonGroup::Private
 {
-  public:
-    Private(KButtonGroup* q) :
+public:
+    Private(KButtonGroup *q) :
         q(q),
         clickedMapper(),
         pressedMapper(),
@@ -50,13 +50,13 @@ class KButtonGroup::Private
     QSignalMapper pressedMapper;
     QSignalMapper releasedMapper;
 
-    QHash<QObject*, int> btnMap;
+    QHash<QObject *, int> btnMap;
     int currentId;
     int nextId;
     int wantToBeId;
 };
 
-KButtonGroup::KButtonGroup(QWidget* parent) : QGroupBox(parent), d(new Private(this))
+KButtonGroup::KButtonGroup(QWidget *parent) : QGroupBox(parent), d(new Private(this))
 {
 }
 
@@ -73,12 +73,12 @@ void KButtonGroup::setSelected(int id)
         return;
     }
 
-    QHash<QObject*, int>::Iterator it = d->btnMap.begin();
-    QHash<QObject*, int>::Iterator itEnd = d->btnMap.end();
-    QAbstractButton* button = 0;
+    QHash<QObject *, int>::Iterator it = d->btnMap.begin();
+    QHash<QObject *, int>::Iterator itEnd = d->btnMap.end();
+    QAbstractButton *button = 0;
 
     for (; it != itEnd; ++it) {
-        if ((it.value() == id) && (button = qobject_cast<QAbstractButton*>(it.key()))) {
+        if ((it.value() == id) && (button = qobject_cast<QAbstractButton *>(it.key()))) {
             button->setChecked(true);
             d->currentId = id;
             emit changed(id);
@@ -95,11 +95,11 @@ int KButtonGroup::selected() const
     return d->currentId;
 }
 
-void KButtonGroup::childEvent(QChildEvent* event)
+void KButtonGroup::childEvent(QChildEvent *event)
 {
     if (event->polished()) {
-        QAbstractButton* button = qobject_cast<QAbstractButton*>(event->child());
-        if (!d->btnMap.contains( event->child()) && button) {
+        QAbstractButton *button = qobject_cast<QAbstractButton *>(event->child());
+        if (!d->btnMap.contains(event->child()) && button) {
             connect(button, SIGNAL(clicked()), &d->clickedMapper, SLOT(map()));
             d->clickedMapper.setMapping(button, d->nextId);
 
@@ -115,14 +115,14 @@ void KButtonGroup::childEvent(QChildEvent* event)
                 d->currentId = d->wantToBeId;
                 d->wantToBeId = -1;
                 button->setChecked(true);
-                emit changed( d->currentId );
+                emit changed(d->currentId);
             }
 
             ++d->nextId;
         }
     } else if (event->removed()) {
-        QObject* obj = event->child();
-        QHash<QObject*, int>::ConstIterator it = d->btnMap.constFind(obj);
+        QObject *obj = event->child();
+        QHash<QObject *, int>::ConstIterator it = d->btnMap.constFind(obj);
 
         if (it != d->btnMap.constEnd()) {
             d->clickedMapper.removeMappings(obj);
@@ -141,9 +141,9 @@ void KButtonGroup::childEvent(QChildEvent* event)
     QGroupBox::childEvent(event);
 }
 
-int KButtonGroup::id(QAbstractButton* button) const
+int KButtonGroup::id(QAbstractButton *button) const
 {
-    QHash<QObject*, int>::ConstIterator it = d->btnMap.constFind(button);
+    QHash<QObject *, int>::ConstIterator it = d->btnMap.constFind(button);
 
     if (it != d->btnMap.constEnd()) {
         return it.value();

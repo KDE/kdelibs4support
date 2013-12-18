@@ -21,7 +21,7 @@
 #include <QtTest/QtTest>
 #include "kglobalsettingstest.h"
 
-QTEST_MAIN( KGlobalSettingsTest )
+QTEST_MAIN(KGlobalSettingsTest)
 
 #include <kglobalsettings.h>
 #include <QtCore/QProcess>
@@ -62,15 +62,16 @@ void KGlobalSettingsTest::initTestCase()
     QSignalSpy settings_spy( settings, SIGNAL(settingsChanged(int)) ); \
     QSignalSpy appearance_spy( settings, SIGNAL(appearanceChanged()) )
 
-static void callClient( const QString& opt, const char* signalToWaitFor ) {
+static void callClient(const QString &opt, const char *signalToWaitFor)
+{
     QProcess proc;
     QString processName;
 #ifdef Q_OS_WIN
     processName = "kglobalsettingsclient.exe";
 #else
-    if (QFile::exists("./kglobalsettingsclient.shell"))
+    if (QFile::exists("./kglobalsettingsclient.shell")) {
         processName = "./kglobalsettingsclient.shell";
-    else {
+    } else {
         QVERIFY(QFile::exists("./kglobalsettingsclient"));
         processName = "./kglobalsettingsclient";
     }

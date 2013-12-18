@@ -86,10 +86,10 @@ public:
      *
      * @param webAddress Home page of the person.
      */
-    explicit K4AboutPerson( const KLocalizedString &name,
+    explicit K4AboutPerson(const KLocalizedString &name,
                            const KLocalizedString &task = KLocalizedString(),
                            const QByteArray &emailAddress = QByteArray(),
-                           const QByteArray &webAddress = QByteArray() );
+                           const QByteArray &webAddress = QByteArray());
 
     /**
      * Convenience constructor with Open Collaboration Services data
@@ -104,17 +104,17 @@ public:
      *
      * @param ocsUsername Open Collaboration Services username of the person.
      */
-    explicit K4AboutPerson( const KLocalizedString &name,
+    explicit K4AboutPerson(const KLocalizedString &name,
                            const KLocalizedString &task,
                            const QByteArray &emailAddress,
                            const QByteArray &webAddress,
-                           const QByteArray &ocsUsername ); //KDE5: merge into main ctor
+                           const QByteArray &ocsUsername);  //KDE5: merge into main ctor
 
     /**
      * Copy constructor.  Performs a deep copy.
      * @param other object to copy
      */
-    K4AboutPerson(const K4AboutPerson& other);
+    K4AboutPerson(const K4AboutPerson &other);
 
     ~K4AboutPerson();
 
@@ -122,8 +122,7 @@ public:
      * Assignment operator.  Performs a deep copy.
      * @param other object to copy
      */
-    K4AboutPerson& operator=(const K4AboutPerson& other);
-
+    K4AboutPerson &operator=(const K4AboutPerson &other);
 
     /**
      * The person's name
@@ -164,7 +163,7 @@ private:
     /**
      * @internal Used by K4AboutData to construct translator data.
      */
-    explicit K4AboutPerson( const QString &name, const QString &email );
+    explicit K4AboutPerson(const QString &name, const QString &email);
 
     class Private;
     Private *const d;
@@ -197,37 +196,35 @@ class K4AboutLicense;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
 {
-  public:
-  /**
-   * Describes the license of the software.
-   */
-    enum LicenseKey // KDE5: move to K4AboutLicense, cut License_ prefix
-    {
-      License_Custom = -2,
-      License_File = -1,
-      License_Unknown = 0,
-      License_GPL  = 1,
-      License_GPL_V2 = 1,
-      License_LGPL = 2,
-      License_LGPL_V2 = 2,
-      License_BSD  = 3,
-      License_Artistic = 4,
-      License_QPL = 5,
-      License_QPL_V1_0 = 5,
-      License_GPL_V3 = 6,
-      License_LGPL_V3 = 7
+public:
+    /**
+     * Describes the license of the software.
+     */
+    enum LicenseKey { // KDE5: move to K4AboutLicense, cut License_ prefix
+        License_Custom = -2,
+        License_File = -1,
+        License_Unknown = 0,
+        License_GPL  = 1,
+        License_GPL_V2 = 1,
+        License_LGPL = 2,
+        License_LGPL_V2 = 2,
+        License_BSD  = 3,
+        License_Artistic = 4,
+        License_QPL = 5,
+        License_QPL_V1_0 = 5,
+        License_GPL_V3 = 6,
+        License_LGPL_V3 = 7
     };
 
-  /**
-   * Format of the license name.
-   */
-    enum NameFormat // KDE5: move to K4AboutLicense
-    {
+    /**
+     * Format of the license name.
+     */
+    enum NameFormat { // KDE5: move to K4AboutLicense
         ShortName,
         FullName
     };
 
-  public:
+public:
     /**
      * Constructor.
      *
@@ -269,7 +266,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        This defaults to the kde.org bug system.
      *
      */
-    K4AboutData( const QByteArray &appName,
+    K4AboutData(const QByteArray &appName,
                 const QByteArray &catalogName,
                 const KLocalizedString &programName,
                 const QByteArray &version,
@@ -279,23 +276,23 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
                 const KLocalizedString &otherText = KLocalizedString(),
                 const QByteArray &homePageAddress = QByteArray(),
                 const QByteArray &bugsEmailAddress = "submit@bugs.kde.org"
-              );
+               );
 
     /**
      * Copy constructor.  Performs a deep copy.
      * @param other object to copy
      */
-     K4AboutData(const K4AboutData& other);
+    K4AboutData(const K4AboutData &other);
 
     /**
      * Assignment operator.  Performs a deep copy.
      * @param other object to copy
      */
-     K4AboutData& operator=(const K4AboutData& other);
+    K4AboutData &operator=(const K4AboutData &other);
 
-     ~K4AboutData();
+    ~K4AboutData();
 
-     operator KAboutData() const;
+    operator KAboutData() const;
 
     /**
      * Defines an author.
@@ -319,10 +316,10 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        correct, "some.domain" is not. Can be left empty.
      *
      */
-    K4AboutData &addAuthor( const KLocalizedString &name,
+    K4AboutData &addAuthor(const KLocalizedString &name,
                            const KLocalizedString &task = KLocalizedString(),
                            const QByteArray &emailAddress = QByteArray(),
-                           const QByteArray &webAddress = QByteArray() );
+                           const QByteArray &webAddress = QByteArray());
 
     /**
      * Defines an author.
@@ -349,11 +346,11 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        The provider can be optionally specified with @see setOcsProvider.
      *
      */
-    K4AboutData &addAuthor( const KLocalizedString &name,
+    K4AboutData &addAuthor(const KLocalizedString &name,
                            const KLocalizedString &task,
                            const QByteArray &emailAddress,
                            const QByteArray &webAddress,
-                           const QByteArray &ocsUsername ); //KDE5: merge with addAuthor
+                           const QByteArray &ocsUsername);  //KDE5: merge with addAuthor
 
     /**
      * Defines a person that deserves credit.
@@ -377,10 +374,10 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        is correct, "some.domain" is not. Can be left empty.
      *
      */
-    K4AboutData &addCredit( const KLocalizedString &name,
+    K4AboutData &addCredit(const KLocalizedString &name,
                            const KLocalizedString &task = KLocalizedString(),
                            const QByteArray &emailAddress = QByteArray(),
-                           const QByteArray &webAddress = QByteArray() );
+                           const QByteArray &webAddress = QByteArray());
 
     /**
      * Defines a person that deserves credit.
@@ -407,11 +404,11 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        The provider can be optionally specified with @see setOcsProvider.
      *
      */
-    K4AboutData &addCredit( const KLocalizedString &name,
+    K4AboutData &addCredit(const KLocalizedString &name,
                            const KLocalizedString &task,
                            const QByteArray &emailAddress,
                            const QByteArray &webAddress,
-                           const QByteArray &ocsUsername ); //KDE5: merge with addCredit
+                           const QByteArray &ocsUsername);  //KDE5: merge with addCredit
 
     /**
      * @brief Sets the name(s) of the translator(s) of the GUI.
@@ -435,8 +432,8 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @param emailAddress the email address(es) of the translator(s)
      * @see K4AboutTranslator
      */
-    K4AboutData &setTranslator( const KLocalizedString& name,
-                               const KLocalizedString& emailAddress );
+    K4AboutData &setTranslator(const KLocalizedString &name,
+                               const KLocalizedString &emailAddress);
 
     /**
      * Defines a license text, which is marked for translation.
@@ -448,7 +445,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *
      * @param license The license text.
      */
-    K4AboutData &setLicenseText( const KLocalizedString &license );
+    K4AboutData &setLicenseText(const KLocalizedString &license);
 
     /**
      * Adds a license text, which is marked for translation.
@@ -465,7 +462,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @see setLicenseText, addLicense, addLicenseTextFile
      * @since 4.1
      */
-    K4AboutData &addLicenseText( const KLocalizedString &license );
+    K4AboutData &addLicenseText(const KLocalizedString &license);
 
     /**
      * Defines a license text by pointing to a file where it resides.
@@ -473,7 +470,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *
      * @param file Path to the file in the local filesystem containing the license text.
      */
-    K4AboutData &setLicenseTextFile( const QString &file );
+    K4AboutData &setLicenseTextFile(const QString &file);
 
     /**
      * Adds a license text by pointing to a file where it resides.
@@ -486,14 +483,14 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @see addLicenseText, addLicense, setLicenseTextFile
      * @since 4.1
      */
-    K4AboutData &addLicenseTextFile( const QString &file );
+    K4AboutData &addLicenseTextFile(const QString &file);
 
     /**
      * Defines the program name used internally.
      *
      * @param appName The application name. Example: "kate".
      */
-    K4AboutData &setAppName( const QByteArray &appName );
+    K4AboutData &setAppName(const QByteArray &appName);
 
     /**
      * Defines the displayable program name string.
@@ -502,7 +499,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        marked for translation.
      *        Example: ki18n("Advanced Text Editor").
      */
-    K4AboutData &setProgramName( const KLocalizedString &programName );
+    K4AboutData &setProgramName(const KLocalizedString &programName);
 
     /**
      * Defines the program icon.
@@ -514,7 +511,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @see programIconName()
      * @since 4.1
      */
-    K4AboutData &setProgramIconName( const QString &iconName );
+    K4AboutData &setProgramIconName(const QString &iconName);
 
     /**
      * Defines the program logo.
@@ -528,7 +525,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @param image logo image.
      * @see programLogo()
     */
-    K4AboutData &setProgramLogo(const QVariant& image);
+    K4AboutData &setProgramLogo(const QVariant &image);
 
     /**
      * Specifies an Open Collaboration Services provider by URL.
@@ -542,14 +539,14 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *
      * @param providerUrl The provider URL as defined in the provider file.
      */
-    K4AboutData &setOcsProvider( const QByteArray &providerUrl );
+    K4AboutData &setOcsProvider(const QByteArray &providerUrl);
 
     /**
      * Defines the program version string.
      *
      * @param version The program version.
      */
-    K4AboutData &setVersion( const QByteArray &version );
+    K4AboutData &setVersion(const QByteArray &version);
 
     /**
      * Defines a short description of what the program does.
@@ -558,14 +555,14 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        be marked for translation. Example: ki18n("An advanced text
      *        editor with syntax highlighting support.").
      */
-    K4AboutData &setShortDescription( const KLocalizedString &shortDescription );
+    K4AboutData &setShortDescription(const KLocalizedString &shortDescription);
 
     /**
      * Defines the translation catalog that the program uses.
      *
      * @param catalogName The translation catalog name.
      */
-    K4AboutData &setCatalogName( const QByteArray &catalogName );
+    K4AboutData &setCatalogName(const QByteArray &catalogName);
 
     /**
      * Defines the license identifier.
@@ -573,7 +570,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @param licenseKey The license identifier.
      * @see addLicenseText, setLicenseText, setLicenseTextFile
      */
-    K4AboutData &setLicense( LicenseKey licenseKey );
+    K4AboutData &setLicense(LicenseKey licenseKey);
 
     /**
      * Adds a license identifier.
@@ -585,7 +582,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @see setLicenseText, addLicenseText, addLicenseTextFile
      * @since 4.1
      */
-    K4AboutData &addLicense( LicenseKey licenseKey );
+    K4AboutData &addLicense(LicenseKey licenseKey);
 
     /**
      * Defines the copyright statement to show when displaying the license.
@@ -594,7 +591,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        this: ki18n("Copyright (C) 1999-2000 Name"). The string specified here is
      *        taken verbatim; the author information from addAuthor is not used.
      */
-    K4AboutData &setCopyrightStatement( const KLocalizedString &copyrightStatement );
+    K4AboutData &setCopyrightStatement(const KLocalizedString &copyrightStatement);
 
     /**
      * Defines the additional text to show in the about dialog.
@@ -603,7 +600,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        information. The text can contain newlines. This string
      *        should be marked for translation.
      */
-    K4AboutData &setOtherText( const KLocalizedString &otherText );
+    K4AboutData &setOtherText(const KLocalizedString &otherText);
 
     /**
      * Defines the program homepage.
@@ -612,7 +609,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *        Start the address with "http://". "http://kate.kde.org"
      *        is correct but "kate.kde.org" is not.
      */
-    K4AboutData &setHomepage( const QByteArray &homepage );
+    K4AboutData &setHomepage(const QByteArray &homepage);
 
     /**
      * Defines the address where bug reports should be sent.
@@ -620,7 +617,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @param bugAddress The bug report email address string.
      *        This defaults to the kde.org bug system.
      */
-    K4AboutData &setBugAddress( const QByteArray &bugAddress );
+    K4AboutData &setBugAddress(const QByteArray &bugAddress);
 
     /**
      * Defines the Internet domain of the organization that wrote this application.
@@ -639,7 +636,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *
      * @param domain the domain name, for instance kde.org, koffice.org, kdevelop.org, etc.
      */
-    K4AboutData &setOrganizationDomain( const QByteArray &domain );
+    K4AboutData &setOrganizationDomain(const QByteArray &domain);
 
     /**
      * Defines the product name which will be used in the KBugReport dialog.
@@ -649,7 +646,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      *
      * @param name The name of product
      */
-    K4AboutData &setProductName( const QByteArray &name );
+    K4AboutData &setProductName(const QByteArray &name);
 
     /**
      * Returns the application's internal name.
@@ -683,7 +680,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @internal
      * Provided for use by KCrash
      */
-    const char* internalProgramName() const;
+    const char *internalProgramName() const;
 
     /**
      * @internal
@@ -731,7 +728,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @internal
      * Provided for use by KCrash
      */
-    const char* internalVersion() const;
+    const char *internalVersion() const;
 
     /**
      * Returns a short, translated description.
@@ -763,7 +760,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * @internal
      * Provided for use by KCrash
      */
-    const char* internalBugAddress() const;
+    const char *internalBugAddress() const;
 
     /**
      * Returns a list of authors.
@@ -868,7 +865,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      * message.
      */
     K4AboutData &setCustomAuthorText(const KLocalizedString &plainText,
-                                    const KLocalizedString &richText);
+                                     const KLocalizedString &richText);
 
     /**
      * Clears any custom text displayed around the list of authors and falls
@@ -877,12 +874,11 @@ class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
      */
     K4AboutData &unsetCustomAuthorText();
 
-  private:
+private:
 
     class Private;
     Private *const d;
 };
-
 
 /**
  * This class is used to store information about a license.
@@ -907,7 +903,7 @@ public:
      * Copy constructor.  Performs a deep copy.
      * @param other object to copy
      */
-    K4AboutLicense(const K4AboutLicense& other);
+    K4AboutLicense(const K4AboutLicense &other);
 
     ~K4AboutLicense();
 
@@ -915,8 +911,7 @@ public:
      * Assignment operator.  Performs a deep copy.
      * @param other object to copy
      */
-    K4AboutLicense& operator=(const K4AboutLicense& other);
-
+    K4AboutLicense &operator=(const K4AboutLicense &other);
 
     /**
      * Returns the full license text. If the licenseType argument of the
@@ -970,15 +965,15 @@ private:
     /**
      * @internal Used by K4AboutData to construct a predefined license.
      */
-    explicit K4AboutLicense( enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData );
+    explicit K4AboutLicense(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData);
     /**
      * @internal Used by K4AboutData to construct license by given text
      */
-    explicit K4AboutLicense( const QString &pathToFile, const K4AboutData *aboutData );
+    explicit K4AboutLicense(const QString &pathToFile, const K4AboutData *aboutData);
     /**
      * @internal Used by K4AboutData to construct license by given text
      */
-    explicit K4AboutLicense( const KLocalizedString &licenseText, const K4AboutData *aboutData );
+    explicit K4AboutLicense(const KLocalizedString &licenseText, const K4AboutData *aboutData);
 
     class Private;
     QSharedDataPointer<Private> d;

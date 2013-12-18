@@ -46,7 +46,7 @@ public:
 /*
  * compute general date structure from hebrew date
  */
-static class h_date * hebrewToGregorian(int y, int m, int d)
+static class h_date *hebrewToGregorian(int y, int m, int d)
 {
     static class h_date h;
     int s;
@@ -91,13 +91,13 @@ static class h_date * hebrewToGregorian(int y, int m, int d)
     h.hd_day = d;
     h.hd_mon = m;
     h.hd_year = y;
-    return(&h);
+    return (&h);
 }
 
 /*
  * compute date structure from no. of days since 1 Tishrei 3744
  */
-static class h_date * gregorianToHebrew(int y, int m, int d)
+static class h_date *gregorianToHebrew(int y, int m, int d)
 {
     static class h_date h;
     int s;
@@ -146,7 +146,7 @@ static class h_date * gregorianToHebrew(int y, int m, int d)
     h.hd_day = d;
     h.hd_mon = m;
     h.hd_year = y;
-    return(&h);
+    return (&h);
 }
 
 /* constants, in 1/18th of minute */
@@ -212,7 +212,7 @@ static int long_cheshvan(int year)
 static int short_kislev(int year)
 {
     QDate first, last;
-    class h_date * gd;
+    class h_date *gd;
 
     gd = hebrewToGregorian(year, 1, 1);
     first.setDate(gd->hd_year, gd->hd_mon + 1, gd->hd_day + 1);
@@ -266,7 +266,7 @@ public:
 // Shared d pointer base class definitions
 
 KCalendarSystemHebrewPrivate::KCalendarSystemHebrewPrivate(KCalendarSystemHebrew *q)
-                            : KCalendarSystemPrivate(q)
+    : KCalendarSystemPrivate(q)
 {
 }
 
@@ -402,7 +402,7 @@ int KCalendarSystemHebrewPrivate::integerFromString(const QString &inputString, 
         int result = 0;
         int value = 0;
 
-        for (; position < stringLength ; ++position) {
+        for (; position < stringLength; ++position) {
 
             thisChar = string[position];
 
@@ -566,8 +566,9 @@ QString KCalendarSystemHebrewPrivate::stringFromInteger(int number, int padWidth
         // The numbers 15 and 16 translate to letters that spell out the name of God which is
         // forbidden, so require special treatment where 15 = 9 + 6 and 1 = 9 + 7.
         if (number >= 10) {
-            if (number == 15 || number == 16)
+            if (number == 15 || number == 16) {
                 number -= 9;
+            }
             result += decade[number / 10];
             number %= 10;
         }
@@ -861,16 +862,15 @@ QString KCalendarSystemHebrewPrivate::weekDayName(int weekDay, KLocale::DateTime
     }
 }
 
-
 KCalendarSystemHebrew::KCalendarSystemHebrew(const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystem(*new KCalendarSystemHebrewPrivate(this), config, locale)
+    : KCalendarSystem(*new KCalendarSystemHebrewPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemHebrew::KCalendarSystemHebrew(KCalendarSystemHebrewPrivate &dd,
-                                             const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystem(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystem(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
@@ -969,7 +969,7 @@ bool KCalendarSystemHebrew::isProleptic() const
 
 bool KCalendarSystemHebrew::julianDayToDate(qint64 jd, int &year, int &month, int &day) const
 {
-    class h_date * sd = toHebrew(QDate::fromJulianDay(jd));
+    class h_date *sd = toHebrew(QDate::fromJulianDay(jd));
 
     year = sd->hd_year;
 
@@ -991,7 +991,7 @@ bool KCalendarSystemHebrew::julianDayToDate(qint64 jd, int &year, int &month, in
 
 bool KCalendarSystemHebrew::dateToJulianDay(int year, int month, int day, qint64 &jd) const
 {
-    class h_date * gd = hebrewToGregorian(year, month, day);
+    class h_date *gd = hebrewToGregorian(year, month, day);
 
     QDate tempDate(gd->hd_year, gd->hd_mon + 1, gd->hd_day + 1);
 

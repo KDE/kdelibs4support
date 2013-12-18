@@ -196,8 +196,9 @@ public:
     enum SearchOption { NoSearchOptions = 0,
                         Recursive = 1,
                         NoDuplicates = 2,
-                        IgnoreExecBit = 4 };
-    Q_DECLARE_FLAGS( SearchOptions, SearchOption )
+                        IgnoreExecBit = 4
+                      };
+    Q_DECLARE_FLAGS(SearchOptions, SearchOption)
 
     /**
      * KStandardDirs' destructor.
@@ -215,7 +216,7 @@ public:
      *
      * @param dir The directory to append relative paths to.
      */
-    void addPrefix( const QString& dir );
+    void addPrefix(const QString &dir);
 
     /**
      * Adds another search dir to front of the @c XDG_CONFIG_XXX list
@@ -224,7 +225,7 @@ public:
      *
      * @param dir The directory to append relative paths to.
      */
-    void addXdgConfigPrefix( const QString& dir );
+    void addXdgConfigPrefix(const QString &dir);
 
     /**
      * Adds another search dir to front of the @c XDG_DATA_XXX list
@@ -232,7 +233,7 @@ public:
      *
      * @param dir The directory to append relative paths to.
      */
-    void addXdgDataPrefix( const QString& dir );
+    void addXdgDataPrefix(const QString &dir);
 
     /**
      * Adds suffixes for types.
@@ -258,8 +259,8 @@ public:
      * @deprecated, use addResourceType(type, 0, relativename, priority)
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool addResourceType( const char *type,
-                                         const QString& relativename, bool priority = true );
+    KDE4SUPPORT_DEPRECATED bool addResourceType(const char *type,
+            const QString &relativename, bool priority = true);
 #endif
 
     /**
@@ -283,12 +284,12 @@ public:
      * otherwise after
      * @return true if successful, false otherwise.
      */
-    bool addResourceType( const char *type, const char *basetype,
-                          const QString& relativename, bool priority = true );
+    bool addResourceType(const char *type, const char *basetype,
+                         const QString &relativename, bool priority = true);
 
     /// @internal - just to avoid unwanted overload
-    bool addResourceType( const char *type, const char *basetype,
-                          const char* relativename, bool priority = true )
+    bool addResourceType(const char *type, const char *basetype,
+                         const char *relativename, bool priority = true)
     {
         return addResourceType(type, basetype, QLatin1String(relativename), priority);
     }
@@ -310,8 +311,8 @@ public:
      * otherwise after
      * @return true if successful, false otherwise.
      */
-    bool addResourceDir( const char *type,
-                         const QString& absdir, bool priority = true );
+    bool addResourceDir(const char *type,
+                        const QString &absdir, bool priority = true);
 
     /**
      * Tries to find a resource in the following order:
@@ -340,8 +341,8 @@ public:
      * @return A full path to the filename specified in the second
      *         argument, or QString() if not found.
      */
-    QString findResource( const char *type,
-                          const QString& filename ) const;
+    QString findResource(const char *type,
+                         const QString &filename) const;
 
     /**
      * Checks whether a resource is restricted as part of the KIOSK
@@ -357,8 +358,8 @@ public:
      *
      * @return True if the resource is restricted.
      */
-    bool isRestrictedResource( const char *type,
-                               const QString& relPath=QString() ) const;
+    bool isRestrictedResource(const char *type,
+                              const QString &relPath = QString()) const;
 
     /**
      * Returns a number that identifies this version of the resource.
@@ -376,9 +377,9 @@ public:
      * In other apps, just use QFileInfo(fullPath).lastModified().toTime_t()
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED quint32 calcResourceHash( const char *type,
-                              const QString& filename,
-                              SearchOptions options = NoSearchOptions) const;
+    KDE4SUPPORT_DEPRECATED quint32 calcResourceHash(const char *type,
+            const QString &filename,
+            SearchOptions options = NoSearchOptions) const;
 #endif
 
     /**
@@ -399,8 +400,8 @@ public:
      * @return A list of matching directories, or an empty
      *         list if the resource specified is not found.
      */
-    QStringList findDirs( const char *type,
-                          const QString& reldir ) const;
+    QStringList findDirs(const char *type,
+                         const QString &reldir) const;
 
     /**
      * Tries to find the directory the file is in.
@@ -422,9 +423,8 @@ public:
      *         of resource specified is unknown or the resource
      *         cannot be found.
      */
-    QString findResourceDir( const char *type,
-                             const QString& filename) const;
-
+    QString findResourceDir(const char *type,
+                            const QString &filename) const;
 
     /**
      * Tries to find all resources with the specified type.
@@ -446,9 +446,9 @@ public:
      * @return List of all the files whose filename matches the
      *         specified filter.
      */
-    QStringList findAllResources( const char *type,
-                                  const QString& filter = QString(),
-                                  SearchOptions options = NoSearchOptions ) const;
+    QStringList findAllResources(const char *type,
+                                 const QString &filter = QString(),
+                                 SearchOptions options = NoSearchOptions) const;
 
     /**
      * Tries to find all resources with the specified type.
@@ -478,21 +478,21 @@ public:
      * @return List of all the files whose filename matches the
      *         specified filter.
      */
-    QStringList findAllResources( const char *type,
-                                  const QString& filter,
-                                  SearchOptions options,
-                                  QStringList &relPaths) const;
+    QStringList findAllResources(const char *type,
+                                 const QString &filter,
+                                 SearchOptions options,
+                                 QStringList &relPaths) const;
 
     /**
      * Returns a QStringList list of pathnames in the system path.
      *
      * @param pstr  The path which will be searched. If this is
-     * 		null (default), the @c $PATH environment variable will
-     *		be searched.
+     *      null (default), the @c $PATH environment variable will
+     *      be searched.
      *
      * @return a QStringList list of pathnames in the system path.
      */
-    static QStringList systemPaths( const QString& pstr=QString() );
+    static QStringList systemPaths(const QString &pstr = QString());
 
     /**
      * Finds the executable in the system path.
@@ -514,9 +514,9 @@ public:
      *         it will return QString().
      * @see findAllExe()
      */
-    static QString findExe( const QString& appname,
-                            const QString& pathstr = QString(),
-                            SearchOptions options = NoSearchOptions );
+    static QString findExe(const QString &appname,
+                           const QString &pathstr = QString(),
+                           SearchOptions options = NoSearchOptions);
 
     /**
      * Finds all occurrences of an executable in the system path.
@@ -536,9 +536,9 @@ public:
      *
      * @see findExe()
      */
-    static int findAllExe( QStringList& list, const QString& appname,
-                           const QString& pathstr=QString(),
-                           SearchOptions options = NoSearchOptions );
+    static int findAllExe(QStringList &list, const QString &appname,
+                          const QString &pathstr = QString(),
+                          SearchOptions options = NoSearchOptions);
 
     /**
      * Reads customized entries out of the given config object and add
@@ -590,7 +590,7 @@ public:
      *         saved, or QString() if the resource type is unknown.
      */
     QString saveLocation(const char *type,
-                         const QString& suffix = QString(),
+                         const QString &suffix = QString(),
                          bool create = true) const;
 
     /**
@@ -638,7 +638,7 @@ public:
      * @deprecated since 5.0, use QDir().mkpath(dir).
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED static bool makeDir(const QString& dir, int mode = 0755);
+    KDE4SUPPORT_DEPRECATED static bool makeDir(const QString &dir, int mode = 0755);
 #endif
 
     /**
@@ -770,7 +770,7 @@ public:
      * @return A full path to the filename specified in the second
      *         argument, or QString() if not found
      **/
-    static QString locate( const char *type, const QString& filename );
+    static QString locate(const char *type, const QString &filename);
 
     /**
      * This function is much like locate. However it returns a
@@ -785,7 +785,7 @@ public:
      * @return A full path to the filename specified in the second
      *         argument, or QString() if not found
      **/
-    static QString locateLocal(const char *type, const QString& filename);
+    static QString locateLocal(const char *type, const QString &filename);
 
     /**
      * This function is much like locate. No check is made if the
@@ -802,7 +802,7 @@ public:
      * @return A full path to the filename specified in the second
      *         argument, or QString() if not found
      **/
-    static QString locateLocal(const char *type, const QString& filename, bool createDir);
+    static QString locateLocal(const char *type, const QString &filename, bool createDir);
 
     /**
      * Check, if a file may be accessed in a given mode.
@@ -820,22 +820,22 @@ public:
      * @param mode     The access mode, as in the access() system call.
      * @return Whether the access is allowed, true = Access allowed
      */
-    static bool checkAccess(const QString& pathname, int mode);
+    static bool checkAccess(const QString &pathname, int mode);
 
 private:
     // Disallow assignment and copy-construction
-    KStandardDirs( const KStandardDirs& );
-    KStandardDirs& operator= ( const KStandardDirs& );
+    KStandardDirs(const KStandardDirs &);
+    KStandardDirs &operator= (const KStandardDirs &);
 
     class KStandardDirsPrivate;
-    KStandardDirsPrivate* const d;
+    KStandardDirsPrivate *const d;
 
     // Like their public counter parts but with an extra priority argument
     // If priority is true, the directory is added directly after
     // $KDEHOME/$XDG_DATA_HOME/$XDG_CONFIG_HOME
-    void addPrefix( const QString& dir, bool priority );
-    void addXdgConfigPrefix( const QString& dir, bool priority );
-    void addXdgDataPrefix( const QString& dir, bool priority );
+    void addPrefix(const QString &dir, bool priority);
+    void addXdgConfigPrefix(const QString &dir, bool priority);
+    void addXdgDataPrefix(const QString &dir, bool priority);
     void addKDEDefaults();
 
     void addResourcesFrom_krcdirs();

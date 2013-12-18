@@ -24,20 +24,20 @@
 #include "knfotranslator_p.h"
 
 #if ! KIO_NO_NEPOMUK
-    #define DISABLE_NEPOMUK_LEGACY
-    #include "nepomukmassupdatejob.h"
-    #include "tagwidget.h"
-    #include "tag.h"
-    #include "kratingwidget.h"
-    #include "resource.h"
-    #include "resourcemanager.h"
+#define DISABLE_NEPOMUK_LEGACY
+#include "nepomukmassupdatejob.h"
+#include "tagwidget.h"
+#include "tag.h"
+#include "kratingwidget.h"
+#include "resource.h"
+#include "resourcemanager.h"
 
-    #include "kcommentwidget_p.h"
+#include "kcommentwidget_p.h"
 #else
-    namespace Nepomuk
-    {
-        typedef int Tag;
-    }
+namespace Nepomuk
+{
+typedef int Tag;
+}
 #endif
 
 #include <QEvent>
@@ -47,32 +47,33 @@
 
 // Required includes for subDirectoriesCount():
 #ifdef Q_OS_WIN
-    #include <QDir>
+#include <QDir>
 #else
-    #include <dirent.h>
-    #include <QFile>
+#include <dirent.h>
+#include <QFile>
 #endif
 
-namespace {
-    static QString plainText(const QString& richText)
-    {
-        QString plainText;
-        plainText.reserve(richText.length());
+namespace
+{
+static QString plainText(const QString &richText)
+{
+    QString plainText;
+    plainText.reserve(richText.length());
 
-        bool skip = false;
-        for (int i = 0; i < richText.length(); ++i) {
-            const QChar c = richText.at(i);
-            if (c == QLatin1Char('<')) {
-                skip = true;
-            } else if (c == QLatin1Char('>')) {
-                skip = false;
-            } else if (!skip) {
-                plainText.append(c);
-            }
+    bool skip = false;
+    for (int i = 0; i < richText.length(); ++i) {
+        const QChar c = richText.at(i);
+        if (c == QLatin1Char('<')) {
+            skip = true;
+        } else if (c == QLatin1Char('>')) {
+            skip = false;
+        } else if (!skip) {
+            plainText.append(c);
         }
-
-        return plainText;
     }
+
+    return plainText;
+}
 }
 
 // The default size hint of QLabel tries to return a square size.
@@ -84,11 +85,11 @@ namespace {
 class ValueWidget : public QLabel
 {
 public:
-    explicit ValueWidget(QWidget* parent = 0);
+    explicit ValueWidget(QWidget *parent = 0);
     virtual QSize sizeHint() const;
 };
 
-ValueWidget::ValueWidget(QWidget* parent) :
+ValueWidget::ValueWidget(QWidget *parent) :
     QLabel(parent)
 {
 }
@@ -103,39 +104,37 @@ QSize ValueWidget::sizeHint() const
     return metrics.size(Qt::TextSingleLine, plainText(text()));
 }
 
-
-
 class KFileMetaDataProvider::Private
 {
 
 public:
-    Private(KFileMetaDataProvider* parent);
+    Private(KFileMetaDataProvider *parent);
     ~Private();
 
     void slotLoadingFinished();
 
     void slotRatingChanged(unsigned int rating);
-    void slotTagsChanged(const QList<Nepomuk::Tag>& tags);
-    void slotCommentChanged(const QString& comment);
+    void slotTagsChanged(const QList<Nepomuk::Tag> &tags);
+    void slotCommentChanged(const QString &comment);
 
     void slotMetaDataUpdateDone();
-    void slotTagClicked(const Nepomuk::Tag& tag);
-    void slotLinkActivated(const QString& link);
+    void slotTagClicked(const Nepomuk::Tag &tag);
+    void slotLinkActivated(const QString &link);
 
     /**
      * Disables the metadata widget and starts the job that
      * changes the meta data asynchronously. After the job
      * has been finished, the metadata widget gets enabled again.
      */
-    void startChangeDataJob(KJob* job);
+    void startChangeDataJob(KJob *job);
 
 #if ! KIO_NO_NEPOMUK
     QList<Nepomuk::Resource> resourceList() const;
-    QWidget* createRatingWidget(int rating, QWidget* parent);
-    QWidget* createTagWidget(const QList<Nepomuk::Tag>& tags, QWidget* parent);
-    QWidget* createCommentWidget(const QString& comment, QWidget* parent);
+    QWidget *createRatingWidget(int rating, QWidget *parent);
+    QWidget *createTagWidget(const QList<Nepomuk::Tag> &tags, QWidget *parent);
+    QWidget *createCommentWidget(const QString &comment, QWidget *parent);
 #endif
-    QWidget* createValueWidget(const QString& value, QWidget* parent);
+    QWidget *createValueWidget(const QString &value, QWidget *parent);
 
     /*
      * @return The number of subdirectories for the directory \a path.
@@ -149,8 +148,8 @@ public:
 #if ! KIO_NO_NEPOMUK
     QHash<QUrl, Nepomuk::Variant> m_data;
 
-    QList<KFileMetaDataReader*> m_metaDataReaders;
-    KFileMetaDataReader* m_latestMetaDataReader;
+    QList<KFileMetaDataReader *> m_metaDataReaders;
+    KFileMetaDataReader *m_latestMetaDataReader;
 
     QPointer<KRatingWidget> m_ratingWidget;
     QPointer<Nepomuk::TagWidget> m_tagWidget;
@@ -158,10 +157,10 @@ public:
 #endif
 
 private:
-    KFileMetaDataProvider* const q;
+    KFileMetaDataProvider *const q;
 };
 
-KFileMetaDataProvider::Private::Private(KFileMetaDataProvider* parent) :
+KFileMetaDataProvider::Private::Private(KFileMetaDataProvider *parent) :
     m_readOnly(false),
     m_nepomukActivated(false),
     m_fileItems(),
@@ -214,11 +213,11 @@ QString _k_fancyFormatDateTime(const QDateTime &dateTime)
 void KFileMetaDataProvider::Private::slotLoadingFinished()
 {
 #if ! KIO_NO_NEPOMUK
-    KFileMetaDataReader* finishedMetaDataReader = qobject_cast<KFileMetaDataReader*>(q->sender());
+    KFileMetaDataReader *finishedMetaDataReader = qobject_cast<KFileMetaDataReader *>(q->sender());
     // The process that has emitted the finished() signal
     // will get deleted and removed from m_metaDataReaders.
     for (int i = 0; i < m_metaDataReaders.count(); ++i) {
-        KFileMetaDataReader* metaDataReader = m_metaDataReaders[i];
+        KFileMetaDataReader *metaDataReader = m_metaDataReaders[i];
         if (metaDataReader == finishedMetaDataReader) {
             m_metaDataReaders.removeAt(i);
             if (metaDataReader != m_latestMetaDataReader) {
@@ -236,7 +235,7 @@ void KFileMetaDataProvider::Private::slotLoadingFinished()
     if (m_fileItems.count() == 1) {
         // TODO: Handle case if remote URLs are used properly. isDir() does
         // not work, the modification date needs also to be adjusted...
-        const KFileItem& item = m_fileItems.first();
+        const KFileItem &item = m_fileItems.first();
 
         if (item.isDir()) {
             const int count = subDirectoriesCount(item.url().pathOrUrl());
@@ -256,7 +255,7 @@ void KFileMetaDataProvider::Private::slotLoadingFinished()
     } else if (m_fileItems.count() > 1) {
         // Calculate the size of all items
         quint64 totalSize = 0;
-        foreach (const KFileItem& item, m_fileItems) {
+        foreach (const KFileItem &item, m_fileItems) {
             if (!item.isDir() && !item.isLink()) {
                 totalSize += item.size();
             }
@@ -271,20 +270,20 @@ void KFileMetaDataProvider::Private::slotLoadingFinished()
 void KFileMetaDataProvider::Private::slotRatingChanged(unsigned int rating)
 {
 #if ! KIO_NO_NEPOMUK
-    Nepomuk::MassUpdateJob* job = Nepomuk::MassUpdateJob::rateResources(resourceList(), rating);
+    Nepomuk::MassUpdateJob *job = Nepomuk::MassUpdateJob::rateResources(resourceList(), rating);
     startChangeDataJob(job);
 #else
     Q_UNUSED(rating);
 #endif
 }
 
-void KFileMetaDataProvider::Private::slotTagsChanged(const QList<Nepomuk::Tag>& tags)
+void KFileMetaDataProvider::Private::slotTagsChanged(const QList<Nepomuk::Tag> &tags)
 {
 #if ! KIO_NO_NEPOMUK
     if (!m_tagWidget.isNull()) {
         m_tagWidget.data()->setSelectedTags(tags);
 
-        Nepomuk::MassUpdateJob* job = Nepomuk::MassUpdateJob::tagResources(resourceList(), tags);
+        Nepomuk::MassUpdateJob *job = Nepomuk::MassUpdateJob::tagResources(resourceList(), tags);
         startChangeDataJob(job);
     }
 #else
@@ -292,17 +291,17 @@ void KFileMetaDataProvider::Private::slotTagsChanged(const QList<Nepomuk::Tag>& 
 #endif
 }
 
-void KFileMetaDataProvider::Private::slotCommentChanged(const QString& comment)
+void KFileMetaDataProvider::Private::slotCommentChanged(const QString &comment)
 {
 #if ! KIO_NO_NEPOMUK
-    Nepomuk::MassUpdateJob* job = Nepomuk::MassUpdateJob::commentResources(resourceList(), comment);
+    Nepomuk::MassUpdateJob *job = Nepomuk::MassUpdateJob::commentResources(resourceList(), comment);
     startChangeDataJob(job);
 #else
     Q_UNUSED(comment);
 #endif
 }
 
-void KFileMetaDataProvider::Private::slotTagClicked(const Nepomuk::Tag& tag)
+void KFileMetaDataProvider::Private::slotTagClicked(const Nepomuk::Tag &tag)
 {
 #if ! KIO_NO_NEPOMUK
     emit q->urlActivated(tag.resourceUri());
@@ -311,12 +310,12 @@ void KFileMetaDataProvider::Private::slotTagClicked(const Nepomuk::Tag& tag)
 #endif
 }
 
-void KFileMetaDataProvider::Private::slotLinkActivated(const QString& link)
+void KFileMetaDataProvider::Private::slotLinkActivated(const QString &link)
 {
     emit q->urlActivated(QUrl(link));
 }
 
-void KFileMetaDataProvider::Private::startChangeDataJob(KJob* job)
+void KFileMetaDataProvider::Private::startChangeDataJob(KJob *job)
 {
     connect(job, SIGNAL(result(KJob*)),
             q, SIGNAL(dataChangeFinished()));
@@ -328,17 +327,18 @@ void KFileMetaDataProvider::Private::startChangeDataJob(KJob* job)
 QList<Nepomuk::Resource> KFileMetaDataProvider::Private::resourceList() const
 {
     QList<Nepomuk::Resource> list;
-    foreach (const KFileItem& item, m_fileItems) {
+    foreach (const KFileItem &item, m_fileItems) {
         const QUrl url = item.nepomukUri();
-        if(url.isValid())
+        if (url.isValid()) {
             list.append(Nepomuk::Resource(url));
+        }
     }
     return list;
 }
 
-QWidget* KFileMetaDataProvider::Private::createRatingWidget(int rating, QWidget* parent)
+QWidget *KFileMetaDataProvider::Private::createRatingWidget(int rating, QWidget *parent)
 {
-    KRatingWidget* ratingWidget = new KRatingWidget(parent);
+    KRatingWidget *ratingWidget = new KRatingWidget(parent);
     const Qt::Alignment align = (ratingWidget->layoutDirection() == Qt::LeftToRight) ?
                                 Qt::AlignLeft : Qt::AlignRight;
     ratingWidget->setAlignment(align);
@@ -354,9 +354,9 @@ QWidget* KFileMetaDataProvider::Private::createRatingWidget(int rating, QWidget*
     return ratingWidget;
 }
 
-QWidget* KFileMetaDataProvider::Private::createTagWidget(const QList<Nepomuk::Tag>& tags, QWidget* parent)
+QWidget *KFileMetaDataProvider::Private::createTagWidget(const QList<Nepomuk::Tag> &tags, QWidget *parent)
 {
-    Nepomuk::TagWidget* tagWidget = new Nepomuk::TagWidget(parent);
+    Nepomuk::TagWidget *tagWidget = new Nepomuk::TagWidget(parent);
     tagWidget->setModeFlags(m_readOnly
                             ? Nepomuk::TagWidget::MiniMode | Nepomuk::TagWidget::ReadOnly
                             : Nepomuk::TagWidget::MiniMode);
@@ -372,9 +372,9 @@ QWidget* KFileMetaDataProvider::Private::createTagWidget(const QList<Nepomuk::Ta
     return tagWidget;
 }
 
-QWidget* KFileMetaDataProvider::Private::createCommentWidget(const QString& comment, QWidget* parent)
+QWidget *KFileMetaDataProvider::Private::createCommentWidget(const QString &comment, QWidget *parent)
 {
-    KCommentWidget* commentWidget = new KCommentWidget(parent);
+    KCommentWidget *commentWidget = new KCommentWidget(parent);
     commentWidget->setText(comment);
     commentWidget->setReadOnly(m_readOnly);
 
@@ -387,9 +387,9 @@ QWidget* KFileMetaDataProvider::Private::createCommentWidget(const QString& comm
 }
 #endif
 
-QWidget* KFileMetaDataProvider::Private::createValueWidget(const QString& value, QWidget* parent)
+QWidget *KFileMetaDataProvider::Private::createValueWidget(const QString &value, QWidget *parent)
 {
-    ValueWidget* valueWidget = new ValueWidget(parent);
+    ValueWidget *valueWidget = new ValueWidget(parent);
     valueWidget->setWordWrap(true);
     valueWidget->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     valueWidget->setText(m_readOnly ? plainText(value) : value);
@@ -397,7 +397,7 @@ QWidget* KFileMetaDataProvider::Private::createValueWidget(const QString& value,
     return valueWidget;
 }
 
-KFileMetaDataProvider::KFileMetaDataProvider(QObject* parent) :
+KFileMetaDataProvider::KFileMetaDataProvider(QObject *parent) :
     QObject(parent),
     d(new Private(this))
 {
@@ -408,7 +408,7 @@ KFileMetaDataProvider::~KFileMetaDataProvider()
     delete d;
 }
 
-void KFileMetaDataProvider::setItems(const KFileItemList& items)
+void KFileMetaDataProvider::setItems(const KFileItemList &items)
 {
     d->m_fileItems = items;
 
@@ -416,10 +416,10 @@ void KFileMetaDataProvider::setItems(const KFileItemList& items)
     if (items.isEmpty()) {
         return;
     }
-    Q_PRIVATE_SLOT(d, void slotDataChangeStarted())
-    Q_PRIVATE_SLOT(d, void slotDataChangeFinished())
+    Q_PRIVATE_SLOT(d,void slotDataChangeStarted())
+    Q_PRIVATE_SLOT(d,void slotDataChangeFinished())
     QList<QUrl> urls;
-    foreach (const KFileItem& item, items) {
+    foreach (const KFileItem &item, items) {
         const QUrl url = item.nepomukUri();
         if (url.isValid()) {
             urls.append(url);
@@ -434,12 +434,12 @@ void KFileMetaDataProvider::setItems(const KFileItemList& items)
 #endif
 }
 
-QString KFileMetaDataProvider::label(const QUrl& metaDataUri) const
+QString KFileMetaDataProvider::label(const QUrl &metaDataUri) const
 {
     struct TranslationItem {
-        const char* const key;
-        const char* const context;
-        const char* const value;
+        const char *const key;
+        const char *const context;
+        const char *const value;
     };
 
     static const TranslationItem translations[] = {
@@ -457,7 +457,7 @@ QString KFileMetaDataProvider::label(const QUrl& metaDataUri) const
 
     static QHash<QString, QString> hash;
     if (hash.isEmpty()) {
-        const TranslationItem* item = &translations[0];
+        const TranslationItem *item = &translations[0];
         while (item->key != 0) {
             hash.insert(item->key, i18nc(item->context, item->value));
             ++item;
@@ -472,7 +472,7 @@ QString KFileMetaDataProvider::label(const QUrl& metaDataUri) const
     return value;
 }
 
-QString KFileMetaDataProvider::group(const QUrl& metaDataUri) const
+QString KFileMetaDataProvider::group(const QUrl &metaDataUri) const
 {
     QString group; // return value
 
@@ -511,12 +511,12 @@ QHash<QUrl, Nepomuk::Variant> KFileMetaDataProvider::data() const
     return d->m_data;
 }
 
-QWidget* KFileMetaDataProvider::createValueWidget(const QUrl& metaDataUri,
-                                                  const Nepomuk::Variant& value,
-                                                  QWidget* parent) const
+QWidget *KFileMetaDataProvider::createValueWidget(const QUrl &metaDataUri,
+        const Nepomuk::Variant &value,
+        QWidget *parent) const
 {
     Q_ASSERT(parent != 0);
-    QWidget* widget = 0;
+    QWidget *widget = 0;
 
     if (d->m_nepomukActivated) {
         const QString uri = metaDataUri.url();
@@ -525,7 +525,7 @@ QWidget* KFileMetaDataProvider::createValueWidget(const QUrl& metaDataUri,
         } else if (uri == QLatin1String("kfileitem#tags")) {
             const QStringList tagNames = value.toStringList();
             QList<Nepomuk::Tag> tags;
-            foreach (const QString& tagName, tagNames) {
+            foreach (const QString &tagName, tagNames) {
                 tags.append(Nepomuk::Tag(tagName));
             }
 
@@ -546,17 +546,17 @@ QWidget* KFileMetaDataProvider::createValueWidget(const QUrl& metaDataUri,
 }
 #endif
 
-int KFileMetaDataProvider::Private::subDirectoriesCount(const QString& path)
+int KFileMetaDataProvider::Private::subDirectoriesCount(const QString &path)
 {
 #ifdef Q_OS_WIN
     QDir dir(path);
-    return dir.entryList(QDir::AllEntries|QDir::NoDotAndDotDot|QDir::System).count();
+    return dir.entryList(QDir::AllEntries | QDir::NoDotAndDotDot | QDir::System).count();
 #else
     // Taken from kdelibs/kio/kio/kdirmodel.cpp
     // Copyright (C) 2006 David Faure <faure@kde.org>
 
     int count = -1;
-    DIR* dir = ::opendir(QFile::encodeName(path));
+    DIR *dir = ::opendir(QFile::encodeName(path));
     if (dir) {
         count = 0;
         struct dirent *dirEntry = 0;

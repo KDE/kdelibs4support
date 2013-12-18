@@ -42,7 +42,7 @@ public:
         s_createComponentDataCalled = false;
     }
 
-    explicit KGenericFactoryBase( const KAboutData *data )
+    explicit KGenericFactoryBase(const KAboutData *data)
         : KPluginFactory(data->componentName().toUtf8().constData())
     {
         KAboutData::registerPluginData(*data);
@@ -153,26 +153,26 @@ template <class Product, class ParentType = QObject>
 class KDE4SUPPORT_DEPRECATED KGenericFactory : public KGenericFactoryBase<Product>
 {
 public:
-    explicit KGenericFactory( const char *componentName = 0 )
+    explicit KGenericFactory(const char *componentName = 0)
         : KGenericFactoryBase<Product>(componentName)
     {}
 
-    explicit KGenericFactory( const KAboutData *data )
+    explicit KGenericFactory(const KAboutData *data)
         : KGenericFactoryBase<Product>(data)
     {}
 
 protected:
-    virtual QObject *createObject( QObject *parent,
-                                   const char *className, const QStringList &args )
+    virtual QObject *createObject(QObject *parent,
+                                  const char *className, const QStringList &args)
     {
         return KDEPrivate::ConcreteFactory<Product, ParentType>
-            ::create( 0, parent, className, args );
+               ::create(0, parent, className, args);
     }
 };
 
 /**
  * \class KGenericFactory kgenericfactory.h <KGenericFactory>
- * 
+ *
  * This template provides a generic implementation of a KLibFactory ,
  * for use with shared library components. It implements the pure virtual
  * createObject method of KLibFactory and instantiates objects of the
@@ -244,27 +244,26 @@ class KGenericFactory< KTypeList<Product, ProductListTail>, QObject >
     : public KGenericFactoryBase<KTypeList<Product, ProductListTail> >
 {
 public:
-    explicit KGenericFactory( const char *componentName  = 0 )
+    explicit KGenericFactory(const char *componentName  = 0)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(componentName)
     {}
 
-    explicit KGenericFactory( const KAboutData *data )
+    explicit KGenericFactory(const KAboutData *data)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(data)
     {}
 
-
 protected:
-    virtual QObject *createObject( QObject *parent,
-                                   const char *className, const QStringList &args )
+    virtual QObject *createObject(QObject *parent,
+                                  const char *className, const QStringList &args)
     {
         return KDEPrivate::MultiFactory< KTypeList< Product, ProductListTail > >
-            ::create( 0, parent, className, args );
+               ::create(0, parent, className, args);
     }
 };
 
 /**
  * \class KGenericFactory kgenericfactory.h <KGenericFactory>
- * 
+ *
  * This template provides a generic implementation of a KLibFactory ,
  * for use with shared library components. It implements the pure virtual
  * createObject method of KLibFactory and instantiates objects of the
@@ -334,30 +333,28 @@ protected:
 template <class Product, class ProductListTail,
           class ParentType, class ParentTypeListTail>
 class KGenericFactory< KTypeList<Product, ProductListTail>,
-                       KTypeList<ParentType, ParentTypeListTail> >
+    KTypeList<ParentType, ParentTypeListTail> >
     : public KGenericFactoryBase<KTypeList<Product, ProductListTail> >
 {
 public:
-    explicit KGenericFactory( const char *componentName  = 0 )
+    explicit KGenericFactory(const char *componentName  = 0)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(componentName)
     {}
-    explicit KGenericFactory( const KAboutData *data )
+    explicit KGenericFactory(const KAboutData *data)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(data)
     {}
 
-
 protected:
-    virtual QObject *createObject( QObject *parent,
-                                   const char *className, const QStringList &args )
+    virtual QObject *createObject(QObject *parent,
+                                  const char *className, const QStringList &args)
     {
         return KDEPrivate::MultiFactory< KTypeList< Product, ProductListTail >,
-                                         KTypeList< ParentType, ParentTypeListTail > >
-                                       ::create( 0, 0, parent,
-                                                 className, args );
+               KTypeList< ParentType, ParentTypeListTail > >
+               ::create(0, 0, parent,
+                        className, args);
     }
 };
 
 #endif
 #endif
-
 

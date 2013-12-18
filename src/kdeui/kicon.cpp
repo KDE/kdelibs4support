@@ -18,25 +18,24 @@
 
 #include "kicon.h"
 
-
 #include "kiconloader.h"
 #include "kiconengine.h"
 
-KIcon::KIcon(const QString& iconName, KIconLoader* iconLoader, const QStringList &overlays)
-  : QIcon(new KIconEngine(iconName, iconLoader ? iconLoader : KIconLoader::global(), overlays)),
-    d(0)
+KIcon::KIcon(const QString &iconName, KIconLoader *iconLoader, const QStringList &overlays)
+    : QIcon(new KIconEngine(iconName, iconLoader ? iconLoader : KIconLoader::global(), overlays)),
+      d(0)
 {
 }
 
-KIcon::KIcon(const QString& iconName, KIconLoader* iconLoader)
-  : QIcon(new KIconEngine(iconName, iconLoader ? iconLoader : KIconLoader::global())),
-    d(0)
+KIcon::KIcon(const QString &iconName, KIconLoader *iconLoader)
+    : QIcon(new KIconEngine(iconName, iconLoader ? iconLoader : KIconLoader::global())),
+      d(0)
 {
 }
 
-KIcon::KIcon(const QString& iconName)
-  : QIcon(new KIconEngine(iconName, KIconLoader::global())),
-    d(0)
+KIcon::KIcon(const QString &iconName)
+    : QIcon(new KIconEngine(iconName, KIconLoader::global())),
+      d(0)
 {
 }
 
@@ -45,9 +44,9 @@ KIcon::KIcon()
 {
 }
 
-KIcon::KIcon(const QIcon& copy)
-  : QIcon(copy),
-    d(0)
+KIcon::KIcon(const QIcon &copy)
+    : QIcon(copy),
+      d(0)
 {
 }
 

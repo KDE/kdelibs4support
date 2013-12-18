@@ -1,4 +1,3 @@
-/* kate: tab-indents off; replace-tabs on; tab-width 4; remove-trailing-space on; encoding utf-8;*/
 /*
  *  This file is part of the KDE libraries
  *  Copyright (c) 2003 Joseph Wenninger <jowenn@kde.org>
@@ -72,56 +71,55 @@ public:
     {
         autoRemove = true;
         exists = false;
-        error=0;
+        error = 0;
     }
 };
 
 KTempDir::KTempDir(const QString &directoryPrefix, int mode) : d(new Private)
 {
-    (void) create( directoryPrefix.isEmpty() ? QDir::tempPath() + QLatin1Char('/') + QCoreApplication::applicationName() : directoryPrefix , mode);
+    (void) create(directoryPrefix.isEmpty() ? QDir::tempPath() + QLatin1Char('/') + QCoreApplication::applicationName() : directoryPrefix, mode);
 }
 
 bool KTempDir::create(const QString &directoryPrefix, int mode)
 {
-   QByteArray nme = QFile::encodeName(directoryPrefix) + "XXXXXX";
-   QTemporaryDir tempdir(nme);
-   tempdir.setAutoRemove(false);
-   if(!tempdir.isValid())
-   {
-       qWarning() << "KTempDir: Error trying to create " << nme
-       << ": " << ::strerror(errno);
-       d->tmpName.clear();
-       return false;
-   }
+    QByteArray nme = QFile::encodeName(directoryPrefix) + "XXXXXX";
+    QTemporaryDir tempdir(nme);
+    tempdir.setAutoRemove(false);
+    if (!tempdir.isValid()) {
+        qWarning() << "KTempDir: Error trying to create " << nme
+                   << ": " << ::strerror(errno);
+        d->tmpName.clear();
+        return false;
+    }
 
-   // got a return value != 0
-   QString realNameStr(tempdir.path());
-   d->tmpName = realNameStr + QLatin1Char('/');
-   qDebug() << "KTempDir: Temporary directory created :" << d->tmpName;
+    // got a return value != 0
+    QString realNameStr(tempdir.path());
+    d->tmpName = realNameStr + QLatin1Char('/');
+    qDebug() << "KTempDir: Temporary directory created :" << d->tmpName;
 #ifndef Q_OS_WIN
-   if(chmod(QFile::encodeName(realNameStr), mode&(~s_umask)) < 0) {
-       qWarning() << "KTempDir: Unable to change permissions on" << d->tmpName
-                  << ":" << ::strerror(errno);
-       d->error = errno;
-       d->tmpName.clear();
-       tempdir.remove(); // Cleanup created directory
-       return false;
-   }
+    if (chmod(QFile::encodeName(realNameStr), mode & (~s_umask)) < 0) {
+        qWarning() << "KTempDir: Unable to change permissions on" << d->tmpName
+                   << ":" << ::strerror(errno);
+        d->error = errno;
+        d->tmpName.clear();
+        tempdir.remove(); // Cleanup created directory
+        return false;
+    }
 
-   // Success!
-   d->exists = true;
+    // Success!
+    d->exists = true;
 
-   // Set uid/gid (necessary for SUID programs)
-   if(chown(QFile::encodeName(realNameStr), getuid(), getgid()) < 0) {
-       // Just warn, but don't failover yet
-       qWarning() << "KTempDir: Unable to change owner on" << d->tmpName
-                  << ":" << ::strerror(errno);
-   }
+    // Set uid/gid (necessary for SUID programs)
+    if (chown(QFile::encodeName(realNameStr), getuid(), getgid()) < 0) {
+        // Just warn, but don't failover yet
+        qWarning() << "KTempDir: Unable to change owner on" << d->tmpName
+                   << ":" << ::strerror(errno);
+    }
 
 #endif
-   // Success!
-   d->exists = true;
-   return true;
+    // Success!
+    d->exists = true;
+    return true;
 }
 
 KTempDir::~KTempDir()
@@ -160,44 +158,50 @@ bool KTempDir::autoRemove() const
 
 void KTempDir::unlink()
 {
-    if (!d->exists) return;
-    if (KTempDir::removeDir(d->tmpName))
-        d->error=0;
-    else
-        d->error=errno;
-    d->exists=false;
+    if (!d->exists) {
+        return;
+    }
+    if (KTempDir::removeDir(d->tmpName)) {
+        d->error = 0;
+    } else {
+        d->error = errno;
+    }
+    d->exists = false;
 }
 
 #ifndef Q_OS_WIN
 // Auxiliary recursive function for removeDirs
-static bool rmtree(const QString& name)
+static bool rmtree(const QString &name)
 {
     if (QFileInfo(name).isDir()) {
-        Q_FOREACH(const QFileInfo & entry, QDir(name).entryInfoList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot)) {
-            if( ! rmtree(entry.absoluteFilePath()))
+        Q_FOREACH (const QFileInfo &entry, QDir(name).entryInfoList(QDir::AllEntries | QDir::Hidden | QDir::NoDotAndDotDot)) {
+            if (! rmtree(entry.absoluteFilePath())) {
                 return false;
+            }
         }
     }
     return remove(name.toLocal8Bit().data()) != -1;
 }
 #endif
 
-bool KTempDir::removeDir( const QString& path )
+bool KTempDir::removeDir(const QString &path)
 {
     //kDebug(180) << path;
-    if ( !QFile::exists( path ) )
-        return true; // The goal is that there is no directory
+    if (!QFile::exists(path)) {
+        return true;    // The goal is that there is no directory
+    }
 
 #ifdef Q_OS_WIN
     QVarLengthArray<WCHAR, MAX_PATH> name;
-    name.resize( path.length() + 2 ); // double null terminated!
-    memcpy( name.data(), path.utf16(), path.length() * sizeof(WCHAR) );
+    name.resize(path.length() + 2);   // double null terminated!
+    memcpy(name.data(), path.utf16(), path.length() * sizeof(WCHAR));
     name[path.length()     ] = 0;
     name[path.length() + 1 ] = 0;
-    if(path.endsWith(QLatin1Char('/')) || path.endsWith(QLatin1Char('\\')))
-      name[path.length() - 1 ] = 0;
+    if (path.endsWith(QLatin1Char('/')) || path.endsWith(QLatin1Char('\\'))) {
+        name[path.length() - 1 ] = 0;
+    }
     SHFILEOPSTRUCTW fileOp;
-    memset(&fileOp, 0, sizeof(SHFILEOPSTRUCTW) );
+    memset(&fileOp, 0, sizeof(SHFILEOPSTRUCTW));
     fileOp.wFunc = FO_DELETE;
     fileOp.pFrom = (LPCWSTR)name.constData();
     fileOp.fFlags = FOF_NOCONFIRMATION | FOF_SILENT;
@@ -206,10 +210,10 @@ bool KTempDir::removeDir( const QString& path )
 #else
     fileOp.fFlags |= FOF_NOERRORUI;
 #endif
-    errno = SHFileOperationW( &fileOp );
+    errno = SHFileOperationW(&fileOp);
     return (errno == 0);
 #else
-    return rmtree( path );
+    return rmtree(path);
 #endif
 }
 

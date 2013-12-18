@@ -142,7 +142,7 @@ public:
      * @internal Sets the Country Division Code
      * The worker of the same-name KLocale API function.
      */
-    bool setCountryDivisionCode(const QString & countryDivision);
+    bool setCountryDivisionCode(const QString &countryDivision);
 
     /**
      * @internal Returns the Country Division Code
@@ -906,7 +906,7 @@ public:
      * @internal Returns the user's default binary unit dialect.
      * The worker of the same-name KLocale API function.
      */
-   virtual KLocale::BinaryUnitDialect binaryUnitDialect() const;
+    virtual KLocale::BinaryUnitDialect binaryUnitDialect() const;
 
     /**
      * @internal Sets the default dialect for this locale
@@ -1125,15 +1125,15 @@ public:
         setObjectName(QLatin1String("kdetranslator"));
     }
 
-    virtual QString translate(const char* context,
+    virtual QString translate(const char *context,
                               const char *sourceText,
-                              const char* comment
+                              const char *comment
                               , int n
-                              ) const
+                             ) const
     {
         return KLocalizedString::translateQt(context, sourceText, comment
                                              , n
-            );
+                                            );
     }
 
     virtual bool isEmpty() const

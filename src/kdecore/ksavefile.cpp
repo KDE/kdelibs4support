@@ -1,4 +1,3 @@
-/* kate: tab-indents off; replace-tabs on; tab-width 4; remove-trailing-space on; encoding utf-8;*/
 /*
   This file is part of the KDE libraries
   Copyright 1999 Waldo Bastian <bastian@kde.org>
@@ -25,7 +24,6 @@
 
 #include <QDir>
 #include <QTemporaryFile>
-
 
 #include <sys/types.h>
 #include <sys/stat.h> // umask, fchmod
@@ -68,12 +66,12 @@ public:
 };
 
 KSaveFile::KSaveFile()
- : d(new Private())
+    : d(new Private())
 {
 }
 
 KSaveFile::KSaveFile(const QString &filename)
- : d(new Private())
+    : d(new Private())
 {
     KSaveFile::setFileName(filename);
 }
@@ -92,16 +90,16 @@ bool KSaveFile::open(OpenMode flags)
     }
     d->needFinalize = false;
 
-    if ( d->realFileName.isEmpty() ) {
-        d->error=QFile::OpenError;
-        d->errorString=tr("No target filename has been given.");
+    if (d->realFileName.isEmpty()) {
+        d->error = QFile::OpenError;
+        d->errorString = tr("No target filename has been given.");
         return false;
     }
 
-    if ( !d->tempFileName.isNull() ) {
+    if (!d->tempFileName.isNull()) {
 #if 0 // do not set an error here, this open() fails, but the file itself is without errors
-        d->error=QFile::OpenError;
-        d->errorString=tr("Already opened.");
+        d->error = QFile::OpenError;
+        d->errorString = tr("Already opened.");
 #endif
         return false;
     }
@@ -129,12 +127,12 @@ bool KSaveFile::open(OpenMode flags)
         const QFileInfo fileInfo(d->realFileName);
         QDir parentDir = fileInfo.dir();
         if (!QFileInfo(parentDir.absolutePath()).isWritable()) {
-            d->error=QFile::PermissionsError;
-            d->errorString=tr("Insufficient permissions in target directory.");
+            d->error = QFile::PermissionsError;
+            d->errorString = tr("Insufficient permissions in target directory.");
             return false;
         }
-        d->error=QFile::OpenError;
-        d->errorString=tr("Unable to open temporary file.");
+        d->error = QFile::OpenError;
+        d->errorString = tr("Unable to open temporary file.");
         return false;
     }
 
@@ -142,7 +140,7 @@ bool KSaveFile::open(OpenMode flags)
     // permissions are the same as existing file so the existing
     // file's permissions are preserved. this will succeed completely
     // only if we are the same owner and group - or allmighty root.
-    QFileInfo fi ( d->realFileName );
+    QFileInfo fi(d->realFileName);
     if (fi.exists()) {
         //Qt apparently has no way to change owner/group of file :(
         if (fchown(tempFile.handle(), fi.ownerId(), fi.groupId())) {
@@ -151,9 +149,8 @@ bool KSaveFile::open(OpenMode flags)
         }
 
         tempFile.setPermissions(fi.permissions());
-    }
-    else {
-        fchmod(tempFile.handle(), 0666&(~s_umask));
+    } else {
+        fchmod(tempFile.handle(), 0666 & (~s_umask));
     }
 
     //Open oursleves with the temporary file
@@ -164,7 +161,7 @@ bool KSaveFile::open(OpenMode flags)
     }
 
     d->tempFileName = tempFile.fileName();
-    d->error=QFile::NoError;
+    d->error = QFile::NoError;
     d->errorString.clear();
     d->needFinalize = true;
     return true;
@@ -175,8 +172,8 @@ void KSaveFile::setFileName(const QString &filename)
     d->realFileName = filename;
 
     // make absolute if needed
-    if ( QDir::isRelativePath( filename ) ) {
-        d->realFileName = QDir::current().absoluteFilePath( filename );
+    if (QDir::isRelativePath(filename)) {
+        d->realFileName = QDir::current().absoluteFilePath(filename);
     }
 
     const QFileInfo fileInfo(d->realFileName);
@@ -188,7 +185,7 @@ void KSaveFile::setFileName(const QString &filename)
 
 QFile::FileError KSaveFile::error() const
 {
-    if ( d->error != QFile::NoError ) {
+    if (d->error != QFile::NoError) {
         return d->error;
     } else {
         return QFile::error();
@@ -197,7 +194,7 @@ QFile::FileError KSaveFile::error() const
 
 QString KSaveFile::errorString() const
 {
-    if ( !d->errorString.isEmpty() ) {
+    if (!d->errorString.isEmpty()) {
         return d->errorString;
     } else {
         return QFile::errorString();
@@ -232,14 +229,18 @@ bool KSaveFile::finalize()
     bool success = false;
 #ifdef Q_OS_UNIX
     static int extraSync = -1;
-    if (extraSync < 0)
+    if (extraSync < 0) {
         extraSync = getenv("KDE_EXTRA_FSYNC") != 0 ? 1 : 0;
+    }
     if (extraSync) {
         if (flush()) {
             Q_FOREVER {
-                if (!FDATASYNC(handle()))
+            if (!FDATASYNC(handle()))
+                {
                     break;
-                if (errno != EINTR) {
+                }
+                if (errno != EINTR)
+                {
                     d->error = QFile::WriteError;
                     d->errorString = tr("Synchronization to disk failed");
                     break;
@@ -260,18 +261,18 @@ bool KSaveFile::finalize()
         //to the temp file without creating a small race condition. So we use
         //the standard rename call instead, which will do the copy without the
         //race condition.
- #ifdef Q_OS_WIN
-         else if (0 == kdewin32_rename(d->tempFileName,d->realFileName)) {
- #else
-         else if (0 == ::rename(QFile::encodeName(d->tempFileName).constData(),
-                                QFile::encodeName(d->realFileName).constData())) {
- #endif
-            d->error=QFile::NoError;
+#ifdef Q_OS_WIN
+        else if (0 == kdewin32_rename(d->tempFileName, d->realFileName)) {
+#else
+        else if (0 == ::rename(QFile::encodeName(d->tempFileName).constData(),
+                               QFile::encodeName(d->realFileName).constData())) {
+#endif
+            d->error = QFile::NoError;
             d->errorString.clear();
             success = true;
         } else {
-            d->error=QFile::OpenError;
-            d->errorString=tr("Error during rename.");
+            d->error = QFile::OpenError;
+            d->errorString = tr("Error during rename.");
             QFile::remove(d->tempFileName);
         }
     } else { // direct overwrite

@@ -35,7 +35,10 @@ public:
         }
         m_loop.exec();
     }
-    bool signalEmitted() const { return m_emitted; }
+    bool signalEmitted() const
+    {
+        return m_emitted;
+    }
 
 private Q_SLOTS:
     void slotSignalEmitted()
@@ -46,7 +49,7 @@ private Q_SLOTS:
         m_loop.quit();
     }
 private:
-    QObject* m_obj;
+    QObject *m_obj;
     bool m_emitted;
     QEventLoop m_loop;
     QTimer m_timer;
@@ -54,7 +57,7 @@ private:
 
 // Unit test for this code: tests/kglobaltest.cpp
 
-bool QTest::kWaitForSignal(QObject *obj, const char *signal, int timeout )
+bool QTest::kWaitForSignal(QObject *obj, const char *signal, int timeout)
 {
     KDESignalSpy spy(obj, signal, timeout);
     return spy.signalEmitted();

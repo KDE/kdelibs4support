@@ -22,7 +22,8 @@
 
 #include <QWidget>
 
-namespace KDEPrivate {
+namespace KDEPrivate
+{
 
 /**
  * A color palette in table form.
@@ -31,41 +32,44 @@ namespace KDEPrivate {
  **/
 class  KColorTable : public QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  explicit KColorTable( QWidget *parent, int minWidth=210, int cols = 16);
-  ~KColorTable();
-  
-  void addToCustomColors( const QColor &);
-  void addToRecentColors( const QColor &);
-  
-  QString name() const;
-  
+    explicit KColorTable(QWidget *parent, int minWidth = 210, int cols = 16);
+    ~KColorTable();
+
+    void addToCustomColors(const QColor &);
+    void addToRecentColors(const QColor &);
+
+    QString name() const;
+
 public Q_SLOTS:
-  void setColors(const QString &collectionName);
+    void setColors(const QString &collectionName);
 
 Q_SIGNALS:
-  void colorSelected( const QColor &, const QString & );
-  void colorDoubleClicked( const QColor &, const QString & );
+    void colorSelected(const QColor &, const QString &);
+    void colorDoubleClicked(const QColor &, const QString &);
 
 private:
-  Q_PRIVATE_SLOT(d, void slotColorCellSelected( int index , const QColor& ))
-  Q_PRIVATE_SLOT(d, void slotColorCellDoubleClicked( int index , const QColor& ))
-  Q_PRIVATE_SLOT(d, void slotColorTextSelected( const QString &colorText ))
-  Q_PRIVATE_SLOT(d, void slotSetColors( const QString &_collectionName ))
-  Q_PRIVATE_SLOT(d, void slotShowNamedColorReadError( void ))
+    Q_PRIVATE_SLOT(d, void slotColorCellSelected(int index, const QColor &))
+    Q_PRIVATE_SLOT(d, void slotColorCellDoubleClicked(int index, const QColor &))
+    Q_PRIVATE_SLOT(d, void slotColorTextSelected(const QString &colorText))
+    Q_PRIVATE_SLOT(d, void slotSetColors(const QString &_collectionName))
+    Q_PRIVATE_SLOT(d, void slotShowNamedColorReadError(void))
 
-  void readNamedColor( void );
+    void readNamedColor(void);
 
 private:
-  virtual void setPalette(const QPalette& p) { QWidget::setPalette(p); }
-  
+    virtual void setPalette(const QPalette &p)
+    {
+        QWidget::setPalette(p);
+    }
+
 private:
-  class KColorTablePrivate;
-  friend class KColorTablePrivate;
-  KColorTablePrivate *const d;
-  
-  Q_DISABLE_COPY(KColorTable)
+    class KColorTablePrivate;
+    friend class KColorTablePrivate;
+    KColorTablePrivate *const d;
+
+    Q_DISABLE_COPY(KColorTable)
 };
 
 }

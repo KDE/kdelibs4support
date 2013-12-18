@@ -33,12 +33,13 @@ public:
     ~KPreviewPropsPluginPrivate() {}
 };
 
-KPreviewPropsPlugin::KPreviewPropsPlugin(KPropertiesDialog* props)
-  : KPropertiesDialogPlugin(props),d(new KPreviewPropsPluginPrivate)
+KPreviewPropsPlugin::KPreviewPropsPlugin(KPropertiesDialog *props)
+    : KPropertiesDialogPlugin(props), d(new KPreviewPropsPluginPrivate)
 {
 
-    if (properties->items().count()>1)
+    if (properties->items().count() > 1) {
         return;
+    }
 
     createLayout();
 }
@@ -46,17 +47,17 @@ KPreviewPropsPlugin::KPreviewPropsPlugin(KPropertiesDialog* props)
 void KPreviewPropsPlugin::createLayout()
 {
     // let the dialog create the page frame
-    QFrame* topframe = new QFrame();
+    QFrame *topframe = new QFrame();
     properties->addPage(topframe, i18n("P&review"));
     topframe->setFrameStyle(QFrame::NoFrame);
 
-    QVBoxLayout* tmp = new QVBoxLayout(topframe);
+    QVBoxLayout *tmp = new QVBoxLayout(topframe);
     tmp->setMargin(0);
 
     preview = new KFileMetaPreview(topframe);
 
-    tmp->addWidget(preview) ;
-    connect( properties, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), SLOT(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)) );
+    tmp->addWidget(preview);
+    connect(properties, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), SLOT(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
 }
 
 KPreviewPropsPlugin::~KPreviewPropsPlugin()
@@ -64,28 +65,32 @@ KPreviewPropsPlugin::~KPreviewPropsPlugin()
     delete d;
 }
 
-bool KPreviewPropsPlugin::supports( const KFileItemList &_items )
+bool KPreviewPropsPlugin::supports(const KFileItemList &_items)
 {
-    if ( _items.count() != 1 )
+    if (_items.count() != 1) {
         return false;
+    }
     bool metaDataEnabled = KProtocolInfo::showFilePreview(_items.first().url().scheme());
-    if (!metaDataEnabled)
+    if (!metaDataEnabled) {
         return false;
+    }
     const QMimeType mime = _items.first().determineMimeType();
     const QStringList supportedMimeTypes = KIO::PreviewJob::supportedMimeTypes();
-    foreach(const QString& supportedMime, supportedMimeTypes) {
-        if (mime.inherits(supportedMime))
+    foreach (const QString &supportedMime, supportedMimeTypes) {
+        if (mime.inherits(supportedMime)) {
             return true;
+        }
     }
     return false;
 }
 
-void KPreviewPropsPlugin::currentPageChanged( KPageWidgetItem *current, KPageWidgetItem * )
+void KPreviewPropsPlugin::currentPageChanged(KPageWidgetItem *current, KPageWidgetItem *)
 {
-    if ( current->widget() != preview->parent() )
+    if (current->widget() != preview->parent()) {
         return;
+    }
 
-    disconnect( properties, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), this, SLOT(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)) );
+    disconnect(properties, SIGNAL(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)), this, SLOT(currentPageChanged(KPageWidgetItem*,KPageWidgetItem*)));
     preview->showPreview(properties->item().url());
 }
 

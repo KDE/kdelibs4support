@@ -38,13 +38,13 @@ public:
     /**
      * @return the unique mimetype factory, creating it if necessary
      */
-    static KMimeTypeRepository * self();
+    static KMimeTypeRepository *self();
 
     /**
      * Return the patterns (globs) for a given mimetype
      * TEMPORARY method, it will go away once we can require shared-mime-info >= 0.70.
      */
-    QStringList patternsForMimetype(const QString& mimeType);
+    QStringList patternsForMimetype(const QString &mimeType);
 
     KMimeType::Ptr defaultMimeTypePtr();
 
@@ -58,7 +58,7 @@ public:
     /**
      * @internal
      */
-    static bool matchFileName( const QString &filename, const QString &pattern );
+    static bool matchFileName(const QString &filename, const QString &pattern);
 
 private:
     KMimeTypeRepository();

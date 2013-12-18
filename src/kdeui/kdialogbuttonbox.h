@@ -44,57 +44,57 @@ class KDialogButtonBoxPrivate;
 
 class KDE4SUPPORT_DEPRECATED_EXPORT KDialogButtonBox : public QDialogButtonBox
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  /**
-    * Create an empty container for buttons.
-    *
-    * If @p _orientation is @p Vertical, the buttons inserted with
-    * addButton() are laid out from top to bottom, otherwise they
-    * are laid out from left to right.
-    */
-  explicit KDialogButtonBox(QWidget *parent, Qt::Orientation _orientation = Qt::Horizontal);
+    /**
+      * Create an empty container for buttons.
+      *
+      * If @p _orientation is @p Vertical, the buttons inserted with
+      * addButton() are laid out from top to bottom, otherwise they
+      * are laid out from left to right.
+      */
+    explicit KDialogButtonBox(QWidget *parent, Qt::Orientation _orientation = Qt::Horizontal);
 
-  /**
-    * Free private data field
-    */
-  ~KDialogButtonBox();
+    /**
+      * Free private data field
+      */
+    ~KDialogButtonBox();
 
-  /**
-    * Creates a push button with the given text, adds it to the button box for the specified role, and returns the corresponding push button. 
-    * If role is invalid, no button is created, and zero is returned.
-    *
-    * The clicked signal of the button is automatically connected to the slot
-    *
-    * @param text the text of the button to add.
-    * @param role the button role
-    * @param receiver An object to connect to.
-    * @param slot A Qt slot to connect the 'clicked()' signal to.
-    *
-    * @return A pointer to the new button.
-    */
-  QPushButton *addButton(const QString& text, ButtonRole role, QObject * receiver, const char * slot);
+    /**
+      * Creates a push button with the given text, adds it to the button box for the specified role, and returns the corresponding push button.
+      * If role is invalid, no button is created, and zero is returned.
+      *
+      * The clicked signal of the button is automatically connected to the slot
+      *
+      * @param text the text of the button to add.
+      * @param role the button role
+      * @param receiver An object to connect to.
+      * @param slot A Qt slot to connect the 'clicked()' signal to.
+      *
+      * @return A pointer to the new button.
+      */
+    QPushButton *addButton(const QString &text, ButtonRole role, QObject *receiver, const char *slot);
 
-  /**
-    * Creates a push button with the given KUiItem, adds it to the button box for the specified role, and returns the corresponding push button. 
-    * If role is invalid, the button is created, but not added.
-    *
-    * The clicked signal of the button is automatically connected to the slot
-    *
-    * @param guiitem text and icon on the button
-    * @param role the button role
-    * @param receiver An object to connect to.
-    * @param slot A Qt slot to connect the 'clicked()' signal to.
-    *
-    * @return A pointer to the new button.
-    */
-  KPushButton *addButton(const KGuiItem& guiitem,ButtonRole role, QObject * receiver=0, const char * slot=0);
+    /**
+      * Creates a push button with the given KUiItem, adds it to the button box for the specified role, and returns the corresponding push button.
+      * If role is invalid, the button is created, but not added.
+      *
+      * The clicked signal of the button is automatically connected to the slot
+      *
+      * @param guiitem text and icon on the button
+      * @param role the button role
+      * @param receiver An object to connect to.
+      * @param slot A Qt slot to connect the 'clicked()' signal to.
+      *
+      * @return A pointer to the new button.
+      */
+    KPushButton *addButton(const KGuiItem &guiitem, ButtonRole role, QObject *receiver = 0, const char *slot = 0);
 
-  using QDialogButtonBox::addButton;
+    using QDialogButtonBox::addButton;
 
 private:
-  KDialogButtonBoxPrivate* const d;
+    KDialogButtonBoxPrivate *const d;
 };
 
 #endif

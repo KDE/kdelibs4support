@@ -74,7 +74,7 @@ public:
     QDate firstDayOfMonth(int year, int month) const;
     QDate lastDayOfMonth(int year, int month) const;
     const KLocale *locale() const;
-    void loadEraList(const KConfigGroup & cg);
+    void loadEraList(const KConfigGroup &cg);
     void addEra(char direction, int offset, const QDate &startDate, int startYear, const QDate &endDate,
                 const QString &name, const QString &shortName, const QString &format);
     QList<KCalendarEra> *eraList() const;
@@ -82,9 +82,9 @@ public:
     KCalendarEra era(const QString &eraName, int yearInEra) const;
     int shortYearWindowStartYear() const;
     int applyShortYearWindow(int inputYear) const;
-    void loadShortYearWindowStartYear(const KConfigGroup & cg);
+    void loadShortYearWindowStartYear(const KConfigGroup &cg);
     KSharedConfig::Ptr config();
-    void loadConfig(const QString & calendarType);
+    void loadConfig(const QString &calendarType);
 
     // Week utility functions
     int isoWeekNumber(const QDate &date, int *yearNum) const;

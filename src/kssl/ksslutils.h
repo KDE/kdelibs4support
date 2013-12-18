@@ -31,7 +31,6 @@
 class QString;
 class QDateTime;
 
-
 #if KSSL_HAVE_SSL
 // This functionality is missing in OpenSSL
 /**
@@ -54,7 +53,6 @@ QString ASN1_UTCTIME_QString(ASN1_UTCTIME *tm);
  */
 QDateTime ASN1_UTCTIME_QDateTime(ASN1_UTCTIME *tm, int *isGmt);
 
-
 /**
  *  Convert an ASN1 INTEGER value to a string.
  *
@@ -64,7 +62,5 @@ QDateTime ASN1_UTCTIME_QDateTime(ASN1_UTCTIME *tm, int *isGmt);
  */
 QString ASN1_INTEGER_QString(ASN1_INTEGER *aint);
 #endif
-
-
 
 #endif

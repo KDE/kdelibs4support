@@ -27,9 +27,10 @@
 #include <QtCore/QTextStream>
 #include <QtConcurrentRun>
 
-namespace QTest {
+namespace QTest
+{
 
-char* toString(const KLockFile::LockResult& result)
+char *toString(const KLockFile::LockResult &result)
 {
     static const char *const strings[] = {
         "LockOK", "LockFail", "LockError", "LockStale"
@@ -63,7 +64,7 @@ static const char *const lockName = "klockfiletest.lock";
 void Test_KLockFile::initTestCase()
 {
     qApp->setApplicationName(QLatin1String("qttest"));
-    QFile::remove( QString::fromLatin1(lockName) );
+    QFile::remove(QString::fromLatin1(lockName));
     lockFile = new KLockFile(QLatin1String(lockName));
 }
 
@@ -72,7 +73,7 @@ void Test_KLockFile::cleanupTestCase()
     delete lockFile;
 }
 
-static KLockFile::LockResult testLockFromProcess(const QString& lockName)
+static KLockFile::LockResult testLockFromProcess(const QString &lockName)
 {
     const int ret = QProcess::execute(QString::fromLatin1("./klockfile_testlock"), QStringList() << lockName);
     return KLockFile::LockResult(ret);
@@ -119,7 +120,7 @@ void Test_KLockFile::testStale()
     lf.setStaleTime(secs);
     QVERIFY(lf.staleTime() == secs);
 
-    QTest::qWait(secs*1000);
+    QTest::qWait(secs * 1000);
     QCOMPARE(lf.lock(), KLockFile::LockStale);
     QVERIFY(!lf.isLocked());
 
@@ -128,8 +129,9 @@ void Test_KLockFile::testStale()
     if (lf.getLockInfo(pid, host, app)) {
         QCOMPARE(pid, ::getpid());
         char hostname[256];
-        if (::gethostname(hostname, sizeof(hostname)) == 0)
+        if (::gethostname(hostname, sizeof(hostname)) == 0) {
             QCOMPARE(host, QLatin1String(hostname));
+        }
         QCOMPARE(app, QLatin1String("qttest")); // this is our app name
     }
 #endif
@@ -145,7 +147,7 @@ void Test_KLockFile::testUnlock()
 void Test_KLockFile::testStaleNoBlockFlag()
 {
 #ifdef Q_OS_WIN
-    QSKIP("lockfile on windows has different format",SkipSingle);
+    QSKIP("lockfile on windows has different format", SkipSingle);
 #else
     char hostname[256];
     ::gethostname(hostname, sizeof(hostname));
@@ -162,11 +164,10 @@ void Test_KLockFile::testStaleNoBlockFlag()
     QCOMPARE(lockFile.lock(KLockFile::NoBlockFlag), KLockFile::LockStale);
     QByteArray expectedMsg = QByteArray("WARNING: deleting stale lockfile ") + lockName;
     QTest::ignoreMessage(QtWarningMsg, expectedMsg.data());
-    QCOMPARE(lockFile.lock(KLockFile::NoBlockFlag|KLockFile::ForceFlag), KLockFile::LockOK);
+    QCOMPARE(lockFile.lock(KLockFile::NoBlockFlag | KLockFile::ForceFlag), KLockFile::LockOK);
 
     QVERIFY(lockFile.isLocked());
 #endif
 }
-
 
 QTEST_MAIN(Test_KLockFile)

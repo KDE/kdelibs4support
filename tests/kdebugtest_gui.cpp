@@ -4,8 +4,7 @@
 #include <QtCore/QVariant>
 #include <QPen>
 
-
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QWidget widget(0);
@@ -14,12 +13,12 @@ int main(int argc, char** argv)
 
     kDebug() << &widget;
 
-    QRect r(9,12,58,234);
+    QRect r(9, 12, 58, 234);
     QRegion reg(r);
-    reg += QRect(1,60,200,59);
+    reg += QRect(1, 60, 200, 59);
     kDebug() << reg;
 
-    QVariant v = QPen( Qt::red );
+    QVariant v = QPen(Qt::red);
     kDebug() << "Variant: " << v;
 
     return 0;

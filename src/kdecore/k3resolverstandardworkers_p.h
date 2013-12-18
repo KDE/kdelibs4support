@@ -37,40 +37,45 @@
 
 #include <config-network.h>
 
-namespace KNetwork { namespace Internal
+namespace KNetwork
 {
-  extern void initStandardWorkers() KDE4SUPPORT_NO_EXPORT;
+namespace Internal
+{
+extern void initStandardWorkers() KDE4SUPPORT_NO_EXPORT;
 
-  /**
-   * @internal
-   * The blacklist worker.
-   */
-  class KBlacklistWorker: public KNetwork::KResolverWorkerBase
-  {
-  public:
+/**
+ * @internal
+ * The blacklist worker.
+ */
+class KBlacklistWorker: public KNetwork::KResolverWorkerBase
+{
+public:
     static QStringList blacklist;
 
     static void loadBlacklist();
     static void init();
-    static bool isBlacklisted(const QString&);
+    static bool isBlacklisted(const QString &);
 
     virtual bool preprocess();
     virtual bool run();
-    virtual bool postprocess() { return true; }
-  };
+    virtual bool postprocess()
+    {
+        return true;
+    }
+};
 
-  /** @internal
-   * Standard worker.
-   */
-  class KStandardWorker: public KNetwork::KResolverWorkerBase
-  {
-  protected:
+/** @internal
+ * Standard worker.
+ */
+class KStandardWorker: public KNetwork::KResolverWorkerBase
+{
+protected:
     mutable QByteArray m_encodedName;
     quint16 port;
     int scopeid;
-    QList<KNetwork::KResolverResults*> resultList;
+    QList<KNetwork::KResolverResults *> resultList;
 
-  public:
+public:
     virtual ~KStandardWorker();
     bool sanityCheck();
 
@@ -83,30 +88,33 @@ namespace KNetwork { namespace Internal
     bool resolveNumerically();
 
     KNetwork::KResolver::ErrorCodes addUnix();
-  };
+};
 
 #if HAVE_GETADDRINFO
-  /** @internal
-   * Worker class based on getaddrinfo(3).
-   *
-   * This class does not do post-processing.
-   */
-  class KGetAddrinfoWorker: public KStandardWorker
-  {
-  public:
+/** @internal
+ * Worker class based on getaddrinfo(3).
+ *
+ * This class does not do post-processing.
+ */
+class KGetAddrinfoWorker: public KStandardWorker
+{
+public:
     KGetAddrinfoWorker()
     { }
 
     virtual ~KGetAddrinfoWorker();
     virtual bool preprocess();
     virtual bool run();
-    virtual bool postprocess() { return true; }
+    virtual bool postprocess()
+    {
+        return true;
+    }
 
     bool wantThis(int family);
-  };
+};
 #endif // HAVE_GETADDRINFO
 
-} } // namespace KNetwork::Internal
-
+}
+} // namespace KNetwork::Internal
 
 #endif

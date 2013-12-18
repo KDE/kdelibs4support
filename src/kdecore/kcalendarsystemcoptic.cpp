@@ -30,7 +30,7 @@
 // Shared d pointer implementations
 
 KCalendarSystemCopticPrivate::KCalendarSystemCopticPrivate(KCalendarSystemCoptic *q)
-                            : KCalendarSystemPrivate(q)
+    : KCalendarSystemPrivate(q)
 {
 }
 
@@ -380,16 +380,15 @@ QString KCalendarSystemCopticPrivate::weekDayName(int weekDay, KLocale::DateTime
     }
 }
 
-
 KCalendarSystemCoptic::KCalendarSystemCoptic(const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystem(*new KCalendarSystemCopticPrivate(this), config, locale)
+    : KCalendarSystem(*new KCalendarSystemCopticPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemCoptic::KCalendarSystemCoptic(KCalendarSystemCopticPrivate &dd,
-                                             const KSharedConfig::Ptr config, const KLocale *locale)
-                     : KCalendarSystem(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystem(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
@@ -449,7 +448,6 @@ QString KCalendarSystemCoptic::weekDayName(const QDate &date, WeekDayNameFormat 
 {
     return KCalendarSystem::weekDayName(date, format);
 }
-
 
 bool KCalendarSystemCoptic::isLunar() const
 {

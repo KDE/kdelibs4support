@@ -43,18 +43,18 @@ public:
 };
 
 KLocalizedDatePrivate::KLocalizedDatePrivate(const QDate &date, const KCalendarSystem *calendar, bool manageCalendar)
-                     : QSharedData(),
-                       m_date(date),
-                       m_calendar(calendar),
-                       m_manageCalendar(manageCalendar)
+    : QSharedData(),
+      m_date(date),
+      m_calendar(calendar),
+      m_manageCalendar(manageCalendar)
 {
 }
 
 KLocalizedDatePrivate::KLocalizedDatePrivate(const KLocalizedDatePrivate &rhs)
-                     : QSharedData(rhs),
-                       m_date(rhs.m_date),
-                       m_calendar(rhs.m_calendar),
-                       m_manageCalendar(rhs.m_manageCalendar)
+    : QSharedData(rhs),
+      m_date(rhs.m_date),
+      m_calendar(rhs.m_calendar),
+      m_manageCalendar(rhs.m_manageCalendar)
 {
     // If we're managing the calendar object, then take a copy,
     // i.e. user called setCalendarSystem() rather than passing a custom one into the constructor
@@ -92,18 +92,18 @@ KLocalizedDatePrivate::~KLocalizedDatePrivate()
  *****************************************************************************/
 
 KLocalizedDate::KLocalizedDate(const QDate &date, const KCalendarSystem *calendarSystem)
-              : d(new KLocalizedDatePrivate(date, calendarSystem, false))
+    : d(new KLocalizedDatePrivate(date, calendarSystem, false))
 {
 }
 
 KLocalizedDate::KLocalizedDate(int year, int month, int day, const KCalendarSystem *calendarSystem)
-              : d(new KLocalizedDatePrivate(QDate(), calendarSystem, false))
+    : d(new KLocalizedDatePrivate(QDate(), calendarSystem, false))
 {
     setDate(year, month, day);
 }
 
 KLocalizedDate::KLocalizedDate(const KLocalizedDate &rhs)
-              : d(new KLocalizedDatePrivate(*rhs.d))
+    : d(new KLocalizedDatePrivate(*rhs.d))
 {
 }
 
@@ -135,7 +135,7 @@ void KLocalizedDate::setCalendarSystem(KLocale::CalendarSystem calendarSystem)
         return;
     }
     KCalendarSystem *newCalendar =  KCalendarSystem::create(calendarSystem,
-                                                            new KLocale(*calendar()->locale()));
+                                    new KLocale(*calendar()->locale()));
     if (d->m_manageCalendar) {
         delete d->m_calendar;
     }

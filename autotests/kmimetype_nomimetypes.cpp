@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 
     KComponentData cData("foo");
 
-    KTestMessageHandler* msgHandler = new KTestMessageHandler;
+    KTestMessageHandler *msgHandler = new KTestMessageHandler;
     KMessage::setMessageHandler(msgHandler);
 
     KMimeType::Ptr s0 = KMimeType::mimeType("application/x-zerosize");

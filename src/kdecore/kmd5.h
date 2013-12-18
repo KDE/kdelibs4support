@@ -20,7 +20,7 @@
 
    The KMD5 class is based on a C++ implementation of
    "RSA Data Security, Inc. MD5 Message-Digest Algorithm" by
-   Mordechai T. Abzug,	Copyright (c) 1995.  This implementation                // krazy:exclude=copyright
+   Mordechai T. Abzug,  Copyright (c) 1995.  This implementation                // krazy:exclude=copyright
    passes the test-suite as defined in RFC 1321.
 
    The encoding and decoding utilities in KCodecs with the exception of
@@ -95,170 +95,169 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KMD5
 {
 public:
 
-  typedef unsigned char Digest[16];
+    typedef unsigned char Digest[16];
 
-  KMD5();
-  ~KMD5();
+    KMD5();
+    ~KMD5();
 
-  /**
-   * Constructor that updates the digest for the given string.
-   *
-   * @param in   C string or binary data
-   * @param len  if negative, calculates the length by using
-   *             strlen on the first parameter, otherwise
-   *             it trusts the given length (does not stop on NUL byte).
-   */
-  explicit KMD5(const char* in, int len = -1);
+    /**
+     * Constructor that updates the digest for the given string.
+     *
+     * @param in   C string or binary data
+     * @param len  if negative, calculates the length by using
+     *             strlen on the first parameter, otherwise
+     *             it trusts the given length (does not stop on NUL byte).
+     */
+    explicit KMD5(const char *in, int len = -1);
 
-  /**
-   * @overload
-   *
-   * Same as above except it accepts a QByteArray as its argument.
-   */
-  explicit KMD5(const QByteArray& a );
+    /**
+     * @overload
+     *
+     * Same as above except it accepts a QByteArray as its argument.
+     */
+    explicit KMD5(const QByteArray &a);
 
-  /**
-   * Updates the message to be digested. Be sure to add all data
-   * before you read the digest. After reading the digest, you
-   * can <b>not</b> add more data!
-   *
-   * @param in     message to be added to digest
-   * @param len    the length of the given message.
-   *
-   * @deprecated please use QCryptographicHash::addData instead
-   */
-  void update(const char* in, int len = -1);
+    /**
+     * Updates the message to be digested. Be sure to add all data
+     * before you read the digest. After reading the digest, you
+     * can <b>not</b> add more data!
+     *
+     * @param in     message to be added to digest
+     * @param len    the length of the given message.
+     *
+     * @deprecated please use QCryptographicHash::addData instead
+     */
+    void update(const char *in, int len = -1);
 
-  /**
-   * @overload
-   *
-   * please use QCryptographicHash::addData instead
-   */
-  void update(const unsigned char* in, int len = -1);
+    /**
+     * @overload
+     *
+     * please use QCryptographicHash::addData instead
+     */
+    void update(const unsigned char *in, int len = -1);
 
-  /**
-   * @overload
-   *
-   * @param in     message to be added to the digest (QByteArray).
-   *
-   * @deprecated please use QCryptographicHash::addData instead
-   */
-  void update(const QByteArray& in );
+    /**
+     * @overload
+     *
+     * @param in     message to be added to the digest (QByteArray).
+     *
+     * @deprecated please use QCryptographicHash::addData instead
+     */
+    void update(const QByteArray &in);
 
-  /**
-   * @overload
-   *
-   * reads the data from an I/O device, i.e. from a file (QFile).
-   *
-   * NOTE that the file must be open for reading.
-   *
-   * @param file       a pointer to FILE as returned by calls like f{d,re}open
-   *
-   * @returns false if an error occurred during reading.
-   *
-   * @deprecated please use QCryptographicHash::addData instead
-   */
-  bool update(QIODevice& file);
+    /**
+     * @overload
+     *
+     * reads the data from an I/O device, i.e. from a file (QFile).
+     *
+     * NOTE that the file must be open for reading.
+     *
+     * @param file       a pointer to FILE as returned by calls like f{d,re}open
+     *
+     * @returns false if an error occurred during reading.
+     *
+     * @deprecated please use QCryptographicHash::addData instead
+     */
+    bool update(QIODevice &file);
 
-  /**
-   * Calling this function will reset the calculated message digest.
-   * Use this method to perform another message digest calculation
-   * without recreating the KMD5 object.
-   *
-   * @deprecated please use QCryptographicHash::reset() instead
-   */
-  void reset();
+    /**
+     * Calling this function will reset the calculated message digest.
+     * Use this method to perform another message digest calculation
+     * without recreating the KMD5 object.
+     *
+     * @deprecated please use QCryptographicHash::reset() instead
+     */
+    void reset();
 
-  /**
-   * @return the raw representation of the digest
-   * @deprecated please use QCryptographicHash::result instead
-   */
-  const Digest& rawDigest (); //krazy:exclude=constref (simple array)
+    /**
+     * @return the raw representation of the digest
+     * @deprecated please use QCryptographicHash::result instead
+     */
+    const Digest &rawDigest();  //krazy:exclude=constref (simple array)
 
-  /**
-   * Fills the given array with the binary representation of the
-   * message digest.
-   *
-   * Use this method if you do not want to worry about making
-   * copy of the digest once you obtain it.
-   *
-   * @param bin an array of 16 characters ( char[16] )
-   */
-  void rawDigest( KMD5::Digest& bin );
+    /**
+     * Fills the given array with the binary representation of the
+     * message digest.
+     *
+     * Use this method if you do not want to worry about making
+     * copy of the digest once you obtain it.
+     *
+     * @param bin an array of 16 characters ( char[16] )
+     */
+    void rawDigest(KMD5::Digest &bin);
 
-  /**
-   * Returns the value of the calculated message digest in
-   * a hexadecimal representation.
-   * @deprecated please use QCryptographicHash::result().toHex() instead
-   */
-  QByteArray hexDigest ();
+    /**
+     * Returns the value of the calculated message digest in
+     * a hexadecimal representation.
+     * @deprecated please use QCryptographicHash::result().toHex() instead
+     */
+    QByteArray hexDigest();
 
-  /**
-   * @overload
-   */
-  void hexDigest(QByteArray&);
+    /**
+     * @overload
+     */
+    void hexDigest(QByteArray &);
 
-  /**
-   * Returns the value of the calculated message digest in
-   * a base64-encoded representation.
-   * @deprecated please use QCryptographicHash::result().toBase64() instead
-   */
-  QByteArray base64Digest ();
+    /**
+     * Returns the value of the calculated message digest in
+     * a base64-encoded representation.
+     * @deprecated please use QCryptographicHash::result().toBase64() instead
+     */
+    QByteArray base64Digest();
 
-  /**
-   * returns true if the calculated digest for the given
-   * message matches the given one.
-   */
-  bool verify( const KMD5::Digest& digest);
+    /**
+     * returns true if the calculated digest for the given
+     * message matches the given one.
+     */
+    bool verify(const KMD5::Digest &digest);
 
-  /**
-   * @overload
-   */
-  bool verify(const QByteArray&);
+    /**
+     * @overload
+     */
+    bool verify(const QByteArray &);
 
 protected:
-  /**
-   *  Performs the real update work.  Note
-   *  that length is implied to be 64.
-   */
-  void transform( const unsigned char buffer[64] );
+    /**
+     *  Performs the real update work.  Note
+     *  that length is implied to be 64.
+     */
+    void transform(const unsigned char buffer[64]);
 
-  /**
-   * finalizes the digest
-   */
-  void finalize();
-
-private:
-  KMD5(const KMD5& u);
-  KMD5& operator=(const KMD5& md);
-
-  void init();
-  void encode( unsigned char* output, quint32 *in, quint32 len );
-  void decode( quint32 *output, const unsigned char* in, quint32 len );
-
-  quint32 rotate_left( quint32 x, quint32 n );
-  quint32 F( quint32 x, quint32 y, quint32 z );
-  quint32 G( quint32 x, quint32 y, quint32 z );
-  quint32 H( quint32 x, quint32 y, quint32 z );
-  quint32 I( quint32 x, quint32 y, quint32 z );
-  void FF( quint32& a, quint32 b, quint32 c, quint32 d, quint32 x,
-               quint32  s, quint32 ac );
-  void GG( quint32& a, quint32 b, quint32 c, quint32 d, quint32 x,
-                quint32 s, quint32 ac );
-  void HH( quint32& a, quint32 b, quint32 c, quint32 d, quint32 x,
-                quint32 s, quint32 ac );
-  void II( quint32& a, quint32 b, quint32 c, quint32 d, quint32 x,
-             quint32 s, quint32 ac );
+    /**
+     * finalizes the digest
+     */
+    void finalize();
 
 private:
-  quint32 m_state[4];
-  quint32 m_count[2];
-  quint8 m_buffer[64];
-  Digest m_digest;
-  bool m_finalized;
+    KMD5(const KMD5 &u);
+    KMD5 &operator=(const KMD5 &md);
 
-  KMD5Private* d;
+    void init();
+    void encode(unsigned char *output, quint32 *in, quint32 len);
+    void decode(quint32 *output, const unsigned char *in, quint32 len);
+
+    quint32 rotate_left(quint32 x, quint32 n);
+    quint32 F(quint32 x, quint32 y, quint32 z);
+    quint32 G(quint32 x, quint32 y, quint32 z);
+    quint32 H(quint32 x, quint32 y, quint32 z);
+    quint32 I(quint32 x, quint32 y, quint32 z);
+    void FF(quint32 &a, quint32 b, quint32 c, quint32 d, quint32 x,
+            quint32  s, quint32 ac);
+    void GG(quint32 &a, quint32 b, quint32 c, quint32 d, quint32 x,
+            quint32 s, quint32 ac);
+    void HH(quint32 &a, quint32 b, quint32 c, quint32 d, quint32 x,
+            quint32 s, quint32 ac);
+    void II(quint32 &a, quint32 b, quint32 c, quint32 d, quint32 x,
+            quint32 s, quint32 ac);
+
+private:
+    quint32 m_state[4];
+    quint32 m_count[2];
+    quint8 m_buffer[64];
+    Digest m_digest;
+    bool m_finalized;
+
+    KMD5Private *d;
 };
-
 
 #endif // KCODECS_H

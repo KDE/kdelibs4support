@@ -23,73 +23,72 @@
 #include <QLayout>
 #include <QTimeEdit>
 
-
 #include "kdatewidget.h"
 
 class KDateTimeWidget::KDateTimeWidgetPrivate
 {
 public:
-  KDateWidget * dateWidget;
-  QTimeEdit * timeWidget;
+    KDateWidget *dateWidget;
+    QTimeEdit *timeWidget;
 };
 
-KDateTimeWidget::KDateTimeWidget(QWidget * parent)
-  : QWidget(parent)
-  , d( new KDateTimeWidgetPrivate )
+KDateTimeWidget::KDateTimeWidget(QWidget *parent)
+    : QWidget(parent)
+    , d(new KDateTimeWidgetPrivate)
 {
-  initWidget();
+    initWidget();
 }
 
-KDateTimeWidget::KDateTimeWidget(const QDateTime & datetime,
-                                 QWidget * parent)
-  : QWidget(parent)
-  , d( new KDateTimeWidgetPrivate )
+KDateTimeWidget::KDateTimeWidget(const QDateTime &datetime,
+                                 QWidget *parent)
+    : QWidget(parent)
+    , d(new KDateTimeWidgetPrivate)
 
 {
-  initWidget();
+    initWidget();
 
-  setDateTime(datetime);
+    setDateTime(datetime);
 }
 
 KDateTimeWidget::~KDateTimeWidget()
 {
-  delete d;
+    delete d;
 }
 
 void KDateTimeWidget::initWidget()
 {
-  QHBoxLayout *layout = new QHBoxLayout(this);
-  layout->setMargin(0);
+    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout->setMargin(0);
 
-  d->dateWidget = new KDateWidget(this);
-  d->timeWidget = new QTimeEdit(this);
-  layout->addWidget( d->dateWidget );
-  layout->addWidget( d->timeWidget );
+    d->dateWidget = new KDateWidget(this);
+    d->timeWidget = new QTimeEdit(this);
+    layout->addWidget(d->dateWidget);
+    layout->addWidget(d->timeWidget);
 
-  connect(d->dateWidget, SIGNAL(changed(QDate)),
-          SLOT(slotValueChanged()));
-  connect(d->timeWidget, SIGNAL(timeChanged(QTime)),
-          SLOT(slotValueChanged()));
+    connect(d->dateWidget, SIGNAL(changed(QDate)),
+            SLOT(slotValueChanged()));
+    connect(d->timeWidget, SIGNAL(timeChanged(QTime)),
+            SLOT(slotValueChanged()));
 }
 
-void KDateTimeWidget::setDateTime(const QDateTime & datetime)
+void KDateTimeWidget::setDateTime(const QDateTime &datetime)
 {
-  d->dateWidget->setDate(datetime.date());
-  d->timeWidget->setTime(datetime.time());
+    d->dateWidget->setDate(datetime.date());
+    d->timeWidget->setTime(datetime.time());
 }
 
 QDateTime KDateTimeWidget::dateTime() const
 {
-  return QDateTime(d->dateWidget->date(), d->timeWidget->time());
+    return QDateTime(d->dateWidget->date(), d->timeWidget->time());
 }
 
 void KDateTimeWidget::slotValueChanged()
 {
-  QDateTime datetime(d->dateWidget->date(),
-                     d->timeWidget->time());
+    QDateTime datetime(d->dateWidget->date(),
+                       d->timeWidget->time());
 
-  //qDebug() << "slotValueChanged(): " << datetime << "\n";
+    //qDebug() << "slotValueChanged(): " << datetime << "\n";
 
-  emit valueChanged(datetime);
+    emit valueChanged(datetime);
 }
 

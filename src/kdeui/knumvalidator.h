@@ -39,54 +39,55 @@ class QString;
   @author Glen Parker <glenebob@nwlink.com>
   @deprecated use QIntValidator (or fix KIntValidator for non-decimal bases)
 */
-class KDE4SUPPORT_DEPRECATED_EXPORT KIntValidator : public QValidator {
+class KDE4SUPPORT_DEPRECATED_EXPORT KIntValidator : public QValidator
+{
 
-  public:
+public:
     /**
      * Constructor.  Also sets the base value.
      */
-    explicit KIntValidator ( QWidget * parent, int base = 10 );
+    explicit KIntValidator(QWidget *parent, int base = 10);
     /**
      * Constructor.  Also sets the minimum, maximum, and numeric base values.
      */
-    KIntValidator ( int bottom, int top, QWidget * parent, int base = 10 );
+    KIntValidator(int bottom, int top, QWidget *parent, int base = 10);
     /**
      * Destructs the validator.
      */
-    virtual ~KIntValidator ();
+    virtual ~KIntValidator();
     /**
      * Validates the text, and return the result.  Does not modify the parameters.
      */
-    virtual State validate ( QString &, int & ) const;
+    virtual State validate(QString &, int &) const;
     /**
      * Fixes the text if possible, providing a valid string.  The parameter may be modified.
      */
-    virtual void fixup ( QString & ) const;
+    virtual void fixup(QString &) const;
     /**
      * Sets the minimum and maximum values allowed.
      * If @p top is greater than @p bottom, it is set to the value of @p bottom.
      */
-    virtual void setRange ( int bottom, int top );
+    virtual void setRange(int bottom, int top);
     /**
      * Sets the numeric base value. @p base must be between 2 and 36.
      */
-    virtual void setBase ( int base );
+    virtual void setBase(int base);
     /**
      * Returns the current minimum value allowed.
      */
-    virtual int bottom () const;
+    virtual int bottom() const;
     /**
      * Returns the current maximum value allowed.
      */
-    virtual int top () const;
+    virtual int top() const;
     /**
      * Returns the current numeric base.
      */
-    virtual int base () const;
+    virtual int base() const;
 
-  private:
+private:
     class KIntValidatorPrivate;
-    KIntValidatorPrivate * const d;
+    KIntValidatorPrivate *const d;
 };
 
 /**
@@ -102,35 +103,36 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KIntValidator : public QValidator {
    @deprecated use QDoubleValidator (and QLocale)
 **/
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KDoubleValidator : public QDoubleValidator {
-  Q_OBJECT
-  Q_PROPERTY( bool acceptLocalizedNumbers READ acceptLocalizedNumbers WRITE setAcceptLocalizedNumbers )
+class KDE4SUPPORT_DEPRECATED_EXPORT KDoubleValidator : public QDoubleValidator
+{
+    Q_OBJECT
+    Q_PROPERTY(bool acceptLocalizedNumbers READ acceptLocalizedNumbers WRITE setAcceptLocalizedNumbers)
 public:
-  /** Constuct a locale-aware KDoubleValidator with default range
-      (whatever QDoubleValidator uses for that) and parent @p
-      parent */
-  explicit KDoubleValidator( QObject * parent );
-  /** Constuct a locale-aware KDoubleValidator for range [@p bottom,@p
-      top] and a precision of @p decimals decimals after the decimal
-      point.  */
-  KDoubleValidator( double bottom, double top, int decimals,
-		    QObject * parent );
-  /** Destructs the validator.
-   */
-  virtual ~KDoubleValidator();
+    /** Constuct a locale-aware KDoubleValidator with default range
+        (whatever QDoubleValidator uses for that) and parent @p
+        parent */
+    explicit KDoubleValidator(QObject *parent);
+    /** Constuct a locale-aware KDoubleValidator for range [@p bottom,@p
+        top] and a precision of @p decimals decimals after the decimal
+        point.  */
+    KDoubleValidator(double bottom, double top, int decimals,
+                     QObject *parent);
+    /** Destructs the validator.
+     */
+    virtual ~KDoubleValidator();
 
-  /** Overloaded for internal reasons. The API is not affected. */
-  virtual QValidator::State validate( QString & input, int & pos ) const;
+    /** Overloaded for internal reasons. The API is not affected. */
+    virtual QValidator::State validate(QString &input, int &pos) const;
 
-  /** @return whether localized numbers are accepted (default: true) */
-  bool acceptLocalizedNumbers() const;
-  /** Sets whether to accept localized numbers (default: true) */
-  void setAcceptLocalizedNumbers( bool accept );
+    /** @return whether localized numbers are accepted (default: true) */
+    bool acceptLocalizedNumbers() const;
+    /** Sets whether to accept localized numbers (default: true) */
+    void setAcceptLocalizedNumbers(bool accept);
 
 private:
-  typedef QDoubleValidator base;
-  class KDoubleValidatorPrivate;
-  KDoubleValidatorPrivate * const d;
+    typedef QDoubleValidator base;
+    class KDoubleValidatorPrivate;
+    KDoubleValidatorPrivate *const d;
 };
 
 #endif

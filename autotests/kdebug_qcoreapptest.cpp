@@ -70,7 +70,10 @@ int main(int argc, char **argv)
     // This should appear, but disabling kdebug_qcoreapptest in kdebugdialog should make it go away.";
     kDebug() << "Simple debug";
 
-    if (KComponentData::hasMainComponent()) { abort(); return 2; }
+    if (KComponentData::hasMainComponent()) {
+        abort();
+        return 2;
+    }
 
     KConfig config("kdebugrc");
     Q_ASSERT(!config.hasGroup(QString::number(myArea)));
@@ -78,12 +81,18 @@ int main(int argc, char **argv)
     //Q_ASSERT(config.hasGroup("myarea"));
     //Q_ASSERT(config.group("myarea").readEntry("InfoOutput", 2) == 0);
 
-    if (KComponentData::hasMainComponent()) { abort(); return 3; }
+    if (KComponentData::hasMainComponent()) {
+        abort();
+        return 3;
+    }
 
     // Test what happens when creating a main component data _now_
     // In KF5: nothing.
     KComponentData mainData("kdebug_qcoreapptest_mainData");
-    if (!KComponentData::hasMainComponent()) { abort(); return 4; }
+    if (!KComponentData::hasMainComponent()) {
+        abort();
+        return 4;
+    }
     kDebug() << "This should appear, under the kdebug_qcoreapptest area";
     kDebug(264) << "Debug in area 264, still off by default";
     kDebug(100) << "Debug in area 100"; // unknown area, will use area 0 instead

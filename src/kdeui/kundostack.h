@@ -33,27 +33,27 @@ class KActionCollection;
 class KDE4SUPPORT_DEPRECATED_EXPORT KUndoStack : public QUndoStack
 {
     Q_OBJECT
-    public:
-        /**
-         * Constructs a KUndoStack with @p parent as parent
-         * @param parent parent of the object
-         */
-        KUndoStack(QObject* parent = 0);
+public:
+    /**
+     * Constructs a KUndoStack with @p parent as parent
+     * @param parent parent of the object
+     */
+    KUndoStack(QObject *parent = 0);
 
-        /**
-         * Creates an redo action with the default shortcut and icon and adds it to @p actionCollection
-         * @param actionCollection the KActionCollection that should be the parent of the action
-         * @param actionName the created action's object name, empty string will set it to the KDE default
-         * @return the created action.
-         */
-        QAction* createRedoAction(KActionCollection* actionCollection, const QString& actionName = QString());
-        /**
-         * Creates an undo action with the default KDE shortcut and icon and adds it to @p actionCollection
-         * @param actionCollection the KActionCollection that should be the parent of the action
-         * @param actionName the created action's object name, empty string will set it to the KDE default
-         * @return the created action.
-         */
-        QAction* createUndoAction(KActionCollection* actionCollection, const QString& actionName = QString());
+    /**
+     * Creates an redo action with the default shortcut and icon and adds it to @p actionCollection
+     * @param actionCollection the KActionCollection that should be the parent of the action
+     * @param actionName the created action's object name, empty string will set it to the KDE default
+     * @return the created action.
+     */
+    QAction *createRedoAction(KActionCollection *actionCollection, const QString &actionName = QString());
+    /**
+     * Creates an undo action with the default KDE shortcut and icon and adds it to @p actionCollection
+     * @param actionCollection the KActionCollection that should be the parent of the action
+     * @param actionName the created action's object name, empty string will set it to the KDE default
+     * @return the created action.
+     */
+    QAction *createUndoAction(KActionCollection *actionCollection, const QString &actionName = QString());
 };
 
 #endif

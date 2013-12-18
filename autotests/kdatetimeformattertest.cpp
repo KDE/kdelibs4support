@@ -30,7 +30,6 @@
 #include "klocale.h"
 #include "kconfiggroup.h"
 
-
 QTEST_MAIN(KDateTimeFormatterTest)
 
 void KDateTimeFormatterTest::testFormatDateTimePosix()

@@ -4,20 +4,20 @@
 #include "khbox.h"
 class QPushButton;
 
-class KHBoxTest : public KHBox {
+class KHBoxTest : public KHBox
+{
     Q_OBJECT
 
 public:
-    KHBoxTest( QWidget* parentWidget );
+    KHBoxTest(QWidget *parentWidget);
 
 public Q_SLOTS:
     void slotAdd();
     void slotRemove();
 
 private:
-    QPushButton* pbAdd;
-    QPushButton* pbRemove;
+    QPushButton *pbAdd;
+    QPushButton *pbRemove;
 };
-
 
 #endif

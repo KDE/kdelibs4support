@@ -23,7 +23,8 @@
 #include <QPainter>
 #include <QPixmap>
 
-namespace KDEPrivate {
+namespace KDEPrivate
+{
 
 void fillOpaqueRect(QPainter *painter, const QRect &rect, const QBrush &brush)
 {

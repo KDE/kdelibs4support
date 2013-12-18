@@ -33,8 +33,8 @@
 static QString loadTimeFormat(const QString &country)
 {
     const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                QString::fromLatin1("locale/l10n/%1/entry.desktop")
-                                                .arg(country));
+                         QString::fromLatin1("locale/l10n/%1/entry.desktop")
+                         .arg(country));
     if (file.isEmpty()) {
         return QString();
     }
@@ -49,7 +49,7 @@ void KLocaleTimeFormatTest::initTestCase()
     // for formatAndReadAllCountriesTest().
     QStringList countries(KLocale::global()->allCountriesList());
     QString timeFormat;
-    Q_FOREACH(const QString &c, countries) {
+    Q_FOREACH (const QString &c, countries) {
         timeFormat = loadTimeFormat(c);
         if (!timeFormat.isEmpty()) {
             m_allFormats.insert(c, timeFormat);
@@ -187,7 +187,7 @@ void KLocaleTimeFormatTest::formatAndReadAllCountriesTest()
 
     QMap<QString, QString>::const_iterator it(m_allFormats.constBegin());
     QMap<QString, QString>::const_iterator end(m_allFormats.constEnd());
-    for ( ; it != end; ++it) {
+    for (; it != end; ++it) {
         locale.setTimeFormat(it.value());
 
         bool ampm = locale.timeFormat().contains(QLatin1String("%p"));

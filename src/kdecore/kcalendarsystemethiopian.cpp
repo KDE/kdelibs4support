@@ -30,10 +30,12 @@
 class KCalendarSystemEthiopianPrivate : public KCalendarSystemCopticPrivate
 {
 public:
-    explicit KCalendarSystemEthiopianPrivate(KCalendarSystemEthiopian *q) : KCalendarSystemCopticPrivate(q) {
+    explicit KCalendarSystemEthiopianPrivate(KCalendarSystemEthiopian *q) : KCalendarSystemCopticPrivate(q)
+    {
     }
 
-    virtual ~KCalendarSystemEthiopianPrivate() {
+    virtual ~KCalendarSystemEthiopianPrivate()
+    {
     }
 
     virtual void loadDefaultEraList();
@@ -289,16 +291,15 @@ QString KCalendarSystemEthiopianPrivate::weekDayName(int weekDay, KLocale::DateT
     }
 }
 
-
 KCalendarSystemEthiopian::KCalendarSystemEthiopian(const KSharedConfig::Ptr config, const KLocale *locale)
-                        : KCalendarSystemCoptic(*new KCalendarSystemEthiopianPrivate(this), config, locale)
+    : KCalendarSystemCoptic(*new KCalendarSystemEthiopianPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemEthiopian::KCalendarSystemEthiopian(KCalendarSystemEthiopianPrivate &dd,
-                                                   const KSharedConfig::Ptr config, const KLocale *locale)
-                        : KCalendarSystemCoptic(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystemCoptic(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

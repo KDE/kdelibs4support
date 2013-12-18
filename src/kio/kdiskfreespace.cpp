@@ -26,7 +26,6 @@
 
 #include <kdebug.h>
 
-
 class KDiskFreeSpace::Private
 {
 public:
@@ -40,33 +39,29 @@ public:
     QString           m_path;
 };
 
-
 KDiskFreeSpace::KDiskFreeSpace(QObject *parent)
     : QObject(parent), d(new Private(this))
 {
 }
-
 
 KDiskFreeSpace::~KDiskFreeSpace()
 {
     delete d;
 }
 
-
-bool KDiskFreeSpace::readDF( const QString & mountPoint )
+bool KDiskFreeSpace::readDF(const QString &mountPoint)
 {
     d->m_path = mountPoint;
     return d->_k_calculateFreeSpace();
 }
 
-
 bool KDiskFreeSpace::Private::_k_calculateFreeSpace()
 {
-    KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo( m_path );
-    if ( info.isValid() ) {
+    KDiskFreeSpaceInfo info = KDiskFreeSpaceInfo::freeSpaceInfo(m_path);
+    if (info.isValid()) {
         quint64 sizeKiB = info.size() / 1024;
         quint64 availKiB = info.available() / 1024;
-        emit m_parent->foundMountPoint( info.mountPoint(), sizeKiB, sizeKiB-availKiB, availKiB );
+        emit m_parent->foundMountPoint(info.mountPoint(), sizeKiB, sizeKiB - availKiB, availKiB);
     }
 
     emit m_parent->done();
@@ -76,9 +71,9 @@ bool KDiskFreeSpace::Private::_k_calculateFreeSpace()
     return info.isValid();
 }
 
-KDiskFreeSpace * KDiskFreeSpace::findUsageInfo( const QString & path )
+KDiskFreeSpace *KDiskFreeSpace::findUsageInfo(const QString &path)
 {
-    KDiskFreeSpace * job = new KDiskFreeSpace;
+    KDiskFreeSpace *job = new KDiskFreeSpace;
     job->d->m_path = path;
     QTimer::singleShot(0, job, SLOT(_k_calculateFreeSpace()));
     return job;

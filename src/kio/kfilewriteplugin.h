@@ -25,14 +25,15 @@
 
 class QUrl;
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileWritePlugin : public QObject {
+class KDE4SUPPORT_DEPRECATED_EXPORT KFileWritePlugin : public QObject
+{
     Q_OBJECT
     friend class KFileWriterProvider;
 public:
     /**
      * @brief Constructor that initializes the object as a QObject.
      **/
-    KFileWritePlugin(QObject* parent, const QStringList& args);
+    KFileWritePlugin(QObject *parent, const QStringList &args);
     /**
      * @brief Destructor
      **/
@@ -41,15 +42,15 @@ public:
      * @brief determine if this plugin can write a value into a particular
      * resource.
      **/
-    virtual bool canWrite(const QUrl& file, const QString& key) = 0;
+    virtual bool canWrite(const QUrl &file, const QString &key) = 0;
     /**
      * @brief Write a set of values into a resource pointed to by @p file.
      **/
-    virtual bool write(const QUrl& file, const QVariantMap& data) = 0;
+    virtual bool write(const QUrl &file, const QVariantMap &data) = 0;
 
 private:
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 #endif

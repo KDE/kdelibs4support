@@ -80,11 +80,11 @@ QDate KDateTimeParser::parseDate(const QString &inputString,
 }
 
 DateTimeComponents KDateTimeParser::parseDatePosix(const QString &inputString,
-                                                   const QString &formatString,
-                                                   const KCalendarSystem *calendar,
-                                                   const KLocale *locale,
-                                                   KLocale::DigitSet digitSet,
-                                                   KLocale::DateTimeFormatStandard standard) const
+        const QString &formatString,
+        const KCalendarSystem *calendar,
+        const KLocale *locale,
+        KLocale::DigitSet digitSet,
+        KLocale::DateTimeFormatStandard standard) const
 {
     QString str = inputString.simplified().toLower();
     QString fmt = formatString.simplified();
@@ -317,10 +317,10 @@ DateTimeComponents KDateTimeParser::parseDatePosix(const QString &inputString,
 
 // Parse an input string to match a UNICODE DateTime format string and return any components found
 DateTimeComponents KDateTimeParser::parseDateUnicode(const QString &inputString,
-                                                     const QString &formatString,
-                                                     const KCalendarSystem *calendar,
-                                                     const KLocale *locale,
-                                                     KLocale::DigitSet digitSet) const
+        const QString &formatString,
+        const KCalendarSystem *calendar,
+        const KLocale *locale,
+        KLocale::DigitSet digitSet) const
 {
     Q_UNUSED(calendar);
     Q_UNUSED(locale);

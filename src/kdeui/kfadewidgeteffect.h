@@ -49,44 +49,44 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KFadeWidgetEffect : public QWidget
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(KFadeWidgetEffect)
-    public:
-        /**
-         * Create the animation widget. Takes a snapshot of the \p destWidget to use as old image
-         * that gets faded out.
-         *
-         * \param destWidget The widget that will change and should fade to the new look.
-         */
-        KFadeWidgetEffect(QWidget *destWidget);
+public:
+    /**
+     * Create the animation widget. Takes a snapshot of the \p destWidget to use as old image
+     * that gets faded out.
+     *
+     * \param destWidget The widget that will change and should fade to the new look.
+     */
+    KFadeWidgetEffect(QWidget *destWidget);
 
-        /**
-         * Destructor.
-         *
-         * \warning KFadeWidgetEffect deletes itself after the animation is finished.
-         */
-        ~KFadeWidgetEffect();
+    /**
+     * Destructor.
+     *
+     * \warning KFadeWidgetEffect deletes itself after the animation is finished.
+     */
+    ~KFadeWidgetEffect();
 
-        /**
-         * Starts the animation.
-         *
-         * Call this function after all visual changes are done.
-         *
-         * \param duration The duration of the animation in milliseconds.
-         */
-        void start(int duration = 250);
+    /**
+     * Starts the animation.
+     *
+     * Call this function after all visual changes are done.
+     *
+     * \param duration The duration of the animation in milliseconds.
+     */
+    void start(int duration = 250);
 
-    protected:
-        /**
-         * \internal
-         */
-        void paintEvent(QPaintEvent *);
+protected:
+    /**
+     * \internal
+     */
+    void paintEvent(QPaintEvent *);
 
-        /**
-         * \internal
-         */
-        KFadeWidgetEffectPrivate *const d_ptr;
+    /**
+     * \internal
+     */
+    KFadeWidgetEffectPrivate *const d_ptr;
 
-    private:
-        Q_PRIVATE_SLOT(d_func(), void finished())
+private:
+    Q_PRIVATE_SLOT(d_func(), void finished())
 };
 
 #endif // KFADEWIDGETEFFECT_H

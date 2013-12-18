@@ -1,4 +1,3 @@
-/* kate: tab-indents off; replace-tabs on; tab-width 4; remove-trailing-space on; encoding utf-8;*/
 /* This file is part of the KDE libraries
  *  Copyright 2006 Jaison Lee <lee.jaison@gmail.com>
  *
@@ -25,19 +24,19 @@
 
 class KTemporaryFilePrivate
 {
-    public:
-        KTemporaryFilePrivate(const KComponentData &c)
-            : componentData(c)
-        {
-        }
+public:
+    KTemporaryFilePrivate(const KComponentData &c)
+        : componentData(c)
+    {
+    }
 
-        inline QString defaultPrefix() const
-        {
-            // was: KStandardDirs::locateLocal("tmp", componentData.componentName(), componentData);
-            return QDir::tempPath() + QLatin1Char('/') + componentData.componentName();
-        }
+    inline QString defaultPrefix() const
+    {
+        // was: KStandardDirs::locateLocal("tmp", componentData.componentName(), componentData);
+        return QDir::tempPath() + QLatin1Char('/') + componentData.componentName();
+    }
 
-        KComponentData componentData;
+    KComponentData componentData;
 };
 
 KTemporaryFile::KTemporaryFile(const KComponentData &componentData)
@@ -55,13 +54,13 @@ KTemporaryFile::~KTemporaryFile()
 void KTemporaryFile::setPrefix(const QString &prefix)
 {
     QString oldTemplate = fileTemplate();
-    QString suffix = oldTemplate.mid(oldTemplate.lastIndexOf(QLatin1String("XXXXXX"))+6);
+    QString suffix = oldTemplate.mid(oldTemplate.lastIndexOf(QLatin1String("XXXXXX")) + 6);
     QString newPrefix = prefix;
 
-    if ( newPrefix.isEmpty() ) {
+    if (newPrefix.isEmpty()) {
         newPrefix = d->defaultPrefix();
     } else {
-        if ( !QDir::isAbsolutePath(newPrefix) ) {
+        if (!QDir::isAbsolutePath(newPrefix)) {
             newPrefix.prepend(QDir::tempPath() + QLatin1Char('/'));
         }
     }

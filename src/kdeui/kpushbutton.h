@@ -31,7 +31,6 @@
 class QDrag;
 class QMenu;
 
-
 /**
  * @brief A QPushButton with drag-support and KGuiItem support
  *
@@ -53,23 +52,23 @@ public:
     /**
      * Default constructor.
      */
-    explicit KPushButton( QWidget *parent = 0 );
+    explicit KPushButton(QWidget *parent = 0);
 
     /**
      * Constructor, that sets the button-text to @p text
      */
-    explicit KPushButton( const QString &text, QWidget *parent = 0 );
+    explicit KPushButton(const QString &text, QWidget *parent = 0);
 
     /**
      * Constructor, that sets an icon and the button-text to @p text
      */
-    KPushButton( const QIcon &icon, const QString &text, QWidget *parent = 0 );
+    KPushButton(const QIcon &icon, const QString &text, QWidget *parent = 0);
 
     /**
      * Constructor that takes a KGuiItem for the text, the icon, the tooltip
      * and the what's this help
      */
-    explicit KPushButton( const KGuiItem &item, QWidget *parent = 0 );
+    explicit KPushButton(const KGuiItem &item, QWidget *parent = 0);
 
     /**
      * Destructs the button.
@@ -79,7 +78,7 @@ public:
     /**
      * Enables/disables drag-support. Default is disabled.
      */
-    void setDragEnabled( bool enable );
+    void setDragEnabled(bool enable);
 
     /**
      * @returns if drag support is enabled or not.
@@ -89,12 +88,12 @@ public:
     /**
      * Sets the KGuiItem for this button.
      */
-    void setGuiItem( const KGuiItem& item );
+    void setGuiItem(const KGuiItem &item);
 
     /**
     * Sets the standard KGuiItem for this button.
     */
-    void setGuiItem( KStandardGuiItem::StandardItem item );
+    void setGuiItem(KStandardGuiItem::StandardItem item);
 
     /**
      * Reads the standard KGuiItem for this button.
@@ -105,24 +104,24 @@ public:
      * Sets the Icon Set for this button. It also takes into account the
      * "show icons on push buttons" user setting.
      */
-    void setIcon( const QIcon &icon );
+    void setIcon(const QIcon &icon);
 
     /**
     * Sets the text of the button
     */
-    void setText( const QString &text );
+    void setText(const QString &text);
 
     /**
      * Sets a delayed popup menu
      * for consistency, since menu() isn't virtual
      */
-     void setDelayedMenu(QMenu *delayed_menu);
+    void setDelayedMenu(QMenu *delayed_menu);
 
     /**
      * returns a delayed popup menu
      * since menu() isn't virtual
      */
-     QMenu *delayedMenu();
+    QMenu *delayedMenu();
 
     /**
      * Reimplemented to add arrow for delayed menu
@@ -135,7 +134,7 @@ public:
      *
      * @returns the KAuth::Action associated with this button.
      */
-     KAuth::Action authAction() const;
+    KAuth::Action authAction() const;
 
     /**
      * Sets the action object associated with this button
@@ -147,16 +146,16 @@ public:
      *
      * @param action the KAuth::Action to associate with this button.
      */
-     void setAuthAction(const KAuth::Action &action);
+    void setAuthAction(const KAuth::Action &action);
 
-     /**
-     * Sets the action object associated with this button
-     *
-     * Overloaded member to allow creating the action by name
-     *
-     * @param actionName the name of the action to associate
-     */
-     void setAuthAction(const QString &actionName);
+    /**
+    * Sets the action object associated with this button
+    *
+    * Overloaded member to allow creating the action by name
+    *
+    * @param actionName the name of the action to associate
+    */
+    void setAuthAction(const QString &actionName);
 
 protected:
     /**
@@ -165,22 +164,22 @@ protected:
      *
      * Default implementation returns 0, so that no drag is initiated.
      */
-    virtual QDrag * dragObject();
+    virtual QDrag *dragObject();
 
     /**
      * Reimplemented to add drag-support
      */
-    virtual void mousePressEvent( QMouseEvent * );
+    virtual void mousePressEvent(QMouseEvent *);
     /**
      * Reimplemented to add drag-support
      */
-    virtual void mouseMoveEvent( QMouseEvent * );
+    virtual void mouseMoveEvent(QMouseEvent *);
 
     /**
      * Reimplemented to add arrow for delayed menu
      * @since 4.4
      */
-    virtual void paintEvent( QPaintEvent * );
+    virtual void paintEvent(QPaintEvent *);
 
     /**
      * Starts a drag (dragCopy() by default) using dragObject()
@@ -210,11 +209,11 @@ private:
      * Internal.
      * Initialize the KPushButton instance
      */
-    void initWidget( const KGuiItem &item );
+    void initWidget(const KGuiItem &item);
 
 private:
     class KPushButtonPrivate;
-    KPushButtonPrivate * const d;
+    KPushButtonPrivate *const d;
 
     Q_PRIVATE_SLOT(d, void slotPressedInternal())
     Q_PRIVATE_SLOT(d, void slotClickedInternal())

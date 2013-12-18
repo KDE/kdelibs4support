@@ -27,12 +27,14 @@
 /// This header defines support for KUrl in KConfigGroup (readEntry/writeEntry)
 
 template <>
-inline void KConfigGroup::writeCheck(const char* key, const KUrl& value, KConfigBase::WriteConfigFlags flags) {
+inline void KConfigGroup::writeCheck(const char *key, const KUrl &value, KConfigBase::WriteConfigFlags flags)
+{
     writeEntry(key, value.url(), flags);
 }
 
 template <>
-inline KUrl KConfigGroup::readCheck(const char* key, const KUrl& defaultValue) const {
+inline KUrl KConfigGroup::readCheck(const char *key, const KUrl &defaultValue) const
+{
     return KUrl(readEntry(key, defaultValue.url()));
 }
 

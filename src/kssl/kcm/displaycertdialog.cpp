@@ -25,8 +25,8 @@
 #include <klocalizedstring.h>
 
 DisplayCertDialog::DisplayCertDialog(QWidget *parent)
- : QDialog(parent),
-   m_index(0)
+    : QDialog(parent),
+      m_index(0)
 {
     QVBoxLayout *layout = new QVBoxLayout;
     setLayout(layout);
@@ -68,7 +68,7 @@ void DisplayCertDialog::showCertificate(int index)
     const QSslCertificate &cert = m_certs.at(index);
     m_ui.subjectCertBox->setCertificate(cert, KSslCertificateBox::Subject);
     m_ui.issuerCertBox->setCertificate(cert, KSslCertificateBox::Issuer);
-    
+
     QString vp = i18nc("%1 is the effective date of the certificate, %2 is the expiry date", "%1 to %2",
                        cert.effectiveDate().toString(),
                        cert.expiryDate().toString());

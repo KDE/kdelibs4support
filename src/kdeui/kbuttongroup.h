@@ -50,7 +50,7 @@ public:
     /**
      * Construct a new empty KGroupBox.
      */
-    explicit KButtonGroup(QWidget* parent = 0);
+    explicit KButtonGroup(QWidget *parent = 0);
 
     /**
      * Destroys the widget.
@@ -68,7 +68,7 @@ public:
      * @return the index of @p button.
      * @since 4.3
      */
-    int id(QAbstractButton* button) const;
+    int id(QAbstractButton *button) const;
 
 public Q_SLOTS:
     /**
@@ -100,14 +100,14 @@ protected:
     /**
      * Reimplemented from QGroupBox.
      */
-    virtual void childEvent(QChildEvent* event);
+    virtual void childEvent(QChildEvent *event);
 
 private:
     Q_PRIVATE_SLOT(d, void slotClicked(int id))
 
     class Private;
     friend class Private;
-    Private * const d;
+    Private *const d;
 };
 
 #endif

@@ -25,12 +25,12 @@
 
 class Tester
 {
-    public:
-        void initConfig();
-        ~Tester();
+public:
+    void initConfig();
+    ~Tester();
 
-    private:
-        KConfig *m_config;
+private:
+    KConfig *m_config;
 };
 
 void Tester::initConfig()

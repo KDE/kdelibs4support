@@ -62,7 +62,7 @@ class KDE4SUPPORT_EXPORT K4TimeZoneWidget : public QTreeWidget
     Q_PROPERTY(bool itemsCheckable READ itemsCheckable WRITE setItemsCheckable)
     Q_PROPERTY(QAbstractItemView::SelectionMode selectionMode READ selectionMode WRITE setSelectionMode)
 
-  public:
+public:
     /**
      * Constructs a time zone selection widget.
      *
@@ -70,7 +70,7 @@ class KDE4SUPPORT_EXPORT K4TimeZoneWidget : public QTreeWidget
      * @param timeZones The time zone database to use. If 0, the system time zone
      *                  database is used.
      */
-    explicit K4TimeZoneWidget( QWidget *parent = 0, KTimeZones *timeZones = 0 );
+    explicit K4TimeZoneWidget(QWidget *parent = 0, KTimeZones *timeZones = 0);
 
     /**
      * Destroys the time zone selection widget.
@@ -123,7 +123,7 @@ class KDE4SUPPORT_EXPORT K4TimeZoneWidget : public QTreeWidget
      * @param zone The time zone name to be selected. Ignored if not recognized!
      * @param selected The new selection state.
      */
-    void setSelected( const QString &zone, bool selected );
+    void setSelected(const QString &zone, bool selected);
 
     /**
      * Unselect all timezones.
@@ -138,11 +138,11 @@ class KDE4SUPPORT_EXPORT K4TimeZoneWidget : public QTreeWidget
      *
      * @return formatted time zone name.
      */
-    static QString displayName( const KTimeZone &zone );
+    static QString displayName(const KTimeZone &zone);
 
-  private:
+private:
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 #endif

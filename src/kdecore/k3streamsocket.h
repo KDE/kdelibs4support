@@ -10,7 +10,7 @@
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
  *
- *  The above copyright notice and this permission notice shall be included 
+ *  The above copyright notice and this permission notice shall be included
  *  in all copies or substantial portions of the Software.
  *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
@@ -30,7 +30,8 @@
 #include "k3clientsocketbase.h"
 
 /** A namespace to store all networking-related (socket) classes. */
-namespace KNetwork {
+namespace KNetwork
+{
 
 class KResolverEntry;
 class KServerSocket;
@@ -97,155 +98,155 @@ class KStreamSocketPrivate;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KStreamSocket: public KClientSocketBase
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  /**
-   * Default constructor.
-   *
-   * @param node	destination host
-   * @param service	destination service to connect to
-   * @param parent	the parent QObject object
-   */
-  explicit KStreamSocket(const QString& node = QString(), const QString& service = QString(),
-		QObject* parent = 0L);
+    /**
+     * Default constructor.
+     *
+     * @param node    destination host
+     * @param service destination service to connect to
+     * @param parent  the parent QObject object
+     */
+    explicit KStreamSocket(const QString &node = QString(), const QString &service = QString(),
+                           QObject *parent = 0L);
 
-  /**
-   * Destructor. This closes the socket.
-   */
-  virtual ~KStreamSocket();
+    /**
+     * Destructor. This closes the socket.
+     */
+    virtual ~KStreamSocket();
 
-  /**
-   * Retrieves the timeout value (in milliseconds).
-   */
-  int timeout() const;
+    /**
+     * Retrieves the timeout value (in milliseconds).
+     */
+    int timeout() const;
 
-  /**
-   * Retrieves the remaining timeout time (in milliseconds). This value
-   * equals timeout() if there's no connection in progress.
-   */
-  int remainingTimeout() const;
+    /**
+     * Retrieves the remaining timeout time (in milliseconds). This value
+     * equals timeout() if there's no connection in progress.
+     */
+    int remainingTimeout() const;
 
-  /**
-   * Sets the timeout value. Setting this value while a connection attempt
-   * is in progress will reset the timer.
-   *
-   * Please note that the timeout value is valid for the connection attempt
-   * only. No other operations are timed against this value -- including the
-   * name lookup associated.
-   *
-   * @param msecs		the timeout value in milliseconds
-   */
-  void setTimeout(int msecs);
+    /**
+     * Sets the timeout value. Setting this value while a connection attempt
+     * is in progress will reset the timer.
+     *
+     * Please note that the timeout value is valid for the connection attempt
+     * only. No other operations are timed against this value -- including the
+     * name lookup associated.
+     *
+     * @param msecs       the timeout value in milliseconds
+     */
+    void setTimeout(int msecs);
 
-  /**
-   * Binds this socket to the given nodename and service,
-   * or use the default ones if none are given. In order to bind to a service
-   * and allow the operating system to choose the interface, set @p node to
-   * QString().
-   * 
-   * Reimplemented from KClientSocketBase.
-   *
-   * Upon successful binding, the bound() signal will be
-   * emitted. If an error is found, the gotError()
-   * signal will be emitted.
-   *
-   * @note Due to the internals of the name lookup and binding
-   *       mechanism, some (if not most) implementations of this function
-   *       do not actually bind the socket until the connection
-   *       is requested (see connect()). They only set the values
-   *       for future reference.
-   *
-   * This function returns true on success.
-   *
-   * @param node	the nodename
-   * @param service	the service
-   */
-  virtual bool bind(const QString& node = QString(),
-		    const QString& service = QString());
+    /**
+     * Binds this socket to the given nodename and service,
+     * or use the default ones if none are given. In order to bind to a service
+     * and allow the operating system to choose the interface, set @p node to
+     * QString().
+     *
+     * Reimplemented from KClientSocketBase.
+     *
+     * Upon successful binding, the bound() signal will be
+     * emitted. If an error is found, the gotError()
+     * signal will be emitted.
+     *
+     * @note Due to the internals of the name lookup and binding
+     *       mechanism, some (if not most) implementations of this function
+     *       do not actually bind the socket until the connection
+     *       is requested (see connect()). They only set the values
+     *       for future reference.
+     *
+     * This function returns true on success.
+     *
+     * @param node    the nodename
+     * @param service the service
+     */
+    virtual bool bind(const QString &node = QString(),
+                      const QString &service = QString());
 
-  /**
-   * Reimplemented from KClientSocketBase. Connect this socket to this
-   * specific address.
-   *
-   * Unlike bind(const QString&, const QString&) above, this function
-   * really does bind the socket. No lookup is performed. The bound()
-   * signal will be emitted.
-   */
-  virtual bool bind(const KResolverEntry& entry);
+    /**
+     * Reimplemented from KClientSocketBase. Connect this socket to this
+     * specific address.
+     *
+     * Unlike bind(const QString&, const QString&) above, this function
+     * really does bind the socket. No lookup is performed. The bound()
+     * signal will be emitted.
+     */
+    virtual bool bind(const KResolverEntry &entry);
 
-  /**
-   * Reimplemented from KClientSocketBase.
-   *
-   * Attempts to connect to the these hostname and service,
-   * or use the default ones if none are given. If a connection attempt
-   * is already in progress, check on its state and set the error status
-   * (NoError, meaning the connection is completed, or InProgress).
-   *
-   * If the blocking mode for this object is on, this function will only
-   * return when all the resolved peer addresses have been tried or when
-   * a connection is established.
-   *
-   * Upon successfully connecting, the connected() signal
-   * will be emitted. If an error is found, the gotError()
-   * signal will be emitted.
-   *
-   * This function also implements timeout handling.
-   *
-   * @param node	the remote node to connect to
-   * @param service	the service on the remote node to connect to
-   * @param mode        mode to operate this socket in
-   */
-  virtual bool connect(const QString& node = QString(),
-		       const QString& service = QString(),
-		       OpenMode mode = ReadWrite);
+    /**
+     * Reimplemented from KClientSocketBase.
+     *
+     * Attempts to connect to the these hostname and service,
+     * or use the default ones if none are given. If a connection attempt
+     * is already in progress, check on its state and set the error status
+     * (NoError, meaning the connection is completed, or InProgress).
+     *
+     * If the blocking mode for this object is on, this function will only
+     * return when all the resolved peer addresses have been tried or when
+     * a connection is established.
+     *
+     * Upon successfully connecting, the connected() signal
+     * will be emitted. If an error is found, the gotError()
+     * signal will be emitted.
+     *
+     * This function also implements timeout handling.
+     *
+     * @param node    the remote node to connect to
+     * @param service the service on the remote node to connect to
+     * @param mode        mode to operate this socket in
+     */
+    virtual bool connect(const QString &node = QString(),
+                         const QString &service = QString(),
+                         OpenMode mode = ReadWrite);
 
-  /**
-   * Unshadowing from KClientSocketBase.
-   */
-  virtual bool connect(const KResolverEntry& entry,
-		       OpenMode mode = ReadWrite);
+    /**
+     * Unshadowing from KClientSocketBase.
+     */
+    virtual bool connect(const KResolverEntry &entry,
+                         OpenMode mode = ReadWrite);
 
 Q_SIGNALS:
-  /**
-   * This signal is emitted when a connection timeout occurs.
-   */
-  void timedOut();
+    /**
+     * This signal is emitted when a connection timeout occurs.
+     */
+    void timedOut();
 
 private Q_SLOTS:
-  void hostFoundSlot();
-  void connectionEvent();
-  void timeoutSlot();
+    void hostFoundSlot();
+    void connectionEvent();
+    void timeoutSlot();
 
 private:
-  /**
-   * @internal
-   * If the user requested local bind before connection, bind the socket to one
-   * suitable address and return true. Also sets d->local to the address used.
-   *
-   * Return false in case of error.
-   */
-  bool bindLocallyFor(const KResolverEntry& peer);
+    /**
+     * @internal
+     * If the user requested local bind before connection, bind the socket to one
+     * suitable address and return true. Also sets d->local to the address used.
+     *
+     * Return false in case of error.
+     */
+    bool bindLocallyFor(const KResolverEntry &peer);
 
-  /**
-   * @internal
-   * Finishes the connection process by setting internal values and
-   * emitting the proper signals.
-   *
-   * Note: assumes d->local iterator points to the address that we bound
-   * to.
-   */
-  void connectionSucceeded(const KResolverEntry& peer);
+    /**
+     * @internal
+     * Finishes the connection process by setting internal values and
+     * emitting the proper signals.
+     *
+     * Note: assumes d->local iterator points to the address that we bound
+     * to.
+     */
+    void connectionSucceeded(const KResolverEntry &peer);
 
-  KStreamSocket(const KStreamSocket&);
-  KStreamSocket& operator=(const KStreamSocket&);
+    KStreamSocket(const KStreamSocket &);
+    KStreamSocket &operator=(const KStreamSocket &);
 
-  KStreamSocketPrivate* const d;
+    KStreamSocketPrivate *const d;
 
-  friend class KServerSocket;
-  friend class KBufferedSocket;
+    friend class KServerSocket;
+    friend class KBufferedSocket;
 };
 
-} 				// namespace KNetwork
+}               // namespace KNetwork
 
 #endif

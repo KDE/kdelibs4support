@@ -34,8 +34,8 @@
   * @param family the storage for family name
   * @param foundry the storage for foundry name
   */
-void splitFontString (const QString &name,
-                      QString *family, QString *foundry = NULL);
+void splitFontString(const QString &name,
+                     QString *family, QString *foundry = NULL);
 
 /**
   * @internal
@@ -46,7 +46,7 @@ void splitFontString (const QString &name,
   * @param name the raw font name reported by Qt
   * @return translated font name
   */
-QString translateFontName (const QString &name);
+QString translateFontName(const QString &name);
 
 /**
   * @internal
@@ -59,7 +59,7 @@ QString translateFontName (const QString &name);
   * @param trToRawNames storage for mapping of translated to raw names
   * @return sorted list of translated font names
   */
-QStringList translateFontNameList (const QStringList &names,
-                                   QHash<QString, QString> *trToRawNames = NULL);
+QStringList translateFontNameList(const QStringList &names,
+                                  QHash<QString, QString> *trToRawNames = NULL);
 
 # endif

@@ -62,8 +62,8 @@ public:
      * @param comment     description of the time zone, if any
      */
     KTzfileTimeZone(KTzfileTimeZoneSource *source, const QString &name,
-        const QString &countryCode = QString(), float latitude = UNKNOWN, float longitude = UNKNOWN,
-        const QString &comment = QString());
+                    const QString &countryCode = QString(), float latitude = UNKNOWN, float longitude = UNKNOWN,
+                    const QString &comment = QString());
 
     ~KTzfileTimeZone();
 
@@ -71,7 +71,6 @@ private:
     // d-pointer is in KTzfileTimeZoneBackend.
     // This is a requirement for classes inherited from KTimeZone.
 };
-
 
 /**
  * Backend class for KTzfileTimeZone class.
@@ -91,7 +90,7 @@ class KDE4SUPPORT_EXPORT KTzfileTimeZoneBackend : public KTimeZoneBackend  //kra
 public:
     /** Implements KTzfileTimeZone::KTzfileTimeZone(). */
     KTzfileTimeZoneBackend(KTzfileTimeZoneSource *source, const QString &name,
-        const QString &countryCode, float latitude, float longitude, const QString &comment);
+                           const QString &countryCode, float latitude, float longitude, const QString &comment);
 
     ~KTzfileTimeZoneBackend();
 
@@ -117,12 +116,11 @@ public:
      * @param caller calling KTzfileTimeZone object
      * @return @c true
      */
-    virtual bool hasTransitions(const KTimeZone* caller) const;
+    virtual bool hasTransitions(const KTimeZone *caller) const;
 
 private:
     KTzfileTimeZonePrivate *d;   // non-const
 };
-
 
 /**
  * A class to read and parse tzfile time zone definition files.
@@ -169,9 +167,8 @@ public:
     virtual KTimeZoneData *parse(const KTimeZone &zone) const;
 
 private:
-    KTzfileTimeZoneSourcePrivate * const d;
+    KTzfileTimeZoneSourcePrivate *const d;
 };
-
 
 /**
  * @internal

@@ -39,7 +39,8 @@
  * @author Daniel M. Duley <mosfet@kde.org>
  * @author Hamish Rodda <rodda@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KMenu : public QMenu {
+class KDE4SUPPORT_DEPRECATED_EXPORT KMenu : public QMenu
+{
     Q_OBJECT
 public:
     /**
@@ -53,7 +54,7 @@ public:
      *              into another menu as a submenu.
      * \param parent the parent QWidget object
      */
-    explicit KMenu(const QString& title, QWidget *parent = 0L);
+    explicit KMenu(const QString &title, QWidget *parent = 0L);
 
     /**
      * Destructs the object
@@ -63,12 +64,12 @@ public:
     /**
      * Inserts a title item with no icon.
      */
-    QAction* addTitle(const QString &text, QAction* before = 0L);
+    QAction *addTitle(const QString &text, QAction *before = 0L);
 
     /**
      * Inserts a title item with the given icon and title.
      */
-    QAction* addTitle(const QIcon &icon, const QString &text, QAction* before = 0L);
+    QAction *addTitle(const QIcon &icon, const QString &text, QAction *before = 0L);
 
     /**
      * Enables keyboard navigation by searching for the entered key sequence.
@@ -98,12 +99,12 @@ public:
      * The data property of all actions inserted into the context menu is modified
      * all the time to point to the action and menu it has been shown for
      */
-    QMenu* contextMenu();
+    QMenu *contextMenu();
 
     /**
      * Returns the context menu associated with this menu
      */
-    const QMenu* contextMenu() const;
+    const QMenu *contextMenu() const;
 
     /**
      * Hides the context menu if shown
@@ -113,12 +114,12 @@ public:
     /**
      * Returns the KMenu associated with the current context menu
      */
-    static KMenu* contextMenuFocus();
+    static KMenu *contextMenuFocus();
 
     /**
      * returns the QAction associated with the current context menu
      */
-    static QAction* contextMenuFocusAction();
+    static QAction *contextMenuFocusAction();
 
     /**
      * Return the state of the mouse buttons when the last menuitem was activated.
@@ -137,28 +138,26 @@ Q_SIGNALS:
      * @param menuAction The action that the context menu is currently on
      * @param ctxMenu The context menu itself
      */
-    void aboutToShowContextMenu(KMenu* menu, QAction* menuAction, QMenu* ctxMenu);
+    void aboutToShowContextMenu(KMenu *menu, QAction *menuAction, QMenu *ctxMenu);
 
 protected:
     virtual void closeEvent(QCloseEvent *);
-    virtual void keyPressEvent(QKeyEvent* e);
-    virtual void mouseReleaseEvent(QMouseEvent* e);
-    virtual void mousePressEvent(QMouseEvent* e);
-    virtual bool focusNextPrevChild( bool next );
+    virtual void keyPressEvent(QKeyEvent *e);
+    virtual void mouseReleaseEvent(QMouseEvent *e);
+    virtual void mousePressEvent(QMouseEvent *e);
+    virtual bool focusNextPrevChild(bool next);
     virtual void contextMenuEvent(QContextMenuEvent *e);
-    virtual void hideEvent(QHideEvent*);
+    virtual void hideEvent(QHideEvent *);
 
 private:
-    QString underlineText(const QString& text, uint length);
+    QString underlineText(const QString &text, uint length);
     class KMenuPrivate;
-    KMenuPrivate * const d;
+    KMenuPrivate *const d;
 
     Q_PRIVATE_SLOT(d, void resetKeyboardVars(bool b = false))
-    Q_PRIVATE_SLOT(d, void actionHovered(QAction*))
+    Q_PRIVATE_SLOT(d, void actionHovered(QAction *))
     Q_PRIVATE_SLOT(d, void showCtxMenu(const QPoint &))
 
 };
-
-
 
 #endif

@@ -31,7 +31,6 @@
 
 #include <QWidgetAction>
 
-
 class KShapeGesture;
 class KRockerGesture;
 class KShortcut;
@@ -211,27 +210,27 @@ class KShortcut;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KAction : public QWidgetAction
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  Q_PROPERTY( KShortcut shortcut READ shortcut WRITE setShortcut )
-  Q_PROPERTY( bool shortcutConfigurable READ isShortcutConfigurable WRITE setShortcutConfigurable )
-  Q_PROPERTY( KShortcut globalShortcut READ globalShortcut WRITE setGlobalShortcut )
+    Q_PROPERTY(KShortcut shortcut READ shortcut WRITE setShortcut)
+    Q_PROPERTY(bool shortcutConfigurable READ isShortcutConfigurable WRITE setShortcutConfigurable)
+    Q_PROPERTY(KShortcut globalShortcut READ globalShortcut WRITE setGlobalShortcut)
 #ifndef KDE_NO_DEPRECATED
-  Q_PROPERTY( bool globalShortcutAllowed READ globalShortcutAllowed WRITE setGlobalShortcutAllowed )
+    Q_PROPERTY(bool globalShortcutAllowed READ globalShortcutAllowed WRITE setGlobalShortcutAllowed)
 #endif
-  Q_PROPERTY( bool globalShortcutEnabled READ isGlobalShortcutEnabled )
-  Q_FLAGS( ShortcutType )
+    Q_PROPERTY(bool globalShortcutEnabled READ isGlobalShortcutEnabled)
+    Q_FLAGS(ShortcutType)
 
 public:
     /**
      * An enumeration about the two types of shortcuts in a KAction
      */
     enum ShortcutType {
-      /// The shortcut will immediately become active but may be reset to "default".
-      ActiveShortcut = 0x1,
-      /// The shortcut is a default shortcut - it becomes active when somebody decides to
-      /// reset shortcuts to default.
-      DefaultShortcut = 0x2
+        /// The shortcut will immediately become active but may be reset to "default".
+        ActiveShortcut = 0x1,
+        /// The shortcut is a default shortcut - it becomes active when somebody decides to
+        /// reset shortcuts to default.
+        DefaultShortcut = 0x2
     };
     Q_DECLARE_FLAGS(ShortcutTypes, ShortcutType)
 
@@ -241,12 +240,12 @@ public:
     //This enum will be ORed with ShortcutType in calls to KGlobalAccel, so it must not contain
     //any value equal to a value in ShortcutType.
     enum GlobalShortcutLoading {
-      /// Look up the action in global settings (using its main component's name and text())
-      /// and set the shortcut as saved there.
-      /// @see setGlobalShortcut()
-      Autoloading = 0x0,
-      /// Prevent autoloading of saved global shortcut for action
-      NoAutoloading = 0x4
+        /// Look up the action in global settings (using its main component's name and text())
+        /// and set the shortcut as saved there.
+        /// @see setGlobalShortcut()
+        Autoloading = 0x0,
+        /// Prevent autoloading of saved global shortcut for action
+        NoAutoloading = 0x4
     };
     /**
      * Constructs an action.
@@ -259,7 +258,7 @@ public:
      * @param text The visible text for this action.
      * @param parent The parent for this action.
      */
-    KAction(const QString& text, QObject *parent);
+    KAction(const QString &text, QObject *parent);
 
     /**
      * Constructs an action with text and icon; a shortcut may be specified by
@@ -272,7 +271,7 @@ public:
      * @param text The text that will be displayed.
      * @param parent The parent for this action.
      */
-    KAction(const QIcon& icon, const QString& text, QObject *parent);
+    KAction(const QIcon &icon, const QString &text, QObject *parent);
 
     /**
      * Standard destructor
@@ -296,7 +295,7 @@ public:
      *
      * @since 4.3
      */
-    void setHelpText(const QString& text);
+    void setHelpText(const QString &text);
 
     /**
      * Get the shortcut for this action.
@@ -321,7 +320,7 @@ public:
      * \param type type of shortcut to be set: active shortcut,
      *  default shortcut, or both (the default).
      */
-    void setShortcut(const KShortcut& shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setShortcut(const KShortcut &shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
 
     /**
      * \overload void setShortcut(const KShortcut& shortcut)
@@ -335,7 +334,7 @@ public:
      * \param type type of shortcut to be set: active shortcut,
      *  default shortcut, or both (default argument value).
      */
-    void setShortcut(const QKeySequence& shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setShortcut(const QKeySequence &shortcut, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
 
     /**
      * \overload void setShortcuts(const QList\<QKeySequence\>& shortcuts).
@@ -349,7 +348,7 @@ public:
      * \param type type of shortcut to be set: active shortcut,
      *  default shortcut, or both (default argument value).
      */
-    void setShortcuts(const QList<QKeySequence>& shortcuts, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setShortcuts(const QList<QKeySequence> &shortcuts, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
 
     /**
      * Returns true if this action's shortcut is configurable.
@@ -414,8 +413,8 @@ public:
      * \note the default shortcut will never be influenced by autoloading - it will be set as given.
      * \sa globalShortcut()
      */
-    void setGlobalShortcut(const KShortcut& shortcut, ShortcutTypes type =
-                           ShortcutTypes(ActiveShortcut | DefaultShortcut),
+    void setGlobalShortcut(const KShortcut &shortcut, ShortcutTypes type =
+                               ShortcutTypes(ActiveShortcut | DefaultShortcut),
                            GlobalShortcutLoading loading = Autoloading);
 
     /**
@@ -460,15 +459,15 @@ public:
     KShapeGesture shapeGesture(ShortcutTypes type = ActiveShortcut) const;
     KRockerGesture rockerGesture(ShortcutTypes type = ActiveShortcut) const;
 
-    void setShapeGesture(const KShapeGesture& gest, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
-    void setRockerGesture(const KRockerGesture& gest, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setShapeGesture(const KShapeGesture &gest, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
+    void setRockerGesture(const KRockerGesture &gest, ShortcutTypes type = ShortcutTypes(ActiveShortcut | DefaultShortcut));
 
     /**
      * Returns the action object associated with this action, or 0 if it does not have one
      *
      * @returns the KAuth::Action associated with this action.
      */
-     KAuth::Action authAction() const;
+    KAuth::Action authAction() const;
 
     /**
      * Sets the action object associated with this action
@@ -480,17 +479,16 @@ public:
      *
      * @param action the KAuth::Action to associate with this action.
      */
-     void setAuthAction(const KAuth::Action &action);
+    void setAuthAction(const KAuth::Action &action);
 
-     /**
-     * Sets the action object associated with this action
-     *
-     * Overloaded member to allow creating the action by name
-     *
-     * @param actionName the name of the action to associate
-     */
-     void setAuthAction(const QString &actionName);
-
+    /**
+    * Sets the action object associated with this action
+    *
+    * Overloaded member to allow creating the action by name
+    *
+    * @param actionName the name of the action to associate
+    */
+    void setAuthAction(const QString &actionName);
 
 Q_SIGNALS:
 #ifdef KDE3_SUPPORT
@@ -530,15 +528,15 @@ Q_SIGNALS:
      * subject to be changed by the global shortcuts kcm.
      * @deprecated use KGlobalAccel::globalShortcutChanged instead
      */
-    void globalShortcutChanged(const QKeySequence&);
+    void globalShortcutChanged(const QKeySequence &);
 
 private:
     friend class KGlobalAccelPrivate; // Needs access to the component
     friend class KActionCollectionPrivate; // Needs access to the component
     friend class KShortcutsEditorDelegate; // Needs access to the component
     Q_PRIVATE_SLOT(d, void slotTriggered())
-    Q_PRIVATE_SLOT(d, void _k_emitActionGlobalShortcutChanged(QAction*, const QKeySequence&))
-    class KActionPrivate* const d;
+    Q_PRIVATE_SLOT(d, void _k_emitActionGlobalShortcutChanged(QAction *, const QKeySequence &))
+    class KActionPrivate *const d;
     friend class KActionPrivate;
     friend class KGlobalShortcutTest;
 };

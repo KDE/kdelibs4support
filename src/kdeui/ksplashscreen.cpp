@@ -25,14 +25,14 @@
 #include <QPixmap>
 
 KSplashScreen::KSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f)
-    : QSplashScreen( pixmap, f ),
-      d( 0 )
+    : QSplashScreen(pixmap, f),
+      d(0)
 {
-	QRect desk = KGlobalSettings::splashScreenDesktopGeometry();
-	resize(pixmap.width(), pixmap.height());
-  setGeometry( ( desk.width() / 2 ) - ( width() / 2 ) + desk.left(),
-      ( desk.height() / 2 ) - ( height() / 2 ) + desk.top(),
-        width(), height() );
+    QRect desk = KGlobalSettings::splashScreenDesktopGeometry();
+    resize(pixmap.width(), pixmap.height());
+    setGeometry((desk.width() / 2) - (width() / 2) + desk.left(),
+                (desk.height() / 2) - (height() / 2) + desk.top(),
+                width(), height());
 
 }
 

@@ -19,7 +19,6 @@
  *  Boston, MA 02110-1301, USA.
  */
 
-
 #ifndef KDISKFREESP_H
 #define KDISKFREESP_H
 
@@ -40,7 +39,7 @@ public:
     /**
      * Constructor
      */
-    explicit KDiskFreeSpace( QObject *parent = 0 );
+    explicit KDiskFreeSpace(QObject *parent = 0);
 
     /**
      * Destructor - this object autodeletes itself when it's done
@@ -60,7 +59,7 @@ public:
      * the request for one mount point and then auto-deletes itself.
      * Suicidal objects are not reusable...
      */
-    bool readDF( const QString & mountPoint );
+    bool readDF(const QString &mountPoint);
 
     /**
      * Call this to fire a search on the disk usage information
@@ -69,7 +68,7 @@ public:
      * if this mount point is found, with the info requested.
      * The done() signal is emitted in any case.
      */
-     static KDiskFreeSpace * findUsageInfo( const QString & path );
+    static KDiskFreeSpace *findUsageInfo(const QString &path);
 
 Q_SIGNALS:
     /**
@@ -79,7 +78,7 @@ Q_SIGNALS:
      * @param kibUsed the amount of KiB being used on the partition
      * @param kibAvail the available space on the partition in KiB
      */
-    void foundMountPoint( const QString & mountPoint, quint64 kibSize, quint64 kibUsed, quint64 kibAvail );
+    void foundMountPoint(const QString &mountPoint, quint64 kibSize, quint64 kibUsed, quint64 kibAvail);
 
     /**
      * Emitted when the request made via readDF is over, whether foundMountPoint was emitted or not.
@@ -88,9 +87,9 @@ Q_SIGNALS:
 
 private:
     class Private;
-    Private * const d;
+    Private *const d;
 
-    Q_PRIVATE_SLOT( d, bool _k_calculateFreeSpace() )
+    Q_PRIVATE_SLOT(d, bool _k_calculateFreeSpace())
 };
 
 #endif

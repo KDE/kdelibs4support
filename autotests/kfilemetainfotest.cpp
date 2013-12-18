@@ -28,7 +28,6 @@
 
 #include <QtCore/QThread>
 
-
 /**
  * Reads the meta-data of a given file inside a thread.
  * Used to test KFileMetaInfo for reentrancy issues.
@@ -36,7 +35,7 @@
 class KFileMetaInfoThread : public QThread
 {
 public:
-    KFileMetaInfoThread(const QString& fileName);
+    KFileMetaInfoThread(const QString &fileName);
 
 protected:
     virtual void run();
@@ -55,8 +54,6 @@ void KFileMetaInfoThread::run()
     KFileMetaInfo fileMetaInfo(m_fileName);
 }
 
-
-
 QTEST_MAIN(KFileMetaInfoTest)
 
 void KFileMetaInfoTest::initTestCase()
@@ -73,7 +70,7 @@ void KFileMetaInfoTest::testMetaInfo()
 #if ! KIO_NO_STRIGI
     QVERIFY(fileMetaInfo.isValid());
 
-    const KFileMetaInfoItem& item = fileMetaInfo.item("http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName");
+    const KFileMetaInfoItem &item = fileMetaInfo.item("http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName");
     QCOMPARE(item.value().toString(), QString("testfilename"));
 #endif
 }
@@ -85,7 +82,7 @@ void KFileMetaInfoTest::testReentrancy()
 
     m_exitCount = 20;
     for (int i = 0; i < m_exitCount; ++i) {
-        QThread* thread = new KFileMetaInfoThread(file);
+        QThread *thread = new KFileMetaInfoThread(file);
         thread->setParent(this);
         connect(thread, SIGNAL(finished()), this, SLOT(exitLoop()));
         thread->start();

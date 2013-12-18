@@ -67,137 +67,137 @@ class QUrl;
  */
 namespace KSocketFactory
 {
-    /**
-     * Initiates a TCP/IP socket connection to remote node (host) @p
-     * host, using the @p protocol. Returns a QTcpSocket
-     * that is connecting (i.e., in a state before
-     * QAbstractSocket::Connected) in most cases, even if the target
-     * service doesn't exist or if a connection failure happens.
-     *
-     * This function never returns 0. If the returned socket cannot
-     * connect, it will emit the QAbstractSocket::error()
-     * signal. Otherwise, the QAbstractSocket::connected() signal will
-     * be emitted eventually.
-     *
-     * The @p protocol parameter <b>must</b> be a string representation
-     * of the protocol being attempted, like "http", "ftp" or
-     * "xmpp". It might be used to determine the proxy type -- for
-     * instance, the proxy for HTTP connections might be different
-     * from the proxy for other connections. Pass an empty QString if
-     * the connection is of no established protocol.
-     *
-     * The @p port parameter can be used to specify the port
-     * number lookup if the service is not a well-known service.
-     *
-     * @param protocol  the protocol this socket will use
-     * @param host      the remote node (host) to connect to
-     * @param port      the port number to connect to
-     * @param parent    the parent object to be passed to the
-     *                  QTcpSocket constructor
-     * @threadsafe
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QString &protocol, const QString &host,
-                                             quint16 port, QObject *parent = 0);
+/**
+ * Initiates a TCP/IP socket connection to remote node (host) @p
+ * host, using the @p protocol. Returns a QTcpSocket
+ * that is connecting (i.e., in a state before
+ * QAbstractSocket::Connected) in most cases, even if the target
+ * service doesn't exist or if a connection failure happens.
+ *
+ * This function never returns 0. If the returned socket cannot
+ * connect, it will emit the QAbstractSocket::error()
+ * signal. Otherwise, the QAbstractSocket::connected() signal will
+ * be emitted eventually.
+ *
+ * The @p protocol parameter <b>must</b> be a string representation
+ * of the protocol being attempted, like "http", "ftp" or
+ * "xmpp". It might be used to determine the proxy type -- for
+ * instance, the proxy for HTTP connections might be different
+ * from the proxy for other connections. Pass an empty QString if
+ * the connection is of no established protocol.
+ *
+ * The @p port parameter can be used to specify the port
+ * number lookup if the service is not a well-known service.
+ *
+ * @param protocol  the protocol this socket will use
+ * @param host      the remote node (host) to connect to
+ * @param port      the port number to connect to
+ * @param parent    the parent object to be passed to the
+ *                  QTcpSocket constructor
+ * @threadsafe
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QString &protocol, const QString &host,
+        quint16 port, QObject *parent = 0);
 
-    /**
-     * @overload
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QUrl &url, QObject *parent = 0);
+/**
+ * @overload
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QUrl &url, QObject *parent = 0);
 
-    /**
-     * @overload
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void connectToHost(QTcpSocket *socket, const QString &protocol,
-                                      const QString &host, quint16 port);
+/**
+ * @overload
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void connectToHost(QTcpSocket *socket, const QString &protocol,
+        const QString &host, quint16 port);
 
-    /**
-     * @overload
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void connectToHost(QTcpSocket *socket, const QUrl &url);
+/**
+ * @overload
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void connectToHost(QTcpSocket *socket, const QUrl &url);
 
-    /**
-     * This function behaves exactly like connectToHost() above, except
-     * that the socket it returns is either in
-     * QAbstractSocket::Connected state, or it has failed connecting
-     * altogether.
-     *
-     * This function should be used if a synchronous connection is
-     * necessary instead of calling
-     * QAbstractSocket::waitForConnected(), since that may not work on
-     * all objects returned from connectToHost().
-     *
-     * This function does not return 0. If the connection attempt
-     * failed for some reason, the socket state will be
-     * QAbstractSocket::UnconnectedState and QAbstractSocket::isValid
-     * will return false. The socket error state and string will
-     * contain more information.
-     * @warning: This function may block.
-     *
-     * @param protocol  the protocol this socket will use
-     * @param host      the remote node (host) to connect to
-     * @param port      the port number to connect to
-     * @param msecs     the time (in milliseconds) to wait while
-     *                  attempting to connect
-     * @param parent    the parent object to be passed to the
-     *                  QTcpSocket constructor
-     * @threadsafe
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *synchronousConnectToHost(const QString &protocol,
-                                                        const QString &host,
-                                                        quint16 port, int msecs = 30000,
-                                                        QObject *parent = 0);
+/**
+ * This function behaves exactly like connectToHost() above, except
+ * that the socket it returns is either in
+ * QAbstractSocket::Connected state, or it has failed connecting
+ * altogether.
+ *
+ * This function should be used if a synchronous connection is
+ * necessary instead of calling
+ * QAbstractSocket::waitForConnected(), since that may not work on
+ * all objects returned from connectToHost().
+ *
+ * This function does not return 0. If the connection attempt
+ * failed for some reason, the socket state will be
+ * QAbstractSocket::UnconnectedState and QAbstractSocket::isValid
+ * will return false. The socket error state and string will
+ * contain more information.
+ * @warning: This function may block.
+ *
+ * @param protocol  the protocol this socket will use
+ * @param host      the remote node (host) to connect to
+ * @param port      the port number to connect to
+ * @param msecs     the time (in milliseconds) to wait while
+ *                  attempting to connect
+ * @param parent    the parent object to be passed to the
+ *                  QTcpSocket constructor
+ * @threadsafe
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *synchronousConnectToHost(const QString &protocol,
+        const QString &host,
+        quint16 port, int msecs = 30000,
+        QObject *parent = 0);
 
-    /**
-     * @overload
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *synchronousConnectToHost(const QUrl &url, int msecs = 30000,
-                                                        QObject *parent = 0);
+/**
+ * @overload
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT QTcpSocket *synchronousConnectToHost(const QUrl &url, int msecs = 30000,
+        QObject *parent = 0);
 
-    /**
-     * @overload
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void synchronousConnectToHost(QTcpSocket *socket, const QString &protocol,
-                                                 const QString &host, quint16 port,
-                                                 int msecs = 30000);
+/**
+ * @overload
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void synchronousConnectToHost(QTcpSocket *socket, const QString &protocol,
+        const QString &host, quint16 port,
+        int msecs = 30000);
 
-    /**
-     * @overload
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void synchronousConnectToHost(QTcpSocket *socket, const QUrl &url,
-                                                 int msecs = 30000);
+/**
+ * @overload
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void synchronousConnectToHost(QTcpSocket *socket, const QUrl &url,
+        int msecs = 30000);
 
-    /**
-     * Opens a TCP/IP socket for listening protocol @p protocol, binding
-     * only at address @p address. The @p port parameter indicates the
-     * port to be opened.
-     *
-     * This function does not return 0. If the opening of the socket
-     * failed for some reason, it will return a QTcpServer object that
-     * is not listening (QTcpServer::isListening() returns false),
-     * with a properly set error string indicating the reason).
-     *
-     * Note that passing 0 as the default port number will cause the
-     * operating system to automatically allocate a free port for the
-     * socket.
-     *
-     * @param protocol  the protocol this socket will accept
-     * @param address   the address to listen at
-     * @param port      the default port for the service
-     * @param parent    the parent object to be passed to the
-     *                  QTcpServer constructor
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT QTcpServer *listen(const QString &protocol, const QHostAddress &address = QHostAddress::Any,
-                                      quint16 port = 0, QObject *parent = 0);
+/**
+ * Opens a TCP/IP socket for listening protocol @p protocol, binding
+ * only at address @p address. The @p port parameter indicates the
+ * port to be opened.
+ *
+ * This function does not return 0. If the opening of the socket
+ * failed for some reason, it will return a QTcpServer object that
+ * is not listening (QTcpServer::isListening() returns false),
+ * with a properly set error string indicating the reason).
+ *
+ * Note that passing 0 as the default port number will cause the
+ * operating system to automatically allocate a free port for the
+ * socket.
+ *
+ * @param protocol  the protocol this socket will accept
+ * @param address   the address to listen at
+ * @param port      the default port for the service
+ * @param parent    the parent object to be passed to the
+ *                  QTcpServer constructor
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT QTcpServer *listen(const QString &protocol, const QHostAddress &address = QHostAddress::Any,
+        quint16 port = 0, QObject *parent = 0);
 
-    // These functions below aren't done yet
-    // Undocumented -> don't use!
+// These functions below aren't done yet
+// Undocumented -> don't use!
 
-    KDE4SUPPORT_DEPRECATED_EXPORT QUdpSocket *datagramSocket(const QString &protocol, const QString &host, QObject *parent = 0);
+KDE4SUPPORT_DEPRECATED_EXPORT QUdpSocket *datagramSocket(const QString &protocol, const QString &host, QObject *parent = 0);
 
 #ifndef QT_NO_NETWORKPROXY
-    KDE4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForConnection(const QString &protocol, const QString &host);
-    KDE4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForListening(const QString &protocol);
-    KDE4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForDatagram(const QString &protocol, const QString &host);
+KDE4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForConnection(const QString &protocol, const QString &host);
+KDE4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForListening(const QString &protocol);
+KDE4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForDatagram(const QString &protocol, const QString &host);
 #endif
 }
 

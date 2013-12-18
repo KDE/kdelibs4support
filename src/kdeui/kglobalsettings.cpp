@@ -52,7 +52,7 @@
 
 static QRgb qt_colorref2qrgb(COLORREF col)
 {
-    return qRgb(GetRValue(col),GetGValue(col),GetBValue(col));
+    return qRgb(GetRValue(col), GetGValue(col), GetBValue(col));
 }
 #endif
 #include <config-kde4support.h>
@@ -70,56 +70,55 @@ static QRgb qt_colorref2qrgb(COLORREF col)
 #include <kconfiggroup.h>
 #include <kiconloader.h>
 
-
 //static QColor *_buttonBackground = 0;
 static KGlobalSettings::GraphicEffects _graphicEffects = KGlobalSettings::NoEffects;
 
 class KGlobalSettings::Private
 {
-    public:
-        Private(KGlobalSettings *q)
-            : q(q), activated(false), paletteCreated(false), mLargeFont(0), mMouseSettings(0)
-        {
-            kdeFullSession = !qgetenv("KDE_FULL_SESSION").isEmpty();
-        }
+public:
+    Private(KGlobalSettings *q)
+        : q(q), activated(false), paletteCreated(false), mLargeFont(0), mMouseSettings(0)
+    {
+        kdeFullSession = !qgetenv("KDE_FULL_SESSION").isEmpty();
+    }
 
-        QPalette createApplicationPalette(const KSharedConfigPtr &config);
-        QPalette createNewApplicationPalette(const KSharedConfigPtr &config);
-        void _k_slotNotifyChange(int, int);
-        void _k_slotIconChange(int);
+    QPalette createApplicationPalette(const KSharedConfigPtr &config);
+    QPalette createNewApplicationPalette(const KSharedConfigPtr &config);
+    void _k_slotNotifyChange(int, int);
+    void _k_slotIconChange(int);
 
-        void propagateQtSettings();
-        void kdisplaySetPalette();
-        void kdisplaySetStyle();
-        void kdisplaySetFont();
-        void applyGUIStyle();
-        void dropMouseSettingsCache();
-        KGlobalSettings::KMouseSettings &mouseSettings();
+    void propagateQtSettings();
+    void kdisplaySetPalette();
+    void kdisplaySetStyle();
+    void kdisplaySetFont();
+    void applyGUIStyle();
+    void dropMouseSettingsCache();
+    KGlobalSettings::KMouseSettings &mouseSettings();
 
-        /**
-         * @internal
-         *
-         * Ensures that cursors are loaded from the theme KDE is configured
-         * to use. Note that calling this function doesn't cause existing
-         * cursors to be reloaded. Reloading already created cursors is
-         * handled by the KCM when a cursor theme is applied.
-         *
-         * It is not necessary to call this function when KGlobalSettings
-         * is initialized.
-         */
-        void applyCursorTheme();
+    /**
+     * @internal
+     *
+     * Ensures that cursors are loaded from the theme KDE is configured
+     * to use. Note that calling this function doesn't cause existing
+     * cursors to be reloaded. Reloading already created cursors is
+     * handled by the KCM when a cursor theme is applied.
+     *
+     * It is not necessary to call this function when KGlobalSettings
+     * is initialized.
+     */
+    void applyCursorTheme();
 
-        static void reloadStyleSettings();
+    static void reloadStyleSettings();
 
-        QFont largeFont( const QString &text );
+    QFont largeFont(const QString &text);
 
-        KGlobalSettings *q;
-        bool activated;
-        bool paletteCreated;
-        bool kdeFullSession;
-        QPalette applicationPalette;
-        KGlobalSettings::KMouseSettings *mMouseSettings;
-        QFont *mLargeFont;
+    KGlobalSettings *q;
+    bool activated;
+    bool paletteCreated;
+    bool kdeFullSession;
+    QPalette applicationPalette;
+    KGlobalSettings::KMouseSettings *mMouseSettings;
+    QFont *mLargeFont;
 };
 
 // class for access to KGlobalSettings constructor
@@ -131,7 +130,7 @@ public:
 
 Q_GLOBAL_STATIC(KGlobalSettingsSingleton, s_self)
 
-KGlobalSettings* KGlobalSettings::self()
+KGlobalSettings *KGlobalSettings::self()
 {
     return &s_self()->object;
 }
@@ -158,12 +157,12 @@ void KGlobalSettings::activate(ActivateOptions options)
         d->activated = true;
 
         if (options & ListenForChanges) {
-            QDBusConnection::sessionBus().connect( QString(), "/KGlobalSettings", "org.kde.KGlobalSettings",
-                                                   "notifyChange", this, SLOT(_k_slotNotifyChange(int,int)) );
-            QDBusConnection::sessionBus().connect( QString(), "/KIconLoader", "org.kde.KIconLoader",
-                                                   "iconChanged", this, SLOT(_k_slotIconChange(int)) );
-            QDBusConnection::sessionBus().connect( QString(), "/KDEPlatformTheme", "org.kde.KDEPlatformTheme",
-                                                      "refreshFonts", this, SLOT(kdisplayFontChanged()) );
+            QDBusConnection::sessionBus().connect(QString(), "/KGlobalSettings", "org.kde.KGlobalSettings",
+                                                  "notifyChange", this, SLOT(_k_slotNotifyChange(int,int)));
+            QDBusConnection::sessionBus().connect(QString(), "/KIconLoader", "org.kde.KIconLoader",
+                                                  "iconChanged", this, SLOT(_k_slotIconChange(int)));
+            QDBusConnection::sessionBus().connect(QString(), "/KDEPlatformTheme", "org.kde.KDEPlatformTheme",
+                                                  "refreshFonts", this, SLOT(kdisplayFontChanged()));
         }
 
         if (options & ApplySettings) {
@@ -177,42 +176,41 @@ void KGlobalSettings::activate(ActivateOptions options)
 // so that apps can just use QApplication::startDragDistance().
 int KGlobalSettings::dndEventDelay()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "General" );
+    KConfigGroup g(KSharedConfig::openConfig(), "General");
     return g.readEntry("StartDragDist", QApplication::startDragDistance());
 }
 
 bool KGlobalSettings::singleClick()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
-    return g.readEntry("SingleClick", KDE_DEFAULT_SINGLECLICK );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
+    return g.readEntry("SingleClick", KDE_DEFAULT_SINGLECLICK);
 }
 
 bool KGlobalSettings::changeCursorOverIcon()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
     return g.readEntry("ChangeCursor", KDE_DEFAULT_CHANGECURSOR);
 }
 
 int KGlobalSettings::autoSelectDelay()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
     return g.readEntry("AutoSelectDelay", KDE_DEFAULT_AUTOSELECTDELAY);
 }
 
 KGlobalSettings::Completion KGlobalSettings::completionMode()
 {
     int completion;
-    KConfigGroup g( KSharedConfig::openConfig(), "General" );
+    KConfigGroup g(KSharedConfig::openConfig(), "General");
     completion = g.readEntry("completionMode", -1);
     if ((completion < (int) CompletionNone) ||
-        (completion > (int) CompletionPopupAuto))
-      {
+            (completion > (int) CompletionPopupAuto)) {
         completion = (int) CompletionPopup; // Default
-      }
+    }
     return (Completion) completion;
 }
 
-bool KGlobalSettings::showContextMenusOnPress ()
+bool KGlobalSettings::showContextMenusOnPress()
 {
     KConfigGroup g(KSharedConfig::openConfig(), "ContextMenus");
     return g.readEntry("ShowOnPress", true);
@@ -224,8 +222,8 @@ QColor KGlobalSettings::inactiveTitleColor()
 #ifdef Q_OS_WIN
     return qt_colorref2qrgb(GetSysColor(COLOR_INACTIVECAPTION));
 #else
-    KConfigGroup g( KSharedConfig::openConfig(), "WM" );
-    return g.readEntry( "inactiveBackground", QColor(224,223,222) );
+    KConfigGroup g(KSharedConfig::openConfig(), "WM");
+    return g.readEntry("inactiveBackground", QColor(224, 223, 222));
 #endif
 }
 
@@ -235,8 +233,8 @@ QColor KGlobalSettings::inactiveTextColor()
 #ifdef Q_OS_WIN
     return qt_colorref2qrgb(GetSysColor(COLOR_INACTIVECAPTIONTEXT));
 #else
-    KConfigGroup g( KSharedConfig::openConfig(), "WM" );
-    return g.readEntry( "inactiveForeground", QColor(75,71,67) );
+    KConfigGroup g(KSharedConfig::openConfig(), "WM");
+    return g.readEntry("inactiveForeground", QColor(75, 71, 67));
 #endif
 }
 
@@ -246,8 +244,8 @@ QColor KGlobalSettings::activeTitleColor()
 #ifdef Q_OS_WIN
     return qt_colorref2qrgb(GetSysColor(COLOR_ACTIVECAPTION));
 #else
-    KConfigGroup g( KSharedConfig::openConfig(), "WM" );
-    return g.readEntry( "activeBackground", QColor(48,174,232));
+    KConfigGroup g(KSharedConfig::openConfig(), "WM");
+    return g.readEntry("activeBackground", QColor(48, 174, 232));
 #endif
 }
 
@@ -257,8 +255,8 @@ QColor KGlobalSettings::activeTextColor()
 #ifdef Q_OS_WIN
     return qt_colorref2qrgb(GetSysColor(COLOR_CAPTIONTEXT));
 #else
-    KConfigGroup g( KSharedConfig::openConfig(), "WM" );
-    return g.readEntry( "activeForeground", QColor(255,255,255) );
+    KConfigGroup g(KSharedConfig::openConfig(), "WM");
+    return g.readEntry("activeForeground", QColor(255, 255, 255));
 #endif
 }
 
@@ -274,23 +272,23 @@ qreal KGlobalSettings::contrastF(const KSharedConfigPtr &config)
 
 bool KGlobalSettings::shadeSortColumn()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "General" );
-    return g.readEntry( "shadeSortColumn", KDE_DEFAULT_SHADE_SORT_COLUMN );
+    KConfigGroup g(KSharedConfig::openConfig(), "General");
+    return g.readEntry("shadeSortColumn", KDE_DEFAULT_SHADE_SORT_COLUMN);
 }
 
 bool KGlobalSettings::allowDefaultBackgroundImages()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "General" );
-    return g.readEntry( "allowDefaultBackgroundImages", KDE_DEFAULT_ALLOW_DEFAULT_BACKGROUND_IMAGES );
+    KConfigGroup g(KSharedConfig::openConfig(), "General");
+    return g.readEntry("allowDefaultBackgroundImages", KDE_DEFAULT_ALLOW_DEFAULT_BACKGROUND_IMAGES);
 }
 
 //inspired in old KGlobalSettingsData code
-QFont constructFontFromConfig(const char* groupKey, const char* configKey)
+QFont constructFontFromConfig(const char *groupKey, const char *configKey)
 {
-    const KConfigGroup configGroup( KSharedConfig::openConfig(), groupKey );
+    const KConfigGroup configGroup(KSharedConfig::openConfig(), groupKey);
     QFont ret;
     ret.setStyleHint(QFont::SansSerif);
-    ret = configGroup.readEntry( configKey, ret );
+    ret = configGroup.readEntry(configKey, ret);
     return ret;
 }
 
@@ -323,15 +321,14 @@ QFont KGlobalSettings::taskbarFont()
     return constructFontFromConfig("General", "taskbarFont");
 }
 
-QFont KGlobalSettings::Private::largeFont( const QString& text )
+QFont KGlobalSettings::Private::largeFont(const QString &text)
 {
     QFontDatabase db;
     QStringList fam = db.families();
 
     // Move a bunch of preferred fonts to the front.
     // most preferred last
-    static const char* const PreferredFontNames[] =
-    {
+    static const char *const PreferredFontNames[] = {
         "Arial",
         "Sans Serif",
         "Verdana",
@@ -341,12 +338,12 @@ QFont KGlobalSettings::Private::largeFont( const QString& text )
         "Nimbus Sans",
         "Gothic I"
     };
-    static const unsigned int PreferredFontNamesCount = sizeof(PreferredFontNames)/sizeof(const char*);
-    for( unsigned int i=0; i<PreferredFontNamesCount; ++i )
-    {
-        const QString fontName (PreferredFontNames[i]);
-        if (fam.removeAll(fontName)>0)
+    static const unsigned int PreferredFontNamesCount = sizeof(PreferredFontNames) / sizeof(const char *);
+    for (unsigned int i = 0; i < PreferredFontNamesCount; ++i) {
+        const QString fontName(PreferredFontNames[i]);
+        if (fam.removeAll(fontName) > 0) {
             fam.prepend(fontName);
+        }
     }
 
     if (mLargeFont) {
@@ -354,61 +351,57 @@ QFont KGlobalSettings::Private::largeFont( const QString& text )
         delete mLargeFont;
     }
 
-    for(QStringList::ConstIterator it = fam.constBegin();
-        it != fam.constEnd(); ++it)
-    {
-        if (db.isSmoothlyScalable(*it) && !db.isFixedPitch(*it))
-        {
+    for (QStringList::ConstIterator it = fam.constBegin();
+            it != fam.constEnd(); ++it) {
+        if (db.isSmoothlyScalable(*it) && !db.isFixedPitch(*it)) {
             QFont font(*it);
             font.setPixelSize(75);
             QFontMetrics metrics(font);
             int h = metrics.height();
-            if ((h < 60) || ( h > 90))
+            if ((h < 60) || (h > 90)) {
                 continue;
+            }
 
             bool ok = true;
-            for(int i = 0; i < text.length(); i++)
-            {
-                if (!metrics.inFont(text[i]))
-                {
+            for (int i = 0; i < text.length(); i++) {
+                if (!metrics.inFont(text[i])) {
                     ok = false;
                     break;
                 }
             }
-            if (!ok)
+            if (!ok) {
                 continue;
+            }
 
             font.setPointSize(48);
             mLargeFont = new QFont(font);
             return *mLargeFont;
         }
     }
-    mLargeFont = new QFont( q->generalFont() );
+    mLargeFont = new QFont(q->generalFont());
     mLargeFont->setPointSize(48);
     return *mLargeFont;
 }
 
-QFont KGlobalSettings::largeFont( const QString& text )
+QFont KGlobalSettings::largeFont(const QString &text)
 {
-    return self()->d->largeFont( text );
+    return self()->d->largeFont(text);
 }
 
-KGlobalSettings::KMouseSettings& KGlobalSettings::Private::mouseSettings()
+KGlobalSettings::KMouseSettings &KGlobalSettings::Private::mouseSettings()
 {
-    if (!mMouseSettings)
-    {
+    if (!mMouseSettings) {
         mMouseSettings = new KGlobalSettings::KMouseSettings;
-        KGlobalSettings::KMouseSettings& s = *mMouseSettings; // for convenience
+        KGlobalSettings::KMouseSettings &s = *mMouseSettings; // for convenience
 
 #ifndef Q_OS_WIN
-        KConfigGroup g( KSharedConfig::openConfig(), "Mouse" );
+        KConfigGroup g(KSharedConfig::openConfig(), "Mouse");
         QString setting = g.readEntry("MouseButtonMapping");
-        if (setting == "RightHanded")
+        if (setting == "RightHanded") {
             s.handed = KGlobalSettings::KMouseSettings::RightHanded;
-        else if (setting == "LeftHanded")
+        } else if (setting == "LeftHanded") {
             s.handed = KGlobalSettings::KMouseSettings::LeftHanded;
-        else
-        {
+        } else {
 #if HAVE_X11
             // get settings from X server
             // This is a simplified version of the code in input/mouse.cpp
@@ -416,22 +409,21 @@ KGlobalSettings::KMouseSettings& KGlobalSettings::Private::mouseSettings()
             s.handed = KGlobalSettings::KMouseSettings::RightHanded;
             unsigned char map[20];
             int num_buttons = XGetPointerMapping(QX11Info::display(), map, 20);
-            if( num_buttons == 2 )
-            {
-                if ( (int)map[0] == 1 && (int)map[1] == 2 )
+            if (num_buttons == 2) {
+                if ((int)map[0] == 1 && (int)map[1] == 2) {
                     s.handed = KGlobalSettings::KMouseSettings::RightHanded;
-                else if ( (int)map[0] == 2 && (int)map[1] == 1 )
+                } else if ((int)map[0] == 2 && (int)map[1] == 1) {
                     s.handed = KGlobalSettings::KMouseSettings::LeftHanded;
-            }
-            else if( num_buttons >= 3 )
-            {
-                if ( (int)map[0] == 1 && (int)map[2] == 3 )
+                }
+            } else if (num_buttons >= 3) {
+                if ((int)map[0] == 1 && (int)map[2] == 3) {
                     s.handed = KGlobalSettings::KMouseSettings::RightHanded;
-                else if ( (int)map[0] == 3 && (int)map[2] == 1 )
+                } else if ((int)map[0] == 3 && (int)map[2] == 1) {
                     s.handed = KGlobalSettings::KMouseSettings::LeftHanded;
+                }
             }
 #else
-        // FIXME: Implement on other platforms
+            // FIXME: Implement on other platforms
 #endif
         }
 #endif //Q_OS_WIN
@@ -440,24 +432,24 @@ KGlobalSettings::KMouseSettings& KGlobalSettings::Private::mouseSettings()
     //not cached
 #ifndef _WIN32_WCE
     mMouseSettings->handed = (GetSystemMetrics(SM_SWAPBUTTON) ?
-        KGlobalSettings::KMouseSettings::LeftHanded :
-        KGlobalSettings::KMouseSettings::RightHanded);
+                              KGlobalSettings::KMouseSettings::LeftHanded :
+                              KGlobalSettings::KMouseSettings::RightHanded);
 #else
 // There is no mice under wince
-    mMouseSettings->handed =KGlobalSettings::KMouseSettings::RightHanded;
+    mMouseSettings->handed = KGlobalSettings::KMouseSettings::RightHanded;
 #endif
 #endif
     return *mMouseSettings;
 }
 // KDE5: make this a const return?
-KGlobalSettings::KMouseSettings & KGlobalSettings::mouseSettings()
+KGlobalSettings::KMouseSettings &KGlobalSettings::mouseSettings()
 {
     return self()->d->mouseSettings();
 }
 
 QString KGlobalSettings::desktopPath()
 {
-    QString path = QStandardPaths::writableLocation( QStandardPaths::DesktopLocation );
+    QString path = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
     return path.isEmpty() ? QDir::homePath() : path;
 }
 
@@ -468,12 +460,12 @@ QString KGlobalSettings::desktopPath()
 QString KGlobalSettings::autostartPath()
 {
     QString s_autostartPath;
-    KConfigGroup g( KSharedConfig::openConfig(), "Paths" );
+    KConfigGroup g(KSharedConfig::openConfig(), "Paths");
     s_autostartPath = KGlobal::dirs()->localkdedir() + "Autostart/";
-    s_autostartPath = g.readPathEntry( "Autostart" , s_autostartPath );
-    s_autostartPath = QDir::cleanPath( s_autostartPath );
-    if ( !s_autostartPath.endsWith( '/' ) ) {
-        s_autostartPath.append( QLatin1Char( '/' ) );
+    s_autostartPath = g.readPathEntry("Autostart", s_autostartPath);
+    s_autostartPath = QDir::cleanPath(s_autostartPath);
+    if (!s_autostartPath.endsWith('/')) {
+        s_autostartPath.append(QLatin1Char('/'));
     }
     return s_autostartPath;
 }
@@ -481,31 +473,31 @@ QString KGlobalSettings::autostartPath()
 
 QString KGlobalSettings::documentPath()
 {
-    QString path = QStandardPaths::writableLocation( QStandardPaths::DocumentsLocation );
+    QString path = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     return path.isEmpty() ? QDir::homePath() : path;
 }
 
 QString KGlobalSettings::downloadPath()
 {
-    QString path = QStandardPaths::writableLocation( QStandardPaths::DownloadLocation );
+    QString path = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
     return path.isEmpty() ? QDir::homePath() : path;
 }
 
 QString KGlobalSettings::videosPath()
 {
-    QString path = QStandardPaths::writableLocation( QStandardPaths::MoviesLocation );
+    QString path = QStandardPaths::writableLocation(QStandardPaths::MoviesLocation);
     return path.isEmpty() ? QDir::homePath() : path;
 }
 
 QString KGlobalSettings::picturesPath()
 {
-    QString path = QStandardPaths::writableLocation( QStandardPaths::PicturesLocation );
-    return path.isEmpty() ? QDir::homePath() :path;
+    QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    return path.isEmpty() ? QDir::homePath() : path;
 }
 
 QString KGlobalSettings::musicPath()
 {
-    QString path = QStandardPaths::writableLocation( QStandardPaths::MusicLocation );
+    QString path = QStandardPaths::writableLocation(QStandardPaths::MusicLocation);
     return path.isEmpty() ? QDir::homePath() : path;
 }
 
@@ -524,8 +516,8 @@ bool KGlobalSettings::isMultiHead()
 
 bool KGlobalSettings::wheelMouseZooms()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
-    return g.readEntry( "WheelMouseZooms", KDE_DEFAULT_WHEEL_ZOOM );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
+    return g.readEntry("WheelMouseZooms", KDE_DEFAULT_WHEEL_ZOOM);
 }
 
 QRect KGlobalSettings::splashScreenDesktopGeometry()
@@ -533,26 +525,26 @@ QRect KGlobalSettings::splashScreenDesktopGeometry()
     return QApplication::desktop()->screenGeometry(QCursor::pos());
 }
 
-QRect KGlobalSettings::desktopGeometry(const QPoint& point)
+QRect KGlobalSettings::desktopGeometry(const QPoint &point)
 {
     return QApplication::desktop()->screenGeometry(point);
 }
 
-QRect KGlobalSettings::desktopGeometry(const QWidget* w)
+QRect KGlobalSettings::desktopGeometry(const QWidget *w)
 {
     return QApplication::desktop()->screenGeometry(w);
 }
 
 bool KGlobalSettings::showIconsOnPushButtons()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
     return g.readEntry("ShowIconsOnPushButtons",
                        KDE_DEFAULT_ICON_ON_PUSHBUTTON);
 }
 
 bool KGlobalSettings::naturalSorting()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
     return g.readEntry("NaturalSorting",
                        KDE_DEFAULT_NATURAL_SORTING);
 }
@@ -585,19 +577,19 @@ bool KGlobalSettings::showFilePreview(const QUrl &url)
 {
     KConfigGroup g(KSharedConfig::openConfig(), "PreviewSettings");
     bool defaultSetting = url.isLocalFile(); // ## incorrect, use KProtocolInfo::showFilePreview instead
-    return g.readEntry(url.scheme(), defaultSetting );
+    return g.readEntry(url.scheme(), defaultSetting);
 }
 #endif
 
 bool KGlobalSettings::opaqueResize()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
     return g.readEntry("OpaqueResize", KDE_DEFAULT_OPAQUE_RESIZE);
 }
 
 int KGlobalSettings::buttonLayout()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE");
     return g.readEntry("ButtonLayout", KDE_DEFAULT_BUTTON_LAYOUT);
 }
 
@@ -625,8 +617,8 @@ static void x11_apply_settings_in_all_apps()
                         8, stamp.size(), (const void *)stamp.constData());
 
     //XChangeProperty(QX11Info::display(), QX11Info::appRootWindow(0),
-                    //ATOM(_QT_SETTINGS_TIMESTAMP), ATOM(_QT_SETTINGS_TIMESTAMP), 8,
-                    //PropModeReplace, (unsigned char *)stamp.data(), stamp.size());
+    //ATOM(_QT_SETTINGS_TIMESTAMP), ATOM(_QT_SETTINGS_TIMESTAMP), 8,
+    //PropModeReplace, (unsigned char *)stamp.data(), stamp.size());
 }
 #endif
 
@@ -643,7 +635,7 @@ void KGlobalSettings::emitChange(ChangeType changeType, int arg)
         self()->d->kdisplaySetFont();
         break;
     default: {
-        QDBusMessage message = QDBusMessage::createSignal("/KGlobalSettings", "org.kde.KGlobalSettings", "notifyChange" );
+        QDBusMessage message = QDBusMessage::createSignal("/KGlobalSettings", "org.kde.KGlobalSettings", "notifyChange");
         QList<QVariant> args;
         args.append(static_cast<int>(changeType));
         args.append(arg);
@@ -661,7 +653,7 @@ void KGlobalSettings::Private::_k_slotIconChange(int arg)
 
 void KGlobalSettings::Private::_k_slotNotifyChange(int changeType, int arg)
 {
-    switch(changeType) {
+    switch (changeType) {
     case StyleChanged:
         if (activated) {
             KSharedConfig::openConfig()->reparseConfiguration();
@@ -695,17 +687,17 @@ void KGlobalSettings::Private::_k_slotNotifyChange(int changeType, int arg)
             }
         } else {
             switch (category) {
-                case SETTINGS_STYLE:
-                    reloadStyleSettings();
-                    break;
-                case SETTINGS_MOUSE:
-                    self()->d->dropMouseSettingsCache();
-                    break;
-                case SETTINGS_LOCALE:
-                    // QT5 TODO REPLACEMENT ? KLocale::global()->reparseConfiguration();
-                    break;
-                default:
-                    break;
+            case SETTINGS_STYLE:
+                reloadStyleSettings();
+                break;
+            case SETTINGS_MOUSE:
+                self()->d->dropMouseSettingsCache();
+                break;
+            case SETTINGS_LOCALE:
+                // QT5 TODO REPLACEMENT ? KLocale::global()->reparseConfiguration();
+                break;
+            default:
+                break;
             }
             emit q->settingsChanged(category);
         }
@@ -742,12 +734,12 @@ QString kde_overrideStyle;
 void KGlobalSettings::Private::applyGUIStyle()
 {
 #if 0 // Disabled for KF5. TODO Qt5: check that the KDE style is correctly applied.
-  //Platform plugin only loaded on X11 systems
+    //Platform plugin only loaded on X11 systems
 #if HAVE_X11
     if (!kde_overrideStyle.isEmpty()) {
         const QLatin1String currentStyleName(qApp->style()->metaObject()->className());
         if (0 != kde_overrideStyle.compare(currentStyleName, Qt::CaseInsensitive) &&
-            0 != (QString(kde_overrideStyle + QLatin1String("Style"))).compare(currentStyleName, Qt::CaseInsensitive)) {
+                0 != (QString(kde_overrideStyle + QLatin1String("Style"))).compare(currentStyleName, Qt::CaseInsensitive)) {
             qApp->setStyle(kde_overrideStyle);
         }
     } else {
@@ -769,20 +761,22 @@ void KGlobalSettings::Private::applyGUIStyle()
             return;
         }
 
-        QStyle* sp = QStyleFactory::create( styleStr );
+        QStyle *sp = QStyleFactory::create(styleStr);
         if (sp && currentStyleName == sp->metaObject()->className()) {
             delete sp;
             return;
         }
 
         // If there is no default style available, try falling back any available style
-        if ( !sp && styleStr != defaultStyle)
-            sp = QStyleFactory::create( defaultStyle );
-        if ( !sp )
-            sp = QStyleFactory::create( QStyleFactory::keys().first() );
+        if (!sp && styleStr != defaultStyle) {
+            sp = QStyleFactory::create(defaultStyle);
+        }
+        if (!sp) {
+            sp = QStyleFactory::create(QStyleFactory::keys().first());
+        }
         qApp->setStyle(sp);
     } else if (0 != kde_overrideStyle.compare(currentStyleName, Qt::CaseInsensitive) &&
-            0 != (QString(kde_overrideStyle + QLatin1String("Style"))).compare(currentStyleName, Qt::CaseInsensitive)) {
+               0 != (QString(kde_overrideStyle + QLatin1String("Style"))).compare(currentStyleName, Qt::CaseInsensitive)) {
         qApp->setStyle(kde_overrideStyle);
     }
     emit q->kdisplayStyleChanged();
@@ -829,12 +823,11 @@ void KGlobalSettings::Private::kdisplaySetPalette()
         return;
     }
 
-    QApplication::setPalette( q->createApplicationPalette() );
+    QApplication::setPalette(q->createApplicationPalette());
     emit q->kdisplayPaletteChanged();
     emit q->appearanceChanged();
 #endif
 }
-
 
 void KGlobalSettings::Private::kdisplaySetFont()
 {
@@ -843,12 +836,11 @@ void KGlobalSettings::Private::kdisplaySetFont()
         return;
     }
 
-    QDBusMessage message = QDBusMessage::createSignal("/KDEPlatformTheme", "org.kde.KDEPlatformTheme", "refreshFonts" );
+    QDBusMessage message = QDBusMessage::createSignal("/KDEPlatformTheme", "org.kde.KDEPlatformTheme", "refreshFonts");
     QDBusConnection::sessionBus().send(message);
     emit q->kdisplayFontChanged();
 #endif
 }
-
 
 void KGlobalSettings::Private::kdisplaySetStyle()
 {
@@ -858,10 +850,9 @@ void KGlobalSettings::Private::kdisplaySetStyle()
     kdisplaySetPalette();
 }
 
-
 void KGlobalSettings::Private::reloadStyleSettings()
 {
-    KConfigGroup g( KSharedConfig::openConfig(), "KDE-Global GUI Settings" );
+    KConfigGroup g(KSharedConfig::openConfig(), "KDE-Global GUI Settings");
 
     // Asking for hasKey we do not ask for graphicEffectsLevelDefault() that can
     // contain some very slow code. If we can save that time, do it. (ereslibre)
@@ -875,7 +866,6 @@ void KGlobalSettings::Private::reloadStyleSettings()
     _graphicEffects = KGlobalSettings::graphicEffectsLevelDefault();
 }
 
-
 void KGlobalSettings::Private::applyCursorTheme()
 {
 #if HAVE_X11 && defined(HAVE_XCURSOR)
@@ -886,9 +876,8 @@ void KGlobalSettings::Private::applyCursorTheme()
     int size      = g.readEntry("cursorSize", -1);
 
     // Default cursor size is 16 points
-    if (size == -1)
-    {
-        QApplication *app = static_cast<QApplication*>(QApplication::instance());
+    if (size == -1) {
+        QApplication *app = static_cast<QApplication *>(QApplication::instance());
         size = app->desktop()->screen(0)->logicalDpiY() * 16 / 72;
     }
 
@@ -904,17 +893,18 @@ void KGlobalSettings::Private::applyCursorTheme()
 #endif
 }
 
-
 void KGlobalSettings::Private::propagateQtSettings()
 {
-    KConfigGroup cg( KSharedConfig::openConfig(), "KDE" );
+    KConfigGroup cg(KSharedConfig::openConfig(), "KDE");
 
 #ifndef Q_OS_WIN
     int num = cg.readEntry("CursorBlinkRate", QApplication::cursorFlashTime());
-    if ((num != 0) && (num < 200))
+    if ((num != 0) && (num < 200)) {
         num = 200;
-    if (num > 2000)
+    }
+    if (num > 2000) {
         num = 2000;
+    }
     QApplication::setCursorFlashTime(num);
 #else
     int num;

@@ -22,9 +22,10 @@
 #include <kmessagebox.h>
 #include "kdialogqueue_p.h"
 
-namespace KMessageBox {
+namespace KMessageBox
+{
 
-extern QDialogButtonBox::StandardButton KWIDGETSADDONS_EXPORT (*KMessageBox_exec_hook)(QDialog*);
+extern QDialogButtonBox::StandardButton KWIDGETSADDONS_EXPORT(*KMessageBox_exec_hook)(QDialog *);
 
 QDialogButtonBox::StandardButton queued_dialog_exec(QDialog *dialog)
 {
@@ -33,45 +34,44 @@ QDialogButtonBox::StandardButton queued_dialog_exec(QDialog *dialog)
 }
 
 void queuedDetailedError(QWidget *parent,  const QString &text,
-                   const QString &details,
-                   const QString &caption)
+                         const QString &details,
+                         const QString &caption)
 {
-    return queuedDetailedErrorWId( parent ? parent->effectiveWinId() : 0, text, details, caption );
+    return queuedDetailedErrorWId(parent ? parent->effectiveWinId() : 0, text, details, caption);
 }
 
 void queuedDetailedErrorWId(WId parent_id,  const QString &text,
-                   const QString &details,
-                   const QString &caption)
-{
-   KMessageBox_exec_hook = &queued_dialog_exec;
-   (void) detailedErrorWId(parent_id, text, details, caption);
-   KMessageBox_exec_hook = 0;
-}
-
-void queuedMessageBox( QWidget *parent, DialogType type, const QString &text, const QString &caption, Options options )
-{
-    return queuedMessageBoxWId( parent ? parent->effectiveWinId() : 0, type, text, caption, options );
-}
-
-void queuedMessageBoxWId( WId parent_id, DialogType type, const QString &text, const QString &caption, Options options )
+                            const QString &details,
+                            const QString &caption)
 {
     KMessageBox_exec_hook = &queued_dialog_exec;
-    (void) messageBoxWId(parent_id, type, text, caption, KStandardGuiItem::yes(),
-                     KStandardGuiItem::no(), KStandardGuiItem::cancel(), QString(), options);
+    (void) detailedErrorWId(parent_id, text, details, caption);
     KMessageBox_exec_hook = 0;
 }
 
-void queuedMessageBox( QWidget *parent, DialogType type, const QString &text, const QString &caption )
+void queuedMessageBox(QWidget *parent, DialogType type, const QString &text, const QString &caption, Options options)
 {
-    return queuedMessageBoxWId( parent ? parent->effectiveWinId() : 0, type, text, caption );
+    return queuedMessageBoxWId(parent ? parent->effectiveWinId() : 0, type, text, caption, options);
 }
 
-void queuedMessageBoxWId( WId parent_id, DialogType type, const QString &text, const QString &caption )
+void queuedMessageBoxWId(WId parent_id, DialogType type, const QString &text, const QString &caption, Options options)
+{
+    KMessageBox_exec_hook = &queued_dialog_exec;
+    (void) messageBoxWId(parent_id, type, text, caption, KStandardGuiItem::yes(),
+                         KStandardGuiItem::no(), KStandardGuiItem::cancel(), QString(), options);
+    KMessageBox_exec_hook = 0;
+}
+
+void queuedMessageBox(QWidget *parent, DialogType type, const QString &text, const QString &caption)
+{
+    return queuedMessageBoxWId(parent ? parent->effectiveWinId() : 0, type, text, caption);
+}
+
+void queuedMessageBoxWId(WId parent_id, DialogType type, const QString &text, const QString &caption)
 {
     KMessageBox_exec_hook = &queued_dialog_exec;
     (void) messageBoxWId(parent_id, type, text, caption);
     KMessageBox_exec_hook = 0;
 }
-
 
 } // KMessageBox

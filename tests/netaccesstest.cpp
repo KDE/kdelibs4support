@@ -28,30 +28,30 @@
 
 int main(int argc, char **argv)
 {
-  QApplication::setApplicationName("netaccesstest");
-  QApplication app(argc, argv);
-  QUrl srcURL( "ftp://ftp.kde.org/pub/kde/README" );
+    QApplication::setApplicationName("netaccesstest");
+    QApplication app(argc, argv);
+    QUrl srcURL("ftp://ftp.kde.org/pub/kde/README");
 #ifdef Q_OS_WIN
-  QUrl tmpURL( "file://" + QDir::tempPath() + "/netaccesstest_README" );
+    QUrl tmpURL("file://" + QDir::tempPath() + "/netaccesstest_README");
 #else
-  QUrl tmpURL( "file:/tmp/netaccesstest_README" );
+    QUrl tmpURL("file:/tmp/netaccesstest_README");
 #endif
 
-  for ( uint i = 0; i < 4 ; ++i ) {
-    qDebug() << "file_copy";
-    KIO::Job* job = KIO::file_copy(srcURL, tmpURL, -1, KIO::Overwrite);
-    if ( !KIO::NetAccess::synchronousRun(job, 0) ) {
-      qCritical() << "file_copy failed: " << KIO::NetAccess::lastErrorString();
-      return 1;
-    } else {
-      QFile f( tmpURL.path() );
-      if (!f.open(QIODevice::ReadOnly)) {
-        qCritical() << "Cannot open: " << f.fileName() << ". The error was: " << f.errorString();
-        return 2;
-      }
+    for (uint i = 0; i < 4; ++i) {
+        qDebug() << "file_copy";
+        KIO::Job *job = KIO::file_copy(srcURL, tmpURL, -1, KIO::Overwrite);
+        if (!KIO::NetAccess::synchronousRun(job, 0)) {
+            qCritical() << "file_copy failed: " << KIO::NetAccess::lastErrorString();
+            return 1;
+        } else {
+            QFile f(tmpURL.path());
+            if (!f.open(QIODevice::ReadOnly)) {
+                qCritical() << "Cannot open: " << f.fileName() << ". The error was: " << f.errorString();
+                return 2;
+            }
+        }
     }
-  }
 
-  return 0;
+    return 0;
 }
 

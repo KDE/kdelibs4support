@@ -24,7 +24,7 @@
 #include <QAction>
 #include <QtTest/QtTest>
 
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
     QApplication::setApplicationName("ktextedittest");
     QApplication app(argc, argv);
@@ -35,10 +35,10 @@ int main( int argc, char **argv )
                   "<a href=\"faure at kde.org\">faure at kde.org</a><br/>"
                   "<a href=\"mailto:faure@kde.org\">mailto:faure@kde.org</a><br/>"
                   "<a href=\"http://www.kde.org\">http://www.kde.org</a><br/>"
-                  "<a href=\""+QFINDTESTDATA("ktextbrowsertest.cpp")+"\">A local link</a><br/>"
+                  "<a href=\"" + QFINDTESTDATA("ktextbrowsertest.cpp") + "\">A local link</a><br/>"
                   "</html>");
 
-    edit->resize( 600, 600 );
+    edit->resize(600, 600);
     edit->show();
     return app.exec();
 }

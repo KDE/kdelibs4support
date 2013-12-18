@@ -19,26 +19,31 @@
 
 #include "kascii.h"
 
-int kasciistricmp( const char *str1, const char *str2 )
+int kasciistricmp(const char *str1, const char *str2)
 {
     const unsigned char *s1 = (const unsigned char *)str1;
     const unsigned char *s2 = (const unsigned char *)str2;
     int res;
     unsigned char c1, c2;
 
-    if ( !s1 || !s2 )
+    if (!s1 || !s2) {
         return s1 ? 1 : (s2 ? -1 : 0);
-    if ( !*s1 || !*s2 )
+    }
+    if (!*s1 || !*s2) {
         return *s1 ? 1 : (*s2 ? -1 : 0);
-    for (;*s1; ++s1, ++s2) {
+    }
+    for (; *s1; ++s1, ++s2) {
         c1 = *s1; c2 = *s2;
-        if (c1 >= 'A' && c1 <= 'Z')
+        if (c1 >= 'A' && c1 <= 'Z') {
             c1 += 'a' - 'A';
-        if (c2 >= 'A' && c2 <= 'Z')
+        }
+        if (c2 >= 'A' && c2 <= 'Z') {
             c2 += 'a' - 'A';
+        }
 
-        if ((res = c1 - c2))
+        if ((res = c1 - c2)) {
             break;
+        }
     }
     return *s1 ? res : (*s2 ? -1 : 0);
 }
@@ -47,41 +52,47 @@ int kasciistricmp( const char *str1, const char *str2 )
     @param ch Character to convert
     @internal
 */
-static unsigned char ASCIIToLower( unsigned char ch )
+static unsigned char ASCIIToLower(unsigned char ch)
 {
-  if ( ch >= 'A' && ch <= 'Z' )
-    return ch - 'A' + 'a';
-  else
-    return ch;
+    if (ch >= 'A' && ch <= 'Z') {
+        return ch - 'A' + 'a';
+    } else {
+        return ch;
+    }
 }
 
-char * kAsciiToLower( char *s )
+char *kAsciiToLower(char *s)
 {
-  if ( !s )
-    return 0;
-  for ( unsigned char *p = (unsigned char *) s; *p; ++p )
-    *p = ASCIIToLower( *p );
-  return s;
+    if (!s) {
+        return 0;
+    }
+    for (unsigned char *p = (unsigned char *) s; *p; ++p) {
+        *p = ASCIIToLower(*p);
+    }
+    return s;
 }
 
 /** Convert a single ASCII character to uppercase.
     @param ch Character to convert
     @internal
 */
-static unsigned char ASCIIToUpper( unsigned char ch )
+static unsigned char ASCIIToUpper(unsigned char ch)
 {
-  if ( ch >= 'a' && ch <= 'z' )
-    return ch - 'a' + 'A';
-  else
-    return ch;
+    if (ch >= 'a' && ch <= 'z') {
+        return ch - 'a' + 'A';
+    } else {
+        return ch;
+    }
 }
 
-char * kAsciiToUpper( char *s )
+char *kAsciiToUpper(char *s)
 {
-  if ( !s )
-    return 0;
-  for ( unsigned char *p = (unsigned char *) s; *p; ++p )
-    *p = ASCIIToUpper( *p );
-  return s;
+    if (!s) {
+        return 0;
+    }
+    for (unsigned char *p = (unsigned char *) s; *p; ++p) {
+        *p = ASCIIToUpper(*p);
+    }
+    return s;
 }
 

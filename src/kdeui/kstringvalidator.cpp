@@ -23,7 +23,7 @@
 
 class KStringListValidator::Private
 {
-  public:
+public:
     QStringList mStringList;
     bool mRejecting : 1;
     bool mFixupEnabled : 1;
@@ -32,82 +32,86 @@ class KStringListValidator::Private
 //
 // KStringListValidator
 //
-KStringListValidator::KStringListValidator( const QStringList &list, bool rejecting,
-                                            bool fixupEnabled, QObject *parent )
-  : QValidator( parent ),
-    d( new Private )
+KStringListValidator::KStringListValidator(const QStringList &list, bool rejecting,
+        bool fixupEnabled, QObject *parent)
+    : QValidator(parent),
+      d(new Private)
 {
-  d->mStringList = list;
-  d->mRejecting = rejecting;
-  d->mFixupEnabled = fixupEnabled;
+    d->mStringList = list;
+    d->mRejecting = rejecting;
+    d->mFixupEnabled = fixupEnabled;
 }
 
 KStringListValidator::~KStringListValidator()
 {
-  delete d;
+    delete d;
 }
 
-QValidator::State KStringListValidator::validate( QString & input, int& ) const
+QValidator::State KStringListValidator::validate(QString &input, int &) const
 {
-  if ( input.isEmpty() )
-    return Intermediate;
+    if (input.isEmpty()) {
+        return Intermediate;
+    }
 
-  if ( isRejecting() ) // anything not in mStringList is acceptable:
-    if ( !d->mStringList.contains( input ) )
-      return Acceptable;
-    else
-      return Intermediate;
-  else // only what is in mStringList is acceptable:
-    if ( d->mStringList.contains( input ) )
-      return Acceptable;
-    else
-      for ( QStringList::ConstIterator it = d->mStringList.constBegin(); it != d->mStringList.constEnd() ; ++it )
-        if ( (*it).startsWith( input ) || input.startsWith( *it ) )
-          return Intermediate;
+    if (isRejecting())   // anything not in mStringList is acceptable:
+        if (!d->mStringList.contains(input)) {
+            return Acceptable;
+        } else {
+            return Intermediate;
+        }
+    else // only what is in mStringList is acceptable:
+        if (d->mStringList.contains(input)) {
+            return Acceptable;
+        } else
+            for (QStringList::ConstIterator it = d->mStringList.constBegin(); it != d->mStringList.constEnd(); ++it)
+                if ((*it).startsWith(input) || input.startsWith(*it)) {
+                    return Intermediate;
+                }
 
-  return Invalid;
+    return Invalid;
 }
 
-void KStringListValidator::fixup( QString& ) const
+void KStringListValidator::fixup(QString &) const
 {
-  if ( !isFixupEnabled() )
-    return;
+    if (!isFixupEnabled()) {
+        return;
+    }
 
-  // warn (but only once!) about non-implemented fixup():
-  static bool warn = true;
-  if ( warn ) {
-    kDebug() << "KStringListValidator::fixup() isn't yet implemented!";
-    warn = false;
-  }
+    // warn (but only once!) about non-implemented fixup():
+    static bool warn = true;
+    if (warn) {
+        kDebug() << "KStringListValidator::fixup() isn't yet implemented!";
+        warn = false;
+    }
 }
 
-void KStringListValidator::setRejecting( bool rejecting )
+void KStringListValidator::setRejecting(bool rejecting)
 {
-  d->mRejecting = rejecting;
+    d->mRejecting = rejecting;
 }
 
 bool KStringListValidator::isRejecting() const
 {
-  return d->mRejecting;
+    return d->mRejecting;
 }
 
-void KStringListValidator::setFixupEnabled( bool fixupEnabled )
+void KStringListValidator::setFixupEnabled(bool fixupEnabled)
 {
-  d->mFixupEnabled = fixupEnabled;
+    d->mFixupEnabled = fixupEnabled;
 }
 
 bool KStringListValidator::isFixupEnabled() const
 {
-  return d->mFixupEnabled;
+    return d->mFixupEnabled;
 }
 
-void KStringListValidator::setStringList( const QStringList &list )
+void KStringListValidator::setStringList(const QStringList &list)
 {
-  d->mStringList = list;
+    d->mStringList = list;
 }
 
 QStringList KStringListValidator::stringList() const
 {
-  return d->mStringList;
+    return d->mStringList;
 }
 

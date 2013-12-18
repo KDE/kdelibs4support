@@ -61,17 +61,17 @@ public:
 
 private:
     virtual DateTimeComponents parseDatePosix(const QString &dateString,
-                                              const QString &format,
-                                              const KCalendarSystem *calendar,
-                                              const KLocale *locale,
-                                              KLocale::DigitSet digitSet,
-                                              KLocale::DateTimeFormatStandard standard) const;
+            const QString &format,
+            const KCalendarSystem *calendar,
+            const KLocale *locale,
+            KLocale::DigitSet digitSet,
+            KLocale::DateTimeFormatStandard standard) const;
 
     virtual DateTimeComponents parseDateUnicode(const QString &inputString,
-                                                const QString &format,
-                                                const KCalendarSystem *calendar,
-                                                const KLocale *locale,
-                                                KLocale::DigitSet digitSet) const;
+            const QString &format,
+            const KCalendarSystem *calendar,
+            const KLocale *locale,
+            KLocale::DigitSet digitSet) const;
 
     virtual int integerFromString(const QString &string, int maxLength, int &readLength) const;
 };

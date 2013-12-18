@@ -45,7 +45,7 @@ class KLocalizedString;
 class KDE4SUPPORT_DEPRECATED_EXPORT KNumInput : public QWidget
 {
     Q_OBJECT
-    Q_PROPERTY( QString label READ label WRITE setLabel )
+    Q_PROPERTY(QString label READ label WRITE setLabel)
 public:
     /**
      * Default constructor
@@ -53,7 +53,7 @@ public:
      * window. If parent is another widget, this widget becomes a child
      * window inside parent. The new widget is deleted when its parent is deleted.
      */
-    explicit KNumInput(QWidget* parent=0);
+    explicit KNumInput(QWidget *parent = 0);
 
     /**
      * @param below A pointer to another KNumInput.
@@ -61,7 +61,7 @@ public:
      * \deprecated - use the version without the below parameter instead
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED KNumInput(QWidget *parent, KNumInput* below);
+    KDE4SUPPORT_DEPRECATED KNumInput(QWidget *parent, KNumInput *below);
 #endif
 
     /**
@@ -86,7 +86,7 @@ public:
      *     @li @p Qt:AlignBottom  The label is placed below the edit/slider
      *
      */
-    virtual void setLabel(const QString & label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop);
+    virtual void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop);
 
     /**
      * @return the text of the label.
@@ -139,7 +139,7 @@ protected:
 
 private:
     friend class KNumInputPrivate;
-    KNumInputPrivate * const d;
+    KNumInputPrivate *const d;
 
     Q_DISABLE_COPY(KNumInput)
 };
@@ -176,23 +176,23 @@ private:
 class KDE4SUPPORT_DEPRECATED_EXPORT KIntNumInput : public KNumInput
 {
     Q_OBJECT
-    Q_PROPERTY( int value READ value WRITE setValue NOTIFY valueChanged USER true )
-    Q_PROPERTY( int minimum READ minimum WRITE setMinimum )
-    Q_PROPERTY( int maximum READ maximum WRITE setMaximum )
-    Q_PROPERTY( int singleStep READ singleStep WRITE setSingleStep )
-    Q_PROPERTY( int referencePoint READ referencePoint WRITE setReferencePoint )
-    Q_PROPERTY( double relativeValue READ relativeValue WRITE setRelativeValue )
-    Q_PROPERTY( QString suffix READ suffix WRITE setSuffix )
-    Q_PROPERTY( QString prefix READ prefix WRITE setPrefix )
-    Q_PROPERTY( QString specialValueText READ specialValueText WRITE setSpecialValueText )
-    Q_PROPERTY( bool sliderEnabled READ showSlider WRITE setSliderEnabled )
+    Q_PROPERTY(int value READ value WRITE setValue NOTIFY valueChanged USER true)
+    Q_PROPERTY(int minimum READ minimum WRITE setMinimum)
+    Q_PROPERTY(int maximum READ maximum WRITE setMaximum)
+    Q_PROPERTY(int singleStep READ singleStep WRITE setSingleStep)
+    Q_PROPERTY(int referencePoint READ referencePoint WRITE setReferencePoint)
+    Q_PROPERTY(double relativeValue READ relativeValue WRITE setRelativeValue)
+    Q_PROPERTY(QString suffix READ suffix WRITE setSuffix)
+    Q_PROPERTY(QString prefix READ prefix WRITE setPrefix)
+    Q_PROPERTY(QString specialValueText READ specialValueText WRITE setSpecialValueText)
+    Q_PROPERTY(bool sliderEnabled READ showSlider WRITE setSliderEnabled)
 
 public:
     /**
      * Constructs an input control for integer values
      * with base 10 and initial value 0.
      */
-    explicit KIntNumInput(QWidget *parent=0);
+    explicit KIntNumInput(QWidget *parent = 0);
     /**
      * Constructor
      * It constructs a QSpinBox that allows the input of integer numbers
@@ -204,7 +204,7 @@ public:
      * @param base   numeric base used for display
      * @param parent parent QWidget
      */
-    explicit KIntNumInput(int value, QWidget *parent=0,int base = 10);
+    explicit KIntNumInput(int value, QWidget *parent = 0, int base = 10);
 
     /**
      * Constructor
@@ -225,7 +225,7 @@ public:
      * \deprecated use the version without the below parameter instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED KIntNumInput(KNumInput* below, int value, QWidget *parent, int base = 10);
+    KDE4SUPPORT_DEPRECATED KIntNumInput(KNumInput *below, int value, QWidget *parent, int base = 10);
 #endif
 
     /**
@@ -274,7 +274,7 @@ public:
      * @param max  maximum value
      * @param step step size
      */
-    void setRange(int min, int max, int singleStep=1);
+    void setRange(int min, int max, int singleStep = 1);
 
     /**
      * @deprecated Use the other setRange function and setSliderEnabled instead
@@ -287,7 +287,7 @@ public:
       * @param enabled Show the slider
       * @default enabled
       */
-    void setSliderEnabled(bool enabled=true);
+    void setSliderEnabled(bool enabled = true);
 
     /**
      * Sets the minimum value.
@@ -322,9 +322,9 @@ public:
      * value is equal to minVal(). Typically this is used for indicating
      * that the choice has a special (default) meaning.
      */
-    void setSpecialValueText(const QString& text);
+    void setSpecialValueText(const QString &text);
 
-    virtual void setLabel(const QString & label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop);
+    virtual void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop);
 
     /**
      * This method returns the minimum size necessary to display the
@@ -383,7 +383,7 @@ public Q_SLOTS:
      * sets focus to the edit widget and marks all text in if mark == true
      *
      */
-    void setEditFocus( bool mark = true );
+    void setEditFocus(bool mark = true);
 
 Q_SIGNALS:
     /**
@@ -410,7 +410,7 @@ protected:
     QSpinBox *spinBox() const;
 
     virtual void doLayout();
-    void resizeEvent ( QResizeEvent * );
+    void resizeEvent(QResizeEvent *);
 
 private:
     void initWidget(int value, int _base);
@@ -418,11 +418,10 @@ private:
 private:
     class KIntNumInputPrivate;
     friend class KIntNumInputPrivate;
-    KIntNumInputPrivate * const d;
+    KIntNumInputPrivate *const d;
 
     Q_DISABLE_COPY(KIntNumInput)
 };
-
 
 /* ------------------------------------------------------------------------ */
 
@@ -456,18 +455,18 @@ class KDoubleLine;
 class KDE4SUPPORT_DEPRECATED_EXPORT KDoubleNumInput : public KNumInput
 {
     Q_OBJECT
-    Q_PROPERTY( double value READ value WRITE setValue NOTIFY valueChanged USER true )
-    Q_PROPERTY( double minimum READ minimum WRITE setMinimum )
-    Q_PROPERTY( double maximum READ maximum WRITE setMaximum )
-    Q_PROPERTY( double singleStep READ singleStep WRITE setSingleStep )
-    Q_PROPERTY( QString suffix READ suffix WRITE setSuffix )
-    Q_PROPERTY( QString prefix READ prefix WRITE setPrefix )
-    Q_PROPERTY( QString specialValueText READ specialValueText WRITE setSpecialValueText )
-    Q_PROPERTY( int decimals READ decimals WRITE setDecimals )
-    Q_PROPERTY( double referencePoint READ referencePoint WRITE setReferencePoint )
-    Q_PROPERTY( double relativeValue READ relativeValue  WRITE setRelativeValue )
-    Q_PROPERTY( bool sliderEnabled READ showSlider WRITE setSliderEnabled )
-    Q_PROPERTY( double exponentRatio READ exponentRatio WRITE setExponentRatio )
+    Q_PROPERTY(double value READ value WRITE setValue NOTIFY valueChanged USER true)
+    Q_PROPERTY(double minimum READ minimum WRITE setMinimum)
+    Q_PROPERTY(double maximum READ maximum WRITE setMaximum)
+    Q_PROPERTY(double singleStep READ singleStep WRITE setSingleStep)
+    Q_PROPERTY(QString suffix READ suffix WRITE setSuffix)
+    Q_PROPERTY(QString prefix READ prefix WRITE setPrefix)
+    Q_PROPERTY(QString specialValueText READ specialValueText WRITE setSpecialValueText)
+    Q_PROPERTY(int decimals READ decimals WRITE setDecimals)
+    Q_PROPERTY(double referencePoint READ referencePoint WRITE setReferencePoint)
+    Q_PROPERTY(double relativeValue READ relativeValue  WRITE setRelativeValue)
+    Q_PROPERTY(bool sliderEnabled READ showSlider WRITE setSliderEnabled)
+    Q_PROPERTY(double exponentRatio READ exponentRatio WRITE setExponentRatio)
 
 public:
     /**
@@ -486,14 +485,13 @@ public:
      * @param precision number of digits after the decimal point
      * @param parent parent QWidget
      */
-    KDoubleNumInput(double lower, double upper, double value, QWidget *parent=0,double singleStep=0.01,
-		    int precision=2);
+    KDoubleNumInput(double lower, double upper, double value, QWidget *parent = 0, double singleStep = 0.01,
+                    int precision = 2);
 
     /**
      * destructor
      */
     virtual ~KDoubleNumInput();
-
 
     /**
      * Constructor
@@ -517,9 +515,9 @@ public:
      * \deprecated use the version without below instead
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED KDoubleNumInput(KNumInput* below,
-		    double lower, double upper, double value, QWidget *parent=0,double singleStep=0.02,
-		    int precision=2);
+    KDE4SUPPORT_DEPRECATED KDoubleNumInput(KNumInput *below,
+                                           double lower, double upper, double value, QWidget *parent = 0, double singleStep = 0.02,
+                                           int precision = 2);
 #endif
 
     /**
@@ -551,13 +549,13 @@ public:
      */
     QString specialValueText() const;
 
-     /**
-     * @param min  minimum value
-     * @param max  maximum value
-     * @param singleStep step size for the QSlider
-     * @param slider whether the slider is created or not
-     */
-    void setRange(double min, double max, double singleStep=1, bool slider=true);
+    /**
+    * @param min  minimum value
+    * @param max  maximum value
+    * @param singleStep step size for the QSlider
+    * @param slider whether the slider is created or not
+    */
+    void setRange(double min, double max, double singleStep = 1, bool slider = true);
 
     /**
       * @param enabled Show the slider
@@ -598,7 +596,10 @@ public:
     void setDecimals(int decimals);
 
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setPrecision(int precision) { setDecimals(precision); }
+    KDE4SUPPORT_DEPRECATED void setPrecision(int precision)
+    {
+        setDecimals(precision);
+    }
 #endif
 
     /**
@@ -617,9 +618,9 @@ public:
      * value is equal to minVal(). Typically this is used for indicating
      * that the choice has a special (default) meaning.
      */
-    void setSpecialValueText(const QString& text);
+    void setSpecialValueText(const QString &text);
 
-    virtual void setLabel(const QString & label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop);
+    virtual void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop);
     virtual QSize minimumSizeHint() const;
 
     /**
@@ -689,23 +690,22 @@ private Q_SLOTS:
 
 protected:
     virtual void doLayout();
-    void resizeEvent ( QResizeEvent * );
+    void resizeEvent(QResizeEvent *);
 
     friend class KDoubleLine;
 private:
     void initWidget(double value, double lower, double upper,
-    double singleStep, int precision);
+                    double singleStep, int precision);
     double mapSliderToSpin(int) const;
     void updateLegacyMembers();
 
 private:
     class KDoubleNumInputPrivate;
     friend class KDoubleNumInputPrivate;
-    KDoubleNumInputPrivate * const d;
+    KDoubleNumInputPrivate *const d;
 
     Q_DISABLE_COPY(KDoubleNumInput)
 };
-
 
 /* ------------------------------------------------------------------------ */
 
@@ -725,7 +725,7 @@ private:
 class KDE4SUPPORT_DEPRECATED_EXPORT KIntSpinBox : public QSpinBox
 {
     Q_OBJECT
-    Q_PROPERTY( int base READ base WRITE setBase )
+    Q_PROPERTY(int base READ base WRITE setBase)
 
 public:
 
@@ -736,7 +736,7 @@ public:
      *  and a slider, with minimal value 0, maximal value 99, step 1, base 10
      *  and initial value 0.
      */
-    explicit KIntSpinBox( QWidget *parent = 0 );
+    explicit KIntSpinBox(QWidget *parent = 0);
 
     /**
      *  Constructor.
@@ -751,7 +751,7 @@ public:
      *  @param base   The base of the used number system.
      *  @param parent The parent of the widget.
      */
-    KIntSpinBox(int lower, int upper, int singleStep, int value, QWidget *parent,int base = 10);
+    KIntSpinBox(int lower, int upper, int singleStep, int value, QWidget *parent, int base = 10);
 
     /**
      *  Destructor.

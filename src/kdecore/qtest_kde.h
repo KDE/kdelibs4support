@@ -33,20 +33,19 @@
 #include <QtCore/QEventLoop>
 #include <QtTest/QSignalSpy>
 
-
 namespace QTest
 {
-    /**
-     * Starts an event loop that runs until the given signal is received.
-     * Optionally the event loop can return earlier on a timeout.
-     *
-     * \param timeout the timeout in milliseconds
-     *
-     * \return \p true if the requested signal was received
-     *         \p false on timeout
-     * \deprecated since 5.0, use QSignalSpy::wait(timeout)
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT bool kWaitForSignal(QObject *obj, const char *signal, int timeout = 0);
+/**
+ * Starts an event loop that runs until the given signal is received.
+ * Optionally the event loop can return earlier on a timeout.
+ *
+ * \param timeout the timeout in milliseconds
+ *
+ * \return \p true if the requested signal was received
+ *         \p false on timeout
+ * \deprecated since 5.0, use QSignalSpy::wait(timeout)
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT bool kWaitForSignal(QObject *obj, const char *signal, int timeout = 0);
 } // namespace QTest
 
 // By default, unit tests get no gui.
@@ -70,27 +69,27 @@ Q_DECLARE_OPERATORS_FOR_FLAGS(KDEMainFlags)
  * \see QTestLib
  */
 #define QTEST_KDEMAIN_WITH_COMPONENTNAME(TestObject, flags, componentName) \
-int main(int argc, char *argv[]) \
-{ \
-    qputenv("LC_ALL", "C"); \
-    assert( !QDir::homePath().isEmpty() ); \
-    qputenv("XDG_DATA_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/local") )); \
-    qputenv("XDG_CONFIG_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config") )); \
-    qputenv("XDG_CACHE_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/cache") )); \
-    qputenv("KDE_SKIP_KDERC", "1"); \
-    unsetenv("KDE_COLOR_DEBUG"); \
-    QFile::remove(QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config/qttestrc"));  \
-    K4AboutData aboutData( QByteArray(componentName), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") );  \
-    KDEMainFlags mainFlags = flags;                         \
-    KComponentData cData(&aboutData); \
-    QApplication app( argc, argv, (mainFlags & GUI) != 0 ); \
-    app.setApplicationName( QLatin1String("qttest") ); \
-    qRegisterMetaType<KUrl>(); /*as done by kapplication*/ \
-    qRegisterMetaType<QList<KUrl> >(); \
-    TestObject tc; \
-    KGlobal::ref(); /* don't quit qeventloop after closing a mainwindow */ \
-    return QTest::qExec( &tc, argc, argv ); \
-}
+    int main(int argc, char *argv[]) \
+    { \
+        qputenv("LC_ALL", "C"); \
+        assert( !QDir::homePath().isEmpty() ); \
+        qputenv("XDG_DATA_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/local") )); \
+        qputenv("XDG_CONFIG_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config") )); \
+        qputenv("XDG_CACHE_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/cache") )); \
+        qputenv("KDE_SKIP_KDERC", "1"); \
+        unsetenv("KDE_COLOR_DEBUG"); \
+        QFile::remove(QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config/qttestrc"));  \
+        K4AboutData aboutData( QByteArray(componentName), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") );  \
+        KDEMainFlags mainFlags = flags;                         \
+        KComponentData cData(&aboutData); \
+        QApplication app( argc, argv, (mainFlags & GUI) != 0 ); \
+        app.setApplicationName( QLatin1String("qttest") ); \
+        qRegisterMetaType<KUrl>(); /*as done by kapplication*/ \
+        qRegisterMetaType<QList<KUrl> >(); \
+        TestObject tc; \
+        KGlobal::ref(); /* don't quit qeventloop after closing a mainwindow */ \
+        return QTest::qExec( &tc, argc, argv ); \
+    }
 
 /**
  * \short KDE Replacement for QTEST_MAIN from QTestLib
@@ -121,26 +120,26 @@ int main(int argc, char *argv[]) \
  * \since 4.3
  */
 #define QTEST_KDEMAIN_CORE_WITH_COMPONENTNAME(TestObject, componentName) \
-int main(int argc, char *argv[]) \
-{ \
-    qputenv("LC_ALL", "C"); \
-    assert( !QDir::homePath().isEmpty() ); \
-    qputenv("XDG_DATA_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/local"))); \
-    qputenv("XDG_CONFIG_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config") )); \
-    qputenv("XDG_CACHE_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/cache") )); \
-    qputenv("KDE_SKIP_KDERC", "1"); \
-    unsetenv("KDE_COLOR_DEBUG"); \
-    QFile::remove(QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config/qttestrc"));  \
-    K4AboutData aboutData( QByteArray(componentName), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") );  \
-    KComponentData cData(&aboutData); \
-    QCoreApplication app( argc, argv ); \
-    app.setApplicationName( QLatin1String("qttest") ); \
-    qRegisterMetaType<KUrl>(); /*as done by kapplication*/ \
-    qRegisterMetaType<QList<KUrl> >(); \
-    TestObject tc; \
-    KGlobal::ref(); /* don't quit qeventloop after closing a mainwindow */ \
-    return QTest::qExec( &tc, argc, argv ); \
-}
+    int main(int argc, char *argv[]) \
+    { \
+        qputenv("LC_ALL", "C"); \
+        assert( !QDir::homePath().isEmpty() ); \
+        qputenv("XDG_DATA_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/local"))); \
+        qputenv("XDG_CONFIG_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config") )); \
+        qputenv("XDG_CACHE_HOME", QFile::encodeName( QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/cache") )); \
+        qputenv("KDE_SKIP_KDERC", "1"); \
+        unsetenv("KDE_COLOR_DEBUG"); \
+        QFile::remove(QDir::homePath() + QString::fromLatin1("/.kde-unit-test/xdg/config/qttestrc"));  \
+        K4AboutData aboutData( QByteArray(componentName), QByteArray(), ki18n("KDE Test Program"), QByteArray("version") );  \
+        KComponentData cData(&aboutData); \
+        QCoreApplication app( argc, argv ); \
+        app.setApplicationName( QLatin1String("qttest") ); \
+        qRegisterMetaType<KUrl>(); /*as done by kapplication*/ \
+        qRegisterMetaType<QList<KUrl> >(); \
+        TestObject tc; \
+        KGlobal::ref(); /* don't quit qeventloop after closing a mainwindow */ \
+        return QTest::qExec( &tc, argc, argv ); \
+    }
 
 /**
  * \short KDE Replacement for QTEST_MAIN from QTestLib, for non-gui code.

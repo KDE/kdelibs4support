@@ -50,28 +50,28 @@ KDayPeriodPrivate::KDayPeriodPrivate(const QString &periodCode,
                                      const QTime &periodEnd,
                                      int offsetFromStart,
                                      int offsetIfZero)
-                 : QSharedData(),
-                   m_periodCode(periodCode),
-                   m_longName(longName),
-                   m_shortName(shortName),
-                   m_narrowName(narrowName),
-                   m_periodStart(periodStart),
-                   m_periodEnd(periodEnd),
-                   m_offsetFromStart(offsetFromStart),
-                   m_offsetIfZero(offsetIfZero)
+    : QSharedData(),
+      m_periodCode(periodCode),
+      m_longName(longName),
+      m_shortName(shortName),
+      m_narrowName(narrowName),
+      m_periodStart(periodStart),
+      m_periodEnd(periodEnd),
+      m_offsetFromStart(offsetFromStart),
+      m_offsetIfZero(offsetIfZero)
 {
 }
 
 KDayPeriodPrivate::KDayPeriodPrivate(const KDayPeriodPrivate &other)
-                 : QSharedData(other),
-                   m_periodCode(other.m_periodCode),
-                   m_longName(other.m_longName),
-                   m_shortName(other.m_shortName),
-                   m_narrowName(other.m_narrowName),
-                   m_periodStart(other.m_periodStart),
-                   m_periodEnd(other.m_periodEnd),
-                   m_offsetFromStart(other.m_offsetFromStart),
-                   m_offsetIfZero(other.m_offsetIfZero)
+    : QSharedData(other),
+      m_periodCode(other.m_periodCode),
+      m_longName(other.m_longName),
+      m_shortName(other.m_shortName),
+      m_narrowName(other.m_narrowName),
+      m_periodStart(other.m_periodStart),
+      m_periodEnd(other.m_periodEnd),
+      m_offsetFromStart(other.m_offsetFromStart),
+      m_offsetIfZero(other.m_offsetIfZero)
 {
 }
 
@@ -87,24 +87,24 @@ KDayPeriod::KDayPeriod(const QString &periodCode,
                        const QTime &periodEnd,
                        int offsetFromStart,
                        int offsetIfZero)
-          : d(new KDayPeriodPrivate(periodCode,
-                                    longName,
-                                    shortName,
-                                    narrowName,
-                                    periodStart,
-                                    periodEnd,
-                                    offsetFromStart,
-                                    offsetIfZero))
+    : d(new KDayPeriodPrivate(periodCode,
+                              longName,
+                              shortName,
+                              narrowName,
+                              periodStart,
+                              periodEnd,
+                              offsetFromStart,
+                              offsetIfZero))
 {
 }
 
 KDayPeriod::KDayPeriod()
-          : d(new KDayPeriodPrivate(QString(), QString(), QString(), QString(), QTime(), QTime(), -1, -1))
+    : d(new KDayPeriodPrivate(QString(), QString(), QString(), QString(), QTime(), QTime(), -1, -1))
 {
 }
 
 KDayPeriod::KDayPeriod(const KDayPeriod &rhs)
-          : d(rhs.d)
+    : d(rhs.d)
 {
 }
 
@@ -112,7 +112,7 @@ KDayPeriod::~KDayPeriod()
 {
 }
 
-KDayPeriod& KDayPeriod::operator=(const KDayPeriod &rhs)
+KDayPeriod &KDayPeriod::operator=(const KDayPeriod &rhs)
 {
     if (&rhs != this) {
         d = rhs.d;

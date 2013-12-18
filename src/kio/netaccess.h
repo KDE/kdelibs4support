@@ -36,37 +36,38 @@ class QWidget;
 template<typename T, typename K> class QMap;
 
 class KJob;
-namespace KIO {
+namespace KIO
+{
 
-  class Job;
+class Job;
 
-  class NetAccessPrivate;
-  /**
-   * Net Transparency.
-   *
-   * NetAccess allows you to do simple file operation (load, save,
-   * copy, delete...) without working with KIO::Job directly.
-   * Whereas a KIO::Job is asynchronous, meaning that the
-   * developer has to connect slots for it, KIO::NetAccess provides
-   * synchronous downloads and uploads, as well as temporary file
-   * creation and removal. The functions appear to be blocking,
-   * but the Qt event loop continues running while the operations
-   * are handled. More precisely, the GUI will still repaint, but no user
-   * interaction will be possible. If you can, please use async KIO jobs instead!
-   * See the documentation of KJob::exec() for more about the dangers of NetAccess.
-   *
-   * This class isn't meant to be used as a class but only as a simple
-   * namespace for static functions, though an instance of the class
-   * is built for internal purposes. TODO KDE5: turn into namespace,
-   * and make the qobject class private.
-   *
-   * Port to kio done by David Faure, faure@kde.org
-   *
-   * @short Provides a blocking interface to KIO file operations.
-   */
+class NetAccessPrivate;
+/**
+ * Net Transparency.
+ *
+ * NetAccess allows you to do simple file operation (load, save,
+ * copy, delete...) without working with KIO::Job directly.
+ * Whereas a KIO::Job is asynchronous, meaning that the
+ * developer has to connect slots for it, KIO::NetAccess provides
+ * synchronous downloads and uploads, as well as temporary file
+ * creation and removal. The functions appear to be blocking,
+ * but the Qt event loop continues running while the operations
+ * are handled. More precisely, the GUI will still repaint, but no user
+ * interaction will be possible. If you can, please use async KIO jobs instead!
+ * See the documentation of KJob::exec() for more about the dangers of NetAccess.
+ *
+ * This class isn't meant to be used as a class but only as a simple
+ * namespace for static functions, though an instance of the class
+ * is built for internal purposes. TODO KDE5: turn into namespace,
+ * and make the qobject class private.
+ *
+ * Port to kio done by David Faure, faure@kde.org
+ *
+ * @short Provides a blocking interface to KIO file operations.
+ */
 class KDE4SUPPORT_DEPRECATED_EXPORT NetAccess : public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
     enum StatSide {
@@ -139,7 +140,7 @@ public:
      * @see lastErrorString()
      * @deprecated since 5.0, use KIO::storedGet + KJobWidgets::setWindow + job->exec() instead
      */
-    static bool download(const QUrl& src, QString & target, QWidget* window);
+    static bool download(const QUrl &src, QString &target, QWidget *window);
 
     /**
      * Removes the specified file if and only if it was created
@@ -152,7 +153,7 @@ public:
      * @param name Path to temporary file to remove.  May not be
      *             empty.
      */
-    static void removeTempFile(const QString& name);
+    static void removeTempFile(const QString &name);
 
     /**
      * Uploads file @p src to URL @p target.
@@ -173,7 +174,7 @@ public:
      * @return true if successful, false for failure
      * @deprecated since 5.0, use KIO::storedPut + KJobWidgets::setWindow + job->exec() instead
      */
-    static bool upload(const QString& src, const QUrl& target, QWidget* window);
+    static bool upload(const QString &src, const QUrl &target, QWidget *window);
 
     /**
      * Alternative to upload for copying over the network.
@@ -193,9 +194,9 @@ public:
      * @deprecated since 5.0, use KIO::file_copy + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool file_copy( const QUrl& src, const QUrl& target, QWidget* window = 0 );
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool copy( const QUrl& src, const QUrl& target,
-                                     QWidget* window = 0 );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool file_copy(const QUrl &src, const QUrl &target, QWidget *window = 0);
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool copy(const QUrl &src, const QUrl &target,
+            QWidget *window = 0);
 #endif
 
     /**
@@ -220,7 +221,7 @@ public:
      * @deprecated since 5.0, use KIO::copy + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool dircopy( const QUrl& src, const QUrl& target, QWidget* window );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool dircopy(const QUrl &src, const QUrl &target, QWidget *window);
 #endif
 
     /**
@@ -228,7 +229,7 @@ public:
      * @deprecated since 5.0, use KIO::copy + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool dircopy( const QList<QUrl>& src, const QUrl& target, QWidget* window = 0L );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool dircopy(const QList<QUrl> &src, const QUrl &target, QWidget *window = 0L);
 #endif
     /**
      * Full-fledged equivalent of KIO::move.
@@ -236,7 +237,7 @@ public:
      * @deprecated since 5.0, use KIO::move + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool move( const QUrl& src, const QUrl& target, QWidget* window = 0L );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool move(const QUrl &src, const QUrl &target, QWidget *window = 0L);
 #endif
 
     /**
@@ -245,7 +246,7 @@ public:
      * @deprecated since 5.0, use KIO::move + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool move( const QList<QUrl>& src, const QUrl& target, QWidget* window = 0L );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool move(const QList<QUrl> &src, const QUrl &target, QWidget *window = 0L);
 #endif
 
     /**
@@ -266,7 +267,7 @@ public:
      * @deprecated use the StatSide enum instead of the bool source
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool exists(const QUrl& url, bool source, QWidget* window);
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool exists(const QUrl &url, bool source, QWidget *window);
 #endif
 
     /**
@@ -284,7 +285,7 @@ public:
      *              @p source, false otherwise
      * @deprecated since 5.0, use QFile::exists for local files and KIO::stat for transparency
      */
-    static bool exists(const QUrl& url, StatSide statSide, QWidget* window);
+    static bool exists(const QUrl &url, StatSide statSide, QWidget *window);
 
     /**
      * Tests whether a URL exists and return information on it.
@@ -303,8 +304,7 @@ public:
      * @return true if successful, false for failure
      * @deprecated since 5.0, use KIO::stat + KJobWidgets::setWindow + job->exec() instead
      */
-    static bool stat(const QUrl& url, KIO::UDSEntry & entry, QWidget* window);
-
+    static bool stat(const QUrl &url, KIO::UDSEntry &entry, QWidget *window);
 
     /**
      * Tries to map a local URL for the given URL.
@@ -322,7 +322,7 @@ public:
      *         original URL, or the original URL if no local URL can be mapped
      * @deprecated since 5.0, use KIO::mostLocalUrl + KJobWidgets::setWindow + job->exec() instead
      */
-    static QUrl mostLocalUrl(const QUrl& url, QWidget* window);
+    static QUrl mostLocalUrl(const QUrl &url, QWidget *window);
 
     /**
      * Deletes a file or a directory in a synchronous way.
@@ -340,7 +340,7 @@ public:
      * @deprecated since 5.0, use KIO::del + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool del( const QUrl & url, QWidget* window );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool del(const QUrl &url, QWidget *window);
 #endif
 
     /**
@@ -360,7 +360,7 @@ public:
      * @deprecated since 5.0, use KIO::mkdir + job->ui()->setWindow() + job->exec() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED_EXPORT bool mkdir( const QUrl & url, QWidget* window, int permissions = -1 );
+    static KDE4SUPPORT_DEPRECATED_EXPORT bool mkdir(const QUrl &url, QWidget *window, int permissions = -1);
 #endif
 
     /**
@@ -381,7 +381,7 @@ public:
      *               again be prompted for passwords as needed.
      * @return The resulting output of the @p command that is executed.
      */
-    static QString fish_execute( const QUrl & url, const QString &command, QWidget* window );
+    static QString fish_execute(const QUrl &url, const QString &command, QWidget *window);
 
     /**
      * This function executes a job in a synchronous way.
@@ -416,8 +416,8 @@ public:
      * @return true on success, false on failure.
      * @deprecated since 5.0, KJobWidgets::setWindow + job->exec() instead
      */
-    static bool synchronousRun( Job* job, QWidget* window, QByteArray* data=0,
-                                QUrl* finalURL=0, QMap<QString,QString>* metaData=0 );
+    static bool synchronousRun(Job *job, QWidget *window, QByteArray *data = 0,
+                               QUrl *finalURL = 0, QMap<QString, QString> *metaData = 0);
 
     /**
      * Determines the mimetype of a given URL.
@@ -438,8 +438,7 @@ public:
      * @return The mimetype name.
      * @deprecated since 5.0, use KIO::mimetype + KJobWidgets::setWindow + job->exec() instead
      */
-    static QString mimetype( const QUrl & url, QWidget* window );
-
+    static QString mimetype(const QUrl &url, QWidget *window);
 
     /**
      * Returns the error string for the last job, in case it failed.
@@ -470,31 +469,31 @@ private:
     /**
      * Internal methods
      */
-    bool filecopyInternal(const QUrl& src, const QUrl& target, int permissions,
-                          KIO::JobFlags flags, QWidget* window, bool move);
-    bool dircopyInternal(const QList<QUrl>& src, const QUrl& target,
-                         QWidget* window, bool move);
-    bool statInternal(const QUrl & url, int details, StatSide side, QWidget* window = 0);
+    bool filecopyInternal(const QUrl &src, const QUrl &target, int permissions,
+                          KIO::JobFlags flags, QWidget *window, bool move);
+    bool dircopyInternal(const QList<QUrl> &src, const QUrl &target,
+                         QWidget *window, bool move);
+    bool statInternal(const QUrl &url, int details, StatSide side, QWidget *window = 0);
 
-    bool delInternal(const QUrl & url, QWidget* window = 0);
-    bool mkdirInternal(const QUrl & url, int permissions, QWidget* window = 0);
-    QString fish_executeInternal(const QUrl & url, const QString &command, QWidget* window = 0);
-    bool synchronousRunInternal( Job* job, QWidget* window, QByteArray* data,
-                                 QUrl* finalURL, QMap<QString,QString>* metaData );
+    bool delInternal(const QUrl &url, QWidget *window = 0);
+    bool mkdirInternal(const QUrl &url, int permissions, QWidget *window = 0);
+    QString fish_executeInternal(const QUrl &url, const QString &command, QWidget *window = 0);
+    bool synchronousRunInternal(Job *job, QWidget *window, QByteArray *data,
+                                QUrl *finalURL, QMap<QString, QString> *metaData);
 
-    QString mimetypeInternal(const QUrl & url, QWidget* window = 0);
+    QString mimetypeInternal(const QUrl &url, QWidget *window = 0);
     void enter_loop();
 
     friend class I_like_this_class;
 
 private Q_SLOTS:
-    void slotResult( KJob * job );
-    void slotMimetype( KIO::Job * job, const QString & type );
-    void slotData( KIO::Job*, const QByteArray& );
-    void slotRedirection( KIO::Job*, const QUrl& );
+    void slotResult(KJob *job);
+    void slotMimetype(KIO::Job *job, const QString &type);
+    void slotData(KIO::Job *, const QByteArray &);
+    void slotRedirection(KIO::Job *, const QUrl &);
 
 private:
-    NetAccessPrivate * const d;
+    NetAccessPrivate *const d;
 };
 
 }

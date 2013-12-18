@@ -41,26 +41,26 @@ class QPixmap;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KSplashScreen : public QSplashScreen //krazy:exclude=qclasses
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
 
-  /**
-   *  Constructs a splash screen.
-   */
-  explicit KSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f = 0);
+    /**
+     *  Constructs a splash screen.
+     */
+    explicit KSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f = 0);
 
-  /**
-   *  Destructor.
-   *
-   *  Deletes all internal objects.
-   */
-  ~KSplashScreen();
+    /**
+     *  Destructor.
+     *
+     *  Deletes all internal objects.
+     */
+    ~KSplashScreen();
 
 private:
     class Private;
-    Private* const d;
-    Q_DISABLE_COPY( KSplashScreen )
+    Private *const d;
+    Q_DISABLE_COPY(KSplashScreen)
 };
 
 #endif //KSPLASHSCREEN_H

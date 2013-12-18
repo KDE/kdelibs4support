@@ -49,15 +49,17 @@ bool dbus_initialized = false;
   qAppFileName() is not public in qt4/mac, so we need to redo it here
 */
 
-QString convert_CFString_to_QString(CFStringRef str) {
-	CFIndex length = CFStringGetLength(str);
-	const UniChar *chars = CFStringGetCharactersPtr(str);
-	if (chars)
-		return QString(reinterpret_cast<const QChar *>(chars), length);
+QString convert_CFString_to_QString(CFStringRef str)
+{
+    CFIndex length = CFStringGetLength(str);
+    const UniChar *chars = CFStringGetCharactersPtr(str);
+    if (chars) {
+        return QString(reinterpret_cast<const QChar *>(chars), length);
+    }
 
-	QVarLengthArray<UniChar> buffer(length);
-	CFStringGetCharacters(str, CFRangeMake(0, length), buffer.data());
-	return QString(reinterpret_cast<const QChar *>(buffer.constData()), length);
+    QVarLengthArray<UniChar> buffer(length);
+    CFStringGetCharacters(str, CFRangeMake(0, length), buffer.data());
+    return QString(reinterpret_cast<const QChar *>(buffer.constData()), length);
 }
 
 /**
@@ -65,49 +67,49 @@ QString convert_CFString_to_QString(CFStringRef str) {
  on Mac OS X, but as of 10.5 is explicitly disallowed with an exception.  As a
  result, in the case where we would normally fork and then dlopen code, or continue
  to run other code, we must now fork-and-exec.
- 
+
  See "CoreFoundation and fork()" at http://developer.apple.com/releasenotes/CoreFoundation/CoreFoundation.html
 */
 
 void
 mac_fork_and_reexec_self()
 {
-	int argc = *_NSGetArgc();
-	char ** argv = *_NSGetArgv();
-	char * newargv[argc+2];
-	char progname[PATH_MAX];
-	uint32_t buflen = PATH_MAX;
-	_NSGetExecutablePath(progname, &buflen);
-	bool found_psn = false;
+    int argc = *_NSGetArgc();
+    char **argv = *_NSGetArgv();
+    char *newargv[argc + 2];
+    char progname[PATH_MAX];
+    uint32_t buflen = PATH_MAX;
+    _NSGetExecutablePath(progname, &buflen);
+    bool found_psn = false;
 
-	for (int i = 0; i < argc; i++) {
-		newargv[i] = argv[i];
-	}
+    for (int i = 0; i < argc; i++) {
+        newargv[i] = argv[i];
+    }
 
-	newargv[argc] = "--nofork";
-	newargv[argc+1] = NULL;
+    newargv[argc] = "--nofork";
+    newargv[argc + 1] = NULL;
 
-	int x_fork_result = fork();
-	switch(x_fork_result) {
+    int x_fork_result = fork();
+    switch (x_fork_result) {
 
-		case -1:
+    case -1:
 #ifndef NDEBUG
-			fprintf(stderr, "Mac OS X workaround fork() failed!\n");
+        fprintf(stderr, "Mac OS X workaround fork() failed!\n");
 #endif
-			::_exit(255);
-			break;
+        ::_exit(255);
+        break;
 
-		case 0:
-			// Child
-			execvp(progname, newargv);
-			break;
+    case 0:
+        // Child
+        execvp(progname, newargv);
+        break;
 
-		default:
-			// Parent
-			_exit(0);
-			break;
+    default:
+        // Parent
+        _exit(0);
+        break;
 
-	}
+    }
 }
 
 /**
@@ -116,13 +118,13 @@ mac_fork_and_reexec_self()
 
 bool mac_set_dbus_address(QString value)
 {
-	if (!value.isEmpty() && QFile::exists(value) && (QFile::permissions(value) & QFile::WriteUser)) {
-		value = QLatin1String("unix:path=") + value;
-		qputenv("DBUS_SESSION_BUS_ADDRESS", value.toLocal8Bit());
-		kDebug() << "set session bus address to" << value;
-		return true;
-	}
-	return false;
+    if (!value.isEmpty() && QFile::exists(value) && (QFile::permissions(value) & QFile::WriteUser)) {
+        value = QLatin1String("unix:path=") + value;
+        qputenv("DBUS_SESSION_BUS_ADDRESS", value.toLocal8Bit());
+        kDebug() << "set session bus address to" << value;
+        return true;
+    }
+    return false;
 }
 
 /**
@@ -131,81 +133,84 @@ bool mac_set_dbus_address(QString value)
 
 void mac_initialize_dbus()
 {
-	if (dbus_initialized)
-		return;
+    if (dbus_initialized) {
+        return;
+    }
 
-	QString dbusVar = QString::fromLocal8Bit(qgetenv("DBUS_SESSION_BUS_ADDRESS"));
-	if (!dbusVar.isEmpty()) {
-		dbus_initialized = true;
-		return;
-	}
+    QString dbusVar = QString::fromLocal8Bit(qgetenv("DBUS_SESSION_BUS_ADDRESS"));
+    if (!dbusVar.isEmpty()) {
+        dbus_initialized = true;
+        return;
+    }
 
-	dbusVar = QFile::decodeName(qgetenv("DBUS_LAUNCHD_SESSION_BUS_SOCKET"));
-	if (mac_set_dbus_address(dbusVar)) {
-		dbus_initialized = true;
-		return;
-	}
+    dbusVar = QFile::decodeName(qgetenv("DBUS_LAUNCHD_SESSION_BUS_SOCKET"));
+    if (mac_set_dbus_address(dbusVar)) {
+        dbus_initialized = true;
+        return;
+    }
 
-	QString externalProc;
-	QStringList path = QFile::decodeName(qgetenv("KDEDIRS")).split(QLatin1Char(':')).replaceInStrings(QRegExp(QLatin1String("$")), QLatin1String("/bin"));
-	path << QFile::decodeName(qgetenv("PATH")).split(QLatin1Char(':')) << QLatin1String("/usr/local/bin");
+    QString externalProc;
+    QStringList path = QFile::decodeName(qgetenv("KDEDIRS")).split(QLatin1Char(':')).replaceInStrings(QRegExp(QLatin1String("$")), QLatin1String("/bin"));
+    path << QFile::decodeName(qgetenv("PATH")).split(QLatin1Char(':')) << QLatin1String("/usr/local/bin");
 
-	for (int i = 0; i < path.size(); ++i) {
-		QString testLaunchctl = QString(path.at(i)).append(QLatin1String("/launchctl"));
-		if (QFile(testLaunchctl).exists()) {
-			externalProc = testLaunchctl;
-			break;
-		}
-	}
+    for (int i = 0; i < path.size(); ++i) {
+        QString testLaunchctl = QString(path.at(i)).append(QLatin1String("/launchctl"));
+        if (QFile(testLaunchctl).exists()) {
+            externalProc = testLaunchctl;
+            break;
+        }
+    }
 
-	if (!externalProc.isEmpty()) {
-                QProcess qp;
-                qp.setTextModeEnabled(true);
+    if (!externalProc.isEmpty()) {
+        QProcess qp;
+        qp.setTextModeEnabled(true);
 
-		qp.start(externalProc, QStringList() << QLatin1String("getenv") << QLatin1String("DBUS_LAUNCHD_SESSION_BUS_SOCKET"));
-                if (!qp.waitForFinished(timeout)) {
-                    kDebug() << "error running" << externalProc << qp.errorString();
-                    return;
-                }
-                if (qp.exitCode() != 0) {
-                    kDebug() << externalProc << "unsuccessful:" << qp.readAllStandardError();
-                    return;
-                }
+        qp.start(externalProc, QStringList() << QLatin1String("getenv") << QLatin1String("DBUS_LAUNCHD_SESSION_BUS_SOCKET"));
+        if (!qp.waitForFinished(timeout)) {
+            kDebug() << "error running" << externalProc << qp.errorString();
+            return;
+        }
+        if (qp.exitCode() != 0) {
+            kDebug() << externalProc << "unsuccessful:" << qp.readAllStandardError();
+            return;
+        }
 
-                QString line = QString::fromLatin1(qp.readLine()).trimmed(); // read the first line
-                if (mac_set_dbus_address(line))
-                    dbus_initialized = true; // hooray
-	}
+        QString line = QString::fromLatin1(qp.readLine()).trimmed(); // read the first line
+        if (mac_set_dbus_address(line)) {
+            dbus_initialized = true;    // hooray
+        }
+    }
 
-	if (dbus_initialized == false) {
-		kDebug() << "warning: unable to initialize D-Bus environment!";
-	}
+    if (dbus_initialized == false) {
+        kDebug() << "warning: unable to initialize D-Bus environment!";
+    }
 
 }
 
-QString mac_app_filename() {
-	static QString appFileName;
-	if (appFileName.isEmpty()) {
-		CFURLRef bundleURL = NULL;
-		CFBundleRef bundle = NULL;
-		CFStringRef bundlePath = NULL;
+QString mac_app_filename()
+{
+    static QString appFileName;
+    if (appFileName.isEmpty()) {
+        CFURLRef bundleURL = NULL;
+        CFBundleRef bundle = NULL;
+        CFStringRef bundlePath = NULL;
 
-		bundle = CFBundleGetMainBundle();
-		if (bundle) {
-			bundleURL = CFBundleCopyBundleURL(bundle);
-			bundlePath = CFURLCopyFileSystemPath(bundleURL, kCFURLPOSIXPathStyle);
+        bundle = CFBundleGetMainBundle();
+        if (bundle) {
+            bundleURL = CFBundleCopyBundleURL(bundle);
+            bundlePath = CFURLCopyFileSystemPath(bundleURL, kCFURLPOSIXPathStyle);
 
-			if (bundleURL) {
-				CFRelease(bundleURL);
-			}
+            if (bundleURL) {
+                CFRelease(bundleURL);
+            }
 
-			if (bundlePath) {
-				appFileName = convert_CFString_to_QString(bundlePath);
-				CFRelease(bundlePath);
-			}
-		}
-	}
-	return appFileName;
+            if (bundlePath) {
+                appFileName = convert_CFString_to_QString(bundlePath);
+                CFRelease(bundlePath);
+            }
+        }
+    }
+    return appFileName;
 }
 
 #endif

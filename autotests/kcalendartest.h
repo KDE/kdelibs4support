@@ -60,7 +60,7 @@ protected:
                        const QString &shortNamePossessive, const QString &longNamePossessive);
 
     void testStrings(KLocale::DigitSet testDigitSet);
-    QDate setDayOfYearDate(const KCalendarSystem * calendar, int year, int dayOfYear);
+    QDate setDayOfYearDate(const KCalendarSystem *calendar, int year, int dayOfYear);
     void compareDateDifference(const KCalendarSystem *calendar,
                                const QDate &lowDate, const QDate &highDate,
                                int yearsDiff, int monthsDiff, int daysDiff);

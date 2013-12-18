@@ -31,7 +31,7 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
- 
+
 #ifndef KDE_K4STYLE_H
 #define KDE_K4STYLE_H
 
@@ -102,7 +102,7 @@ public:
      *
      * For simplicity, only StyleHints, ControlElements and their SubElements are supported
      * If you don't need extended SubElement functionality, just drop it
-     * 
+     *
      * @param element The style element, represented as string.
      * Naming convention: "appname.(2-char-element-type)_element"
      * where the 2-char-element-type is of {SH, CE, SE}
@@ -120,9 +120,9 @@ public:
      * 3) If you cache this value (good idea, this requires a map lookup) don't (!) forget to catch
      * style changes in QWidget::changeEvent()
      */
-     static StyleHint customStyleHint(const QString &element, const QWidget *widget);
-     static ControlElement customControlElement(const QString &element, const QWidget *widget);
-     static SubElement customSubElement(const QString &element, const QWidget *widget);
+    static StyleHint customStyleHint(const QString &element, const QWidget *widget);
+    static ControlElement customControlElement(const QString &element, const QWidget *widget);
+    static SubElement customSubElement(const QString &element, const QWidget *widget);
 
 protected:
 
@@ -157,7 +157,7 @@ protected:
     StyleHint newStyleHint(const QString &element);
     ControlElement newControlElement(const QString &element);
     SubElement newSubElement(const QString &element);
-    
+
     /** @name Helper Methods
     * These are methods helping with QRect handling, for example.
     */
@@ -165,8 +165,8 @@ protected:
     /**
      Draws inside the rectangle using a thinkness 0 pen. This is what drawRect in Qt3 used to do.
     */
-    void drawInsideRect(QPainter* p, const QRect& r) const;
-    
+    void drawInsideRect(QPainter *p, const QRect &r) const;
+
     /**
      Returns a w x h QRect center inside the 'in' rectangle
     */
@@ -178,10 +178,10 @@ protected:
     QRect centerRect(const QRect &in, const QSize &size) const;
 //@}
 
-/**
- * \defgroup OptionGroup K4Style option representation
- * Things related to the representation of options passed when drawing things.
- */
+    /**
+     * \defgroup OptionGroup K4Style option representation
+     * Things related to the representation of options passed when drawing things.
+     */
 //@{
     /**
      * @brief A representation for colors for use as a widget layout property.
@@ -198,8 +198,7 @@ protected:
          * -# Auto-selected black or white, dependent on the brightness of a certain
          *    color role from the palette.
         */
-        enum Mode
-        {
+        enum Mode {
             PaletteEntryMode,
             BWAutoContrastMode = 0x8000000
         };
@@ -223,21 +222,19 @@ protected:
 
         /// Return the color corresponding to our role from the palette,
         /// automatically compensating for the contrast mode.
-        QColor color(const QPalette& palette);
+        QColor color(const QPalette &palette);
     };
 
-    
     /**
-     Base for our own option classes. 
+     Base for our own option classes.
      The idea here is that Option is the main base, and all the
      public bases inherit off it indirectly using OptionBase,
      which helps implement the default handling
-    
+
      When implementing the actual types, just implement the default ctor,
      filling in defaults, and you're set.
     */
-    struct KDE4SUPPORT_DEPRECATED_EXPORT Option
-    {
+    struct KDE4SUPPORT_DEPRECATED_EXPORT Option {
         virtual ~Option() {} //So dynamic_cast works, and g++ shuts up
     };
 
@@ -251,23 +248,23 @@ protected:
      BaseType        --- the type of option from which this should inherit
      */
     template<typename EventualSubtype, typename BaseType>
-    struct KDE4SUPPORT_DEPRECATED_EXPORT OptionBase: public BaseType
-    {
+    struct KDE4SUPPORT_DEPRECATED_EXPORT OptionBase: public BaseType {
         /** Default value for this option. Uses the default constructor
-            of EventualSubtype to create the option. 
+            of EventualSubtype to create the option.
         */
-        static EventualSubtype* defaultOption()
+        static EventualSubtype *defaultOption()
         {
-            static EventualSubtype* theDefault = 0; //### function static, not very nice,
+            static EventualSubtype *theDefault = 0; //### function static, not very nice,
             //but avoids need for explicit instantiation.
 
-            if (!theDefault)
+            if (!theDefault) {
                 theDefault = new EventualSubtype;
-                
+            }
+
             return theDefault;
         }
     };
-    
+
     /**
      The extractOption method casts the passed in option object, and returns
      it, if available, or the defaults for the given type. When implementing
@@ -275,14 +272,13 @@ protected:
      the parameter.
     */
     template<typename T>
-    static T extractOption(Option* option);
+    static T extractOption(Option *option);
 
     /**
      Option representing the color of the thing to draw. Used for arrows, and for text
      (the latter actually uses TextOption)
     */
-    struct KDE4SUPPORT_DEPRECATED_EXPORT ColorOption: public OptionBase<ColorOption, Option>
-    {
+    struct KDE4SUPPORT_DEPRECATED_EXPORT ColorOption: public OptionBase<ColorOption, Option> {
         /** Color to use for the drawing. Public, modifiable. */
         ColorMode color;
 
@@ -294,8 +290,7 @@ protected:
      Option for drawing icons: represents whether the icon should be active or not.
      The implementation is responsible for all other flags
     */
-    struct KDE4SUPPORT_DEPRECATED_EXPORT IconOption: public OptionBase<IconOption, Option>
-    {
+    struct KDE4SUPPORT_DEPRECATED_EXPORT IconOption: public OptionBase<IconOption, Option> {
         bool  active; ///< Is the icon active?
         QIcon icon;   ///< Icon drawn by this option
         QSize size;
@@ -309,13 +304,11 @@ protected:
      * a button should be drawn active or not.
      * @sa ScrollBar::Primitive
      */
-    struct KDE4SUPPORT_DEPRECATED_EXPORT DoubleButtonOption: public OptionBase<DoubleButtonOption, Option>
-    {
+    struct KDE4SUPPORT_DEPRECATED_EXPORT DoubleButtonOption: public OptionBase<DoubleButtonOption, Option> {
         /**
          * List of active button possibilities.
          */
-        enum ActiveButton
-        {
+        enum ActiveButton {
             None,   ///< No button is active
             Top,    ///< Vertical scrollbar: The upper button is active
             Left,   ///< Horizontal scrollbar: The left button is active
@@ -323,11 +316,11 @@ protected:
             Bottom  ///< Vertical scrollbar: The lower button is active
         };
 
-	/**
-          Whether any of the two buttons is active; and if yes, which
-          one.
-	*/
-        ActiveButton activeButton; 
+        /**
+              Whether any of the two buttons is active; and if yes, which
+              one.
+        */
+        ActiveButton activeButton;
 
         DoubleButtonOption(): activeButton(None)
         {}
@@ -346,8 +339,7 @@ protected:
      * the button is pressed, and containing the window icon
      * @sa Window
      */
-    struct KDE4SUPPORT_DEPRECATED_EXPORT TitleButtonOption: public OptionBase<TitleButtonOption, Option>
-    {
+    struct KDE4SUPPORT_DEPRECATED_EXPORT TitleButtonOption: public OptionBase<TitleButtonOption, Option> {
         bool active;  ///< whether the button is pressed
         QIcon icon;   ///< window Icon
 //         /// whether the button is hovered, this doesn't work at the moment (not even in any Qt style)...
@@ -364,13 +356,12 @@ protected:
         TitleButtonOption(bool act): active(act)
         {}
     };
-    
-    ///Option representing text drawing info. For Generic::Text. 
-    struct KDE4SUPPORT_DEPRECATED_EXPORT TextOption: public OptionBase<TextOption, ColorOption>
-    {
+
+    ///Option representing text drawing info. For Generic::Text.
+    struct KDE4SUPPORT_DEPRECATED_EXPORT TextOption: public OptionBase<TextOption, ColorOption> {
         Qt::Alignment        hAlign; ///< The horizontal alignment, default is Qt::AlignLeft
         QString              text;   ///< The text to draw
-        
+
         TextOption();
 
         /**
@@ -378,7 +369,7 @@ protected:
          *
          * @param _text initializes the text string property
          */
-        TextOption(const QString& _text);
+        TextOption(const QString &_text);
 
         /**
          * Called by the constructor to set the default value of @c hAlign
@@ -387,10 +378,10 @@ protected:
     };
 //@}
 
-/**
- * \defgroup WidgetGroup K4Style widget representation
- * Things related to the representation of widgets.
- */
+    /**
+     * \defgroup WidgetGroup K4Style widget representation
+     * Things related to the representation of widgets.
+     */
 //@{
     /**
      This enum is used to represent K4Style's concept of
@@ -398,8 +389,7 @@ protected:
      with it. The generic value is used for primitives and metrics
      that are common between many widgets
     */
-    enum WidgetType
-    {
+    enum WidgetType {
         WT_Generic,         ///< @sa Generic
         WT_PushButton,      ///< @sa PushButton
         WT_Splitter,        ///< @sa Splitter
@@ -429,7 +419,6 @@ protected:
         WT_Limit = 0xFFFF ///< For enum extensibility
     };
 
-                
     /**
      These constants describe how to access various fields of a margin property.
      For example, to set an additional top margin of 2 pixels, use
@@ -437,8 +426,7 @@ protected:
      * setWidgetLayoutProp(WT_SomeWidget, SomeWidget::Margin + Top, 2);
      * \endcode
      */
-    enum MarginOffsets
-    {
+    enum MarginOffsets {
         MainMargin, /**< The main margin is applied equally on each side.
                      * In the example above, 'SomeWidget::Margin+MainMargin' is
                      * the same as 'SomeWidget::Margin'. */
@@ -450,20 +438,17 @@ protected:
                      * Left, Right margins. */
     };
 
-
     /**
      * Basic primitive drawing operations. Are intended to be used in every
      * WidgetType combination.
      */
-    struct Generic
-    {
+    struct Generic {
         /**
          * Layout properties. These can be set with setWidgetLayoutProp()
          * Generic LayoutProps contain a few properties which are not
          * directly related to a specific widget type.
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             DefaultFrameWidth,    ///< The FrameWidth used by LineEdit, etc..., default is \b 2 [sets QStyle::PM_DefaultFrameWidth]
             DefaultLayoutSpacing, ///< The spacing used by layouts, unless the style implements layoutSpacingImplementation(), default is \b 6 [sets QStyle::PM_DefaultLayoutSpacing]
             DefaultLayoutMargin   ///< The margin used by layouts, default is \b 9 [sets QStyle::PM_DefaultChildMargin and QStyle::PM_DefaultTopLevelMargin]
@@ -474,8 +459,7 @@ protected:
          * @note The arrows are centering primitives, which means they draw in
          * the center of the specified rectangle.
          */
-        enum Primitive
-        {
+        enum Primitive {
             Text = 0xFFFF,  ///< Passes in TextOption
             Icon,           ///< Passes in IconOption
             FocusIndicator, ///< Indication that this widget has focus
@@ -494,8 +478,7 @@ protected:
      *
      * @sa WT_PushButton
      */
-    struct PushButton
-    {
+    struct PushButton {
         /**
          * The layout of a PushButton is structured as follows:
          * -# Between the very outside and the bevel is the default indicator
@@ -508,8 +491,7 @@ protected:
          *
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             ContentsMargin, ///< (\b 5) space between the bevel and the button contents
             FocusMargin            = ContentsMargin + MarginInc, ///< (\b 3) Used to calculate the area of the focus indicator. Measured from the bevel.
             DefaultIndicatorMargin = FocusMargin    + MarginInc, ///< (\b 0 ?) Default indicator between the very outside and the bevel. KStyle may reserve this for auto-default buttons, too, for consistency's sake. [the MainMargin sets QStyle::PM_ButtonDefaultIndicator]
@@ -529,8 +511,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Panel,              /**< the pushbutton panel
                                  * [implements QStyle::PE_PanelButtonCommand] */
             DefaultButtonFrame  /**< frame indicating a default button, painted before
@@ -544,13 +525,11 @@ protected:
      *
      * @sa WT_Splitter
      */
-    struct Splitter
-    {
+    struct Splitter {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             Width ///< (\b 6) size of the splitter handle [sets QStyle::PM_SplitterWidth]
         };
 
@@ -559,8 +538,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             HandleHor,      /**< The splitter handle, horizontal. Flags: @c State_Enabled&&State_MouseOver for mouseOver */
             HandleVert      /**< The splitter handle, vertical. Flags: @c State_Enabled&&State_MouseOver for mouseOver */
         };
@@ -571,13 +549,11 @@ protected:
      *
      * @sa WT_CheckBox
      */
-    struct CheckBox
-    {
+    struct CheckBox {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             Size,               ///< (\b 16) size of the checkbox [sets PM_IndicatorWidth, PM_IndicatorHeight]
             BoxTextSpace,       ///< (\b 6) space to leave between checkbox and text (and icon between them in case there is one)
             NoLabelFocusMargin, /**< (\b 1) rectangle to apply to the checkbox rectangle
@@ -598,8 +574,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             CheckOn,        ///< checkbox which is checked
             CheckOff,       ///< checkbox which is not checked
             CheckTriState   ///< tristate checkbox (neither off nor on)
@@ -609,13 +584,11 @@ protected:
     /**
      * @brief Describes widgets like QRadioButton.
      */
-    struct RadioButton
-    {
+    struct RadioButton {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             Size, /**< [sets QStyle::PM_ExclusiveIndicatorWidth,
                    *    QStyle::PM_ExclusiveIndicatorHeight]
                    * @sa CheckBox::Size */
@@ -634,26 +607,22 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             RadioOn,        ///< radiobutton which is checked
             RadioOff        ///< radiobutton which is not checked
         };
     };
-    
 
     /**
      * @brief Describes the title of a dock widget.
      *
      * @sa WT_DockWidget
      */
-    struct DockWidget
-    {
+    struct DockWidget {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             TitleTextColor, ///< (\b ColorMode(QPalette::HighlightedText)) color mode of the title text
             TitleMargin, ///< (\b 2) Margin around title contents: Note that the symmetric margin (MainMargin) is used to size the title! Additional the Left and Right margins can be used to position the title text a little, though (to set Top and Bottom is not advisable). [the MainMargin sets QStyle::PM_DockWidgetTitleMargin]
             FrameWidth = TitleMargin + MarginInc,  ///< (\b 3) width of the frame around floating dockwidgets [sets QStyle::PM_DockWidgetFrameWidth]
@@ -669,8 +638,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             TitlePanel, ///< the panel/background of the title bar
             SeparatorHandle ///< the splitter between dockwidgets
         };
@@ -683,13 +651,11 @@ protected:
      *
      * @sa WT_ProgressBar
      */
-    struct ProgressBar
-    {
+    struct ProgressBar {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             GrooveMargin,        ///< (\b 2) Margin to allocate for the groove. Content area will be inside of it.
             SideText = GrooveMargin + MarginInc, ///< (\b false) set this to true to have the text positionned to the side
             SideTextSpace,       ///< (\b 3) Extra space besides that needed for text to allocate to side indicator (on both sides).
@@ -704,8 +670,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Groove,         /**< the progressbar groove, drawn before the progress
                              * Indicator [implements QStyle::CE_ProgressBarGroove] */
             Indicator,      ///< The actual bar indicating the progress...
@@ -715,19 +680,16 @@ protected:
         };
     };
 
-
     /**
      * @brief Describes widgets like QMenuBar.
      *
      * @sa WT_MenuBar
      */
-    struct MenuBar
-    {
+    struct MenuBar {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             Margin,           /**< (MainMargin \b 2, Left \b 4, Right \b 4)
                                * Margin rectangle for the contents. */
             ItemSpacing = Margin + MarginInc ///< (\b 14) Space between items [sets QStyle::PM_MenuBarItemSpacing]
@@ -736,14 +698,12 @@ protected:
         /**
          * @sa drawKStylePrimitive()
          */
-        enum Property
-        {
+        enum Property {
             EmptyArea /**< Empty area of a menu bar, e.g. background
                        * color. Maybe the place to fake toolbar separators (?)
                        * [implements QStyle::CE_MenuBarEmptyArea] */
         };
     };
-
 
     /**
      * @brief Describes MenuBar items.
@@ -751,13 +711,11 @@ protected:
      * Relevant elements:
      * - @c Generic::Text text appearing as menubar entry
      */
-    struct MenuBarItem
-    {
+    struct MenuBarItem {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             Margin,                    /**< (\b 1) Margin rectangle to allocate for any
                                         * bevel, etc. (Text will be drawn with
                                         * the inside rect). */
@@ -767,8 +725,7 @@ protected:
         /**
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Panel       ///< The panel/background of a menubar item. Interesting flags: State_Selected && State_HasFocus for mouseOver, State_Sunken for pressed state.
         };
     };
@@ -778,13 +735,11 @@ protected:
      *
      * @sa WT_Menu
      */
-    struct Menu
-    {
+    struct Menu {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             FrameWidth, ///< (\b 1) The width of the frame, note that this does not affect the layout.
             Margin,     ///< (\b 3) The margin of the menu. @todo have a look at comments at PM_MenuHMargin...
             ScrollerHeight = Margin + MarginInc, ///< (\b 10) Height of a menu scroller. [sets QStyle::PM_MenuScrollerHeight]
@@ -797,8 +752,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Background, ///< Menu and MenuItem background
             TearOff,    /**< paints the area where a menu can be teared off
                          * [implements QStyle::CE_MenuTearoff] */
@@ -825,17 +779,15 @@ protected:
      *
      * @sa WT_MenuItem
      */
-    struct MenuItem
-    {
+    struct MenuItem {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             Margin,         ///< (\b 2) margin for each entry
             CheckAlongsideIcon = Margin + MarginInc,
-                            /**< (\b 0) Set to non-zero to have checkmarks painted
-                             * separate from icons. */
+            /**< (\b 0) Set to non-zero to have checkmarks painted
+             * separate from icons. */
             CheckWidth,     /**< (\b 12) size of the checkmark column
                              * (CheckAlongsideButton enabled). */
             CheckSpace,     /**< (\b 3) Space between the checkmark column and the icon
@@ -860,8 +812,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             CheckColumn, ///< Background of the checkmark/icon column
             CheckOn,     ///< The checkmark - checked
             CheckOff,    ///< The checkmark - not checked
@@ -873,22 +824,19 @@ protected:
         };
     };
 
-
     /**
      * @brief Describes widgets like QScrollBar.
      *
      * @sa WT_ScrollBar
      */
-    struct ScrollBar
-    {
+    struct ScrollBar {
         /**
          * @note Dimensions of LayoutProperties are generally specified with respect
          *       to the vertical scrollbar. Of course, for horizontal ones they're flipped.
          *
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             DoubleTopButton,    ///< (\b 0) set to non-zero to have two buttons on top
             DoubleBotButton,    ///< (\b 1) set to non-zero to have two buttons on bottom
             SingleButtonHeight, ///< (\b 16) height of a single button
@@ -911,8 +859,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             SingleButtonVert,   ///< used to draw a 1-button bevel, vertical
             SingleButtonHor,    ///< used to draw a 1-button bevel, horizontal
             DoubleButtonVert,           /**< Used to draw a 2-button bevel, vertical.
@@ -933,8 +880,7 @@ protected:
      *
      * @sa WT_TabBar
      */
-    struct TabBar
-    {
+    struct TabBar {
         /**
          * Each tab is basically built hiearchically out of the following areas:
          * -# Content area, one of the following layouts:
@@ -948,14 +894,13 @@ protected:
          *
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             TabContentsMargin,  ///< (\b 6) margin around the tab contents, used to size the tab
             TabFocusMargin     = TabContentsMargin + MarginInc,
-                                /**< (\b 3) where the tab focus rect is placed, measured from the
-                                 * tab sides (?) */
+            /**< (\b 3) where the tab focus rect is placed, measured from the
+             * tab sides (?) */
             TabTextToIconSpace = TabFocusMargin    + MarginInc,
-                                /**< (\b 0 ?) space between icon and text if the tab contains both */
+            /**< (\b 0 ?) space between icon and text if the tab contains both */
             TabOverlap,         /**< (\b 0) Amount of pixels tabs should overlap. The
                                  * paint rectangle will be extended to the left for
                                  * all tabs which are not at the beginning (accordingly
@@ -973,8 +918,7 @@ protected:
          * - @c Generic::Icon for icons associated to tabs
          * - @c ToolButton::Panel paints the scroll button (when the tabs don't fit the tab bar)
          */
-        enum Primitive
-        {
+        enum Primitive {
             EastText,       /**< Special rotated text for east tabs. */
             WestText,       ///< @see EastText
             NorthTab,       ///< @todo say something about triangular shape etc.
@@ -997,13 +941,11 @@ protected:
      *
      * @sa WT_TabWidget
      */
-    struct TabWidget
-    {
+    struct TabWidget {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             ContentsMargin,      /**< (\b 2) Width of the frame around a tab widget.
                                * Margins for a tabwidget with tab position 'North' are
                                * specified as expected. For other positions, the
@@ -1011,7 +953,7 @@ protected:
                                * of a 'West' tabwidget is the same as top for a 'North'
                                * tabwidget.
                                * [sets QStyle::SE_TabWidgetTabContents] */
-            DummyProp = ContentsMargin+MarginInc
+            DummyProp = ContentsMargin + MarginInc
         };
     };
 
@@ -1020,16 +962,14 @@ protected:
      *
      * @sa WT_Slider
      */
-    struct Slider
-    {
+    struct Slider {
 
         /**
          * @note The description applies to horizontal sliders.
          *
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             HandleThickness, ///< (\b 20) The height of a slider handle
             HandleLength     ///< (\b 16) The width of a slider handle [sets QStyle::PM_SliderLength]
         };
@@ -1040,8 +980,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             HandleVert,   ///< A vertical slider handle
             HandleHor,    ///< A horizontal slider handle
             GrooveVert,   ///< A vertical slider groove
@@ -1049,12 +988,10 @@ protected:
         };
     };
 
-
     /**
      * @brief Describes an expandable tree, e.g. in a QListView.
      */
-    struct Tree
-    {
+    struct Tree {
         /**
          * For trees, all the control we provide here is to provide a cap on the size
          * of the expander widget, which is always square. There are 4 primitives to
@@ -1064,8 +1001,7 @@ protected:
          *
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             MaxExpanderSize      /**< (\b 9) @note If you set MaxExpanderSize to a value less
                                   * than 9, designer will look funny. The value should also
                                   * be odd, or value - 1 will be used.
@@ -1075,8 +1011,7 @@ protected:
         /**
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             ExpanderClosed, ///< A closed tree expander, usually drawn as '+'. K4Style has a default implementation (Windows-like look).
             ExpanderOpen,   ///< An opened tree expander, usually drawn as '-' K4Style has a default implementation.
             HorizontalBranch, /**< A horizontal tree line.
@@ -1090,8 +1025,7 @@ protected:
     /**
      * @brief Describes a widget like QSpinBox.
      */
-    struct SpinBox
-    {
+    struct SpinBox {
         /**
          * @note The description applies to LTR (left to right) mode.
          *
@@ -1107,8 +1041,7 @@ protected:
          *
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             FrameWidth,        /**< (\b 1) Space reserved left, top, bottom of the SpinBox
                                 * [sets QStyle::PM_SpinBoxFrameWidth] */
             ButtonWidth,       ///< (\b 16) Space reserved for the widget, right of the EditField
@@ -1127,8 +1060,8 @@ protected:
                                 * frame, FrameWidth and Top/Bottom/Right ButtonMargin
                                 * is ignored. */
             ContentsMargin
-                                /**< (\b 5) space between the bevel and the spinbox contents
-                                    */
+            /**< (\b 5) space between the bevel and the spinbox contents
+                */
         };
 
         /**
@@ -1136,8 +1069,7 @@ protected:
          * - @c Generic::Frame for the area around text input field and buttons
          * - @c Generic::ArrowUp @c Generic::ArrowDown drawn on the buttons
          */
-        enum Primitive
-        {
+        enum Primitive {
             EditField,          /**< the text contents area, painted after Generic::Frame
                                  * @note This is respected only if the combobox is not
                                  * editable. */
@@ -1156,8 +1088,7 @@ protected:
     /**
      * @brief Describes a widget like QComboBox.
      */
-    struct ComboBox
-    {
+    struct ComboBox {
         /**
          * @note The description applies to LTR (left to right) mode.
          *
@@ -1169,21 +1100,20 @@ protected:
          * EditField and the outside. Inside it, the button is aligned.
          * -# The @c FocusMargin is measured from the EditField rect.
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             FrameWidth,         /**< (\b 1) @see SpinBox::FrameWidth */
             ButtonWidth,        /**< (\b 16) @see SpinBox::ButtonWidth */
             ButtonMargin,       /**< (MainMargin \b 0, Right Top Bot \b 1)
                                  * @see SpinBox::ButtonMargin */
             FocusMargin = ButtonMargin + MarginInc,
-                                /**< (\b 1) Focus margin for ComboBoxes that aren't
-                                 * editable, measured from the EditField rect */
+            /**< (\b 1) Focus margin for ComboBoxes that aren't
+             * editable, measured from the EditField rect */
             SupportFrameless = FocusMargin + MarginInc,
-                                /**< (\b 0) @see LP_SpinBox_SupportFrameless same description
-                                 * applies here */
+            /**< (\b 0) @see LP_SpinBox_SupportFrameless same description
+             * applies here */
             ContentsMargin
-                                /**< (\b 5) space between the bevel and the combobox contents
-                                    */
+            /**< (\b 5) space between the bevel and the combobox contents
+                */
         };
 
         /**
@@ -1194,8 +1124,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             EditField,          /**< @see SpinBox::EditField */
             Button              /**< The button panel of the combobox */
         };
@@ -1206,18 +1135,16 @@ protected:
      *
      * @sa WT_Header
      */
-    struct Header
-    {
+    struct Header {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProp
-        {
+        enum LayoutProp {
             ContentsMargin,      /**< (\b 3) margin around contents used to size the header. */
             TextToIconSpace = ContentsMargin + MarginInc,
-                                 /**< (\b 3) space that is allocated between icon and text
-                                  * if both exist
-                                  * [sets QStyle::PM_HeaderMargin] */
+            /**< (\b 3) space that is allocated between icon and text
+             * if both exist
+             * [sets QStyle::PM_HeaderMargin] */
             MarkSize             /**< (\b 9) size of the sort indicator in a header
                                   * [sets QStyle::PM_HeaderMarkSize] */
         };
@@ -1229,8 +1156,7 @@ protected:
          *
          * [the Sections implement QStyle::CE_HeaderSection]
          */
-        enum Primitive
-        {
+        enum Primitive {
             SectionHor, ///< header section, horizontal
             SectionVert ///< header section, vertical
         };
@@ -1241,16 +1167,14 @@ protected:
      *
      * The frame width of lineedits is determined using Generic::DefaultFrameWidth
      */
-    struct LineEdit
-    {
+    struct LineEdit {
         /**
          * Relevant Generic elements:
          * - @c Generic::Frame paints a lineedit frame only [implements QStyle::PE_FrameLineEdit]
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Panel     ///< the panel for a QLineEdit (including frame...) [implements QStyle::PE_PanelLineEdit]
         };
     };
@@ -1267,13 +1191,11 @@ protected:
      *
      * @sa WT_GroupBox
      */
-    struct GroupBox
-    {
+    struct GroupBox {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProps
-        {
+        enum LayoutProps {
             FrameWidth, /**< (\b 2) width of a groupbox frame */
             TextAlignTop, /**< (\b 0) set to non-zero, the title will be aligned
                           * above the groupbox frame, not vertically centered
@@ -1283,8 +1205,7 @@ protected:
         /**
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             FlatFrame  /**< For groupboxes which are set to be 'flat' (usually
                         * a divider line from top left to top right). K4Style
                         * has a basic default implementation */
@@ -1301,8 +1222,7 @@ protected:
      *
      * @sa WT_StatusBar
      */
-    struct StatusBar
-    {
+    struct StatusBar {
         /**
         No LayoutProps for now.
          */
@@ -1313,13 +1233,11 @@ protected:
      *
      * @sa WT_ToolBar
      */
-    struct ToolBar
-    {
+    struct ToolBar {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProps
-        {
+        enum LayoutProps {
             HandleExtent,       ///< (\b 6) the width(hor)/height(vert) of a ToolBar handle [sets QStyle::PM_ToolBarHandleExtent]
             SeparatorExtent,    ///< (\b 6) the width/height of a ToolBar separator [sets QStyle::PM_ToolBarSeparatorExtent]
             ExtensionExtent,    ///< (\b 10) the width/height of a ToolBar extender, when there is not enough room for toolbar buttons [sets PM_ToolBarExtensionExtent]
@@ -1335,8 +1253,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             HandleHor, ///< handle of a toolbar, horizontal
             HandleVert, ///< handle of a toolbar, vertical
             Separator, ///< [implements QStyle::PE_IndicatorToolBarSeparator]
@@ -1345,19 +1262,16 @@ protected:
         };
     };
 
-
     /**
      * @brief Describes a tab for a tool box, like QToolBox.
      *
      * @sa WT_ToolBoxTab
      */
-    struct ToolBoxTab
-    {
+    struct ToolBoxTab {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProps
-        {
+        enum LayoutProps {
             Margin  /**< (\b 0) used to specify the
                      * position of the tab contents, doesn't influence the tab size
                      * [sets QStyle::SE_ToolBoxTabContents] */
@@ -1366,14 +1280,12 @@ protected:
         /**
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Panel   /**< the panel of a toolbox tab, K4Style default implementation
                      * paints WT_ToolButton/ToolButton::Panel
                      * [implements CE_ToolBoxTab] */
         };
     };
-
 
     /**
      * @brief Describes widgets like QToolButton (usually inside a QToolBar).
@@ -1385,18 +1297,16 @@ protected:
      *
      * @sa WT_ToolButton
      */
-    struct ToolButton
-    {
+    struct ToolButton {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProps
-        {
+        enum LayoutProps {
             ContentsMargin,  /**< (\b 5) Margin reserved around the contents size of
                               * a toolbutton. Used to size the contents. */
             FocusMargin            = ContentsMargin + MarginInc,
-                             /**< (\b 3) Where the focus rect will be drawn, measured
-                              * from the widget sides */
+            /**< (\b 3) Where the focus rect will be drawn, measured
+             * from the widget sides */
             MenuIndicatorSize, /**< (\b 11) Size for the separate menu arrows on tool buttons
                                  * [sets QStyle::PM_MenuButtonIndicator wheen a toolbutton option is passed in] */
             InlineMenuIndicatorSize = FocusMargin + MarginInc, /**< (\b 0) Size of arrow when it's incorporated into
@@ -1420,13 +1330,11 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             Panel           /**< the toolbutton panel
                              * [implements QStyle::PE_PanelButtonTool] */
         };
     };
-
 
     /**
      * @brief Describes windows, like in QWorkspace.
@@ -1435,13 +1343,11 @@ protected:
      *
      * @sa WT_Window
      */
-    struct Window
-    {
+    struct Window {
         /**
          * @sa setWidgetLayoutProp()
          */
-        enum LayoutProps
-        {
+        enum LayoutProps {
             TitleTextColor, ///< (\b ColorMode(QPalette::HighlightedText)) color mode of the titlebar text
             TitleHeight, ///< (\b 20) height of the titlebar [sets QStyle::PM_TitleBarHeight]
             NoTitleFrame, /**< (\b 0) if set to non-zero, the frame primitive is not
@@ -1464,8 +1370,7 @@ protected:
          *
          * @sa drawKStylePrimitive()
          */
-        enum Primitive
-        {
+        enum Primitive {
             TitlePanel,  ///< whole titlebar panel/background, by K4Style default it's filled with plain highlight color
             ButtonMenu,     ///< system menu button, passes TitleButtonOption
             ButtonMin,      ///< minimize button, passes TitleButtonOption
@@ -1497,7 +1402,7 @@ protected:
      * @param w the actual widget this call is related to
      */
     virtual int widgetLayoutProp(WidgetType widgetType, int metric,
-                                 const QStyleOption* opt = 0, const QWidget* w = 0) const;
+                                 const QStyleOption *opt = 0, const QWidget *w = 0) const;
 
     /**
      * @brief Draws primitives which are used inside K4Style.
@@ -1527,84 +1432,83 @@ protected:
      * @param widget the widget which is painted on
      * @param kOpt information passed from K4Style
      */
-    virtual void drawKStylePrimitive(WidgetType widgetType, int primitive, 
-                                     const QStyleOption* opt,
+    virtual void drawKStylePrimitive(WidgetType widgetType, int primitive,
+                                     const QStyleOption *opt,
                                      const QRect &r, const QPalette &pal,
-                                     State flags, QPainter* p,
-                                     const QWidget* widget = 0,
-                                     Option* kOpt    = 0) const;
+                                     State flags, QPainter *p,
+                                     const QWidget *widget = 0,
+                                     Option *kOpt    = 0) const;
 private:
     ///Should we use a side text here?
-    bool useSideText(const QStyleOptionProgressBar* opt)     const;
-    int  sideTextWidth(const QStyleOptionProgressBar* pbOpt) const;
+    bool useSideText(const QStyleOptionProgressBar *opt)     const;
+    int  sideTextWidth(const QStyleOptionProgressBar *pbOpt) const;
 
     ///Returns true if the tab is vertical
-    bool isVerticalTab (const QStyleOptionTab* tbOpt) const;
+    bool isVerticalTab(const QStyleOptionTab *tbOpt) const;
 
     ///Returns true if the tab has reflected layout
-    bool isReflectedTab(const QStyleOptionTab* tbOpt) const;
+    bool isReflectedTab(const QStyleOptionTab *tbOpt) const;
 
-    enum Side
-    {
+    enum Side {
         North,
         East,
         West,
         South
     };
 
-    Side tabSide(const QStyleOptionTab* tbOpt) const;
+    Side tabSide(const QStyleOptionTab *tbOpt) const;
 
     ///Returns the tab rectangle adjusted for the tab direction
-    QRect marginAdjustedTab(const QStyleOptionTab* tbOpt, int property) const;
+    QRect marginAdjustedTab(const QStyleOptionTab *tbOpt, int property) const;
 
     ///Wrapper around visualRect for easier use
-    QRect  handleRTL(const QStyleOption* opt, const QRect& subRect) const;
-    QPoint handleRTL(const QStyleOption* opt, const QPoint& pos)    const;
+    QRect  handleRTL(const QStyleOption *opt, const QRect &subRect) const;
+    QPoint handleRTL(const QStyleOption *opt, const QPoint &pos)    const;
 
     ///Storage for metrics/flags
     QVector<QVector<int> > metrics;
-    
+
     ///Expands out the dimension to make sure it incorporates the margins
-    QSize expandDim(const QSize& orig, WidgetType widget, int baseMarginMetric, const QStyleOption* opt, const QWidget* w, bool rotated = false) const;
-    
+    QSize expandDim(const QSize &orig, WidgetType widget, int baseMarginMetric, const QStyleOption *opt, const QWidget *w, bool rotated = false) const;
+
     ///Calculates the contents rectangle by subtracting out the appropriate margins
     ///from the outside
-    QRect insideMargin(const QRect &orig, WidgetType widget, int baseMarginMetric, const QStyleOption* opt, const QWidget* w) const;
+    QRect insideMargin(const QRect &orig, WidgetType widget, int baseMarginMetric, const QStyleOption *opt, const QWidget *w) const;
 
     ///Internal subrect calculations, for e.g. scrollbar arrows,
     ///where we fake our output to get Qt to do what we want
-    QRect internalSubControlRect (ComplexControl control, const QStyleOptionComplex* opt,
-                                                    SubControl subControl, const QWidget* w) const;
+    QRect internalSubControlRect(ComplexControl control, const QStyleOptionComplex *opt,
+                                 SubControl subControl, const QWidget *w) const;
 
     // fitt's law label support: QLabel focusing its buddy widget
     const QObject *clickedLabel;
 
     template<typename T>
-    static T extractOptionHelper(T*);
+    static T extractOptionHelper(T *);
 
 public:
-/** @name QStyle Methods
- * These are methods reimplemented from QStyle. Usually it's not necessary to
- * reimplement them yourself.
- *
- * Some of them are there for binary compatibility reasons only; all they do is to call
- * the implementation from QCommonStyle.
- */
+    /** @name QStyle Methods
+     * These are methods reimplemented from QStyle. Usually it's not necessary to
+     * reimplement them yourself.
+     *
+     * Some of them are there for binary compatibility reasons only; all they do is to call
+     * the implementation from QCommonStyle.
+     */
 //@{
-    void drawControl      (ControlElement   elem, const QStyleOption* opt, QPainter* p, const QWidget* w) const;
-    void drawPrimitive    (PrimitiveElement elem, const QStyleOption* opt, QPainter* p, const QWidget* w) const;
-    int  pixelMetric      (PixelMetric    metric, const QStyleOption* opt = 0, const QWidget* w = 0) const;
-    QRect subElementRect  (SubElement    subRect, const QStyleOption* opt, const QWidget* w) const;
-    QSize sizeFromContents(ContentsType     type, const QStyleOption* opt,
-                                                const QSize& contentsSize, const QWidget* w) const;
-    int   styleHint       (StyleHint        hint, const QStyleOption* opt, const QWidget* w,
-                                                               QStyleHintReturn* returnData) const;
-    QRect subControlRect (ComplexControl control, const QStyleOptionComplex* opt,
-                                                    SubControl subControl, const QWidget* w) const;
-    SubControl hitTestComplexControl(ComplexControl cc, const QStyleOptionComplex* opt,
-                                             const QPoint& pt, const QWidget* w) const;
-    void       drawComplexControl   (ComplexControl cc, const QStyleOptionComplex* opt,
-                                             QPainter *p,      const QWidget* w) const;
+    void drawControl(ControlElement   elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const;
+    void drawPrimitive(PrimitiveElement elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const;
+    int  pixelMetric(PixelMetric    metric, const QStyleOption *opt = 0, const QWidget *w = 0) const;
+    QRect subElementRect(SubElement    subRect, const QStyleOption *opt, const QWidget *w) const;
+    QSize sizeFromContents(ContentsType     type, const QStyleOption *opt,
+                           const QSize &contentsSize, const QWidget *w) const;
+    int   styleHint(StyleHint        hint, const QStyleOption *opt, const QWidget *w,
+                    QStyleHintReturn *returnData) const;
+    QRect subControlRect(ComplexControl control, const QStyleOptionComplex *opt,
+                         SubControl subControl, const QWidget *w) const;
+    SubControl hitTestComplexControl(ComplexControl cc, const QStyleOptionComplex *opt,
+                                     const QPoint &pt, const QWidget *w) const;
+    void       drawComplexControl(ComplexControl cc, const QStyleOptionComplex *opt,
+                                  QPainter *p,      const QWidget *w) const;
 
     void polish(QWidget *);
     void unpolish(QWidget *);
@@ -1612,35 +1516,37 @@ public:
     void unpolish(QApplication *);
     void polish(QPalette &);
     QRect itemTextRect(const QFontMetrics &fm, const QRect &r,
-                           int flags, bool enabled,
-                           const QString &text) const;
+                       int flags, bool enabled,
+                       const QString &text) const;
     QRect itemPixmapRect(const QRect &r, int flags, const QPixmap &pixmap) const;
     void drawItemText(QPainter *painter, const QRect &rect,
-                              int flags, const QPalette &pal, bool enabled,
-                              const QString &text, QPalette::ColorRole textRole = QPalette::NoRole) const;
+                      int flags, const QPalette &pal, bool enabled,
+                      const QString &text, QPalette::ColorRole textRole = QPalette::NoRole) const;
     void drawItemPixmap(QPainter *painter, const QRect &rect,
-                                int alignment, const QPixmap &pixmap) const;
+                        int alignment, const QPixmap &pixmap) const;
     QPalette standardPalette() const;
     QPixmap standardPixmap(StandardPixmap standardPixmap, const QStyleOption *opt,
-                                   const QWidget *widget = 0) const; //### kde5 remove
+                           const QWidget *widget = 0) const; //### kde5 remove
     QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap &pixmap,
-                                   const QStyleOption *opt) const;
+                                const QStyleOption *opt) const;
     bool eventFilter(QObject *, QEvent *);
 
     int layoutSpacing(QSizePolicy::ControlType control1,
-                    QSizePolicy::ControlType control2, Qt::Orientation orientation,
-                    const QStyleOption *option = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+                      QSizePolicy::ControlType control2, Qt::Orientation orientation,
+                      const QStyleOption *option = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
 
     QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = 0,
-                                     const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+                       const QWidget *widget = 0) const Q_DECL_OVERRIDE;
 //@}
 private:
-    K4StylePrivate * const d;
+    K4StylePrivate *const d;
 };
 
 template<typename T>
-const char* kstyleName()
-{ return "default"; }
+const char *kstyleName()
+{
+    return "default";
+}
 
 /**
  * Template class which helps implementing the widget style plugin interface.
@@ -1660,13 +1566,14 @@ class K4StyleFactory: public QStylePlugin
         l << kstyleName<T>();
         return l;
     }
-    
-    QStyle* create(const QString& id)
+
+    QStyle *create(const QString &id)
     {
         QStringList names = keys();
         //check whether included in the keys
-        if (names.contains(id, Qt::CaseInsensitive))
+        if (names.contains(id, Qt::CaseInsensitive)) {
             return new T();
+        }
 
         return 0;
     }
@@ -1674,23 +1581,25 @@ class K4StyleFactory: public QStylePlugin
 
 // get the pointed-to type from a pointer
 template<typename T>
-T K4Style::extractOptionHelper(T*)
+T K4Style::extractOptionHelper(T *)
 {
     return T();
 }
 
 template<typename T>
-T K4Style::extractOption(Option* option)
+T K4Style::extractOption(Option *option)
 {
     if (option) {
-        if (dynamic_cast<T>(option))
+        if (dynamic_cast<T>(option)) {
             return static_cast<T>(option);
+        }
         // Ugly hacks for when RTLD_GLOBAL is not used (quite common with plugins, really)
         // and dynamic_cast fails.
         // This is still partially broken as it doesn't take into account subclasses.
         // ### KDE5 do this somehow differently
-        if ( qstrcmp(typeid(*option).name(), typeid(extractOptionHelper(static_cast<T>(0))).name()) == 0 )
+        if (qstrcmp(typeid(*option).name(), typeid(extractOptionHelper(static_cast<T>(0))).name()) == 0) {
             return static_cast<T>(option);
+        }
     }
 
     //### warn if cast failed?
@@ -1703,4 +1612,3 @@ T K4Style::extractOption(Option* option)
     Q_EXPORT_PLUGIN(K4StyleFactory<type>)
 
 #endif
-// kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

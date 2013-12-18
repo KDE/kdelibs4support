@@ -49,8 +49,8 @@ KCalendarSystem *KCalendarSystem::create(KLocale::CalendarSystem calendarSystem,
 }
 
 KCalendarSystem *KCalendarSystem::create(KLocale::CalendarSystem calendarSystem,
-                                         KSharedConfig::Ptr config,
-                                         const KLocale *locale)
+        KSharedConfig::Ptr config,
+        const KLocale *locale)
 {
     switch (calendarSystem) {
     case KLocale::GregorianCalendar:
@@ -134,9 +134,9 @@ QString KCalendarSystem::calendarLabel(KLocale::CalendarSystem calendarSystem, c
 // Shared d pointer base class definitions
 
 KCalendarSystemPrivate::KCalendarSystemPrivate(KCalendarSystem *q_ptr)
-                      : q(q_ptr),
-                        m_eraList(0),
-                        m_shortYearWindowStartYear(2000)
+    : q(q_ptr),
+      m_eraList(0),
+      m_shortYearWindowStartYear(2000)
 {
 }
 
@@ -160,7 +160,7 @@ int KCalendarSystemPrivate::isoWeekNumber(const QDate &date, int *yearNum) const
 
     // iso 8601: week 1  is the first containing thursday and week starts on monday
     if (weekDay1 > 4 /*Thursday*/) {
-        firstDayWeek1 = q->addDays(firstDayWeek1 , daysInWeek() - weekDay1 + 1);   // next monday
+        firstDayWeek1 = q->addDays(firstDayWeek1, daysInWeek() - weekDay1 + 1);   // next monday
     }
 
     dayOfWeek1InYear = dayOfYear(firstDayWeek1);
@@ -263,7 +263,7 @@ int KCalendarSystemPrivate::simpleWeeksInYear(int year) const
 // Works for calendars with constant number of months, or where leap month is last month of year
 // Will not work for Hebrew or others where leap month is inserted in middle of year
 void KCalendarSystemPrivate::dateDifference(const QDate &fromDate, const QDate &toDate,
-                                            int *yearsDiff, int *monthsDiff, int *daysDiff, int *direction) const
+        int *yearsDiff, int *monthsDiff, int *daysDiff, int *direction) const
 {
     // This could be optimised a little but is left in full as it's easier to understand
     int dy = 0;
@@ -598,7 +598,7 @@ QDate KCalendarSystemPrivate::lastDayOfMonth(int year, int month) const
     return QDate::fromJulianDay(jd);
 }
 
-const KLocale * KCalendarSystemPrivate::locale() const
+const KLocale *KCalendarSystemPrivate::locale() const
 {
     if (m_locale) {
         return m_locale;
@@ -636,7 +636,7 @@ KCalendarEra KCalendarSystemPrivate::era(const QString &eraName, int yearInEra) 
     return KCalendarEra();
 }
 
-void KCalendarSystemPrivate::loadEraList(const KConfigGroup & cg)
+void KCalendarSystemPrivate::loadEraList(const KConfigGroup &cg)
 {
     delete m_eraList;
     m_eraList = new QList<KCalendarEra>;
@@ -734,7 +734,7 @@ int KCalendarSystemPrivate::applyShortYearWindow(int inputYear) const
     }
 }
 
-void KCalendarSystemPrivate::loadShortYearWindowStartYear(const KConfigGroup & cg)
+void KCalendarSystemPrivate::loadShortYearWindowStartYear(const KConfigGroup &cg)
 {
     // Default to 2000 for backwards compatibility
     // as that's the old readDate() default value
@@ -754,7 +754,7 @@ KSharedConfig::Ptr KCalendarSystemPrivate::config()
     }
 }
 
-void KCalendarSystemPrivate::loadConfig(const QString & calendarType)
+void KCalendarSystemPrivate::loadConfig(const QString &calendarType)
 {
     KConfigGroup localeGroup(config(), QString::fromLatin1("Locale"));
     KConfigGroup calendarGroup = localeGroup.group(QString::fromLatin1("KCalendarSystem %1").arg(calendarType));
@@ -763,7 +763,7 @@ void KCalendarSystemPrivate::loadConfig(const QString & calendarType)
 }
 
 KCalendarSystem::KCalendarSystem(KCalendarSystemPrivate &dd, const KSharedConfig::Ptr config, const KLocale *locale)
-               : d_ptr(&dd)
+    : d_ptr(&dd)
 {
     d_ptr->m_config = config;
     d_ptr->m_locale = locale;
@@ -1179,8 +1179,9 @@ int KCalendarSystem::weeksInYear(int year, KLocale::WeekNumberSystem weekNumberS
 {
     Q_D(const KCalendarSystem);
 
-    if (!isValid(year, 1, 1))
+    if (!isValid(year, 1, 1)) {
         return -1;
+    }
 
     switch (weekNumberSystem) {
     case KLocale::IsoWeekNumber:
@@ -1278,8 +1279,9 @@ int KCalendarSystem::week(const QDate &date, KLocale::WeekNumberSystem weekNumbe
 {
     Q_D(const KCalendarSystem);
 
-    if (!isValid(date))
+    if (!isValid(date)) {
         return -1;
+    }
 
     switch (weekNumberSystem) {
     case KLocale::IsoWeekNumber:
@@ -1870,7 +1872,7 @@ int KCalendarSystem::applyShortYearWindow(int inputYear) const
     return d->applyShortYearWindow(inputYear);
 }
 
-const KLocale * KCalendarSystem::locale() const
+const KLocale *KCalendarSystem::locale() const
 {
     Q_D(const KCalendarSystem);
 

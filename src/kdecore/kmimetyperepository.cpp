@@ -37,7 +37,7 @@ public:
 
 Q_GLOBAL_STATIC(KMimeTypeRepositorySingleton, s_self)
 
-KMimeTypeRepository * KMimeTypeRepository::self()
+KMimeTypeRepository *KMimeTypeRepository::self()
 {
     return &s_self()->instance;
 }
@@ -54,45 +54,53 @@ KMimeTypeRepository::~KMimeTypeRepository()
 {
 }
 
-bool KMimeTypeRepository::matchFileName( const QString &filename, const QString &pattern )
+bool KMimeTypeRepository::matchFileName(const QString &filename, const QString &pattern)
 {
     const int pattern_len = pattern.length();
-    if (!pattern_len)
+    if (!pattern_len) {
         return false;
+    }
     const int len = filename.length();
 
     const int starCount = pattern.count(QLatin1Char('*'));
 
     // Patterns like "*~", "*.extension"
-    if (pattern[0] == QLatin1Char('*')  && pattern.indexOf(QLatin1Char('[')) == -1 && starCount == 1)
-    {
-        if ( len + 1 < pattern_len ) return false;
+    if (pattern[0] == QLatin1Char('*')  && pattern.indexOf(QLatin1Char('[')) == -1 && starCount == 1) {
+        if (len + 1 < pattern_len) {
+            return false;
+        }
 
         const QChar *c1 = pattern.unicode() + pattern_len - 1;
         const QChar *c2 = filename.unicode() + len - 1;
         int cnt = 1;
-        while (cnt < pattern_len && *c1-- == *c2--)
+        while (cnt < pattern_len && *c1-- == *c2--) {
             ++cnt;
+        }
         return cnt == pattern_len;
     }
 
     // Patterns like "README*" (well this is currently the only one like that...)
     if (starCount == 1 && pattern[pattern_len - 1] == QLatin1Char('*')) {
-        if ( len + 1 < pattern_len ) return false;
-        if (pattern[0] == QLatin1Char('*'))
+        if (len + 1 < pattern_len) {
+            return false;
+        }
+        if (pattern[0] == QLatin1Char('*')) {
             return filename.indexOf(pattern.mid(1, pattern_len - 2)) != -1;
+        }
 
         const QChar *c1 = pattern.unicode();
         const QChar *c2 = filename.unicode();
         int cnt = 1;
-        while (cnt < pattern_len && *c1++ == *c2++)
-           ++cnt;
+        while (cnt < pattern_len && *c1++ == *c2++) {
+            ++cnt;
+        }
         return cnt == pattern_len;
     }
 
     // Names without any wildcards like "README"
-    if (pattern.indexOf(QLatin1Char('[')) == -1 && starCount == 0 && pattern.indexOf(QLatin1Char('?')))
+    if (pattern.indexOf(QLatin1Char('[')) == -1 && starCount == 0 && pattern.indexOf(QLatin1Char('?'))) {
         return (pattern == filename);
+    }
 
     // Other (quite rare) patterns, like "*.anim[1-9j]": use slow but correct method
     QRegExp rx(pattern);
@@ -100,7 +108,7 @@ bool KMimeTypeRepository::matchFileName( const QString &filename, const QString 
     return rx.exactMatch(filename);
 }
 
-QStringList KMimeTypeRepository::patternsForMimetype(const QString& mimeType)
+QStringList KMimeTypeRepository::patternsForMimetype(const QString &mimeType)
 {
     //QWriteLocker lock(&m_mutex);
     QMimeType mime = m_mimeDb.mimeTypeForName(mimeType);
@@ -126,14 +134,14 @@ bool KMimeTypeRepository::useFavIcons()
     m_mutex.lockForWrite();
     if (!m_useFavIconsChecked) {
         m_useFavIconsChecked = true;
-        KConfigGroup cg( KSharedConfig::openConfig(), "HTML Settings" );
+        KConfigGroup cg(KSharedConfig::openConfig(), "HTML Settings");
         m_useFavIcons = cg.readEntry("EnableFavicon", true);
     }
     m_mutex.unlock();
     return m_useFavIcons;
 }
 
-static void addPlatformSpecificPkgConfigPath(QStringList& paths)
+static void addPlatformSpecificPkgConfigPath(QStringList &paths)
 {
 #if defined (Q_OS_FREEBSD)
     paths << QLatin1String("/usr/local/libdata/pkgconfig"); // FreeBSD
@@ -159,13 +167,13 @@ static int mimeDataBaseVersion()
     // Add platform specific hard-coded default paths to the list...
     addPlatformSpecificPkgConfigPath(paths);
 
-    Q_FOREACH(const QString& path, paths) {
+    Q_FOREACH (const QString &path, paths) {
         const QString fileName = path + QLatin1String("/shared-mime-info.pc");
         if (!QFile::exists(fileName)) {
             continue;
         }
 
-        QFile file (fileName);
+        QFile file(fileName);
         if (!file.open(QIODevice::ReadOnly)) {
             break;
         }
@@ -209,8 +217,9 @@ static int mimeDataBaseVersion()
 int KMimeTypeRepository::sharedMimeInfoVersion()
 {
     m_mutex.lockForWrite();
-    if (m_sharedMimeInfoVersion == 0)
+    if (m_sharedMimeInfoVersion == 0) {
         m_sharedMimeInfoVersion = mimeDataBaseVersion();
+    }
     m_mutex.unlock();
     return m_sharedMimeInfoVersion;
 }

@@ -10,7 +10,7 @@
  *  permit persons to whom the Software is furnished to do so, subject to
  *  the following conditions:
  *
- *  The above copyright notice and this permission notice shall be included 
+ *  The above copyright notice and this permission notice shall be included
  *  in all copies or substantial portions of the Software.
  *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
@@ -32,7 +32,8 @@
 
 #include "k3socketaddress.h"
 
-namespace KNetwork {
+namespace KNetwork
+{
 
 class KReverseResolverPrivate;
 /** @class KReverseResolver k3reverseresolver.h k3reverseresolver.h
@@ -50,148 +51,147 @@ class KReverseResolverPrivate;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT KReverseResolver: public QObject
 {
-  Q_OBJECT
+    Q_OBJECT
 
 public:
-  /**
-   * Flags for the reverse resolution.
-   *
-   * These flags are used by the reverse resolution functions for
-   * setting resolution parameters. The possible values are:
-   * @li NumericHost: don't try to resolve the host address to a text form.
-   *		Instead, convert the address to its numeric textual representation.
-   * @li NumericService: the same as NumericHost, but for the service name
-   * @li NodeNameOnly: returns the node name only (i.e., not the Fully
-   *		Qualified Domain Name)
-   * @li Datagram: in case of ambiguity in the service name, prefer the
-   *		name associated with the datagram protocol
-   * @li NumericScope: for those addresses which have the concept of scope,
-   *            resolve using the numeric value instead of the proper scope name.
-   * @li ResolutionRequired: normally, when resolving, if the name resolution
-   *            fails, the process normally converts the numeric address into its
-   *            presentation forms. This flag causes the function to return
-   *            with error instead.
-   */
-  enum Flags
-    {
-      NumericHost = 0x01,
-      NumericService = 0x02,
-      NodeNameOnly = 0x04,
-      Datagram = 0x08,
-      NumericScope = 0x10,
-      ResolutionRequired = 0x20
+    /**
+     * Flags for the reverse resolution.
+     *
+     * These flags are used by the reverse resolution functions for
+     * setting resolution parameters. The possible values are:
+     * @li NumericHost: don't try to resolve the host address to a text form.
+     *        Instead, convert the address to its numeric textual representation.
+     * @li NumericService: the same as NumericHost, but for the service name
+     * @li NodeNameOnly: returns the node name only (i.e., not the Fully
+     *        Qualified Domain Name)
+     * @li Datagram: in case of ambiguity in the service name, prefer the
+     *        name associated with the datagram protocol
+     * @li NumericScope: for those addresses which have the concept of scope,
+     *            resolve using the numeric value instead of the proper scope name.
+     * @li ResolutionRequired: normally, when resolving, if the name resolution
+     *            fails, the process normally converts the numeric address into its
+     *            presentation forms. This flag causes the function to return
+     *            with error instead.
+     */
+    enum Flags {
+        NumericHost = 0x01,
+        NumericService = 0x02,
+        NodeNameOnly = 0x04,
+        Datagram = 0x08,
+        NumericScope = 0x10,
+        ResolutionRequired = 0x20
     };
 
-  /**
-   * Constructs this object to resolve the given socket address.
-   *
-   * @param addr        the address to resolve
-   * @param flags       the flags to use, see Flags
-   * @param parent      the parent object (see QObject)
-   */
-  explicit KReverseResolver(const KSocketAddress& addr, int flags = 0,
-                            QObject *parent = 0L);
+    /**
+     * Constructs this object to resolve the given socket address.
+     *
+     * @param addr        the address to resolve
+     * @param flags       the flags to use, see Flags
+     * @param parent      the parent object (see QObject)
+     */
+    explicit KReverseResolver(const KSocketAddress &addr, int flags = 0,
+                              QObject *parent = 0L);
 
-  /**
-   * Destructor.
-   */
-  virtual ~KReverseResolver();
+    /**
+     * Destructor.
+     */
+    virtual ~KReverseResolver();
 
-  /**
-   * This function returns 'true' if the processing is still running.
-   */
-  bool isRunning() const;
+    /**
+     * This function returns 'true' if the processing is still running.
+     */
+    bool isRunning() const;
 
-  /**
-   * This function returns true if the processing has finished with
-   * success, false if it's still running or failed.
-   */
-  bool success() const;
+    /**
+     * This function returns true if the processing has finished with
+     * success, false if it's still running or failed.
+     */
+    bool success() const;
 
-  /**
-   * This function returns true if the processing has finished with
-   * failure, false if it's still running or succeeded.
-   */
-  bool failure() const;
+    /**
+     * This function returns true if the processing has finished with
+     * failure, false if it's still running or succeeded.
+     */
+    bool failure() const;
 
-  /**
-   * Returns the resolved node name, if the resolution has finished 
-   * successfully, or QString() otherwise.
-   */
-  QString node() const;
+    /**
+     * Returns the resolved node name, if the resolution has finished
+     * successfully, or QString() otherwise.
+     */
+    QString node() const;
 
-  /**
-   * Returns the resolved service name, if the resolution has finished
-   * successfully, or QString() otherwise.
-   */
-  QString service() const;
+    /**
+     * Returns the resolved service name, if the resolution has finished
+     * successfully, or QString() otherwise.
+     */
+    QString service() const;
 
-  /**
-   * Returns the socket address which was subject to resolution.
-   */
-  const KSocketAddress& address() const;
+    /**
+     * Returns the socket address which was subject to resolution.
+     */
+    const KSocketAddress &address() const;
 
-  /**
-   * Starts the resolution. This function returns 'true'
-   * if the resolution has started successfully.
-   */
-  bool start();
+    /**
+     * Starts the resolution. This function returns 'true'
+     * if the resolution has started successfully.
+     */
+    bool start();
 
-  /**
-   * Overrides event handling
-   */
-  virtual bool event(QEvent* );
+    /**
+     * Overrides event handling
+     */
+    virtual bool event(QEvent *);
 
 Q_SIGNALS:
-  /**
-   * This signal is emitted when the resolution has finished.
-   *
-   * @param obj		this class, which contains the results
-   */
-  void finished(const KNetwork::KReverseResolver& obj);
+    /**
+     * This signal is emitted when the resolution has finished.
+     *
+     * @param obj     this class, which contains the results
+     */
+    void finished(const KNetwork::KReverseResolver &obj);
 
 public:
-  /**
-   * Resolves a socket address to its textual representation
-   *
-   * FIXME!! How can we do this in a non-blocking manner!?
-   *
-   * This function is used to resolve a socket address from its
-   * binary representation to a textual form, even if numeric only.
-   *
-   * @param addr	the socket address to be resolved
-   * @param node	the QString where we will store the resolved node
-   * @param serv	the QString where we will store the resolved service
-   * @param flags	flags to be used for this resolution.
-   * @return true if the resolution succeeded, false if not
-   * @see ReverseFlags for the possible values for @p flags
-   */
-  static bool resolve(const KSocketAddress& addr, QString& node, 
-		      QString& serv, int flags = 0);
+    /**
+     * Resolves a socket address to its textual representation
+     *
+     * FIXME!! How can we do this in a non-blocking manner!?
+     *
+     * This function is used to resolve a socket address from its
+     * binary representation to a textual form, even if numeric only.
+     *
+     * @param addr    the socket address to be resolved
+     * @param node    the QString where we will store the resolved node
+     * @param serv    the QString where we will store the resolved service
+     * @param flags   flags to be used for this resolution.
+     * @return true if the resolution succeeded, false if not
+     * @see ReverseFlags for the possible values for @p flags
+     */
+    static bool resolve(const KSocketAddress &addr, QString &node,
+                        QString &serv, int flags = 0);
 
-  /**
-   * Resolves a socket address to its textual representation
-   *
-   * FIXME!! How can we do this in a non-blocking manner!?
-   *
-   * This function behaves just like the above one, except it takes
-   * a sockaddr structure and its size as parameters.
-   *
-   * @param sa	the sockaddr structure containing the address to be resolved
-   * @param salen	the length of the sockaddr structure
-   * @param node	the QString where we will store the resolved node
-   * @param serv	the QString where we will store the resolved service
-   * @param flags	flags to be used for this resolution.
-   * @return true if the resolution succeeded, false if not
-   * @see ReverseFlags for the possible values for @p flags
-   */
-  static bool resolve(const struct sockaddr* sa, quint16 salen, 
-		      QString& node, QString& serv, int flags = 0);
+    /**
+     * Resolves a socket address to its textual representation
+     *
+     * FIXME!! How can we do this in a non-blocking manner!?
+     *
+     * This function behaves just like the above one, except it takes
+     * a sockaddr structure and its size as parameters.
+     *
+     * @param sa  the sockaddr structure containing the address to be resolved
+     * @param salen   the length of the sockaddr structure
+     * @param node    the QString where we will store the resolved node
+     * @param serv    the QString where we will store the resolved service
+     * @param flags   flags to be used for this resolution.
+     * @return true if the resolution succeeded, false if not
+     * @see ReverseFlags for the possible values for @p flags
+     */
+    static bool resolve(const struct sockaddr *sa, quint16 salen,
+                        QString &node, QString &serv, int flags = 0);
 
 private:
-  KReverseResolverPrivate* const d;
+    KReverseResolverPrivate *const d;
 };
 
-}				// namespace KNetwork
+}               // namespace KNetwork
 
 #endif

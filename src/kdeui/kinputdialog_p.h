@@ -38,25 +38,25 @@ class KTextEdit;
  */
 class KInputDialogHelper : public QDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 
-  public:
+public:
 
-    KInputDialogHelper( const QString &caption, const QString &label,
-                        const QString &value, QWidget *parent,
-                        QValidator *validator, const QString &mask );
-    KInputDialogHelper( const QString &caption, const QString &label,
-                        const QString &value, QWidget *parent );
-    KInputDialogHelper( const QString &caption, const QString &label, int value,
-                        int minValue, int maxValue, int step, int base, QWidget *parent );
-    KInputDialogHelper( const QString &caption, const QString &label, double value,
-                        double minValue, double maxValue, double step, int decimals,
-                        QWidget *parent );
-    KInputDialogHelper( const QString &caption, const QString &label,
-                        const QStringList &list, int current, bool editable, QWidget *parent );
-    KInputDialogHelper( const QString &caption, const QString &label,
-                        const QStringList &list, const QStringList &select, bool editable,
-                        QWidget *parent );
+    KInputDialogHelper(const QString &caption, const QString &label,
+                       const QString &value, QWidget *parent,
+                       QValidator *validator, const QString &mask);
+    KInputDialogHelper(const QString &caption, const QString &label,
+                       const QString &value, QWidget *parent);
+    KInputDialogHelper(const QString &caption, const QString &label, int value,
+                       int minValue, int maxValue, int step, int base, QWidget *parent);
+    KInputDialogHelper(const QString &caption, const QString &label, double value,
+                       double minValue, double maxValue, double step, int decimals,
+                       QWidget *parent);
+    KInputDialogHelper(const QString &caption, const QString &label,
+                       const QStringList &list, int current, bool editable, QWidget *parent);
+    KInputDialogHelper(const QString &caption, const QString &label,
+                       const QStringList &list, const QStringList &select, bool editable,
+                       QWidget *parent);
 
     ~KInputDialogHelper();
 
@@ -67,11 +67,11 @@ class KInputDialogHelper : public QDialog
     QListWidget *listBox() const;
     KTextEdit *textEdit() const;
 
-  private Q_SLOTS:
-    void slotEditTextChanged( const QString& );
-    void slotUpdateButtons( const QString& );
+private Q_SLOTS:
+    void slotEditTextChanged(const QString &);
+    void slotUpdateButtons(const QString &);
 
-  private:
+private:
     QLabel *m_label;
     KLineEdit *m_lineEdit;
     QSpinBox *m_intSpinBox;
@@ -84,5 +84,3 @@ class KInputDialogHelper : public QDialog
 
 #endif // KINPUTDIALOG_P_H
 
-/* vim: set ai et sw=2 ts=2
-*/

@@ -37,54 +37,54 @@
  */
 class KDE4SUPPORT_EXPORT KDateTimeWidget : public QWidget
 {
-  Q_OBJECT
-  Q_PROPERTY( QDateTime dateTime READ dateTime WRITE setDateTime NOTIFY valueChanged USER true )
+    Q_OBJECT
+    Q_PROPERTY(QDateTime dateTime READ dateTime WRITE setDateTime NOTIFY valueChanged USER true)
 
 public:
-  /**
-   * Constructs a date and time selection widget.
-   */
-  explicit KDateTimeWidget(QWidget * parent = 0);
+    /**
+     * Constructs a date and time selection widget.
+     */
+    explicit KDateTimeWidget(QWidget *parent = 0);
 
-  /**
-   * Constructs a date and time selection widget with the initial date and
-   * time set to @p datetime.
-   */
-  explicit KDateTimeWidget(const QDateTime & datetime,
-                           QWidget * parent = 0);
+    /**
+     * Constructs a date and time selection widget with the initial date and
+     * time set to @p datetime.
+     */
+    explicit KDateTimeWidget(const QDateTime &datetime,
+                             QWidget *parent = 0);
 
-  /**
-   * Destructs the date and time selection widget.
-   */
-  virtual ~KDateTimeWidget();
+    /**
+     * Destructs the date and time selection widget.
+     */
+    virtual ~KDateTimeWidget();
 
-  /**
-   * Returns the currently selected date and time.
-   */
-  QDateTime dateTime() const;
+    /**
+     * Returns the currently selected date and time.
+     */
+    QDateTime dateTime() const;
 
 public Q_SLOTS:
-  /**
-   * Changes the selected date and time to @p datetime.
-   */
-  void setDateTime(const QDateTime & datetime);
+    /**
+     * Changes the selected date and time to @p datetime.
+     */
+    void setDateTime(const QDateTime &datetime);
 
 Q_SIGNALS:
-  /**
-   * Emitted whenever the date or time of the widget
-   * is changed, either with setDateTime() or via user selection.
-   */
-  void valueChanged(const QDateTime & datetime);
+    /**
+     * Emitted whenever the date or time of the widget
+     * is changed, either with setDateTime() or via user selection.
+     */
+    void valueChanged(const QDateTime &datetime);
 
 private:
-  void initWidget();
+    void initWidget();
 
 private Q_SLOTS:
-  void slotValueChanged();
+    void slotValueChanged();
 
 private:
-  class KDateTimeWidgetPrivate;
-  KDateTimeWidgetPrivate * const d;
+    class KDateTimeWidgetPrivate;
+    KDateTimeWidgetPrivate *const d;
 };
 
 #endif

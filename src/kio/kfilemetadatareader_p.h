@@ -48,7 +48,7 @@ public:
      * @param urls   List of files where the metadata should be extracted from.
      * @param parent Parent object.
      */
-    explicit KFileMetaDataReader(const QList<QUrl>& urls, QObject* parent = 0);
+    explicit KFileMetaDataReader(const QList<QUrl> &urls, QObject *parent = 0);
     virtual ~KFileMetaDataReader();
 
     /**
@@ -83,7 +83,7 @@ Q_SIGNALS:
 
 private:
     class Private;
-    Private* d;
+    Private *d;
 
     Q_PRIVATE_SLOT(d, void slotLoadingFinished(int, QProcess::ExitStatus))
 };

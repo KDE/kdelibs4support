@@ -12,13 +12,13 @@ class testWindow  : public KXmlGuiWindow
     Q_OBJECT
 
 public:
-    testWindow (QWidget *parent=0);
-    ~testWindow ();
+    testWindow(QWidget *parent = 0);
+    ~testWindow();
 
 public Q_SLOTS:
     void slotPress(int i);
     void slotClick(int i);
-    void slotMenu(QAction*);
+    void slotMenu(QAction *);
 
 protected:
     QMenu *fileMenu;

@@ -30,7 +30,6 @@
 
 K_PLUGIN_FACTORY(KcmSslFactory, registerPlugin<KcmSsl>();)
 
-
 KcmSsl::KcmSsl(QWidget *parent, const QVariantList &args)
     : KCModule(parent, args)
 {

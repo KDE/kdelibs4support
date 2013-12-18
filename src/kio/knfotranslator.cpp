@@ -20,7 +20,6 @@
 #include "knfotranslator_p.h"
 #include <klocalizedstring.h>
 
-
 #include <QUrl>
 
 #include <config-kde4support.h>
@@ -30,9 +29,9 @@
 #endif
 
 struct TranslationItem {
-    const char* const key;
-    const char* const context;
-    const char* const value;
+    const char *const key;
+    const char *const context;
+    const char *const value;
 };
 
 // TODO: a lot of NFOs are missing yet
@@ -107,7 +106,7 @@ static const TranslationItem g_translations[] = {
     { "translation.total", I18N_NOOP2_NOSTRIP("@label Number of total translations", "Total Translations") },
     { "translation.translated", I18N_NOOP2_NOSTRIP("@label Number of translated strings", "Translated") },
     { "translation.translation_date", I18N_NOOP2_NOSTRIP("@label", "Translation Date") },
-    { "translation.untranslated", I18N_NOOP2_NOSTRIP("@label Number of untranslated strings" , "Untranslated") },
+    { "translation.untranslated", I18N_NOOP2_NOSTRIP("@label Number of untranslated strings", "Untranslated") },
     { 0, 0, 0 } // mandatory last entry
 };
 
@@ -118,12 +117,12 @@ public:
 };
 Q_GLOBAL_STATIC(KNfoTranslatorSingleton, s_nfoTranslator)
 
-KNfoTranslator& KNfoTranslator::instance()
+KNfoTranslator &KNfoTranslator::instance()
 {
     return s_nfoTranslator()->instance;
 }
 
-QString KNfoTranslator::translation(const QUrl& uri) const
+QString KNfoTranslator::translation(const QUrl &uri) const
 {
     const QString key = uri.toString();
     if (m_hash.contains(key)) {
@@ -160,7 +159,7 @@ QString KNfoTranslator::translation(const QUrl& uri) const
 KNfoTranslator::KNfoTranslator() :
     m_hash()
 {
-    const TranslationItem* item = &g_translations[0];
+    const TranslationItem *item = &g_translations[0];
     while (item->key != 0) {
         m_hash.insert(item->key, i18nc(item->context, item->value));
         ++item;

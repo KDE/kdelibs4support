@@ -37,14 +37,14 @@
 /**
  \return a value from MS Windows native registry for shell folder \a folder.
 */
-KDE4SUPPORT_DEPRECATED_EXPORT QString getWin32ShellFoldersPath(const QString& folder);
+KDE4SUPPORT_DEPRECATED_EXPORT QString getWin32ShellFoldersPath(const QString &folder);
 
 /**
  Shows native MS Windows file property dialog for a file \a fileName.
  Return true on success. Only works for local absolute paths.
  Used by KPropertiesDialog, if possible.
 */
-KDE4SUPPORT_DEPRECATED_EXPORT bool showWin32FilePropertyDialog(const QString& fileName);
+KDE4SUPPORT_DEPRECATED_EXPORT bool showWin32FilePropertyDialog(const QString &fileName);
 
 /**
  \return two-letter locale name (like "en" or "pl") taken from MS Windows native registry.
@@ -61,7 +61,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT bool isExecutable(const QString &filename);
 /**
  \return a value from MS Windows native registry.
 */
-QString getWin32RegistryValue ( HKEY key, const QString& subKey, const QString& item, bool *ok = 0 );
+QString getWin32RegistryValue(HKEY key, const QString &subKey, const QString &item, bool *ok = 0);
 
 #endif  // Q_OS_WIN
 #endif  // KKERNEL_WIN_H

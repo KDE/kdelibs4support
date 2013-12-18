@@ -24,7 +24,6 @@
 #include <kde4support_export.h>
 #include <ksharedconfig.h>
 
-
 // Include for providing source code compatibility
 #include <klocalizedstring.h>
 
@@ -115,12 +114,12 @@ public:
     /**
      * Copy constructor
      */
-    KLocale(const KLocale & rhs);
+    KLocale(const KLocale &rhs);
 
     /**
      * Assignment operator
      */
-    KLocale& operator= (const KLocale & rhs);
+    KLocale &operator= (const KLocale &rhs);
 
     /**
      * Destructor
@@ -184,30 +183,30 @@ public:
         TamilDigits,              /**< ௦௧௨௩௪௫௬௭௮ (Tamil) */
         TeluguDigits,             /**< ౦౧౨౩౪౫౬౭౯ (Telugu) */
         ThaiDigits                /**< ๐๑๒๓๔๕๖๗๘๙ (Thai) */
-    // The following Decimal Digit Sets are defined in Unicode but the associated
-    // languages are not yet translated in KDE, so are not yet enabled.
-    // The script names are taken from the Unicode standard, the associated
-    // languages from Wikipedia.
-    //  BalineseDigits,           /**< ᭐᭑᭒᭓᭔᭕᭖᭗᭘᭙ (Balinese) */
-    //  ChamDigits,               /**< ꩐꩑꩒꩓꩔꩕꩖꩗꩘꩙ (Cham) */
-    //  JavaneseDigits,           /**< ꧐꧑꧒꧓꧔꧕꧖꧗꧘꧙ (Javanese) */
-    //  KayahLiDigits,            /**< ꤀꤁꤂꤃꤄꤅꤆꤇꤈꤉ (Kayah) */
-    //  LaoDigits,                /**< ໐໑໒໓໔໕໖໗໘໙ (Lao) */
-    //  LepchaDigits,             /**< ᱀᱁᱂᱃᱄᱅᱆᱇᱈᱉ (Lepcha) */
-    //  LimbuDigits,              /**< ᥆᥇᥈᥉᥊᥋᥌᥍᥎᥏ (Limbu) */
-    //  MeeteiMayekDigits,        /**< ꯰꯱꯲꯳꯴꯵꯶꯷꯸꯹ (Meitei) */
-    //  MongolianDigits,          /**< ᠐᠑᠒᠓᠔᠕᠖᠗᠘᠙ (Mongolian) */
-    //  MyanmarDigits,            /**< ၀၁၂၃၄၅၆၇၈၉ (Myanmar/Burmese ) */
-    //  MyanmarShanDigits,        /**< ႐႑႒႓႔႕႖႗႘႙ (Shan) */
-    //  NewTaiLueDigits,          /**< ᧐᧑᧒᧓᧔᧕᧖᧗᧘᧙ (Tai Lü) */
-    //  NKoDigits,                /**< ߀߁߂߃߄߅߆߇߈߉ (Mande and N'Ko) */
-    //  OlChikiDigits,            /**< ᱐᱑᱒᱓᱔᱕᱖᱗᱘᱙ (Santali) */
-    //  OsmanyaDigits,            /**< ҠҡҢңҤҥҦҧҨҩ (Somali) */
-    //  SaurashtraDigits,         /**< ꣐꣑꣒꣓꣔꣕꣖꣗꣘꣙ (Saurashtra) */
-    //  SundaneseDigits,          /**< ᮰᮱᮲᮳᮴᮵᮶᮷᮸᮹ (Sundanese) */
-    //  TaiThamDigits,            /**< ᪐᪑᪒᪓᪔᪕᪖᪗᪘᪙ (Tai Lü) */
-    //  TibetanDigits,            /**< ༠༡༢༣༤༥༦༧༨༩ (Tibetan) */
-    //  VaiDigits,                /**< ꘠꘡꘢꘣꘤꘥꘦꘧꘨꘩ (Vai) */
+        // The following Decimal Digit Sets are defined in Unicode but the associated
+        // languages are not yet translated in KDE, so are not yet enabled.
+        // The script names are taken from the Unicode standard, the associated
+        // languages from Wikipedia.
+        //  BalineseDigits,           /**< ᭐᭑᭒᭓᭔᭕᭖᭗᭘᭙ (Balinese) */
+        //  ChamDigits,               /**< ꩐꩑꩒꩓꩔꩕꩖꩗꩘꩙ (Cham) */
+        //  JavaneseDigits,           /**< ꧐꧑꧒꧓꧔꧕꧖꧗꧘꧙ (Javanese) */
+        //  KayahLiDigits,            /**< ꤀꤁꤂꤃꤄꤅꤆꤇꤈꤉ (Kayah) */
+        //  LaoDigits,                /**< ໐໑໒໓໔໕໖໗໘໙ (Lao) */
+        //  LepchaDigits,             /**< ᱀᱁᱂᱃᱄᱅᱆᱇᱈᱉ (Lepcha) */
+        //  LimbuDigits,              /**< ᥆᥇᥈᥉᥊᥋᥌᥍᥎᥏ (Limbu) */
+        //  MeeteiMayekDigits,        /**< ꯰꯱꯲꯳꯴꯵꯶꯷꯸꯹ (Meitei) */
+        //  MongolianDigits,          /**< ᠐᠑᠒᠓᠔᠕᠖᠗᠘᠙ (Mongolian) */
+        //  MyanmarDigits,            /**< ၀၁၂၃၄၅၆၇၈၉ (Myanmar/Burmese ) */
+        //  MyanmarShanDigits,        /**< ႐႑႒႓႔႕႖႗႘႙ (Shan) */
+        //  NewTaiLueDigits,          /**< ᧐᧑᧒᧓᧔᧕᧖᧗᧘᧙ (Tai Lü) */
+        //  NKoDigits,                /**< ߀߁߂߃߄߅߆߇߈߉ (Mande and N'Ko) */
+        //  OlChikiDigits,            /**< ᱐᱑᱒᱓᱔᱕᱖᱗᱘᱙ (Santali) */
+        //  OsmanyaDigits,            /**< ҠҡҢңҤҥҦҧҨҩ (Somali) */
+        //  SaurashtraDigits,         /**< ꣐꣑꣒꣓꣔꣕꣖꣗꣘꣙ (Saurashtra) */
+        //  SundaneseDigits,          /**< ᮰᮱᮲᮳᮴᮵᮶᮷᮸᮹ (Sundanese) */
+        //  TaiThamDigits,            /**< ᪐᪑᪒᪓᪔᪕᪖᪗᪘᪙ (Tai Lü) */
+        //  TibetanDigits,            /**< ༠༡༢༣༤༥༦༧༨༩ (Tibetan) */
+        //  VaiDigits,                /**< ꘠꘡꘢꘣꘤꘥꘦꘧꘨꘩ (Vai) */
     };
 
     /**
@@ -657,10 +656,10 @@ public:
         JalaliCalendar = 16, /**< Jalali Calendar, aka Persian or Iranian, also used in Afghanistan */
         //JalaliBirashkCalendar = 17, /**< Jalali Calendar, Birashk Algorythm variant */
         //Jalali33YearCalendar = 18, /**< Jalali Calendar, 33 Year cycle variant */
-        JapaneseCalendar= 19, /**< Japanese Calendar, Gregorian calculation using Japanese Era (Nengô) */
+        JapaneseCalendar = 19, /**< Japanese Calendar, Gregorian calculation using Japanese Era (Nengô) */
         //JucheCalendar = 20, /**< Juche Calendar, used in North Korea */
         JulianCalendar = 21, /**< Julian Calendar, as used in Orthodox Churches */
-        MinguoCalendar= 22, /**< Minguo Calendar, aka ROC, Republic of China or Taiwanese */
+        MinguoCalendar = 22, /**< Minguo Calendar, aka ROC, Republic of China or Taiwanese */
         ThaiCalendar = 23, /**< Thai Calendar, aka Buddhist or Thai Buddhist */
 
         QDateCalendar = GregorianCalendar /**< @deprecated Alias for GregorianCalendar */
@@ -690,9 +689,9 @@ public:
      * Standard used for Date Time Format String
      */
     enum DateTimeFormatStandard {
-         KdeFormat,        /**< KDE Standard */
-         PosixFormat,      /**< POSIX Standard */
-         UnicodeFormat     /**< UNICODE Standard (Qt/Java/OSX/Windows) */
+        KdeFormat,        /**< KDE Standard */
+        PosixFormat,      /**< POSIX Standard */
+        UnicodeFormat     /**< UNICODE Standard (Qt/Java/OSX/Windows) */
     };
 
     //KDE5 move to KDateTime namespace
@@ -702,15 +701,15 @@ public:
      * Mode to use when parsing a Date Time input string
      */
     enum DateTimeParseMode {
-         LiberalParsing   /**< Parse Date/Time liberally.  So long as the
+        LiberalParsing   /**< Parse Date/Time liberally.  So long as the
                                input string contains at least a reconizable
                                month and day the input will be accepted. */
-         //ModerateParsing, /**< Parse Date/Time with modeate tolerance.
-         //                      The date components in the format must all
-         //                      occur in the input and in the same order,
-         //                      but the spacing and the componants themselves
-         //                      may vary from the strict format. */
-         //StrictParsing    /**< Parse Date/Time strictly to the format. */
+        //ModerateParsing, /**< Parse Date/Time with modeate tolerance.
+        //                      The date components in the format must all
+        //                      occur in the input and in the same order,
+        //                      but the spacing and the componants themselves
+        //                      may vary from the strict format. */
+        //StrictParsing    /**< Parse Date/Time strictly to the format. */
     };
 
     //KDE5 move to KDateTime namespace
@@ -879,22 +878,22 @@ public:
      */
     enum TimeFormatOption {
         TimeDefault        = 0x0,   ///< Default formatting using seconds and the format
-                                    ///< as specified by the locale.
+        ///< as specified by the locale.
         TimeWithoutSeconds = 0x1,   ///< Exclude the seconds part of the time from display
         TimeWithoutAmPm    = 0x2,   ///< Read/format time string without am/pm suffix but
-                                    ///< keep the 12/24h format as specified by locale time
-                                    ///< format, eg. "07.33.05" instead of "07.33.05 pm" for
-                                    ///< time format "%I.%M.%S %p".
+        ///< keep the 12/24h format as specified by locale time
+        ///< format, eg. "07.33.05" instead of "07.33.05 pm" for
+        ///< time format "%I.%M.%S %p".
         TimeDuration       = 0x6,   ///< Read/format time string as duration. This will strip
-                                    ///< the am/pm suffix and read/format times with an hour
-                                    ///< value of 0-23 hours, eg. "19.33.05" instead of
-                                    ///< "07.33.05 pm" for time format "%I.%M.%S %p".
-                                    ///< This automatically implies @c TimeWithoutAmPm.
+        ///< the am/pm suffix and read/format times with an hour
+        ///< value of 0-23 hours, eg. "19.33.05" instead of
+        ///< "07.33.05 pm" for time format "%I.%M.%S %p".
+        ///< This automatically implies @c TimeWithoutAmPm.
         TimeFoldHours      = 0xE    ///< Read/format time string as duration. This will not
-                                    ///< not output the hours part of the duration but will
-                                    ///< add the hours (times sixty) to the number of minutes,
-                                    ///< eg. "70.23" instead of "01.10.23" for time format
-                                    ///< "%I.%M.%S %p".
+                             ///< not output the hours part of the duration but will
+                             ///< add the hours (times sixty) to the number of minutes,
+                             ///< eg. "70.23" instead of "01.10.23" for time format
+                             ///< "%I.%M.%S %p".
     };
     Q_DECLARE_FLAGS(TimeFormatOptions, TimeFormatOption)
 
@@ -977,7 +976,7 @@ public:
      *
      * @return the current calendar system instance
      */
-    const KCalendarSystem * calendar() const;
+    const KCalendarSystem *calendar() const;
 
     //KDE5 remove
     /**
@@ -1012,7 +1011,7 @@ public:
      * @see setCalendarSystem()
      * @param calendarType the name of the calendar type
      */
-    KDE4SUPPORT_DEPRECATED void setCalendar(const QString & calendarType);
+    KDE4SUPPORT_DEPRECATED void setCalendar(const QString &calendarType);
 
     /**
      * @since 4.6
@@ -1068,7 +1067,7 @@ public:
      *
      * @return The string converted to a double
      */
-    double readMoney(const QString &numStr, bool * ok = 0) const;
+    double readMoney(const QString &numStr, bool *ok = 0) const;
 
     /**
      * Converts a localized numeric string to a double.
@@ -1079,7 +1078,7 @@ public:
      *
      * @return The string converted to a double
      */
-    double readNumber(const QString &numStr, bool * ok = 0) const;
+    double readNumber(const QString &numStr, bool *ok = 0) const;
 
     //KDE5 move to KDateTime namespace
     /**
@@ -1095,7 +1094,7 @@ public:
      * @return The string converted to a QDate
      * @see KCalendarSystem::readDate()
      */
-    QDate readDate(const QString &str, bool* ok = 0) const;
+    QDate readDate(const QString &str, bool *ok = 0) const;
 
     //KDE5 move to KDateTime namespace
     /**
@@ -1103,7 +1102,7 @@ public:
      * You will usually not want to use this method.
      * @see KCalendarSystem::readDate()
      */
-    QDate readDate(const QString &intstr, const QString &fmt, bool* ok = 0) const;
+    QDate readDate(const QString &intstr, const QString &fmt, bool *ok = 0) const;
 
     //KDE5 move to KDateTime namespace
     /**
@@ -1150,7 +1149,7 @@ public:
      *
      * @return The string converted to a QTime
      */
-    QTime readTime(const QString &str, bool* ok = 0) const;
+    QTime readTime(const QString &str, bool *ok = 0) const;
 
     /**
      * Flags for the old version of readTime()
@@ -1187,11 +1186,11 @@ public:
      */
     enum TimeProcessingOption {
         ProcessStrict    = 0x1,    ///< Process time in a strict manner, ie.
-                                   ///< a read time string has to exactly match
-                                   ///< the defined time format.
+        ///< a read time string has to exactly match
+        ///< the defined time format.
         ProcessNonStrict = 0x2     ///< Process time in a lax manner, ie.
-                                   ///< allow spaces in the time-format to be
-                                   ///< left out when entering a time string.
+                           ///< allow spaces in the time-format to be
+                           ///< left out when entering a time string.
     };
     Q_DECLARE_FLAGS(TimeProcessingOptions, TimeProcessingOption)
 
@@ -1325,7 +1324,7 @@ public:
      * @see encoding
      * @see encodingMib
      */
-    QTextCodec * codecForEncoding() const;
+    QTextCodec *codecForEncoding() const;
 
     /**
      * Returns the file encoding.
@@ -1359,7 +1358,7 @@ public:
      *
      * @param format The new date format
      */
-    void setDateFormat(const QString & format);
+    void setDateFormat(const QString &format);
 
     /**
      * Changes the current short date format.
@@ -1383,7 +1382,7 @@ public:
      *
      * @param format The new short date format
      */
-    void setDateFormatShort(const QString & format);
+    void setDateFormatShort(const QString &format);
 
     /**
      * Changes the form of month name used in dates.
@@ -1411,7 +1410,7 @@ public:
      *
      * @param format The new time format
      */
-    void setTimeFormat(const QString & format);
+    void setTimeFormat(const QString &format);
 
     /**
      * @since 4.3
@@ -1483,14 +1482,14 @@ public:
      *
      * @param symbol The new decimal symbol.
      */
-    void setDecimalSymbol(const QString & symbol);
+    void setDecimalSymbol(const QString &symbol);
 
     /**
      * Changes the separator used to group digits when formating numbers.
      *
      * @param separator The new thousands separator.
      */
-    void setThousandsSeparator(const QString & separator);
+    void setThousandsSeparator(const QString &separator);
 
     /**
      * Changes the sign used to identify a positive number. Normally this is
@@ -1498,14 +1497,14 @@ public:
      *
      * @param sign Sign used for positive numbers.
      */
-    void setPositiveSign(const QString & sign);
+    void setPositiveSign(const QString &sign);
 
     /**
      * Changes the sign used to identify a negative number.
      *
      * @param sign Sign used for negative numbers.
      */
-    void setNegativeSign(const QString & sign);
+    void setNegativeSign(const QString &sign);
 
     /**
      * @since 4.3
@@ -1581,7 +1580,7 @@ public:
      *
      * @param separator The new thousands separator.
      */
-    void setMonetaryThousandsSeparator(const QString & separator);
+    void setMonetaryThousandsSeparator(const QString &separator);
 
     /**
      * Changes the symbol used to identify the decimal pointer for monetary
@@ -1589,7 +1588,7 @@ public:
      *
      * @param symbol The new decimal symbol.
      */
-    void setMonetaryDecimalSymbol(const QString & symbol);
+    void setMonetaryDecimalSymbol(const QString &symbol);
 
     /**
      * @since 4.4
@@ -1608,7 +1607,7 @@ public:
      * @param symbol The new currency symbol
      * @see currencyCode, KCurrency::currencySymbols
      */
-    void setCurrencySymbol(const QString & symbol);
+    void setCurrencySymbol(const QString &symbol);
 
     /**
      * @since 4.3
@@ -1755,7 +1754,7 @@ public:
      *
      * @since 5.0
      */
-    static KLocale* global();
+    static KLocale *global();
 
     /**
      * Returns the name of the internal language.
@@ -1803,7 +1802,7 @@ public:
      *
      * @return @c true on success, @c false on failure
      */
-    bool setCountry(const QString & country, KConfig *config);
+    bool setCountry(const QString &country, KConfig *config);
 
     /**
      * @since 4.6
@@ -1820,7 +1819,7 @@ public:
      * @return @c true on success, @c false on failure
      * @see countryDivisionCode
      */
-    bool setCountryDivisionCode(const QString & countryDivision);
+    bool setCountryDivisionCode(const QString &countryDivision);
 
     /**
      * Changes the current language. The current language will be left
@@ -1884,7 +1883,7 @@ private:
     friend class KLocalePrivate;
     friend class KLocaleTest;
     friend class KDateTimeFormatter;
-    KLocalePrivate * const d;
+    KLocalePrivate *const d;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(KLocale::DateTimeFormatOptions)

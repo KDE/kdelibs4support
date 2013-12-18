@@ -34,15 +34,13 @@ class K4TimeZoneWidget::Private
 public:
     Private() : itemsCheckable(false), singleSelection(true) {}
 
-    enum Columns
-    {
+    enum Columns {
         CityColumn = 0,
         RegionColumn,
         CommentColumn
     };
 
-    enum Roles
-    {
+    enum Roles {
         ZoneRole = Qt::UserRole + 0xF3A3CB1
     };
 
@@ -50,79 +48,81 @@ public:
     bool singleSelection;
 };
 
-static bool localeLessThan (const QString &a, const QString &b)
+static bool localeLessThan(const QString &a, const QString &b)
 {
     return QString::localeAwareCompare(a, b) < 0;
 }
 
-K4TimeZoneWidget::K4TimeZoneWidget( QWidget *parent, KTimeZones *db )
-  : QTreeWidget( parent ),
-    d(new K4TimeZoneWidget::Private)
+K4TimeZoneWidget::K4TimeZoneWidget(QWidget *parent, KTimeZones *db)
+    : QTreeWidget(parent),
+      d(new K4TimeZoneWidget::Private)
 {
-  // If the user did not provide a timezone database, we'll use the system default.
-  setRootIsDecorated(false);
-  setHeaderLabels( QStringList() << i18nc("Define an area in the time zone, like a town area", "Area" ) << i18nc( "Time zone", "Region" ) << i18n( "Comment" ) );
+    // If the user did not provide a timezone database, we'll use the system default.
+    setRootIsDecorated(false);
+    setHeaderLabels(QStringList() << i18nc("Define an area in the time zone, like a town area", "Area") << i18nc("Time zone", "Region") << i18n("Comment"));
 
-  // Collect zones by localized city names, so that they can be sorted properly.
-  QStringList cities;
-  QHash<QString, KTimeZone> zonesByCity;
+    // Collect zones by localized city names, so that they can be sorted properly.
+    QStringList cities;
+    QHash<QString, KTimeZone> zonesByCity;
 
-  if (!db) {
-      db = KSystemTimeZones::timeZones();
+    if (!db) {
+        db = KSystemTimeZones::timeZones();
 
-      // add UTC to the defaults default
-      KTimeZone utc = KTimeZone::utc();
-      cities.append(utc.name());
-      zonesByCity.insert(utc.name(), utc);
-  }
-
-  const KTimeZones::ZoneMap zones = db->zones();
-  for ( KTimeZones::ZoneMap::ConstIterator it = zones.begin(); it != zones.end(); ++it ) {
-    const KTimeZone zone = it.value();
-    const QString continentCity = displayName( zone );
-    const int separator = continentCity.lastIndexOf('/');
-    // Make up the localized key that will be used for sorting.
-    // Example: i18n(Asia/Tokyo) -> key = "i18n(Tokyo)|i18n(Asia)|Asia/Tokyo"
-    // The zone name is appended to ensure unicity even with equal translations (#174918)
-    const QString key = continentCity.mid(separator+1) + '|'
-                   + continentCity.left(separator) + '|' + zone.name();
-    cities.append( key );
-    zonesByCity.insert( key, zone );
-  }
-  qSort( cities.begin(), cities.end(), localeLessThan );
-
-  foreach ( const QString &key, cities ) {
-    const KTimeZone zone = zonesByCity.value(key);
-    const QString tzName = zone.name();
-    QString comment = zone.comment();
-
-    if ( !comment.isEmpty() )
-      comment = i18n( comment.toUtf8() );
-
-    // Convert:
-    //
-    //  "Europe/London", "GB" -> "London", "Europe/GB".
-    //  "UTC",           ""   -> "UTC",    "".
-    QStringList continentCity = displayName( zone ).split( '/' );
-
-    QTreeWidgetItem *listItem = new QTreeWidgetItem( this );
-    listItem->setText( Private::CityColumn, continentCity[ continentCity.count() - 1 ] );
-    QString countryName = KLocale::global()->countryCodeToName( zone.countryCode() );
-    if ( countryName.isEmpty() ) {
-      continentCity[ continentCity.count() - 1 ] = zone.countryCode();
-    } else {
-      continentCity[ continentCity.count() - 1 ] = countryName;
+        // add UTC to the defaults default
+        KTimeZone utc = KTimeZone::utc();
+        cities.append(utc.name());
+        zonesByCity.insert(utc.name(), utc);
     }
 
-    listItem->setText( Private::RegionColumn, continentCity.join( QChar('/') ) );
-    listItem->setText( Private::CommentColumn, comment );
-    listItem->setData( Private::CityColumn, Private::ZoneRole, tzName ); // store complete path in custom role
+    const KTimeZones::ZoneMap zones = db->zones();
+    for (KTimeZones::ZoneMap::ConstIterator it = zones.begin(); it != zones.end(); ++it) {
+        const KTimeZone zone = it.value();
+        const QString continentCity = displayName(zone);
+        const int separator = continentCity.lastIndexOf('/');
+        // Make up the localized key that will be used for sorting.
+        // Example: i18n(Asia/Tokyo) -> key = "i18n(Tokyo)|i18n(Asia)|Asia/Tokyo"
+        // The zone name is appended to ensure unicity even with equal translations (#174918)
+        const QString key = continentCity.mid(separator + 1) + '|'
+                            + continentCity.left(separator) + '|' + zone.name();
+        cities.append(key);
+        zonesByCity.insert(key, zone);
+    }
+    qSort(cities.begin(), cities.end(), localeLessThan);
 
-    // Locate the flag from /l10n/%1/flag.png.
-    QString flag = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString("locale/l10n/%1/flag.png").arg(zone.countryCode().toLower()));
-    if ( QFile::exists( flag ) )
-      listItem->setIcon( Private::RegionColumn, QPixmap( flag ) );
-  }
+    foreach (const QString &key, cities) {
+        const KTimeZone zone = zonesByCity.value(key);
+        const QString tzName = zone.name();
+        QString comment = zone.comment();
+
+        if (!comment.isEmpty()) {
+            comment = i18n(comment.toUtf8());
+        }
+
+        // Convert:
+        //
+        //  "Europe/London", "GB" -> "London", "Europe/GB".
+        //  "UTC",           ""   -> "UTC",    "".
+        QStringList continentCity = displayName(zone).split('/');
+
+        QTreeWidgetItem *listItem = new QTreeWidgetItem(this);
+        listItem->setText(Private::CityColumn, continentCity[ continentCity.count() - 1 ]);
+        QString countryName = KLocale::global()->countryCodeToName(zone.countryCode());
+        if (countryName.isEmpty()) {
+            continentCity[ continentCity.count() - 1 ] = zone.countryCode();
+        } else {
+            continentCity[ continentCity.count() - 1 ] = countryName;
+        }
+
+        listItem->setText(Private::RegionColumn, continentCity.join(QChar('/')));
+        listItem->setText(Private::CommentColumn, comment);
+        listItem->setData(Private::CityColumn, Private::ZoneRole, tzName);   // store complete path in custom role
+
+        // Locate the flag from /l10n/%1/flag.png.
+        QString flag = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString("locale/l10n/%1/flag.png").arg(zone.countryCode().toLower()));
+        if (QFile::exists(flag)) {
+            listItem->setIcon(Private::RegionColumn, QPixmap(flag));
+        }
+    }
 }
 
 K4TimeZoneWidget::~K4TimeZoneWidget()
@@ -135,7 +135,7 @@ void K4TimeZoneWidget::setItemsCheckable(bool enable)
     d->itemsCheckable = enable;
     const int count = topLevelItemCount();
     for (int row = 0; row < count; ++row) {
-        QTreeWidgetItem* listItem = topLevelItem(row);
+        QTreeWidgetItem *listItem = topLevelItem(row);
         listItem->setCheckState(Private::CityColumn, Qt::Unchecked);
     }
     QTreeWidget::setSelectionMode(QAbstractItemView::NoSelection);
@@ -146,9 +146,9 @@ bool K4TimeZoneWidget::itemsCheckable() const
     return d->itemsCheckable;
 }
 
-QString K4TimeZoneWidget::displayName( const KTimeZone &zone )
+QString K4TimeZoneWidget::displayName(const KTimeZone &zone)
 {
-    return i18n( zone.name().toUtf8() ).replace( '_', ' ' );
+    return i18n(zone.name().toUtf8()).replace('_', ' ');
 }
 
 QStringList K4TimeZoneWidget::selection() const
@@ -159,15 +159,15 @@ QStringList K4TimeZoneWidget::selection() const
     // Do not use selectedItems() because it skips hidden items, making it
     // impossible to use a KTreeWidgetSearchLine.
     // There is no QTreeWidgetItemConstIterator, hence the const_cast :/
-    QTreeWidgetItemIterator it(const_cast<K4TimeZoneWidget*>(this), d->itemsCheckable ? QTreeWidgetItemIterator::Checked : QTreeWidgetItemIterator::Selected);
+    QTreeWidgetItemIterator it(const_cast<K4TimeZoneWidget *>(this), d->itemsCheckable ? QTreeWidgetItemIterator::Checked : QTreeWidgetItemIterator::Selected);
     for (; *it; ++it) {
-        selection.append( (*it)->data( Private::CityColumn, Private::ZoneRole ).toString() );
+        selection.append((*it)->data(Private::CityColumn, Private::ZoneRole).toString());
     }
 
     return selection;
 }
 
-void K4TimeZoneWidget::setSelected( const QString &zone, bool selected )
+void K4TimeZoneWidget::setSelected(const QString &zone, bool selected)
 {
     bool found = false;
 
@@ -192,14 +192,14 @@ void K4TimeZoneWidget::setSelected( const QString &zone, bool selected )
             }
 
             if (d->itemsCheckable) {
-                QTreeWidgetItem* listItem = itemFromIndex(index);
+                QTreeWidgetItem *listItem = itemFromIndex(index);
                 listItem->setCheckState(Private::CityColumn, selected ? Qt::Checked : Qt::Unchecked);
             } else {
                 selectionModel()->select(index, selected ? (QItemSelectionModel::Select | QItemSelectionModel::Rows) : (QItemSelectionModel::Deselect | QItemSelectionModel::Rows));
             }
 
             // Ensure the selected item is visible as appropriate.
-            scrollTo( index );
+            scrollTo(index);
 
             found = true;
 
@@ -209,8 +209,9 @@ void K4TimeZoneWidget::setSelected( const QString &zone, bool selected )
         }
     }
 
-    if ( !found )
+    if (!found) {
         qDebug() << "No such zone: " << zone;
+    }
 }
 
 void K4TimeZoneWidget::clearSelection()
@@ -220,7 +221,7 @@ void K4TimeZoneWidget::clearSelection()
         const int rowCount = model()->rowCount(QModelIndex());
         for (int row = 0; row < rowCount; ++row) {
             const QModelIndex index = model()->index(row, 0);
-            QTreeWidgetItem* listItem = itemFromIndex(index);
+            QTreeWidgetItem *listItem = itemFromIndex(index);
             listItem->setCheckState(Private::CityColumn, Qt::Unchecked);
         }
     } else {

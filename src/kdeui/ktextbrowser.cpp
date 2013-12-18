@@ -32,9 +32,9 @@
 
 class KTextBrowser::Private
 {
-  public:
+public:
     Private()
-      : notifyClick( false )
+        : notifyClick(false)
     {
     }
 
@@ -45,83 +45,82 @@ class KTextBrowser::Private
     bool notifyClick;
 };
 
-KTextBrowser::KTextBrowser( QWidget *parent, bool notifyClick )
-  : QTextBrowser( parent ), d( new Private )
+KTextBrowser::KTextBrowser(QWidget *parent, bool notifyClick)
+    : QTextBrowser(parent), d(new Private)
 {
-  d->notifyClick = notifyClick;
+    d->notifyClick = notifyClick;
 }
 
 KTextBrowser::~KTextBrowser()
 {
-  delete d;
+    delete d;
 }
 
-
-void KTextBrowser::setNotifyClick( bool notifyClick )
+void KTextBrowser::setNotifyClick(bool notifyClick)
 {
-  d->notifyClick = notifyClick;
+    d->notifyClick = notifyClick;
 }
-
 
 bool KTextBrowser::isNotifyClick() const
 {
-  return d->notifyClick;
+    return d->notifyClick;
 }
 
-
-void KTextBrowser::setSource( const QUrl& name )
+void KTextBrowser::setSource(const QUrl &name)
 {
-  QString strName = name.toString();
-  if ( strName.isNull() )
-    return;
-
-  QRegExp whatsthis( "whatsthis:/*([^/].*)" );
-  if ( !d->notifyClick && whatsthis.exactMatch( strName ) ) {
-     QWhatsThis::showText( QCursor::pos(), whatsthis.cap( 1 ) );
-  } else if ( strName.indexOf( '@' ) > -1 ) {
-    if ( !d->notifyClick ) {
-        QDesktopServices::openUrl(name);
-    } else {
-      emit mailClick( QString(), strName );
+    QString strName = name.toString();
+    if (strName.isNull()) {
+        return;
     }
-  } else {
-    if ( !d->notifyClick ) {
-        QDesktopServices::openUrl(name);
+
+    QRegExp whatsthis("whatsthis:/*([^/].*)");
+    if (!d->notifyClick && whatsthis.exactMatch(strName)) {
+        QWhatsThis::showText(QCursor::pos(), whatsthis.cap(1));
+    } else if (strName.indexOf('@') > -1) {
+        if (!d->notifyClick) {
+            QDesktopServices::openUrl(name);
+        } else {
+            emit mailClick(QString(), strName);
+        }
     } else {
-      emit urlClick( strName );
+        if (!d->notifyClick) {
+            QDesktopServices::openUrl(name);
+        } else {
+            emit urlClick(strName);
+        }
     }
-  }
 }
 
-
-void KTextBrowser::keyPressEvent( QKeyEvent *event )
+void KTextBrowser::keyPressEvent(QKeyEvent *event)
 {
-  if ( event->key() == Qt::Key_Escape )
-    event->ignore();
-  else if ( event->key() == Qt::Key_F1 )
-    event->ignore();
-  else
-    QTextBrowser::keyPressEvent( event );
+    if (event->key() == Qt::Key_Escape) {
+        event->ignore();
+    } else if (event->key() == Qt::Key_F1) {
+        event->ignore();
+    } else {
+        QTextBrowser::keyPressEvent(event);
+    }
 }
 
-void KTextBrowser::wheelEvent( QWheelEvent *event )
+void KTextBrowser::wheelEvent(QWheelEvent *event)
 {
-  if ( KGlobalSettings::wheelMouseZooms() )
-    QTextBrowser::wheelEvent( event );
-  else // thanks, we don't want to zoom, so skip QTextEdit's impl.
-    QAbstractScrollArea::wheelEvent( event );
+    if (KGlobalSettings::wheelMouseZooms()) {
+        QTextBrowser::wheelEvent(event);
+    } else { // thanks, we don't want to zoom, so skip QTextEdit's impl.
+        QAbstractScrollArea::wheelEvent(event);
+    }
 }
 
-void KTextBrowser::contextMenuEvent( QContextMenuEvent *event )
+void KTextBrowser::contextMenuEvent(QContextMenuEvent *event)
 {
-  QMenu *popup = createStandardContextMenu(event->pos());
-  if (popup) {
-    KIconTheme::assignIconsToContextMenu( isReadOnly() ? KIconTheme::ReadOnlyText
-                                                       : KIconTheme::TextEditor,
-                                          popup->actions() );
+    QMenu *popup = createStandardContextMenu(event->pos());
+    if (popup) {
+        KIconTheme::assignIconsToContextMenu(isReadOnly() ? KIconTheme::ReadOnlyText
+                                             : KIconTheme::TextEditor,
+                                             popup->actions());
 
-    popup->exec( event->globalPos() );
-    delete popup;
-  }
+        popup->exec(event->globalPos());
+        delete popup;
+    }
 }
 

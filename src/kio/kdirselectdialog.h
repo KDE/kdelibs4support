@@ -45,7 +45,7 @@ public:
      * @param localOnly unused. You can only select paths below the startDir
      * @param parent the parent for the dialog, usually 0L
      */
-    explicit KDirSelectDialog(const QUrl& startDir = QUrl(),
+    explicit KDirSelectDialog(const QUrl &startDir = QUrl(),
                               bool localOnly = false,
                               QWidget *parent = 0L);
 
@@ -65,7 +65,7 @@ public:
     /**
      * Returns a pointer to the view which is used for displaying the directories.
      */
-    QAbstractItemView* view() const;
+    QAbstractItemView *view() const;
 
     /**
      * Returns whether only local directories can be selected.
@@ -85,9 +85,9 @@ public:
      * @deprecated since 5.0, use QFileDialog::getExistingDirectory (if localOnly was true)
      * or QFileDialog::getExistingDirectoryUrl (if localOnly was false) instead.
      */
-    static KDE4SUPPORT_DEPRECATED QUrl selectDirectory( const QUrl& startDir = QUrl(),
-                                 bool localOnly = false, QWidget *parent = 0L,
-                                 const QString& caption = QString());
+    static KDE4SUPPORT_DEPRECATED QUrl selectDirectory(const QUrl &startDir = QUrl(),
+            bool localOnly = false, QWidget *parent = 0L,
+            const QString &caption = QString());
 
     /**
      * @return The path for the root node
@@ -98,7 +98,7 @@ public Q_SLOTS:
     /**
      * Sets the current @p url in the dialog.
      */
-    void setCurrentUrl( const QUrl& url );
+    void setCurrentUrl(const QUrl &url);
 
 protected:
     virtual void accept();
@@ -106,21 +106,21 @@ protected:
     /**
      * Reimplemented for saving the dialog geometry.
      */
-    virtual void hideEvent( QHideEvent *event );
+    virtual void hideEvent(QHideEvent *event);
 
 private:
     class Private;
-    Private* const d;
+    Private *const d;
 
-    Q_PRIVATE_SLOT( d, void slotCurrentChanged() )
-    Q_PRIVATE_SLOT( d, void slotExpand(const QModelIndex&) )
-    Q_PRIVATE_SLOT( d, void slotUrlActivated(const QString&) )
-    Q_PRIVATE_SLOT( d, void slotComboTextChanged(const QString&) )
-    Q_PRIVATE_SLOT( d, void slotContextMenuRequested(const QPoint&) )
-    Q_PRIVATE_SLOT( d, void slotNewFolder() )
-    Q_PRIVATE_SLOT( d, void slotMoveToTrash() )
-    Q_PRIVATE_SLOT( d, void slotDelete() )
-    Q_PRIVATE_SLOT( d, void slotProperties() )
+    Q_PRIVATE_SLOT(d, void slotCurrentChanged())
+    Q_PRIVATE_SLOT(d, void slotExpand(const QModelIndex &))
+    Q_PRIVATE_SLOT(d, void slotUrlActivated(const QString &))
+    Q_PRIVATE_SLOT(d, void slotComboTextChanged(const QString &))
+    Q_PRIVATE_SLOT(d, void slotContextMenuRequested(const QPoint &))
+    Q_PRIVATE_SLOT(d, void slotNewFolder())
+    Q_PRIVATE_SLOT(d, void slotMoveToTrash())
+    Q_PRIVATE_SLOT(d, void slotDelete())
+    Q_PRIVATE_SLOT(d, void slotProperties())
 };
 
 #endif

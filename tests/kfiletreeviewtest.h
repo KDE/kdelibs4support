@@ -29,16 +29,15 @@ class Window : public KMainWindow
 {
     Q_OBJECT
 
-    public:
-        Window();
+public:
+    Window();
 
-    public Q_SLOTS:
-        void showHome();
-        void showRoot();
+public Q_SLOTS:
+    void showHome();
+    void showRoot();
 
-    private:
-        KFileTreeView *mTreeView;
+private:
+    KFileTreeView *mTreeView;
 };
-
 
 #endif

@@ -35,19 +35,18 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoWidget: public QWidget
 {
     Q_OBJECT
 public:
-    enum Mode
-    {
-      ReadOnly  = 1,  ///Only display the meta information, and do not permit the user to edit them
-      ReadWrite = 0,  ///Permits user to edit the displayed meta-info
-      Reserve = 0xff
+    enum Mode {
+        ReadOnly  = 1,  ///Only display the meta information, and do not permit the user to edit them
+        ReadWrite = 0,  ///Permits user to edit the displayed meta-info
+        Reserve = 0xff
     };
 
     explicit KFileMetaInfoWidget(KFileMetaInfoItem item,
-                                 QValidator* val = 0,
-                                 QWidget* parent = 0);
+                                 QValidator *val = 0,
+                                 QWidget *parent = 0);
 
-    KFileMetaInfoWidget(KFileMetaInfoItem item, Mode mode, QValidator* val = 0,
-                        QWidget* parent = 0 );
+    KFileMetaInfoWidget(KFileMetaInfoItem item, Mode mode, QValidator *val = 0,
+                        QWidget *parent = 0);
 
     virtual ~KFileMetaInfoWidget();
 
@@ -55,34 +54,34 @@ public:
 
     void setValue(const QVariant &value);
     QVariant value() const;
-    QValidator* validator() const;
+    QValidator *validator() const;
     KFileMetaInfoItem item() const;
 
 Q_SIGNALS:
-    void valueChanged(const QVariant& value);
+    void valueChanged(const QVariant &value);
 
 protected:
     void reparentValidator(QWidget *widget, QValidator *validator);
-    virtual QWidget* makeWidget();
+    virtual QWidget *makeWidget();
 
-    QWidget* makeBoolWidget();
-    QWidget* makeIntWidget();
-    QWidget* makeDoubleWidget();
-    QWidget* makeStringWidget();
-    QWidget* makeDateWidget();
-    QWidget* makeTimeWidget();
-    QWidget* makeDateTimeWidget();
+    QWidget *makeBoolWidget();
+    QWidget *makeIntWidget();
+    QWidget *makeDoubleWidget();
+    QWidget *makeStringWidget();
+    QWidget *makeDateWidget();
+    QWidget *makeTimeWidget();
+    QWidget *makeDateTimeWidget();
 
 private Q_SLOTS:
     void slotChanged(bool value);
     void slotChanged(int value);
     void slotChanged(double value);
     void slotComboChanged(const QString &value);
-    void slotLineEditChanged(const QString& value);
+    void slotLineEditChanged(const QString &value);
     void slotMultiLineEditChanged();
-    void slotDateChanged(const QDate& value);
-    void slotTimeChanged(const QTime& value);
-    void slotDateTimeChanged(const QDateTime& value);
+    void slotDateChanged(const QDate &value);
+    void slotTimeChanged(const QTime &value);
+    void slotDateTimeChanged(const QDateTime &value);
 
 private:
     friend class KFileMetaInfoWidgetPrivate;

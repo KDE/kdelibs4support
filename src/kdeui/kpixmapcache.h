@@ -31,7 +31,6 @@
 class QString;
 class QPixmap;
 
-
 /**
  * @brief General-purpose pixmap cache for KDE.
  *
@@ -90,7 +89,7 @@ public:
      * Constucts the pixmap cache object.
      * @param name unique name of the cache
      */
-    explicit KPixmapCache(const QString& name);
+    explicit KPixmapCache(const QString &name);
     virtual ~KPixmapCache();
 
     /**
@@ -99,14 +98,14 @@ public:
      *
      * @return true when pixmap was found and loaded from cache, false otherwise
      */
-    virtual bool find(const QString& key, QPixmap& pix);
+    virtual bool find(const QString &key, QPixmap &pix);
 
     /**
      * Inserts the pixmap @a pix into the cache, associated with the key @a key.
      *
      * Any existing pixmaps associated with @a key are overwritten.
      */
-    virtual void insert(const QString& key, const QPixmap& pix);
+    virtual void insert(const QString &key, const QPixmap &pix);
 
     /**
      * Loads a pixmap from given file, using the cache. If the file does not
@@ -126,7 +125,7 @@ public:
      * @return The given pixmap, or an empty pixmap if the file was invalid or did
      *         not exist.
      */
-    QPixmap loadFromFile(const QString& filename);
+    QPixmap loadFromFile(const QString &filename);
 
     /**
      * Same as loadFromFile(), but using an SVG file instead. You may optionally
@@ -142,7 +141,7 @@ public:
      * @return an empty pixmap if the file does not exist or was invalid, otherwise
      *         a pixmap of the desired @a size.
      */
-    QPixmap loadFromSvg(const QString& filename, const QSize& size = QSize());
+    QPixmap loadFromSvg(const QString &filename, const QSize &size = QSize());
 
     /**
      * @note KPixmapCache does not ever change the timestamp, so the application
@@ -215,12 +214,12 @@ public:
      * @see removeEntryStrategy(), @see setRemoveEntryStrategy()
      */
     enum RemoveStrategy { /// oldest entries are removed first.
-                          RemoveOldest,
-                          /// least used entries are removed first.
-                          RemoveSeldomUsed,
-                          /// least recently used entries are removed first.
-                          RemoveLeastRecentlyUsed
-                        };
+        RemoveOldest,
+        /// least used entries are removed first.
+        RemoveSeldomUsed,
+        /// least recently used entries are removed first.
+        RemoveLeastRecentlyUsed
+    };
     /**
      * @return current entry removal strategy.
      * Default is RemoveLeastRecentlyUsed.
@@ -253,7 +252,7 @@ public:
      */
     // KDE5: Static function oh how I hate you, this makes it very difficult to perform
     // appropriate locking and synchronization to actually remove the cache.
-    static void deleteCache(const QString& name);
+    static void deleteCache(const QString &name);
 
     /**
      * Deletes all entries and reinitializes this cache.
@@ -306,7 +305,7 @@ protected:
      *         false is returned then the cached item is assumed to be invalid and
      *         will not be available to find() or contains().
      */
-    virtual bool loadCustomData(QDataStream& stream);
+    virtual bool loadCustomData(QDataStream &stream);
 
     /**
      * Can be used by subclasses to write custom data into the stream.
@@ -318,7 +317,7 @@ protected:
      * @see writeCustomIndexHeader
      * @param stream the QDataStream to write data to
      */
-    virtual bool writeCustomData(QDataStream& stream);
+    virtual bool writeCustomData(QDataStream &stream);
 
     /**
      * Can be used by subclasses to load custom data from cache's header.
@@ -333,7 +332,7 @@ protected:
      *         otherwise. If false is returned then the cache is assumed to
      *         be invalid and further processing does not occur.
      */
-    virtual bool loadCustomIndexHeader(QDataStream& stream);
+    virtual bool loadCustomIndexHeader(QDataStream &stream);
 
     /**
      * Can be used by subclasses to write custom data into cache's header.
@@ -345,7 +344,7 @@ protected:
      * @see loadCustomIndexHeader
      * @param stream the QDataStream to write data to
      */
-    virtual void writeCustomIndexHeader(QDataStream& stream);
+    virtual void writeCustomIndexHeader(QDataStream &stream);
 
     /**
      * Sets whether this cache is valid or not. (The cache must be enabled in addition
@@ -379,7 +378,7 @@ private:
     /// @internal
     class Private;
     friend class Private;
-    Private * const d; ///< @internal
+    Private *const d;  ///< @internal
 };
 
 #endif // KPIXMAPCACHE_H

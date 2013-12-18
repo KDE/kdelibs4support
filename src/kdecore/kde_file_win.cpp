@@ -34,91 +34,94 @@
 /** @internal, from kdewin32 lib */
 static int kdewin_fix_mode_string(char *fixed_mode, const char *mode)
 {
-	if (strlen(mode)<1 || strlen(mode)>3) {
+    if (strlen(mode) < 1 || strlen(mode) > 3) {
         errno = EINVAL;
-		return 1;
+        return 1;
     }
 
-	strncpy(fixed_mode, mode, 3);
-	if (fixed_mode[0]=='b' || fixed_mode[1]=='b' || fixed_mode[0]=='t' || fixed_mode[1]=='t')
-		return 0;
-	/* no 't' or 'b': append 'b' */
-	if (fixed_mode[1]=='+') {
-		fixed_mode[1]='b';
-		fixed_mode[2]='+';
-		fixed_mode[3]=0;
-	}
-	else {
-		fixed_mode[1]='b';
-		fixed_mode[2]=0;
-	}
-	return 0;
+    strncpy(fixed_mode, mode, 3);
+    if (fixed_mode[0] == 'b' || fixed_mode[1] == 'b' || fixed_mode[0] == 't' || fixed_mode[1] == 't') {
+        return 0;
+    }
+    /* no 't' or 'b': append 'b' */
+    if (fixed_mode[1] == '+') {
+        fixed_mode[1] = 'b';
+        fixed_mode[2] = '+';
+        fixed_mode[3] = 0;
+    } else {
+        fixed_mode[1] = 'b';
+        fixed_mode[2] = 0;
+    }
+    return 0;
 }
 
 /** @internal */
 static int kdewin_fix_flags(int flags)
 {
-	if ((flags & O_TEXT) == 0 && (flags & O_BINARY) == 0)
-		return flags | O_BINARY;
-	return flags;
+    if ((flags & O_TEXT) == 0 && (flags & O_BINARY) == 0) {
+        return flags | O_BINARY;
+    }
+    return flags;
 }
 
 namespace KDE
 {
-  int access(const QString &path, int mode)
-  {
+int access(const QString &path, int mode)
+{
     int x_mode = 0;
     // X_OK gives an assert on msvc2005 and up - use stat() instead
-    if( ( mode & X_OK ) == X_OK ) {
+    if ((mode & X_OK) == X_OK) {
         KDE_struct_stat st;
-        if( KDE::stat( path, &st ) != 0 )
-          return 1;
-        if( ( st.st_mode & S_IXUSR ) != S_IXUSR )
-          return 1;
+        if (KDE::stat(path, &st) != 0) {
+            return 1;
+        }
+        if ((st.st_mode & S_IXUSR) != S_IXUSR) {
+            return 1;
+        }
     }
     mode &= ~X_OK;
-    return _waccess( CONV(path), mode );
-  }
+    return _waccess(CONV(path), mode);
+}
 
-  int chmod(const QString &path, mode_t mode)
-  {
-    return _wchmod( CONV(path), mode );
-  }
+int chmod(const QString &path, mode_t mode)
+{
+    return _wchmod(CONV(path), mode);
+}
 
-  FILE *fopen(const QString &pathname, const char *mode)
-  {
-    return _wfopen( CONV(pathname), CONV(QString::fromLatin1( mode )) );
-  }
+FILE *fopen(const QString &pathname, const char *mode)
+{
+    return _wfopen(CONV(pathname), CONV(QString::fromLatin1(mode)));
+}
 
-  int lstat(const QString &path, KDE_struct_stat *buf)
-  {
-    return KDE::stat( path, buf );
-  }
+int lstat(const QString &path, KDE_struct_stat *buf)
+{
+    return KDE::stat(path, buf);
+}
 
-  int mkdir(const QString &pathname, mode_t)
-  {
-    return _wmkdir( CONV(pathname) );
-  }
+int mkdir(const QString &pathname, mode_t)
+{
+    return _wmkdir(CONV(pathname));
+}
 
-  int open(const QString &pathname, int flags, mode_t mode)
-  {
-    return _wopen( CONV(pathname), kdewin_fix_flags(flags), mode );
-  }
+int open(const QString &pathname, int flags, mode_t mode)
+{
+    return _wopen(CONV(pathname), kdewin_fix_flags(flags), mode);
+}
 
-  int rename(const QString &in, const QString &out)
-  {
+int rename(const QString &in, const QString &out)
+{
     // better than :waccess/_wunlink/_wrename
 #ifndef _WIN32_WCE
-    bool ok = ( MoveFileExW( CONV(in), CONV(out),
-                             MOVEFILE_REPLACE_EXISTING|MOVEFILE_COPY_ALLOWED ) != 0 );
+    bool ok = (MoveFileExW(CONV(in), CONV(out),
+                           MOVEFILE_REPLACE_EXISTING | MOVEFILE_COPY_ALLOWED) != 0);
 #else
-    bool ok = ( MoveFileW( CONV(in), CONV(out)) != 0 );
+    bool ok = (MoveFileW(CONV(in), CONV(out)) != 0);
 #endif
-	return ok ? 0 : -1;
-  }
+    return ok ? 0 : -1;
+}
 
-  int stat(const QString &path, KDE_struct_stat *buf)
-  {
+int stat(const QString &path, KDE_struct_stat *buf)
+{
     int result;
 #ifdef Q_CC_MSVC
 #ifndef _WIN32_WCE
@@ -130,35 +133,36 @@ namespace KDE
     struct __stat64 s64;
 #endif
     const int len = path.length();
-    if ( (len==2 || len==3) && path[1]==QLatin1Char(':') && path[0].isLetter() ) {
-    	/* 1) */
+    if ((len == 2 || len == 3) && path[1] == QLatin1Char(':') && path[0].isLetter()) {
+        /* 1) */
         QString newPath(path);
-    	if (len==2)
-    		newPath += QLatin1Char('\\');
+        if (len == 2) {
+            newPath += QLatin1Char('\\');
+        }
 #ifndef _WIN32_WCE
-    	result = _wstat64( CONV(newPath), &s64 );
+        result = _wstat64(CONV(newPath), &s64);
 #else
-    	result = wstat( CONV(newPath), &st );
+        result = wstat(CONV(newPath), &st);
 #endif
-    } else
-    if ( len > 1 && (path.endsWith(QLatin1Char('\\')) || path.endsWith(QLatin1Char('/'))) ) {
-    	/* 2) */
-        const QString newPath = path.left( len - 1 );
+    } else if (len > 1 && (path.endsWith(QLatin1Char('\\')) || path.endsWith(QLatin1Char('/')))) {
+        /* 2) */
+        const QString newPath = path.left(len - 1);
 #ifndef _WIN32_WCE
-    	result = _wstat64( CONV(newPath), &s64 );
+        result = _wstat64(CONV(newPath), &s64);
 #else
-    	result = wstat( CONV(newPath), &st );
+        result = wstat(CONV(newPath), &st);
 #endif
     } else {
         //TODO: is stat("/") ok?
 #ifndef _WIN32_WCE
-        result = _wstat64( CONV(path), &s64 );
+        result = _wstat64(CONV(path), &s64);
 #else
-    	result = wstat( CONV(path), &st );
+        result = wstat(CONV(path), &st);
 #endif
     }
-    if( result != 0 )
+    if (result != 0) {
         return result;
+    }
     // KDE5: fixme!
 #ifndef _WIN32_WCE
     buf->st_dev   = s64.st_dev;
@@ -187,13 +191,13 @@ namespace KDE
     buf->st_ctime = st.st_ctime;
 #endif
     return result;
-  }
-  int utime(const QString &filename, struct utimbuf *buf)
-  {
+}
+int utime(const QString &filename, struct utimbuf *buf)
+{
 #ifndef _WIN32_WCE
-    return _wutime( CONV(filename), (struct _utimbuf*)buf );
+    return _wutime(CONV(filename), (struct _utimbuf *)buf);
 #else
-    return _wutime( CONV(filename), (struct utimbuf*)buf );
+    return _wutime(CONV(filename), (struct utimbuf *)buf);
 #endif
-  }
+}
 };

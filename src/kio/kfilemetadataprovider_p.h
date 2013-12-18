@@ -26,8 +26,8 @@
 
 #include <config-kde4support.h>
 #if ! KIO_NO_NEPOMUK
-    #define DISABLE_NEPOMUK_LEGACY
-    #include <variant.h>
+#define DISABLE_NEPOMUK_LEGACY
+#include <variant.h>
 #endif
 
 class KFileItemList;
@@ -49,7 +49,7 @@ class KFileMetaDataProvider : public QObject
     Q_OBJECT
 
 public:
-    explicit KFileMetaDataProvider(QObject* parent = 0);
+    explicit KFileMetaDataProvider(QObject *parent = 0);
     virtual ~KFileMetaDataProvider();
 
     /**
@@ -61,7 +61,7 @@ public:
      * KFileMetaDataProvider::data() afterwards. The label for
      * each item can be retrieved by KFileMetaDataProvider::label().
      */
-    void setItems(const KFileItemList& items);
+    void setItems(const KFileItemList &items);
     KFileItemList items() const;
 
     /**
@@ -77,7 +77,7 @@ public:
      *         by \p metaDataUri. If no custom translation is provided, the
      *         base implementation must be invoked.
      */
-    virtual QString label(const QUrl& metaDataUri) const;
+    virtual QString label(const QUrl &metaDataUri) const;
 
     /**
      * Meta data items are sorted alphabetically by their translated
@@ -90,7 +90,7 @@ public:
      *         by \p metaDataUri belongs to. Per default an empty string
      *         is returned.
      */
-    virtual QString group(const QUrl& metaDataUri) const;
+    virtual QString group(const QUrl &metaDataUri) const;
 
 #if ! KIO_NO_NEPOMUK
     /**
@@ -108,9 +108,9 @@ public:
      *         implementation must be invoked. Per default an instance
      *         of QLabel will be returned.
      */
-    virtual QWidget* createValueWidget(const QUrl& metaDataUri,
-                                       const Nepomuk::Variant& value,
-                                       QWidget* parent) const;
+    virtual QWidget *createValueWidget(const QUrl &metaDataUri,
+                                       const Nepomuk::Variant &value,
+                                       QWidget *parent) const;
 #endif
 
 Q_SIGNALS:
@@ -120,21 +120,21 @@ Q_SIGNALS:
      */
     void loadingFinished();
 
-    void urlActivated(const QUrl& url);
+    void urlActivated(const QUrl &url);
 
     void dataChangeStarted();
     void dataChangeFinished();
 
 private:
     class Private;
-    Private* const d;
+    Private *const d;
 
     Q_PRIVATE_SLOT(d, void slotLoadingFinished())
     Q_PRIVATE_SLOT(d, void slotRatingChanged(unsigned int rating))
-    Q_PRIVATE_SLOT(d, void slotTagsChanged(const QList<Nepomuk::Tag>& tags))
-    Q_PRIVATE_SLOT(d, void slotCommentChanged(const QString& comment))
-    Q_PRIVATE_SLOT(d, void slotTagClicked(const Nepomuk::Tag& tag))
-    Q_PRIVATE_SLOT(d, void slotLinkActivated(const QString&))
+    Q_PRIVATE_SLOT(d, void slotTagsChanged(const QList<Nepomuk::Tag> &tags))
+    Q_PRIVATE_SLOT(d, void slotCommentChanged(const QString &comment))
+    Q_PRIVATE_SLOT(d, void slotTagClicked(const Nepomuk::Tag &tag))
+    Q_PRIVATE_SLOT(d, void slotLinkActivated(const QString &))
 
     friend class KLoadMetaDataThread; // invokes KMetaDataObject::loadData()
 };

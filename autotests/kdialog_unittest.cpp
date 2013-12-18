@@ -38,19 +38,20 @@ public:
     }
 
 private: // helper methods
-    void checkOtherButtonsAreNotDefault(KDialog & dialog, KDialog::ButtonCode id)
+    void checkOtherButtonsAreNotDefault(KDialog &dialog, KDialog::ButtonCode id)
     {
         KDialog::ButtonCode codes[] = { KDialog::Ok, KDialog::Apply, KDialog::Cancel,
-            KDialog::No, KDialog::Yes };
-        for (int i = 0; i < 5; i++)
-	{
-            if (codes[i] == id)
-	        continue;
+                                        KDialog::No, KDialog::Yes
+                                      };
+        for (int i = 0; i < 5; i++) {
+            if (codes[i] == id) {
+                continue;
+            }
             QVERIFY(!dialog.button(codes[i])->isDefault());
-	}
+        }
     }
 
-    void checkSetDefaultButton(KDialog & dialog, KDialog::ButtonCode id)
+    void checkSetDefaultButton(KDialog &dialog, KDialog::ButtonCode id)
     {
         dialog.setDefaultButton(id);
         QCOMPARE(dialog.defaultButton(), id);
@@ -66,7 +67,7 @@ private Q_SLOTS:
     {
         KDialog dialog;
         dialog.setButtons(KDialog::Ok | KDialog::Apply
-            | KDialog::Cancel | KDialog::No | KDialog::Yes);
+                          | KDialog::Cancel | KDialog::No | KDialog::Yes);
         checkSetDefaultButton(dialog, KDialog::Ok);
         checkSetDefaultButton(dialog, KDialog::Apply);
         checkSetDefaultButton(dialog, KDialog::Cancel);
@@ -88,7 +89,7 @@ private Q_SLOTS:
         QCOMPARE(dialog.button(id), static_cast<QPushButton *>(0));
 
         dialog.setButtons(KDialog::Ok | KDialog::Apply
-            | KDialog::Cancel | KDialog::No | KDialog::Yes);
+                          | KDialog::Cancel | KDialog::No | KDialog::Yes);
         QCOMPARE(dialog.defaultButton(), KDialog::Apply);
         QVERIFY(dialog.button(id)->isDefault());
         QVERIFY(!dialog.button(KDialog::Ok)->isDefault());
@@ -100,14 +101,14 @@ private Q_SLOTS:
     {
         KDialog dialog;
         dialog.setButtons(KDialog::Ok | KDialog::Cancel);
-        QCheckBox* checkBox = new QCheckBox("Hello world !", &dialog);
-        QPushButton* okButton = dialog.button(KDialog::Ok);
+        QCheckBox *checkBox = new QCheckBox("Hello world !", &dialog);
+        QPushButton *okButton = dialog.button(KDialog::Ok);
         okButton->setFocus();
         QVERIFY(!okButton->hasFocus()); // confusing, heh?
-        QCOMPARE(dialog.focusWidget(), static_cast<QWidget*>(okButton));
+        QCOMPARE(dialog.focusWidget(), static_cast<QWidget *>(okButton));
         checkBox->setFocus();
         QVERIFY(!checkBox->hasFocus()); // confusing, heh?
-        QCOMPARE(dialog.focusWidget(), static_cast<QWidget*>(checkBox));
+        QCOMPARE(dialog.focusWidget(), static_cast<QWidget *>(checkBox));
     }
 
     // Ensure that only the defaultButton() receives the keyEvent
@@ -143,7 +144,7 @@ private Q_SLOTS:
         QApplication::setActiveWindow(&dialog);
         QVERIFY(checkBox.hasFocus());
         QVERIFY(!dialog.button(KDialog::Cancel)->hasFocus());
-        QCOMPARE(dialog.focusWidget(), static_cast<QWidget*>(&checkBox));
+        QCOMPARE(dialog.focusWidget(), static_cast<QWidget *>(&checkBox));
         QTest::keyClick(dialog.focusWidget(), Qt::Key_Return);
         QCOMPARE(qCancelClickedSpy.count(), 1);
     }
@@ -200,7 +201,7 @@ private Q_SLOTS:
         QFETCH(int, emitAccepted);
         QFETCH(int, emitRejected);
 
-        KDialog* dialog = new KDialog;
+        KDialog *dialog = new KDialog;
         QPointer<KDialog> dialogPointer(dialog);
         dialog->setAttribute(Qt::WA_DeleteOnClose);
         dialog->setButtons(KDialog::Ok | button);
@@ -231,7 +232,7 @@ private Q_SLOTS:
         QFETCH(int, emitRejected);
         QFETCH(QString, signal);
 
-        KDialog* dialog = new KDialog;
+        KDialog *dialog = new KDialog;
         QPointer<KDialog> dialogPointer(dialog);
         dialog->setAttribute(Qt::WA_DeleteOnClose);
         dialog->setButtons(KDialog::Ok | button);
@@ -239,10 +240,12 @@ private Q_SLOTS:
         QSignalSpy qRejectedSpy(dialog, SIGNAL(rejected()));
         dialog->show(); // KDialog::closeEvent tests for isHidden
         dialog->close();
-        if (qRejectedSpy.isEmpty() && emitRejected)
+        if (qRejectedSpy.isEmpty() && emitRejected) {
             QVERIFY(qRejectedSpy.wait(5000));
-        if (qCancelOrCloseClickedSpy.isEmpty())
+        }
+        if (qCancelOrCloseClickedSpy.isEmpty()) {
             QVERIFY(qCancelOrCloseClickedSpy.wait(5000));
+        }
         QCOMPARE(qRejectedSpy.count(), emitRejected); // and then rejected is emitted as well
         QCOMPARE(qCancelOrCloseClickedSpy.count(), 1); // KDialog emulated cancel or close being clicked
         qApp->sendPostedEvents(); // DeferredDelete

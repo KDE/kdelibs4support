@@ -24,7 +24,8 @@
 
 using namespace std;
 
-class PredicateProperties::Private : public QSharedData {
+class PredicateProperties::Private : public QSharedData
+{
 public:
     static const QString nullString;
     static const QStringList nullStringList;
@@ -44,65 +45,80 @@ const PredicateProperties PredicateProperties::Private::nullPP;
 #endif
 
 #ifndef KDE_NO_DEPRECATED
-PredicateProperties::PredicateProperties(const QString& predicate) {
+PredicateProperties::PredicateProperties(const QString &predicate)
+{
     if (!predicate.isEmpty()) {
         d = new Private();
         d->key = predicate;
     }
 }
 #endif
-PredicateProperties::PredicateProperties(const PredicateProperties& pp)
-        : d(pp.d) {
+PredicateProperties::PredicateProperties(const PredicateProperties &pp)
+    : d(pp.d)
+{
 }
-PredicateProperties::~PredicateProperties() {
+PredicateProperties::~PredicateProperties()
+{
 }
-const PredicateProperties&
-PredicateProperties::operator=(const PredicateProperties& pp) {
+const PredicateProperties &
+PredicateProperties::operator=(const PredicateProperties &pp)
+{
     d = pp.d;
     return pp;
 }
-const QString&
-PredicateProperties::name() const {
-    if ( d == 0) return Private::nullString;
-    return ( d->name.isEmpty()) ? d->key : d->name;
+const QString &
+PredicateProperties::name() const
+{
+    if (d == 0) {
+        return Private::nullString;
+    }
+    return (d->name.isEmpty()) ? d->key : d->name;
 }
 
-const QStringList&
-PredicateProperties::suggestedValues() const {
+const QStringList &
+PredicateProperties::suggestedValues() const
+{
     return Private::nullStringList;
 }
 
 uint
-PredicateProperties::minCardinality() const {
+PredicateProperties::minCardinality() const
+{
     return 0;
 }
 
 uint
-PredicateProperties::maxCardinality() const {
+PredicateProperties::maxCardinality() const
+{
     return 0;
 }
 
 uint
-PredicateProperties::attributes() const {
-    return ( d) ? d->attributes :0;
+PredicateProperties::attributes() const
+{
+    return (d) ? d->attributes : 0;
 }
 QVariant::Type
-PredicateProperties::type() const {
-    return ( d) ? d->type :QVariant::Invalid;
+PredicateProperties::type() const
+{
+    return (d) ? d->type : QVariant::Invalid;
 }
-QValidator*
-PredicateProperties::createValidator() const {
+QValidator *
+PredicateProperties::createValidator() const
+{
     return 0;
 }
-const PredicateProperties&
-PredicateProperties::parent() const {
+const PredicateProperties &
+PredicateProperties::parent() const
+{
 #ifndef KDE_NO_DEPRECATED
-    return ( d) ? d->parent :Private::nullPP;
+    return (d) ? d->parent : Private::nullPP;
 #else
     return d->parent;
 #endif
 }
 bool
-PredicateProperties::isValid() const {
+PredicateProperties::isValid() const
+{
     return d;
 }

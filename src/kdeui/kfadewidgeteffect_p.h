@@ -29,19 +29,19 @@
 class KFadeWidgetEffectPrivate
 {
     Q_DECLARE_PUBLIC(KFadeWidgetEffect)
-    protected:
-        KFadeWidgetEffectPrivate(QWidget *_destWidget);
-        KFadeWidgetEffect *q_ptr;
+protected:
+    KFadeWidgetEffectPrivate(QWidget *_destWidget);
+    KFadeWidgetEffect *q_ptr;
 
-    private:
-	QPixmap transition(const QPixmap &from, const QPixmap &to, qreal amount) const;
-        void finished();
+private:
+    QPixmap transition(const QPixmap &from, const QPixmap &to, qreal amount) const;
+    void finished();
 
-        QTimeLine timeLine;
-        QPixmap oldPixmap;
-        QPixmap newPixmap;
-        QWidget *destWidget;
-        bool disabled;
+    QTimeLine timeLine;
+    QPixmap oldPixmap;
+    QPixmap newPixmap;
+    QWidget *destWidget;
+    bool disabled;
 };
 
 #endif // KFADEWIDGETEFFECT_P_H

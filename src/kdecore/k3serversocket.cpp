@@ -40,379 +40,382 @@ using namespace KNetwork;
 class KNetwork::KServerSocketPrivate
 {
 public:
-  KResolver resolver;
-  KResolverResults resolverResults;
+    KResolver resolver;
+    KResolverResults resolverResults;
 
-  enum { None, LookupDone, Bound, Listening } state;
-  int backlog;
-  int timeout;
+    enum { None, LookupDone, Bound, Listening } state;
+    int backlog;
+    int timeout;
 
-  bool bindWhenFound : 1, listenWhenBound : 1, useKBufferedSocket : 1;
+    bool bindWhenFound : 1, listenWhenBound : 1, useKBufferedSocket : 1;
 
-  KServerSocketPrivate()
-    : state(None), timeout(0), bindWhenFound(false), listenWhenBound(false),
-      useKBufferedSocket(true)
-  {
-    resolver.setFlags(KResolver::Passive);
-    resolver.setFamily(KResolver::KnownFamily);
-  }
+    KServerSocketPrivate()
+        : state(None), timeout(0), bindWhenFound(false), listenWhenBound(false),
+          useKBufferedSocket(true)
+    {
+        resolver.setFlags(KResolver::Passive);
+        resolver.setFamily(KResolver::KnownFamily);
+    }
 };
 
-KServerSocket::KServerSocket(QObject* parent)
-  : QObject(parent), d(new KServerSocketPrivate)
+KServerSocket::KServerSocket(QObject *parent)
+    : QObject(parent), d(new KServerSocketPrivate)
 {
-  QObject::connect(&d->resolver, SIGNAL(finished(KNetwork::KResolverResults)),
-		   this, SLOT(lookupFinishedSlot()));
+    QObject::connect(&d->resolver, SIGNAL(finished(KNetwork::KResolverResults)),
+                     this, SLOT(lookupFinishedSlot()));
 }
 
-KServerSocket::KServerSocket(const QString& service, QObject* parent)
-  : QObject(parent), d(new KServerSocketPrivate)
+KServerSocket::KServerSocket(const QString &service, QObject *parent)
+    : QObject(parent), d(new KServerSocketPrivate)
 {
-  QObject::connect(&d->resolver, SIGNAL(finished(KNetwork::KResolverResults)),
-		   this, SLOT(lookupFinishedSlot()));
-  d->resolver.setServiceName(service);
+    QObject::connect(&d->resolver, SIGNAL(finished(KNetwork::KResolverResults)),
+                     this, SLOT(lookupFinishedSlot()));
+    d->resolver.setServiceName(service);
 }
 
-KServerSocket::KServerSocket(const QString& node, const QString& service,
-			     QObject* parent)
-  : QObject(parent), d(new KServerSocketPrivate)
+KServerSocket::KServerSocket(const QString &node, const QString &service,
+                             QObject *parent)
+    : QObject(parent), d(new KServerSocketPrivate)
 {
-  QObject::connect(&d->resolver, SIGNAL(finished(KNetwork::KResolverResults)),
-		   this, SLOT(lookupFinishedSlot()));
-  setAddress(node, service);
+    QObject::connect(&d->resolver, SIGNAL(finished(KNetwork::KResolverResults)),
+                     this, SLOT(lookupFinishedSlot()));
+    setAddress(node, service);
 }
 
 KServerSocket::~KServerSocket()
 {
-  close();
-  delete d;
+    close();
+    delete d;
 }
 
 bool KServerSocket::setSocketOptions(int opts)
 {
-  QMutexLocker locker(mutex());
-  KSocketBase::setSocketOptions(opts); // call parent
-  bool result = socketDevice()->setSocketOptions(opts); // and set the implementation
-  copyError();
-  return result;
+    QMutexLocker locker(mutex());
+    KSocketBase::setSocketOptions(opts); // call parent
+    bool result = socketDevice()->setSocketOptions(opts); // and set the implementation
+    copyError();
+    return result;
 }
 
-KResolver& KServerSocket::resolver() const
+KResolver &KServerSocket::resolver() const
 {
-  return d->resolver;
+    return d->resolver;
 }
 
-const KResolverResults& KServerSocket::resolverResults() const
+const KResolverResults &KServerSocket::resolverResults() const
 {
-  return d->resolverResults;
+    return d->resolverResults;
 }
 
 void KServerSocket::setResolutionEnabled(bool enable)
 {
-  if (enable)
-    d->resolver.setFlags(d->resolver.flags() & ~KResolver::NoResolve);
-  else
-    d->resolver.setFlags(d->resolver.flags() | KResolver::NoResolve);
+    if (enable) {
+        d->resolver.setFlags(d->resolver.flags() & ~KResolver::NoResolve);
+    } else {
+        d->resolver.setFlags(d->resolver.flags() | KResolver::NoResolve);
+    }
 }
 
 void KServerSocket::setFamily(int families)
 {
-  d->resolver.setFamily(families);
+    d->resolver.setFamily(families);
 }
 
-void KServerSocket::setAddress(const QString& service)
+void KServerSocket::setAddress(const QString &service)
 {
-  d->resolver.setNodeName(QString());
-  d->resolver.setServiceName(service);
-  d->resolverResults.empty();
-  if (d->state <= KServerSocketPrivate::LookupDone)
-    d->state = KServerSocketPrivate::None;
+    d->resolver.setNodeName(QString());
+    d->resolver.setServiceName(service);
+    d->resolverResults.empty();
+    if (d->state <= KServerSocketPrivate::LookupDone) {
+        d->state = KServerSocketPrivate::None;
+    }
 }
 
-void KServerSocket::setAddress(const QString& node, const QString& service)
+void KServerSocket::setAddress(const QString &node, const QString &service)
 {
-  d->resolver.setNodeName(node);
-  d->resolver.setServiceName(service);
-  d->resolverResults.empty();
-  if (d->state <= KServerSocketPrivate::LookupDone)
-    d->state = KServerSocketPrivate::None;
+    d->resolver.setNodeName(node);
+    d->resolver.setServiceName(service);
+    d->resolverResults.empty();
+    if (d->state <= KServerSocketPrivate::LookupDone) {
+        d->state = KServerSocketPrivate::None;
+    }
 }
 
 void KServerSocket::setTimeout(int msec)
 {
-  d->timeout = msec;
+    d->timeout = msec;
 }
 
 bool KServerSocket::lookup()
 {
-  setError(NoError);
-  if (d->resolver.isRunning() && !blocking())
-    return true;		// already doing lookup
-
-  if (d->state >= KServerSocketPrivate::LookupDone)
-    return true;		// results are already available
-
-  // make sure we have at least one parameter for lookup
-  if (d->resolver.serviceName().isNull() &&
-      !d->resolver.nodeName().isNull())
-    d->resolver.setServiceName(QLatin1String(""));
-
-  // don't restart the lookups if they had succeeded and
-  // the input values weren't changed
-
-  // reset results
-  d->resolverResults = KResolverResults();
-
-  if (d->resolver.status() <= 0)
-    // if it's already running, there's no harm in calling again
-    d->resolver.start();	// signal may emit
-
-  if (blocking())
-    {
-      // we're in blocking mode operation
-      // wait for the results
-
-      d->resolver.wait();	// signal may be emitted again
-      // lookupFinishedSlot has been called
+    setError(NoError);
+    if (d->resolver.isRunning() && !blocking()) {
+        return true;    // already doing lookup
     }
 
-  return true;
-}
-
-bool KServerSocket::bind(const KResolverEntry& address)
-{
-  if (socketDevice()->bind(address))
-    {
-      setError(NoError);
-
-      d->state = KServerSocketPrivate::Bound;
-      emit bound(address);
-      return true;
+    if (d->state >= KServerSocketPrivate::LookupDone) {
+        return true;    // results are already available
     }
-  copyError();
-  return false;
+
+    // make sure we have at least one parameter for lookup
+    if (d->resolver.serviceName().isNull() &&
+            !d->resolver.nodeName().isNull()) {
+        d->resolver.setServiceName(QLatin1String(""));
+    }
+
+    // don't restart the lookups if they had succeeded and
+    // the input values weren't changed
+
+    // reset results
+    d->resolverResults = KResolverResults();
+
+    if (d->resolver.status() <= 0)
+        // if it's already running, there's no harm in calling again
+    {
+        d->resolver.start();    // signal may emit
+    }
+
+    if (blocking()) {
+        // we're in blocking mode operation
+        // wait for the results
+
+        d->resolver.wait();   // signal may be emitted again
+        // lookupFinishedSlot has been called
+    }
+
+    return true;
 }
 
-bool KServerSocket::bind(const QString& node, const QString& service)
+bool KServerSocket::bind(const KResolverEntry &address)
 {
-  setAddress(node, service);
-  return bind();
+    if (socketDevice()->bind(address)) {
+        setError(NoError);
+
+        d->state = KServerSocketPrivate::Bound;
+        emit bound(address);
+        return true;
+    }
+    copyError();
+    return false;
 }
 
-bool KServerSocket::bind(const QString& service)
+bool KServerSocket::bind(const QString &node, const QString &service)
 {
-  setAddress(service);
-  return bind();
+    setAddress(node, service);
+    return bind();
+}
+
+bool KServerSocket::bind(const QString &service)
+{
+    setAddress(service);
+    return bind();
 }
 
 bool KServerSocket::bind()
 {
-  if (d->state >= KServerSocketPrivate::Bound)
-    return true;
-
-  if (d->state < KServerSocketPrivate::LookupDone)
-    {
-      if (!blocking())
-	{
-	  d->bindWhenFound = true;
-	  bool ok = lookup();	// will call doBind
-	  if (d->state >= KServerSocketPrivate::Bound)
-	    d->bindWhenFound = false;
-	  return ok;
-	}
-
-      // not blocking
-      if (!lookup())
-	return false;
+    if (d->state >= KServerSocketPrivate::Bound) {
+        return true;
     }
 
-  return doBind();
+    if (d->state < KServerSocketPrivate::LookupDone) {
+        if (!blocking()) {
+            d->bindWhenFound = true;
+            bool ok = lookup();   // will call doBind
+            if (d->state >= KServerSocketPrivate::Bound) {
+                d->bindWhenFound = false;
+            }
+            return ok;
+        }
+
+        // not blocking
+        if (!lookup()) {
+            return false;
+        }
+    }
+
+    return doBind();
 }
 
 bool KServerSocket::listen(int backlog)
 {
-  // WARNING
-  // this function has to be reentrant
-  // due to the mechanisms used for binding, this function might
-  // end up calling itself
+    // WARNING
+    // this function has to be reentrant
+    // due to the mechanisms used for binding, this function might
+    // end up calling itself
 
-  if (d->state == KServerSocketPrivate::Listening)
-    return true;		// already listening
-
-  d->backlog = backlog;
-
-  if (d->state < KServerSocketPrivate::Bound)
-    {
-      // we must bind
-      // note that we can end up calling ourselves here
-      d->listenWhenBound = true;
-      if (!bind())
-	{
-	  d->listenWhenBound = false;
-	  return false;
-	}
-
-      if (d->state < KServerSocketPrivate::Bound)
-	// asynchronous lookup in progress...
-	// we can't be blocking here anyways
-	return true;
-
-      d->listenWhenBound = false;
+    if (d->state == KServerSocketPrivate::Listening) {
+        return true;    // already listening
     }
 
-  if (d->state < KServerSocketPrivate::Listening)
-    return doListen();
+    d->backlog = backlog;
 
-  return true;
+    if (d->state < KServerSocketPrivate::Bound) {
+        // we must bind
+        // note that we can end up calling ourselves here
+        d->listenWhenBound = true;
+        if (!bind()) {
+            d->listenWhenBound = false;
+            return false;
+        }
+
+        if (d->state < KServerSocketPrivate::Bound)
+            // asynchronous lookup in progress...
+            // we can't be blocking here anyways
+        {
+            return true;
+        }
+
+        d->listenWhenBound = false;
+    }
+
+    if (d->state < KServerSocketPrivate::Listening) {
+        return doListen();
+    }
+
+    return true;
 }
 
 void KServerSocket::close()
 {
-  socketDevice()->close();
-  if (d->resolver.isRunning())
-    d->resolver.cancel(false);
-  d->state = KServerSocketPrivate::None;
-  emit closed();
+    socketDevice()->close();
+    if (d->resolver.isRunning()) {
+        d->resolver.cancel(false);
+    }
+    d->state = KServerSocketPrivate::None;
+    emit closed();
 }
 
 void KServerSocket::setAcceptBuffered(bool enable)
 {
-  d->useKBufferedSocket = enable;
+    d->useKBufferedSocket = enable;
 }
 
-KStreamSocket* KServerSocket::accept()
+KStreamSocket *KServerSocket::accept()
 {
-  if (d->state < KServerSocketPrivate::Listening)
-    {
-      if (!blocking())
-	{
-	  listen();
-	  setError(WouldBlock);
-	  return NULL;
-	}
-      else if (!listen())
-	// error happened during listen
-	return NULL;
+    if (d->state < KServerSocketPrivate::Listening) {
+        if (!blocking()) {
+            listen();
+            setError(WouldBlock);
+            return NULL;
+        } else if (!listen())
+            // error happened during listen
+        {
+            return NULL;
+        }
     }
 
-  // check to see if we're doing a timeout
-  if (blocking() && d->timeout > 0)
-    {
-      bool timedout;
-      if (!socketDevice()->poll(d->timeout, &timedout))
-	{
-	  copyError();
-	  return NULL;
-	}
+    // check to see if we're doing a timeout
+    if (blocking() && d->timeout > 0) {
+        bool timedout;
+        if (!socketDevice()->poll(d->timeout, &timedout)) {
+            copyError();
+            return NULL;
+        }
 
-      if (timedout)
-	return 0L;
+        if (timedout) {
+            return 0L;
+        }
     }
 
-  // we're listening here
-  KSocketDevice* accepted = socketDevice()->accept();
-  if (!accepted)
-    {
-      // error happened during accept
-      copyError();
-      return NULL;
+    // we're listening here
+    KSocketDevice *accepted = socketDevice()->accept();
+    if (!accepted) {
+        // error happened during accept
+        copyError();
+        return NULL;
     }
 
-  KStreamSocket* streamsocket;
-  if (d->useKBufferedSocket)
-    {
-      streamsocket = new KBufferedSocket();
-      streamsocket->setOpenMode(KStreamSocket::ReadWrite);
+    KStreamSocket *streamsocket;
+    if (d->useKBufferedSocket) {
+        streamsocket = new KBufferedSocket();
+        streamsocket->setOpenMode(KStreamSocket::ReadWrite);
+    } else {
+        streamsocket = new KStreamSocket();
+        streamsocket->setOpenMode(KStreamSocket::ReadWrite |
+                                  KStreamSocket::Unbuffered);
     }
-  else
-    {
-      streamsocket = new KStreamSocket();
-      streamsocket->setOpenMode(KStreamSocket::ReadWrite |
-				KStreamSocket::Unbuffered);
-    }
-  streamsocket->setSocketDevice(accepted);
+    streamsocket->setSocketDevice(accepted);
 
-  // FIXME!
-  // when KStreamSocket can find out the state of the socket passed through
-  // setSocketDevice, this will probably be unnecessary:
-  streamsocket->setState(KStreamSocket::Connected);
+    // FIXME!
+    // when KStreamSocket can find out the state of the socket passed through
+    // setSocketDevice, this will probably be unnecessary:
+    streamsocket->setState(KStreamSocket::Connected);
 
-  return streamsocket;
+    return streamsocket;
 }
 
 KSocketAddress KServerSocket::localAddress() const
 {
-  return socketDevice()->localAddress();
+    return socketDevice()->localAddress();
 }
 
 KSocketAddress KServerSocket::externalAddress() const
 {
-  return socketDevice()->externalAddress();
+    return socketDevice()->externalAddress();
 }
 
 void KServerSocket::lookupFinishedSlot()
 {
-  if (d->resolver.isRunning() || d->state > KServerSocketPrivate::LookupDone)
-    return;
-
-  if (d->resolver.status() < 0)
-    {
-      setError(LookupFailure);
-      emit gotError(LookupFailure);
-      d->bindWhenFound = d->listenWhenBound = false;
-      d->state = KServerSocketPrivate::None;
-      return;
+    if (d->resolver.isRunning() || d->state > KServerSocketPrivate::LookupDone) {
+        return;
     }
 
-  // lookup succeeded
-  d->resolverResults = d->resolver.results();
-  d->state = KServerSocketPrivate::LookupDone;
-  emit hostFound();
+    if (d->resolver.status() < 0) {
+        setError(LookupFailure);
+        emit gotError(LookupFailure);
+        d->bindWhenFound = d->listenWhenBound = false;
+        d->state = KServerSocketPrivate::None;
+        return;
+    }
 
-  if (d->bindWhenFound)
-    doBind();
+    // lookup succeeded
+    d->resolverResults = d->resolver.results();
+    d->state = KServerSocketPrivate::LookupDone;
+    emit hostFound();
+
+    if (d->bindWhenFound) {
+        doBind();
+    }
 }
 
 void KServerSocket::copyError()
 {
-  setError(socketDevice()->error());
+    setError(socketDevice()->error());
 }
 
 bool KServerSocket::doBind()
 {
-  d->bindWhenFound = false;
-  // loop through the results and bind to the first that works
+    d->bindWhenFound = false;
+    // loop through the results and bind to the first that works
 
-  KResolverResults::ConstIterator it = d->resolverResults.constBegin();
-  for ( ; it != d->resolverResults.constEnd(); ++it)
-    if (bind(*it))
-      {
-	if (d->listenWhenBound)
-	  return doListen();
-	return true;
-      }
-    else
-      socketDevice()->close();	// didn't work, try again
+    KResolverResults::ConstIterator it = d->resolverResults.constBegin();
+    for (; it != d->resolverResults.constEnd(); ++it)
+        if (bind(*it)) {
+            if (d->listenWhenBound) {
+                return doListen();
+            }
+            return true;
+        } else {
+            socketDevice()->close();    // didn't work, try again
+        }
 
-  // failed to bind
-  emit gotError(error());
-  return false;
+    // failed to bind
+    emit gotError(error());
+    return false;
 }
 
 bool KServerSocket::doListen()
 {
-  if (!socketDevice()->listen(d->backlog))
-    {
-      copyError();
-      emit gotError(error());
-      return false;		// failed to listen
+    if (!socketDevice()->listen(d->backlog)) {
+        copyError();
+        emit gotError(error());
+        return false;     // failed to listen
     }
 
-  // set up ready accept signal
-  QObject::connect(socketDevice()->readNotifier(), SIGNAL(activated(int)),
-		   this, SIGNAL(readyAccept()));
-  d->state = KServerSocketPrivate::Listening;
-  return true;
+    // set up ready accept signal
+    QObject::connect(socketDevice()->readNotifier(), SIGNAL(activated(int)),
+                     this, SIGNAL(readyAccept()));
+    d->state = KServerSocketPrivate::Listening;
+    return true;
 }
-
 

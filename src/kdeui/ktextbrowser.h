@@ -25,7 +25,6 @@
 
 #include <QTextBrowser>
 
-
 /**
  * @deprecated since 5.0, use QTextBrowser instead
  *
@@ -56,17 +55,17 @@
 
 class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
 {
-  Q_OBJECT
-  Q_PROPERTY( bool notifyClick READ isNotifyClick WRITE setNotifyClick )
+    Q_OBJECT
+    Q_PROPERTY(bool notifyClick READ isNotifyClick WRITE setNotifyClick)
 
-  public:
+public:
     /**
      * Creates a new text browser.
      *
      * @param parent Parent of the widget.
      * @param notifyClick @p true causes signals to be emitted.
      */
-    explicit KTextBrowser( QWidget *parent = 0, bool notifyClick = false );
+    explicit KTextBrowser(QWidget *parent = 0, bool notifyClick = false);
 
     /**
      * Destroys the text browser.
@@ -79,7 +78,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
      *
      * @param notifyClick @p true causes signals to be emitted.
      */
-    void setNotifyClick( bool notifyClick );
+    void setNotifyClick(bool notifyClick);
 
     /**
      * Returns whether a click on a link should be handled internally
@@ -87,7 +86,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
      */
     bool isNotifyClick() const;
 
-  protected:
+protected:
     /**
      * Reimplemented to NOT set the source but to do the special handling
      * of links being clicked. Do not call this.
@@ -96,17 +95,17 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
      * the QTextBrowser method explicitly, like this:
      * <code>myTextBrowser->QTextBrowser::setSource(url)</code>
      */
-    void setSource( const QUrl& name );
+    void setSource(const QUrl &name);
 
     /**
      * Makes sure Key_Escape is ignored
      */
-    virtual void keyPressEvent( QKeyEvent *event );
+    virtual void keyPressEvent(QKeyEvent *event);
 
     /**
      * Reimplemented to support Qt2 behavior (Ctrl-Wheel = fast scroll)
      */
-    virtual void wheelEvent( QWheelEvent *event );
+    virtual void wheelEvent(QWheelEvent *event);
 
     /**
     * Re-implemented for internal reasons.  API not affected.
@@ -114,9 +113,9 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
     * See QLineEdit::createPopupMenu().
     */
 
-    virtual void contextMenuEvent( QContextMenuEvent *event );
+    virtual void contextMenuEvent(QContextMenuEvent *event);
 
-  Q_SIGNALS:
+Q_SIGNALS:
     /**
      * Emitted when a mail link has been activated and the widget has
      * been configured to emit the signal.
@@ -124,7 +123,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
      * @param name The destination name. It is QString() at the moment.
      * @param address The destination address.
      */
-    void mailClick( const QString &name, const QString &address );
+    void mailClick(const QString &name, const QString &address);
 
     /**
      * Emitted if mailClick() is not emitted and the widget has been
@@ -132,11 +131,11 @@ class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
      *
      * @param url The destination address.
      */
-    void urlClick( const QString &url );
+    void urlClick(const QString &url);
 
-  private:
+private:
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 #endif

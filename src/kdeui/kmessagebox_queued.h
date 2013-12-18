@@ -26,75 +26,75 @@ class QWidget;
 
 #include <kde4support_export.h>
 
-namespace KMessageBox {
+namespace KMessageBox
+{
 
-  /**
-   * Like detailedError
-   *
-   * This function will return immediately, the messagebox will be shown
-   * once the application enters an event loop and no other messagebox
-   * is being shown.
-   *
-   * Note that if the parent gets deleted, the messagebox will not be
-   * shown.
-   */
-  KDE4SUPPORT_DEPRECATED_EXPORT void queuedDetailedError( QWidget *parent,
-                    const QString &text,
-                    const QString &details,
-                    const QString &caption = QString());
+/**
+ * Like detailedError
+ *
+ * This function will return immediately, the messagebox will be shown
+ * once the application enters an event loop and no other messagebox
+ * is being shown.
+ *
+ * Note that if the parent gets deleted, the messagebox will not be
+ * shown.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void queuedDetailedError(QWidget *parent,
+        const QString &text,
+        const QString &details,
+        const QString &caption = QString());
 
- /**
-  * This function accepts the window id of the parent window, instead
-  * of QWidget*. It should be used only when necessary.
-  */
-  KDE4SUPPORT_DEPRECATED_EXPORT void queuedDetailedErrorWId( WId parent_id,
-                    const QString &text,
-                    const QString &details,
-                    const QString &caption = QString());
+/**
+ * This function accepts the window id of the parent window, instead
+ * of QWidget*. It should be used only when necessary.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void queuedDetailedErrorWId(WId parent_id,
+        const QString &text,
+        const QString &details,
+        const QString &caption = QString());
 
+/**
+ * Like messageBox
+ *
+ * Only for message boxes of type Information, Sorry or Error.
+ *
+ * This function will return immediately, the messagebox will be shown
+ * once the application enters an event loop and no other messagebox
+ * is being shown.
+ *
+ * Note that if the parent gets deleted, the messagebox will not be
+ * shown.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBox(QWidget *parent,
+        DialogType type, const QString &text,
+        const QString &caption,
+        Options options);
 
-    /**
-     * Like messageBox
-     *
-     * Only for message boxes of type Information, Sorry or Error.
-     *
-     * This function will return immediately, the messagebox will be shown
-     * once the application enters an event loop and no other messagebox
-     * is being shown.
-     *
-     * Note that if the parent gets deleted, the messagebox will not be
-     * shown.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBox( QWidget *parent,
-                    DialogType type, const QString &text,
-                    const QString &caption,
-                    Options options );
+/**
+ * This function accepts the window id of the parent window, instead
+ * of QWidget*. It should be used only when necessary.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBoxWId(WId parent_id,
+        DialogType type, const QString &text,
+        const QString &caption,
+        Options options);
 
-    /**
-     * This function accepts the window id of the parent window, instead
-     * of QWidget*. It should be used only when necessary.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBoxWId( WId parent_id,
-                    DialogType type, const QString &text,
-                    const QString &caption,
-                    Options options );
+/**
+ * @overload
+ *
+ * This is an overloaded member function, provided for convenience.
+ * It behaves essentially like the above function.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBox(QWidget *parent,
+        DialogType type, const QString &text,
+        const QString &caption = QString());
 
-    /**
-     * @overload
-     *
-     * This is an overloaded member function, provided for convenience.
-     * It behaves essentially like the above function.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBox( QWidget *parent,
-                    DialogType type, const QString &text,
-                    const QString &caption = QString() );
-
-    /**
-     * This function accepts the window id of the parent window, instead
-     * of QWidget*. It should be used only when necessary.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBoxWId( WId parent_id,
-                    DialogType type, const QString &text,
-                    const QString &caption = QString() );
+/**
+ * This function accepts the window id of the parent window, instead
+ * of QWidget*. It should be used only when necessary.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void queuedMessageBoxWId(WId parent_id,
+        DialogType type, const QString &text,
+        const QString &caption = QString());
 
 } // namespace

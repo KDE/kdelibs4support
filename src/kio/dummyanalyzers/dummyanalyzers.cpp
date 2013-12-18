@@ -34,130 +34,184 @@ class DummySaxAnalyzerFactory;
 class DummyLineAnalyzerFactory;
 class DummyEventAnalyzerFactory;
 
-class STRIGI_PLUGIN_API DummyEndAnalyzer : public StreamEndAnalyzer {
+class STRIGI_PLUGIN_API DummyEndAnalyzer : public StreamEndAnalyzer
+{
 public:
     DummyEndAnalyzer() {}
-    bool checkHeader(const char*, int32_t) const {
+    bool checkHeader(const char *, int32_t) const
+    {
         return false;
     }
-    signed char analyze(Strigi::AnalysisResult&, InputStream*) {
+    signed char analyze(Strigi::AnalysisResult &, InputStream *)
+    {
         return -1;
     }
-    const char* name() const { return "DummyEndAnalyzer"; }
+    const char *name() const
+    {
+        return "DummyEndAnalyzer";
+    }
 };
-class STRIGI_PLUGIN_API DummyEndAnalyzerFactory : public StreamEndAnalyzerFactory {
-    const char* name() const {
+class STRIGI_PLUGIN_API DummyEndAnalyzerFactory : public StreamEndAnalyzerFactory
+{
+    const char *name() const
+    {
         return "DummyEndAnalyzerFactory";
     }
-    void registerFields(Strigi::FieldRegister&)  {}
-    StreamEndAnalyzer* newInstance() const {
+    void registerFields(Strigi::FieldRegister &)  {}
+    StreamEndAnalyzer *newInstance() const
+    {
         return new DummyEndAnalyzer();
     }
 };
-class STRIGI_PLUGIN_API DummyThroughAnalyzer : public StreamThroughAnalyzer {
+class STRIGI_PLUGIN_API DummyThroughAnalyzer : public StreamThroughAnalyzer
+{
 public:
     DummyThroughAnalyzer() {}
-    const char* name() const {
-	return "DummyThroughAnalyzer";
+    const char *name() const
+    {
+        return "DummyThroughAnalyzer";
     }
-    void setIndexable(Strigi::AnalysisResult*) {}
-    InputStream* connectInputStream(InputStream *in) {
+    void setIndexable(Strigi::AnalysisResult *) {}
+    InputStream *connectInputStream(InputStream *in)
+    {
         return in;
     }
-    bool isReadyWithStream() { return true; }
+    bool isReadyWithStream()
+    {
+        return true;
+    }
 };
-class STRIGI_PLUGIN_API DummyThroughAnalyzerFactory : public StreamThroughAnalyzerFactory {
-    const char* name() const {
+class STRIGI_PLUGIN_API DummyThroughAnalyzerFactory : public StreamThroughAnalyzerFactory
+{
+    const char *name() const
+    {
         return "DummyThroughAnalyzerFactory";
     }
-    void registerFields(Strigi::FieldRegister&)  {}
-    StreamThroughAnalyzer* newInstance() const {
+    void registerFields(Strigi::FieldRegister &)  {}
+    StreamThroughAnalyzer *newInstance() const
+    {
         return new DummyThroughAnalyzer();
     }
 };
-class STRIGI_PLUGIN_API DummySaxAnalyzer : public StreamSaxAnalyzer {
+class STRIGI_PLUGIN_API DummySaxAnalyzer : public StreamSaxAnalyzer
+{
 public:
     DummySaxAnalyzer() {}
-    const char* name() const { return "DummySaxAnalyzer"; }
-    void startAnalysis(AnalysisResult*) {}
+    const char *name() const
+    {
+        return "DummySaxAnalyzer";
+    }
+    void startAnalysis(AnalysisResult *) {}
     void endAnalysis(bool /*complete*/) {}
-    bool isReadyWithStream() { return true; }
+    bool isReadyWithStream()
+    {
+        return true;
+    }
 };
-class STRIGI_PLUGIN_API DummySaxAnalyzerFactory : public StreamSaxAnalyzerFactory {
-    const char* name() const {
+class STRIGI_PLUGIN_API DummySaxAnalyzerFactory : public StreamSaxAnalyzerFactory
+{
+    const char *name() const
+    {
         return "DummySaxAnalyzerFactory";
     }
-    void registerFields(Strigi::FieldRegister&)  {}
-    StreamSaxAnalyzer* newInstance() const {
+    void registerFields(Strigi::FieldRegister &)  {}
+    StreamSaxAnalyzer *newInstance() const
+    {
         return new DummySaxAnalyzer();
     }
 };
-class STRIGI_PLUGIN_API DummyLineAnalyzer : public StreamLineAnalyzer {
+class STRIGI_PLUGIN_API DummyLineAnalyzer : public StreamLineAnalyzer
+{
 public:
     DummyLineAnalyzer() {}
-    const char* name() const { return "DummyLineAnalyzer"; }
-    void startAnalysis(AnalysisResult*) {}
+    const char *name() const
+    {
+        return "DummyLineAnalyzer";
+    }
+    void startAnalysis(AnalysisResult *) {}
     void endAnalysis(bool /*complete*/) {}
-    void handleLine(const char*, uint32_t) {}
-    bool isReadyWithStream() { return true; }
+    void handleLine(const char *, uint32_t) {}
+    bool isReadyWithStream()
+    {
+        return true;
+    }
 };
-class STRIGI_PLUGIN_API DummyLineAnalyzerFactory : public StreamLineAnalyzerFactory {
-    const char* name() const {
+class STRIGI_PLUGIN_API DummyLineAnalyzerFactory : public StreamLineAnalyzerFactory
+{
+    const char *name() const
+    {
         return "DummyLineAnalyzerFactory";
     }
-    void registerFields(Strigi::FieldRegister&)  {}
-    StreamLineAnalyzer* newInstance() const {
+    void registerFields(Strigi::FieldRegister &)  {}
+    StreamLineAnalyzer *newInstance() const
+    {
         return new DummyLineAnalyzer();
     }
 };
-class STRIGI_PLUGIN_API DummyEventAnalyzer : public StreamEventAnalyzer {
+class STRIGI_PLUGIN_API DummyEventAnalyzer : public StreamEventAnalyzer
+{
 public:
     DummyEventAnalyzer() {}
-    const char* name() const { return "DummyEventAnalyzer"; }
-    void startAnalysis(AnalysisResult*) {}
+    const char *name() const
+    {
+        return "DummyEventAnalyzer";
+    }
+    void startAnalysis(AnalysisResult *) {}
     void endAnalysis(bool /*complete*/) {}
-    void handleData(const char*, uint32_t) {}
-    bool isReadyWithStream() { return true; }
+    void handleData(const char *, uint32_t) {}
+    bool isReadyWithStream()
+    {
+        return true;
+    }
 };
-class STRIGI_PLUGIN_API DummyEventAnalyzerFactory : public StreamEventAnalyzerFactory {
-    const char* name() const {
+class STRIGI_PLUGIN_API DummyEventAnalyzerFactory : public StreamEventAnalyzerFactory
+{
+    const char *name() const
+    {
         return "DummyEventAnalyzerFactory";
     }
-    void registerFields(Strigi::FieldRegister&)  {}
-    StreamEventAnalyzer* newInstance() const {
+    void registerFields(Strigi::FieldRegister &)  {}
+    StreamEventAnalyzer *newInstance() const
+    {
         return new DummyEventAnalyzer();
     }
 };
 
-class Factory : public AnalyzerFactoryFactory {
+class Factory : public AnalyzerFactoryFactory
+{
 public:
-    list<StreamEndAnalyzerFactory*>
-    streamEndAnalyzerFactories() const {
-        list<StreamEndAnalyzerFactory*> af;
+    list<StreamEndAnalyzerFactory *>
+    streamEndAnalyzerFactories() const
+    {
+        list<StreamEndAnalyzerFactory *> af;
         af.push_back(new DummyEndAnalyzerFactory());
         return af;
     }
-    list<StreamThroughAnalyzerFactory*>
-    streamThroughAnalyzerFactories() const {
-        list<StreamThroughAnalyzerFactory*> af;
+    list<StreamThroughAnalyzerFactory *>
+    streamThroughAnalyzerFactories() const
+    {
+        list<StreamThroughAnalyzerFactory *> af;
         af.push_back(new DummyThroughAnalyzerFactory());
         return af;
     }
-    list<StreamSaxAnalyzerFactory*>
-    streamSaxAnalyzerFactories() const {
-        list<StreamSaxAnalyzerFactory*> af;
+    list<StreamSaxAnalyzerFactory *>
+    streamSaxAnalyzerFactories() const
+    {
+        list<StreamSaxAnalyzerFactory *> af;
         af.push_back(new DummySaxAnalyzerFactory());
         return af;
     }
-    list<StreamLineAnalyzerFactory*>
-    streamLineAnalyzerFactories() const {
-        list<StreamLineAnalyzerFactory*> af;
+    list<StreamLineAnalyzerFactory *>
+    streamLineAnalyzerFactories() const
+    {
+        list<StreamLineAnalyzerFactory *> af;
         af.push_back(new DummyLineAnalyzerFactory());
         return af;
     }
-    list<StreamEventAnalyzerFactory*>
-    streamEventAnalyzerFactories() const {
-        list<StreamEventAnalyzerFactory*> af;
+    list<StreamEventAnalyzerFactory *>
+    streamEventAnalyzerFactories() const
+    {
+        list<StreamEventAnalyzerFactory *> af;
         af.push_back(new DummyEventAnalyzerFactory());
         return af;
     }

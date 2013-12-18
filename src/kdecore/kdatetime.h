@@ -147,7 +147,7 @@ class KTimeZones;
  */
 class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
 {
-  public:
+public:
     /**
      * The time specification type of a KDateTime instance.
      * This specifies how the date/time component of the KDateTime instance
@@ -155,8 +155,7 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      * is expressed in. For the full time specification (including time zone
      * details), see KDateTime::Spec.
      */
-    enum SpecType
-    {
+    enum SpecType {
         Invalid,    /**< an invalid time specification. */
         UTC,        /**< a UTC time. */
         OffsetFromUTC, /**< a local time which has a fixed offset from UTC. */
@@ -199,7 +198,7 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      */
     class KDE4SUPPORT_EXPORT Spec
     {
-      public:
+    public:
         /**
          * Constructs an invalid time specification.
          */
@@ -225,12 +224,12 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
         /**
          * Copy constructor.
          */
-        Spec(const Spec& spec);
+        Spec(const Spec &spec);
 
         /**
          * Assignment operator.
          */
-        Spec& operator=(const Spec& spec);
+        Spec &operator=(const Spec &spec);
 
         /**
          * Destructor
@@ -342,7 +341,10 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
          */
         bool operator==(const Spec &other) const;
 
-        bool operator!=(const Spec &other) const { return !operator==(other); }
+        bool operator!=(const Spec &other) const
+        {
+            return !operator==(other);
+        }
 
         /**
          * Checks whether this instance is equivalent to another.
@@ -389,12 +391,11 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
         static Spec LocalZone();
 
     private:
-        KDateTimeSpecPrivate* const d;
+        KDateTimeSpecPrivate *const d;
     };
 
     /** Format for strings representing date/time values. */
-    enum TimeFormat
-    {
+    enum TimeFormat {
         ISODate,    /**< ISO 8601 format, i.e. [±]YYYY-MM-DDThh[:mm[:ss[.sss]]]TZ,
                      *   where TZ is the time zone offset (blank for local
                      *   time, Z for UTC, or ±hhmm for an offset from UTC).
@@ -452,8 +453,7 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      * - s2 = start time of other instance
      * - e2 = end time of other instance.
      */
-    enum Comparison
-    {
+    enum Comparison {
         Before  = 0x01, /**< This KDateTime is strictly earlier than the other,
                          *   i.e. e1 < s2.
                          */
@@ -473,26 +473,25 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
                          *   i.e. s1 > e2.
                          */
         Equal = AtStart | Inside | AtEnd,
-                        /**< Simultaneous, i.e. s1 = s2 && e1 = e2.
-                         */
+        /**< Simultaneous, i.e. s1 = s2 && e1 = e2.
+         */
         Outside = Before | AtStart | Inside | AtEnd | After,
-                        /**< This KDateTime starts before the start of the other,
-                         *   and ends after the end of the other,
-                         *   i.e. s1 < s2, e1 > e2.
-                         */
+        /**< This KDateTime starts before the start of the other,
+         *   and ends after the end of the other,
+         *   i.e. s1 < s2, e1 > e2.
+         */
         StartsAt = AtStart | Inside | AtEnd | After,
-                        /**< This KDateTime starts at the same time as the other,
-                         *   and ends after the end of the other,
-                         *   i.e. s1 = s2, e1 > e2.
-                         */
+        /**< This KDateTime starts at the same time as the other,
+         *   and ends after the end of the other,
+         *   i.e. s1 = s2, e1 > e2.
+         */
         EndsAt = Before | AtStart | Inside | AtEnd
-                        /**< This KDateTime starts before the start of the other,
-                         *   and ends at the same time as the other,
-                         *   i.e. s1 < s2, e1 = e2.
-                         */
-   };
+                 /**< This KDateTime starts before the start of the other,
+                  *   and ends at the same time as the other,
+                  *   i.e. s1 < s2, e1 = e2.
+                  */
+    };
 
-  
     /**
      * Constructs an invalid date/time.
      */
@@ -1434,7 +1433,6 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      */
     static void setFromStringDefault(const Spec &spec);
 
-
     /**
      * Always returns false, as dates earlier than -4712 are now supported by
      * @c KDateTime.
@@ -1502,7 +1500,10 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      */
     bool operator==(const KDateTime &other) const;
 
-    bool operator!=(const KDateTime &other) const { return !(*this == other); }
+    bool operator!=(const KDateTime &other) const
+    {
+        return !(*this == other);
+    }
 
     /**
      * Check whether this date/time is earlier than another.
@@ -1525,9 +1526,18 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      */
     bool operator<(const KDateTime &other) const;
 
-    bool operator<=(const KDateTime &other) const { return !(other < *this); }
-    bool operator>(const KDateTime &other) const { return other < *this; }
-    bool operator>=(const KDateTime &other) const { return !(*this < other); }
+    bool operator<=(const KDateTime &other) const
+    {
+        return !(other < *this);
+    }
+    bool operator>(const KDateTime &other) const
+    {
+        return other < *this;
+    }
+    bool operator>=(const KDateTime &other) const
+    {
+        return !(*this < other);
+    }
 
     /**
      * Create a separate copy of this instance's data if it is implicitly shared
@@ -1572,7 +1582,7 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
      *      currentLocalDate(), currentLocalTime()
      * @since 4.3
      */
-    static void setSimulatedSystemTime(const KDateTime& newTime);
+    static void setSimulatedSystemTime(const KDateTime &newTime);
 
     /**
      * Return the real (not simulated) system time.
@@ -1596,7 +1606,7 @@ class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
     friend QDataStream KDE4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime &dateTime);
     friend QDataStream KDE4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime &dateTime);
 
-  private:
+private:
     QSharedDataPointer<KDateTimePrivate> d;
 };
 

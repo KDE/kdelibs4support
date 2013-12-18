@@ -22,17 +22,17 @@
 
 K_PLUGIN_FACTORY(KLibLoaderTestFactory,
                  registerPlugin<KLibLoaderTestObject>();
-                 )
+                )
 
-KLibLoaderTestObject::KLibLoaderTestObject( QObject* parent, const QList<QVariant>& )
-    : QObject( parent )
+KLibLoaderTestObject::KLibLoaderTestObject(QObject *parent, const QList<QVariant> &)
+    : QObject(parent)
 {
-    qDebug( "KLibLoaderTestObject created with KPluginFactory" );
+    qDebug("KLibLoaderTestObject created with KPluginFactory");
 }
 
 KLibLoaderTestObject::~KLibLoaderTestObject()
 {
-    qDebug( "KLibLoaderTestObject created with KPluginFactory, now deleted" );
+    qDebug("KLibLoaderTestObject created with KPluginFactory, now deleted");
 }
 
 #include "klibloadertest4_module.moc"

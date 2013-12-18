@@ -28,13 +28,13 @@
 
 #include <config-kde4support.h>
 #if ! KIO_NO_NEPOMUK
-    #define DISABLE_NEPOMUK_LEGACY
-    #include <resource.h>
-    #include <resourcemanager.h>
-    #include <property.h>
-    #include <variant.h>
+#define DISABLE_NEPOMUK_LEGACY
+#include <resource.h>
+#include <resourcemanager.h>
+#include <property.h>
+#include <variant.h>
 
-    #include "kfilemetadataprovider_p.h"
+#include "kfilemetadataprovider_p.h"
 #endif
 
 #include <QEvent>
@@ -44,12 +44,12 @@
 class KFileMetaDataConfigurationWidget::Private
 {
 public:
-    Private(KFileMetaDataConfigurationWidget* parent);
+    Private(KFileMetaDataConfigurationWidget *parent);
     ~Private();
 
     void init();
     void loadMetaData();
-    void addItem(const QUrl& uri);
+    void addItem(const QUrl &uri);
 
     /**
      * Is invoked after the meta data model has finished the loading of
@@ -61,15 +61,15 @@ public:
     int m_visibleDataTypes;
     KFileItemList m_fileItems;
 #if ! KIO_NO_NEPOMUK
-    KFileMetaDataProvider* m_provider;
+    KFileMetaDataProvider *m_provider;
 #endif
-    QListWidget* m_metaDataList;
+    QListWidget *m_metaDataList;
 
 private:
-    KFileMetaDataConfigurationWidget* const q;
+    KFileMetaDataConfigurationWidget *const q;
 };
 
-KFileMetaDataConfigurationWidget::Private::Private(KFileMetaDataConfigurationWidget* parent) :
+KFileMetaDataConfigurationWidget::Private::Private(KFileMetaDataConfigurationWidget *parent) :
     m_visibleDataTypes(0),
     m_fileItems(),
 #if ! KIO_NO_NEPOMUK
@@ -82,7 +82,7 @@ KFileMetaDataConfigurationWidget::Private::Private(KFileMetaDataConfigurationWid
     m_metaDataList->setSelectionMode(QAbstractItemView::NoSelection);
     m_metaDataList->setSortingEnabled(true);
 
-    QVBoxLayout* layout = new QVBoxLayout(q);
+    QVBoxLayout *layout = new QVBoxLayout(q);
     layout->addWidget(m_metaDataList);
 
 #if ! KIO_NO_NEPOMUK
@@ -103,12 +103,12 @@ void KFileMetaDataConfigurationWidget::Private::loadMetaData()
 #endif
 }
 
-void KFileMetaDataConfigurationWidget::Private::addItem(const QUrl& uri)
+void KFileMetaDataConfigurationWidget::Private::addItem(const QUrl &uri)
 {
     // Meta information provided by Nepomuk that is already
     // available from KFileItem as "fixed item" (see above)
     // should not be shown as second entry.
-    static const char* const hiddenProperties[] = {
+    static const char *const hiddenProperties[] = {
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#comment",         // = fixed item kfileitem#comment
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#contentSize",     // = fixed item kfileitem#size
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#lastModified",    // = fixed item kfileitem#modified
@@ -141,7 +141,7 @@ void KFileMetaDataConfigurationWidget::Private::addItem(const QUrl& uri)
     const QString label = KNfoTranslator::instance().translation(uri);
 #endif
 
-    QListWidgetItem* item = new QListWidgetItem(label, m_metaDataList);
+    QListWidgetItem *item = new QListWidgetItem(label, m_metaDataList);
     item->setData(Qt::UserRole, key);
     const bool show = settings.readEntry(key, true);
     item->setCheckState(show ? Qt::Checked : Qt::Unchecked);
@@ -163,7 +163,7 @@ void KFileMetaDataConfigurationWidget::Private::slotLoadingFinished()
 #endif
 }
 
-KFileMetaDataConfigurationWidget::KFileMetaDataConfigurationWidget(QWidget* parent) :
+KFileMetaDataConfigurationWidget::KFileMetaDataConfigurationWidget(QWidget *parent) :
     QWidget(parent),
     d(new Private(this))
 {
@@ -174,7 +174,7 @@ KFileMetaDataConfigurationWidget::~KFileMetaDataConfigurationWidget()
     delete d;
 }
 
-void KFileMetaDataConfigurationWidget::setItems(const KFileItemList& items)
+void KFileMetaDataConfigurationWidget::setItems(const KFileItemList &items)
 {
     d->m_fileItems = items;
 }
@@ -191,7 +191,7 @@ void KFileMetaDataConfigurationWidget::save()
 
     const int count = d->m_metaDataList->count();
     for (int i = 0; i < count; ++i) {
-        QListWidgetItem* item = d->m_metaDataList->item(i);
+        QListWidgetItem *item = d->m_metaDataList->item(i);
         const bool show = (item->checkState() == Qt::Checked);
         const QString key = item->data(Qt::UserRole).toString();
         showGroup.writeEntry(key, show);
@@ -200,7 +200,7 @@ void KFileMetaDataConfigurationWidget::save()
     showGroup.sync();
 }
 
-bool KFileMetaDataConfigurationWidget::event(QEvent* event)
+bool KFileMetaDataConfigurationWidget::event(QEvent *event)
 {
     if (event->type() == QEvent::Polish) {
         // loadMetaData() must be invoked asynchronously, as the list
@@ -214,6 +214,5 @@ QSize KFileMetaDataConfigurationWidget::sizeHint() const
 {
     return d->m_metaDataList->sizeHint();
 }
-
 
 #include "moc_kfilemetadataconfigurationwidget.cpp"

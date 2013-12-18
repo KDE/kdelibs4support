@@ -21,15 +21,15 @@
 
 #include "kcolordialog.h"
 
-int main( int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
-	QApplication::setColorSpec( QApplication::CustomColor );
-	QApplication::setApplicationName("KColorDialogTest");
-	QApplication a(argc, argv);
+    QApplication::setColorSpec(QApplication::CustomColor);
+    QApplication::setApplicationName("KColorDialogTest");
+    QApplication a(argc, argv);
 
-	QColor color;
-	int nRet = KColorDialog::getColor( color, Qt::red /*testing default color*/ );
+    QColor color;
+    int nRet = KColorDialog::getColor(color, Qt::red /*testing default color*/);
 
-	return nRet;
+    return nRet;
 }
 

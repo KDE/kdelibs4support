@@ -72,7 +72,7 @@ public:
      * @param parent the QWidget's parent, or 0
      * @return the KScanDialog, or 0 if the function failed
      */
-    static KScanDialog * getScanDialog( QWidget *parent = 0 );
+    static KScanDialog *getScanDialog(QWidget *parent = 0);
     /**
      * Destructs the scan dialog.
      */
@@ -99,9 +99,9 @@ protected:
      * @param parent The QWidget's parent, or 0
      * @see KPageDialog
      */
-    explicit KScanDialog( int dialogFace = Tabbed,
-                          int buttonMask = QDialogButtonBox::Close|QDialogButtonBox::Help,
-                          QWidget *parent = 0 );
+    explicit KScanDialog(int dialogFace = Tabbed,
+                         int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
+                         QWidget *parent = 0);
 
     /**
      * Returns the current id for an image. You can use that in your subclass
@@ -135,7 +135,7 @@ Q_SIGNALS:
      * @param img the image
      * @param id the image's id
      */
-    void preview( const QImage &img, int id );
+    void preview(const QImage &img, int id);
 
     /**
      * Informs you that an image has scanned. @p id is the same as in the
@@ -146,7 +146,7 @@ Q_SIGNALS:
      * @param img the image
      * @param id the image's id
      */
-    void finalImage( const QImage &img, int id );
+    void finalImage(const QImage &img, int id);
 
     /**
      * Informs you that the image with the id @p id has been run through
@@ -156,13 +156,12 @@ Q_SIGNALS:
      * @param text the text that has been recognized
      * @param id the id of the image
      */
-    void textRecognized( const QString &text, int id );
+    void textRecognized(const QString &text, int id);
 
 private:
     class KScanDialogPrivate;
     KScanDialogPrivate *const d;
 };
-
 
 /**
  * Base class for OCR Dialogs.
@@ -180,7 +179,7 @@ public:
      * @param parent the QWidget's parent, or 0
      * @return the KOCRDialog, or 0 if the function failed
      */
-    static KOCRDialog * getOCRDialog( QWidget *parent = 0 );
+    static KOCRDialog *getOCRDialog(QWidget *parent = 0);
     ~KOCRDialog();
 
 protected:
@@ -194,8 +193,8 @@ protected:
      * @param parent the QWidget's parent, or 0
      * @param modal if true the dialog is model
      */
-    explicit KOCRDialog( int dialogFace=Tabbed, int buttonMask = QDialogButtonBox::Close|QDialogButtonBox::Help,
-                         QWidget *parent=0L, bool modal=false );
+    explicit KOCRDialog(int dialogFace = Tabbed, int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
+                        QWidget *parent = 0L, bool modal = false);
 
     /**
      * Returns the current id for an image. You can use that in your subclass
@@ -227,12 +226,11 @@ Q_SIGNALS:
      * @param text the text that has been recognized
      * @param id the id of the image
      */
-    void textRecognized( const QString &text, int id );
+    void textRecognized(const QString &text, int id);
 
 private:
     class KOCRDialogPrivate;
-    KOCRDialogPrivate * const d;
+    KOCRDialogPrivate *const d;
 };
-
 
 #endif // KSCAN_H

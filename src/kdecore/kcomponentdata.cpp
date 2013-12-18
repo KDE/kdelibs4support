@@ -31,9 +31,9 @@
 
 #ifndef NDEBUG
 #define MYASSERT(x) if (!x) \
-   qFatal("Fatal error: you need to have a KComponentData object before\n" \
-         "you do anything that requires it! Examples of this are config\n" \
-         "objects, standard directories or translations.");
+        qFatal("Fatal error: you need to have a KComponentData object before\n" \
+               "you do anything that requires it! Examples of this are config\n" \
+               "objects, standard directories or translations.");
 #else
 #define MYASSERT(x) /* nope */
 #endif
@@ -72,7 +72,7 @@ bool KComponentData::operator==(const KComponentData &rhs) const
 
 bool KComponentData::operator!=(const KComponentData &rhs) const
 {
-  return !operator==(rhs);
+    return !operator==(rhs);
 }
 
 enum KdeLibraryPathsAdded {
@@ -103,7 +103,6 @@ public:
     }
 };
 
-
 /**
  * This component may be used in applications that doesn't have a
  * main component (such as pure Qt applications).
@@ -111,10 +110,12 @@ public:
 static KComponentData initFakeComponent()
 {
     QString name = QCoreApplication::applicationName();
-    if(name.isEmpty() && QCoreApplication::instance())
+    if (name.isEmpty() && QCoreApplication::instance()) {
         name = qAppName();
-    if(name.isEmpty())
+    }
+    if (name.isEmpty()) {
         name = QString::fromLatin1("kde");
+    }
     return KComponentData(name.toLatin1(), name.toLatin1(),
                           KComponentData::SkipMainComponentRegistration);
 }
@@ -219,7 +220,7 @@ void KComponentDataPrivate::configInit()
         KConfigGroup cg(sharedConfig, "KDE Action Restrictions");
         QString kioskException = cg.readEntry("kiosk_exception");
         if (!cg.readEntry("custom_config", true)) {
-           sharedConfig = 0;
+            sharedConfig = 0;
         }
     }
 
@@ -275,17 +276,17 @@ QString KComponentData::catalogName() const
 
 bool KComponentData::hasMainComponent()
 {
-    KComponentDataStatic* s = globalStatic();
+    KComponentDataStatic *s = globalStatic();
     return s && s->mainComponent.isValid();
 }
 
-const KComponentData& KComponentData::mainComponent()
+const KComponentData &KComponentData::mainComponent()
 {
-    KComponentDataStatic* s = globalStatic();
+    KComponentDataStatic *s = globalStatic();
     return s && s->mainComponent.isValid() ? s->mainComponent : *fakeComponent();
 }
 
-const KComponentData& KComponentData::activeComponent()
+const KComponentData &KComponentData::activeComponent()
 {
     MYASSERT(globalStatic()->activeComponent.isValid());
     return globalStatic()->activeComponent;
@@ -306,6 +307,8 @@ KComponentData::operator KAboutData() const
     return KAboutData(*aboutData());
 }
 
-void KComponentData::virtual_hook(int, void*)
-{ /*BASE::virtual_hook(id, data);*/ }
+void KComponentData::virtual_hook(int, void *)
+{
+    /*BASE::virtual_hook(id, data);*/
+}
 

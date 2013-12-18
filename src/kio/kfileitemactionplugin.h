@@ -44,8 +44,8 @@ public:
 
     virtual ~KFileItemActionPlugin();
 
-    virtual QList<QAction*> actions(const KFileItemListProperties &fileItemInfos,
-                                    QWidget *parentWidget) const = 0;
+    virtual QList<QAction *> actions(const KFileItemListProperties &fileItemInfos,
+                                     QWidget *parentWidget) const = 0;
 };
 
 #endif

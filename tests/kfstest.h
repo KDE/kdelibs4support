@@ -15,7 +15,7 @@ class KFDTest : public QObject
     Q_OBJECT
 
 public:
-    KFDTest( const QUrl& startDir, QObject *parent = 0, const char *name = 0);
+    KFDTest(const QUrl &startDir, QObject *parent = 0, const char *name = 0);
 
 public Q_SLOTS:
     void doit();
@@ -23,6 +23,5 @@ public Q_SLOTS:
 private:
     QUrl m_startDir;
 };
-
 
 #endif // KFDTEST_H

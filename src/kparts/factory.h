@@ -41,10 +41,10 @@ class Part;
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT Factory : public KPluginFactory
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  Factory( QObject *parent = 0 );
-  virtual ~Factory();
+    Factory(QObject *parent = 0);
+    virtual ~Factory();
 
     /**
      * Creates a part.
@@ -73,24 +73,24 @@ public:
      * important for reference counting, and allows unloading the
      * library automatically once all its objects have been destroyed.
      */
-     Part *createPart( QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList() );
+    Part *createPart(QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList());
 
-     /**
-      * If you have a part contained in a shared library you might want to query
-      * for meta-information like the about-data, or the KComponentData in general.
-      * If the part is exported using KParts::GenericFactory then this method will
-      * return the instance that belongs to the part without the need to instantiate
-      * the part component.
-      */
-     virtual KComponentData partComponentData();
+    /**
+     * If you have a part contained in a shared library you might want to query
+     * for meta-information like the about-data, or the KComponentData in general.
+     * If the part is exported using KParts::GenericFactory then this method will
+     * return the instance that belongs to the part without the need to instantiate
+     * the part component.
+     */
+    virtual KComponentData partComponentData();
 
-     /**
-      * A convenience method for partComponentData that takes care of retrieving
-      * the factory for a given library name and calling partComponentData on it.
-      *
-      * @param libraryName name of the library to query the instance from
-      */
-     static KComponentData partComponentDataFromLibrary(const QString &libraryName);
+    /**
+     * A convenience method for partComponentData that takes care of retrieving
+     * the factory for a given library name and calling partComponentData on it.
+     *
+     * @param libraryName name of the library to query the instance from
+     */
+    static KComponentData partComponentDataFromLibrary(const QString &libraryName);
 
 protected:
 
@@ -116,19 +116,15 @@ protected:
      *
      * @returns the newly created part.
      */
-    virtual Part *createPartObject( QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList() ) = 0;
+    virtual Part *createPartObject(QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList()) = 0;
 
     /**
      * Reimplemented from KPluginFactory. Calls createPart()
      */
-    virtual QObject *createObject( QObject *parent = 0, const char *classname = "QObject", const QStringList &args = QStringList() );
+    virtual QObject *createObject(QObject *parent = 0, const char *classname = "QObject", const QStringList &args = QStringList());
 
 };
 
 }
-
-/*
- * vim: et sw=4
- */
 
 #endif

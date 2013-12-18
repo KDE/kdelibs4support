@@ -20,10 +20,9 @@
 
 #include "klibloadertest.h"
 
-
 #include <QtTest>
 
-QTEST_MAIN( KLibLoaderTest )
+QTEST_MAIN(KLibLoaderTest)
 
 #include <klibloader.h>
 //#include <kstandarddirs.h>
@@ -41,14 +40,14 @@ void KLibLoaderTest::initTestCase()
 void KLibLoaderTest::testNonWorking()
 {
     int error = 0;
-    QObject* obj = KLibLoader::createInstance<QObject>( "idontexist", this, QStringList(), &error );
-    QCOMPARE( obj, (QObject*)0 );
-    QCOMPARE( error, (int)KLibLoader::ErrNoLibrary );
-    QString errorString = KLibLoader::errorString( error );
+    QObject *obj = KLibLoader::createInstance<QObject>("idontexist", this, QStringList(), &error);
+    QCOMPARE(obj, (QObject *)0);
+    QCOMPARE(error, (int)KLibLoader::ErrNoLibrary);
+    QString errorString = KLibLoader::errorString(error);
     qDebug() << errorString;
-    QVERIFY( !errorString.isEmpty() );
+    QVERIFY(!errorString.isEmpty());
 
-    KPluginFactory* factory = KPluginLoader( "idontexist2" ).factory();
+    KPluginFactory *factory = KPluginLoader("idontexist2").factory();
     QVERIFY(!factory);
 }
 
@@ -57,25 +56,26 @@ static const char s_kgenericFactoryModule[] = "klibloadertestmodule";
 
 void KLibLoaderTest::testFindLibrary()
 {
-    const QString library = KLibLoader::findLibrary( s_kgenericFactoryModule );
-    QVERIFY( !library.isEmpty() );
-    const QString libraryPath = QFileInfo( library ).canonicalFilePath();
+    const QString library = KLibLoader::findLibrary(s_kgenericFactoryModule);
+    QVERIFY(!library.isEmpty());
+    const QString libraryPath = QFileInfo(library).canonicalFilePath();
 #if defined(Q_OS_WIN) || defined(Q_OS_CYGWIN)
-    const QString expectedPath = QFileInfo( QDir::currentPath()  + '/' + s_kgenericFactoryModule + ".dll" ).canonicalFilePath();
+    const QString expectedPath = QFileInfo(QDir::currentPath()  + '/' + s_kgenericFactoryModule + ".dll").canonicalFilePath();
 #else
-    const QString expectedPath = QFileInfo( QDir::currentPath()  + '/' + s_kgenericFactoryModule + ".so" ).canonicalFilePath();
+    const QString expectedPath = QFileInfo(QDir::currentPath()  + '/' + s_kgenericFactoryModule + ".so").canonicalFilePath();
 #endif
-    QCOMPARE( library, expectedPath );
+    QCOMPARE(library, expectedPath);
 }
 
 // old loader, old plugin
 void KLibLoaderTest::testWorking_KLibLoader_KGenericFactory()
 {
     int error = 0;
-    QObject* obj = KLibLoader::createInstance<QObject>( s_kgenericFactoryModule, 0, QStringList(), &error );
-    if ( error )
+    QObject *obj = KLibLoader::createInstance<QObject>(s_kgenericFactoryModule, 0, QStringList(), &error);
+    if (error) {
         qWarning() << "error=" << error << " lastErrorMessage=" << KLibLoader::self()->lastErrorMessage();
-    QVERIFY( obj != 0 );
+    }
+    QVERIFY(obj != 0);
     delete obj;
 }
 
@@ -84,12 +84,12 @@ void KLibLoaderTest::testWrongClass_KLibLoader_KGenericFactory()
 {
     int error = 0;
 
-    KLibLoaderTest* obj = KLibLoader::createInstance<KLibLoaderTest>( s_kgenericFactoryModule, 0, QStringList(), &error );
-    QCOMPARE( obj, (KLibLoaderTest*)0 );
-    QCOMPARE( error, (int)KLibLoader::ErrNoComponent );
-    QString errorString = KLibLoader::errorString( error );
+    KLibLoaderTest *obj = KLibLoader::createInstance<KLibLoaderTest>(s_kgenericFactoryModule, 0, QStringList(), &error);
+    QCOMPARE(obj, (KLibLoaderTest *)0);
+    QCOMPARE(error, (int)KLibLoader::ErrNoComponent);
+    QString errorString = KLibLoader::errorString(error);
     qDebug() << errorString;
-    QVERIFY( !errorString.isEmpty() );
+    QVERIFY(!errorString.isEmpty());
 }
 
 static const char s_kpluginFactoryModule[] = "klibloadertestmodule4";
@@ -98,10 +98,11 @@ static const char s_kpluginFactoryModule[] = "klibloadertestmodule4";
 void KLibLoaderTest::testWorking_KLibLoader_KPluginFactory()
 {
     int error = 0;
-    QObject* obj = KLibLoader::createInstance<QObject>( s_kpluginFactoryModule, 0, QStringList(), &error );
-    if ( error )
+    QObject *obj = KLibLoader::createInstance<QObject>(s_kpluginFactoryModule, 0, QStringList(), &error);
+    if (error) {
         qWarning() << "error=" << error << " lastErrorMessage=" << KLibLoader::self()->lastErrorMessage();
-    QVERIFY( obj != 0 );
+    }
+    QVERIFY(obj != 0);
     delete obj;
 }
 
@@ -109,12 +110,12 @@ void KLibLoaderTest::testWorking_KLibLoader_KPluginFactory()
 void KLibLoaderTest::testWorking_KPluginLoader_KGenericFactory()
 {
     KPluginLoader loader(s_kgenericFactoryModule);
-    KPluginFactory* factory = loader.factory();
+    KPluginFactory *factory = loader.factory();
     if (!factory) {
         qWarning() << "error=" << loader.errorString();
         QVERIFY(factory);
     } else {
-        QObject* obj = factory->create<QObject>();
+        QObject *obj = factory->create<QObject>();
         if (!obj) {
             qWarning() << "Error creating object";
         }
@@ -127,12 +128,12 @@ void KLibLoaderTest::testWorking_KPluginLoader_KGenericFactory()
 void KLibLoaderTest::testWorking_KPluginLoader_KPluginFactory()
 {
     KPluginLoader loader(s_kpluginFactoryModule);
-    KPluginFactory* factory = loader.factory();
+    KPluginFactory *factory = loader.factory();
     if (!factory) {
         qWarning() << "error=" << loader.errorString();
         QVERIFY(factory);
     } else {
-        QObject* obj = factory->create<QObject>();
+        QObject *obj = factory->create<QObject>();
         if (!obj) {
             qWarning() << "Error creating object";
         }

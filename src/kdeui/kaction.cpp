@@ -42,25 +42,25 @@
 
 void KActionPrivate::init(KAction *q_ptr)
 {
-  q = q_ptr;
+    q = q_ptr;
 
-  QObject::connect(q, SIGNAL(triggered(bool)), q, SLOT(slotTriggered()));
+    QObject::connect(q, SIGNAL(triggered(bool)), q, SLOT(slotTriggered()));
 
-  q->setProperty("isShortcutConfigurable", true);
+    q->setProperty("isShortcutConfigurable", true);
 
-  decorator = new KAuth::ObjectDecorator(q);
-  QObject::connect(decorator, SIGNAL(authorized(KAuth::Action)),
-                   q, SIGNAL(authorized(KAuth::Action)));
-  QObject::connect(KGlobalAccel::self(), SIGNAL(globalShortcutChanged(QAction*,const QKeySequence&)),
-        q, SLOT(_k_emitActionGlobalShortcutChanged(QAction*,const QKeySequence&)));
+    decorator = new KAuth::ObjectDecorator(q);
+    QObject::connect(decorator, SIGNAL(authorized(KAuth::Action)),
+                     q, SIGNAL(authorized(KAuth::Action)));
+    QObject::connect(KGlobalAccel::self(), SIGNAL(globalShortcutChanged(QAction*,QKeySequence)),
+                     q, SLOT(_k_emitActionGlobalShortcutChanged(QAction*,QKeySequence)));
 }
 
 void KActionPrivate::slotTriggered()
 {
 #ifdef KDE3_SUPPORT
-  emit q->activated();
+    emit q->activated();
 #endif
-  emit q->triggered(QApplication::mouseButtons(), QApplication::keyboardModifiers());
+    emit q->triggered(QApplication::mouseButtons(), QApplication::keyboardModifiers());
 }
 
 void KActionPrivate::_k_emitActionGlobalShortcutChanged(QAction *action, const QKeySequence &seq)
@@ -77,24 +77,24 @@ void KActionPrivate::_k_emitActionGlobalShortcutChanged(QAction *action, const Q
 //---------------------------------------------------------------------
 
 KAction::KAction(QObject *parent)
-  : QWidgetAction(parent), d(new KActionPrivate)
+    : QWidgetAction(parent), d(new KActionPrivate)
 {
-  d->init(this);
+    d->init(this);
 }
 
 KAction::KAction(const QString &text, QObject *parent)
-  : QWidgetAction(parent), d(new KActionPrivate)
+    : QWidgetAction(parent), d(new KActionPrivate)
 {
-  d->init(this);
-  setText(text);
+    d->init(this);
+    setText(text);
 }
 
 KAction::KAction(const QIcon &icon, const QString &text, QObject *parent)
-  : QWidgetAction(parent), d(new KActionPrivate)
+    : QWidgetAction(parent), d(new KActionPrivate)
 {
-  d->init(this);
-  setIcon(icon);
-  setText(text);
+    d->init(this);
+    setIcon(icon);
+    setText(text);
 }
 
 KAction::~KAction()
@@ -108,101 +108,103 @@ bool KAction::isShortcutConfigurable() const
     return property("isShortcutConfigurable").toBool();
 }
 
-void KAction::setShortcutConfigurable( bool b )
+void KAction::setShortcutConfigurable(bool b)
 {
     setProperty("isShortcutConfigurable", b);
 }
 
 KShortcut KAction::shortcut(ShortcutTypes type) const
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if (type == DefaultShortcut) {
-      QList<QKeySequence> shortcuts = property("defaultShortcuts").value<QList<QKeySequence> >();
-      return KShortcut(shortcuts);
-  }
+    if (type == DefaultShortcut) {
+        QList<QKeySequence> shortcuts = property("defaultShortcuts").value<QList<QKeySequence> >();
+        return KShortcut(shortcuts);
+    }
 
-  QKeySequence primary = shortcuts().value(0);
-  QKeySequence secondary = shortcuts().value(1);
-  return KShortcut(primary, secondary);
+    QKeySequence primary = shortcuts().value(0);
+    QKeySequence secondary = shortcuts().value(1);
+    return KShortcut(primary, secondary);
 }
 
-void KAction::setShortcut( const KShortcut & shortcut, ShortcutTypes type )
+void KAction::setShortcut(const KShortcut &shortcut, ShortcutTypes type)
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if (type & DefaultShortcut) {
-      setProperty("defaultShortcuts", QVariant::fromValue(shortcut.toList()));
-  }
+    if (type & DefaultShortcut) {
+        setProperty("defaultShortcuts", QVariant::fromValue(shortcut.toList()));
+    }
 
-  if (type & ActiveShortcut) {
-      QAction::setShortcuts(shortcut);
-  }
+    if (type & ActiveShortcut) {
+        QAction::setShortcuts(shortcut);
+    }
 }
 
-void KAction::setShortcut( const QKeySequence & keySeq, ShortcutTypes type )
+void KAction::setShortcut(const QKeySequence &keySeq, ShortcutTypes type)
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if (type & DefaultShortcut)
-      setProperty("defaultShortcuts", QVariant::fromValue(QList<QKeySequence>() << keySeq));
+    if (type & DefaultShortcut) {
+        setProperty("defaultShortcuts", QVariant::fromValue(QList<QKeySequence>() << keySeq));
+    }
 
-  if (type & ActiveShortcut) {
-      QAction::setShortcut(keySeq);
-  }
+    if (type & ActiveShortcut) {
+        QAction::setShortcut(keySeq);
+    }
 }
 
-void KAction::setShortcuts(const QList<QKeySequence>& shortcuts, ShortcutTypes type)
+void KAction::setShortcuts(const QList<QKeySequence> &shortcuts, ShortcutTypes type)
 {
-  setShortcut(KShortcut(shortcuts), type);
+    setShortcut(KShortcut(shortcuts), type);
 }
 
 KShortcut KAction::globalShortcut(ShortcutTypes type) const
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if (type == DefaultShortcut)
-    return KGlobalAccel::self()->defaultShortcut(this);
+    if (type == DefaultShortcut) {
+        return KGlobalAccel::self()->defaultShortcut(this);
+    }
 
-  return KGlobalAccel::self()->shortcut(this);
+    return KGlobalAccel::self()->shortcut(this);
 }
 
-void KAction::setGlobalShortcut( const KShortcut & shortcut, ShortcutTypes type,
-                                 GlobalShortcutLoading load )
+void KAction::setGlobalShortcut(const KShortcut &shortcut, ShortcutTypes type,
+                                GlobalShortcutLoading load)
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if ((type & DefaultShortcut) && globalShortcut(DefaultShortcut) != shortcut) {
-    KGlobalAccel::self()->setDefaultShortcut(this, shortcut,
-                                             static_cast<KGlobalAccel::GlobalShortcutLoading>(load));
-  }
+    if ((type & DefaultShortcut) && globalShortcut(DefaultShortcut) != shortcut) {
+        KGlobalAccel::self()->setDefaultShortcut(this, shortcut,
+                static_cast<KGlobalAccel::GlobalShortcutLoading>(load));
+    }
 
-  if ((type & ActiveShortcut) && globalShortcut(ActiveShortcut) != shortcut) {
-    KGlobalAccel::self()->setShortcut(this, shortcut,
-                                      static_cast<KGlobalAccel::GlobalShortcutLoading>(load));
-  }
+    if ((type & ActiveShortcut) && globalShortcut(ActiveShortcut) != shortcut) {
+        KGlobalAccel::self()->setShortcut(this, shortcut,
+                                          static_cast<KGlobalAccel::GlobalShortcutLoading>(load));
+    }
 }
 
 #ifndef KDE_NO_DEPRECATED
 bool KAction::globalShortcutAllowed() const
 {
-  return isGlobalShortcutEnabled();
+    return isGlobalShortcutEnabled();
 }
 #endif
 
 bool KAction::isGlobalShortcutEnabled() const
 {
-  return KGlobalAccel::self()->hasShortcut(this);
+    return KGlobalAccel::self()->hasShortcut(this);
 }
 
 #ifndef KDE_NO_DEPRECATED
-void KAction::setGlobalShortcutAllowed( bool allowed, GlobalShortcutLoading /* load */ )
+void KAction::setGlobalShortcutAllowed(bool allowed, GlobalShortcutLoading /* load */)
 {
-  if (allowed) {
-      //### no-op
-  } else {
-      forgetGlobalShortcut();
-  }
+    if (allowed) {
+        //### no-op
+    } else {
+        forgetGlobalShortcut();
+    }
 }
 #endif
 
@@ -213,17 +215,17 @@ void KAction::forgetGlobalShortcut()
     }
 }
 
-KShapeGesture KAction::shapeGesture( ShortcutTypes type ) const
+KShapeGesture KAction::shapeGesture(ShortcutTypes type) const
 {
     Q_ASSERT(type);
-    if ( type & DefaultShortcut ) {
+    if (type & DefaultShortcut) {
         return KGestureMap::self()->defaultShapeGesture(this);
     } else {
         return KGestureMap::self()->shapeGesture(this);
     }
 }
 
-KRockerGesture KAction::rockerGesture( ShortcutTypes type ) const
+KRockerGesture KAction::rockerGesture(ShortcutTypes type) const
 {
     Q_ASSERT(type);
     if (type & DefaultShortcut) {
@@ -233,46 +235,47 @@ KRockerGesture KAction::rockerGesture( ShortcutTypes type ) const
     }
 }
 
-void KAction::setShapeGesture( const KShapeGesture& gest,  ShortcutTypes type )
+void KAction::setShapeGesture(const KShapeGesture &gest,  ShortcutTypes type)
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if (type & DefaultShortcut) {
-    KGestureMap::self()->setDefaultShapeGesture(this, gest);
-  }
-
-  if (type & ActiveShortcut) {
-    if ( KGestureMap::self()->findAction( gest ) ) {
-      kDebug(283) << "New mouse gesture already in use, won't change gesture.";
-      return;
+    if (type & DefaultShortcut) {
+        KGestureMap::self()->setDefaultShapeGesture(this, gest);
     }
-    KGestureMap::self()->setShapeGesture(this, gest);
-  }
+
+    if (type & ActiveShortcut) {
+        if (KGestureMap::self()->findAction(gest)) {
+            kDebug(283) << "New mouse gesture already in use, won't change gesture.";
+            return;
+        }
+        KGestureMap::self()->setShapeGesture(this, gest);
+    }
 }
 
-void KAction::setRockerGesture( const KRockerGesture& gest,  ShortcutTypes type )
+void KAction::setRockerGesture(const KRockerGesture &gest,  ShortcutTypes type)
 {
-  Q_ASSERT(type);
+    Q_ASSERT(type);
 
-  if( type & DefaultShortcut ) {
-    KGestureMap::self()->setDefaultRockerGesture(this, gest);
-  }
-
-  if ( type & ActiveShortcut ) {
-    if ( KGestureMap::self()->findAction( gest ) ) {
-      kDebug(283) << "New mouse gesture already in use, won't change gesture.";
-      return;
+    if (type & DefaultShortcut) {
+        KGestureMap::self()->setDefaultRockerGesture(this, gest);
     }
-    KGestureMap::self()->setRockerGesture(this, gest);
-  }
+
+    if (type & ActiveShortcut) {
+        if (KGestureMap::self()->findAction(gest)) {
+            kDebug(283) << "New mouse gesture already in use, won't change gesture.";
+            return;
+        }
+        KGestureMap::self()->setRockerGesture(this, gest);
+    }
 }
 
-void KAction::setHelpText(const QString& text)
+void KAction::setHelpText(const QString &text)
 {
     setStatusTip(text);
     setToolTip(text);
-    if (whatsThis().isEmpty())
+    if (whatsThis().isEmpty()) {
         setWhatsThis(text);
+    }
 }
 
 KAuth::Action KAction::authAction() const
@@ -289,8 +292,5 @@ void KAction::setAuthAction(const KAuth::Action &action)
 {
     d->decorator->setAuthAction(action);
 }
-
-/* vim: et sw=2 ts=2
- */
 
 #include "moc_kaction.cpp"

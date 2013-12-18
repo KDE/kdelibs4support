@@ -65,10 +65,13 @@ typedef void (*KdeCleanUpFunction)();
  */
 class KCleanUpGlobalStatic
 {
-    public:
-        KdeCleanUpFunction func;
+public:
+    KdeCleanUpFunction func;
 
-        inline ~KCleanUpGlobalStatic() { func(); }
+    inline ~KCleanUpGlobalStatic()
+    {
+        func();
+    }
 };
 
 #ifdef Q_CC_MSVC
@@ -268,52 +271,51 @@ class KCleanUpGlobalStatic
 // which isn't in Qt5 yet, so duplicate for now.
 
 #define K_GLOBAL_STATIC_WITH_ARGS(TYPE, NAME, ARGS)                            \
-static QBasicAtomicPointer<TYPE > _k_static_##NAME = Q_BASIC_ATOMIC_INITIALIZER(0); \
-static bool _k_static_##NAME##_destroyed;                                      \
-static struct K_GLOBAL_STATIC_STRUCT_NAME(NAME)                                \
-{                                                                              \
-    inline bool isDestroyed() const                                            \
-    {                                                                          \
-        return _k_static_##NAME##_destroyed;                                   \
-    }                                                                          \
-    inline bool exists() const                                                 \
-    {                                                                          \
-        return _k_static_##NAME.load() != 0;                                          \
-    }                                                                          \
-    inline operator TYPE*()                                                    \
-    {                                                                          \
-        return operator->();                                                   \
-    }                                                                          \
-    inline TYPE *operator->()                                                  \
-    {                                                                          \
-        if (!_k_static_##NAME.load()) {                                               \
-            if (isDestroyed()) {                                               \
-                qFatal("Fatal Error: Accessed global static '%s *%s()' after destruction. " \
-                       "Defined at %s:%d", #TYPE, #NAME, __FILE__, __LINE__);  \
-            }                                                                  \
-            TYPE *x = new TYPE ARGS;                                           \
-            if (!_k_static_##NAME.testAndSetOrdered(0, x)                      \
-                && _k_static_##NAME.load() != x ) {                                   \
-                delete x;                                                      \
-            } else {                                                           \
-                static KCleanUpGlobalStatic cleanUpObject = { destroy };       \
-            }                                                                  \
-        }                                                                      \
-        return _k_static_##NAME.load();                                               \
-    }                                                                          \
-    inline TYPE &operator*()                                                   \
-    {                                                                          \
-        return *operator->();                                                  \
-    }                                                                          \
-    static void destroy()                                                      \
-    {                                                                          \
-        _k_static_##NAME##_destroyed = true;                                   \
-        TYPE *x = _k_static_##NAME.load();                                            \
-        _k_static_##NAME.store(0);                                                  \
-        delete x;                                                              \
-    }                                                                          \
-} NAME;
-
+    static QBasicAtomicPointer<TYPE > _k_static_##NAME = Q_BASIC_ATOMIC_INITIALIZER(0); \
+    static bool _k_static_##NAME##_destroyed;                                      \
+    static struct K_GLOBAL_STATIC_STRUCT_NAME(NAME)                                \
+    {                                                                              \
+        inline bool isDestroyed() const                                            \
+        {                                                                          \
+            return _k_static_##NAME##_destroyed;                                   \
+        }                                                                          \
+        inline bool exists() const                                                 \
+        {                                                                          \
+            return _k_static_##NAME.load() != 0;                                          \
+        }                                                                          \
+        inline operator TYPE*()                                                    \
+        {                                                                          \
+            return operator->();                                                   \
+        }                                                                          \
+        inline TYPE *operator->()                                                  \
+        {                                                                          \
+            if (!_k_static_##NAME.load()) {                                               \
+                if (isDestroyed()) {                                               \
+                    qFatal("Fatal Error: Accessed global static '%s *%s()' after destruction. " \
+                           "Defined at %s:%d", #TYPE, #NAME, __FILE__, __LINE__);  \
+                }                                                                  \
+                TYPE *x = new TYPE ARGS;                                           \
+                if (!_k_static_##NAME.testAndSetOrdered(0, x)                      \
+                        && _k_static_##NAME.load() != x ) {                                   \
+                    delete x;                                                      \
+                } else {                                                           \
+                    static KCleanUpGlobalStatic cleanUpObject = { destroy };       \
+                }                                                                  \
+            }                                                                      \
+            return _k_static_##NAME.load();                                               \
+        }                                                                          \
+        inline TYPE &operator*()                                                   \
+        {                                                                          \
+            return *operator->();                                                  \
+        }                                                                          \
+        static void destroy()                                                      \
+        {                                                                          \
+            _k_static_##NAME##_destroyed = true;                                   \
+            TYPE *x = _k_static_##NAME.load();                                            \
+            _k_static_##NAME.store(0);                                                  \
+            delete x;                                                              \
+        }                                                                          \
+    } NAME;
 
 /**
  * Access to the KDE global objects.
@@ -327,229 +329,228 @@ static struct K_GLOBAL_STATIC_STRUCT_NAME(NAME)                                \
 namespace KGlobal
 {
 
-  struct KDE4SUPPORT_DEPRECATED_EXPORT_NOISE LocaleWrapper : public KLocale
-  {
+struct KDE4SUPPORT_DEPRECATED_EXPORT_NOISE LocaleWrapper : public KLocale {
     explicit LocaleWrapper(KLocale *locale)
-      : KLocale(*locale)
+        : KLocale(*locale)
     {
 
     }
 
     KDE4SUPPORT_DEPRECATED static void insertCatalog(const QString &)
     {
-      qWarning() << "Your code needs to be ported in KF5.  See the Ki18n programmers guide.";
+        qWarning() << "Your code needs to be ported in KF5.  See the Ki18n programmers guide.";
     }
 
-    LocaleWrapper* operator->()
+    LocaleWrapper *operator->()
     {
-      return this;
+        return this;
     }
 
-    operator KLocale*()
+    operator KLocale *()
     {
-      return this;
+        return this;
     }
-  };
+};
 
-    /**
-     * Returns the global component data.  There is always at least
-     * one instance of a component in one application (in most
-     * cases the application itself).
-     * @return the global component data
-     * @deprecated since 5.0 use KComponentData::mainComponent() if you really need a KComponentData
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT const KComponentData &mainComponent(); //krazy:exclude=constref (don't mess up ref-counting)
+/**
+ * Returns the global component data.  There is always at least
+ * one instance of a component in one application (in most
+ * cases the application itself).
+ * @return the global component data
+ * @deprecated since 5.0 use KComponentData::mainComponent() if you really need a KComponentData
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT const KComponentData &mainComponent(); //krazy:exclude=constref (don't mess up ref-counting)
 
-    /**
-     * @internal
-     * Returns whether a main KComponentData is available.
-     * @deprecated since 5.0, use KComponentData::hasMainComponent() if you really need a KComponentData
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT bool hasMainComponent();
+/**
+ * @internal
+ * Returns whether a main KComponentData is available.
+ * @deprecated since 5.0, use KComponentData::hasMainComponent() if you really need a KComponentData
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT bool hasMainComponent();
 
-    /**
-     * Returns the application standard dirs object.
-     * @return the global standard dir object
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT KStandardDirs *dirs();
+/**
+ * Returns the application standard dirs object.
+ * @return the global standard dir object
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT KStandardDirs *dirs();
 
-    /**
-     * Returns the general config object.
-     * @return the global configuration object.
-     * @deprecated since 5.0, use KSharedConfig::openConfig()
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT KSharedConfigPtr config();
+/**
+ * Returns the general config object.
+ * @return the global configuration object.
+ * @deprecated since 5.0, use KSharedConfig::openConfig()
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT KSharedConfigPtr config();
 
-    /**
-     * Returns the global locale object.
-     * @return the global locale object
-     *
-     * Note: in multi-threaded programs, you should call KLocale::global()
-     * in the main thread (e.g. in main(), after creating the QCoreApplication
-     * and setting the main component), to ensure that the initialization is
-     * done in the main thread. However KApplication takes care of this, so this
-     * is only needed when not using KApplication.
-     *
-     * @deprecated since 5.0, use KLocale::global()
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT LocaleWrapper locale();
-    /**
-     * @internal
-     * Returns whether KGlobal has a valid KLocale object
-     * @deprecated since 5.0, port to if (qApp) because KLocale::global() can be called, as soon as a qApp exists.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT bool hasLocale();
+/**
+ * Returns the global locale object.
+ * @return the global locale object
+ *
+ * Note: in multi-threaded programs, you should call KLocale::global()
+ * in the main thread (e.g. in main(), after creating the QCoreApplication
+ * and setting the main component), to ensure that the initialization is
+ * done in the main thread. However KApplication takes care of this, so this
+ * is only needed when not using KApplication.
+ *
+ * @deprecated since 5.0, use KLocale::global()
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT LocaleWrapper locale();
+/**
+ * @internal
+ * Returns whether KGlobal has a valid KLocale object
+ * @deprecated since 5.0, port to if (qApp) because KLocale::global() can be called, as soon as a qApp exists.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT bool hasLocale();
 
-    /**
-     * The global charset manager.
-     * @return the global charset manager
-     * @deprecated since 5.0, use KCharsets::charsets()
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT KCharsets *charsets();
+/**
+ * The global charset manager.
+ * @return the global charset manager
+ * @deprecated since 5.0, use KCharsets::charsets()
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT KCharsets *charsets();
 
-    /**
-     * Returns the umask of the process.
-     * @return the umask of the process
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT mode_t umask();
+/**
+ * Returns the umask of the process.
+ * @return the umask of the process
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT mode_t umask();
 
-    /**
-     * Creates a static QString.
-     *
-     * To be used inside functions(!) like:
-     * @code
-     * static const QString &myString = KGlobal::staticQString("myText");
-     * @endcode
-     *
-     * @attention Do @b NOT use code such as:
-     * @code
-     * static QString myString = KGlobal::staticQString("myText");
-     * @endcode
-     * This creates a static object (instead of a static reference)
-     * and as you know static objects are EVIL.
-     * @param str the string to create
-     * @return the static string
-     * @deprecated since 5.0, use QLatin1Literal()
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT const QString& staticQString(const char *str); //krazy:exclude=constref (doesn't make sense otherwise)
+/**
+ * Creates a static QString.
+ *
+ * To be used inside functions(!) like:
+ * @code
+ * static const QString &myString = KGlobal::staticQString("myText");
+ * @endcode
+ *
+ * @attention Do @b NOT use code such as:
+ * @code
+ * static QString myString = KGlobal::staticQString("myText");
+ * @endcode
+ * This creates a static object (instead of a static reference)
+ * and as you know static objects are EVIL.
+ * @param str the string to create
+ * @return the static string
+ * @deprecated since 5.0, use QLatin1Literal()
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT const QString &staticQString(const char *str); //krazy:exclude=constref (doesn't make sense otherwise)
 
-    /**
-     * Creates a static QString.
-     *
-     * To be used inside functions(!) like:
-     * @code
-     * static const QString &myString = KGlobal::staticQString(i18n("My Text"));
-     * @endcode
-     *
-     * @attention Do @b NOT use code such as:
-     * @code
-     * static QString myString = KGlobal::staticQString(i18n("myText"));
-     * @endcode
-     * This creates a static object (instead of a static reference)
-     * and as you know static objects are EVIL.
-     * @param str the string to create
-     * @return the static string
-     * @deprecated since 5.0 don't make the string static
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT const QString& staticQString(const QString &str); //krazy:exclude=constref (doesn't make sense otherwise)
+/**
+ * Creates a static QString.
+ *
+ * To be used inside functions(!) like:
+ * @code
+ * static const QString &myString = KGlobal::staticQString(i18n("My Text"));
+ * @endcode
+ *
+ * @attention Do @b NOT use code such as:
+ * @code
+ * static QString myString = KGlobal::staticQString(i18n("myText"));
+ * @endcode
+ * This creates a static object (instead of a static reference)
+ * and as you know static objects are EVIL.
+ * @param str the string to create
+ * @return the static string
+ * @deprecated since 5.0 don't make the string static
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT const QString &staticQString(const QString &str); //krazy:exclude=constref (doesn't make sense otherwise)
 
-    /**
-     * Tells KGlobal about one more operations that should be finished
-     * before the application exits. The standard behavior is to exit on the
-     * "last window closed" event, but some events should outlive the last window closed
-     * (e.g. a file copy for a file manager, or 'compacting folders on exit' for a mail client),
-     * or simply any application with a system tray icon.
-     *
-     * We have some use cases that we want to take care of (the format is "action refcount"):
-     * - open window -> setAllowQuit(true) 1 ; close window 0 => EXIT
-     * - job start 1; job end 0 [don't exit yet]; open window -> setAllowQuit(true) 1 ; close window 0 => EXIT
-     * - job start 1; open window -> setAllowQuit(true) 2; close window 1; job end 0 => EXIT
-     * - job start 1; open window -> setAllowQuit(true) 2; job end 1; close window 0 => EXIT
-     * - open dialog 0; close dialog 0; => DO NOT EXIT
-     * - job start 1; job end 0; create two main objects 2; delete both main objects 0 => EXIT
-     * - open window -> setAllowQuit(true) 1; add systray icon 2; close window 1 => DO NOT EXIT
-     * - open window -> setAllowQuit(true) 1; add systray icon 2; remove systray icon 1; close window 0 => EXIT
-     * - unit test which opens and closes many windows: should call ref() to avoid subevent-loops quitting too early.
-     *
-     * Note that for this to happen you must call qApp->setQuitOnLastWindowClosed(false),
-     * in main() for instance.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void ref();
+/**
+ * Tells KGlobal about one more operations that should be finished
+ * before the application exits. The standard behavior is to exit on the
+ * "last window closed" event, but some events should outlive the last window closed
+ * (e.g. a file copy for a file manager, or 'compacting folders on exit' for a mail client),
+ * or simply any application with a system tray icon.
+ *
+ * We have some use cases that we want to take care of (the format is "action refcount"):
+ * - open window -> setAllowQuit(true) 1 ; close window 0 => EXIT
+ * - job start 1; job end 0 [don't exit yet]; open window -> setAllowQuit(true) 1 ; close window 0 => EXIT
+ * - job start 1; open window -> setAllowQuit(true) 2; close window 1; job end 0 => EXIT
+ * - job start 1; open window -> setAllowQuit(true) 2; job end 1; close window 0 => EXIT
+ * - open dialog 0; close dialog 0; => DO NOT EXIT
+ * - job start 1; job end 0; create two main objects 2; delete both main objects 0 => EXIT
+ * - open window -> setAllowQuit(true) 1; add systray icon 2; close window 1 => DO NOT EXIT
+ * - open window -> setAllowQuit(true) 1; add systray icon 2; remove systray icon 1; close window 0 => EXIT
+ * - unit test which opens and closes many windows: should call ref() to avoid subevent-loops quitting too early.
+ *
+ * Note that for this to happen you must call qApp->setQuitOnLastWindowClosed(false),
+ * in main() for instance.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void ref();
 
-    /**
-     * Tells KGlobal that one operation such as those described in ref() just finished.
-     * This call makes the QApplication quit if the counter is back to 0.
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void deref();
+/**
+ * Tells KGlobal that one operation such as those described in ref() just finished.
+ * This call makes the QApplication quit if the counter is back to 0.
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void deref();
 
-    /**
-     * If refcounting reaches 0 (or less), and @p allowQuit is true, the instance of the application
-     * will automatically be exited. Otherwise, the application will not exit automatically.
-     *
-     * This is used by KMainWindow to allow quitting after the first mainwindow is created,
-     * and is used by special applications like kfmclient, to allow quitting even though
-     * no mainwindow was created.
-     *
-     * However, don't try to call setAllowQuit(false) in applications, it doesn't make sense.
-     * If you find that the application quits too early when closing a window, then consider
-     * _what_ is making your application still alive to the user (like a systray icon or a D-Bus object)
-     * and use KGlobal::ref() + KGlobal::deref() in that object.
-     *
-     * @since 4.1.1
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void setAllowQuit(bool allowQuit);
+/**
+ * If refcounting reaches 0 (or less), and @p allowQuit is true, the instance of the application
+ * will automatically be exited. Otherwise, the application will not exit automatically.
+ *
+ * This is used by KMainWindow to allow quitting after the first mainwindow is created,
+ * and is used by special applications like kfmclient, to allow quitting even though
+ * no mainwindow was created.
+ *
+ * However, don't try to call setAllowQuit(false) in applications, it doesn't make sense.
+ * If you find that the application quits too early when closing a window, then consider
+ * _what_ is making your application still alive to the user (like a systray icon or a D-Bus object)
+ * and use KGlobal::ref() + KGlobal::deref() in that object.
+ *
+ * @since 4.1.1
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void setAllowQuit(bool allowQuit);
 
-    /**
-     * The component currently active (useful in a multi-component
-     * application, such as a KParts application).
-     * Don't use this - it's mainly for KAboutDialog and KBugReport.
-     * @internal
-     * @deprecated since 5.0 use KComponentData::activeComponent()
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT KComponentData activeComponent();
+/**
+ * The component currently active (useful in a multi-component
+ * application, such as a KParts application).
+ * Don't use this - it's mainly for KAboutDialog and KBugReport.
+ * @internal
+ * @deprecated since 5.0 use KComponentData::activeComponent()
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT KComponentData activeComponent();
 
-    /**
-     * Set the active component for use by KAboutDialog and KBugReport.
-     * To be used only by a multi-component (KParts) application.
-     *
-     * @see activeComponent()
-     * @deprecated since 5.0 use KComponentData::setActiveComponent
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT void setActiveComponent(const KComponentData &d);
+/**
+ * Set the active component for use by KAboutDialog and KBugReport.
+ * To be used only by a multi-component (KParts) application.
+ *
+ * @see activeComponent()
+ * @deprecated since 5.0 use KComponentData::setActiveComponent
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT void setActiveComponent(const KComponentData &d);
 
-    /**
-     * Returns a text for the window caption.
-     *
-     * This may be set by
-     * "-caption", otherwise it will be equivalent to the name of the
-     * executable.
-     * @return the text for the window caption
-     * @deprecated since 5.0. Don't use in window titles anymore, Qt takes care of it.
-     * If you really need this, use QGuiApplication::applicationDisplayName(), and if that's empty, QCoreApplication::applicationName().
-     */
-    KDE4SUPPORT_DEPRECATED_EXPORT QString caption();
+/**
+ * Returns a text for the window caption.
+ *
+ * This may be set by
+ * "-caption", otherwise it will be equivalent to the name of the
+ * executable.
+ * @return the text for the window caption
+ * @deprecated since 5.0. Don't use in window titles anymore, Qt takes care of it.
+ * If you really need this, use QGuiApplication::applicationDisplayName(), and if that's empty, QCoreApplication::applicationName().
+ */
+KDE4SUPPORT_DEPRECATED_EXPORT QString caption();
 
-    /// @internal
-    KDE4SUPPORT_DEPRECATED_EXPORT QObject* findDirectChild_helper(const QObject* parent, const QMetaObject& mo);
+/// @internal
+KDE4SUPPORT_DEPRECATED_EXPORT QObject *findDirectChild_helper(const QObject *parent, const QMetaObject &mo);
 
-    /**
-     * Returns the child of the given object that can be cast into type T, or 0 if there is no such object.
-     * Unlike QObject::findChild, the search is NOT performed recursively.
-     * @since 4.4
-     * @deprecated since Qt 5, use QObject::findChild(FindDirectChildrenOnly)
-     */
-    template<typename T>
-    KDE4SUPPORT_DEPRECATED inline T findDirectChild(const QObject* object) {
-        return static_cast<T>(findDirectChild_helper(object, (static_cast<T>(0))->staticMetaObject));
-    }
+/**
+ * Returns the child of the given object that can be cast into type T, or 0 if there is no such object.
+ * Unlike QObject::findChild, the search is NOT performed recursively.
+ * @since 4.4
+ * @deprecated since Qt 5, use QObject::findChild(FindDirectChildrenOnly)
+ */
+template<typename T>
+KDE4SUPPORT_DEPRECATED inline T findDirectChild(const QObject *object)
+{
+    return static_cast<T>(findDirectChild_helper(object, (static_cast<T>(0))->staticMetaObject));
+}
 }
 
-struct KCatalogLoader
-{
-  KDE4SUPPORT_DEPRECATED KCatalogLoader(const QString &)
-  {
-    qWarning() << "Your code needs to be ported in KF5.  See the Ki18n programmers guide.";
-  }
+struct KCatalogLoader {
+    KDE4SUPPORT_DEPRECATED KCatalogLoader(const QString &)
+    {
+        qWarning() << "Your code needs to be ported in KF5.  See the Ki18n programmers guide.";
+    }
 };
 
 #endif // _KGLOBAL_H

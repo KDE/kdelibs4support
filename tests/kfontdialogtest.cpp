@@ -21,26 +21,25 @@
 
 */
 
-
 #include "kfontdialog.h"
 #include <kconfig.h>
 
 #include <QApplication>
 
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
-  QApplication::setApplicationName("KFontDialogTest");
+    QApplication::setApplicationName("KFontDialogTest");
 
-  QApplication app(argc, argv);
+    QApplication app(argc, argv);
 
-  app.setFont(QFont("Helvetica",12));
+    app.setFont(QFont("Helvetica", 12));
 
-  //  QFont font = QFont("Times",18,QFont::Bold);
+    //  QFont font = QFont("Times",18,QFont::Bold);
 
-  QFont font;
-  int nRet = KFontDialog::getFont(font);
-  KFontChooser::FontDiffFlags diffFlags;
-  nRet = KFontDialog::getFontDiff(font, diffFlags);
+    QFont font;
+    int nRet = KFontDialog::getFont(font);
+    KFontChooser::FontDiffFlags diffFlags;
+    nRet = KFontDialog::getFontDiff(font, diffFlags);
 
-  return nRet;
+    return nRet;
 }

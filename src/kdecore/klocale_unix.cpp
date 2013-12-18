@@ -20,27 +20,27 @@
 #include "klocale_unix_p.h"
 
 KLocaleUnixPrivate::KLocaleUnixPrivate(KLocale *q_ptr, KSharedConfig::Ptr config)
-                   :KLocalePrivate(q_ptr)
+    : KLocalePrivate(q_ptr)
 {
     init(QString(), QString(), config, 0);
 }
 
 KLocaleUnixPrivate::KLocaleUnixPrivate(KLocale *q_ptr,
-                                       const QString &language,const QString &country, KConfig *config)
-                   :KLocalePrivate(q_ptr)
+                                       const QString &language, const QString &country, KConfig *config)
+    : KLocalePrivate(q_ptr)
 {
     init(language, country, KSharedConfig::Ptr(), config);
 }
 
-KLocaleUnixPrivate::KLocaleUnixPrivate( const KLocaleUnixPrivate &rhs )
-                  :KLocalePrivate( rhs )
+KLocaleUnixPrivate::KLocaleUnixPrivate(const KLocaleUnixPrivate &rhs)
+    : KLocalePrivate(rhs)
 {
-    KLocalePrivate::copy( rhs );
+    KLocalePrivate::copy(rhs);
 }
 
-KLocaleUnixPrivate &KLocaleUnixPrivate::operator=( const KLocaleUnixPrivate &rhs )
+KLocaleUnixPrivate &KLocaleUnixPrivate::operator=(const KLocaleUnixPrivate &rhs)
 {
-    KLocalePrivate::copy( rhs );
+    KLocalePrivate::copy(rhs);
     return *this;
 }
 

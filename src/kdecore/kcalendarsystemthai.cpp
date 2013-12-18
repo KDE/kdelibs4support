@@ -43,7 +43,7 @@ public:
 //Override only a few of the Gregorian private methods
 
 KCalendarSystemThaiPrivate::KCalendarSystemThaiPrivate(KCalendarSystemThai *q)
-                          : KCalendarSystemGregorianPrivate(q)
+    : KCalendarSystemGregorianPrivate(q)
 {
 }
 
@@ -86,16 +86,15 @@ int KCalendarSystemThaiPrivate::earliestValidYear() const
     return 0;
 }
 
-
 KCalendarSystemThai::KCalendarSystemThai(const KSharedConfig::Ptr config, const KLocale *locale)
-                   : KCalendarSystemGregorian(*new KCalendarSystemThaiPrivate(this), config, locale)
+    : KCalendarSystemGregorian(*new KCalendarSystemThaiPrivate(this), config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }
 
 KCalendarSystemThai::KCalendarSystemThai(KCalendarSystemThaiPrivate &dd,
-                                         const KSharedConfig::Ptr config, const KLocale *locale)
-                   : KCalendarSystemGregorian(dd, config, locale)
+        const KSharedConfig::Ptr config, const KLocale *locale)
+    : KCalendarSystemGregorian(dd, config, locale)
 {
     d_ptr->loadConfig(calendarType());
 }

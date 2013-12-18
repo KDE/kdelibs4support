@@ -39,7 +39,6 @@
 
 int gmtoff(time_t t);   // defined in ksystemtimezone.cpp
 
-
 /******************************************************************************/
 
 class KTimeZonesPrivate
@@ -50,9 +49,8 @@ public:
     KTimeZones::ZoneMap zones;
 };
 
-
 KTimeZones::KTimeZones()
-  : d(new KTimeZonesPrivate)
+    : d(new KTimeZonesPrivate)
 {
 }
 
@@ -68,22 +66,21 @@ const KTimeZones::ZoneMap KTimeZones::zones() const
 
 bool KTimeZones::add(const KTimeZone &zone)
 {
-    if (!zone.isValid())
+    if (!zone.isValid()) {
         return false;
-    if (d->zones.find(zone.name()) != d->zones.end())
+    }
+    if (d->zones.find(zone.name()) != d->zones.end()) {
         return false;    // name already exists
+    }
     d->zones.insert(zone.name(), zone);
     return true;
 }
 
 KTimeZone KTimeZones::remove(const KTimeZone &zone)
 {
-    if (zone.isValid())
-    {
-        for (ZoneMap::Iterator it = d->zones.begin(), end = d->zones.end();  it != end;  ++it)
-        {
-            if (it.value() == zone)
-            {
+    if (zone.isValid()) {
+        for (ZoneMap::Iterator it = d->zones.begin(), end = d->zones.end();  it != end;  ++it) {
+            if (it.value() == zone) {
                 d->zones.erase(it);
                 return zone;
             }
@@ -94,11 +91,9 @@ KTimeZone KTimeZones::remove(const KTimeZone &zone)
 
 KTimeZone KTimeZones::remove(const QString &name)
 {
-    if (!name.isEmpty())
-    {
+    if (!name.isEmpty()) {
         ZoneMap::Iterator it = d->zones.find(name);
-        if (it != d->zones.end())
-        {
+        if (it != d->zones.end()) {
             KTimeZone zone = it.value();
             d->zones.erase(it);
             return zone;
@@ -109,63 +104,62 @@ KTimeZone KTimeZones::remove(const QString &name)
 
 void KTimeZones::clear()
 {
-  d->zones.clear();
+    d->zones.clear();
 }
 
 KTimeZone KTimeZones::zone(const QString &name) const
 {
-    if (!name.isEmpty())
-    {
+    if (!name.isEmpty()) {
         ZoneMap::ConstIterator it = d->zones.constFind(name);
-        if (it != d->zones.constEnd())
+        if (it != d->zones.constEnd()) {
             return it.value();
-        if (name == KTimeZone::utc().name())
+        }
+        if (name == KTimeZone::utc().name()) {
             return KTimeZone::utc();
+        }
     }
     return KTimeZone();    // error
 }
-
 
 /******************************************************************************/
 
 class KTimeZonePhasePrivate : public QSharedData
 {
-    public:
-        QByteArray       abbreviations;  // time zone abbreviations (zero-delimited)
-        QString          comment;        // optional comment
-        int              utcOffset;      // seconds to add to UTC
-        bool             dst;            // true if daylight savings time
+public:
+    QByteArray       abbreviations;  // time zone abbreviations (zero-delimited)
+    QString          comment;        // optional comment
+    int              utcOffset;      // seconds to add to UTC
+    bool             dst;            // true if daylight savings time
 
-        explicit KTimeZonePhasePrivate(int offset = 0, bool ds = false)
+    explicit KTimeZonePhasePrivate(int offset = 0, bool ds = false)
         : QSharedData(),
           utcOffset(offset),
           dst(ds)
-        {}
-        KTimeZonePhasePrivate(const KTimeZonePhasePrivate& rhs)
+    {}
+    KTimeZonePhasePrivate(const KTimeZonePhasePrivate &rhs)
         : QSharedData(rhs),
           abbreviations(rhs.abbreviations),
           comment(rhs.comment),
           utcOffset(rhs.utcOffset),
           dst(rhs.dst)
-        {}
-        bool operator==(const KTimeZonePhasePrivate &rhs) const
-        {
-            return abbreviations == rhs.abbreviations
+    {}
+    bool operator==(const KTimeZonePhasePrivate &rhs) const
+    {
+        return abbreviations == rhs.abbreviations
                &&  comment       == rhs.comment
                &&  utcOffset     == rhs.utcOffset
                &&  dst           == rhs.dst;
-        }
+    }
 };
 
-
 KTimeZone::Phase::Phase()
-  : d(new KTimeZonePhasePrivate)
+    : d(new KTimeZonePhasePrivate)
 {
 }
 
 KTimeZone::Phase::Phase(int utcOffset, const QByteArray &abbrevs,
                         bool dst, const QString &cmt)
-  : d(new KTimeZonePhasePrivate(utcOffset, dst))
+    : d(new KTimeZonePhasePrivate(utcOffset, dst))
 {
     d->abbreviations = abbrevs;
     d->comment       = cmt;
@@ -173,19 +167,19 @@ KTimeZone::Phase::Phase(int utcOffset, const QByteArray &abbrevs,
 
 KTimeZone::Phase::Phase(int utcOffset, const QList<QByteArray> &abbrevs,
                         bool dst, const QString &cmt)
-  : d(new KTimeZonePhasePrivate(utcOffset, dst))
+    : d(new KTimeZonePhasePrivate(utcOffset, dst))
 {
-    for (int i = 0, end = abbrevs.count();  i < end;  ++i)
-    {
-        if (i > 0)
+    for (int i = 0, end = abbrevs.count();  i < end;  ++i) {
+        if (i > 0) {
             d->abbreviations += '\0';
+        }
         d->abbreviations += abbrevs[i];
     }
     d->comment = cmt;
 }
 
 KTimeZone::Phase::Phase(const KTimeZone::Phase &rhs)
-  : d(rhs.d)
+    : d(rhs.d)
 {
 }
 
@@ -224,7 +218,6 @@ QString KTimeZone::Phase::comment() const
     return d->comment;
 }
 
-
 /******************************************************************************/
 
 class KTimeZoneTransitionPrivate
@@ -233,7 +226,6 @@ public:
     QDateTime time;
     KTimeZone::Phase phase;
 };
-
 
 KTimeZone::Transition::Transition()
     : d(new KTimeZoneTransitionPrivate)
@@ -271,29 +263,33 @@ bool KTimeZone::Transition::operator<(const KTimeZone::Transition &rhs) const
     return d->time < rhs.d->time;
 }
 
-QDateTime        KTimeZone::Transition::time() const   { return d->time; }
-KTimeZone::Phase KTimeZone::Transition::phase() const  { return d->phase; }
-
+QDateTime        KTimeZone::Transition::time() const
+{
+    return d->time;
+}
+KTimeZone::Phase KTimeZone::Transition::phase() const
+{
+    return d->phase;
+}
 
 /******************************************************************************/
 
 class KTimeZoneDataPrivate
 {
-    public:
-        QList<KTimeZone::Phase>       phases;
-        QList<KTimeZone::Transition>  transitions;
-        QList<KTimeZone::LeapSeconds> leapChanges;
-        QList<int>                    utcOffsets;
-        QList<QByteArray>             abbreviations;
-        KTimeZone::Phase              prePhase;    // phase to use before the first transition
+public:
+    QList<KTimeZone::Phase>       phases;
+    QList<KTimeZone::Transition>  transitions;
+    QList<KTimeZone::LeapSeconds> leapChanges;
+    QList<int>                    utcOffsets;
+    QList<QByteArray>             abbreviations;
+    KTimeZone::Phase              prePhase;    // phase to use before the first transition
 
-        KTimeZoneDataPrivate() {}
-        // Find the last transition before a specified UTC or local date/time.
-        int transitionIndex(const QDateTime &dt) const;
-        bool transitionIndexes(const QDateTime &start, const QDateTime &end, int &ixstart, int &ixend) const;
-        bool isSecondOccurrence(const QDateTime &utcLocalTime, int transitionIndex) const;
+    KTimeZoneDataPrivate() {}
+    // Find the last transition before a specified UTC or local date/time.
+    int transitionIndex(const QDateTime &dt) const;
+    bool transitionIndexes(const QDateTime &start, const QDateTime &end, int &ixstart, int &ixend) const;
+    bool isSecondOccurrence(const QDateTime &utcLocalTime, int transitionIndex) const;
 };
-
 
 /******************************************************************************/
 
@@ -301,10 +297,13 @@ class KTimeZonePrivate : public QSharedData
 {
 public:
     KTimeZonePrivate() : source(0), data(0), refCount(1), cachedTransitionIndex(-1) {}
-    KTimeZonePrivate(KTimeZoneSource *src, const QString& nam,
+    KTimeZonePrivate(KTimeZoneSource *src, const QString &nam,
                      const QString &country, float lat, float lon, const QString &cmnt);
     KTimeZonePrivate(const KTimeZonePrivate &);
-    ~KTimeZonePrivate()  { delete data; }
+    ~KTimeZonePrivate()
+    {
+        delete data;
+    }
     KTimeZonePrivate &operator=(const KTimeZonePrivate &);
     static KTimeZoneSource *utcSource();
     static void cleanup();
@@ -328,44 +327,46 @@ private:
 
 KTimeZoneSource *KTimeZonePrivate::mUtcSource = 0;
 
-
-KTimeZonePrivate::KTimeZonePrivate(KTimeZoneSource *src, const QString& nam,
-                 const QString &country, float lat, float lon, const QString &cmnt)
-  : source(src),
-    name(nam),
-    countryCode(country.toUpper()),
-    comment(cmnt),
-    latitude(lat),
-    longitude(lon),
-    data(0),
-    refCount(1),
-    cachedTransitionIndex(-1)
+KTimeZonePrivate::KTimeZonePrivate(KTimeZoneSource *src, const QString &nam,
+                                   const QString &country, float lat, float lon, const QString &cmnt)
+    : source(src),
+      name(nam),
+      countryCode(country.toUpper()),
+      comment(cmnt),
+      latitude(lat),
+      longitude(lon),
+      data(0),
+      refCount(1),
+      cachedTransitionIndex(-1)
 {
     // Detect duff values.
-    if (latitude > 90 || latitude < -90)
+    if (latitude > 90 || latitude < -90) {
         latitude = KTimeZone::UNKNOWN;
-    if (longitude > 180 || longitude < -180)
+    }
+    if (longitude > 180 || longitude < -180) {
         longitude = KTimeZone::UNKNOWN;
+    }
 }
 
 KTimeZonePrivate::KTimeZonePrivate(const KTimeZonePrivate &rhs)
-  : QSharedData(rhs),
-    source(rhs.source),
-    name(rhs.name),
-    countryCode(rhs.countryCode),
-    comment(rhs.comment),
-    latitude(rhs.latitude),
-    longitude(rhs.longitude),
-    refCount(1),
-    cachedTransitionIndex(rhs.cachedTransitionIndex),
-    cachedTransitionStartZoneTime(rhs.cachedTransitionStartZoneTime),
-    cachedTransitionEndZoneTime(rhs.cachedTransitionEndZoneTime),
-    cachedTransitionTimesValid(rhs.cachedTransitionTimesValid)
+    : QSharedData(rhs),
+      source(rhs.source),
+      name(rhs.name),
+      countryCode(rhs.countryCode),
+      comment(rhs.comment),
+      latitude(rhs.latitude),
+      longitude(rhs.longitude),
+      refCount(1),
+      cachedTransitionIndex(rhs.cachedTransitionIndex),
+      cachedTransitionStartZoneTime(rhs.cachedTransitionStartZoneTime),
+      cachedTransitionEndZoneTime(rhs.cachedTransitionEndZoneTime),
+      cachedTransitionTimesValid(rhs.cachedTransitionTimesValid)
 {
-    if (rhs.data)
+    if (rhs.data) {
         data = rhs.data->clone();
-    else
+    } else {
         data = 0;
+    }
 }
 
 KTimeZonePrivate &KTimeZonePrivate::operator=(const KTimeZonePrivate &rhs)
@@ -383,18 +384,18 @@ KTimeZonePrivate &KTimeZonePrivate::operator=(const KTimeZonePrivate &rhs)
     cachedTransitionEndZoneTime   = rhs.cachedTransitionEndZoneTime;
     cachedTransitionTimesValid    = rhs.cachedTransitionTimesValid;
     delete data;
-    if (rhs.data)
+    if (rhs.data) {
         data = rhs.data->clone();
-    else
+    } else {
         data = 0;
+    }
     // refCount is unchanged
     return *this;
 }
 
 KTimeZoneSource *KTimeZonePrivate::utcSource()
 {
-    if (!mUtcSource)
-    {
+    if (!mUtcSource) {
         mUtcSource = new KTimeZoneSource;
         qAddPostRoutine(KTimeZonePrivate::cleanup);
     }
@@ -406,45 +407,45 @@ void KTimeZonePrivate::cleanup()
     delete mUtcSource;
 }
 
-
 /******************************************************************************/
 
 Q_GLOBAL_STATIC(KTimeZonePrivate, s_emptyTimeZonePrivate)
 
 KTimeZoneBackend::KTimeZoneBackend()
-  : d(s_emptyTimeZonePrivate())
+    : d(s_emptyTimeZonePrivate())
 {
     ++d->refCount;
 }
 
 KTimeZoneBackend::KTimeZoneBackend(const QString &name)
-  : d(new KTimeZonePrivate(KTimeZonePrivate::utcSource(), name, QString(), KTimeZone::UNKNOWN, KTimeZone::UNKNOWN, QString()))
+    : d(new KTimeZonePrivate(KTimeZonePrivate::utcSource(), name, QString(), KTimeZone::UNKNOWN, KTimeZone::UNKNOWN, QString()))
 {}
 
 KTimeZoneBackend::KTimeZoneBackend(KTimeZoneSource *source, const QString &name,
-        const QString &countryCode, float latitude, float longitude, const QString &comment)
-  : d(new KTimeZonePrivate(source, name, countryCode, latitude, longitude, comment))
+                                   const QString &countryCode, float latitude, float longitude, const QString &comment)
+    : d(new KTimeZonePrivate(source, name, countryCode, latitude, longitude, comment))
 {}
 
 KTimeZoneBackend::KTimeZoneBackend(const KTimeZoneBackend &other)
-  : d(other.d)
+    : d(other.d)
 {
     ++d->refCount;
 }
 
 KTimeZoneBackend::~KTimeZoneBackend()
 {
-    if (d && --d->refCount == 0)
+    if (d && --d->refCount == 0) {
         delete d;
+    }
     d = 0;
 }
 
 KTimeZoneBackend &KTimeZoneBackend::operator=(const KTimeZoneBackend &other)
 {
-    if (d != other.d)
-    {
-        if (--d->refCount == 0)
+    if (d != other.d) {
+        if (--d->refCount == 0) {
             delete d;
+        }
         d = other.d;
         ++d->refCount;
     }
@@ -461,42 +462,39 @@ KTimeZoneBackend *KTimeZoneBackend::clone() const
     return new KTimeZoneBackend(*this);
 }
 
-int KTimeZoneBackend::offsetAtZoneTime(const KTimeZone* caller, const QDateTime &zoneDateTime, int *secondOffset) const
+int KTimeZoneBackend::offsetAtZoneTime(const KTimeZone *caller, const QDateTime &zoneDateTime, int *secondOffset) const
 {
-    if (!zoneDateTime.isValid()  ||  zoneDateTime.timeSpec() != Qt::LocalTime)    // check for invalid time
-    {
-        if (secondOffset)
+    if (!zoneDateTime.isValid()  ||  zoneDateTime.timeSpec() != Qt::LocalTime) {  // check for invalid time
+        if (secondOffset) {
             *secondOffset = KTimeZone::InvalidOffset;
+        }
         return KTimeZone::InvalidOffset;
     }
     const QList<KTimeZone::Transition> transitions = caller->transitions();
     int index = d->cachedTransitionIndex;
-    if (index >= 0 && index < transitions.count())
-    {
+    if (index >= 0 && index < transitions.count()) {
         // There is a cached transition - check whether zoneDateTime uses it.
         // Caching is used because this method has been found to consume
         // significant CPU in real life applications.
-        if (!d->cachedTransitionTimesValid)
-        {
+        if (!d->cachedTransitionTimesValid) {
             const int offset = transitions[index].phase().utcOffset();
             const int preoffset = (index > 0) ? transitions[index - 1].phase().utcOffset() : d->data ? d->data->previousUtcOffset() : KTimeZone::InvalidOffset;
             d->cachedTransitionStartZoneTime = transitions[index].time().addSecs(qMax(offset, preoffset));
-            if (index + 1 < transitions.count())
-	    {
+            if (index + 1 < transitions.count()) {
                 const int postoffset = transitions[index + 1].phase().utcOffset();
                 d->cachedTransitionEndZoneTime = transitions[index + 1].time().addSecs(qMin(offset, postoffset));
-	    }
+            }
             d->cachedTransitionTimesValid = true;
         }
         QDateTime dtutc = zoneDateTime;
         dtutc.setTimeSpec(Qt::UTC);
         if (dtutc >= d->cachedTransitionStartZoneTime
-        &&  (index + 1 >= transitions.count() || dtutc < d->cachedTransitionEndZoneTime))
-        {
+                && (index + 1 >= transitions.count() || dtutc < d->cachedTransitionEndZoneTime)) {
             // The time falls within the cached transition limits, so return its UTC offset
             const int offset = transitions[index].phase().utcOffset();
-            if (secondOffset)
+            if (secondOffset) {
                 *secondOffset = offset;
+            }
 #ifdef COMPILING_TESTS
             // qDebug() << "-> Using cache";   // enable the debug area to see this in the tests
 #endif
@@ -511,12 +509,13 @@ int KTimeZoneBackend::offsetAtZoneTime(const KTimeZone* caller, const QDateTime 
     bool validTime;
     int secondIndex = -1;
     index = caller->transitionIndex(zoneDateTime, (secondOffset ? &secondIndex : 0), &validTime);
-    const KTimeZone::Transition* tr = (index >= 0) ? &transitions[index] : 0;
+    const KTimeZone::Transition *tr = (index >= 0) ? &transitions[index] : 0;
     const int offset = tr ? tr->phase().utcOffset()
-                          : validTime ? (d->data ? d->data->previousUtcOffset() : KTimeZone::InvalidOffset)
-                                      : KTimeZone::InvalidOffset;
-    if (secondOffset)
+                       : validTime ? (d->data ? d->data->previousUtcOffset() : KTimeZone::InvalidOffset)
+                       : KTimeZone::InvalidOffset;
+    if (secondOffset) {
         *secondOffset = (secondIndex >= 0) ? transitions.at(secondIndex).phase().utcOffset() : offset;
+    }
 
     // Cache transition data for subsequent date/time values which occur after the same transition.
     d->cachedTransitionIndex = index;
@@ -524,19 +523,18 @@ int KTimeZoneBackend::offsetAtZoneTime(const KTimeZone* caller, const QDateTime 
     return offset;
 }
 
-int KTimeZoneBackend::offsetAtUtc(const KTimeZone* caller, const QDateTime &utcDateTime) const
+int KTimeZoneBackend::offsetAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const
 {
-    if (!utcDateTime.isValid()  ||  utcDateTime.timeSpec() != Qt::UTC)    // check for invalid time
+    if (!utcDateTime.isValid()  ||  utcDateTime.timeSpec() != Qt::UTC) {  // check for invalid time
         return 0;
+    }
     const QList<KTimeZone::Transition> transitions = caller->transitions();
     int index = d->cachedTransitionIndex;
-    if (index >= 0 && index < transitions.count())
-    {
+    if (index >= 0 && index < transitions.count()) {
         // There is a cached transition - check whether utcDateTime uses it.
         if (utcDateTime >= transitions[index].time()
-        &&  (index + 1 >= transitions.count()
-             || utcDateTime < transitions[index + 1].time()))
-        {
+                && (index + 1 >= transitions.count()
+                    || utcDateTime < transitions[index + 1].time())) {
             // The time falls within the cached transition, so return its UTC offset
 #ifdef COMPILING_TESTS
             // qDebug() << "Using cache";   // enable the debug area to see this in the tests
@@ -552,36 +550,37 @@ int KTimeZoneBackend::offsetAtUtc(const KTimeZone* caller, const QDateTime &utcD
     index = caller->transitionIndex(utcDateTime);
     d->cachedTransitionIndex = index;   // cache transition data
     d->cachedTransitionTimesValid = false;
-    const KTimeZone::Transition* tr = (index >= 0) ? &transitions.at(index) : 0;
+    const KTimeZone::Transition *tr = (index >= 0) ? &transitions.at(index) : 0;
     return tr ? tr->phase().utcOffset() : (d->data ? d->data->previousUtcOffset() : KTimeZone::InvalidOffset);
 }
 
-int KTimeZoneBackend::offset(const KTimeZone* caller, time_t t) const
+int KTimeZoneBackend::offset(const KTimeZone *caller, time_t t) const
 {
     return offsetAtUtc(caller, KTimeZone::fromTime_t(t));
 }
 
-bool KTimeZoneBackend::isDstAtUtc(const KTimeZone* caller, const QDateTime &utcDateTime) const
+bool KTimeZoneBackend::isDstAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const
 {
-    if (!utcDateTime.isValid()  ||  utcDateTime.timeSpec() != Qt::UTC)    // check for invalid time
+    if (!utcDateTime.isValid()  ||  utcDateTime.timeSpec() != Qt::UTC) {  // check for invalid time
         return false;
+    }
     const KTimeZone::Transition *tr = caller->transition(utcDateTime);
-    if (!tr)
+    if (!tr) {
         return false;
+    }
     return tr->phase().isDst();
 }
 
-bool KTimeZoneBackend::isDst(const KTimeZone* caller, time_t t) const
+bool KTimeZoneBackend::isDst(const KTimeZone *caller, time_t t) const
 {
     return isDstAtUtc(caller, KTimeZone::fromTime_t(t));
 }
 
-bool KTimeZoneBackend::hasTransitions(const KTimeZone* caller) const
+bool KTimeZoneBackend::hasTransitions(const KTimeZone *caller) const
 {
     Q_UNUSED(caller);
     return false;
 }
-
 
 /******************************************************************************/
 
@@ -593,17 +592,16 @@ const time_t KTimeZone::InvalidTime_t = 0x80000000;
 const int    KTimeZone::InvalidOffset = 0x80000000;
 const float  KTimeZone::UNKNOWN = 1000.0;
 
-
 KTimeZone::KTimeZone()
-  : d(new KTimeZoneBackend())
+    : d(new KTimeZoneBackend())
 {}
 
 KTimeZone::KTimeZone(const QString &name)
-  : d(new KTimeZoneBackend(name))
+    : d(new KTimeZoneBackend(name))
 {}
 
 KTimeZone::KTimeZone(const KTimeZone &tz)
-  : d(tz.d->clone())
+    : d(tz.d->clone())
 {}
 
 KTimeZone::~KTimeZone()
@@ -612,7 +610,7 @@ KTimeZone::~KTimeZone()
 }
 
 KTimeZone::KTimeZone(KTimeZoneBackend *impl)
-  : d(impl)
+    : d(impl)
 {
     // 'impl' should be a newly constructed object, with refCount = 1
     Q_ASSERT(d->d->refCount == 1 || d->d == s_emptyTimeZonePrivate());
@@ -620,8 +618,7 @@ KTimeZone::KTimeZone(KTimeZoneBackend *impl)
 
 KTimeZone &KTimeZone::operator=(const KTimeZone &tz)
 {
-    if (d != tz.d)
-    {
+    if (d != tz.d) {
         delete d;
         d = tz.d->clone();
     }
@@ -670,29 +667,33 @@ QString KTimeZone::name() const
 
 QList<QByteArray> KTimeZone::abbreviations() const
 {
-    if (!data(true))
+    if (!data(true)) {
         return QList<QByteArray>();
+    }
     return d->d->data->abbreviations();
 }
 
 QByteArray KTimeZone::abbreviation(const QDateTime &utcDateTime) const
 {
-    if (utcDateTime.timeSpec() != Qt::UTC  ||  !data(true))
+    if (utcDateTime.timeSpec() != Qt::UTC  ||  !data(true)) {
         return QByteArray();
+    }
     return d->d->data->abbreviation(utcDateTime);
 }
 
 QList<int> KTimeZone::utcOffsets() const
 {
-    if (!data(true))
+    if (!data(true)) {
         return QList<int>();
+    }
     return d->d->data->utcOffsets();
 }
 
 QList<KTimeZone::Phase> KTimeZone::phases() const
 {
-    if (!data(true))
+    if (!data(true)) {
         return QList<KTimeZone::Phase>();
+    }
     return d->d->data->phases();
 }
 
@@ -703,17 +704,19 @@ bool KTimeZone::hasTransitions() const
 
 QList<KTimeZone::Transition> KTimeZone::transitions(const QDateTime &start, const QDateTime &end) const
 {
-    if (!data(true))
+    if (!data(true)) {
         return QList<KTimeZone::Transition>();
+    }
     return d->d->data->transitions(start, end);
 }
 
 const KTimeZone::Transition *KTimeZone::transition(const QDateTime &dt, const Transition **secondTransition,
-                                                   bool *validTime) const
+        bool *validTime) const
 {
     if (!data(true)) {
-        if (validTime)
+        if (validTime) {
             *validTime = false;
+        }
         return 0;
     }
     return d->d->data->transition(dt, secondTransition, validTime);
@@ -722,8 +725,9 @@ const KTimeZone::Transition *KTimeZone::transition(const QDateTime &dt, const Tr
 int KTimeZone::transitionIndex(const QDateTime &dt, int *secondIndex, bool *validTime) const
 {
     if (!data(true)) {
-        if (validTime)
+        if (validTime) {
             *validTime = false;
+        }
         return -1;
     }
     return d->d->data->transitionIndex(dt, secondIndex, validTime);
@@ -731,15 +735,17 @@ int KTimeZone::transitionIndex(const QDateTime &dt, int *secondIndex, bool *vali
 
 QList<QDateTime> KTimeZone::transitionTimes(const Phase &phase, const QDateTime &start, const QDateTime &end) const
 {
-    if (!data(true))
+    if (!data(true)) {
         return QList<QDateTime>();
+    }
     return d->d->data->transitionTimes(phase, start, end);
 }
 
 QList<KTimeZone::LeapSeconds> KTimeZone::leapSecondChanges() const
 {
-    if (!data(true))
+    if (!data(true)) {
         return QList<KTimeZone::LeapSeconds>();
+    }
     return d->d->data->leapSecondChanges();
 }
 
@@ -750,27 +756,32 @@ KTimeZoneSource *KTimeZone::source() const
 
 const KTimeZoneData *KTimeZone::data(bool create) const
 {
-    if (!isValid())
+    if (!isValid()) {
         return 0;
-    if (create && !d->d->data && d->d->source->useZoneParse())
+    }
+    if (create && !d->d->data && d->d->source->useZoneParse()) {
         d->d->data = d->d->source->parse(*this);
+    }
     return d->d->data;
 }
 
 void KTimeZone::setData(KTimeZoneData *data, KTimeZoneSource *source)
 {
-    if (!isValid())
+    if (!isValid()) {
         return;
+    }
     delete d->d->data;
     d->d->data = data;
-    if (source)
+    if (source) {
         d->d->source = source;
+    }
 }
 
 bool KTimeZone::updateBase(const KTimeZone &other)
 {
-    if (d->d->name.isEmpty() || d->d->name != other.d->d->name)
+    if (d->d->name.isEmpty() || d->d->name != other.d->d->name) {
         return false;
+    }
     d->d->countryCode = other.d->d->countryCode;
     d->d->comment     = other.d->d->comment;
     d->d->latitude    = other.d->d->latitude;
@@ -780,10 +791,10 @@ bool KTimeZone::updateBase(const KTimeZone &other)
 
 bool KTimeZone::parse() const
 {
-    if (!isValid())
+    if (!isValid()) {
         return false;
-    if (d->d->source->useZoneParse())
-    {
+    }
+    if (d->d->source->useZoneParse()) {
         delete d->d->data;
         d->d->data = d->d->source->parse(*this);
     }
@@ -792,11 +803,13 @@ bool KTimeZone::parse() const
 
 QDateTime KTimeZone::toUtc(const QDateTime &zoneDateTime) const
 {
-    if (!zoneDateTime.isValid()  ||  zoneDateTime.timeSpec() != Qt::LocalTime)
+    if (!zoneDateTime.isValid()  ||  zoneDateTime.timeSpec() != Qt::LocalTime) {
         return QDateTime();
+    }
     const int secs = offsetAtZoneTime(zoneDateTime);
-    if (secs == InvalidOffset)
+    if (secs == InvalidOffset) {
         return QDateTime();
+    }
     QDateTime dt = zoneDateTime;
     dt.setTimeSpec(Qt::UTC);
     return dt.addSecs(-secs);
@@ -804,16 +817,16 @@ QDateTime KTimeZone::toUtc(const QDateTime &zoneDateTime) const
 
 QDateTime KTimeZone::toZoneTime(const QDateTime &utcDateTime, bool *secondOccurrence) const
 {
-    if (secondOccurrence)
+    if (secondOccurrence) {
         *secondOccurrence = false;
-    if (!utcDateTime.isValid()  ||  utcDateTime.timeSpec() != Qt::UTC)    // check for invalid time
+    }
+    if (!utcDateTime.isValid()  ||  utcDateTime.timeSpec() != Qt::UTC) {  // check for invalid time
         return QDateTime();
+    }
 
     // Convert UTC to local time
-    if (hasTransitions())
-    {
-        if (!data(true))
-        {
+    if (hasTransitions()) {
+        if (!data(true)) {
             // No data - default to UTC
             QDateTime dt = utcDateTime;
             dt.setTimeSpec(Qt::LocalTime);
@@ -824,22 +837,18 @@ QDateTime KTimeZone::toZoneTime(const QDateTime &utcDateTime, bool *secondOccurr
         const int index = data->transitionIndex(utcDateTime);
         const int secs = (index >= 0) ? data->transitions().at(index).phase().utcOffset() : data->previousUtcOffset();
         QDateTime dt = utcDateTime.addSecs(secs);
-        if (secondOccurrence)
-        {
+        if (secondOccurrence) {
             // Check whether the local time occurs twice around a daylight savings time
             // shift, and if so, whether it's the first or second occurrence.
             *secondOccurrence = data->d->isSecondOccurrence(dt, index);
         }
         dt.setTimeSpec(Qt::LocalTime);
         return dt;
-    }
-    else
-    {
+    } else {
         const int secs = offsetAtUtc(utcDateTime);
         QDateTime dt = utcDateTime.addSecs(secs);
         dt.setTimeSpec(Qt::LocalTime);
-        if (secondOccurrence)
-        {
+        if (secondOccurrence) {
             // Check whether the local time occurs twice around a daylight savings time
             // shift, and if so, whether it's the first or second occurrence.
             *secondOccurrence = (secs != offsetAtZoneTime(dt));
@@ -850,10 +859,10 @@ QDateTime KTimeZone::toZoneTime(const QDateTime &utcDateTime, bool *secondOccurr
 
 QDateTime KTimeZone::convert(const KTimeZone &newZone, const QDateTime &zoneDateTime) const
 {
-    if (newZone == *this)
-    {
-        if (zoneDateTime.timeSpec() != Qt::LocalTime)
+    if (newZone == *this) {
+        if (zoneDateTime.timeSpec() != Qt::LocalTime) {
             return QDateTime();
+        }
         return zoneDateTime;
     }
     return newZone.toZoneTime(toUtc(zoneDateTime));
@@ -880,17 +889,16 @@ int KTimeZone::currentOffset(Qt::TimeSpec basis) const
     const time_t now = time(0);
     const int secs = offset(now);
 
-    switch (basis)
-    {
-        case Qt::LocalTime:
-            // Return the current offset of this time zone to the local system time
-            return secs - gmtoff(now);
-        case Qt::UTC:
-            // Return the current offset of this time zone to UTC
-            return secs;
+    switch (basis) {
+    case Qt::LocalTime:
+        // Return the current offset of this time zone to the local system time
+        return secs - gmtoff(now);
+    case Qt::UTC:
+        // Return the current offset of this time zone to UTC
+        return secs;
 
-        default:
-            break;
+    default:
+        break;
     }
     return 0;
 }
@@ -914,14 +922,13 @@ KTimeZone KTimeZone::utc()
 QDateTime KTimeZone::fromTime_t(time_t t)
 {
     static const int secondsADay = 86400;
-    static const QDate epochDate(1970,1,1);
-    static const QTime epochTime(0,0,0);
+    static const QDate epochDate(1970, 1, 1);
+    static const QTime epochTime(0, 0, 0);
     int days = t / secondsADay;
     int secs;
-    if (t >= 0)
+    if (t >= 0) {
         secs = t % secondsADay;
-    else
-    {
+    } else {
         secs = secondsADay - (-t % secondsADay);
         --days;
     }
@@ -930,19 +937,20 @@ QDateTime KTimeZone::fromTime_t(time_t t)
 
 time_t KTimeZone::toTime_t(const QDateTime &utcDateTime)
 {
-    static const QDate epochDate(1970,1,1);
-    static const QTime epochTime(0,0,0);
-    if (utcDateTime.timeSpec() != Qt::UTC)
+    static const QDate epochDate(1970, 1, 1);
+    static const QTime epochTime(0, 0, 0);
+    if (utcDateTime.timeSpec() != Qt::UTC) {
         return InvalidTime_t;
+    }
     const qint64 days = epochDate.daysTo(utcDateTime.date());
     const qint64 secs = epochTime.secsTo(utcDateTime.time());
     const qint64 t64 = days * 86400 + secs;
     const time_t t = static_cast<time_t>(t64);
-    if (static_cast<qint64>(t) != t64)
+    if (static_cast<qint64>(t) != t64) {
         return InvalidTime_t;
+    }
     return t;
 }
-
 
 /******************************************************************************/
 
@@ -952,15 +960,14 @@ public:
     bool mUseZoneParse;
 };
 
-
 KTimeZoneSource::KTimeZoneSource()
-  : d(new KTimeZoneSourcePrivate)
+    : d(new KTimeZoneSourcePrivate)
 {
     d->mUseZoneParse = true;
 }
 
 KTimeZoneSource::KTimeZoneSource(bool useZoneParse)
-  : d(new KTimeZoneSourcePrivate)
+    : d(new KTimeZoneSourcePrivate)
 {
     d->mUseZoneParse = useZoneParse;
 }
@@ -981,28 +988,25 @@ bool KTimeZoneSource::useZoneParse() const
     return d->mUseZoneParse;
 }
 
-
 /******************************************************************************/
 
 class KTimeZoneLeapSecondsPrivate
 {
-    public:
-        QDateTime  dt;         // UTC time when this change occurred
-        QString    comment;    // optional comment
-        int        seconds;    // number of leap seconds
+public:
+    QDateTime  dt;         // UTC time when this change occurred
+    QString    comment;    // optional comment
+    int        seconds;    // number of leap seconds
 };
 
-
 KTimeZone::LeapSeconds::LeapSeconds()
-  : d(new KTimeZoneLeapSecondsPrivate)
+    : d(new KTimeZoneLeapSecondsPrivate)
 {
 }
 
 KTimeZone::LeapSeconds::LeapSeconds(const QDateTime &utc, int leap, const QString &cmt)
-  : d(new KTimeZoneLeapSecondsPrivate)
+    : d(new KTimeZoneLeapSecondsPrivate)
 {
-    if (utc.timeSpec() == Qt::UTC)   // invalid if start time is not UTC
-    {
+    if (utc.timeSpec() == Qt::UTC) { // invalid if start time is not UTC
         d->dt      = utc;
         d->comment = cmt;
         d->seconds = leap;
@@ -1010,7 +1014,7 @@ KTimeZone::LeapSeconds::LeapSeconds(const QDateTime &utc, int leap, const QStrin
 }
 
 KTimeZone::LeapSeconds::LeapSeconds(const KTimeZone::LeapSeconds &c)
-  : d(new KTimeZoneLeapSecondsPrivate)
+    : d(new KTimeZoneLeapSecondsPrivate)
 {
     d->dt      = c.d->dt;
     d->comment = c.d->comment;
@@ -1030,7 +1034,7 @@ KTimeZone::LeapSeconds &KTimeZone::LeapSeconds::operator=(const KTimeZone::LeapS
     return *this;
 }
 
-bool KTimeZone::LeapSeconds::operator<(const KTimeZone::LeapSeconds& c) const
+bool KTimeZone::LeapSeconds::operator<(const KTimeZone::LeapSeconds &c) const
 {
     return d->dt < c.d->dt;
 }
@@ -1055,37 +1059,32 @@ QString KTimeZone::LeapSeconds::comment() const
     return d->comment;
 }
 
-
 /******************************************************************************/
-
 
 int KTimeZoneDataPrivate::transitionIndex(const QDateTime &dt) const
 {
     // Do a binary search to find the last transition before this date/time
     int start = -1;
     int end = transitions.count();
-    if (dt.timeSpec() == Qt::UTC)
-    {
-        while (end - start > 1)
-        {
+    if (dt.timeSpec() == Qt::UTC) {
+        while (end - start > 1) {
             int i = (start + end) / 2;
-            if (dt < transitions[i].time())
+            if (dt < transitions[i].time()) {
                 end = i;
-            else
+            } else {
                 start = i;
+            }
         }
-    }
-    else
-    {
+    } else {
         QDateTime dtutc = dt;
         dtutc.setTimeSpec(Qt::UTC);
-        while (end - start > 1)
-        {
+        while (end - start > 1) {
             const int i = (start + end) / 2;
-            if (dtutc.addSecs(-transitions[i].phase().utcOffset()) < transitions[i].time())
+            if (dtutc.addSecs(-transitions[i].phase().utcOffset()) < transitions[i].time()) {
                 end = i;
-            else
+            } else {
                 start = i;
+            }
         }
     }
     return end ? start : -1;
@@ -1097,23 +1096,22 @@ int KTimeZoneDataPrivate::transitionIndex(const QDateTime &dt) const
 bool KTimeZoneDataPrivate::transitionIndexes(const QDateTime &start, const QDateTime &end, int &ixstart, int &ixend) const
 {
     ixstart = 0;
-    if (start.isValid() && start.timeSpec() == Qt::UTC)
-    {
+    if (start.isValid() && start.timeSpec() == Qt::UTC) {
         ixstart = transitionIndex(start);
-        if (ixstart < 0)
+        if (ixstart < 0) {
             ixstart = 0;
-        else if (transitions[ixstart].time() < start)
-        {
-            if (++ixstart >= transitions.count())
-                return false;   // there are no transitions at/after 'start'
+        } else if (transitions[ixstart].time() < start) {
+            if (++ixstart >= transitions.count()) {
+                return false;    // there are no transitions at/after 'start'
+            }
         }
     }
     ixend = -1;
-    if (end.isValid() && end.timeSpec() == Qt::UTC)
-    {
+    if (end.isValid() && end.timeSpec() == Qt::UTC) {
         ixend = transitionIndex(end);
-        if (ixend < 0)
-            return false;   // there are no transitions at/before 'end'
+        if (ixend < 0) {
+            return false;    // there are no transitions at/before 'end'
+        }
     }
     return true;
 }
@@ -1124,26 +1122,26 @@ bool KTimeZoneDataPrivate::transitionIndexes(const QDateTime &start, const QDate
  */
 bool KTimeZoneDataPrivate::isSecondOccurrence(const QDateTime &utcLocalTime, int transitionIndex) const
 {
-    if (transitionIndex < 0)
+    if (transitionIndex < 0) {
         return false;
+    }
     const int offset = transitions[transitionIndex].phase().utcOffset();
-    const int prevoffset = (transitionIndex > 0) ? transitions[transitionIndex-1].phase().utcOffset() : prePhase.utcOffset();
+    const int prevoffset = (transitionIndex > 0) ? transitions[transitionIndex - 1].phase().utcOffset() : prePhase.utcOffset();
     const int phaseDiff = prevoffset - offset;
-    if (phaseDiff <= 0)
+    if (phaseDiff <= 0) {
         return false;
+    }
     // Find how long after the start of the latest phase 'dt' is
     const int afterStart = transitions[transitionIndex].time().secsTo(utcLocalTime) - offset;
     return (afterStart < phaseDiff);
 }
 
-
-
 KTimeZoneData::KTimeZoneData()
-  : d(new KTimeZoneDataPrivate)
+    : d(new KTimeZoneDataPrivate)
 { }
 
 KTimeZoneData::KTimeZoneData(const KTimeZoneData &c)
-  : d(new KTimeZoneDataPrivate)
+    : d(new KTimeZoneDataPrivate)
 {
     d->phases        = c.d->phases;
     d->transitions   = c.d->transitions;
@@ -1176,47 +1174,49 @@ KTimeZoneData *KTimeZoneData::clone() const
 
 QList<QByteArray> KTimeZoneData::abbreviations() const
 {
-    if (d->abbreviations.isEmpty())
-    {
-        for (int i = 0, end = d->phases.count();  i < end;  ++i)
-        {
+    if (d->abbreviations.isEmpty()) {
+        for (int i = 0, end = d->phases.count();  i < end;  ++i) {
             const QList<QByteArray> abbrevs = d->phases[i].abbreviations();
             for (int j = 0, jend = abbrevs.count();  j < jend;  ++j)
-                if (!d->abbreviations.contains(abbrevs[j]))
+                if (!d->abbreviations.contains(abbrevs[j])) {
                     d->abbreviations.append(abbrevs[j]);
+                }
         }
-        if (d->abbreviations.isEmpty())
+        if (d->abbreviations.isEmpty()) {
             d->abbreviations += "UTC";
+        }
     }
     return d->abbreviations;
 }
 
 QByteArray KTimeZoneData::abbreviation(const QDateTime &utcDateTime) const
 {
-    if (d->phases.isEmpty())
+    if (d->phases.isEmpty()) {
         return "UTC";
+    }
     const KTimeZone::Transition *tr = transition(utcDateTime);
     const QList<QByteArray> abbrevs = tr ? tr->phase().abbreviations()
-                                         : d->prePhase.abbreviations();
-    if (abbrevs.isEmpty())
+                                      : d->prePhase.abbreviations();
+    if (abbrevs.isEmpty()) {
         return QByteArray();
+    }
     return abbrevs[0];
 }
 
 QList<int> KTimeZoneData::utcOffsets() const
 {
-    if (d->utcOffsets.isEmpty())
-    {
-        for (int i = 0, end = d->phases.count();  i < end;  ++i)
-        {
+    if (d->utcOffsets.isEmpty()) {
+        for (int i = 0, end = d->phases.count();  i < end;  ++i) {
             const int offset = d->phases[i].utcOffset();
-            if (!d->utcOffsets.contains(offset))
+            if (!d->utcOffsets.contains(offset)) {
                 d->utcOffsets.append(offset);
+            }
         }
-        if (d->utcOffsets.isEmpty())
+        if (d->utcOffsets.isEmpty()) {
             d->utcOffsets += 0;
-        else
+        } else {
             qSort(d->utcOffsets);
+        }
     }
     return d->utcOffsets;
 }
@@ -1226,7 +1226,7 @@ QList<KTimeZone::Phase> KTimeZoneData::phases() const
     return d->phases;
 }
 
-void KTimeZoneData::setPhases(const QList<KTimeZone::Phase> &phases, const KTimeZone::Phase& previousPhase)
+void KTimeZoneData::setPhases(const QList<KTimeZone::Phase> &phases, const KTimeZone::Phase &previousPhase)
 {
     d->phases   = phases;
     d->prePhase = previousPhase;
@@ -1246,12 +1246,15 @@ bool KTimeZoneData::hasTransitions() const
 QList<KTimeZone::Transition> KTimeZoneData::transitions(const QDateTime &start, const QDateTime &end) const
 {
     int ixstart, ixend;
-    if (!d->transitionIndexes(start, end, ixstart, ixend))
-        return QList<KTimeZone::Transition>();   // there are no transitions within the time period
-    if (ixend >= 0)
+    if (!d->transitionIndexes(start, end, ixstart, ixend)) {
+        return QList<KTimeZone::Transition>();    // there are no transitions within the time period
+    }
+    if (ixend >= 0) {
         return d->transitions.mid(ixstart, ixend - ixstart + 1);
-    if (ixstart > 0)
+    }
+    if (ixstart > 0) {
         return d->transitions.mid(ixstart);
+    }
     return d->transitions;
 }
 
@@ -1266,30 +1269,30 @@ int KTimeZoneData::previousUtcOffset() const
 }
 
 const KTimeZone::Transition *KTimeZoneData::transition(const QDateTime &dt, const KTimeZone::Transition **secondTransition,
-                                                       bool *validTime) const
+        bool *validTime) const
 {
     int secondIndex;
     const int index = transitionIndex(dt, (secondTransition ? &secondIndex : 0), validTime);
-    if (secondTransition)
+    if (secondTransition) {
         *secondTransition = (secondIndex >= 0) ? &d->transitions[secondIndex] : 0;
+    }
     return (index >= 0) ? &d->transitions[index] : 0;
 }
 
 int KTimeZoneData::transitionIndex(const QDateTime &dt, int *secondIndex, bool *validTime) const
 {
-    if (validTime)
+    if (validTime) {
         *validTime = true;
+    }
 
     // Find the last transition before this date/time
     int index = d->transitionIndex(dt);
-    if (dt.timeSpec() == Qt::UTC)
-    {
-        if (secondIndex)
+    if (dt.timeSpec() == Qt::UTC) {
+        if (secondIndex) {
             *secondIndex = index;
+        }
         return index;
-    }
-    else
-    {
+    } else {
         /* Check whether the specified local time actually occurs.
          * Find the start of the next phase, and check if it falls in the gap
          * between the two phases.
@@ -1298,32 +1301,31 @@ int KTimeZoneData::transitionIndex(const QDateTime &dt, int *secondIndex, bool *
         dtutc.setTimeSpec(Qt::UTC);
         const int count = d->transitions.count();
         const int next = (index >= 0) ? index + 1 : 0;
-        if (next < count)
-        {
+        if (next < count) {
             KTimeZone::Phase nextPhase = d->transitions[next].phase();
             const int offset = (index >= 0) ? d->transitions[index].phase().utcOffset() : d->prePhase.utcOffset();
             const int phaseDiff = nextPhase.utcOffset() - offset;
-            if (phaseDiff > 0)
-            {
+            if (phaseDiff > 0) {
                 // Get UTC equivalent as if 'dt' was in the next phase
-                if (dtutc.secsTo(d->transitions[next].time()) + nextPhase.utcOffset() < phaseDiff)
-                {
+                if (dtutc.secsTo(d->transitions[next].time()) + nextPhase.utcOffset() < phaseDiff) {
                     // The time falls in the gap between the two phases,
                     // so return an invalid value.
-                    if (validTime)
+                    if (validTime) {
                         *validTime = false;
-                    if (secondIndex)
+                    }
+                    if (secondIndex) {
                         *secondIndex = -1;
+                    }
                     return -1;
                 }
             }
         }
 
-        if (index < 0)
-        {
+        if (index < 0) {
             // The specified time is before the first phase
-            if (secondIndex)
+            if (secondIndex) {
                 *secondIndex = -1;
+            }
             return -1;
         }
 
@@ -1332,22 +1334,22 @@ int KTimeZoneData::transitionIndex(const QDateTime &dt, int *secondIndex, bool *
          * time change).
          */
         bool duplicate = true;
-        if (d->isSecondOccurrence(dtutc, index))
-        {
+        if (d->isSecondOccurrence(dtutc, index)) {
             // 'dt' occurs twice
-            if (secondIndex)
-            {
+            if (secondIndex) {
                 *secondIndex = index;
                 duplicate = false;
             }
             // Get the transition containing the first occurrence of 'dt'
-            if (index <= 0)
-                return -1;   // first occurrence of 'dt' is just before the first transition
+            if (index <= 0) {
+                return -1;    // first occurrence of 'dt' is just before the first transition
+            }
             --index;
         }
 
-        if (secondIndex  &&  duplicate)
+        if (secondIndex  &&  duplicate) {
             *secondIndex = index;
+        }
         return index;
     }
 }
@@ -1356,14 +1358,14 @@ QList<QDateTime> KTimeZoneData::transitionTimes(const KTimeZone::Phase &phase, c
 {
     QList<QDateTime> times;
     int ixstart, ixend;
-    if (d->transitionIndexes(start, end, ixstart, ixend))
-    {
-        if (ixend < 0)
+    if (d->transitionIndexes(start, end, ixstart, ixend)) {
+        if (ixend < 0) {
             ixend = d->transitions.count() - 1;
-        while (ixstart <= ixend)
-        {
-            if (d->transitions[ixstart].phase() == phase)
+        }
+        while (ixstart <= ixend) {
+            if (d->transitions[ixstart].phase() == phase) {
                 times += d->transitions[ixstart].time();
+            }
         }
     }
     return times;
@@ -1381,14 +1383,13 @@ void KTimeZoneData::setLeapSecondChanges(const QList<KTimeZone::LeapSeconds> &ad
 
 KTimeZone::LeapSeconds KTimeZoneData::leapSecondChange(const QDateTime &utc) const
 {
-    if (utc.timeSpec() != Qt::UTC)
+    if (utc.timeSpec() != Qt::UTC) {
         qCritical() << "KTimeZoneData::leapSecondChange(): non-UTC time specified" << endl;
-    else
-    {
-        for (int i = d->leapChanges.count();  --i >= 0;  )
-        {
-            if (d->leapChanges[i].dateTime() < utc)
+    } else {
+        for (int i = d->leapChanges.count();  --i >= 0;) {
+            if (d->leapChanges[i].dateTime() < utc) {
                 return d->leapChanges[i];
+            }
         }
     }
     return KTimeZone::LeapSeconds();

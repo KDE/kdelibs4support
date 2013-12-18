@@ -37,4 +37,3 @@ private Q_SLOTS:
 };
 
 #endif
-// kate: space-indent on; indent-width 4; encoding utf-8; replace-tabs on;

@@ -28,16 +28,16 @@
 #include <kactioncollection.h>
 #include <klocalizedstring.h>
 
-KUndoStack::KUndoStack(QObject* parent)
-: QUndoStack(parent)
+KUndoStack::KUndoStack(QObject *parent)
+    : QUndoStack(parent)
 {
 }
 
-QAction* KUndoStack::createRedoAction(KActionCollection* actionCollection, const QString& actionName)
+QAction *KUndoStack::createRedoAction(KActionCollection *actionCollection, const QString &actionName)
 {
-    QAction* action = QUndoStack::createRedoAction(actionCollection);
+    QAction *action = QUndoStack::createRedoAction(actionCollection);
 
-    if(actionName.isEmpty()) {
+    if (actionName.isEmpty()) {
         action->setObjectName(KStandardAction::name(KStandardAction::Redo));
     } else {
         action->setObjectName(actionName);
@@ -52,11 +52,11 @@ QAction* KUndoStack::createRedoAction(KActionCollection* actionCollection, const
     return action;
 }
 
-QAction* KUndoStack::createUndoAction(KActionCollection* actionCollection, const QString& actionName)
+QAction *KUndoStack::createUndoAction(KActionCollection *actionCollection, const QString &actionName)
 {
-    QAction* action = QUndoStack::createUndoAction(actionCollection);
+    QAction *action = QUndoStack::createUndoAction(actionCollection);
 
-    if(actionName.isEmpty()) {
+    if (actionName.isEmpty()) {
         action->setObjectName(KStandardAction::name(KStandardAction::Undo));
     } else {
         action->setObjectName(actionName);

@@ -368,9 +368,8 @@ private:
     KTimeZones(const KTimeZones &);              // prohibit copying
     KTimeZones &operator=(const KTimeZones &);   // prohibit copying
 
-    KTimeZonesPrivate * const d;
+    KTimeZonesPrivate *const d;
 };
-
 
 /**
  * Base class representing a time zone.
@@ -430,9 +429,9 @@ public:
     {
     public:
         /**
-	 * Default constructor.
-	 * Creates a standard-time time zone phase with UTC offset 0.
-	 */
+        * Default constructor.
+         * Creates a standard-time time zone phase with UTC offset 0.
+         */
         Phase();
 
         /**
@@ -462,7 +461,10 @@ public:
         ~Phase();
         Phase &operator=(const Phase &rhs);
         bool operator==(const Phase &rhs) const;
-        bool operator!=(const Phase &rhs) const  { return !operator==(rhs); }
+        bool operator!=(const Phase &rhs) const
+        {
+            return !operator==(rhs);
+        }
 
         /**
          * Return the UTC offset in seconds during this phase.
@@ -499,7 +501,6 @@ public:
     private:
         QSharedDataPointer<class KTimeZonePhasePrivate> d;
     };
-
 
     /*
      * Time zone daylight saving time transition.
@@ -544,7 +545,6 @@ public:
     private:
         KTimeZoneTransitionPrivate *const d;
     };
-
 
     /*
      * Leap seconds adjustment for a time zone.
@@ -600,7 +600,6 @@ public:
         KTimeZoneLeapSecondsPrivate *const d;
     };
 
-
     /**
      * Constructs a null time zone. A null time zone is invalid.
      *
@@ -630,7 +629,10 @@ public:
      * @return true if the same instance, else false
      */
     bool operator==(const KTimeZone &rhs) const;
-    bool operator!=(const KTimeZone &rhs) const  { return !operator==(rhs); }
+    bool operator!=(const KTimeZone &rhs) const
+    {
+        return !operator==(rhs);
+    }
 
     /**
      * Returns the class name of the data represented by this instance.
@@ -1100,7 +1102,6 @@ private:
     KTimeZoneBackend *d;
 };
 
-
 /**
  * Base backend class for KTimeZone classes.
  *
@@ -1154,37 +1155,37 @@ public:
      *
      * @param caller calling KTimeZone object
      */
-    virtual int offsetAtZoneTime(const KTimeZone* caller, const QDateTime &zoneDateTime, int *secondOffset) const;
+    virtual int offsetAtZoneTime(const KTimeZone *caller, const QDateTime &zoneDateTime, int *secondOffset) const;
     /**
      * Implements KTimeZone::offsetAtUtc().
      *
      * @param caller calling KTimeZone object
      */
-    virtual int offsetAtUtc(const KTimeZone* caller, const QDateTime &utcDateTime) const;
+    virtual int offsetAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const;
     /**
      * Implements KTimeZone::offset().
      *
      * @param caller calling KTimeZone object
      */
-    virtual int offset(const KTimeZone* caller, time_t t) const;
+    virtual int offset(const KTimeZone *caller, time_t t) const;
     /**
      * Implements KTimeZone::isDstAtUtc().
      *
      * @param caller calling KTimeZone object
      */
-    virtual bool isDstAtUtc(const KTimeZone* caller, const QDateTime &utcDateTime) const;
+    virtual bool isDstAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const;
     /**
      * Implements KTimeZone::isDst().
      *
      * @param caller calling KTimeZone object
      */
-    virtual bool isDst(const KTimeZone* caller, time_t t) const;
+    virtual bool isDst(const KTimeZone *caller, time_t t) const;
     /**
      * Implements KTimeZone::hasTransitions().
      *
      * @param caller calling KTimeZone object
      */
-    virtual bool hasTransitions(const KTimeZone* caller) const;
+    virtual bool hasTransitions(const KTimeZone *caller) const;
 
 protected:
     /**
@@ -1281,9 +1282,8 @@ protected:
     explicit KTimeZoneSource(bool useZoneParse);
 
 private:
-    KTimeZoneSourcePrivate * const d;
+    KTimeZoneSourcePrivate *const d;
 };
-
 
 /**
  * Base class for the parsed data returned by a KTimeZoneSource class.
@@ -1495,7 +1495,7 @@ protected:
      * @see phases()
      * @since 4.8.3
      */
-    void setPhases(const QList<KTimeZone::Phase> &phases, const KTimeZone::Phase& previousPhase);
+    void setPhases(const QList<KTimeZone::Phase> &phases, const KTimeZone::Phase &previousPhase);
 
     /**
      * Initialise the daylight savings time phase list.
@@ -1526,7 +1526,7 @@ protected:
     void setLeapSecondChanges(const QList<KTimeZone::LeapSeconds> &adjusts);
 
 private:
-    KTimeZoneDataPrivate * const d;
+    KTimeZoneDataPrivate *const d;
 };
 
 #endif

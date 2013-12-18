@@ -22,17 +22,17 @@
 
 int main(int argc, char *argv[])
 {
-   //KAboutData about("klockfile_testlock", 0, qi18n("klockfile_testlock"), "version");
+    //KAboutData about("klockfile_testlock", 0, qi18n("klockfile_testlock"), "version");
 
-   if (argc <= 1) {
-       return KLockFile::LockError;
-   }
+    if (argc <= 1) {
+        return KLockFile::LockError;
+    }
 
-   const QString lockName = QString::fromLocal8Bit(argv[1]);
+    const QString lockName = QString::fromLocal8Bit(argv[1]);
 
-   KLockFile lockFile(lockName);
-   if (lockFile.isLocked()) {
-       return KLockFile::LockError;
-   }
-   return lockFile.lock(KLockFile::NoBlockFlag);
+    KLockFile lockFile(lockName);
+    if (lockFile.isLocked()) {
+        return KLockFile::LockError;
+    }
+    return lockFile.lock(KLockFile::NoBlockFlag);
 }

@@ -83,7 +83,7 @@
  * Returns a debug stream that may or may not output anything.
  */
 KDE4SUPPORT_DEPRECATED_EXPORT_NOISE QDebug kDebugStream(QtMsgType level, int area, const char *file = 0,
-                                   int line = -1, const char *funcinfo = 0);
+        int line = -1, const char *funcinfo = 0);
 
 /**
  * @internal
@@ -97,7 +97,6 @@ KDE4SUPPORT_DEPRECATED_EXPORT_NOISE QDebug kDebugDevNull();
  */
 KDE4SUPPORT_DEPRECATED_EXPORT_NOISE QString kRealBacktrace(int);
 
-
 /**
  * \relates KGlobal
  * Returns a backtrace.
@@ -108,9 +107,15 @@ KDE4SUPPORT_DEPRECATED_EXPORT_NOISE QString kRealBacktrace(int);
  * @return a backtrace
  */
 #if !defined(KDE_NO_DEBUG_OUTPUT)
-inline QString kBacktrace(int levels=-1) { return kRealBacktrace(levels); }
+inline QString kBacktrace(int levels = -1)
+{
+    return kRealBacktrace(levels);
+}
 #else
-static inline QString kBacktrace(int=-1) { return QString(); }
+static inline QString kBacktrace(int = -1)
+{
+    return QString();
+}
 #endif
 
 /**
@@ -153,13 +158,23 @@ KDE4SUPPORT_DEPRECATED_EXPORT_NOISE void kClearDebugConfig();
  * @param area an id to identify the output, KDE_DEFAULT_DEBUG_AREA for default
  */
 static inline QDebug kDebug(int area = KDE_DEFAULT_DEBUG_AREA)
-{ return kDebugStream(QtDebugMsg, area); }
+{
+    return kDebugStream(QtDebugMsg, area);
+}
 static inline QDebug kDebug(bool cond, int area = KDE_DEFAULT_DEBUG_AREA)
-{ return cond ? kDebug(area) : kDebugDevNull(); }
+{
+    return cond ? kDebug(area) : kDebugDevNull();
+}
 
 #else  // KDE_NO_DEBUG_OUTPUT
-static inline QDebug kDebug(int = KDE_DEFAULT_DEBUG_AREA) { return kDebugDevNull(); }
-static inline QDebug kDebug(bool, int = KDE_DEFAULT_DEBUG_AREA) { return kDebugDevNull(); }
+static inline QDebug kDebug(int = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kDebugDevNull();
+}
+static inline QDebug kDebug(bool, int = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kDebugDevNull();
+}
 #endif
 
 #if !defined(KDE_NO_WARNING_OUTPUT)
@@ -170,13 +185,23 @@ static inline QDebug kDebug(bool, int = KDE_DEFAULT_DEBUG_AREA) { return kDebugD
  * @param area an id to identify the output, KDE_DEFAULT_DEBUG_AREA for default
  */
 static inline QDebug kWarning(int area = KDE_DEFAULT_DEBUG_AREA)
-{ return kDebugStream(QtWarningMsg, area); }
+{
+    return kDebugStream(QtWarningMsg, area);
+}
 static inline QDebug kWarning(bool cond, int area = KDE_DEFAULT_DEBUG_AREA)
-{ return cond ? kWarning(area) : kDebugDevNull(); }
+{
+    return cond ? kWarning(area) : kDebugDevNull();
+}
 
 #else  // KDE_NO_WARNING_OUTPUT
-static inline QDebug kWarning(int = KDE_DEFAULT_DEBUG_AREA) { return kDebugDevNull(); }
-static inline QDebug kWarning(bool, int = KDE_DEFAULT_DEBUG_AREA) { return kDebugDevNull(); }
+static inline QDebug kWarning(int = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kDebugDevNull();
+}
+static inline QDebug kWarning(bool, int = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kDebugDevNull();
+}
 #endif
 
 /**
@@ -186,9 +211,13 @@ static inline QDebug kWarning(bool, int = KDE_DEFAULT_DEBUG_AREA) { return kDebu
  * @param area an id to identify the output, KDE_DEFAULT_DEBUG_AREA for default
  */
 static inline QDebug kError(int area = KDE_DEFAULT_DEBUG_AREA)
-{ return kDebugStream(QtCriticalMsg, area); }
+{
+    return kDebugStream(QtCriticalMsg, area);
+}
 static inline QDebug kError(bool cond, int area = KDE_DEFAULT_DEBUG_AREA)
-{ return cond ? kError(area) : kDebugDevNull(); }
+{
+    return cond ? kError(area) : kDebugDevNull();
+}
 
 /**
  * \relates KGlobal
@@ -197,14 +226,20 @@ static inline QDebug kError(bool cond, int area = KDE_DEFAULT_DEBUG_AREA)
  * @param area an id to identify the output, KDE_DEFAULT_DEBUG_AREA for default
  */
 static inline QDebug kFatal(int area = KDE_DEFAULT_DEBUG_AREA)
-{ return kDebugStream(QtFatalMsg, area); }
+{
+    return kDebugStream(QtFatalMsg, area);
+}
 static inline QDebug kFatal(bool cond, int area = KDE_DEFAULT_DEBUG_AREA)
-{ return cond ? kFatal(area) : kDebugDevNull(); }
+{
+    return cond ? kFatal(area) : kDebugDevNull();
+}
 
 struct KDebugTag { }; ///! @internal just a tag class
-typedef QDebug (*KDebugStreamFunction)(QDebug, KDebugTag); ///< @internal
+typedef QDebug(*KDebugStreamFunction)(QDebug, KDebugTag);  ///< @internal
 inline QDebug operator<<(QDebug s, KDebugStreamFunction f)
-{ return (*f)(s, KDebugTag()); }
+{
+    return (*f)(s, KDebugTag());
+}
 
 /**
  * \relates KGlobal
@@ -227,13 +262,31 @@ KDE4SUPPORT_DEPRECATED_EXPORT_NOISE QDebug operator<<(QDebug s, const QUrl &url)
 class KDE4SUPPORT_DEPRECATED_NOISE kndbgstream { };
 typedef QDebug kdbgstream;
 
-static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdDebug(int area = KDE_DEFAULT_DEBUG_AREA) { return kDebug(area); }
-static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdWarning(int area = KDE_DEFAULT_DEBUG_AREA) { return kWarning(area); }
-static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdError(int area = KDE_DEFAULT_DEBUG_AREA) { return kError(area); }
-static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdFatal(int area = KDE_DEFAULT_DEBUG_AREA) { return kFatal(area); }
-inline KDE4SUPPORT_DEPRECATED_NOISE QString kdBacktrace(int levels=-1) { return kBacktrace( levels ); }
+static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdDebug(int area = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kDebug(area);
+}
+static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdWarning(int area = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kWarning(area);
+}
+static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdError(int area = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kError(area);
+}
+static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kdFatal(int area = KDE_DEFAULT_DEBUG_AREA)
+{
+    return kFatal(area);
+}
+inline KDE4SUPPORT_DEPRECATED_NOISE QString kdBacktrace(int levels = -1)
+{
+    return kBacktrace(levels);
+}
 
-static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kndDebug() { return kDebugDevNull(); }
+static inline KDE4SUPPORT_DEPRECATED_NOISE QDebug kndDebug()
+{
+    return kDebugDevNull();
+}
 #endif
 #endif
 
@@ -253,29 +306,39 @@ public:
     class Block;
     explicit inline KDebug(QtMsgType type, const char *f = 0, int l = -1, const char *info = 0)
         : file(f), funcinfo(info), line(l), level(type)
-        {
+    {
 #ifdef KDE4_CMAKE_TOPLEVEL_DIR_LENGTH // set by FindKDE4Internal.cmake
-            file = file + KDE4_CMAKE_TOPLEVEL_DIR_LENGTH + 1;
+        file = file + KDE4_CMAKE_TOPLEVEL_DIR_LENGTH + 1;
 #endif
-        }
+    }
 
     inline QDebug operator()(int area = KDE_DEFAULT_DEBUG_AREA)
-        { return kDebugStream(level, area, file, line, funcinfo); }
+    {
+        return kDebugStream(level, area, file, line, funcinfo);
+    }
     inline QDebug operator()(bool cond, int area = KDE_DEFAULT_DEBUG_AREA)
-        { if (cond) return operator()(area); return kDebugDevNull(); }
+    {
+        if (cond) {
+            return operator()(area);
+        } return kDebugDevNull();
+    }
 
     /// @internal
     static KDE4SUPPORT_DEPRECATED_EXPORT_NOISE bool hasNullOutput(QtMsgType type,
-                                             bool condition,
-                                             int area,
-                                             bool enableByDefault);
+            bool condition,
+            int area,
+            bool enableByDefault);
 
     /// @internal
     static inline bool hasNullOutputQtDebugMsg(int area = KDE_DEFAULT_DEBUG_AREA)
-        { return hasNullOutput(QtDebugMsg, true, area, KDE_DEBUG_ENABLED_BY_DEFAULT); }
+    {
+        return hasNullOutput(QtDebugMsg, true, area, KDE_DEBUG_ENABLED_BY_DEFAULT);
+    }
     /// @internal
     static inline bool hasNullOutputQtDebugMsg(bool condition, int area = KDE_DEFAULT_DEBUG_AREA)
-        { return hasNullOutput(QtDebugMsg, condition, area, KDE_DEBUG_ENABLED_BY_DEFAULT); }
+    {
+        return hasNullOutput(QtDebugMsg, condition, area, KDE_DEBUG_ENABLED_BY_DEFAULT);
+    }
 
     /**
      * @since 4.4
@@ -302,19 +365,21 @@ public:
      * declare it in one file without static, and use "extern int debugArea();"
      * in other files (with a better name for the function of course).
      */
-    static KDE4SUPPORT_DEPRECATED_EXPORT_NOISE int registerArea(const QByteArray& areaName, bool enabled = true);
+    static KDE4SUPPORT_DEPRECATED_EXPORT_NOISE int registerArea(const QByteArray &areaName, bool enabled = true);
 
 private:
-    WrongSyntax operator()(const char*) {return WrongSyntax();} // error! Use kDebug() << "..." or kWarning() << "..." instead.
+    WrongSyntax operator()(const char *)
+    {
+        return WrongSyntax();   // error! Use kDebug() << "..." or kWarning() << "..." instead.
+    }
 };
-
 
 #if !defined(KDE_NO_DEBUG_OUTPUT)
 /* __VA_ARGS__ should work with any supported GCC version and MSVC > 2005 */
 # if defined(Q_CC_GNU) || (defined(Q_CC_MSVC) && _MSC_VER >= 1500)
 #  define kDebug(...) for (bool _k_kDebugDoOutput_ = !KDebug::hasNullOutputQtDebugMsg(__VA_ARGS__); \
                            Q_UNLIKELY(_k_kDebugDoOutput_); _k_kDebugDoOutput_ = false) \
-                           KDebug(QtDebugMsg, __FILE__, __LINE__, Q_FUNC_INFO)(__VA_ARGS__)
+    KDebug(QtDebugMsg, __FILE__, __LINE__, Q_FUNC_INFO)(__VA_ARGS__)
 # else
 #  define kDebug     KDebug(QtDebugMsg, __FILE__, __LINE__, Q_FUNC_INFO)
 # endif
@@ -357,14 +422,14 @@ private:
 class KDE4SUPPORT_DEPRECATED_EXPORT KDebug::Block
 {
 public:
-    Block(const char* label, int area = KDE_DEFAULT_DEBUG_AREA);
+    Block(const char *label, int area = KDE_DEFAULT_DEBUG_AREA);
     ~Block();
 
 private:
     QElapsedTimer m_startTime;
     int m_area;
     class Private;
-    Private* d;
+    Private *d;
 };
 
 /**
@@ -377,7 +442,7 @@ private:
 class KDE4SUPPORT_DEPRECATED_EXPORT KDebug::Block
 {
 public:
-    Block(const char*, int = KDE_DEFAULT_DEBUG_AREA) {}
+    Block(const char *, int = KDE_DEFAULT_DEBUG_AREA) {}
     ~Block() {}
 };
 

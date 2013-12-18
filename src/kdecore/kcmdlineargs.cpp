@@ -75,55 +75,57 @@
 // Helper classes
 //
 
-class KCmdLineParsedOptions : public QHash<QByteArray,QByteArray>
+class KCmdLineParsedOptions : public QHash<QByteArray, QByteArray>
 {
 public:
-   KCmdLineParsedOptions() { }
+    KCmdLineParsedOptions() { }
 };
 
 class KCmdLineParsedArgs : public QList<QByteArray>
 {
 public:
-   KCmdLineParsedArgs() { }
+    KCmdLineParsedArgs() { }
 };
 
-
-class KCmdLineArgsList: public QList<KCmdLineArgs*>
+class KCmdLineArgsList: public QList<KCmdLineArgs *>
 {
 public:
-   KCmdLineArgsList() { }
-   ~KCmdLineArgsList() {
-	   while (count())
-		delete takeFirst();
-   }
+    KCmdLineArgsList() { }
+    ~KCmdLineArgsList()
+    {
+        while (count()) {
+            delete takeFirst();
+        }
+    }
 };
 
 //
 // KCmdLineOptions
 //
 
-class KCmdLineOptionsPrivate {
-    public:
+class KCmdLineOptionsPrivate
+{
+public:
     QList<QByteArray> names;
     QList<KLocalizedString> descriptions;
     QStringList defaults;
 };
 
-KCmdLineOptions::KCmdLineOptions ()
-: d(new KCmdLineOptionsPrivate)
+KCmdLineOptions::KCmdLineOptions()
+    : d(new KCmdLineOptionsPrivate)
 {}
 
-KCmdLineOptions::~KCmdLineOptions ()
+KCmdLineOptions::~KCmdLineOptions()
 {
     delete d;
 }
 
-KCmdLineOptions::KCmdLineOptions (const KCmdLineOptions &options)
-: d(new KCmdLineOptionsPrivate(*(options.d)))
+KCmdLineOptions::KCmdLineOptions(const KCmdLineOptions &options)
+    : d(new KCmdLineOptionsPrivate(*(options.d)))
 {
 }
 
-KCmdLineOptions& KCmdLineOptions::operator= (const KCmdLineOptions &options)
+KCmdLineOptions &KCmdLineOptions::operator= (const KCmdLineOptions &options)
 {
     if (this != &options) {
         *d = *(options.d);
@@ -131,9 +133,9 @@ KCmdLineOptions& KCmdLineOptions::operator= (const KCmdLineOptions &options)
     return *this;
 }
 
-KCmdLineOptions &KCmdLineOptions::add (const QByteArray &name,
-                                       const KLocalizedString &description,
-                                       const QByteArray &defaultValue)
+KCmdLineOptions &KCmdLineOptions::add(const QByteArray &name,
+                                      const KLocalizedString &description,
+                                      const QByteArray &defaultValue)
 {
     d->names.append(name);
     d->descriptions.append(description);
@@ -141,7 +143,7 @@ KCmdLineOptions &KCmdLineOptions::add (const QByteArray &name,
     return *this;
 }
 
-KCmdLineOptions &KCmdLineOptions::add (const KCmdLineOptions &other)
+KCmdLineOptions &KCmdLineOptions::add(const KCmdLineOptions &other)
 {
     d->names += other.d->names;
     d->descriptions += other.d->descriptions;
@@ -153,8 +155,9 @@ KCmdLineOptions &KCmdLineOptions::add (const KCmdLineOptions &other)
 // KCmdLineArgs static data and methods
 //
 
-class KCmdLineArgsStatic {
-    public:
+class KCmdLineArgsStatic
+{
+public:
 
     KCmdLineArgsList *argsList; // All options.
     const K4AboutData *about;
@@ -170,9 +173,9 @@ class KCmdLineArgsStatic {
     KCmdLineOptions qt_options;
     KCmdLineOptions kde_options;
 
-    KCmdLineArgsStatic ();
+    KCmdLineArgsStatic();
 
-    ~KCmdLineArgsStatic ();
+    ~KCmdLineArgsStatic();
 
     QTextCodec *codec; // codec for converting raw input to QString
 
@@ -251,7 +254,8 @@ class KCmdLineArgsStatic {
 };
 Q_GLOBAL_STATIC(KCmdLineArgsStatic, staticObj)
 
-KCmdLineArgsStatic::KCmdLineArgsStatic () {
+KCmdLineArgsStatic::KCmdLineArgsStatic()
+{
     // Global data
     argsList = 0;
     all_argc = 0;
@@ -314,7 +318,7 @@ KCmdLineArgsStatic::KCmdLineArgsStatic () {
 #endif
 }
 
-KCmdLineArgsStatic::~KCmdLineArgsStatic ()
+KCmdLineArgsStatic::~KCmdLineArgsStatic()
 {
     delete argsList;
     // K4AboutData object is deleted by ~KCleanUpGlobalStatic.
@@ -376,14 +380,14 @@ public:
      *
      * Save to a stream.
      */
-    void save( QDataStream &) const;
+    void save(QDataStream &) const;
 
     /**
      * @internal
      *
      * Restore from a stream.
      */
-    void load( QDataStream &);
+    void load(QDataStream &);
 };
 
 //
@@ -405,7 +409,7 @@ KCmdLineArgsStatic::encodeOutput(const QString &str)
 void
 KCmdLineArgsStatic::printQ(const QString &msg)
 {
-   fprintf(stdout, "%s", encodeOutput(msg).data());
+    fprintf(stdout, "%s", encodeOutput(msg).data());
 }
 
 void
@@ -417,231 +421,234 @@ KCmdLineArgs::init(int _argc, char **_argv,
                    const KLocalizedString &_description,
                    StdCmdLineArgs stdargs)
 {
-   init(_argc, _argv,
-        new K4AboutData(_appname, _catalog, _programName, _version, _description),
-        stdargs);
+    init(_argc, _argv,
+         new K4AboutData(_appname, _catalog, _programName, _version, _description),
+         stdargs);
 }
 
 void
-KCmdLineArgs::initIgnore(int _argc, char **_argv, const QByteArray &_appname )
+KCmdLineArgs::initIgnore(int _argc, char **_argv, const QByteArray &_appname)
 {
-   init(_argc, _argv,
-        new K4AboutData(_appname, 0, ki18n(_appname.data()), "unknown", ki18n("KDE Application")));
-   staticObj()->ignoreUnknown = true;
+    init(_argc, _argv,
+         new K4AboutData(_appname, 0, ki18n(_appname.data()), "unknown", ki18n("KDE Application")));
+    staticObj()->ignoreUnknown = true;
 }
 
 void
-KCmdLineArgs::init(const K4AboutData* ab)
+KCmdLineArgs::init(const K4AboutData *ab)
 {
-   char **_argv = (char **) malloc(sizeof(char *));
-   _argv[0] = (char *) staticObj()->encodeOutput(ab->appName()).data();
-   init(1,_argv,ab, CmdLineArgNone);
+    char **_argv = (char **) malloc(sizeof(char *));
+    _argv[0] = (char *) staticObj()->encodeOutput(ab->appName()).data();
+    init(1, _argv, ab, CmdLineArgNone);
 }
-
 
 void
 KCmdLineArgs::init(int _argc, char **_argv, const K4AboutData *_about, StdCmdLineArgs stdargs)
 {
-   staticObj()->all_argc = _argc;
-   staticObj()->all_argv = _argv;
+    staticObj()->all_argc = _argc;
+    staticObj()->all_argv = _argv;
 
-   if (!staticObj()->all_argv)
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
-      fprintf(stderr, "Passing null-pointer to 'argv' is not allowed.\n\n");
+    if (!staticObj()->all_argv) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
+        fprintf(stderr, "Passing null-pointer to 'argv' is not allowed.\n\n");
 
-      assert( 0 );
-      exit(255);
-   }
+        assert(0);
+        exit(255);
+    }
 
-   // Strip path from argv[0]
-   if (staticObj()->all_argc) {
-     char *p = strrchr(staticObj()->all_argv[0], QDir::separator().toLatin1());
-     if (p)
-       staticObj()->appName = p+1;
-     else
-       staticObj()->appName = staticObj()->all_argv[0];
-   }
+    // Strip path from argv[0]
+    if (staticObj()->all_argc) {
+        char *p = strrchr(staticObj()->all_argv[0], QDir::separator().toLatin1());
+        if (p) {
+            staticObj()->appName = p + 1;
+        } else {
+            staticObj()->appName = staticObj()->all_argv[0];
+        }
+    }
 
-   staticObj()->about = _about;
-   staticObj()->parsed = false;
-   staticObj()->mCwd = QDir::currentPath().toLocal8Bit(); //currentPath() uses fromLocal8Bit internally apparently
-   addStdCmdLineOptions(stdargs);
+    staticObj()->about = _about;
+    staticObj()->parsed = false;
+    staticObj()->mCwd = QDir::currentPath().toLocal8Bit(); //currentPath() uses fromLocal8Bit internally apparently
+    addStdCmdLineOptions(stdargs);
 }
 
 QString KCmdLineArgs::cwd()
 {
-   return QString::fromLocal8Bit(staticObj()->mCwd.data());
+    return QString::fromLocal8Bit(staticObj()->mCwd.data());
 }
 
 QString KCmdLineArgs::appName()
 {
-   if (!staticObj()->appName) return QString();
-   return staticObj()->decodeInput(staticObj()->appName);
+    if (!staticObj()->appName) {
+        return QString();
+    }
+    return staticObj()->decodeInput(staticObj()->appName);
 }
 
 /**
   * Add Qt and KDE command line options to KCmdLineArgs.
   */
-void KCmdLineArgs::addStdCmdLineOptions(StdCmdLineArgs stdargs) {
-   if (stdargs & KCmdLineArgs::CmdLineArgQt) {
-       KCmdLineArgs::addCmdLineOptions(staticObj()->qt_options, ki18n("Qt"), "qt");
-   }
-   if (stdargs & KCmdLineArgs::CmdLineArgKDE) {
-       KCmdLineArgs::addCmdLineOptions(staticObj()->kde_options, ki18n("KDE"), "kde");
-   }
-   staticObj()->mStdargs = stdargs;
+void KCmdLineArgs::addStdCmdLineOptions(StdCmdLineArgs stdargs)
+{
+    if (stdargs & KCmdLineArgs::CmdLineArgQt) {
+        KCmdLineArgs::addCmdLineOptions(staticObj()->qt_options, ki18n("Qt"), "qt");
+    }
+    if (stdargs & KCmdLineArgs::CmdLineArgKDE) {
+        KCmdLineArgs::addCmdLineOptions(staticObj()->kde_options, ki18n("KDE"), "kde");
+    }
+    staticObj()->mStdargs = stdargs;
 }
 
 void
-KCmdLineArgs::addCmdLineOptions( const KCmdLineOptions &options, const KLocalizedString &name,
-         const QByteArray &id, const QByteArray &afterId)
+KCmdLineArgs::addCmdLineOptions(const KCmdLineOptions &options, const KLocalizedString &name,
+                                const QByteArray &id, const QByteArray &afterId)
 {
-   if (!staticObj()->argsList)
-      staticObj()->argsList = new KCmdLineArgsList;
+    if (!staticObj()->argsList) {
+        staticObj()->argsList = new KCmdLineArgsList;
+    }
 
-   int pos = staticObj()->argsList->count();
-   // To make sure that the named options come before unnamed.
-   if (pos > 0 && !id.isEmpty() && staticObj()->argsList->last()->d->name.isEmpty())
-      pos--;
+    int pos = staticObj()->argsList->count();
+    // To make sure that the named options come before unnamed.
+    if (pos > 0 && !id.isEmpty() && staticObj()->argsList->last()->d->name.isEmpty()) {
+        pos--;
+    }
 
-   KCmdLineArgsList::Iterator args;
-   int i = 0;
-   for(args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args, i++)
-   {
-       if (id == (*args)->d->id) {
-         return; // Options already present.
-      }
+    KCmdLineArgsList::Iterator args;
+    int i = 0;
+    for (args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args, i++) {
+        if (id == (*args)->d->id) {
+            return; // Options already present.
+        }
 
-      // Only check for afterId if it has been given non-empty, as the
-      // unnamed option group should come after all named groups.
-      if (!afterId.isEmpty() && afterId == (*args)->d->id)
-         pos = i+1;
-   }
+        // Only check for afterId if it has been given non-empty, as the
+        // unnamed option group should come after all named groups.
+        if (!afterId.isEmpty() && afterId == (*args)->d->id) {
+            pos = i + 1;
+        }
+    }
 
-   Q_ASSERT( staticObj()->parsed == false ); // You must add _ALL_ cmd line options
-                                   // before accessing the arguments!
-   staticObj()->argsList->insert(pos, new KCmdLineArgs(options, name, id));
+    Q_ASSERT(staticObj()->parsed == false);   // You must add _ALL_ cmd line options
+    // before accessing the arguments!
+    staticObj()->argsList->insert(pos, new KCmdLineArgs(options, name, id));
 }
 
 void
-KCmdLineArgs::saveAppArgs( QDataStream &ds)
+KCmdLineArgs::saveAppArgs(QDataStream &ds)
 {
-   if (!staticObj()->parsed)
-      staticObj()->parseAllArgs();
+    if (!staticObj()->parsed) {
+        staticObj()->parseAllArgs();
+    }
 
-   // Remove Qt and KDE options.
-   staticObj()->removeArgs("qt");
-   staticObj()->removeArgs("kde");
-   staticObj()->removeArgs("kuniqueapp");
+    // Remove Qt and KDE options.
+    staticObj()->removeArgs("qt");
+    staticObj()->removeArgs("kde");
+    staticObj()->removeArgs("kuniqueapp");
 
-   ds << staticObj()->mCwd;
+    ds << staticObj()->mCwd;
 
-   uint count = staticObj()->argsList ? staticObj()->argsList->count() : 0;
-   ds << count;
+    uint count = staticObj()->argsList ? staticObj()->argsList->count() : 0;
+    ds << count;
 
-   if (!count) return;
+    if (!count) {
+        return;
+    }
 
-   KCmdLineArgsList::Iterator args;
-   for(args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args)
-   {
-      ds << (*args)->d->id;
-      (*args)->d->save(ds);
-   }
+    KCmdLineArgsList::Iterator args;
+    for (args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args) {
+        ds << (*args)->d->id;
+        (*args)->d->save(ds);
+    }
 }
 
 void
-KCmdLineArgs::loadAppArgs( QDataStream &ds)
+KCmdLineArgs::loadAppArgs(QDataStream &ds)
 {
-   staticObj()->parsed = true; // don't reparse argc/argv!
+    staticObj()->parsed = true; // don't reparse argc/argv!
 
-   // Remove Qt and KDE options.
-   staticObj()->removeArgs("qt");
-   staticObj()->removeArgs("kde");
-   staticObj()->removeArgs("kuniqueapp");
+    // Remove Qt and KDE options.
+    staticObj()->removeArgs("qt");
+    staticObj()->removeArgs("kde");
+    staticObj()->removeArgs("kuniqueapp");
 
-   KCmdLineArgsList::Iterator args;
-   if ( staticObj()->argsList ) {
-      for(args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args)
-      {
-         (*args)->clear();
-      }
-   }
+    KCmdLineArgsList::Iterator args;
+    if (staticObj()->argsList) {
+        for (args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args) {
+            (*args)->clear();
+        }
+    }
 
-   if (ds.atEnd())
-      return;
+    if (ds.atEnd()) {
+        return;
+    }
 
-   QByteArray qCwd;
-   ds >> qCwd;
+    QByteArray qCwd;
+    ds >> qCwd;
 
-   staticObj()->mCwd = qCwd;
+    staticObj()->mCwd = qCwd;
 
-   uint count;
-   ds >> count;
+    uint count;
+    ds >> count;
 
-   while(count--)
-   {
-     QByteArray id;
-     ds >> id;
-     Q_ASSERT( staticObj()->argsList );
-     bool found = false;
-     for(args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args)
-     {
-       if ((*args)->d->id  == id)
-       {
-          (*args)->d->load(ds);
-          found = true;
-          break;
-       }
-     }
-     if (!found) {
-         qWarning() << "Argument definitions for" << id << "not found!";
-         // The next ds >> id will do nonsensical things...
-     }
-   }
-   staticObj()->parsed = true;
+    while (count--) {
+        QByteArray id;
+        ds >> id;
+        Q_ASSERT(staticObj()->argsList);
+        bool found = false;
+        for (args = staticObj()->argsList->begin(); args != staticObj()->argsList->end(); ++args) {
+            if ((*args)->d->id  == id) {
+                (*args)->d->load(ds);
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            qWarning() << "Argument definitions for" << id << "not found!";
+            // The next ds >> id will do nonsensical things...
+        }
+    }
+    staticObj()->parsed = true;
 }
 
 KCmdLineArgs *KCmdLineArgs::parsedArgs(const QByteArray &id)
 {
-   if (!staticObj()->argsList)
-      return 0;
-   KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
-   while(args != staticObj()->argsList->end())
-   {
-      if ((*args)->d->id == id)
-      {
-          if (!staticObj()->parsed)
-             staticObj()->parseAllArgs();
-          return *args;
-      }
-      ++args;
-   }
+    if (!staticObj()->argsList) {
+        return 0;
+    }
+    KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
+    while (args != staticObj()->argsList->end()) {
+        if ((*args)->d->id == id) {
+            if (!staticObj()->parsed) {
+                staticObj()->parseAllArgs();
+            }
+            return *args;
+        }
+        ++args;
+    }
 
-   return 0;
+    return 0;
 }
 
 void KCmdLineArgsStatic::removeArgs(const QByteArray &id)
 {
-   if (!staticObj()->argsList)
-      return;
-   KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
-   while(args != staticObj()->argsList->end())
-   {
-      if ((*args)->d->id == id)
-      {
-          if (!staticObj()->parsed)
-             staticObj()->parseAllArgs();
-          break;
-      }
-      ++args;
-   }
+    if (!staticObj()->argsList) {
+        return;
+    }
+    KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
+    while (args != staticObj()->argsList->end()) {
+        if ((*args)->d->id == id) {
+            if (!staticObj()->parsed) {
+                staticObj()->parseAllArgs();
+            }
+            break;
+        }
+        ++args;
+    }
 
-   if (args != staticObj()->argsList->end()) {
-      KCmdLineArgs *a = *args;
-      staticObj()->argsList->erase(args);
-      delete a;
-   }
+    if (args != staticObj()->argsList->end()) {
+        KCmdLineArgs *a = *args;
+        staticObj()->argsList->erase(args);
+        delete a;
+    }
 }
 
 #pragma message("KDE5 TODO: Remove this method once it is in Qt5")
@@ -673,406 +680,370 @@ int
 KCmdLineArgsStatic::findOption(const KCmdLineOptions &options, QByteArray &opt,
                                QByteArray &opt_name, QString &def, bool &enabled)
 {
-   int result;
-   bool inverse;
+    int result;
+    bool inverse;
 
-   for (int i = 0; i < options.d->names.size(); i++)
-   {
-      result = 0;
-      inverse = false;
-      opt_name = options.d->names[i];
-      if (opt_name.startsWith(':') || opt_name.isEmpty())
-      {
-         continue;
-      }
-      if (opt_name.startsWith('!'))
-      {
-         opt_name = opt_name.mid(1);
-         result = 4;
-      }
-      if (opt_name.startsWith("no") && !opt_name.contains('<')) // krazy:exclude=strings
-      {
-         opt_name = opt_name.mid(2);
-         inverse = true;
-      }
-
-      int len = opt.length();
-      if (opt == opt_name.left(len))
-      {
-         opt_name = opt_name.mid(len);
-         if (opt_name.isEmpty())
-         {
-            if (inverse)
-               return result+2;
-
-            if (options.d->descriptions[i].isEmpty())
-            {
-               i++;
-               if (i >= options.d->names.size())
-                  return result+0;
-               QByteArray nextOption = options.d->names[i];
-               int p = nextOption.indexOf(' ');
-               if (p > 0)
-                  nextOption = nextOption.left(p);
-               if (nextOption.startsWith('!'))
-                  nextOption = nextOption.mid(1);
-               if (nextOption.startsWith("no") && !nextOption.contains('<')) // krazy:exclude=strings
-               {
-                  nextOption = nextOption.mid(2);
-                  enabled = !enabled;
-               }
-               result = findOption(options, nextOption, opt_name, def, enabled);
-               Q_ASSERT(result);
-               opt = nextOption;
-               return result;
-            }
-
-            return 1;
-         }
-         if (opt_name.startsWith(' '))
-         {
+    for (int i = 0; i < options.d->names.size(); i++) {
+        result = 0;
+        inverse = false;
+        opt_name = options.d->names[i];
+        if (opt_name.startsWith(':') || opt_name.isEmpty()) {
+            continue;
+        }
+        if (opt_name.startsWith('!')) {
             opt_name = opt_name.mid(1);
-            def = options.d->defaults[i];
-            return result+3;
-         }
-      }
-   }
-   return 0;
+            result = 4;
+        }
+        if (opt_name.startsWith("no") && !opt_name.contains('<')) { // krazy:exclude=strings
+            opt_name = opt_name.mid(2);
+            inverse = true;
+        }
+
+        int len = opt.length();
+        if (opt == opt_name.left(len)) {
+            opt_name = opt_name.mid(len);
+            if (opt_name.isEmpty()) {
+                if (inverse) {
+                    return result + 2;
+                }
+
+                if (options.d->descriptions[i].isEmpty()) {
+                    i++;
+                    if (i >= options.d->names.size()) {
+                        return result + 0;
+                    }
+                    QByteArray nextOption = options.d->names[i];
+                    int p = nextOption.indexOf(' ');
+                    if (p > 0) {
+                        nextOption = nextOption.left(p);
+                    }
+                    if (nextOption.startsWith('!')) {
+                        nextOption = nextOption.mid(1);
+                    }
+                    if (nextOption.startsWith("no") && !nextOption.contains('<')) { // krazy:exclude=strings
+                        nextOption = nextOption.mid(2);
+                        enabled = !enabled;
+                    }
+                    result = findOption(options, nextOption, opt_name, def, enabled);
+                    Q_ASSERT(result);
+                    opt = nextOption;
+                    return result;
+                }
+
+                return 1;
+            }
+            if (opt_name.startsWith(' ')) {
+                opt_name = opt_name.mid(1);
+                def = options.d->defaults[i];
+                return result + 3;
+            }
+        }
+    }
+    return 0;
 }
 
 void
 KCmdLineArgsStatic::findOption(const QByteArray &optv, const QByteArray &_opt,
                                int &i, bool _enabled, bool &moreOptions)
 {
-   KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
-   QByteArray opt = _opt;
-   QByteArray opt_name;
-   QString def;
-   QByteArray argument;
-   int j = opt.indexOf('=');
-   if (j != -1)
-   {
-      argument = opt.mid(j+1);
-      opt = opt.left(j);
-   }
+    KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
+    QByteArray opt = _opt;
+    QByteArray opt_name;
+    QString def;
+    QByteArray argument;
+    int j = opt.indexOf('=');
+    if (j != -1) {
+        argument = opt.mid(j + 1);
+        opt = opt.left(j);
+    }
 
-   bool enabled = true;
-   int result = 0;
-   while (args != staticObj()->argsList->end())
-   {
-      enabled = _enabled;
-      result = findOption((*args)->d->options, opt, opt_name, def, enabled);
-      if (result) break;
-      ++args;
-   }
-   if ((args == staticObj()->argsList->end()) &&
-       (optv.startsWith('-') && !optv.startsWith("--"))) // krazy:exclude=strings
-   {
-      // Option not found check if it is a valid option
-      // in the style of -Pprinter1 or ps -aux
-      int p = 1;
-      while (true)
-      {
-         QByteArray singleCharOption = " "; // krazy:exclude=doublequote_chars
-         singleCharOption[0] = optv[p];
-         args = staticObj()->argsList->begin();
-         while (args != staticObj()->argsList->end())
-         {
-            enabled = _enabled;
-            result = findOption((*args)->d->options, singleCharOption,
-			          opt_name, def, enabled);
-            if (result) break;
-            ++args;
-         }
-         if (args == staticObj()->argsList->end())
-            break; // Unknown argument
-
-         p++;
-         if (result == 1) // Single option
-         {
-            (*args)->d->setOption(singleCharOption, enabled);
-            if (p < optv.length())
-               continue; // Next option
-            else
-               return; // Finished
-         }
-         else if (result == 3) // This option takes an argument
-         {
-            if (argument.isEmpty())
-            {
-               argument = optv.mid(p);
+    bool enabled = true;
+    int result = 0;
+    while (args != staticObj()->argsList->end()) {
+        enabled = _enabled;
+        result = findOption((*args)->d->options, opt, opt_name, def, enabled);
+        if (result) {
+            break;
+        }
+        ++args;
+    }
+    if ((args == staticObj()->argsList->end()) &&
+            (optv.startsWith('-') && !optv.startsWith("--"))) { // krazy:exclude=strings
+        // Option not found check if it is a valid option
+        // in the style of -Pprinter1 or ps -aux
+        int p = 1;
+        while (true) {
+            QByteArray singleCharOption = " "; // krazy:exclude=doublequote_chars
+            singleCharOption[0] = optv[p];
+            args = staticObj()->argsList->begin();
+            while (args != staticObj()->argsList->end()) {
+                enabled = _enabled;
+                result = findOption((*args)->d->options, singleCharOption,
+                                    opt_name, def, enabled);
+                if (result) {
+                    break;
+                }
+                ++args;
             }
-            (*args)->d->setOption(singleCharOption, argument);
+            if (args == staticObj()->argsList->end()) {
+                break;    // Unknown argument
+            }
+
+            p++;
+            if (result == 1) { // Single option
+                (*args)->d->setOption(singleCharOption, enabled);
+                if (p < optv.length()) {
+                    continue;    // Next option
+                } else {
+                    return;    // Finished
+                }
+            } else if (result == 3) { // This option takes an argument
+                if (argument.isEmpty()) {
+                    argument = optv.mid(p);
+                }
+                (*args)->d->setOption(singleCharOption, argument);
+                return;
+            }
+            break; // Unknown argument
+        }
+        args = staticObj()->argsList->end();
+        result = 0;
+    }
+
+    if (args == staticObj()->argsList->end() || !result) {
+        if (staticObj()->ignoreUnknown) {
             return;
-         }
-         break; // Unknown argument
-      }
-      args = staticObj()->argsList->end();
-      result = 0;
-   }
+        }
+        KCmdLineArgs::enable_i18n();
+        KCmdLineArgs::usageError(QObject::tr("Unknown option '%1'.").arg(QString::fromLocal8Bit(_opt.data())));
+    }
 
-   if (args == staticObj()->argsList->end() || !result)
-   {
-      if (staticObj()->ignoreUnknown)
-         return;
-      KCmdLineArgs::enable_i18n();
-      KCmdLineArgs::usageError(QObject::tr("Unknown option '%1'.").arg(QString::fromLocal8Bit(_opt.data())));
-   }
+    if ((result & 4) != 0) {
+        result &= ~4;
+        moreOptions = false;
+    }
 
-   if ((result & 4) != 0)
-   {
-      result &= ~4;
-      moreOptions = false;
-   }
-
-   if (result == 3) // This option takes an argument
-   {
-      if (!enabled)
-      {
-         if (staticObj()->ignoreUnknown)
-            return;
-         KCmdLineArgs::enable_i18n();
-         KCmdLineArgs::usageError(QObject::tr("Unknown option '%1'.").arg(QString::fromLocal8Bit(_opt.data())));
-      }
-      if (argument.isEmpty())
-      {
-         i++;
-         if (i >= staticObj()->all_argc)
-         {
+    if (result == 3) { // This option takes an argument
+        if (!enabled) {
+            if (staticObj()->ignoreUnknown) {
+                return;
+            }
             KCmdLineArgs::enable_i18n();
-            KCmdLineArgs::usageError(i18nc("@info:shell %1 is cmdoption name","'%1' missing.").arg(QString::fromLocal8Bit(opt_name.data())));
-         }
-         argument = staticObj()->all_argv[i];
-      }
-      (*args)->d->setOption(opt, argument);
-   }
-   else
-   {
-      (*args)->d->setOption(opt, enabled);
-   }
+            KCmdLineArgs::usageError(QObject::tr("Unknown option '%1'.").arg(QString::fromLocal8Bit(_opt.data())));
+        }
+        if (argument.isEmpty()) {
+            i++;
+            if (i >= staticObj()->all_argc) {
+                KCmdLineArgs::enable_i18n();
+                KCmdLineArgs::usageError(i18nc("@info:shell %1 is cmdoption name", "'%1' missing.").arg(QString::fromLocal8Bit(opt_name.data())));
+            }
+            argument = staticObj()->all_argv[i];
+        }
+        (*args)->d->setOption(opt, argument);
+    } else {
+        (*args)->d->setOption(opt, enabled);
+    }
 }
 
 void
 KCmdLineArgsStatic::parseAllArgs()
 {
-   bool allowArgs = false;
-   bool inOptions = true;
-   bool everythingAfterArgIsArgs = false;
-   KCmdLineArgs *appOptions = staticObj()->argsList->last();
-   if (appOptions->d->id.isEmpty())
-   {
-     Q_FOREACH(const QByteArray& name, appOptions->d->options.d->names)
-     {
-       everythingAfterArgIsArgs = everythingAfterArgIsArgs || name.startsWith("!+");
-       allowArgs = allowArgs || name.startsWith('+') || everythingAfterArgIsArgs;
-     }
-   }
-   for(int i = 1; i < staticObj()->all_argc; i++)
-   {
-      if (!staticObj()->all_argv[i])
-         continue;
-
-      if ((staticObj()->all_argv[i][0] == '-') && staticObj()->all_argv[i][1] && inOptions)
-      {
-         bool enabled = true;
-         QByteArray orig = staticObj()->all_argv[i];
-         QByteArray option = orig.mid(1);
-         if (option.startsWith('-'))
-         {
-            option = option.mid(1);
-            if (option.isEmpty())
-            {
-               inOptions = false;
-               continue;
-            }
-         }
-         if (option == "help")
-         {
-            KCmdLineArgs::usage();
-         }
-         else if (option.startsWith("help-")) // krazy:exclude=strings
-         {
-            KCmdLineArgs::usage(option.mid(5));
-         }
-#ifdef Q_OS_MAC
-         // skip the finder -psn_* hint
-         else if (option.startsWith("psn_")) // krazy:exclude=strings
-         {
+    bool allowArgs = false;
+    bool inOptions = true;
+    bool everythingAfterArgIsArgs = false;
+    KCmdLineArgs *appOptions = staticObj()->argsList->last();
+    if (appOptions->d->id.isEmpty()) {
+        Q_FOREACH (const QByteArray &name, appOptions->d->options.d->names) {
+            everythingAfterArgIsArgs = everythingAfterArgIsArgs || name.startsWith("!+");
+            allowArgs = allowArgs || name.startsWith('+') || everythingAfterArgIsArgs;
+        }
+    }
+    for (int i = 1; i < staticObj()->all_argc; i++) {
+        if (!staticObj()->all_argv[i]) {
             continue;
-         }
+        }
+
+        if ((staticObj()->all_argv[i][0] == '-') && staticObj()->all_argv[i][1] && inOptions) {
+            bool enabled = true;
+            QByteArray orig = staticObj()->all_argv[i];
+            QByteArray option = orig.mid(1);
+            if (option.startsWith('-')) {
+                option = option.mid(1);
+                if (option.isEmpty()) {
+                    inOptions = false;
+                    continue;
+                }
+            }
+            if (option == "help") {
+                KCmdLineArgs::usage();
+            } else if (option.startsWith("help-")) { // krazy:exclude=strings
+                KCmdLineArgs::usage(option.mid(5));
+            }
+#ifdef Q_OS_MAC
+            // skip the finder -psn_* hint
+            else if (option.startsWith("psn_")) { // krazy:exclude=strings
+                continue;
+            }
 #endif
-         else if ((option == "version") || (option == "v"))
-         {
-            KCmdLineArgs::enable_i18n();
+            else if ((option == "version") || (option == "v")) {
+                KCmdLineArgs::enable_i18n();
 #pragma message("KDE5 TODO: use kcoreaddons version number")
-            staticObj()->printQ(i18nc("@info:shell message on appcmd --version; do not translate 'Development Platform'"
-                            "%3 application name, other %n version strings",
-                            "Qt: %1\n"
-                            "KDE Development Platform: %2\n"
-                            "%3: %4\n").arg(QString::fromLatin1(qVersion()),
-                            QString::fromLatin1("TODO" /*KDE_VERSION_STRING*/),
-                            staticObj()->about->programName(), staticObj()->about->version()));
-            exit(0);
-         } else if (option == "license")
-         {
-            KCmdLineArgs::enable_i18n();
-            staticObj()->printQ(staticObj()->about->license());
-            staticObj()->printQ(QString::fromLatin1("\n"));
-            exit(0);
-         } else if (option == "author") {
-             KCmdLineArgs::enable_i18n();
-       if ( staticObj()->about ) {
-         const QList<K4AboutPerson> authors = staticObj()->about->authors();
-         if ( !authors.isEmpty() ) {
-           QString authorlist;
-           for (QList<K4AboutPerson>::ConstIterator it = authors.begin(); it != authors.end(); ++it ) {
-             QString email;
-             if ( !(*it).emailAddress().isEmpty() )
-               email = QString::fromLatin1(" &lt;") + (*it).emailAddress() + QLatin1String("&gt;");
-             authorlist += QString::fromLatin1("    ") + (*it).name() + email + QLatin1Char('\n');
-           }
-           staticObj()->printQ(i18nc("the 2nd argument is a list of name+address, one on each line","%1 was written by\n%2").arg(QString(staticObj()->about->programName()), authorlist));
-         }
-       } else {
-         staticObj()->printQ(QObject::tr("This application was written by somebody who wants to remain anonymous."));
-       }
-       if (staticObj()->about)
-       {
-         if (!staticObj()->about->customAuthorTextEnabled ())
-         {
-           if (staticObj()->about->bugAddress().isEmpty() || staticObj()->about->bugAddress() == QLatin1String("submit@bugs.kde.org") )
-             staticObj()->printQ(QObject::tr( "Please use http://bugs.kde.org to report bugs.\n"));
-           else
-             staticObj()->printQ(QObject::tr( "Please report bugs to %1.\n").arg(staticObj()->about->bugAddress()));
-         }
-         else
-         {
-           staticObj()->printQ(staticObj()->about->customAuthorPlainText()+QLatin1Char('\n'));
-         }
-       }
-       exit(0);
-         } else {
-           if (option.startsWith("no")) // krazy:exclude=strings
-           {
-              bool noHasParameter=false;
-              Q_FOREACH(const QByteArray& name, appOptions->d->options.d->names)
-              {
-                 if (name.contains(option + QByteArray(" ")) && name.contains('<'))
-                 {
-                    noHasParameter=true;
-                    break;
-                  }
-              }
-              if (!noHasParameter)
-              {
-                 option = option.mid(2);
-                 enabled = false;
-              }
-           }
-           staticObj()->findOption(orig, option, i, enabled, inOptions);
-         }
-      }
-      else
-      {
-         // Check whether appOptions allows these arguments
-         if (!allowArgs)
-         {
-            if (staticObj()->ignoreUnknown)
-               continue;
-            KCmdLineArgs::enable_i18n();
-            KCmdLineArgs::usageError(QObject::tr("Unexpected argument '%1'.").arg(staticObj()->escape(staticObj()->decodeInput(staticObj()->all_argv[i]))));
-         }
-         else
-         {
-            appOptions->d->addArgument(staticObj()->all_argv[i]);
-            if (everythingAfterArgIsArgs)
-                inOptions = false;
-         }
-      }
-   }
-   staticObj()->parsed = true;
+                staticObj()->printQ(i18nc("@info:shell message on appcmd --version; do not translate 'Development Platform'"
+                                          "%3 application name, other %n version strings",
+                                          "Qt: %1\n"
+                                          "KDE Development Platform: %2\n"
+                                          "%3: %4\n").arg(QString::fromLatin1(qVersion()),
+                                                  QString::fromLatin1("TODO" /*KDE_VERSION_STRING*/),
+                                                  staticObj()->about->programName(), staticObj()->about->version()));
+                exit(0);
+            } else if (option == "license") {
+                KCmdLineArgs::enable_i18n();
+                staticObj()->printQ(staticObj()->about->license());
+                staticObj()->printQ(QString::fromLatin1("\n"));
+                exit(0);
+            } else if (option == "author") {
+                KCmdLineArgs::enable_i18n();
+                if (staticObj()->about) {
+                    const QList<K4AboutPerson> authors = staticObj()->about->authors();
+                    if (!authors.isEmpty()) {
+                        QString authorlist;
+                        for (QList<K4AboutPerson>::ConstIterator it = authors.begin(); it != authors.end(); ++it) {
+                            QString email;
+                            if (!(*it).emailAddress().isEmpty()) {
+                                email = QString::fromLatin1(" &lt;") + (*it).emailAddress() + QLatin1String("&gt;");
+                            }
+                            authorlist += QString::fromLatin1("    ") + (*it).name() + email + QLatin1Char('\n');
+                        }
+                        staticObj()->printQ(i18nc("the 2nd argument is a list of name+address, one on each line", "%1 was written by\n%2").arg(QString(staticObj()->about->programName()), authorlist));
+                    }
+                } else {
+                    staticObj()->printQ(QObject::tr("This application was written by somebody who wants to remain anonymous."));
+                }
+                if (staticObj()->about) {
+                    if (!staticObj()->about->customAuthorTextEnabled()) {
+                        if (staticObj()->about->bugAddress().isEmpty() || staticObj()->about->bugAddress() == QLatin1String("submit@bugs.kde.org")) {
+                            staticObj()->printQ(QObject::tr("Please use http://bugs.kde.org to report bugs.\n"));
+                        } else {
+                            staticObj()->printQ(QObject::tr("Please report bugs to %1.\n").arg(staticObj()->about->bugAddress()));
+                        }
+                    } else {
+                        staticObj()->printQ(staticObj()->about->customAuthorPlainText() + QLatin1Char('\n'));
+                    }
+                }
+                exit(0);
+            } else {
+                if (option.startsWith("no")) { // krazy:exclude=strings
+                    bool noHasParameter = false;
+                    Q_FOREACH (const QByteArray &name, appOptions->d->options.d->names) {
+                        if (name.contains(option + QByteArray(" ")) && name.contains('<')) {
+                            noHasParameter = true;
+                            break;
+                        }
+                    }
+                    if (!noHasParameter) {
+                        option = option.mid(2);
+                        enabled = false;
+                    }
+                }
+                staticObj()->findOption(orig, option, i, enabled, inOptions);
+            }
+        } else {
+            // Check whether appOptions allows these arguments
+            if (!allowArgs) {
+                if (staticObj()->ignoreUnknown) {
+                    continue;
+                }
+                KCmdLineArgs::enable_i18n();
+                KCmdLineArgs::usageError(QObject::tr("Unexpected argument '%1'.").arg(staticObj()->escape(staticObj()->decodeInput(staticObj()->all_argv[i]))));
+            } else {
+                appOptions->d->addArgument(staticObj()->all_argv[i]);
+                if (everythingAfterArgIsArgs) {
+                    inOptions = false;
+                }
+            }
+        }
+    }
+    staticObj()->parsed = true;
 }
 
-int & KCmdLineArgs::qtArgc()
+int &KCmdLineArgs::qtArgc()
 {
-   if (!staticObj()->argsList)
-      addStdCmdLineOptions(CmdLineArgKDE|CmdLineArgQt); // Lazy bastards!
+    if (!staticObj()->argsList) {
+        addStdCmdLineOptions(CmdLineArgKDE | CmdLineArgQt);    // Lazy bastards!
+    }
 
-   static int qt_argc = -1;
-   if( qt_argc != -1 )
-      return qt_argc;
+    static int qt_argc = -1;
+    if (qt_argc != -1) {
+        return qt_argc;
+    }
 
-   if (!(staticObj()->mStdargs & KCmdLineArgs::CmdLineArgQt))
-   {
-     qt_argc = 2;
-     return qt_argc;
-   }
+    if (!(staticObj()->mStdargs & KCmdLineArgs::CmdLineArgQt)) {
+        qt_argc = 2;
+        return qt_argc;
+    }
 
-   KCmdLineArgs *args = parsedArgs("qt");
-   Q_ASSERT(args); // No qt options have been added!
-   if (!staticObj()->all_argv)
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
-      fprintf(stderr, "Application has not called KCmdLineArgs::init(...).\n\n");
+    KCmdLineArgs *args = parsedArgs("qt");
+    Q_ASSERT(args); // No qt options have been added!
+    if (!staticObj()->all_argv) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
+        fprintf(stderr, "Application has not called KCmdLineArgs::init(...).\n\n");
 
-      assert( 0 );
-      exit(255);
-   }
+        assert(0);
+        exit(255);
+    }
 
-   Q_ASSERT(staticObj()->all_argc >= (args->count()+1));
-   qt_argc = args->count() +1;
-   return qt_argc;
+    Q_ASSERT(staticObj()->all_argc >= (args->count() + 1));
+    qt_argc = args->count() + 1;
+    return qt_argc;
 }
 
-static char** s_qt_argv;
+static char **s_qt_argv;
 
 char **
 KCmdLineArgs::qtArgv()
 {
-   if (!staticObj()->argsList)
-      addStdCmdLineOptions(CmdLineArgKDE|CmdLineArgQt); // Lazy bastards!
+    if (!staticObj()->argsList) {
+        addStdCmdLineOptions(CmdLineArgKDE | CmdLineArgQt);    // Lazy bastards!
+    }
 
-   if( s_qt_argv != NULL )
-      return s_qt_argv;
+    if (s_qt_argv != NULL) {
+        return s_qt_argv;
+    }
 
-   if (!(staticObj()->mStdargs & KCmdLineArgs::CmdLineArgQt))
-   {
-     s_qt_argv = new char*[2];
-     s_qt_argv[0] = qstrdup(staticObj()->all_argc?staticObj()->all_argv[0]:"");
-     s_qt_argv[1] = 0;
+    if (!(staticObj()->mStdargs & KCmdLineArgs::CmdLineArgQt)) {
+        s_qt_argv = new char *[2];
+        s_qt_argv[0] = qstrdup(staticObj()->all_argc ? staticObj()->all_argv[0] : "");
+        s_qt_argv[1] = 0;
 
-     return s_qt_argv;
-   }
+        return s_qt_argv;
+    }
 
-   KCmdLineArgs *args = parsedArgs("qt");
-   if (!args)
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
-      fprintf(stderr, "The \"qt\" options have not be added to KCmdLineArgs!\n\n");
+    KCmdLineArgs *args = parsedArgs("qt");
+    if (!args) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
+        fprintf(stderr, "The \"qt\" options have not be added to KCmdLineArgs!\n\n");
 
-      assert( 0 );
-      exit(255);
-   }
-   if (!staticObj()->all_argv)
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
-      fprintf(stderr, "Application has not called KCmdLineArgs::init(...).\n\n");
+        assert(0);
+        exit(255);
+    }
+    if (!staticObj()->all_argv) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
+        fprintf(stderr, "Application has not called KCmdLineArgs::init(...).\n\n");
 
-      assert( 0 );
-      exit(255);
-   }
+        assert(0);
+        exit(255);
+    }
 
-   int count=args->count();
-   s_qt_argv = new char*[ count + 2 ];
-   s_qt_argv[0] = qstrdup(staticObj()->all_argc?staticObj()->all_argv[0]:"");
-   int i = 0;
-   for(; i < count; i++)
-   {
-      s_qt_argv[i+1] = qstrdup(args->d->parsedArgList->at(i).data());
-   }
-   s_qt_argv[i+1] = 0;
+    int count = args->count();
+    s_qt_argv = new char *[ count + 2 ];
+    s_qt_argv[0] = qstrdup(staticObj()->all_argc ? staticObj()->all_argv[0] : "");
+    int i = 0;
+    for (; i < count; i++) {
+        s_qt_argv[i + 1] = qstrdup(args->d->parsedArgList->at(i).data());
+    }
+    s_qt_argv[i + 1] = 0;
 
-   return s_qt_argv;
+    return s_qt_argv;
 }
 
 const K4AboutData *
@@ -1091,8 +1062,9 @@ void
 KCmdLineArgs::usageError(const QString &error)
 {
     QByteArray localError = staticObj()->encodeOutput(error);
-    if (localError.endsWith('\n'))
+    if (localError.endsWith('\n')) {
         localError.chop(1);
+    }
     fprintf(stderr, "%s: %s\n", staticObj()->appName, localError.data());
 
     QString tmp = QObject::tr("Use --help to get a list of available command line options.");
@@ -1104,209 +1076,193 @@ KCmdLineArgs::usageError(const QString &error)
 void
 KCmdLineArgs::usage(const QByteArray &id)
 {
-   enable_i18n();
-   Q_ASSERT(staticObj()->argsList != 0); // It's an error to call usage(...) without
-                               // having done addCmdLineOptions first!
+    enable_i18n();
+    Q_ASSERT(staticObj()->argsList != 0); // It's an error to call usage(...) without
+    // having done addCmdLineOptions first!
 
-   QString optionFormatString = QString::fromLatin1("  %1 %2\n");
-   QString optionFormatStringDef = QString::fromLatin1("  %1 %2 [%3]\n");
-   QString tmp;
-   QString usage;
+    QString optionFormatString = QString::fromLatin1("  %1 %2\n");
+    QString optionFormatStringDef = QString::fromLatin1("  %1 %2 [%3]\n");
+    QString tmp;
+    QString usage;
 
-   KCmdLineArgsList::Iterator args = --(staticObj()->argsList->end());
+    KCmdLineArgsList::Iterator args = --(staticObj()->argsList->end());
 
-   if ((*args)->d->id.isEmpty() && ((*args)->d->options.d->names.size() > 0) &&
-       !(*args)->d->options.d->names[0].startsWith('+'))
-   {
-      usage = QObject::tr("[options] ")+usage;
-   }
+    if ((*args)->d->id.isEmpty() && ((*args)->d->options.d->names.size() > 0) &&
+            !(*args)->d->options.d->names[0].startsWith('+')) {
+        usage = QObject::tr("[options] ") + usage;
+    }
 
-   while(true)
-   {
-      if (!(*args)->d->name.isEmpty())
-      {
-         usage = QObject::tr("[%1-options]").arg((*args)->d->name.toString())+QLatin1Char(' ')+usage;
-      }
-      if (args == staticObj()->argsList->begin())
-         break;
-      --args;
-   }
+    while (true) {
+        if (!(*args)->d->name.isEmpty()) {
+            usage = QObject::tr("[%1-options]").arg((*args)->d->name.toString()) + QLatin1Char(' ') + usage;
+        }
+        if (args == staticObj()->argsList->begin()) {
+            break;
+        }
+        --args;
+    }
 
-   KCmdLineArgs *appOptions = staticObj()->argsList->last();
-   if (appOptions->d->id.isEmpty())
-   {
-     const KCmdLineOptions &option = appOptions->d->options;
-     for (int i = 0; i < option.d->names.size(); i++)
-     {
-       QByteArray opt_name = option.d->names[i];
-       if (opt_name.startsWith('+'))
-         usage += QString::fromLatin1(opt_name.mid(1).data()) + QLatin1Char(' ');
-       else if ( opt_name.startsWith("!+") )
-         usage += QString::fromLatin1(opt_name.mid(2).data()) + QLatin1Char(' ');
-     }
-   }
-
-   staticObj()->printQ(QObject::tr("Usage: %1 %2\n").arg(QString::fromLocal8Bit(staticObj()->appName)).arg(staticObj()->escape(usage)));
-   staticObj()->printQ(QLatin1Char('\n')+staticObj()->about->shortDescription()+QLatin1Char('\n'));
-
-   staticObj()->printQ(QObject::tr("\nGeneric options:\n"));
-   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help"), -25)
-             .arg(QObject::tr("Show help about options")));
-
-   args = staticObj()->argsList->begin();
-   while(args != staticObj()->argsList->end())
-   {
-      if (!(*args)->d->name.isEmpty() && !(*args)->d->id.isEmpty())
-      {
-         QString option = QString::fromLatin1("--help-%1").arg(QString::fromLatin1((*args)->d->id.data()));
-         QString desc = QObject::tr("Show %1 specific options").arg((*args)->d->name.toString());
-
-         staticObj()->printQ(optionFormatString.arg(option, -25).arg(desc));
-      }
-      ++args;
-   }
-
-   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help-all"),-25).arg(QObject::tr("Show all options")));
-   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--author"),-25).arg(QObject::tr("Show author information")));
-   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("-v, --version"),-25).arg(QObject::tr("Show version information")));
-   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--license"),-25).arg(QObject::tr("Show license information")));
-   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--"), -25).arg(QObject::tr("End of options")));
-
-   args = staticObj()->argsList->begin(); // Sets current to 1st.
-
-   bool showAll = (id == "all");
-
-   if (!showAll)
-   {
-     while(args != staticObj()->argsList->end())
-     {
-       if (id == (*args)->d->id) break;
-       ++args;
-     }
-   }
-
-   while(args != staticObj()->argsList->end())
-   {
-     bool hasArgs = false;
-     bool hasOptions = false;
-     QString optionsHeader;
-     if (!(*args)->d->name.isEmpty())
-        optionsHeader = QObject::tr("\n%1 options:\n").arg((*args)->d->name.toString());
-     else
-        optionsHeader = QObject::tr("\nOptions:\n");
-
-     while (args != staticObj()->argsList->end())
-     {
-       const KCmdLineOptions &option = (*args)->d->options;
-       QByteArray opt;
-
-       for (int i = 0; i < option.d->names.size(); i++)
-       {
-         QString description;
-         QStringList dl;
-
-         QString descriptionFull;
-         if (!option.d->descriptions[i].isEmpty()) {
-            descriptionFull = option.d->descriptions[i].toString();
-         }
-
-         // Option header
-         if (option.d->names[i].startsWith(':'))
-         {
-            if (!descriptionFull.isEmpty())
-            {
-               optionsHeader = QLatin1Char('\n')+descriptionFull;
-               if (!optionsHeader.endsWith(QLatin1Char('\n')))
-                  optionsHeader.append(QLatin1Char('\n'));
-               hasOptions = false;
+    KCmdLineArgs *appOptions = staticObj()->argsList->last();
+    if (appOptions->d->id.isEmpty()) {
+        const KCmdLineOptions &option = appOptions->d->options;
+        for (int i = 0; i < option.d->names.size(); i++) {
+            QByteArray opt_name = option.d->names[i];
+            if (opt_name.startsWith('+')) {
+                usage += QString::fromLatin1(opt_name.mid(1).data()) + QLatin1Char(' ');
+            } else if (opt_name.startsWith("!+")) {
+                usage += QString::fromLatin1(opt_name.mid(2).data()) + QLatin1Char(' ');
             }
-            continue;
-         }
+        }
+    }
 
-         // Free-form comment
-         if (option.d->names[i].isEmpty())
-         {
-            if (!descriptionFull.isEmpty())
-            {
-               tmp = QLatin1Char('\n')+descriptionFull;
-               if (!tmp.endsWith(QLatin1Char('\n')))
-                  tmp.append(QLatin1Char('\n'));
-               staticObj()->printQ(tmp);
+    staticObj()->printQ(QObject::tr("Usage: %1 %2\n").arg(QString::fromLocal8Bit(staticObj()->appName)).arg(staticObj()->escape(usage)));
+    staticObj()->printQ(QLatin1Char('\n') + staticObj()->about->shortDescription() + QLatin1Char('\n'));
+
+    staticObj()->printQ(QObject::tr("\nGeneric options:\n"));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help"), -25)
+                        .arg(QObject::tr("Show help about options")));
+
+    args = staticObj()->argsList->begin();
+    while (args != staticObj()->argsList->end()) {
+        if (!(*args)->d->name.isEmpty() && !(*args)->d->id.isEmpty()) {
+            QString option = QString::fromLatin1("--help-%1").arg(QString::fromLatin1((*args)->d->id.data()));
+            QString desc = QObject::tr("Show %1 specific options").arg((*args)->d->name.toString());
+
+            staticObj()->printQ(optionFormatString.arg(option, -25).arg(desc));
+        }
+        ++args;
+    }
+
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help-all"), -25).arg(QObject::tr("Show all options")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--author"), -25).arg(QObject::tr("Show author information")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("-v, --version"), -25).arg(QObject::tr("Show version information")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--license"), -25).arg(QObject::tr("Show license information")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--"), -25).arg(QObject::tr("End of options")));
+
+    args = staticObj()->argsList->begin(); // Sets current to 1st.
+
+    bool showAll = (id == "all");
+
+    if (!showAll) {
+        while (args != staticObj()->argsList->end()) {
+            if (id == (*args)->d->id) {
+                break;
             }
-            continue;
-         }
+            ++args;
+        }
+    }
 
-         // Options
-         if (!descriptionFull.isEmpty())
-         {
-            dl = descriptionFull.split(QLatin1Char('\n'), QString::KeepEmptyParts);
-            description = dl.first();
-            dl.erase( dl.begin() );
-         }
-         QByteArray name = option.d->names[i];
-         if (name.startsWith('!'))
-             name = name.mid(1);
+    while (args != staticObj()->argsList->end()) {
+        bool hasArgs = false;
+        bool hasOptions = false;
+        QString optionsHeader;
+        if (!(*args)->d->name.isEmpty()) {
+            optionsHeader = QObject::tr("\n%1 options:\n").arg((*args)->d->name.toString());
+        } else {
+            optionsHeader = QObject::tr("\nOptions:\n");
+        }
 
-         if (name.startsWith('+'))
-         {
-            if (!hasArgs)
-            {
-               staticObj()->printQ(QObject::tr("\nArguments:\n"));
-               hasArgs = true;
+        while (args != staticObj()->argsList->end()) {
+            const KCmdLineOptions &option = (*args)->d->options;
+            QByteArray opt;
+
+            for (int i = 0; i < option.d->names.size(); i++) {
+                QString description;
+                QStringList dl;
+
+                QString descriptionFull;
+                if (!option.d->descriptions[i].isEmpty()) {
+                    descriptionFull = option.d->descriptions[i].toString();
+                }
+
+                // Option header
+                if (option.d->names[i].startsWith(':')) {
+                    if (!descriptionFull.isEmpty()) {
+                        optionsHeader = QLatin1Char('\n') + descriptionFull;
+                        if (!optionsHeader.endsWith(QLatin1Char('\n'))) {
+                            optionsHeader.append(QLatin1Char('\n'));
+                        }
+                        hasOptions = false;
+                    }
+                    continue;
+                }
+
+                // Free-form comment
+                if (option.d->names[i].isEmpty()) {
+                    if (!descriptionFull.isEmpty()) {
+                        tmp = QLatin1Char('\n') + descriptionFull;
+                        if (!tmp.endsWith(QLatin1Char('\n'))) {
+                            tmp.append(QLatin1Char('\n'));
+                        }
+                        staticObj()->printQ(tmp);
+                    }
+                    continue;
+                }
+
+                // Options
+                if (!descriptionFull.isEmpty()) {
+                    dl = descriptionFull.split(QLatin1Char('\n'), QString::KeepEmptyParts);
+                    description = dl.first();
+                    dl.erase(dl.begin());
+                }
+                QByteArray name = option.d->names[i];
+                if (name.startsWith('!')) {
+                    name = name.mid(1);
+                }
+
+                if (name.startsWith('+')) {
+                    if (!hasArgs) {
+                        staticObj()->printQ(QObject::tr("\nArguments:\n"));
+                        hasArgs = true;
+                    }
+
+                    name = name.mid(1);
+                    if (name.startsWith('[') && name.endsWith(']')) {
+                        name = name.mid(1, name.length() - 2);
+                    }
+                    staticObj()->printQ(optionFormatString.arg(QString::fromLocal8Bit(name.data()), -25).arg(description));
+                } else {
+                    if (!hasOptions) {
+                        staticObj()->printQ(optionsHeader);
+                        hasOptions = true;
+                    }
+
+                    if ((name.length() == 1) || (name[1] == ' ')) {
+                        name = '-' + name;
+                    } else {
+                        name = "--" + name;
+                    }
+                    if (descriptionFull.isEmpty()) {
+                        opt = name + ", ";
+                    } else {
+                        opt = opt + name;
+                        if (option.d->defaults[i].isEmpty()) {
+                            staticObj()->printQ(optionFormatString.arg(QString::fromLatin1(opt.data()), -25).arg(description));
+                        } else {
+                            staticObj()->printQ(optionFormatStringDef.arg(QString::fromLatin1(opt.data()), -25)
+                                                .arg(description, option.d->defaults[i]));
+                        }
+                        opt.clear();
+                    }
+                }
+                for (QStringList::Iterator it = dl.begin();
+                        it != dl.end();
+                        ++it) {
+                    staticObj()->printQ(optionFormatString.arg(QString(), -25).arg(*it));
+                }
             }
 
-            name = name.mid(1);
-            if (name.startsWith('[') && name.endsWith(']'))
-                name = name.mid(1, name.length()-2);
-            staticObj()->printQ(optionFormatString.arg(QString::fromLocal8Bit(name.data()), -25).arg(description));
-         }
-         else
-         {
-            if (!hasOptions)
-            {
-               staticObj()->printQ(optionsHeader);
-               hasOptions = true;
+            ++args;
+            if (args == staticObj()->argsList->end() || !(*args)->d->name.isEmpty() || (*args)->d->id.isEmpty()) {
+                break;
             }
+        }
+        if (!showAll) {
+            break;
+        }
+    }
 
-            if ((name.length() == 1) || (name[1] == ' '))
-               name = '-'+name;
-            else
-               name = "--"+name;
-            if (descriptionFull.isEmpty())
-            {
-               opt = name + ", ";
-            }
-            else
-            {
-               opt = opt + name;
-               if (option.d->defaults[i].isEmpty())
-               {
-                   staticObj()->printQ(optionFormatString.arg(QString::fromLatin1(opt.data()), -25).arg(description));
-               }
-               else
-               {
-                   staticObj()->printQ(optionFormatStringDef.arg(QString::fromLatin1(opt.data()), -25)
-                            .arg(description, option.d->defaults[i]));
-               }
-               opt.clear();
-            }
-         }
-         for(QStringList::Iterator it = dl.begin();
-             it != dl.end();
-             ++it)
-         {
-            staticObj()->printQ(optionFormatString.arg(QString(), -25).arg(*it));
-         }
-       }
-
-       ++args;
-       if (args == staticObj()->argsList->end() || !(*args)->d->name.isEmpty() || (*args)->d->id.isEmpty())
-        break;
-     }
-     if (!showAll) break;
-   }
-
-   exit(0);
+    exit(0);
 }
 
 //
@@ -1318,10 +1274,10 @@ KCmdLineArgs::usage(const QByteArray &id)
  *
  *  The given arguments are assumed to be constants.
  */
-KCmdLineArgs::KCmdLineArgs( const KCmdLineOptions &_options,
-                            const KLocalizedString &_name,
-                            const QByteArray &_id)
-  : d(new KCmdLineArgsPrivate(_options, _name, _id))
+KCmdLineArgs::KCmdLineArgs(const KCmdLineOptions &_options,
+                           const KLocalizedString &_name,
+                           const QByteArray &_id)
+    : d(new KCmdLineArgsPrivate(_options, _name, _id))
 {
 }
 
@@ -1330,13 +1286,14 @@ KCmdLineArgs::KCmdLineArgs( const KCmdLineOptions &_options,
  */
 KCmdLineArgs::~KCmdLineArgs()
 {
-  if (!staticObj.isDestroyed() && staticObj()->argsList)
-     staticObj()->argsList->removeAll(this);
-  delete d;
+    if (!staticObj.isDestroyed() && staticObj()->argsList) {
+        staticObj()->argsList->removeAll(this);
+    }
+    delete d;
 }
 
 void
-KCmdLineArgs::setCwd( const QByteArray &cwd )
+KCmdLineArgs::setCwd(const QByteArray &cwd)
 {
     staticObj()->mCwd = cwd;
 }
@@ -1344,240 +1301,241 @@ KCmdLineArgs::setCwd( const QByteArray &cwd )
 void
 KCmdLineArgs::clear()
 {
-   delete d->parsedArgList;     d->parsedArgList = 0;
-   delete d->parsedOptionList;  d->parsedOptionList = 0;
+    delete d->parsedArgList;     d->parsedArgList = 0;
+    delete d->parsedOptionList;  d->parsedOptionList = 0;
 }
 
 void
 KCmdLineArgs::reset()
 {
-   delete staticObj()->argsList; staticObj()->argsList = 0;
-   staticObj()->parsed = false;
+    delete staticObj()->argsList; staticObj()->argsList = 0;
+    staticObj()->parsed = false;
 }
 
 void
-KCmdLineArgsPrivate::save( QDataStream &ds) const
+KCmdLineArgsPrivate::save(QDataStream &ds) const
 {
-   if (parsedOptionList)
-      ds << (*(parsedOptionList));
-   else
-      ds << quint32(0);
+    if (parsedOptionList) {
+        ds << (*(parsedOptionList));
+    } else {
+        ds << quint32(0);
+    }
 
-   if (parsedArgList)
-      ds << (*(parsedArgList));
-   else
-      ds << quint32(0);
+    if (parsedArgList) {
+        ds << (*(parsedArgList));
+    } else {
+        ds << quint32(0);
+    }
 }
 
 void
-KCmdLineArgsPrivate::load( QDataStream &ds)
+KCmdLineArgsPrivate::load(QDataStream &ds)
 {
-   if (!parsedOptionList) parsedOptionList = new KCmdLineParsedOptions;
-   if (!parsedArgList) parsedArgList = new KCmdLineParsedArgs;
+    if (!parsedOptionList) {
+        parsedOptionList = new KCmdLineParsedOptions;
+    }
+    if (!parsedArgList) {
+        parsedArgList = new KCmdLineParsedArgs;
+    }
 
-   ds >> (*(parsedOptionList));
-   ds >> (*(parsedArgList));
+    ds >> (*(parsedOptionList));
+    ds >> (*(parsedArgList));
 
-   if (parsedOptionList->count() == 0)
-   {
-      delete parsedOptionList;  parsedOptionList = 0;
-   }
-   if (parsedArgList->count() == 0)
-   {
-      delete parsedArgList;     parsedArgList = 0;
-   }
+    if (parsedOptionList->count() == 0) {
+        delete parsedOptionList;  parsedOptionList = 0;
+    }
+    if (parsedArgList->count() == 0) {
+        delete parsedArgList;     parsedArgList = 0;
+    }
 }
 
 void
 KCmdLineArgsPrivate::setOption(const QByteArray &opt, bool enabled)
 {
-   if (isQt)
-   {
-      // Qt does it own parsing.
-      QByteArray argString = "-"; // krazy:exclude=doublequote_chars
-      if( !enabled )
-          argString += "no";
-      argString += opt;
-      addArgument(argString);
-   }
-   if (!parsedOptionList) {
-      parsedOptionList = new KCmdLineParsedOptions;
-   }
+    if (isQt) {
+        // Qt does it own parsing.
+        QByteArray argString = "-"; // krazy:exclude=doublequote_chars
+        if (!enabled) {
+            argString += "no";
+        }
+        argString += opt;
+        addArgument(argString);
+    }
+    if (!parsedOptionList) {
+        parsedOptionList = new KCmdLineParsedOptions;
+    }
 
-   if (enabled)
-      parsedOptionList->insert( opt, "t" ); // krazy:exclude=doublequote_chars
-   else
-      parsedOptionList->insert( opt, "f" ); // krazy:exclude=doublequote_chars
+    if (enabled) {
+        parsedOptionList->insert(opt, "t");    // krazy:exclude=doublequote_chars
+    } else {
+        parsedOptionList->insert(opt, "f");    // krazy:exclude=doublequote_chars
+    }
 }
 
 void
 KCmdLineArgsPrivate::setOption(const QByteArray &opt, const QByteArray &value)
 {
-   if (isQt)
-   {
-      // Qt does it's own parsing.
-      QByteArray argString = "-"; // krazy:exclude=doublequote_chars
-      argString += opt;
-      if (opt == "qmljsdebugger") {
-          // hack: Qt expects the value of the "qmljsdebugger" option to be
-          // passed using a '=' separator rather than a space, so we recreate it
-          // correctly.
-          // See code of QCoreApplicationPrivate::processCommandLineArguments()
-          addArgument(argString + "=" + value);
-      } else {
-          addArgument(argString);
-          addArgument(value);
-      }
+    if (isQt) {
+        // Qt does it's own parsing.
+        QByteArray argString = "-"; // krazy:exclude=doublequote_chars
+        argString += opt;
+        if (opt == "qmljsdebugger") {
+            // hack: Qt expects the value of the "qmljsdebugger" option to be
+            // passed using a '=' separator rather than a space, so we recreate it
+            // correctly.
+            // See code of QCoreApplicationPrivate::processCommandLineArguments()
+            addArgument(argString + "=" + value);
+        } else {
+            addArgument(argString);
+            addArgument(value);
+        }
 
 #if HAVE_X11
-      // Hack coming up!
-      if (argString == "-display")
-      {
-         qputenv(DISPLAY, value);
-      }
+        // Hack coming up!
+        if (argString == "-display") {
+            qputenv(DISPLAY, value);
+        }
 #endif
-   }
-   if (!parsedOptionList) {
-      parsedOptionList = new KCmdLineParsedOptions;
-   }
+    }
+    if (!parsedOptionList) {
+        parsedOptionList = new KCmdLineParsedOptions;
+    }
 
-   parsedOptionList->insertMulti( opt, value );
+    parsedOptionList->insertMulti(opt, value);
 }
 
 QString
 KCmdLineArgs::getOption(const QByteArray &_opt) const
 {
-   QByteArray opt = _opt;
-   QByteArray value;
-   if (d->parsedOptionList)
-   {
-      value = d->parsedOptionList->value(opt);
-   }
-   if (!value.isEmpty())
-      return QString::fromLocal8Bit(value.data());
+    QByteArray opt = _opt;
+    QByteArray value;
+    if (d->parsedOptionList) {
+        value = d->parsedOptionList->value(opt);
+    }
+    if (!value.isEmpty()) {
+        return QString::fromLocal8Bit(value.data());
+    }
 
-   // Look up the default.
-   QByteArray opt_name;
-   QString def;
-   bool dummy = true;
-   int result = staticObj()->findOption( d->options, opt, opt_name, def, dummy) & ~4;
+    // Look up the default.
+    QByteArray opt_name;
+    QString def;
+    bool dummy = true;
+    int result = staticObj()->findOption(d->options, opt, opt_name, def, dummy) & ~4;
 
-   if (result != 3)
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
-      fprintf(stderr, "Application requests for getOption(\"%s\") but the \"%s\" option\n",
-                      opt.data(), opt.data());
-      fprintf(stderr, "has never been specified via addCmdLineOptions( ... )\n\n");
+    if (result != 3) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
+        fprintf(stderr, "Application requests for getOption(\"%s\") but the \"%s\" option\n",
+                opt.data(), opt.data());
+        fprintf(stderr, "has never been specified via addCmdLineOptions( ... )\n\n");
 
-      Q_ASSERT( 0 );
-      exit(255);
-   }
-   return def;
+        Q_ASSERT(0);
+        exit(255);
+    }
+    return def;
 }
 
 QStringList
 KCmdLineArgs::getOptionList(const QByteArray &opt) const
 {
-   QStringList result;
-   if (!d->parsedOptionList)
-      return result;
+    QStringList result;
+    if (!d->parsedOptionList) {
+        return result;
+    }
 
-   while(true)
-   {
-      QByteArray value = d->parsedOptionList->take(opt);
-      if (value.isEmpty())
-         break;
-      result.prepend(QString::fromLocal8Bit(value.data()));
-   }
+    while (true) {
+        QByteArray value = d->parsedOptionList->take(opt);
+        if (value.isEmpty()) {
+            break;
+        }
+        result.prepend(QString::fromLocal8Bit(value.data()));
+    }
 
-   // Reinsert items in dictionary
-   // WABA: This is rather silly, but I don't want to add restrictions
-   // to the API like "you can only call this function once".
-   // I can't access all items without taking them out of the list.
-   // So taking them out and then putting them back is the only way.
-   Q_FOREACH(const QString &str, result)
-   {
-      d->parsedOptionList->insertMulti(opt, str.toLocal8Bit());
-   }
-   return result;
+    // Reinsert items in dictionary
+    // WABA: This is rather silly, but I don't want to add restrictions
+    // to the API like "you can only call this function once".
+    // I can't access all items without taking them out of the list.
+    // So taking them out and then putting them back is the only way.
+    Q_FOREACH (const QString &str, result) {
+        d->parsedOptionList->insertMulti(opt, str.toLocal8Bit());
+    }
+    return result;
 }
 
 bool
 KCmdLineArgs::isSet(const QByteArray &_opt) const
 {
-   // Look up the default.
-   QByteArray opt = _opt;
-   QByteArray opt_name;
-   QString def;
-   int result = 0;
-   KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
-   while (args != staticObj()->argsList->end())
-   {
-      bool dummy = true;
-      result = staticObj()->findOption((*args)->d->options, opt, opt_name, def, dummy) & ~4;
-      if (result) break;
-      ++args;
-   }
+    // Look up the default.
+    QByteArray opt = _opt;
+    QByteArray opt_name;
+    QString def;
+    int result = 0;
+    KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
+    while (args != staticObj()->argsList->end()) {
+        bool dummy = true;
+        result = staticObj()->findOption((*args)->d->options, opt, opt_name, def, dummy) & ~4;
+        if (result) {
+            break;
+        }
+        ++args;
+    }
 
-   if (result == 0)
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
-      fprintf(stderr, "Application requests for isSet(\"%s\") but the \"%s\" option\n",
-                      opt.data(), opt.data());
-      fprintf(stderr, "has never been specified via addCmdLineOptions( ... )\n\n");
+    if (result == 0) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs):\n");
+        fprintf(stderr, "Application requests for isSet(\"%s\") but the \"%s\" option\n",
+                opt.data(), opt.data());
+        fprintf(stderr, "has never been specified via addCmdLineOptions( ... )\n\n");
 
-      Q_ASSERT( 0 );
-      exit(255);
-   }
+        Q_ASSERT(0);
+        exit(255);
+    }
 
-   QByteArray value;
-   if (d->parsedOptionList)
-   {
-      value = d->parsedOptionList->value(opt);
-   }
+    QByteArray value;
+    if (d->parsedOptionList) {
+        value = d->parsedOptionList->value(opt);
+    }
 
-   if (!value.isEmpty())
-   {
-      if (result == 3)
-         return true;
-      else
-         return (value.at(0) == 't');
-   }
+    if (!value.isEmpty()) {
+        if (result == 3) {
+            return true;
+        } else {
+            return (value.at(0) == 't');
+        }
+    }
 
-   if (result == 3)
-      return false; // String option has 'false' as default.
+    if (result == 3) {
+        return false;    // String option has 'false' as default.
+    }
 
-   // We return 'true' as default if the option was listed as '-nofork'
-   // We return 'false' as default if the option was listed as '-fork'
-   return (result == 2);
+    // We return 'true' as default if the option was listed as '-nofork'
+    // We return 'false' as default if the option was listed as '-fork'
+    return (result == 2);
 }
 
 int
 KCmdLineArgs::count() const
 {
-   return d->parsedArgList?d->parsedArgList->count():0;
+    return d->parsedArgList ? d->parsedArgList->count() : 0;
 }
 
 QString
 KCmdLineArgs::arg(int n) const
 {
-   if (!d->parsedArgList || (n >= (int) d->parsedArgList->count()))
-   {
-      fprintf(stderr, "\n\nFAILURE (KCmdLineArgs): Argument out of bounds\n");
-      fprintf(stderr, "Application requests for arg(%d) without checking count() first.\n",
-                      n);
+    if (!d->parsedArgList || (n >= (int) d->parsedArgList->count())) {
+        fprintf(stderr, "\n\nFAILURE (KCmdLineArgs): Argument out of bounds\n");
+        fprintf(stderr, "Application requests for arg(%d) without checking count() first.\n",
+                n);
 
-      Q_ASSERT( 0 );
-      exit(255);
-   }
+        Q_ASSERT(0);
+        exit(255);
+    }
 
-   return QString::fromLocal8Bit(d->parsedArgList->at(n).data());
+    return QString::fromLocal8Bit(d->parsedArgList->at(n).data());
 }
 
 QUrl
 KCmdLineArgs::url(int n) const
 {
-   return makeURL( arg(n).toUtf8() );
+    return makeURL(arg(n).toUtf8());
 }
 
 QUrl KCmdLineArgs::makeURL(const QByteArray &_urlArg)
@@ -1590,8 +1548,8 @@ QUrl KCmdLineArgs::makeURL(const QByteArray &_urlArg)
     }
 
     QUrl qurl(urlArg);
-    if ( qurl.isRelative() || fileInfo.exists() ) {
-        QUrl result = QUrl::fromLocalFile(cwd()+QLatin1Char('/')+urlArg);
+    if (qurl.isRelative() || fileInfo.exists()) {
+        QUrl result = QUrl::fromLocalFile(cwd() + QLatin1Char('/') + urlArg);
 #if 0 //Qt5 TODO: QUrlInfo::cleanPath
         result.cleanPath(); //This did use KUrl::cleanPath()
 #endif
@@ -1604,34 +1562,36 @@ QUrl KCmdLineArgs::makeURL(const QByteArray &_urlArg)
 void
 KCmdLineArgsPrivate::addArgument(const QByteArray &argument)
 {
-   if (!parsedArgList)
-      parsedArgList = new KCmdLineParsedArgs;
+    if (!parsedArgList) {
+        parsedArgList = new KCmdLineParsedArgs;
+    }
 
-   parsedArgList->append(argument);
+    parsedArgList->append(argument);
 }
 
 void
 KCmdLineArgs::addTempFileOption()
 {
     KCmdLineOptions tmpopt;
-    tmpopt.add( "tempfile", ki18n("The files/URLs opened by the application will be deleted after use") );
-    KCmdLineArgs::addCmdLineOptions( tmpopt, ki18n("KDE-tempfile"), "kde-tempfile" );
+    tmpopt.add("tempfile", ki18n("The files/URLs opened by the application will be deleted after use"));
+    KCmdLineArgs::addCmdLineOptions(tmpopt, ki18n("KDE-tempfile"), "kde-tempfile");
 }
 
 bool KCmdLineArgs::isTempFileSet()
 {
-    KCmdLineArgs* args = KCmdLineArgs::parsedArgs( "kde-tempfile" );
-    return args && args->isSet( "tempfile" );
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs("kde-tempfile");
+    return args && args->isSet("tempfile");
 }
 
 QStringList KCmdLineArgs::allArguments()
 {
     QStringList lst;
 
-    for(int i = 0; i < staticObj()->all_argc; i++) {
-        char* arg = staticObj()->all_argv[i];
-        if (!arg)
+    for (int i = 0; i < staticObj()->all_argc; i++) {
+        char *arg = staticObj()->all_argv[i];
+        if (!arg) {
             continue;
+        }
         lst.append(QString::fromLocal8Bit(arg));
     }
     return lst;

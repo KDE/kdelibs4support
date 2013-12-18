@@ -64,5 +64,4 @@ private:
     QString m_textPlainApp;
 };
 
-
 #endif

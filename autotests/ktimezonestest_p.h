@@ -30,7 +30,10 @@
 class TimeZoneTestData
 {
 public:
-    QString dataDir() const { return mDataDir; }
+    QString dataDir() const
+    {
+        return mDataDir;
+    }
 
     void cleanupTimeZoneTest()
     {
@@ -73,9 +76,10 @@ private:
     void removeDir(const QString &subdir)
     {
         QDir local(QDir::homePath() + QLatin1String("/.kde-unit-test/") + subdir);
-        foreach(const QString &file, local.entryList(QDir::Files))
-            if(!local.remove(file))
-                qWarning("%s: removing failed", qPrintable( file ));
+        foreach (const QString &file, local.entryList(QDir::Files))
+            if (!local.remove(file)) {
+                qWarning("%s: removing failed", qPrintable(file));
+            }
         QCOMPARE((int)local.entryList(QDir::Files).count(), 0);
         local.cdUp();
         QString subd = subdir;
@@ -92,16 +96,16 @@ public:
         QTextStream fStream(&f);
         if (testcase)
             fStream << "DE	+5230+01322	Europe/Berlin\n"
-                       "EG	+3003+03115	Africa/Cairo\n"
-                       "FR	+4852+00220	Europe/Paris\n"
-                       "XX	-512830+0001845	Europe/London	Greater Britain\n"
-                       "TL	-0833+12535	Asia/Dili\n"
-                       "US	+340308-1181434	America/Los_Angeles	Pacific Time\n";
+                    "EG	+3003+03115	Africa/Cairo\n"
+                    "FR	+4852+00220	Europe/Paris\n"
+                    "XX	-512830+0001845	Europe/London	Greater Britain\n"
+                    "TL	-0833+12535	Asia/Dili\n"
+                    "US	+340308-1181434	America/Los_Angeles	Pacific Time\n";
         else
             fStream << "EG	+3003+03115	Africa/Cairo\n"
-                       "FR	+4852+00220	Europe/Paris\n"
-                       "GB	+512830-0001845	Europe/London	Great Britain\n"
-                       "US	+340308-1181434	America/Los_Angeles	Pacific Time\n";
+                    "FR	+4852+00220	Europe/Paris\n"
+                    "GB	+512830-0001845	Europe/London	Great Britain\n"
+                    "US	+340308-1181434	America/Los_Angeles	Pacific Time\n";
         f.close();
     }
 
