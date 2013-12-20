@@ -56,6 +56,8 @@ void KStandarddirsTest::initTestCase()
     const QString configDirs = QDir::currentPath() + "/xdg";
     qputenv("XDG_CONFIG_DIRS", QFile::encodeName(configDirs));
 
+    qunsetenv("XDG_DATA_DIRS");
+
     QFile::remove(KGlobal::dirs()->saveLocation("config") + "kstandarddirstestrc");
 
     // Create a main component data so that testAppData doesn't suddenly change the main component
@@ -165,8 +167,9 @@ void KStandarddirsTest::testFindAllResources()
 
     const QStringList configFiles = KGlobal::dirs()->findAllResources("config");
     QVERIFY(!configFiles.isEmpty());
-    QVERIFY(configFiles.count() > 5);   // I have 9 here
+    //qDebug() << configFiles;
     QVERIFY(oneEndsWith(configFiles, "etc/xdg/kdebugrc"));
+    QVERIFY(oneEndsWith(configFiles, "etc/xdg/kdebug.areas"));
     QVERIFY(oneEndsWith(configFiles, "kde-unit-test/xdg/config/foorc"));
     QVERIFY(!oneEndsWith(configFiles, "etc/xdg/colors/Web.colors"));     // recursive was false
 
@@ -187,7 +190,8 @@ void KStandarddirsTest::testFindAllResources()
         QVERIFY(configFilesRecursiveWithFilter.count() >= 3);   // foorc, kdebugrc, ui/ui_standards.rc
         QVERIFY(oneEndsWith(configFilesRecursiveWithFilter, "kde-unit-test/xdg/config/foorc"));
         QVERIFY(oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/kdebugrc"));
-        QVERIFY(oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/ui/ui_standards.rc"));
+        QVERIFY2(oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/ui/ui_standards.rc"),
+                qPrintable(configFilesRecursiveWithFilter.join(',')));
         QVERIFY(!oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/colors/Web.colors"));     // didn't match the filter
     }
 
