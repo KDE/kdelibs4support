@@ -249,15 +249,7 @@ void KMimeTypeTest::testFindByPathUsingFileName_data()
     QTest::newRow("directory") << "/" << "inode/directory";
     QTest::newRow("doesn't exist, no extension") << "IDontExist" << "application/octet-stream";
     QTest::newRow("doesn't exist but has known extension") << "IDontExist.txt" << "text/plain";
-
-    // Can't use KIconLoader since this is a "without GUI" test.
-    if (QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("icons/") + "oxygen", QStandardPaths::LocateDirectory).isEmpty()) {
-        kWarning() << "oxygen not found";
-    } else {
-        QString fh = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("icons/") + "oxygen/22x22/places/folder.png");
-        QVERIFY(!fh.isEmpty());   // if the file doesn't exist, please fix the above to point to an existing icon
-        QTest::newRow("png image") << fh << "image/png";
-    }
+    QTest::newRow("png image") << QFINDTESTDATA("image.png") << "image/png";
 
     const QString exePath = QStandardPaths::findExecutable("cmake");
     QVERIFY2(!exePath.isEmpty(), "cmake not found. Isn't it in your $PATH?");
