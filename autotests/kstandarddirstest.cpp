@@ -38,9 +38,11 @@ QTEST_GUILESS_MAIN(KStandarddirsTest)
 #ifdef Q_OS_WIN
 #define QCOMPARE_PATHS(x,y) QCOMPARE(QString(x).toLower(), QString(y).toLower())
 #define PATH_SENSITIVITY Qt::CaseInsensitive
+#define EXT ".exe"
 #else
 #define QCOMPARE_PATHS(x,y) QCOMPARE(QString(x), QString(y))
 #define PATH_SENSITIVITY Qt::CaseSensitive
+#define EXT ""
 #endif
 
 void KStandarddirsTest::initTestCase()
@@ -114,29 +116,20 @@ void KStandarddirsTest::testChangeSaveLocation()
     QCOMPARE_PATHS(KStandardDirs::realPath(cData.saveLocation("config")), newSaveLoc);
 }
 
-static bool isKdelibsInstalled()
+static bool isKde4supportInstalled()
 {
-    // If there's only one dir, it's the local one (~/.kde-unit-test/share/),
-    // meaning that kdelibs wasn't installed (or we don't find where, the environment isn't right).
-    return KGlobal::dirs()->resourceDirs("data").count() > 1;
+    return QFile::exists(CMAKE_INSTALL_PREFIX "/bin/kf5-config");
 }
 
 void KStandarddirsTest::testFindResource()
 {
-    if (!isKdelibsInstalled()) {
-        QSKIP("kdelibs not installed");
-    }
-
-#ifdef Q_OS_WIN
-#define EXT ".exe"
-#define KIOSLAVE "bin/kioslave.exe"
-#else
-#define EXT ""
-#define KIOSLAVE "kde5/libexec/kioslave"
-#endif
-    const QString bin = KGlobal::dirs()->findResource("exe", "kioslave" EXT);
+    const QString bin = KGlobal::dirs()->findResource("exe", "kconf_update" EXT);
     QVERIFY(!bin.isEmpty());
-    QVERIFY(bin.endsWith(KIOSLAVE));
+#ifdef Q_OS_WIN
+    QVERIFY(bin.endsWith("bin/kconf_update.exe"));
+#else
+    QVERIFY(bin.endsWith("kde5/libexec/kconf_update"));
+#endif
     QVERIFY(!QDir::isRelativePath(bin));
 
     const QString data = KGlobal::dirs()->findResource("data", "dbus-1/interfaces/org.kde.JobView.xml");
@@ -157,10 +150,6 @@ static bool oneEndsWith(const QStringList &lst, const QString &str)
 
 void KStandarddirsTest::testFindAllResources()
 {
-    if (!isKdelibsInstalled()) {
-        QSKIP("kdelibs not installed");
-    }
-
     const QStringList dbusInterfaceFiles = KGlobal::dirs()->findAllResources("data", "dbus-1/interfaces/");
     QVERIFY(!dbusInterfaceFiles.isEmpty());
     QVERIFY(dbusInterfaceFiles.count() > 20);   // I have 21 here, installed by kdelibs.
@@ -250,10 +239,6 @@ void KStandarddirsTest::testFindAllResourcesNewDir()
 
 void KStandarddirsTest::testFindDirs()
 {
-    if (!isKdelibsInstalled()) {
-        QSKIP("kdelibs not installed");
-    }
-
     const QString t = KStandardDirs::locateLocal("data", "kconf_update/");
     QCOMPARE(t, QString(m_dataHome + "/kconf_update/"));
     const QStringList dirs = KGlobal::dirs()->findDirs("data", "kconf_update");
@@ -264,38 +249,46 @@ void KStandarddirsTest::testFindDirs()
 
 void KStandarddirsTest::testFindResourceDir()
 {
-    if (!isKdelibsInstalled()) {
-        QSKIP("kdelibs not installed");
-    }
-
     const QString configDir = KGlobal::dirs()->findResourceDir("config", "foorc");
     QVERIFY(!configDir.isEmpty());
     QVERIFY2(configDir.endsWith(QLatin1String("/xdg/config/")), qPrintable(configDir));
 }
 
-void KStandarddirsTest::testFindExe()
+void KStandarddirsTest::testFindExeLibExec()
 {
-    if (!isKdelibsInstalled()) {
-        QSKIP("kdelibs not installed");
+#ifndef Q_OS_UNIX
+    QSKIP("non-UNIX system");
+#endif
+    if (!isKde4supportInstalled()) {
+        // KStandardDirs::findExe only finds libexec executables in the installed location
+        QSKIP("kde4support not installed");
     }
 
+    // findExe with a result in libexec
+    const QString libexe = KGlobal::dirs()->findExe("fileshareset");
+    QVERIFY(!libexe.isEmpty());
+    QVERIFY(libexe.endsWith(LIB_INSTALL_DIR "/kde5/libexec/fileshareset" EXT, PATH_SENSITIVITY));
+}
+
+void KStandarddirsTest::testFindExe()
+{
     // findExe with a result in bin
-    const QString kdeinit = KGlobal::dirs()->findExe("kdeinit5");
-    QVERIFY(!kdeinit.isEmpty());
+    const QString binexe = KGlobal::dirs()->findExe("kconfig_compiler");
+    QVERIFY(!binexe.isEmpty());
 #ifdef Q_OS_MAC
-    QVERIFY2(kdeinit.endsWith("kdeinit5", PATH_SENSITIVITY), qPrintable(kdeinit));
+    QVERIFY2(binexe.endsWith("kconfig_compiler", PATH_SENSITIVITY), qPrintable(binexe));
 #else
-    QVERIFY2(kdeinit.endsWith("bin/kdeinit5" EXT, PATH_SENSITIVITY), qPrintable(kdeinit));
+    QVERIFY2(binexe.endsWith("bin/kconfig_compiler" EXT, PATH_SENSITIVITY), qPrintable(binexe));
 #endif
 
-#ifndef Q_OS_MAC // kdeinit5 is a bundle on Mac, so the below doesn't work
+#ifndef Q_OS_MAC // kconfig_compiler is a bundle on Mac, so the below doesn't work
     // Check the "exe" resource too
-    QString kdeinitPath1 = KStandardDirs::realFilePath(kdeinit);
-    QString kdeinitPath2 = KGlobal::dirs()->locate("exe", "kdeinit5");
-    QCOMPARE_PATHS(kdeinitPath1, kdeinitPath2);
+    QString binexePath1 = KStandardDirs::realFilePath(binexe);
+    QString binexePath2 = KGlobal::dirs()->locate("exe", "kconfig_compiler");
+    QCOMPARE_PATHS(binexePath1, binexePath2);
 
     // Check realFilePath behavior with complete command lines, like KRun does
-    const QString cmd = kdeinit + " -c foo -x bar";
+    const QString cmd = binexe + " -c foo -x bar";
     const QString fromKStdDirs = KStandardDirs::realFilePath(cmd);
     QCOMPARE(fromKStdDirs, cmd);
     const QString fromQFileInfo = QFileInfo(cmd).canonicalFilePath();
@@ -303,14 +296,9 @@ void KStandarddirsTest::testFindExe()
 #endif
 
 #ifdef Q_OS_UNIX
-    // findExe with a result in libexec
-    const QString kioslave = KGlobal::dirs()->findExe("kioslave");
-    QVERIFY(!kioslave.isEmpty());
-    QVERIFY(kioslave.endsWith(LIB_INSTALL_DIR "/kde5/libexec/kioslave" EXT, PATH_SENSITIVITY));
-
     // locate("exe") with a result in libexec
-    const QString locateExeKioslave = KGlobal::dirs()->locate("exe", "kioslave");
-    QVERIFY(locateExeKioslave.endsWith(LIB_INSTALL_DIR "/kde5/libexec/kioslave" EXT, PATH_SENSITIVITY));
+    const QString locateLibExe = KGlobal::dirs()->locate("exe", "fileshareset");
+    QVERIFY(locateLibExe.endsWith(LIB_INSTALL_DIR "/kde5/libexec/fileshareset" EXT, PATH_SENSITIVITY));
 
     // findExe with relative path
     const QString pwd = QDir::currentPath();
@@ -376,8 +364,8 @@ void KStandarddirsTest::testRelativeLocation()
 
 void KStandarddirsTest::testAddResourceType()
 {
-    if (!isKdelibsInstalled()) {
-        QSKIP("kdelibs not installed");
+    if (!isKde4supportInstalled()) {
+        QSKIP("kde4support not installed");
     }
 
     QString ret = KStandardDirs::locate("dtd", "customization/catalog.xml");

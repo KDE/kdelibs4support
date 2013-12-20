@@ -37,6 +37,7 @@ private Q_SLOTS:
     void testFindDirs();
     void testFindResourceDir();
     void testFindExe();
+    void testFindExeLibExec();
     void testLocate();
     void testRelativeLocation();
     void testAddResourceType();
