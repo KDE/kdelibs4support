@@ -187,11 +187,9 @@ void KStandarddirsTest::testFindAllResources()
                 KStandardDirs::Recursive);
         QVERIFY(!configFilesRecursiveWithFilter.isEmpty());
         //qDebug() << configFilesRecursiveWithFilter;
-        QVERIFY(configFilesRecursiveWithFilter.count() >= 3);   // foorc, kdebugrc, ui/ui_standards.rc
+        QVERIFY(configFilesRecursiveWithFilter.count() >= 2);   // foorc, kdebugrc
         QVERIFY(oneEndsWith(configFilesRecursiveWithFilter, "kde-unit-test/xdg/config/foorc"));
         QVERIFY(oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/kdebugrc"));
-        QVERIFY2(oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/ui/ui_standards.rc"),
-                qPrintable(configFilesRecursiveWithFilter.join(',')));
         QVERIFY(!oneEndsWith(configFilesRecursiveWithFilter, "etc/xdg/colors/Web.colors"));     // didn't match the filter
     }
 
