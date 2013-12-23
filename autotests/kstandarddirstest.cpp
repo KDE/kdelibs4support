@@ -152,6 +152,10 @@ static bool oneEndsWith(const QStringList &lst, const QString &str)
 
 void KStandarddirsTest::testFindAllResources()
 {
+    if (!isKde4supportInstalled()) {
+        QSKIP("KDE4Support is not installed yet");
+    }
+
     const QStringList dbusInterfaceFiles = KGlobal::dirs()->findAllResources("data", "dbus-1/interfaces/");
     QVERIFY(!dbusInterfaceFiles.isEmpty());
     QVERIFY(dbusInterfaceFiles.count() > 20);   // I have 21 here, installed by kdelibs.
@@ -263,7 +267,7 @@ void KStandarddirsTest::testFindExeLibExec()
 #endif
     if (!isKde4supportInstalled()) {
         // KStandardDirs::findExe only finds libexec executables in the installed location
-        QSKIP("kde4support not installed");
+        QSKIP("KDE4Support is not installed yet");
     }
 
     // findExe with a result in libexec
@@ -359,6 +363,10 @@ void KStandarddirsTest::testLocate()
 
 void KStandarddirsTest::testRelativeLocation()
 {
+    if (!isKde4supportInstalled()) {
+        QSKIP("KDE4Support is not installed yet");
+    }
+
     const QString file = "kdebugrc";
     QString located = KGlobal::dirs()->locate("config", file);
     QCOMPARE_PATHS(KGlobal::dirs()->relativeLocation("config", located), file);
@@ -367,7 +375,7 @@ void KStandarddirsTest::testRelativeLocation()
 void KStandarddirsTest::testAddResourceType()
 {
     if (!isKde4supportInstalled()) {
-        QSKIP("kde4support not installed");
+        QSKIP("KDE4Support is not installed yet");
     }
 
     QString ret = KStandardDirs::locate("dtd", "customization/catalog.xml");
