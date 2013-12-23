@@ -50,6 +50,7 @@ private Q_SLOTS:
 private:
     QString m_configHome;
     QString m_dataHome;
+    bool m_canFindKConfig;
 };
 
 #endif

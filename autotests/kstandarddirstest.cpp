@@ -33,6 +33,7 @@ QTEST_GUILESS_MAIN(KStandarddirsTest)
 #include <QtCore/QDebug>
 #include <QtTest/QtTest>
 #include <kconfiggroup.h>
+#include <QFile>
 
 // we need case-insensitive comparison of file paths on windows
 #ifdef Q_OS_WIN
@@ -47,6 +48,20 @@ QTEST_GUILESS_MAIN(KStandarddirsTest)
 
 void KStandarddirsTest::initTestCase()
 {
+    QString kconfig_compilerLocation = QStringLiteral(KCONFIG_COMPILER_LOCATION);
+    if (kconfig_compilerLocation.startsWith(CMAKE_INSTALL_PREFIX)) {
+        m_canFindKConfig = true;
+    } else {
+        // the user needs to set KDEDIRS properly!
+        QStringList kdedirs = QFile::decodeName(qgetenv("KDEDIRS")).split(':');
+        m_canFindKConfig = false;
+        foreach (QString dirName, kdedirs) {
+            if (!dirName.isEmpty() && kconfig_compilerLocation.startsWith(dirName)) {
+                m_canFindKConfig = true;
+            }
+        }
+    }
+
     m_configHome = QDir::homePath() + QLatin1String("/.kde-unit-test/xdg/config");
     qputenv("XDG_CONFIG_HOME", QFile::encodeName(m_configHome));
 
@@ -125,6 +140,10 @@ static bool isKde4supportInstalled()
 
 void KStandarddirsTest::testFindResource()
 {
+    if (!m_canFindKConfig) {
+        QSKIP("KDEDIRS does not contain the KConfig prefix");
+    }
+
     const QString bin = KGlobal::dirs()->findResource("exe", "kconf_update" EXT);
     QVERIFY(!bin.isEmpty());
 #ifdef Q_OS_WIN
@@ -278,14 +297,14 @@ void KStandarddirsTest::testFindExeLibExec()
 
 void KStandarddirsTest::testFindExe()
 {
+    if (!m_canFindKConfig) {
+        QSKIP("KDEDIRS does not contain the KConfig prefix");
+    }
+
     // findExe with a result in bin
     const QString binexe = KGlobal::dirs()->findExe("kconfig_compiler");
     QVERIFY(!binexe.isEmpty());
-#ifdef Q_OS_MAC
-    QVERIFY2(binexe.endsWith("kconfig_compiler", PATH_SENSITIVITY), qPrintable(binexe));
-#else
-    QVERIFY2(binexe.endsWith("bin/kconfig_compiler" EXT, PATH_SENSITIVITY), qPrintable(binexe));
-#endif
+    QCOMPARE_PATHS(KCONFIG_COMPILER_LOCATION, binexe);
 
 #ifndef Q_OS_MAC // kconfig_compiler is a bundle on Mac, so the below doesn't work
     // Check the "exe" resource too
