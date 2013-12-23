@@ -264,9 +264,13 @@ void KStandarddirsTest::testFindAllResourcesNewDir()
 
 void KStandarddirsTest::testFindDirs()
 {
-    const QString t = KStandardDirs::locateLocal("data", "kconf_update/");
-    QCOMPARE(t, QString(m_dataHome + "/kconf_update/"));
-    const QStringList dirs = KGlobal::dirs()->findDirs("data", "kconf_update");
+    if (!isKde4supportInstalled()) {
+        QSKIP("KDE4Support is not installed yet");
+    }
+
+    const QString t = KStandardDirs::locateLocal("data", "locale/");
+    QCOMPARE(t, QString(m_dataHome + "/locale/"));
+    const QStringList dirs = KGlobal::dirs()->findDirs("data", "locale");
     QVERIFY(!dirs.isEmpty());
     QVERIFY2(dirs.count() >= 2, qPrintable(dirs.join(","))); // at least local and global
     //qDebug() << dirs;
@@ -397,18 +401,18 @@ void KStandarddirsTest::testAddResourceType()
         QSKIP("KDE4Support is not installed yet");
     }
 
-    QString ret = KStandardDirs::locate("dtd", "customization/catalog.xml");
-    QCOMPARE(ret, QString()); // normal, there's no "dtd" resource in kstandarddirs by default
+    QString ret = KStandardDirs::locate("widgets", "pics/kdialog.png");
+    QCOMPARE(ret, QString()); // normal, there's no "widgets" resource in kstandarddirs by default
 
-    KGlobal::dirs()->addResourceType("dtd", "data", "ksgmltools2/");
-    ret = KStandardDirs::locate("dtd", "customization/catalog.xml");
+    KGlobal::dirs()->addResourceType("widgets", "data", "kf5widgets/");
+    ret = KStandardDirs::locate("widgets", "pics/kdialog.png");
     QVERIFY(!ret.isEmpty());
 
-    ret = KStandardDirs::locate("dtd", "customization/kde-chunk.xsl");
+    ret = KStandardDirs::locate("widgets", "pics/kdoublenuminput.png");
     QVERIFY(!ret.isEmpty());
 
-    const QStringList files = KGlobal::dirs()->findAllResources("dtd", "customization/*", KStandardDirs::NoDuplicates);
-    QVERIFY(files.count() > 2);
+    const QStringList files = KGlobal::dirs()->findAllResources("widgets", "pics/*", KStandardDirs::NoDuplicates);
+    QVERIFY(files.count() >= 10);
 
     KGlobal::dirs()->addResourceType("xdgdata-ontology", 0, "ontology");
     const QStringList ontologyDirs = KGlobal::dirs()->resourceDirs("xdgdata-ontology");
