@@ -561,6 +561,13 @@ void KStandarddirsTest::testSymlinkResolution()
 // To find multithreading bugs: valgrind --tool=helgrind ./kstandarddirstest testThreads
 void KStandarddirsTest::testThreads()
 {
+    if (!isKde4supportInstalled()) {
+        QSKIP("KDE4Support is not installed yet");
+    }
+    if (!m_canFindKConfig) {
+        QSKIP("KDEDIRS does not contain the KConfig prefix");
+    }
+
     QThreadPool::globalInstance()->setMaxThreadCount(6);
     QFutureSynchronizer<void> sync;
     sync.addFuture(QtConcurrent::run(this, &KStandarddirsTest::testLocateLocal));
