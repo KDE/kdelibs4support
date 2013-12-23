@@ -408,7 +408,7 @@ void KStandarddirsTest::testSetXdgDataDirs()
 {
     // By default we should have KDEDIR/share/applications in `kf5-config --path xdgdata-apps`
     const QStringList dirs = KGlobal::dirs()->resourceDirs("xdgdata-apps");
-    const QString kdeDataApps = KStandardDirs::realPath(CMAKE_INSTALL_PREFIX "/share/applications/");
+    const QString kdeDataApps = KStandardDirs::realPath(CMAKE_INSTALL_PREFIX "/share/applications/kde5/");
     if (!dirs.contains(kdeDataApps)) {
         kDebug() << "ERROR:" << kdeDataApps << "not in" << dirs;
         kDebug() << "XDG_DATA_DIRS=" << qgetenv("XDG_DATA_DIRS");
@@ -451,7 +451,7 @@ void KStandarddirsTest::testRestrictedResources()
     // Check unrestricted results first
     const QStringList appsDirs = KGlobal::dirs()->resourceDirs("xdgdata-apps");
     QCOMPARE_PATHS(appsDirs.first(), localAppsDir);
-    const QString kdeDataApps = KStandardDirs::realPath(CMAKE_INSTALL_PREFIX "/share/applications/");
+    const QString kdeDataApps = KStandardDirs::realPath(CMAKE_INSTALL_PREFIX "/share/applications/kde5/");
     QVERIFY(appsDirs.contains(kdeDataApps, PATH_SENSITIVITY));
     const QStringList dataDirs = KGlobal::dirs()->findDirs("data", "kstandarddirstest");
     QCOMPARE_PATHS(dataDirs.first(), localDataDir);
