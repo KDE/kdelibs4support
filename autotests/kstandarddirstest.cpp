@@ -325,10 +325,6 @@ void KStandarddirsTest::testFindExe()
 #endif
 
 #ifdef Q_OS_UNIX
-    // locate("exe") with a result in libexec
-    const QString locateLibExe = KGlobal::dirs()->locate("exe", "fileshareset");
-    QVERIFY(locateLibExe.endsWith(LIB_INSTALL_DIR "/kde5/libexec/fileshareset" EXT, PATH_SENSITIVITY));
-
     // findExe with relative path
     const QString pwd = QDir::currentPath();
     QDir::setCurrent("/bin");
