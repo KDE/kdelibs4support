@@ -1176,7 +1176,20 @@ QStringList KStandardDirs::KStandardDirsPrivate::resourceDirs(const char *type, 
         }
 
         const QStringList dirs = m_relatives.value(type);
-        const QString typeInstallPath = installPath(type); // could be empty
+        QString typeInstallPath;
+        if (strcmp(type, "xdgdata-apps") == 0) {
+            // If the resource is xdgdata-apps, we never actually want the
+            // install directory (which is probably a subdirectory of
+            // CMAKE_INSTALL_PREFIX/share/applications/), but instead we want
+            // CMAKE_INSTALL_PREFIX/share/applications/ itself.
+#ifdef Q_OS_WIN
+            typeInstallPath = getKde4Prefix() + QLatin1String("share/applications/");
+#else
+            typeInstallPath = QFile::decodeName(CMAKE_INSTALL_PREFIX "/") + QLatin1String("share/applications/");
+#endif
+        } else {
+            typeInstallPath = installPath(type); // could be empty
+        }
         const QString installdir = typeInstallPath.isEmpty() ? QString() : realPath(typeInstallPath);
         const QString installprefix = installPath("kdedir");
         if (!dirs.isEmpty()) {
