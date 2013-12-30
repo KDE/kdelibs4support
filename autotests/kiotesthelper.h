@@ -25,7 +25,7 @@
 #include <qplatformdefs.h>
 #include <QDir>
 #include <QDateTime>
-#include <QtTest/QTest>
+#include <QTest>
 #ifdef Q_OS_UNIX
 #include <utime.h>
 #else
@@ -86,7 +86,7 @@ static void createTestSymlink(const QString &path, const QByteArray &target = "/
     }
     QT_STATBUF buf;
     QVERIFY(QT_LSTAT(QFile::encodeName(path), &buf) == 0);
-    QVERIFY(S_ISLNK(buf.st_mode));
+    QVERIFY((buf.st_mode & QT_STAT_MASK) == QT_STAT_LNK);
     //qDebug( "symlink %s created", qPrintable( path ) );
     QVERIFY(QFileInfo(path).isSymLink());
 }
@@ -133,7 +133,7 @@ public:
                                            const QString &caption,
                                            const QUrl &src,
                                            const QUrl &dest,
-                                           KIO::RenameDialog_Mode mode,
+                                           KIO::RenameDialog_Options options,
                                            QString &newDest,
                                            KIO::filesize_t = (KIO::filesize_t) - 1,
                                            KIO::filesize_t = (KIO::filesize_t) - 1,
@@ -145,17 +145,17 @@ public:
         Q_UNUSED(caption)
         Q_UNUSED(src)
         Q_UNUSED(dest)
-        Q_UNUSED(mode)
+        Q_UNUSED(options)
         Q_UNUSED(newDest)
         ++m_askFileRenameCalled;
         return m_renameResult;
     }
 
     KIO::SkipDialog_Result askSkip(KJob *job,
-                                   bool multi,
+                                   KIO::SkipDialog_Options options,
                                    const QString &error_text) Q_DECL_OVERRIDE {
         Q_UNUSED(job)
-        Q_UNUSED(multi)
+        Q_UNUSED(options)
         Q_UNUSED(error_text)
         ++m_askSkipCalled;
         return m_skipResult;
