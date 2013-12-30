@@ -1,1 +1,1 @@
-#include "../kio/kntlm.h"
+#include <kio/kntlm.h>

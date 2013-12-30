@@ -1,1 +1,1 @@
-#include "../kcolorutils.h"
+#include <kcolorutils.h>

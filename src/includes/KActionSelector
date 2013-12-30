@@ -1,1 +1,1 @@
-#include "../kactionselector.h"
+#include <kactionselector.h>

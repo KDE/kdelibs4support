@@ -1,1 +1,1 @@
-#include "../../kdnssd/servicetypebrowser.h"
+#include <kdnssd/servicetypebrowser.h>

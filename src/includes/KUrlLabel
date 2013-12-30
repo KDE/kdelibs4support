@@ -1,1 +1,1 @@
-#include "../kurllabel.h"
+#include <kurllabel.h>

@@ -1,1 +1,1 @@
-#include "../../ktexteditor/smartrange.h"
+#include <ktexteditor/smartrange.h>

@@ -1,1 +1,1 @@
-#include "../../kparts/plugin.h"
+#include <kparts/plugin.h>

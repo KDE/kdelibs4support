@@ -1,1 +1,1 @@
-#include "../kfilterproxysearchline.h"
+#include <kfilterproxysearchline.h>

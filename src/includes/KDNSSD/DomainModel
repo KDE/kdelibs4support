@@ -1,1 +1,1 @@
-#include "../../kdnssd/domainmodel.h"
+#include <kdnssd/domainmodel.h>

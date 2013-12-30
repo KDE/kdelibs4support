@@ -1,1 +1,1 @@
-#include "../kxyselector.h"
+#include <kxyselector.h>

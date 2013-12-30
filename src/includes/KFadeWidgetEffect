@@ -1,1 +1,1 @@
-#include "../kfadewidgeteffect.h"
+#include <kfadewidgeteffect.h>

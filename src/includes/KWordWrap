@@ -1,1 +1,1 @@
-#include "../kwordwrap.h"
+#include <kwordwrap.h>

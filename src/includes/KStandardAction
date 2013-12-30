@@ -1,1 +1,1 @@
-#include "../kstandardaction.h"
+#include <kstandardaction.h>

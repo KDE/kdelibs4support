@@ -1,1 +1,1 @@
-#include "../kcrash.h"
+#include <kcrash.h>

@@ -1,1 +1,1 @@
-#include "../karrowbutton.h"
+#include <karrowbutton.h>

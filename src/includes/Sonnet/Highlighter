@@ -1,1 +1,1 @@
-#include "../../sonnet/highlighter.h"
+#include <sonnet/highlighter.h>

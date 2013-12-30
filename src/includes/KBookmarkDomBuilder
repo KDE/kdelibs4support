@@ -1,1 +1,1 @@
-#include "../kbookmarkdombuilder.h"
+#include <kbookmarkdombuilder.h>

@@ -1,2 +1,2 @@
-#include "../kcategorizedview.h"
+#include <kcategorizedview.h>
 

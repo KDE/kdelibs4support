@@ -1,1 +1,1 @@
-#include "../kextendableitemdelegate.h"
+#include <kextendableitemdelegate.h>

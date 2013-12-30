@@ -1,1 +1,1 @@
-#include "../kcharsets.h"
+#include <kcharsets.h>

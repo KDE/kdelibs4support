@@ -1,1 +1,1 @@
-#include "../../ktexteditor/movingrange.h"
+#include <ktexteditor/movingrange.h>

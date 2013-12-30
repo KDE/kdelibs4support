@@ -1,1 +1,1 @@
-#include "../klocale.h"
+#include <klocale.h>

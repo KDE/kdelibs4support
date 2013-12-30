@@ -1,1 +1,1 @@
-#include "../ksystemtrayicon.h"
+#include <ksystemtrayicon.h>

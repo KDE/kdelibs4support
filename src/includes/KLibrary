@@ -1,1 +1,1 @@
-#include "../klibrary.h"
+#include <klibrary.h>

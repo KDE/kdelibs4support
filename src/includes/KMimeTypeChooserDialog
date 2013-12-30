@@ -1,1 +1,1 @@
-#include "../kmimetypechooser.h"
+#include <kmimetypechooser.h>

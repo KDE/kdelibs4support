@@ -1,1 +1,1 @@
-#include "../../../nepomuk/simplefacet.h"
+#include <nepomuk/simplefacet.h>

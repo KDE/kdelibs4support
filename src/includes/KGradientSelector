@@ -1,1 +1,1 @@
-#include "../kselector.h"
+#include <kselector.h>

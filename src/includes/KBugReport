@@ -1,1 +1,1 @@
-#include "../kbugreport.h"
+#include <kbugreport.h>

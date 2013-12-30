@@ -1,1 +1,1 @@
-#include "../kcompositejob.h"
+#include <kcompositejob.h>

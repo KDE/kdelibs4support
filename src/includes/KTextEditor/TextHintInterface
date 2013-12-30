@@ -1,1 +1,1 @@
-#include "../../ktexteditor/texthintinterface.h"
+#include <ktexteditor/texthintinterface.h>

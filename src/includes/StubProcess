@@ -1,1 +1,1 @@
-#include "../kdesu/stub.h"
+#include <kdesu/stub.h>

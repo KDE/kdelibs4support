@@ -1,1 +1,1 @@
-#include "../kurlnavigator.h"
+#include <kurlnavigator.h>

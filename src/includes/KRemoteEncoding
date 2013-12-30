@@ -1,1 +1,1 @@
-#include "../kremoteencoding.h"
+#include <kremoteencoding.h>

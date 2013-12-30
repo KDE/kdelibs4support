@@ -1,1 +1,1 @@
-#include "../kidletime.h"
+#include <kidletime.h>

@@ -1,1 +1,1 @@
-#include "../kstartupinfo.h"
+#include <kstartupinfo.h>

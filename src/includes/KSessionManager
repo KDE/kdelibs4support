@@ -1,1 +1,1 @@
-#include "../ksessionmanager.h"
+#include <ksessionmanager.h>

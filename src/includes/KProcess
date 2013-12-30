@@ -1,1 +1,1 @@
-#include "../kprocess.h"
+#include <kprocess.h>

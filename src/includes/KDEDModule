@@ -1,1 +1,1 @@
-#include "../kdedmodule.h"
+#include <kdedmodule.h>

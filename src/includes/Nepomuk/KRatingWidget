@@ -1,1 +1,1 @@
-#include "../../nepomuk/kratingwidget.h"
+#include <nepomuk/kratingwidget.h>

@@ -1,1 +1,1 @@
-#include "../kruler.h"
+#include <kruler.h>

@@ -1,1 +1,1 @@
-#include "../../ktexteditor/containerinterface.h"
+#include <ktexteditor/containerinterface.h>

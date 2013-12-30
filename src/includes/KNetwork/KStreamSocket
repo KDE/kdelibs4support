@@ -1,1 +1,1 @@
-#include "../../k3streamsocket.h"
+#include <k3streamsocket.h>

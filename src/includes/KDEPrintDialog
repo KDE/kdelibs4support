@@ -1,1 +1,1 @@
-#include "../kdeprintdialog.h"
+#include <kdeprintdialog.h>

@@ -1,1 +1,1 @@
-#include "../../solid/deviceinterface.h"
+#include <solid/deviceinterface.h>

@@ -1,1 +1,1 @@
-#include "../kdirmodel.h"
+#include <kdirmodel.h>

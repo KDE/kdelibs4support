@@ -1,1 +1,1 @@
-#include "../kglobal.h"
+#include <kglobal.h>

@@ -1,1 +1,1 @@
-#include "../../solid/genericinterface.h"
+#include <solid/genericinterface.h>

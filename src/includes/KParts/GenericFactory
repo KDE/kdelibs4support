@@ -1,1 +1,1 @@
-#include "../../kparts/genericfactory.h"
+#include <kparts/genericfactory.h>

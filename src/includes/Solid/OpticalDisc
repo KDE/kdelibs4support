@@ -1,1 +1,1 @@
-#include "../../solid/opticaldisc.h"
+#include <solid/opticaldisc.h>

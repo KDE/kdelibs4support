@@ -1,1 +1,1 @@
-#include "../kplugininfo.h"
+#include <kplugininfo.h>

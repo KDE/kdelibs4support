@@ -1,1 +1,1 @@
-#include "../kmultitabbar.h"
+#include <kmultitabbar.h>

@@ -1,1 +1,1 @@
-#include "../keditlistbox.h"
+#include <keditlistbox.h>

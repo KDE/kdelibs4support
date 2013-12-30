@@ -1,1 +1,1 @@
-#include "../../solid/networkshare.h"
+#include <solid/networkshare.h>

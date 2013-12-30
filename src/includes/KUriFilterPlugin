@@ -1,1 +1,1 @@
-#include "../kurifilter.h"
+#include <kurifilter.h>

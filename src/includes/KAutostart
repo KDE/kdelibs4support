@@ -1,1 +1,1 @@
-#include "../kautostart.h"
+#include <kautostart.h>

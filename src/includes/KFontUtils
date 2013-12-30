@@ -1,1 +1,1 @@
-#include "../kfontutils.h"
+#include <kfontutils.h>

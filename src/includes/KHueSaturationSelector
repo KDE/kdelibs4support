@@ -1,1 +1,1 @@
-#include "../khuesaturationselect.h"
+#include <khuesaturationselect.h>

@@ -1,1 +1,1 @@
-#include "../kurlcompletion.h"
+#include <kurlcompletion.h>

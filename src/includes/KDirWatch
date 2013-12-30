@@ -1,1 +1,1 @@
-#include "../kdirwatch.h"
+#include <kdirwatch.h>

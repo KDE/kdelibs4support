@@ -1,1 +1,1 @@
-#include "../kfontchooser.h"
+#include <kfontchooser.h>

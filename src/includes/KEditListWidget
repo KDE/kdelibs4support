@@ -1,1 +1,1 @@
-#include "../keditlistwidget.h"
+#include <keditlistwidget.h>

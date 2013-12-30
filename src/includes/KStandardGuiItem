@@ -1,1 +1,1 @@
-#include "../kstandardguiitem.h"
+#include <kstandardguiitem.h>

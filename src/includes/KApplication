@@ -1,1 +1,1 @@
-#include "../kapplication.h"
+#include <kapplication.h>

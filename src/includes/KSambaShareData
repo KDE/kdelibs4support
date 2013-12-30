@@ -1,1 +1,1 @@
-#include "../ksambasharedata.h"
+#include <ksambasharedata.h>

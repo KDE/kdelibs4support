@@ -1,1 +1,1 @@
-#include "../kuniqueapplication.h"
+#include <kuniqueapplication.h>

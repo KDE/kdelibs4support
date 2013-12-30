@@ -1,1 +1,1 @@
-#include "../../ktexteditor/rangefeedback.h"
+#include <ktexteditor/rangefeedback.h>

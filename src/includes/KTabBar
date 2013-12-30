@@ -1,1 +1,1 @@
-#include "../ktabbar.h"
+#include <ktabbar.h>

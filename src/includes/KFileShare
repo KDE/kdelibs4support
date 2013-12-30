@@ -1,1 +1,1 @@
-#include "../kfileshare.h"
+#include <kfileshare.h>

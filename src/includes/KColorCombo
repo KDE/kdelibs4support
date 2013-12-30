@@ -1,1 +1,1 @@
-#include "../kcolorcombo.h"
+#include <kcolorcombo.h>

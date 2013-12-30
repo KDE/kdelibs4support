@@ -1,1 +1,1 @@
-#include "../khistorycombobox.h"
+#include <khistorycombobox.h>

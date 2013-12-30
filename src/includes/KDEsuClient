@@ -1,1 +1,1 @@
-#include "../kdesu/client.h"
+#include <kdesu/client.h>

@@ -1,1 +1,1 @@
-#include "../kpastetextaction.h"
+#include <kpastetextaction.h>

@@ -1,1 +1,1 @@
-#include "../ktar.h"
+#include <ktar.h>

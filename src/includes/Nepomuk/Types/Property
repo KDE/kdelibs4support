@@ -1,1 +1,1 @@
-#include "../../../nepomuk/property.h"
+#include <nepomuk/property.h>

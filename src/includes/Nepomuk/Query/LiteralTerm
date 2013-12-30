@@ -1,1 +1,1 @@
-#include "../../../nepomuk/literalterm.h"
+#include <nepomuk/literalterm.h>

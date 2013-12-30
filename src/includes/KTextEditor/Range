@@ -1,1 +1,1 @@
-#include "../../ktexteditor/range.h"
+#include <ktexteditor/range.h>

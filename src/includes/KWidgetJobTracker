@@ -1,1 +1,1 @@
-#include "../kwidgetjobtracker.h"
+#include <kwidgetjobtracker.h>

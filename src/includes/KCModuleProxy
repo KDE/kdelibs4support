@@ -1,1 +1,1 @@
-#include "../kcmoduleproxy.h"
+#include <kcmoduleproxy.h>

@@ -1,1 +1,1 @@
-#include "../kmacroexpander.h"
+#include <kmacroexpander.h>

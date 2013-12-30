@@ -1,1 +1,1 @@
-#include "../../nepomuk/variant.h"
+#include <nepomuk/variant.h>

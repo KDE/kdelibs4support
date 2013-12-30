@@ -1,1 +1,1 @@
-#include "../ktoggleaction.h"
+#include <ktoggleaction.h>

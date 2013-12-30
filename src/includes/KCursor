@@ -1,1 +1,1 @@
-#include "../kcursor.h"
+#include <kcursor.h>

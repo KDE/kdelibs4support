@@ -1,1 +1,1 @@
-#include "../kdbusservicestarter.h"
+#include <kdbusservicestarter.h>

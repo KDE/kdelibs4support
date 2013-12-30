@@ -1,1 +1,1 @@
-#include "../kurlpixmapprovider.h"
+#include <kurlpixmapprovider.h>

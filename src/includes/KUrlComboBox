@@ -1,1 +1,1 @@
-#include "../kurlcombobox.h"
+#include <kurlcombobox.h>

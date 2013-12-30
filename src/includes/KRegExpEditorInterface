@@ -1,1 +1,1 @@
-#include "../kregexpeditorinterface.h"
+#include <kregexpeditorinterface.h>

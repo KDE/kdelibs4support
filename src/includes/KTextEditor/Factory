@@ -1,1 +1,1 @@
-#include "../../ktexteditor/factory.h"
+#include <ktexteditor/factory.h>

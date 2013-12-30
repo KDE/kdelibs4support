@@ -1,1 +1,1 @@
-#include "../krecentfilesaction.h"
+#include <krecentfilesaction.h>

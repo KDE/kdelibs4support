@@ -1,1 +1,1 @@
-#include "../kpixmapsequencewidget.h"
+#include <kpixmapsequencewidget.h>

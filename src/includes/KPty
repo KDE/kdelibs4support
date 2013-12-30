@@ -1,1 +1,1 @@
-#include "../kpty.h"
+#include <kpty.h>

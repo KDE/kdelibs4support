@@ -1,1 +1,1 @@
-#include "../kbookmarkimporter_opera.h"
+#include <kbookmarkimporter_opera.h>

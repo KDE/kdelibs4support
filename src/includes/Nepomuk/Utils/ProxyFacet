@@ -1,1 +1,1 @@
-#include "../../../nepomuk/proxyfacet.h"
+#include <nepomuk/proxyfacet.h>

@@ -1,1 +1,1 @@
-#include "../ksortablelist.h"
+#include <ksortablelist.h>

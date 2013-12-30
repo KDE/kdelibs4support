@@ -1,1 +1,1 @@
-#include "../kfileitemactions.h"
+#include <kfileitemactions.h>

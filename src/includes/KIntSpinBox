@@ -1,1 +1,1 @@
-#include "../knuminput.h"
+#include <knuminput.h>

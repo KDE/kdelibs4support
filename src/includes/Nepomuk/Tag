@@ -1,1 +1,1 @@
-#include "../../nepomuk/tag.h"
+#include <nepomuk/tag.h>

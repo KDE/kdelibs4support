@@ -1,1 +1,1 @@
-#include "../../nepomuk/resource.h"
+#include <nepomuk/resource.h>

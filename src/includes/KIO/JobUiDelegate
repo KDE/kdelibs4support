@@ -1,1 +1,1 @@
-#include "../../kio/jobuidelegate.h"
+#include <kio/jobuidelegate.h>

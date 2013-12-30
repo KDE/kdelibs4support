@@ -1,1 +1,1 @@
-#include "../krandom.h"
+#include <krandom.h>

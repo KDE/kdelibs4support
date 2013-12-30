@@ -1,1 +1,1 @@
-#include "../kstatusbar.h"
+#include <kstatusbar.h>

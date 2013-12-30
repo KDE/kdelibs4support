@@ -1,1 +1,1 @@
-#include "../kpixmapregionselectorwidget.h"
+#include <kpixmapregionselectorwidget.h>

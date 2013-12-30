@@ -1,1 +1,1 @@
-#include "../ksavefile.h"
+#include <ksavefile.h>

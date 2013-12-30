@@ -1,1 +1,1 @@
-#include "../../ktexteditor/codecompletionmodel.h"
+#include <ktexteditor/codecompletionmodel.h>

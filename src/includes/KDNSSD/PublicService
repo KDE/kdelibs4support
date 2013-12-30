@@ -1,1 +1,1 @@
-#include "../../kdnssd/publicservice.h"
+#include <kdnssd/publicservice.h>

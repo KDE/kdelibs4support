@@ -1,1 +1,1 @@
-#include "../kservicetypeprofile.h"
+#include <kservicetypeprofile.h>

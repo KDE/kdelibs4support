@@ -1,1 +1,1 @@
-#include "../kpixmapcache.h"
+#include <kpixmapcache.h>

@@ -1,1 +1,1 @@
-#include "../../../nepomuk/nmm.h"
+#include <nepomuk/nmm.h>

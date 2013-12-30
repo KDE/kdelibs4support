@@ -1,1 +1,1 @@
-#include "../../khtml_events.h"
+#include <khtml_events.h>

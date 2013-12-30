@@ -1,1 +1,1 @@
-#include "../../ktexteditor/cursorfeedback.h"
+#include <ktexteditor/cursorfeedback.h>

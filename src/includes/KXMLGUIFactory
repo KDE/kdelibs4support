@@ -1,1 +1,1 @@
-#include "../kxmlguifactory.h"
+#include <kxmlguifactory.h>

@@ -1,1 +1,1 @@
-#include "../kmenubar.h"
+#include <kmenubar.h>

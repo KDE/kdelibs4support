@@ -1,1 +1,1 @@
-#include "../kplotpoint.h"
+#include <kplotpoint.h>

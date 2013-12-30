@@ -1,1 +1,1 @@
-#include "../kfilewidget.h"
+#include <kfilewidget.h>

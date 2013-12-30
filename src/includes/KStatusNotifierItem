@@ -1,1 +1,1 @@
-#include "../kstatusnotifieritem.h"
+#include <kstatusnotifieritem.h>

@@ -1,1 +1,1 @@
-#include "../kbookmarkmanager.h"
+#include <kbookmarkmanager.h>

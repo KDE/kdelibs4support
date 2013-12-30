@@ -1,1 +1,1 @@
-#include "../../dom/css_rule.h"
+#include <dom/css_rule.h>

@@ -1,1 +1,1 @@
-#include "../kwidgetitemdelegate.h"
+#include <kwidgetitemdelegate.h>

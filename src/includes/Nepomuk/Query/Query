@@ -1,1 +1,1 @@
-#include "../../../nepomuk/query.h"
+#include <nepomuk/query.h>

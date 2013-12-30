@@ -1,1 +1,1 @@
-#include "../kreplace.h"
+#include <kreplace.h>

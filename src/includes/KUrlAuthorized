@@ -1,1 +1,1 @@
-#include "../kurlauthorized.h"
+#include <kurlauthorized.h>

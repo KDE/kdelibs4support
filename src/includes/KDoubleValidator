@@ -1,1 +1,1 @@
-#include "../knumvalidator.h"
+#include <knumvalidator.h>

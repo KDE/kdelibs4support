@@ -1,1 +1,1 @@
-#include "../../ktexteditor/searchinterface.h"
+#include <ktexteditor/searchinterface.h>

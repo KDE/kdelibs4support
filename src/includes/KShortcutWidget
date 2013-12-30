@@ -1,1 +1,1 @@
-#include "../kshortcutwidget.h"
+#include <kshortcutwidget.h>

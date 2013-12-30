@@ -1,1 +1,1 @@
-#include "../ksplashscreen.h"
+#include <ksplashscreen.h>

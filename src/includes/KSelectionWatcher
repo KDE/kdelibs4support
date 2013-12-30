@@ -1,1 +1,1 @@
-#include "../kmanagerselection.h"
+#include <kmanagerselection.h>

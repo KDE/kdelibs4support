@@ -1,1 +1,1 @@
-#include "../../../nepomuk/negationterm.h"
+#include <nepomuk/negationterm.h>

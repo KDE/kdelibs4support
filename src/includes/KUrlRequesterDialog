@@ -1,1 +1,1 @@
-#include "../kurlrequesterdialog.h"
+#include <kurlrequesterdialog.h>

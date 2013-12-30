@@ -1,1 +1,1 @@
-#include "../kpixmapsequenceoverlaypainter.h"
+#include <kpixmapsequenceoverlaypainter.h>

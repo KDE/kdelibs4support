@@ -1,1 +1,1 @@
-#include "../../kauthactionreply.h"
+#include <kauthactionreply.h>

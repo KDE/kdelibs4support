@@ -1,1 +1,1 @@
-#include "../kprotocolmanager.h"
+#include <kprotocolmanager.h>

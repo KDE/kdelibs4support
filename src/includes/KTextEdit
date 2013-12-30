@@ -1,1 +1,1 @@
-#include "../ktextedit.h"
+#include <ktextedit.h>

@@ -1,1 +1,1 @@
-#include "../kcomponentdata.h"
+#include <kcomponentdata.h>

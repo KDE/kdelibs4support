@@ -1,1 +1,1 @@
-#include "../kemoticonsprovider.h"
+#include <kemoticonsprovider.h>

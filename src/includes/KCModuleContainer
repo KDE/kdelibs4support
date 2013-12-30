@@ -1,1 +1,1 @@
-#include "../kcmodulecontainer.h"
+#include <kcmodulecontainer.h>

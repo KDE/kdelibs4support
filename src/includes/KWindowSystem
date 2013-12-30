@@ -1,1 +1,1 @@
-#include "../kwindowsystem.h"
+#include <kwindowsystem.h>

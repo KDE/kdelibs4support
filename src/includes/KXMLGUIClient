@@ -1,1 +1,1 @@
-#include "../kxmlguiclient.h"
+#include <kxmlguiclient.h>

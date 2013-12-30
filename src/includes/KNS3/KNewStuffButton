@@ -1,1 +1,1 @@
-#include "../../knewstuff3/knewstuffbutton.h"
+#include <knewstuff3/knewstuffbutton.h>

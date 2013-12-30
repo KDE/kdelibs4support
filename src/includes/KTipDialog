@@ -1,1 +1,1 @@
-#include "../ktip.h"
+#include <ktip.h>

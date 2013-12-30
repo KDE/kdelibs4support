@@ -1,1 +1,1 @@
-#include "../kactioncategory.h"
+#include <kactioncategory.h>

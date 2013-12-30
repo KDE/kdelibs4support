@@ -1,2 +1,2 @@
-#include "../kwebwallet.h"
+#include <kwebwallet.h>
 

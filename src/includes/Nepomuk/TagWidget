@@ -1,1 +1,1 @@
-#include "../../nepomuk/tagwidget.h"
+#include <nepomuk/tagwidget.h>

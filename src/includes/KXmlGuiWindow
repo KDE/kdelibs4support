@@ -1,1 +1,1 @@
-#include "../kxmlguiwindow.h"
+#include <kxmlguiwindow.h>

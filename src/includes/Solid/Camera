@@ -1,1 +1,1 @@
-#include "../../solid/camera.h"
+#include <solid/camera.h>

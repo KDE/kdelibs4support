@@ -1,1 +1,1 @@
-#include "../kcolordialog.h"
+#include <kcolordialog.h>

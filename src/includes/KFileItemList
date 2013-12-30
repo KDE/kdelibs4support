@@ -1,1 +1,1 @@
-#include "../kfileitem.h"
+#include <kfileitem.h>

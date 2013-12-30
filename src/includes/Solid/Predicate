@@ -1,1 +1,1 @@
-#include "../../solid/predicate.h"
+#include <solid/predicate.h>

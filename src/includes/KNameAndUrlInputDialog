@@ -1,1 +1,1 @@
-#include "../knameandurlinputdialog.h"
+#include <knameandurlinputdialog.h>

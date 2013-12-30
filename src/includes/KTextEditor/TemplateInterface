@@ -1,1 +1,1 @@
-#include "../../ktexteditor/templateinterface.h"
+#include <ktexteditor/templateinterface.h>

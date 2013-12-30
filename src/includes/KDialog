@@ -1,1 +1,1 @@
-#include "../kdialog.h"
+#include <kdialog.h>

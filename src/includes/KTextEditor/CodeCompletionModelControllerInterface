@@ -1,1 +1,1 @@
-#include "../../ktexteditor/codecompletionmodelcontrollerinterface.h"
+#include <ktexteditor/codecompletionmodelcontrollerinterface.h>

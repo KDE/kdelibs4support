@@ -1,1 +1,1 @@
-#include "../../../nepomuk/dynamicresourcefacet.h"
+#include <nepomuk/dynamicresourcefacet.h>

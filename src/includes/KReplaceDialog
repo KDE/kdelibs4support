@@ -1,1 +1,1 @@
-#include "../kreplacedialog.h"
+#include <kreplacedialog.h>

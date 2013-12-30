@@ -1,1 +1,1 @@
-#include "../kfilewriteplugin.h"
+#include <kfilewriteplugin.h>

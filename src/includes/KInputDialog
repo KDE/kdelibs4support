@@ -1,1 +1,1 @@
-#include "../kinputdialog.h"
+#include <kinputdialog.h>

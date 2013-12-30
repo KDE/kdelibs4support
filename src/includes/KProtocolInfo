@@ -1,1 +1,1 @@
-#include "../kprotocolinfo.h"
+#include <kprotocolinfo.h>

@@ -1,1 +1,1 @@
-#include "../kbuildsycocaprogressdialog.h"
+#include <kbuildsycocaprogressdialog.h>

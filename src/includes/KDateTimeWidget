@@ -1,1 +1,1 @@
-#include "../kdatetimewidget.h"
+#include <kdatetimewidget.h>

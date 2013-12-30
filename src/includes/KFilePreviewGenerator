@@ -1,1 +1,1 @@
-#include "../kfilepreviewgenerator.h"
+#include <kfilepreviewgenerator.h>

@@ -1,1 +1,1 @@
-#include "../../kmediaplayer/view.h"
+#include <kmediaplayer/view.h>

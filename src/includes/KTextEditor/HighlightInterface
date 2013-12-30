@@ -1,1 +1,1 @@
-#include "../../ktexteditor/highlightinterface.h"
+#include <ktexteditor/highlightinterface.h>

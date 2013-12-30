@@ -1,1 +1,1 @@
-#include "../../kparts/listingextension.h"
+#include <kparts/listingextension.h>

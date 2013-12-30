@@ -1,1 +1,1 @@
-#include "../../sonnet/dialog.h"
+#include <sonnet/dialog.h>

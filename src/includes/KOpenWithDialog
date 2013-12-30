@@ -1,1 +1,1 @@
-#include "../kopenwithdialog.h"
+#include <kopenwithdialog.h>

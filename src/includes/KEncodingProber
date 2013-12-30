@@ -1,1 +1,1 @@
-#include "../kencodingprober.h"
+#include <kencodingprober.h>

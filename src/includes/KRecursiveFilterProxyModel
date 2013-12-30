@@ -1,1 +1,1 @@
-#include "../krecursivefilterproxymodel.h"
+#include <krecursivefilterproxymodel.h>

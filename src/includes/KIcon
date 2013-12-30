@@ -1,1 +1,1 @@
-#include "../kicon.h"
+#include <kicon.h>

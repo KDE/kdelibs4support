@@ -1,1 +1,1 @@
-#include "../kdescendantsproxymodel.h"
+#include <kdescendantsproxymodel.h>

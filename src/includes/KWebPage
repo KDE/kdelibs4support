@@ -1,2 +1,2 @@
-#include "../kwebpage.h"
+#include <kwebpage.h>
 

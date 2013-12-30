@@ -1,1 +1,1 @@
-#include "../kdevicelistmodel.h"
+#include <kdevicelistmodel.h>

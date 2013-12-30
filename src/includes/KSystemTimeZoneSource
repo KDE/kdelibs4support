@@ -1,1 +1,1 @@
-#include "../ksystemtimezone.h"
+#include <ksystemtimezone.h>

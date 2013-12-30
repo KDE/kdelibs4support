@@ -1,1 +1,1 @@
-#include "../kguiitem.h"
+#include <kguiitem.h>

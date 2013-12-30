@@ -1,1 +1,1 @@
-#include "../kross/ui/plugin.h"
+#include <kross/ui/plugin.h>

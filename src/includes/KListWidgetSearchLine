@@ -1,1 +1,1 @@
-#include "../klistwidgetsearchline.h"
+#include <klistwidgetsearchline.h>

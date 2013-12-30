@@ -1,1 +1,1 @@
-#include "../ksycocaentry.h"
+#include <ksycocaentry.h>

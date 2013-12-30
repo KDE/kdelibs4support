@@ -1,2 +1,2 @@
-#include "../kwebpluginfactory.h"
+#include <kwebpluginfactory.h>
 

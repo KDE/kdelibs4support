@@ -1,1 +1,1 @@
-#include "../../knewstuff2/core/entry.h"
+#include <knewstuff3/entry.h>

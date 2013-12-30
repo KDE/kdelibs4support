@@ -1,1 +1,1 @@
-#include "../kjobuidelegate.h"
+#include <kjobuidelegate.h>

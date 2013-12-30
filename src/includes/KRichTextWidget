@@ -1,1 +1,1 @@
-#include "../krichtextwidget.h"
+#include <krichtextwidget.h>

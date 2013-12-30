@@ -1,1 +1,1 @@
-#include "../../kparts/browserinterface.h"
+#include <kparts/browserinterface.h>

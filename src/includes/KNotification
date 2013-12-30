@@ -1,1 +1,1 @@
-#include "../knotification.h"
+#include <knotification.h>

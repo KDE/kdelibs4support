@@ -1,1 +1,1 @@
-#include "../../kio/filejob.h"
+#include <kio/filejob.h>

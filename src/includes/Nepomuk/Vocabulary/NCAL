@@ -1,1 +1,1 @@
-#include "../../../nepomuk/ncal.h"
+#include <nepomuk/ncal.h>

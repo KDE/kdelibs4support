@@ -1,1 +1,1 @@
-#include "../../dom/dom_node.h"
+#include <dom/dom_node.h>

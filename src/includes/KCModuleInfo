@@ -1,1 +1,1 @@
-#include "../kcmoduleinfo.h"
+#include <kcmoduleinfo.h>

@@ -1,1 +1,1 @@
-#include "../kpassivepopupmessagehandler.h"
+#include <kpassivepopupmessagehandler.h>

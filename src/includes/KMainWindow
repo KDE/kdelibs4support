@@ -1,1 +1,1 @@
-#include "../kmainwindow.h"
+#include <kmainwindow.h>

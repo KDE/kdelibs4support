@@ -1,1 +1,1 @@
-#include "../kconfigdialogmanager.h"
+#include <kconfigdialogmanager.h>

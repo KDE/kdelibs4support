@@ -1,1 +1,1 @@
-#include "../../kparts/browserrun.h"
+#include <kparts/browserrun.h>

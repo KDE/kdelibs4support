@@ -1,1 +1,1 @@
-#include "../krun.h"
+#include <krun.h>

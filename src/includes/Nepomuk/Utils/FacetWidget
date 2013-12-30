@@ -1,1 +1,1 @@
-#include "../../../nepomuk/facetwidget.h"
+#include <nepomuk/facetwidget.h>

@@ -1,1 +1,1 @@
-#include "../khtml_part.h"
+#include <khtml_part.h>

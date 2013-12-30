@@ -1,1 +1,1 @@
-#include "../../ktexteditor/editorchooser.h"
+#include <ktexteditor/editorchooser.h>

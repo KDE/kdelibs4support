@@ -1,1 +1,1 @@
-#include "../kascii.h"
+#include <kascii.h>

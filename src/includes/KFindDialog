@@ -1,1 +1,1 @@
-#include "../kfinddialog.h"
+#include <kfinddialog.h>

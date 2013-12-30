@@ -1,1 +1,1 @@
-#include "../kstyle.h"
+#include <kstyle.h>

@@ -1,1 +1,1 @@
-#include "../../ktexteditor/smartcursor.h"
+#include <ktexteditor/smartcursor.h>

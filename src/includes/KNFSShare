@@ -1,1 +1,1 @@
-#include "../knfsshare.h"
+#include <knfsshare.h>

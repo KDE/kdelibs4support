@@ -1,1 +1,1 @@
-#include "../krecentdocument.h"
+#include <krecentdocument.h>

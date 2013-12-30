@@ -1,1 +1,1 @@
-#include "../kpagemodel.h"
+#include <kpagemodel.h>

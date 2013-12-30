@@ -1,1 +1,1 @@
-#include "../kcompletionbox.h"
+#include <kcompletionbox.h>

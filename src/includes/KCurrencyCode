@@ -1,1 +1,1 @@
-#include "../kcurrencycode.h"
+#include <kcurrencycode.h>

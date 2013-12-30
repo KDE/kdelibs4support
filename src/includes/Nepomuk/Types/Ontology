@@ -1,1 +1,1 @@
-#include "../../../nepomuk/ontology.h"
+#include <nepomuk/ontology.h>

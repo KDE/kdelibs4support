@@ -1,1 +1,1 @@
-#include "../ktogglefullscreenaction.h"
+#include <ktogglefullscreenaction.h>

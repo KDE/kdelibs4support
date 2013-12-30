@@ -1,1 +1,1 @@
-#include "../krestrictedline.h"
+#include <krestrictedline.h>

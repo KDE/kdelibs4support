@@ -1,1 +1,1 @@
-#include "../kcheckableproxymodel.h"
+#include <kcheckableproxymodel.h>

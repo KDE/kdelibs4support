@@ -1,1 +1,1 @@
-#include "../kselectionproxymodel.h"
+#include <kselectionproxymodel.h>

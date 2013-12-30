@@ -1,1 +1,1 @@
-#include "../../k3reverseresolver.h"
+#include <k3reverseresolver.h>

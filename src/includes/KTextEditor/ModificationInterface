@@ -1,1 +1,1 @@
-#include "../../ktexteditor/modificationinterface.h"
+#include <ktexteditor/modificationinterface.h>

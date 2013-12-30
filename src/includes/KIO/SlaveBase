@@ -1,1 +1,1 @@
-#include "../../kio/slavebase.h"
+#include <kio/slavebase.h>

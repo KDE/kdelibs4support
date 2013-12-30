@@ -1,1 +1,1 @@
-#include "../../solid/devicenotifier.h"
+#include <solid/devicenotifier.h>

@@ -1,1 +1,1 @@
-#include "../ktoolbarspaceraction.h"
+#include <ktoolbarspaceraction.h>

@@ -1,1 +1,1 @@
-#include "../kcmoduleloader.h"
+#include <kcmoduleloader.h>

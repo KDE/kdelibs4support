@@ -1,1 +1,1 @@
-#include "../kstatusbarofflineindicator.h"
+#include <kstatusbarofflineindicator.h>

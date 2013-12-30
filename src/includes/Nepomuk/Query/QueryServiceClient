@@ -1,1 +1,1 @@
-#include "../../../nepomuk/queryserviceclient.h"
+#include <nepomuk/queryserviceclient.h>

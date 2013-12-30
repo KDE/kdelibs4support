@@ -1,1 +1,1 @@
-#include "../../k3sockssocketdevice.h"
+#include <k3sockssocketdevice.h>

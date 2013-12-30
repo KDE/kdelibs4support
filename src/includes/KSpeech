@@ -1,1 +1,1 @@
-#include "../kspeech.h"
+#include <kspeech.h>

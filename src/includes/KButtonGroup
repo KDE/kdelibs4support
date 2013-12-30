@@ -1,1 +1,1 @@
-#include "../kbuttongroup.h"
+#include <kbuttongroup.h>

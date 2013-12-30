@@ -1,1 +1,1 @@
-#include "../../../nepomuk/optionalterm.h"
+#include <nepomuk/optionalterm.h>

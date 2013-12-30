@@ -1,1 +1,1 @@
-#include "../../kwallet.h"
+#include <kwallet.h>

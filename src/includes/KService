@@ -1,1 +1,1 @@
-#include "../kservice.h"
+#include <kservice.h>

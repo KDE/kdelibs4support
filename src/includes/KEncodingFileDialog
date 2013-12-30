@@ -1,1 +1,1 @@
-#include "../kencodingfiledialog.h"
+#include <kencodingfiledialog.h>

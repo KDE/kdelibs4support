@@ -1,1 +1,1 @@
-#include "../kconfigskeleton.h"
+#include <kconfigskeleton.h>

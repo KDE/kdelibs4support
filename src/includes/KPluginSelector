@@ -1,1 +1,1 @@
-#include "../kpluginselector.h"
+#include <kpluginselector.h>

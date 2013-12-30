@@ -1,1 +1,1 @@
-#include "../kurl.h"
+#include <kurl.h>

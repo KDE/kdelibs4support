@@ -1,1 +1,1 @@
-#include "../kdesu/process.h"
+#include <kdesu/process.h>

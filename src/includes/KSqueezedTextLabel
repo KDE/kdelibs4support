@@ -1,1 +1,1 @@
-#include "../ksqueezedtextlabel.h"
+#include <ksqueezedtextlabel.h>

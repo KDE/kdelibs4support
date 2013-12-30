@@ -1,1 +1,1 @@
-#include "../klanguagebutton.h"
+#include <klanguagebutton.h>

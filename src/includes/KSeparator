@@ -1,1 +1,1 @@
-#include "../kseparator.h"
+#include <kseparator.h>

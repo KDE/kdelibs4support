@@ -1,1 +1,1 @@
-#include "../kfilefiltercombo.h"
+#include <kfilefiltercombo.h>

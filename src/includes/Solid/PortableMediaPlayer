@@ -1,1 +1,1 @@
-#include "../../solid/portablemediaplayer.h"
+#include <solid/portablemediaplayer.h>

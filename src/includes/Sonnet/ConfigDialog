@@ -1,1 +1,1 @@
-#include "../../sonnet/configdialog.h"
+#include <sonnet/configdialog.h>

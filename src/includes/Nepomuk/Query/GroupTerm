@@ -1,1 +1,1 @@
-#include "../../../nepomuk/groupterm.h"
+#include <nepomuk/groupterm.h>

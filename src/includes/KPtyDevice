@@ -1,1 +1,1 @@
-#include "../kptydevice.h"
+#include <kptydevice.h>

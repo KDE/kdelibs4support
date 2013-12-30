@@ -1,1 +1,1 @@
-#include "../ksharedconfig.h"
+#include <ksharedconfig.h>

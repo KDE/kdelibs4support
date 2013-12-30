@@ -1,1 +1,1 @@
-#include "../../../nepomuk/comparisonterm.h"
+#include <nepomuk/comparisonterm.h>

@@ -1,1 +1,1 @@
-#include "../kwindowinfo.h"
+#include <kwindowinfo.h>

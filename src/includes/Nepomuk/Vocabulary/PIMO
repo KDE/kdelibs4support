@@ -1,1 +1,1 @@
-#include "../../../nepomuk/pimo.h"
+#include <nepomuk/pimo.h>

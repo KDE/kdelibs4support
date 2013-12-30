@@ -1,1 +1,1 @@
-#include "../kcapacitybar.h"
+#include <kcapacitybar.h>

@@ -1,1 +1,1 @@
-#include "../kross/core/script.h"
+#include <kross/core/script.h>

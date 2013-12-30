@@ -1,1 +1,1 @@
-#include "../kcolorvalueselector.h"
+#include <kcolorvalueselector.h>

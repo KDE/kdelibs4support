@@ -1,1 +1,1 @@
-#include "../../ktexteditor/sessionconfiginterface.h"
+#include <ktexteditor/sessionconfiginterface.h>

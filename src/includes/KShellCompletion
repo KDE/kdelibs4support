@@ -1,1 +1,1 @@
-#include "../kshellcompletion.h"
+#include <kshellcompletion.h>

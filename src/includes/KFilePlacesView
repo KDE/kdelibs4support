@@ -1,1 +1,1 @@
-#include "../kfileplacesview.h"
+#include <kfileplacesview.h>

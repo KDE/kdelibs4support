@@ -1,1 +1,1 @@
-#include "../kdiskfreespaceinfo.h"
+#include <kdiskfreespaceinfo.h>

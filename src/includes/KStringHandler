@@ -1,1 +1,1 @@
-#include "../kstringhandler.h"
+#include <kstringhandler.h>

@@ -1,1 +1,1 @@
-#include "../kpreviewwidgetbase.h"
+#include <kpreviewwidgetbase.h>

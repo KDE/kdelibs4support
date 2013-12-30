@@ -1,1 +1,1 @@
-#include "../kratingpainter.h"
+#include <kratingpainter.h>

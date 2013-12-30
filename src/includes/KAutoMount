@@ -1,1 +1,1 @@
-#include "../kautomount.h"
+#include <kautomount.h>

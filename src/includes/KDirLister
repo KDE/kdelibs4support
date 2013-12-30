@@ -1,1 +1,1 @@
-#include "../kdirlister.h"
+#include <kdirlister.h>

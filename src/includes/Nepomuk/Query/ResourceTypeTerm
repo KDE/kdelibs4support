@@ -1,1 +1,1 @@
-#include "../../../nepomuk/resourcetypeterm.h"
+#include <nepomuk/resourcetypeterm.h>

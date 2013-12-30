@@ -1,1 +1,1 @@
-#include "../kxmessages.h"
+#include <kxmessages.h>

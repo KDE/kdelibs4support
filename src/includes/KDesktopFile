@@ -1,1 +1,1 @@
-#include "../kdesktopfile.h"
+#include <kdesktopfile.h>

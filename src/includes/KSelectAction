@@ -1,1 +1,1 @@
-#include "../kselectaction.h"
+#include <kselectaction.h>

@@ -1,1 +1,1 @@
-#include "../kfontsizeaction.h"
+#include <kfontsizeaction.h>

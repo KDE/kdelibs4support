@@ -1,2 +1,2 @@
-#include "../kgraphicswebview.h"
+#include <kgraphicswebview.h>
 

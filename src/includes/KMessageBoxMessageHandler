@@ -1,1 +1,1 @@
-#include "../kmessageboxmessagehandler.h"
+#include <kmessageboxmessagehandler.h>

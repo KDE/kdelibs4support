@@ -1,1 +1,1 @@
-#include "../../kparts/textextension.h"
+#include <kparts/textextension.h>

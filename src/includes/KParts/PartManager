@@ -1,1 +1,1 @@
-#include "../../kparts/partmanager.h"
+#include <kparts/partmanager.h>

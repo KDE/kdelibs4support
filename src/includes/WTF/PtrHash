@@ -1,1 +1,1 @@
-#include "../../kxmlcore/HashFunctions.h"
+#include <wtf/HashFunctions.h>

@@ -1,1 +1,1 @@
-#include "../ktimecombobox.h"
+#include <ktimecombobox.h>

@@ -1,1 +1,1 @@
-#include "../kstandarddirs.h"
+#include <kstandarddirs.h>

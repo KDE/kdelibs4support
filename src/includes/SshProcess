@@ -1,1 +1,1 @@
-#include "../kdesu/ssh.h"
+#include <kdesu/ssh.h>

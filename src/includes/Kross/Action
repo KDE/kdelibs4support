@@ -1,1 +1,1 @@
-#include "../kross/core/action.h"
+#include <kross/core/action.h>
