@@ -208,7 +208,11 @@ public:
      *  @param topWidget A top widget of the application.
      *
      *  @see icon(), caption()
-     **/
+     * @deprecated since 5.0. This was doing two things: 1) setting the window title to
+     * include the appname; Qt now takes care of that on platforms where this is wanted.
+     * 2) setting the window startup ID, which Qt should take care of in the future.
+     * -> simply remove this call.
+     */
     void setTopWidget(QWidget *topWidget);
 
     /**
