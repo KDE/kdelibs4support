@@ -17,6 +17,7 @@ set(HAVE_X11 ${X11_FOUND})
 
 include(FeatureSummary)
 include(ECMSetupVersion)
+include(ECMGenerateHeaders)
 
 set(KF5_VERSION "5.0.0")
 ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KPRINTUTILS
@@ -39,6 +40,7 @@ if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
   find_package(KF5TextWidgets ${KF5_VERSION} REQUIRED)
   find_package(KF5CoreAddons ${KF5_VERSION} REQUIRED)
   find_package(KF5Parts ${KF5_VERSION} REQUIRED)
+  find_package(KF5XmlGui ${KF5_VERSION} REQUIRED)
 endif()
 
 add_subdirectory(src)

@@ -30,6 +30,8 @@ add_library(KF5PrintUtils ${kprintutils_LIB_SRCS})
 generate_export_header(KF5PrintUtils BASE_NAME KPrintUtils)
 add_library(KF5::PrintUtils ALIAS KF5PrintUtils)
 
+target_include_directories(KF5PrintUtils INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/kprintutils>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KPrintUtils>")
+
 target_link_libraries(KF5PrintUtils
   PUBLIC
     Qt5::Widgets
@@ -44,11 +46,21 @@ set_target_properties(KF5PrintUtils PROPERTIES
                       EXPORT_NAME PrintUtils
 )
 
-install( FILES
- ${CMAKE_CURRENT_BINARY_DIR}/kprintutils_export.h
- kdeprintdialog.h
- kprintpreview.h
- DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+ecm_generate_headers(
+  KPrintPreview
+  KDEPrintDialog
+
+  MODULE_NAME KPrintUtils
+  REQUIRED_HEADERS KPrintUtils_HEADERS
+)
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KPrintUtils DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/kprintutils_export.h
+  kdeprintdialog.h
+  ${KPrintUtils_HEADERS}
+  DESTINATION ${INCLUDE_INSTALL_DIR}/kprintutils COMPONENT Devel
+)
 
 install(TARGETS KF5PrintUtils EXPORT KF5PrintUtilsTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
