@@ -273,7 +273,7 @@ set(kde4support_INCLUDES
 )
 target_include_directories(KF5KDE4Support PUBLIC "$<BUILD_INTERFACE:${kde4support_INCLUDES}>")
 
-target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE>")
+target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE>")
 
 target_link_libraries(KF5KDE4Support
 PUBLIC
