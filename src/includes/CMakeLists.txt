@@ -1,57 +1,3 @@
-if (QT_QT3SUPPORT_FOUND)
-install( FILES
-  K3BookmarkDrag
-  K3ButtonBox
-  K3ColorDrag
-  K3DictSpellingHighlighter
-  K3DockArea
-  K3DockMainWindow
-  K3DockManager
-  K3DockTabGroup
-  K3DockWidget
-  K3DockWidgetAbstractHeader
-  K3DockWidgetAbstractHeaderDrag
-  K3DockWidgetHeader
-  K3DockWidgetHeaderDrag
-  K3Icon
-  K3IconView
-  K3IconViewItem
-  K3IconViewSearchLine
-  K3ListBox
-  K3ListView
-  K3ListViewItem
-  K3ListViewSearchLine
-  K3ListViewSearchLineWidget
-  K3MimeSourceFactory
-  K3MultipleDrag
-  K3PopupMenu
-  K3Spell
-  K3SpellConfig
-  K3SpellDlg
-  K3SpellingHighlighter
-  K3StaticDeleter
-  K3StaticDeleterBase
-  K3SyntaxHighlighter
-  K3TempFile
-  K3TextEdit
-  K3URLDrag
-  K3Wizard
-  K3Command
-  K3CommandHistory
-  K3AboutApplication
-  K3AboutContainer
-  K3AboutContributor
-  K3AboutDialog
-  K3AboutWidget
-  K3ActiveLabel
-  K3FileTreeView
-  K3FileTreeViewItem
-  K3MacroCommand
-  K3NamedCommand
-  K3RFCDate
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
-endif ()
-
 install( FILES
   KACL
   KAboutApplicationDialog
@@ -509,15 +455,6 @@ DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
 endif()
 
 if (UNIX)
-   if (QT_QT3SUPPORT_FOUND)
-      install( FILES
-        K3ProcIO
-        K3Process
-        K3ProcessController
-        K3ShellProcess
-      DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
-   endif ()
-
    install( FILES
      KDEsuClient
      KPty
