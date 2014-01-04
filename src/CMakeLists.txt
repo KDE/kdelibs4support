@@ -273,7 +273,7 @@ set(kde4support_INCLUDES
 )
 target_include_directories(KF5KDE4Support PUBLIC "$<BUILD_INTERFACE:${kde4support_INCLUDES}>")
 
-target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE>")
+target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support/KDE>")
 
 target_link_libraries(KF5KDE4Support
 PUBLIC
@@ -509,7 +509,7 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kde4support_export_internal.h
     ${CMAKE_CURRENT_BINARY_DIR}/kdemacros.h
     kdecore/kdeversion.h
-    DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support COMPONENT Devel
 )
 
 configure_file(kssl/ksslconfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
@@ -535,7 +535,7 @@ install(FILES
     kio/metainfojob.h
     kio/passworddialog.h
     kio/netaccess.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/kio COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/kio COMPONENT Devel
 )
 
 # kparts/*.h
@@ -543,12 +543,7 @@ install(FILES
     kparts/componentfactory.h
     kparts/genericfactory.h
     kparts/factory.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/kparts COMPONENT Devel
-)
-
-install(FILES
-    kio/kfilewrite.desktop
-    DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/kparts COMPONENT Devel
 )
 
 install( FILES
@@ -560,6 +555,7 @@ install( FILES
 install( FILES
     kio/kscan.desktop
     kio/kdatatool.desktop
+    kio/kfilewrite.desktop
     DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 
 # install the fileshareset and filesharelist scripts, they are not required on windows

@@ -443,7 +443,7 @@ install( FILES
   KWebView
   KWebPluginFactory
   KWebWallet
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE COMPONENT Devel)
 
 if(NOT KDE_NO_DEPRECATED)
 install( FILES
@@ -451,7 +451,7 @@ install( FILES
   KEditListBox
   KDiskFreeSpace
   KMimeTypeResolver
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE COMPONENT Devel)
 endif()
 
 if (UNIX)
@@ -464,14 +464,14 @@ if (UNIX)
      SshProcess
      StubProcess
      SuProcess
-   DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
+   DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE COMPONENT Devel)
 endif ()
 
 install( FILES
   ConversionCheck/QVconvertible
   ConversionCheck/type_toQString
   ConversionCheck/type_toQVariant
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/ConversionCheck COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/ConversionCheck COMPONENT Devel)
 
 
 install( FILES
@@ -484,7 +484,7 @@ install( FILES
   KDNSSD/ServiceBrowser
   KDNSSD/ServiceModel
   KDNSSD/ServiceTypeBrowser
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KDNSSD COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KDNSSD COMPONENT Devel)
 
 
 install( FILES
@@ -604,13 +604,13 @@ install( FILES
   DOM/TextEvent
   DOM/TreeWalker
   DOM/UIEvent
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/DOM COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/DOM COMPONENT Devel)
 
 
 install( FILES
   KAccelGen/Deref
   KAccelGen/Deref_Key
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KAccelGen COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KAccelGen COMPONENT Devel)
 
 install( FILES
   KIO/AccessManager
@@ -649,19 +649,19 @@ install( FILES
   KIO/TCPSlaveBase
   KIO/Task
   KIO/TransferJob
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KIO COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KIO COMPONENT Devel)
 
 if(NOT KDE_NO_DEPRECATED)
 install( FILES
   KIO/PasswordDialog
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KIO COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KIO COMPONENT Devel)
 endif()
 
 
 install( FILES
   KMediaPlayer/Player
   KMediaPlayer/View
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KMediaPlayer COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KMediaPlayer COMPONENT Devel)
 
 
 if(NOT KDE_NO_DEPRECATED)
@@ -672,7 +672,7 @@ install( FILES
   KNS/Entry
   KNS/Installation
   KNS/KTranslatable
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KNS COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KNS COMPONENT Devel)
 endif()
 
 install( FILES
@@ -680,7 +680,7 @@ install( FILES
   KNS3/Entry
   KNS3/KNewStuffAction
   KNS3/KNewStuffButton
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KNS3 COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KNS3 COMPONENT Devel)
 
 install( FILES
   KNetwork/KActiveSocketBase
@@ -701,7 +701,7 @@ install( FILES
   KNetwork/KSocksSocketDevice
   KNetwork/KStreamSocket
   KNetwork/KUnixSocketAddress
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KNetwork COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KNetwork COMPONENT Devel)
 
 install( FILES
   KParts/BrowserExtension
@@ -733,7 +733,7 @@ install( FILES
   KParts/StatusBarExtension
   KParts/TextExtension
   KParts/WindowArgs
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KParts COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KParts COMPONENT Devel)
 
 
 install( FILES
@@ -758,14 +758,14 @@ install( FILES
   Kross/Script
   Kross/ScriptingPlugin
   Kross/WrapperInterface
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Kross COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Kross COMPONENT Devel)
 
 
 install( FILES
   KSettings/Dialog
   KSettings/Dispatcher
   KSettings/PluginPage
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KSettings COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KSettings COMPONENT Devel)
 
 
 #install( FILES
@@ -773,7 +773,7 @@ DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KSettings COMPONENT Devel)
 #  Sonnet/UnicodeData
 #  Sonnet/TextBreaks
 #  Sonnet/Spell
-#DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Sonnet )
+#DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Sonnet )
 
 
 install( FILES
@@ -815,7 +815,7 @@ install( FILES
   KTextEditor/TextHintInterface
   KTextEditor/VariableInterface
   KTextEditor/View
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KTextEditor COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KTextEditor COMPONENT Devel)
 
 
 install( FILES
@@ -823,12 +823,12 @@ install( FILES
   KUnitTest/SlotTester
   KUnitTest/TestResults
   KUnitTest/Tester
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KUnitTest COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KUnitTest COMPONENT Devel)
 
 
 install( FILES
   KWallet/Wallet
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KWallet COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KWallet COMPONENT Devel)
 
 
 install( FILES
@@ -855,7 +855,7 @@ install( FILES
   Solid/StorageAccess
   Solid/StorageDrive
   Solid/StorageVolume
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Solid COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Solid COMPONENT Devel)
 
 
 install( FILES
@@ -864,14 +864,14 @@ install( FILES
   Sonnet/Dialog
   Sonnet/DictionaryComboBox
   Sonnet/Highlighter
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Sonnet COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Sonnet COMPONENT Devel)
 
 install( FILES
   KAuth/Action
   KAuth/ActionReply
   KAuth/ActionWatcher
   KAuth/HelperSupport
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KAuth COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KAuth COMPONENT Devel)
 
 install( FILES
   ThreadWeaver/DependencyPolicy
@@ -885,7 +885,7 @@ install( FILES
   ThreadWeaver/Weaver
   ThreadWeaver/WeaverInterface
   ThreadWeaver/WeaverObserver
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/ThreadWeaver COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/ThreadWeaver COMPONENT Devel)
 
 
 install( FILES
@@ -895,7 +895,7 @@ install( FILES
   khtml/MouseMoveEvent
   khtml/MousePressEvent
   khtml/MouseReleaseEvent
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/khtml COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/khtml COMPONENT Devel)
 
 
 install(FILES
@@ -910,7 +910,7 @@ install(FILES
   Nepomuk/TagWidget
   Nepomuk/Thing
   Nepomuk/Variant
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Nepomuk COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Nepomuk COMPONENT Devel)
 
 
 install(FILES
@@ -918,7 +918,7 @@ install(FILES
   Nepomuk/Types/Literal
   Nepomuk/Types/Ontology
   Nepomuk/Types/Property
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Nepomuk/Types COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Nepomuk/Types COMPONENT Devel)
 
 
 install(FILES
@@ -939,7 +939,7 @@ install(FILES
   Nepomuk/Query/SimpleTerm
   Nepomuk/Query/StandardQuery
   Nepomuk/Query/Term
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Nepomuk/Query COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Nepomuk/Query COMPONENT Devel)
 
 
 install(FILES
@@ -951,7 +951,7 @@ install(FILES
   Nepomuk/Utils/SearchWidget
   Nepomuk/Utils/SimpleFacet
   Nepomuk/Utils/SimpleResourceModel
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Nepomuk/Utils COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Nepomuk/Utils COMPONENT Devel)
 
 
 install(FILES
@@ -966,7 +966,7 @@ install(FILES
   Nepomuk/Vocabulary/NUAO
   Nepomuk/Vocabulary/PIMO
   Nepomuk/Vocabulary/TMO
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/Nepomuk/Vocabulary COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/Nepomuk/Vocabulary COMPONENT Devel)
 
 
 install(FILES
@@ -974,4 +974,4 @@ install(FILES
   KUnitConversion/Unit
   KUnitConversion/UnitCategory
   KUnitConversion/Value
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KUnitConversion COMPONENT Devel)
+DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KUnitConversion COMPONENT Devel)
