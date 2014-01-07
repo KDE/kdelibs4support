@@ -10,6 +10,7 @@ include(KDEInstallDirs)
 include(KDEFrameworkCompilerSettings)
 include(KDECMakeSettings)
 include(FeatureSummary)
+include(GenerateExportHeader)
 
 set(KF5_VERSION "5.0.0")
 set(QT_REQUIRED_VERSION 5.2.0)
