@@ -16,6 +16,7 @@ find_package(X11)
 set(HAVE_X11 ${X11_FOUND})
 
 include(FeatureSummary)
+include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 
