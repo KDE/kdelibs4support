@@ -61,12 +61,6 @@ set_package_properties(Strigi PROPERTIES DESCRIPTION "Desktop indexing and searc
 
 find_package(X11)
 set(HAVE_X11 ${X11_FOUND})
-if(X11_FOUND)
-    set_package_properties(X11_Xrender PROPERTIES DESCRIPTION "X Rendering Extension (libXrender)"
-                           URL "http://www.x.org" TYPE RECOMMENDED
-                           PURPOSE "Support for compositing, rendering operations, and alpha-blending")
-    set(HAVE_XRENDER ${X11_Xrender_FOUND})
-endif()
 if (APPLE)
    find_package(Carbon REQUIRED)
 endif ()
