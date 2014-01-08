@@ -52,15 +52,11 @@ else()
     include(${CMAKE_SOURCE_DIR}/tier3/kdesignerplugin/KF5DesignerPluginMacros.cmake)
 endif()
 
-# find_package(Strigi 0.6.3 QUIET)
-set_package_properties(Strigi PROPERTIES DESCRIPTION "Desktop indexing and search support"
-                       URL "http://strigi.sourceforge.net"
-                       TYPE OPTIONAL
-                       PURPOSE ""
-                      )
-
 find_package(X11)
 set(HAVE_X11 ${X11_FOUND})
+if (HAVE_X11)
+  add_feature_info("X11 Session Management (libSM)" X11_SM_FOUND "Support for session management in KApplication")
+endif ()
 if (APPLE)
    find_package(Carbon REQUIRED)
 endif ()
@@ -156,4 +152,7 @@ install( EXPORT KF5KDE4SupportTargets DESTINATION ${CMAKECONFIG_INSTALL_DIR} NAM
 
 if ("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
   feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
+endif()
+if (HAVE_X11 AND NOT X11_SM_FOUND)
+  message(FATAL_ERROR "The X11 Session Management library (libSM) is required when building on X11.")
 endif()
