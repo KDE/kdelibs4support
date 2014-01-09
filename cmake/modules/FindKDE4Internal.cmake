@@ -38,7 +38,7 @@
 # The following variables are defined for the various tools required to
 # compile KDE software:
 #
-#  KDE4_KCFGC_EXECUTABLE    - the kconfig_compiler executable
+#  KDE4_KCFGC_EXECUTABLE    - the kconfig_compiler_kf5 executable
 #  KDE4_MAKEKDEWIDGETS_EXECUTABLE - the makekdewidgets executable
 #
 # The following variables point to the location of the KDE libraries,
@@ -380,16 +380,16 @@ if (WIN32)
    set(LIBRARY_OUTPUT_PATH               ${EXECUTABLE_OUTPUT_PATH} )
    # CMAKE_CFG_INTDIR is the output subdirectory created e.g. by XCode and MSVC
    if (NOT WINCE)
-     set(KDE4_KCFGC_EXECUTABLE             ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/kconfig_compiler )
+     set(KDE4_KCFGC_EXECUTABLE             ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/kconfig_compiler_kf5 )
    else (NOT WINCE)
-     set(KDE4_KCFGC_EXECUTABLE             ${HOST_BINDIR}/${CMAKE_CFG_INTDIR}/kconfig_compiler )
+     set(KDE4_KCFGC_EXECUTABLE             ${HOST_BINDIR}/${CMAKE_CFG_INTDIR}/kconfig_compiler_kf5 )
    endif(NOT WINCE)
 
    set(KDE4_KAUTH_POLICY_GEN_EXECUTABLE  ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/kauth-policy-gen )
    set(KDE4_MAKEKDEWIDGETS_EXECUTABLE    ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/makekdewidgets )
 else (WIN32)
    set(LIBRARY_OUTPUT_PATH               ${CMAKE_BINARY_DIR}/lib )
-   set(KDE4_KCFGC_EXECUTABLE             ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/kconfig_compiler${CMAKE_EXECUTABLE_SUFFIX}.shell )
+   set(KDE4_KCFGC_EXECUTABLE             ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/kconfig_compiler_kf5${CMAKE_EXECUTABLE_SUFFIX}.shell )
    set(KDE4_KAUTH_POLICY_GEN_EXECUTABLE  ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/kauth-policy-gen${CMAKE_EXECUTABLE_SUFFIX}.shell )
    set(KDE4_MAKEKDEWIDGETS_EXECUTABLE    ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_CFG_INTDIR}/makekdewidgets${CMAKE_EXECUTABLE_SUFFIX}.shell )
 endif (WIN32)
@@ -398,7 +398,7 @@ set(KDE4_LIB_DIR ${LIBRARY_OUTPUT_PATH}/${CMAKE_CFG_INTDIR})
 
 
 # when building kdelibs, make the kcfg rules depend on the binaries...
-set( _KDE4_KCONFIG_COMPILER_DEP kconfig_compiler)
+set( _KDE4_KCONFIG_COMPILER_DEP kconfig_compiler_kf5)
 set( _KDE4_KAUTH_POLICY_GEN_EXECUTABLE_DEP kauth-policy-gen)
 set( _KDE4_MAKEKDEWIDGETS_DEP makekdewidgets)
 

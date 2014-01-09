@@ -306,14 +306,14 @@ void KStandarddirsTest::testFindExe()
     }
 
     // findExe with a result in bin
-    const QString binexe = KGlobal::dirs()->findExe("kconfig_compiler");
+    const QString binexe = KGlobal::dirs()->findExe("kconfig_compiler_kf5");
     QVERIFY(!binexe.isEmpty());
     QCOMPARE_PATHS(KCONFIG_COMPILER_LOCATION, binexe);
 
-#ifndef Q_OS_MAC // kconfig_compiler is a bundle on Mac, so the below doesn't work
+#ifndef Q_OS_MAC // kconfig_compiler_kf5 is a bundle on Mac, so the below doesn't work
     // Check the "exe" resource too
     QString binexePath1 = KStandardDirs::realFilePath(binexe);
-    QString binexePath2 = KGlobal::dirs()->locate("exe", "kconfig_compiler");
+    QString binexePath2 = KGlobal::dirs()->locate("exe", "kconfig_compiler_kf5");
     QCOMPARE_PATHS(binexePath1, binexePath2);
 
     // Check realFilePath behavior with complete command lines, like KRun does
