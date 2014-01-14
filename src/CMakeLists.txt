@@ -546,6 +546,18 @@ install(FILES
     DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/kparts COMPONENT Devel
 )
 
+# knewstuff3/*.h
+install( FILES
+    knewstuff3/downloaddialog.h
+    knewstuff3/downloadmanager.h
+    knewstuff3/downloadwidget.h
+    knewstuff3/entry.h
+    knewstuff3/knewstuffaction.h
+    knewstuff3/knewstuffbutton.h
+    knewstuff3/uploaddialog.h
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/knewstuff3 COMPONENT Devel
+)
+
 install( FILES
     KDECoreMacros.cmake
     KDEUIMacros.cmake
