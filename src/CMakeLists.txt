@@ -543,6 +543,7 @@ install(FILES
     kparts/componentfactory.h
     kparts/genericfactory.h
     kparts/factory.h
+    kparts/listingextension.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/kparts COMPONENT Devel
 )
 

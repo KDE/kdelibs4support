@@ -1,1 +1,3 @@
-#include <kparts/part.h>
+// kde4 compat
+#include <kparts/openurlarguments.h>
+#include <kparts/readwritepart.h>

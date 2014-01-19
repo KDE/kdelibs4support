@@ -713,13 +713,13 @@ install( FILES
   KParts/Event
   KParts/Factory
   KParts/FileInfoExtension
-  KParts/GUIActivateEvent
   KParts/GenericFactory
   KParts/GenericFactoryBase
+  KParts/GUIActivateEvent
   KParts/HistoryProvider
   KParts/HtmlExtension
-  KParts/LiveConnectExtension
   KParts/ListingExtension
+  KParts/LiveConnectExtension
   KParts/MainWindow
   KParts/OpenUrlEvent
   KParts/Part

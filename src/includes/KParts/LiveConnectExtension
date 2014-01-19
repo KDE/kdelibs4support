@@ -1,1 +1,7 @@
+// kde4 compat
+#include <kparts/browserarguments.h>
+#include <kparts/windowargs.h>
+#include <kparts/openurlevent.h>
 #include <kparts/browserextension.h>
+#include <kparts/browserhostextension.h>
+#include <kparts/liveconnectextension.h>
