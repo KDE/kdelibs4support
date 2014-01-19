@@ -676,6 +676,8 @@ DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KNS COMPONENT Devel)
 endif()
 
 install( FILES
+  KNS3/DownloadDialog
+  KNS3/Entry
   KNS3/KNewStuffAction
   KNS3/KNewStuffButton
 DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KNS3 COMPONENT Devel)
