@@ -30,7 +30,7 @@
 
 #include <klocalizedstring.h>
 #include <kmimetypetrader.h>
-#include <kparts/part.h>
+#include <kparts/readonlypart.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
 #include <kservice.h>
