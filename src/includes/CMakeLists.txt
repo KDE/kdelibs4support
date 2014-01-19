@@ -786,12 +786,9 @@ install( FILES
   KTextEditor/CommandInterface
   KTextEditor/ConfigInterface
   KTextEditor/ConfigPage
-  KTextEditor/ContainerInterface
   KTextEditor/Cursor
   KTextEditor/Document
   KTextEditor/Editor
-  KTextEditor/EditorChooser
-  KTextEditor/Factory
   KTextEditor/HighlightInterface
   KTextEditor/MarkInterface
   KTextEditor/ModificationInterface
@@ -803,13 +800,6 @@ install( FILES
   KTextEditor/Range
   KTextEditor/SearchInterface
   KTextEditor/SessionConfigInterface
-  KTextEditor/SmartCursor
-  KTextEditor/SmartCursorNotifier
-  KTextEditor/SmartCursorWatcher
-  KTextEditor/SmartInterface
-  KTextEditor/SmartRange
-  KTextEditor/SmartRangeNotifier
-  KTextEditor/SmartRangeWatcher
   KTextEditor/TemplateInterface
   KTextEditor/TemplateInterface2
   KTextEditor/TextHintInterface
