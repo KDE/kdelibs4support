@@ -894,6 +894,7 @@ public:
      * file:///home. The algorithm tries to go up on the right-most URL. If that is not
      * possible it strips the right most URL. It continues stripping URLs.
      * @return a URL that is a level higher
+     * @deprecated use KIO::upUrl() instead, from kio/global.h
      */
     KUrl upUrl() const;
 
