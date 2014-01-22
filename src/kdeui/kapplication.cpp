@@ -776,15 +776,9 @@ void KApplicationPrivate::parseCommandLine()
         return;
     }
 
-    bool nocrashhandler = (!qgetenv("KDE_DEBUG").isEmpty());
-    if (!nocrashhandler && args->isSet("crashhandler")) {
-        // enable drkonqi
-        KCrash::setDrKonqiEnabled(true);
-    }
-    // Always set the app name, can be usefuls for apps that call setEmergencySaveFunction or enable AutoRestart
-    KCrash::setApplicationName(args->appName());
-    if (!QCoreApplication::applicationDirPath().isEmpty()) {
-        KCrash::setApplicationPath(QCoreApplication::applicationDirPath());
+    if (!args->isSet("crashhandler")) {
+        // disable drkonqi (the old way)
+        KCrash::setDrKonqiEnabled(false);
     }
 
 #if HAVE_X11
