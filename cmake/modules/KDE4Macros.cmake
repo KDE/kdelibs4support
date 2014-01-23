@@ -497,3 +497,8 @@ macro (KDE4_INSTALL_AUTH_HELPER_FILES)
     message(WARNING "KDE4_INSTALL_AUTH_HELPER_FILES is deprecated, use KAUTH_INSTALL_HELPER_FILES instead")
     KAUTH_INSTALL_HELPER_FILES(${ARGN})
 endmacro()
+
+macro (KDE4_CREATE_HANDBOOK)
+    message(WARNING "KDE4_CREATE_HANDBOOK() is deprecated. Call the macro KDOCTOOLS_CREATE_HANDBOOK instead, this will give you a target <dirname>-handbook for creating the html help.")
+    KDOCTOOLS_CREATE_HANDBOOK(${ARGN})
+endmacro()
