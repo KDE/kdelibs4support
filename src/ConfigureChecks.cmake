@@ -11,14 +11,6 @@ include(CMakePushCheckState)
 
 set( KDELIBSUFF ${LIB_SUFFIX} )
 
-# now check for dlfcn.h using the cmake supplied CHECK_INCLUDE_FILES() macro
-# If definitions like -D_GNU_SOURCE are needed for these checks they
-# should be added to _KDE4_PLATFORM_DEFINITIONS when it is originally
-# defined outside this file.  Here we include these definitions in
-# CMAKE_REQUIRED_DEFINITIONS so they will be included in the build of
-# checks below.
-set(CMAKE_REQUIRED_DEFINITIONS ${_KDE4_PLATFORM_DEFINITIONS})
-
 set(CMAKE_REQUIRED_LIBRARIES Qt5::Network)
 check_cxx_source_compiles(
 "#include <QtNetwork/QSslSocket>
