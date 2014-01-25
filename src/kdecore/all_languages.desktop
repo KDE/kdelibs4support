@@ -1,567 +1,1134 @@
 [aa]
 Name=Afar
+Name[pt_BR]=Afar
+Name[sk]=Afarčina
+Name[uk]=афар
 Name[x-test]=xxAfarxx
 [ab]
 Name=Abkhazian
+Name[pt_BR]=Abcázio
+Name[sk]=Abcházština
+Name[uk]=абхазька
 Name[x-test]=xxAbkhazianxx
 [ae]
 Name=Avestan
+Name[pt_BR]=Avéstico
+Name[sk]=Avestčina
+Name[uk]=авестанська
 Name[x-test]=xxAvestanxx
 [af]
 Name=Afrikaans
+Name[pt_BR]=Africâner
+Name[sk]=Afrikánčina
+Name[uk]=африкаанс
 Name[x-test]=xxAfrikaansxx
 [am]
 Name=Amharic
+Name[pt_BR]=Amárico
+Name[sk]=Amharčina
+Name[uk]=амхарська
 Name[x-test]=xxAmharicxx
 [ar]
 Name=Arabic
+Name[pt_BR]=Árabe
+Name[sk]=Arabčina
+Name[uk]=арабська
 Name[x-test]=xxArabicxx
 [as]
 Name=Assamese
+Name[pt_BR]=Assamês
+Name[sk]=Asámčina
+Name[uk]=ассамська
 Name[x-test]=xxAssamesexx
 [ast]
 Name=Asturian
+Name[pt_BR]=Asturiano
+Name[sk]=Astúrčina
+Name[uk]=астурійська
 Name[x-test]=xxAsturianxx
 [ay]
 Name=Aymara
+Name[pt_BR]=Aimará
+Name[sk]=Aymarčina
+Name[uk]=аймарська
 Name[x-test]=xxAymaraxx
 [az]
 Name=Azerbaijani
+Name[pt_BR]=Azeri
+Name[sk]=Azerbajdžančina
+Name[uk]=азербайджанська
 Name[x-test]=xxAzerbaijanixx
 [ba]
 Name=Bashkir
+Name[pt_BR]=Basquir
+Name[sk]=Baškirčina
+Name[uk]=башкирська
 Name[x-test]=xxBashkirxx
 [be]
 Name=Belarusian
+Name[pt_BR]=Bielorrusso
+Name[sk]=Bieloruština
+Name[uk]=білоруська
 Name[x-test]=xxBelarusianxx
 [be@latin]
 Name=Belarusian (Latin)
+Name[pt_BR]=Bielorrusso (latino)
+Name[sk]=Bieloruština (latinka)
+Name[uk]=білоруська (латиниця)
 Name[x-test]=xxBelarusian (Latin)xx
 [bg]
 Name=Bulgarian
+Name[pt_BR]=Búlgaro
+Name[sk]=Bulharčina
+Name[uk]=болгарська
 Name[x-test]=xxBulgarianxx
 [bh]
 Name=Bihari
+Name[pt_BR]=Bihari
+Name[sk]=Bihárčina
+Name[uk]=біхарі
 Name[x-test]=xxBiharixx
 [bi]
 Name=Bislama
+Name[pt_BR]=Bislama
+Name[sk]=Bislama
+Name[uk]=біслама
 Name[x-test]=xxBislamaxx
 [bn]
 Name=Bengali
+Name[pt_BR]=Bengali
+Name[sk]=Bengálčina
+Name[uk]=бенгальська
 Name[x-test]=xxBengalixx
 [bn_IN]
 Name=Bengali (India)
+Name[pt_BR]=Bengali (Índia)
+Name[sk]=Bengálčina (India)
+Name[uk]=бенгальська (Індія)
 Name[x-test]=xxBengali (India)xx
 [bo]
 Name=Tibetan
+Name[pt_BR]=Tibetano
+Name[sk]=Tibetčina
+Name[uk]=тибетська
 Name[x-test]=xxTibetanxx
 [br]
 Name=Breton
+Name[pt_BR]=Bretão
+Name[sk]=Bretónčina
+Name[uk]=бретонська
 Name[x-test]=xxBretonxx
 [bs]
 Name=Bosnian
+Name[pt_BR]=Bósnio
+Name[sk]=Bosniačtina
+Name[uk]=боснійська
 Name[x-test]=xxBosnianxx
 [ca]
 Name=Catalan
+Name[pt_BR]=Catalão
+Name[sk]=Katalánčina
+Name[uk]=каталонська
 Name[x-test]=xxCatalanxx
 [ca@valencia]
 Name=Catalan (Valencian)
+Name[pt_BR]=Catalão (valenciano)
+Name[sk]=Katalánčina (Valencia)
+Name[uk]=каталонська (валенсійський діалект)
 Name[x-test]=xxCatalan (Valencian)xx
 [ce]
 Name=Chechen
+Name[pt_BR]=Checheno
+Name[sk]=Čečenčina
+Name[uk]=чеченська
 Name[x-test]=xxChechenxx
 [ch]
 Name=Chamorro
+Name[pt_BR]=Chamorro
+Name[sk]=Čamorčina
+Name[uk]=чаморо
 Name[x-test]=xxChamorroxx
 [co]
 Name=Corsican
+Name[pt_BR]=Corso
+Name[sk]=Korzičtina
+Name[uk]=корсиканська
 Name[x-test]=xxCorsicanxx
 [crh]
 Name=Crimean Tatar
+Name[pt_BR]=Tártaro da Crimeia
+Name[sk]=Krymská tatárčina
+Name[uk]=кримсько-татарська
 Name[x-test]=xxCrimean Tatarxx
 [cs]
 Name=Czech
+Name[pt_BR]=Tcheco
+Name[sk]=Čeština
+Name[uk]=чеська
 Name[x-test]=xxCzechxx
 [csb]
 Name=Kashubian
+Name[pt_BR]=Cassúbia
+Name[sk]=Kašubčina
+Name[uk]=кашубська
 Name[x-test]=xxKashubianxx
 [cu]
 Name=Church Slavic
+Name[pt_BR]=Eslavo eclesiástico
+Name[sk]=Cirkevná slovančina
+Name[uk]=церковнослов’янська
 Name[x-test]=xxChurch Slavicxx
 [cv]
 Name=Chuvash
+Name[pt_BR]=Tchuvache
+Name[sk]=Čuvaština
+Name[uk]=чуваська
 Name[x-test]=xxChuvashxx
 [cy]
 Name=Welsh
+Name[pt_BR]=Galês
+Name[sk]=Waleština
+Name[uk]=валійська
 Name[x-test]=xxWelshxx
 [da]
 Name=Danish
+Name[pt_BR]=Dinamarquês
+Name[sk]=Dánčina
+Name[uk]=данська
 Name[x-test]=xxDanishxx
 [de]
 Name=German
+Name[pt_BR]=Alemão
+Name[sk]=Nemčina
+Name[uk]=німецька
 Name[x-test]=xxGermanxx
 [dsb]
 Name=Lower Sorbian
+Name[pt_BR]=Baixo Sorábio
+Name[sk]=Dolnolužická srbčina
+Name[uk]=нижньолужицька
 Name[x-test]=xxLower Sorbianxx
 [dz]
 Name=Dzongkha
+Name[pt_BR]=Dzongkha
+Name[sk]=Dzongkä
+Name[uk]=дзонг-ке
 Name[x-test]=xxDzongkhaxx
 [el]
 Name=Greek
+Name[pt_BR]=Grego
+Name[sk]=Gréčtina
+Name[uk]=грецька
 Name[x-test]=xxGreekxx
 [en]
 Name=English
+Name[pt_BR]=Inglês
+Name[sk]=Angličtina
+Name[uk]=англійська
 Name[x-test]=xxEnglishxx
 [en_GB]
 Name=British English
+Name[pt_BR]=Inglês britânico
+Name[sk]=Britská angličtina
+Name[uk]=британська англійська
 Name[x-test]=xxBritish Englishxx
 [en_US]
 Name=American English
+Name[pt_BR]=Inglês americano
+Name[sk]=Americká angličtina
+Name[uk]=американська англійська
 Name[x-test]=xxAmerican Englishxx
 [eo]
 Name=Esperanto
+Name[pt_BR]=Esperanto
+Name[sk]=Esperanto
+Name[uk]=есперанто
 Name[x-test]=xxEsperantoxx
 [es]
 Name=Spanish
+Name[pt_BR]=Espanhol
+Name[sk]=Španielčina
+Name[uk]=іспанська
 Name[x-test]=xxSpanishxx
 [et]
 Name=Estonian
+Name[pt_BR]=Estoniano
+Name[sk]=Estónčina
+Name[uk]=естонська
 Name[x-test]=xxEstonianxx
 [eu]
 Name=Basque
+Name[pt_BR]=Basco
+Name[sk]=Baskičtina
+Name[uk]=баскська
 Name[x-test]=xxBasquexx
 [fa]
 Name=Farsi (Persian)
+Name[pt_BR]=Farsi (Persa)
+Name[sk]=Fársí (perzština)
+Name[uk]=фарсі (перська)
 Name[x-test]=xxFarsi (Persian)xx
 [fi]
 Name=Finnish
+Name[pt_BR]=Finlandês
+Name[sk]=Fínčina
+Name[uk]=фінська
 Name[x-test]=xxFinnishxx
 [fj]
 Name=Fijian
+Name[pt_BR]=Fijiano
+Name[sk]=Fidžijčina
+Name[uk]=фіджійська
 Name[x-test]=xxFijianxx
 [fo]
 Name=Faroese
+Name[pt_BR]=Feroês
+Name[sk]=Faerčina
+Name[uk]=фарерська
 Name[x-test]=xxFaroesexx
 [fr]
 Name=French
+Name[pt_BR]=Francês
+Name[sk]=Francúzština
+Name[uk]=французька
 Name[x-test]=xxFrenchxx
 [fy]
 Name=Frisian
+Name[pt_BR]=Frisão
+Name[sk]=Frízština
+Name[uk]=фризька
 Name[x-test]=xxFrisianxx
 [ga]
 Name=Irish Gaelic
+Name[pt_BR]=Gaélico irlandês
+Name[sk]=Írska gaelčina
+Name[uk]=гаельська (Ірландія)
 Name[x-test]=xxIrish Gaelicxx
 [gd]
 Name=Gaelic
+Name[pt_BR]=Gaélico
+Name[sk]=Gaelčina
+Name[uk]=гаельська
 Name[x-test]=xxGaelicxx
 [gl]
 Name=Galician
+Name[pt_BR]=Galego
+Name[sk]=Galícijčina
+Name[uk]=галісійська
 Name[x-test]=xxGalicianxx
 [gn]
 Name=Guarani
+Name[pt_BR]=Guarani
+Name[sk]=Guaraníjčina
+Name[uk]=гуарані
 Name[x-test]=xxGuaranixx
 [gu]
 Name=Gujarati
+Name[pt_BR]=Guzerate
+Name[sk]=Gudžarátčina
+Name[uk]=гуджараті
 Name[x-test]=xxGujaratixx
 [gv]
 Name=Manx
+Name[pt_BR]=Manês
+Name[sk]=Mančina
+Name[uk]=манкс
 Name[x-test]=xxManxxx
 [ha]
 Name=Hausa
+Name[pt_BR]=Haussá
+Name[sk]=Hauština
+Name[uk]=хауса
 Name[x-test]=xxHausaxx
 [he]
 Name=Hebrew
+Name[pt_BR]=Hebraico
+Name[sk]=Hebrejčina
+Name[uk]=іврит
 Name[x-test]=xxHebrewxx
 [hi]
 Name=Hindi
+Name[pt_BR]=Hindi
+Name[sk]=Hindčina
+Name[uk]=хінді
 Name[x-test]=xxHindixx
 [hne]
 Name=Chhattisgarhi
+Name[pt_BR]=Chhattisgarhi
+Name[sk]=Čatísgarh
+Name[uk]=чхатісгарі
 Name[x-test]=xxChhattisgarhixx
 [ho]
 Name=Hiri Motu
+Name[pt_BR]=Hiri Motu
+Name[sk]=Hiri Motu
+Name[uk]=хірімоту
 Name[x-test]=xxHiri Motuxx
 [hr]
 Name=Croatian
+Name[pt_BR]=Croata
+Name[sk]=Chorvátčina
+Name[uk]=хорватська
 Name[x-test]=xxCroatianxx
 [hsb]
 Name=Upper Sorbian
+Name[pt_BR]=Alto Sorábio
+Name[sk]=Hornolužická srbčina
+Name[uk]=верхньолужицька
 Name[x-test]=xxUpper Sorbianxx
 [hu]
 Name=Hungarian
+Name[pt_BR]=Húngaro
+Name[sk]=Maďarčina
+Name[uk]=угорська
 Name[x-test]=xxHungarianxx
 [hy]
 Name=Armenian
+Name[pt_BR]=Armênio
+Name[sk]=Arménčina
+Name[uk]=вірменська
 Name[x-test]=xxArmenianxx
 [hz]
 Name=Herero
+Name[pt_BR]=Hereró
+Name[sk]=Hererčina
+Name[uk]=гереро
 Name[x-test]=xxHereroxx
 [ia]
 Name=Interlingua
+Name[pt_BR]=Interlíngua
+Name[sk]=Interlingua
+Name[uk]=інтерлінгва
 Name[x-test]=xxInterlinguaxx
 [id]
 Name=Indonesian
+Name[pt_BR]=Indonésio
+Name[sk]=Indonézština
+Name[uk]=індонезійська
 Name[x-test]=xxIndonesianxx
 [ie]
 Name=Interlingue
+Name[pt_BR]=Interlingue
+Name[sk]=Interlingue
+Name[uk]=окциденталь
 Name[x-test]=xxInterlinguexx
 [ik]
 Name=Inupiaq
+Name[pt_BR]=Inupiaq
+Name[sk]=Inupiakčina
+Name[uk]=інупіак
 Name[x-test]=xxInupiaqxx
 [io]
 Name=Ido
+Name[pt_BR]=Ido
+Name[sk]=Ido
+Name[uk]=ідо
 Name[x-test]=xxIdoxx
 [is]
 Name=Icelandic
+Name[pt_BR]=Islandês
+Name[sk]=Islandčina
+Name[uk]=ісландська
 Name[x-test]=xxIcelandicxx
 [it]
 Name=Italian
+Name[pt_BR]=Italiano
+Name[sk]=Taliančina
+Name[uk]=італійська
 Name[x-test]=xxItalianxx
 [iu]
 Name=Inuktitut
+Name[pt_BR]=Inuktitut
+Name[sk]=Inuktitut
+Name[uk]=інуктітут
 Name[x-test]=xxInuktitutxx
 [ja]
 Name=Japanese
+Name[pt_BR]=Japonês
+Name[sk]=Japončina
+Name[uk]=японська
 Name[x-test]=xxJapanesexx
 [jv]
 Name=Javanese
+Name[pt_BR]=Javanês
+Name[sk]=Jávčina
+Name[uk]=яванська
 Name[x-test]=xxJavanesexx
 [ka]
 Name=Georgian
+Name[pt_BR]=Georgiano
+Name[sk]=Gruzínčina
+Name[uk]=грузинська
 Name[x-test]=xxGeorgianxx
 [ki]
 Name=Kikuyu
+Name[pt_BR]=Kikuyu
+Name[sk]=Kikuju
+Name[uk]=кікуйю
 Name[x-test]=xxKikuyuxx
 [kk]
 Name=Kazakh
+Name[pt_BR]=Cazaque
+Name[sk]=Kazaština
+Name[uk]=казахська
 Name[x-test]=xxKazakhxx
 [kl]
 Name=Kalaallisut
+Name[pt_BR]=Groenlandês
+Name[sk]=Grónčina
+Name[uk]=калаалісут
 Name[x-test]=xxKalaallisutxx
 [km]
 Name=Khmer
+Name[pt_BR]=Cambojano
+Name[sk]=Khmérčina
+Name[uk]=кхмерська
 Name[x-test]=xxKhmerxx
 [kn]
 Name=Kannada
+Name[pt_BR]=Canarês
+Name[sk]=Kannadčina
+Name[uk]=каннада
 Name[x-test]=xxKannadaxx
 [ko]
 Name=Korean
+Name[pt_BR]=Coreano
+Name[sk]=Kórejčina
+Name[uk]=корейська
 Name[x-test]=xxKoreanxx
 [ks]
 Name=Kashmiri
+Name[pt_BR]=Caxemira
+Name[sk]=Kašmírčina
+Name[uk]=кашмірська
 Name[x-test]=xxKashmirixx
 [ku]
 Name=Kurdish
+Name[pt_BR]=Curdo
+Name[sk]=Kurdčina
+Name[uk]=курдська
 Name[x-test]=xxKurdishxx
 [kv]
 Name=Komi
+Name[pt_BR]=Komi
+Name[sk]=Komijčina
+Name[uk]=комі
 Name[x-test]=xxKomixx
 [kw]
 Name=Cornish
+Name[pt_BR]=Córnico
+Name[sk]=Kornčina
+Name[uk]=корнійська
 Name[x-test]=xxCornishxx
 [ky]
 Name=Kirghiz
+Name[pt_BR]=Quirguiz
+Name[sk]=Kirgizština
+Name[uk]=киргизька
 Name[x-test]=xxKirghizxx
 [la]
 Name=Latin
+Name[pt_BR]=Latim
+Name[sk]=Latinčina
+Name[uk]=латинська
 Name[x-test]=xxLatinxx
 [lb]
 Name=Luxembourgish
+Name[pt_BR]=Luxemburguês
+Name[sk]=Luxemburčina
+Name[uk]=люксембурзька
 Name[x-test]=xxLuxembourgishxx
 [li]
 Name=Limburgan
+Name[pt_BR]=Limburguês
+Name[sk]=Limburčina
+Name[uk]=лімбурганська
 Name[x-test]=xxLimburganxx
 [ln]
 Name=Lingala
+Name[pt_BR]=Lingala
+Name[sk]=Lingalčina
+Name[uk]=лінгала
 Name[x-test]=xxLingalaxx
 [lo]
 Name=Lao
+Name[pt_BR]=Laociano
+Name[sk]=Laoština
+Name[uk]=лаоська
 Name[x-test]=xxLaoxx
 [lt]
 Name=Lithuanian
+Name[pt_BR]=Lituano
+Name[sk]=Litovčina
+Name[uk]=литовська
 Name[x-test]=xxLithuanianxx
 [lv]
 Name=Latvian
+Name[pt_BR]=Letão
+Name[sk]=Lotyština
+Name[uk]=латиська
 Name[x-test]=xxLatvianxx
 [mai]
 Name=Maithili
+Name[pt_BR]=Maithili
+Name[sk]=Maithilčina
+Name[uk]=майтхілі
 Name[x-test]=xxMaithilixx
 [mg]
 Name=Malagasy
+Name[pt_BR]=Malgaxe
+Name[sk]=Malgaština
+Name[uk]=малагасійська
 Name[x-test]=xxMalagasyxx
 [mh]
 Name=Marshallese
+Name[pt_BR]=Marchalês
+Name[sk]=Maršalčina
+Name[uk]=маршальська
 Name[x-test]=xxMarshallesexx
 [mi]
 Name=Maori
+Name[pt_BR]=Maori
+Name[sk]=Maorčina
+Name[uk]=маорійська
 Name[x-test]=xxMaorixx
 [mk]
 Name=Macedonian
+Name[pt_BR]=Macedônio
+Name[sk]=Macedónčina
+Name[uk]=македонська
 Name[x-test]=xxMacedonianxx
 [ml]
 Name=Malayalam
+Name[pt_BR]=Malaiala
+Name[sk]=Malajálamčina
+Name[uk]=малаялам
 Name[x-test]=xxMalayalamxx
 [mn]
 Name=Mongolian
+Name[pt_BR]=Mongol
+Name[sk]=Mongolčina
+Name[uk]=монгольська
 Name[x-test]=xxMongolianxx
 [mo]
 Name=Moldavian
+Name[pt_BR]=Moldavo
+Name[sk]=Moldavčina
+Name[uk]=молдавська
 Name[x-test]=xxMoldavianxx
 [mr]
 Name=Marathi
+Name[pt_BR]=Marata
+Name[sk]=Maráthčina
+Name[uk]=мараті
 Name[x-test]=xxMarathixx
 [ms]
 Name=Malay
+Name[pt_BR]=Malaio
+Name[sk]=Malajčina
+Name[uk]=малайська
 Name[x-test]=xxMalayxx
 [mt]
 Name=Maltese
+Name[pt_BR]=Maltês
+Name[sk]=Maltčina
+Name[uk]=мальтійська
 Name[x-test]=xxMaltesexx
 [my]
 Name=Burmese
+Name[pt_BR]=Birmanês
+Name[sk]=Barmčina
+Name[uk]=бірманська
 Name[x-test]=xxBurmesexx
 [na]
 Name=Nauru
+Name[pt_BR]=Nauruano
+Name[sk]=Naurčina
+Name[uk]=науру
 Name[x-test]=xxNauruxx
 [nb]
 Name=Norwegian Bokmål
+Name[pt_BR]=Dano-norueguês
+Name[sk]=Nórčina (Bokmål)
+Name[uk]=норвезька букмол
 Name[x-test]=xxNorwegian Bokmålxx
 [nd]
 Name=Ndebele, North
+Name[pt_BR]=Ndebele do norte
+Name[sk]=Ndebelčina, severná
+Name[uk]=ндебеле (північна)
 Name[x-test]=xxNdebele, Northxx
 [nds]
 Name=Low Saxon
+Name[pt_BR]=Baixo Saxão
+Name[sk]=Dolná saština
+Name[uk]=нижньосаксонська
 Name[x-test]=xxLow Saxonxx
 [ne]
 Name=Nepali
+Name[pt_BR]=Nepalês
+Name[sk]=Nepálčina
+Name[uk]=непальська
 Name[x-test]=xxNepalixx
 [ng]
 Name=Ndonga
+Name[pt_BR]=Ndonga
+Name[sk]=Ndonga
+Name[uk]=ндонга
 Name[x-test]=xxNdongaxx
 [nl]
 Name=Dutch
+Name[pt_BR]=Holandês
+Name[sk]=Holandčina
+Name[uk]=голландська
 Name[x-test]=xxDutchxx
 [nn]
 Name=Norwegian Nynorsk
+Name[pt_BR]=Novo norueguês
+Name[sk]=Nórčina (Nynorsk)
+Name[uk]=норвезька нюноршк
 Name[x-test]=xxNorwegian Nynorskxx
 [nr]
 Name=Ndebele, South
+Name[pt_BR]=Ndebele do Sul
+Name[sk]=Ndebelčina, južná
+Name[uk]=південна ндебеле
 Name[x-test]=xxNdebele, Southxx
 [nso]
 Name=Northern Sotho
+Name[pt_BR]=Sotho setentrional
+Name[sk]=Severná sothčina
+Name[uk]=пічнічне сото
 Name[x-test]=xxNorthern Sothoxx
 [nv]
 Name=Navajo
+Name[pt_BR]=Navajo
+Name[sk]=Navajo
+Name[uk]=навахо
 Name[x-test]=xxNavajoxx
 [ny]
 Name=Chichewa
+Name[pt_BR]=Cinianja
+Name[sk]=Čičewa
+Name[uk]=ньянджа
 Name[x-test]=xxChichewaxx
 [oc]
 Name=Occitan
+Name[pt_BR]=Occitano
+Name[sk]=Okcitánčina
+Name[uk]=окситанська
 Name[x-test]=xxOccitanxx
 [om]
 Name=Oromo
+Name[pt_BR]=Oromo
+Name[sk]=Oromčina
+Name[uk]=оромо
 Name[x-test]=xxOromoxx
 [or]
 Name=Oriya
+Name[pt_BR]=Oriá
+Name[sk]=Uríjčina
+Name[uk]=орія
 Name[x-test]=xxOriyaxx
 [os]
 Name=Ossetian
+Name[pt_BR]=Osseto
+Name[sk]=Osetčina
+Name[uk]=осетинська
 Name[x-test]=xxOssetianxx
 [pa]
 Name=Punjabi/Panjabi
+Name[pt_BR]=Panjabi
+Name[sk]=Pandžábčina
+Name[uk]=пенджабі
 Name[x-test]=xxPunjabi/Panjabixx
 [pi]
 Name=Pali
+Name[pt_BR]=Pali
+Name[sk]=Pálí
+Name[uk]=палі
 Name[x-test]=xxPalixx
 [pl]
 Name=Polish
+Name[pt_BR]=Polonês
+Name[sk]=Poľština
+Name[uk]=польська
 Name[x-test]=xxPolishxx
 [ps]
 Name=Pushto
+Name[pt_BR]=Afegão
+Name[sk]=Paštčina
+Name[uk]=пуштунська
 Name[x-test]=xxPushtoxx
 [pt]
 Name=Portuguese
+Name[pt_BR]=Português
+Name[sk]=Portugalčina
+Name[uk]=португальська
 Name[x-test]=xxPortuguesexx
 [pt_BR]
 Name=Brazilian Portuguese
+Name[pt_BR]=Português do Brasil
+Name[sk]=Portugalčina (Brazília)
+Name[uk]=бразильська португальська
 Name[x-test]=xxBrazilian Portuguesexx
 [qu]
 Name=Quechua
+Name[pt_BR]=Quíchua
+Name[sk]=Kečuánčina
+Name[uk]=кечуа
 Name[x-test]=xxQuechuaxx
 [rn]
 Name=Rundi
+Name[pt_BR]=Rundi
+Name[sk]=Rundčina
+Name[uk]=рунді
 Name[x-test]=xxRundixx
 [ro]
 Name=Romanian
+Name[pt_BR]=Romeno
+Name[sk]=Rumunčina
+Name[uk]=румунська
 Name[x-test]=xxRomanianxx
 [rom]
 Name=Romany
+Name[pt_BR]=Romani
+Name[sk]=Rómčina
+Name[uk]=ромська
 Name[x-test]=xxRomanyxx
 [ru]
 Name=Russian
+Name[pt_BR]=Russo
+Name[sk]=Ruština
+Name[uk]=російська
 Name[x-test]=xxRussianxx
 [rw]
 Name=Kinyarwanda
+Name[pt_BR]=Kinyarwanda
+Name[sk]=Rwandčina
+Name[uk]=кіньяруанда
 Name[x-test]=xxKinyarwandaxx
 [sa]
 Name=Sanskrit
+Name[pt_BR]=Sânscrito
+Name[sk]=Sanskrit
+Name[uk]=санскрит
 Name[x-test]=xxSanskritxx
 [sc]
 Name=Sardinian
+Name[pt_BR]=Sardo
+Name[sk]=Sardínčina
+Name[uk]=сардинська
 Name[x-test]=xxSardinianxx
 [sd]
 Name=Sindhi
+Name[pt_BR]=Sindi
+Name[sk]=Sindhčina
+Name[uk]=синдхі
 Name[x-test]=xxSindhixx
 [se]
 Name=Northern Sami
+Name[pt_BR]=Sami setentrional
+Name[sk]=Lapončina (severná)
+Name[uk]=північносаамська
 Name[x-test]=xxNorthern Samixx
 [sg]
 Name=Sango
+Name[pt_BR]=Sango
+Name[sk]=Sango
+Name[uk]=санго
 Name[x-test]=xxSangoxx
 [si]
 Name=Sinhala
+Name[pt_BR]=Cingalês
+Name[sk]=Sinhalčina
+Name[uk]=сингалійська
 Name[x-test]=xxSinhalaxx
 [sk]
 Name=Slovak
+Name[pt_BR]=Eslovaco
+Name[sk]=Slovenčina
+Name[uk]=словацька
 Name[x-test]=xxSlovakxx
 [sl]
 Name=Slovenian
+Name[pt_BR]=Esloveno
+Name[sk]=Slovinčina
+Name[uk]=словенська
 Name[x-test]=xxSlovenianxx
 [sm]
 Name=Samoan
+Name[pt_BR]=Samoano
+Name[sk]=Samojčina
+Name[uk]=самоанська
 Name[x-test]=xxSamoanxx
 [sn]
 Name=Shona
+Name[pt_BR]=Chona
+Name[sk]=Šona
+Name[uk]=шона
 Name[x-test]=xxShonaxx
 [so]
 Name=Somali
+Name[pt_BR]=Somali
+Name[sk]=Somálčina
+Name[uk]=сомалійська
 Name[x-test]=xxSomalixx
 [sq]
 Name=Albanian
+Name[pt_BR]=Albanês
+Name[sk]=Albánčina
+Name[uk]=албанська
 Name[x-test]=xxAlbanianxx
 [sr]
 Name=Serbian
+Name[pt_BR]=Sérvio
+Name[sk]=Srbčina
+Name[uk]=сербська
 Name[x-test]=xxSerbianxx
 [sr@ijekavian]
 Name=Serbian Ijekavian
+Name[pt_BR]=Sérvio ijekavian
+Name[sk]=Srbčina (ijekavština)
+Name[uk]=сербська (ієкавиця)
 Name[x-test]=xxSerbian Ijekavianxx
 [sr@ijekavianlatin]
 Name=Serbian Ijekavian Latin
+Name[pt_BR]=Sérvio latino ijekavian
+Name[sk]=Srbčina (ijekavština - latinka)
+Name[uk]=сербська (ієкавиця, латиниця)
 Name[x-test]=xxSerbian Ijekavian Latinxx
 [sr@latin]
 Name=Serbian Latin
+Name[pt_BR]=Sérvio latino
+Name[sk]=Srbčina (latinka)
+Name[uk]=сербська (латиниця)
 Name[x-test]=xxSerbian Latinxx
 [ss]
 Name=Swati
+Name[pt_BR]=Suázi
+Name[sk]=Swati
+Name[uk]=свазі
 Name[x-test]=xxSwatixx
 [st]
 Name=Sotho, Southern
+Name[pt_BR]=Sotho meridional
+Name[sk]=Sothčina, južná
+Name[uk]=сото, південна
 Name[x-test]=xxSotho, Southernxx
 [su]
 Name=Sundanese
+Name[pt_BR]=Sudanês
+Name[sk]=Sundčina
+Name[uk]=сунданська
 Name[x-test]=xxSundanesexx
 [sv]
 Name=Swedish
+Name[pt_BR]=Sueco
+Name[sk]=Švédčina
+Name[uk]=шведська
 Name[x-test]=xxSwedishxx
 [sw]
 Name=Swahili
+Name[pt_BR]=Suaíli
+Name[sk]=Svahilčina
+Name[uk]=суахілі
 Name[x-test]=xxSwahilixx
 [ta]
 Name=Tamil
+Name[pt_BR]=Tâmil
+Name[sk]=Tamilčina
+Name[uk]=тамільська
 Name[x-test]=xxTamilxx
 [te]
 Name=Telugu
+Name[pt_BR]=Telugu
+Name[sk]=Telugčina
+Name[uk]=телугу
 Name[x-test]=xxTeluguxx
 [tg]
 Name=Tajik
+Name[pt_BR]=Tajique
+Name[sk]=Tadžičtina
+Name[uk]=таджицька
 Name[x-test]=xxTajikxx
 [th]
 Name=Thai
+Name[pt_BR]=Tailandês
+Name[sk]=Thajčina
+Name[uk]=тайська
 Name[x-test]=xxThaixx
 [ti]
 Name=Tigrinya
+Name[pt_BR]=Tigrino
+Name[sk]=Tigriňa
+Name[uk]=тигринійська
 Name[x-test]=xxTigrinyaxx
 [tk]
 Name=Turkmen
+Name[pt_BR]=Turcomeno
+Name[sk]=Turkménčina
+Name[uk]=туркменська
 Name[x-test]=xxTurkmenxx
 [tn]
 Name=Tswana
+Name[pt_BR]=Tswana
+Name[sk]=Tswančina
+Name[uk]=тсвана
 Name[x-test]=xxTswanaxx
 [to]
 Name=Tonga
+Name[pt_BR]=Tonga
+Name[sk]=Tongčina
+Name[uk]=тонга
 Name[x-test]=xxTongaxx
 [tr]
 Name=Turkish
+Name[pt_BR]=Turco
+Name[sk]=Turečtina
+Name[uk]=турецька
 Name[x-test]=xxTurkishxx
 [ts]
 Name=Tsonga
+Name[pt_BR]=Tsonga
+Name[sk]=Tsongčina
+Name[uk]=цонга
 Name[x-test]=xxTsongaxx
 [tt]
 Name=Tatar
+Name[pt_BR]=Tártaro
+Name[sk]=Tatárčina
+Name[uk]=татарська
 Name[x-test]=xxTatarxx
 [tw]
 Name=Twi
+Name[pt_BR]=Twi
+Name[sk]=Twi
+Name[uk]=тві
 Name[x-test]=xxTwixx
 [ty]
 Name=Tahitian
+Name[pt_BR]=Taitiano
+Name[sk]=Tahitčina
+Name[uk]=таїтянська
 Name[x-test]=xxTahitianxx
 [ug]
 Name=Uyghur
+Name[pt_BR]=Uigur
+Name[sk]=Ujgurčina
+Name[uk]=уйгурська
 Name[x-test]=xxUyghurxx
 [uk]
 Name=Ukrainian
+Name[pt_BR]=Ucraniano
+Name[sk]=Ukrajinčina
+Name[uk]=українська
 Name[x-test]=xxUkrainianxx
 [ur]
 Name=Urdu
+Name[pt_BR]=Urdu
+Name[sk]=Urdčina
+Name[uk]=урду
 Name[x-test]=xxUrduxx
 [uz]
 Name=Uzbek
+Name[pt_BR]=Uzbeque
+Name[sk]=Uzbečtina
+Name[uk]=узбецька
 Name[x-test]=xxUzbekxx
 [uz@cyrillic]
 Name=Uzbek (Cyrillic)
+Name[pt_BR]=Uzbeque (Cirílico)
+Name[sk]=Uzbečtina (cyrilika)
+Name[uk]=узбецька (кирилиця)
 Name[x-test]=xxUzbek (Cyrillic)xx
 [ven]
 Name=Venda
+Name[pt_BR]=Venda
+Name[sk]=Vendčina
+Name[uk]=венда
 Name[x-test]=xxVendaxx
 [vi]
 Name=Vietnamese
+Name[pt_BR]=Vietnamita
+Name[sk]=Vietnamčina
+Name[uk]=в'єтнамська
 Name[x-test]=xxVietnamesexx
 [vo]
 Name=Volapük
+Name[pt_BR]=Volapuque
+Name[sk]=Volapük
+Name[uk]=волапюк
 Name[x-test]=xxVolapükxx
 [wa]
 Name=Walloon
+Name[pt_BR]=Valão
+Name[sk]=Valónčina
+Name[uk]=валлонська
 Name[x-test]=xxWalloonxx
 [wo]
 Name=Wolof
+Name[pt_BR]=Jalofo
+Name[sk]=Wolof
+Name[uk]=волоф
 Name[x-test]=xxWolofxx
 [xh]
 Name=Xhosa
+Name[pt_BR]=Xhosa
+Name[sk]=Xhoština
+Name[uk]=хоза
 Name[x-test]=xxXhosaxx
 [x-test]
 Name=KDE Test Language
+Name[pt_BR]=Idioma de teste do KDE
+Name[sk]=Testovací jazyk KDE
+Name[uk]=тестова мова KDE
 Name[x-test]=xxKDE Test Languagexx
 [yi]
 Name=Yiddish
+Name[pt_BR]=Iídiche
+Name[sk]=Jidiš
+Name[uk]=ідиш
 Name[x-test]=xxYiddishxx
 [yo]
 Name=Yoruba
+Name[pt_BR]=Iorubá
+Name[sk]=Jorubčina
+Name[uk]=йоруба
 Name[x-test]=xxYorubaxx
 [za]
 Name=Zhuang
+Name[pt_BR]=Zhuang
+Name[sk]=Čuangčina
+Name[uk]=чжуанська
 Name[x-test]=xxZhuangxx
 [zh]
 Name=Chinese
+Name[pt_BR]=Chinês
+Name[sk]=Čínština
+Name[uk]=китайська
 Name[x-test]=xxChinesexx
 [zh_CN]
 Name=Chinese Simplified
+Name[pt_BR]=Chinês simplificado
+Name[sk]=Čínština (zjednodušená)
+Name[uk]=китайська (спрощена)
 Name[x-test]=xxChinese Simplifiedxx
 [zh_HK]
 Name=Chinese (Hong Kong)
+Name[pt_BR]=Chinês (Hong Kong)
+Name[sk]=Čínština (Hongkong)
+Name[uk]=китайська (Гонконг))
 Name[x-test]=xxChinese (Hong Kong)xx
 [zh_TW]
 Name=Chinese Traditional
+Name[pt_BR]=Chinês tradicional
+Name[sk]=Čínština (tradičná)
+Name[uk]=китайська (традиційна)
 Name[x-test]=xxChinese Traditionalxx
 [zu]
 Name=Zulu
+Name[pt_BR]=Zulu
+Name[sk]=Zuluština
+Name[uk]=зулуська
 Name[x-test]=xxZuluxx

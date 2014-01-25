@@ -3,6 +3,9 @@ Type=ServiceType
 X-KDE-ServiceType=KFileWrite
 
 Comment=KFileWrite plugin
+Comment[pt_BR]=Plugin do KFileWrite
+Comment[sk]=Modul KFileWrite
+Comment[uk]=Додаток KFileWrite
 Comment[x-test]=xxKFileWrite pluginxx
 
 [PropertyDef::MetaDataKeys]

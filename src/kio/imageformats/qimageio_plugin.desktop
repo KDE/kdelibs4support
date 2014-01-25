@@ -2,6 +2,9 @@
 Type=ServiceType
 X-KDE-ServiceType=QImageIOPlugins
 Comment=QImageIOHandler plugin
+Comment[pt_BR]=Plugin do QImageIOHandler
+Comment[sk]=Modul QImageIOHandler
+Comment[uk]=Додаток QImageIOHandler
 Comment[x-test]=xxQImageIOHandler pluginxx
 
 [PropertyDef::X-KDE-ImageFormat]

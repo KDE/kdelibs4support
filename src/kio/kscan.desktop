@@ -2,4 +2,7 @@
 Type=ServiceType
 X-KDE-ServiceType=KScan/KScanDialog
 Name=KScan
+Name[pt_BR]=KScan
+Name[sk]=KScan
+Name[uk]=KScan
 Name[x-test]=xxKScanxx

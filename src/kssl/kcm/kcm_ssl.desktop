@@ -10,9 +10,18 @@ X-KDE-System-Settings-Parent-Category=network-and-connectivity
 X-DocPath=kcontrol/kcm_ssl/index.html
 
 Name=SSL Preferences
+Name[pt_BR]=Preferências do SSL
+Name[sk]=Nastavenie SSL
+Name[uk]=Параметри SSL
 Name[x-test]=xxSSL Preferencesxx
 Comment=SSL Versions and Certificates
+Comment[pt_BR]=Versões e certificados SSL
+Comment[sk]=SSL verzie a certifikáty
+Comment[uk]=Версія і сертифікати SSL
 Comment[x-test]=xxSSL Versions and Certificatesxx
 
 X-KDE-Keywords=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS
+X-KDE-Keywords[pt_BR]=SSL,segurança,rede,protocolo,certificados,criptografia,HTTPS
+X-KDE-Keywords[sk]=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS
+X-KDE-Keywords[uk]=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS,захист,мережа,протокол,сертифікат,сертифікати,шифрування,криптографія
 X-KDE-Keywords[x-test]=xxSSL,Security,Network,Protocol,Certificates,Encryption,HTTPSxx
