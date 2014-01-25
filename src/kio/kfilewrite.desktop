@@ -3,6 +3,7 @@ Type=ServiceType
 X-KDE-ServiceType=KFileWrite
 
 Comment=KFileWrite plugin
+Comment[x-test]=xxKFileWrite pluginxx
 
 [PropertyDef::MetaDataKeys]
 Type=QStringList

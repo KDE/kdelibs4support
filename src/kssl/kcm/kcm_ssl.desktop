@@ -10,6 +10,9 @@ X-KDE-System-Settings-Parent-Category=network-and-connectivity
 X-DocPath=kcontrol/kcm_ssl/index.html
 
 Name=SSL Preferences
+Name[x-test]=xxSSL Preferencesxx
 Comment=SSL Versions and Certificates
+Comment[x-test]=xxSSL Versions and Certificatesxx
 
 X-KDE-Keywords=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS
+X-KDE-Keywords[x-test]=xxSSL,Security,Network,Protocol,Certificates,Encryption,HTTPSxx
