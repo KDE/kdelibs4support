@@ -367,8 +367,13 @@ macro(_KDE4_SET_LIB_VARIABLES _var _lib _prefix)
    set(KDE4_${_var}_LIBS    ${_prefix}${_lib} )
 endmacro(_KDE4_SET_LIB_VARIABLES _var _lib _prefix)
 
-# KDE_ENABLE_EXCEPTIONS is defined in ECM
-set(KDE4_ENABLE_EXCEPTIONS "${KDE_ENABLE_EXCEPTIONS}")
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC" OR (WIN32 AND "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel"))
+  set (KDE4_ENABLE_EXCEPTIONS -EHsc)
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+  set (KDE4_ENABLE_EXCEPTIONS "-fexceptions -UQT_NO_EXCEPTIONS")
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
+  set (KDE4_ENABLE_EXCEPTIONS -fexceptions)
+endif()
 
 #######################  #now try to find some kde stuff  ################################
 
