@@ -2695,7 +2695,7 @@ bool KLocalePrivate::setEncoding(int mibEnum)
 QStringList KLocalePrivate::allLanguagesList()
 {
     if (!m_languages) {
-        m_languages = new KConfig(QLatin1String("locale/all_languages"), KConfig::NoGlobals, QStandardPaths::GenericDataLocation);
+        m_languages = new KConfig(QLatin1String("locale/kf5_all_languages"), KConfig::NoGlobals, QStandardPaths::GenericDataLocation);
     }
     return m_languages->groupList();
 }
@@ -2720,7 +2720,7 @@ QStringList KLocalePrivate::installedLanguages()
 QString KLocalePrivate::languageCodeToName(const QString &language)
 {
     if (!m_languages) {
-        m_languages = new KConfig(QLatin1String("locale/all_languages"), KConfig::NoGlobals, QStandardPaths::GenericDataLocation);
+        m_languages = new KConfig(QLatin1String("locale/kf5_all_languages"), KConfig::NoGlobals, QStandardPaths::GenericDataLocation);
     }
 
     KConfigGroup cg(m_languages, language);
