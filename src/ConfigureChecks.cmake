@@ -3,10 +3,10 @@ include(CheckIncludeFiles)
 include(CheckFunctionExists)
 # TODO: check whether CheckPrototypeExists.cmake is actually necessary or whether something else can be used. Alex
 include(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/modules/CheckPrototypeExists.cmake)
-include(CheckSymbolExists)
+include(CheckCXXSymbolExists)
 include(CheckTypeSize)
 include(CheckStructHasMember)
-include(CheckCSourceRuns)
+include(CheckCXXSourceRuns)
 include(CMakePushCheckState)
 
 set( KDELIBSUFF ${LIB_SUFFIX} )
@@ -55,12 +55,12 @@ check_function_exists(if_nametoindex  HAVE_IF_NAMETOINDEX)
 
 check_prototype_exists(getservbyname_r netdb.h      HAVE_GETSERVBYNAME_R_PROTO)
 
-check_symbol_exists(posix_madvise   "sys/mman.h"               HAVE_MADVISE)
+check_cxx_symbol_exists(posix_madvise   "sys/mman.h"               HAVE_MADVISE)
 
-check_symbol_exists(getnameinfo     "sys/types.h;sys/socket.h;netdb.h"     HAVE_GETNAMEINFO)
-check_symbol_exists(getaddrinfo     "sys/types.h;sys/socket.h;netdb.h"     HAVE_GETADDRINFO)
+check_cxx_symbol_exists(getnameinfo     "sys/types.h;sys/socket.h;netdb.h"     HAVE_GETNAMEINFO)
+check_cxx_symbol_exists(getaddrinfo     "sys/types.h;sys/socket.h;netdb.h"     HAVE_GETADDRINFO)
 
-check_symbol_exists(res_init        "sys/types.h;netinet/in.h;arpa/nameser.h;resolv.h" HAVE_RES_INIT)
+check_cxx_symbol_exists(res_init        "sys/types.h;netinet/in.h;arpa/nameser.h;resolv.h" HAVE_RES_INIT)
 # redundant? check_function_exists(res_init        HAVE_RES_INIT)
 
 
@@ -75,11 +75,11 @@ set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
 check_type_size("struct sockaddr_in6" HAVE_STRUCT_SOCKADDR_IN6)
 set(CMAKE_EXTRA_INCLUDE_FILES)  #reset CMAKE_EXTRA_INCLUDE_FILES
 
-check_struct_has_member("struct sockaddr" sa_len "sys/types.h;sys/socket.h" HAVE_STRUCT_SOCKADDR_SA_LEN)
-check_struct_has_member(dirent d_type dirent.h HAVE_DIRENT_D_TYPE)
+check_struct_has_member("struct sockaddr" sa_len "sys/types.h;sys/socket.h" HAVE_STRUCT_SOCKADDR_SA_LEN LANGUAGE CXX)
+check_struct_has_member(dirent d_type dirent.h HAVE_DIRENT_D_TYPE LANGUAGE CXX)
 check_prototype_exists(res_init "sys/types.h;netinet/in.h;arpa/nameser.h;resolv.h" HAVE_RES_INIT_PROTO)
 
-check_c_source_runs("
+check_cxx_source_runs("
   #include <sys/types.h>
   #include <sys/socket.h>
   #include <netdb.h>
