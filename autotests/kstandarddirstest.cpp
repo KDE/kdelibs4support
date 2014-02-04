@@ -153,9 +153,9 @@ void KStandarddirsTest::testFindResource()
 #endif
     QVERIFY(!QDir::isRelativePath(bin));
 
-    const QString data = KGlobal::dirs()->findResource("data", "dbus-1/interfaces/org.kde.JobView.xml");
+    const QString data = KGlobal::dirs()->findResource("data", "dbus-1/interfaces/kf5_org.kde.JobView.xml");
     QVERIFY(!data.isEmpty());
-    QVERIFY(data.endsWith(QLatin1String("dbus-1/interfaces/org.kde.JobView.xml")));
+    QVERIFY(data.endsWith(QLatin1String("dbus-1/interfaces/kf5_org.kde.JobView.xml")));
     QVERIFY(!QDir::isRelativePath(data));
 }
 
