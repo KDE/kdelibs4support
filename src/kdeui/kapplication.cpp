@@ -140,6 +140,7 @@ public:
         , oldIceIOErrorHandler(0)
         , oldXErrorHandler(0)
         , oldXIOErrorHandler(0)
+        , isX11(false)
 #endif
         , pSessionConfig(0)
         , bSessionManagement(true)
@@ -156,6 +157,7 @@ public:
         , oldIceIOErrorHandler(0)
         , oldXErrorHandler(0)
         , oldXIOErrorHandler(0)
+        , isX11(false)
 #endif
         , pSessionConfig(0)
         , bSessionManagement(true)
@@ -172,6 +174,7 @@ public:
         , oldIceIOErrorHandler(0)
         , oldXErrorHandler(0)
         , oldXIOErrorHandler(0)
+        , isX11(false)
 #endif
         , pSessionConfig(0)
         , bSessionManagement(true)
@@ -212,6 +215,7 @@ public:
     IceIOErrorHandler oldIceIOErrorHandler;
     int (*oldXErrorHandler)(Display *, XErrorEvent *);
     int (*oldXIOErrorHandler)(Display *);
+    bool isX11;
 #endif
 
     QString sessionKey;
@@ -414,26 +418,29 @@ void KApplicationPrivate::init(bool GUIenabled)
     QApplication::setDesktopSettingsAware(false);
 
 #if HAVE_X11
-    // create all required atoms in _one_ roundtrip to the X server
-    const int max = 20;
-    Atom *atoms[max];
-    char *names[max];
-    Atom atoms_return[max];
-    int n = 0;
+    isX11 = (QGuiApplication::platformName() == QStringLiteral("xcb"));
+    if (isX11) {
+        // create all required atoms in _one_ roundtrip to the X server
+        const int max = 20;
+        Atom *atoms[max];
+        char *names[max];
+        Atom atoms_return[max];
+        int n = 0;
 
-    atoms[n] = &atom_DesktopWindow;
-    names[n++] = (char *) "KDE_DESKTOP_WINDOW";
+        atoms[n] = &atom_DesktopWindow;
+        names[n++] = (char *) "KDE_DESKTOP_WINDOW";
 
-    atoms[n] = &atom_NetSupported;
-    names[n++] = (char *) "_NET_SUPPORTED";
+        atoms[n] = &atom_NetSupported;
+        names[n++] = (char *) "_NET_SUPPORTED";
 
-    atoms[n] = &kde_xdnd_drop;
-    names[n++] = (char *) "XdndDrop";
+        atoms[n] = &kde_xdnd_drop;
+        names[n++] = (char *) "XdndDrop";
 
-    XInternAtoms(QX11Info::display(), names, n, false, atoms_return);
+        XInternAtoms(QX11Info::display(), names, n, false, atoms_return);
 
-    for (int i = 0; i < n; i++) {
-        *atoms[i] = atoms_return[i];
+        for (int i = 0; i < n; i++) {
+            *atoms[i] = atoms_return[i];
+        }
     }
 #endif
 
@@ -482,11 +489,13 @@ void KApplicationPrivate::init(bool GUIenabled)
     }
 
 #if HAVE_X11
-    // this is important since we fork() to launch the help (Matthias)
-    fcntl(ConnectionNumber(QX11Info::display()), F_SETFD, FD_CLOEXEC);
-    // set up the fancy (=robust and error ignoring ) KDE xio error handlers (Matthias)
-    oldXErrorHandler = XSetErrorHandler(kde_x_errhandler);
-    oldXIOErrorHandler = XSetIOErrorHandler(kde_xio_errhandler);
+    if (isX11) {
+        // this is important since we fork() to launch the help (Matthias)
+        fcntl(ConnectionNumber(QX11Info::display()), F_SETFD, FD_CLOEXEC);
+        // set up the fancy (=robust and error ignoring ) KDE xio error handlers (Matthias)
+        oldXErrorHandler = XSetErrorHandler(kde_x_errhandler);
+        oldXIOErrorHandler = XSetIOErrorHandler(kde_xio_errhandler);
+    }
 #endif
 
     // Trigger initial settings
@@ -549,6 +558,9 @@ void KApplication::enableSessionManagement()
 {
     d->bSessionManagement = true;
 #if HAVE_X11
+    if (!d->isX11) {
+        return;
+    }
     // Session management support in Qt/KDE is awfully broken.
     // If konqueror disables session management right after its startup,
     // and enables it later (preloading stuff), it won't be properly
@@ -815,14 +827,16 @@ extern void kDebugCleanup();
 KApplication::~KApplication()
 {
 #if HAVE_X11
-    if (d->oldXErrorHandler != NULL) {
-        XSetErrorHandler(d->oldXErrorHandler);
-    }
-    if (d->oldXIOErrorHandler != NULL) {
-        XSetIOErrorHandler(d->oldXIOErrorHandler);
-    }
-    if (d->oldIceIOErrorHandler != NULL) {
-        IceSetIOErrorHandler(d->oldIceIOErrorHandler);
+    if (d->isX11) {
+        if (d->oldXErrorHandler != NULL) {
+            XSetErrorHandler(d->oldXErrorHandler);
+        }
+        if (d->oldXIOErrorHandler != NULL) {
+            XSetIOErrorHandler(d->oldXIOErrorHandler);
+        }
+        if (d->oldIceIOErrorHandler != NULL) {
+            IceSetIOErrorHandler(d->oldIceIOErrorHandler);
+        }
     }
 #endif
 
@@ -874,6 +888,9 @@ unsigned long KApplication::userTimestamp() const
 void KApplication::updateRemoteUserTimestamp(const QString &service, int time)
 {
 #if HAVE_X11
+    if (!d->isX11) {
+        return;
+    }
     Q_ASSERT(service.contains('.'));
     if (time == 0) {
         time = QX11Info::appUserTime();
@@ -984,6 +1001,9 @@ void KApplication::clearStartupId()
 void KApplicationPrivate::_k_slot_KToolInvocation_hook(QStringList &envs, QByteArray &startup_id)
 {
 #if HAVE_X11
+    if (!isX11) {
+        return;
+    }
     if (QX11Info::display()) {
         QByteArray dpystring(XDisplayString(QX11Info::display()));
         envs << QLatin1String("DISPLAY=") + dpystring;
