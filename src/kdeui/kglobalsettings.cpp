@@ -77,7 +77,10 @@ class KGlobalSettings::Private
 {
 public:
     Private(KGlobalSettings *q)
-        : q(q), activated(false), paletteCreated(false), mLargeFont(0), mMouseSettings(0)
+    : q(q), activated(false), paletteCreated(false), mLargeFont(0), mMouseSettings(0)
+#if HAVE_X11
+        , isX11(QX11Info::isPlatformX11())
+#endif
     {
         kdeFullSession = !qgetenv("KDE_FULL_SESSION").isEmpty();
     }
@@ -119,6 +122,9 @@ public:
     QPalette applicationPalette;
     KGlobalSettings::KMouseSettings *mMouseSettings;
     QFont *mLargeFont;
+#if HAVE_X11
+    bool isX11;
+#endif
 };
 
 // class for access to KGlobalSettings constructor
@@ -403,6 +409,7 @@ KGlobalSettings::KMouseSettings &KGlobalSettings::Private::mouseSettings()
             s.handed = KGlobalSettings::KMouseSettings::LeftHanded;
         } else {
 #if HAVE_X11
+        if (isX11) {
             // get settings from X server
             // This is a simplified version of the code in input/mouse.cpp
             // Keep in sync !
@@ -422,6 +429,7 @@ KGlobalSettings::KMouseSettings &KGlobalSettings::Private::mouseSettings()
                     s.handed = KGlobalSettings::KMouseSettings::LeftHanded;
                 }
             }
+        }
 #else
             // FIXME: Implement on other platforms
 #endif
@@ -869,6 +877,9 @@ void KGlobalSettings::Private::reloadStyleSettings()
 void KGlobalSettings::Private::applyCursorTheme()
 {
 #if HAVE_X11 && defined(HAVE_XCURSOR)
+    if (!isX11) {
+        return;
+    }
     KConfig config("kcminputrc");
     KConfigGroup g(&config, "Mouse");
 

@@ -1749,7 +1749,16 @@ KColorDialog::mouseReleaseEvent(QMouseEvent *e)
 QColor
 KColorDialog::grabColor(const QPoint &p)
 {
+    auto fallback = [p]() {
+        QWidget *desktop = QApplication::desktop();
+        QPixmap pm = QPixmap::grabWindow(desktop->winId(), p.x(), p.y(), 1, 1);
+        QImage i = pm.toImage();
+        return i.pixel(0, 0);
+    };
 #if HAVE_X11
+    if (!QX11Info::isPlatformX11()) {
+        return fallback();
+    }
     // we use the X11 API directly in this case as we are not getting back a valid
     // return from QPixmap::grabWindow in the case where the application is using
     // an argb visual
@@ -1768,10 +1777,7 @@ KColorDialog::grabColor(const QPoint &p)
                 &xcol);
     return QColor::fromRgbF(xcol.red / 65535.0, xcol.green / 65535.0, xcol.blue / 65535.0);
 #else
-    QWidget *desktop = QApplication::desktop();
-    QPixmap pm = QPixmap::grabWindow(desktop->winId(), p.x(), p.y(), 1, 1);
-    QImage i = pm.toImage();
-    return i.pixel(0, 0);
+    return fallback();
 #endif
 }
 

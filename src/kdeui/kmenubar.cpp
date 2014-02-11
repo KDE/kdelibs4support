@@ -73,6 +73,7 @@ public:
             wasTopLevel(false),
 #if HAVE_X11
             selection(NULL),
+            isX11(QX11Info::isPlatformX11()),
 #endif
             min_size(0, 0)
     {
@@ -94,6 +95,7 @@ public:
 
 #if HAVE_X11
     KSelectionWatcher *selection;
+    bool isX11;
 #endif
     QTimer selection_timer;
     QSize min_size;
@@ -121,6 +123,9 @@ void initAtoms()
 Atom KMenuBar::KMenuBarPrivate::makeSelectionAtom()
 {
 #if HAVE_X11
+    if (!QX11Info::isPlatformX11()) {
+        return 0;
+    }
     if (selection_atom == None) {
         initAtoms();
     }
@@ -174,12 +179,14 @@ void KMenuBar::setTopLevelMenuInternal(bool top_level)
     d->topLevel = top_level;
     if (isTopLevelMenu()) {
 #if HAVE_X11
-        d->selection = new KSelectionWatcher(KMenuBarPrivate::makeSelectionAtom(),
-                                             DefaultScreen(QX11Info::display()));
-        connect(d->selection, SIGNAL(newOwner(Window)),
-                this, SLOT(updateFallbackSize()));
-        connect(d->selection, SIGNAL(lostOwner()),
-                this, SLOT(updateFallbackSize()));
+        if (d->isX11) {
+            d->selection = new KSelectionWatcher(KMenuBarPrivate::makeSelectionAtom(),
+                                                DefaultScreen(QX11Info::display()));
+            connect(d->selection, SIGNAL(newOwner(Window)),
+                    this, SLOT(updateFallbackSize()));
+            connect(d->selection, SIGNAL(lostOwner()),
+                    this, SLOT(updateFallbackSize()));
+        }
 #endif
         d->frameStyle = 0; //frameStyle();
         d->lineWidth = 0; //lineWidth();
@@ -286,7 +293,7 @@ void KMenuBar::updateFallbackSize()
         return;
     }
 #if HAVE_X11
-    if (d->selection->owner() != None)
+    if (d->selection && d->selection->owner() != None)
 #endif
     {
         // somebody is managing us, don't mess anything, undo changes
