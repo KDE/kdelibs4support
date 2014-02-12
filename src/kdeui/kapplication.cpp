@@ -58,8 +58,8 @@
 
 #if HAVE_X11
 #include <qx11info_x11.h>
-#include <kstartupinfo.h>
 #endif
+#include <kstartupinfo.h>
 
 #include <sys/types.h>
 #if HAVE_SYS_STAT_H
