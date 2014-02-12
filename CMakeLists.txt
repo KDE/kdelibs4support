@@ -17,10 +17,6 @@ set(KF5_VERSION "4.96.0")
 set(QT_REQUIRED_VERSION 5.2.0)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg Concurrent PrintSupport Designer)
 
-if(NOT WIN32 AND NOT APPLE)
-    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED X11Extras)
-endif()
-
 if("${CMAKE_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_BINARY_DIR}")
     # add dependencies
     find_package(KF5I18n ${KF5_VERSION} REQUIRED)
@@ -59,6 +55,7 @@ endif()
 set(HAVE_X11 ${X11_FOUND})
 if (HAVE_X11)
   add_feature_info("X11 Session Management (libSM)" X11_SM_FOUND "Support for session management in KApplication")
+  find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED X11Extras)
 endif ()
 if (APPLE)
     cmake_find_frameworks(CoreFoundation)
