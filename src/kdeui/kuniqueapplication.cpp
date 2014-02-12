@@ -43,6 +43,7 @@
 #include <kconfiggroup.h>
 #include <kwindowsystem.h>
 
+#include <config-kde4support.h>
 #if HAVE_X11
 #include <kstartupinfo.h>
 #include <netwm.h>
