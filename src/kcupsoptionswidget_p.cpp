@@ -20,8 +20,6 @@
 
 #include "kcupsoptionswidget_p.h"
 
-#include <config-kprintutils.h>
-
 #include <QPrinter>
 #include <QPrintEngine>
 #include <QPrintDialog>
@@ -41,7 +39,7 @@ KCupsOptionsWidget::~KCupsOptionsWidget()
 
 bool KCupsOptionsWidget::cupsAvailable()
 {
-#if HAVE_X11
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
     // Ideally we would have access to the private Qt method
     // QCUPSSupport::cupsAvailable() to do this as it is very complex routine.
     // However, if CUPS is available then QPrinter::numCopies() will always return 1

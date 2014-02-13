@@ -1,7 +1,5 @@
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 
-configure_file(config-kprintutils.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kprintutils.h)
-
 set(kprintutils_LIB_SRCS
     kprintpreview.cpp
 )
@@ -11,7 +9,6 @@ set(kprintutils_LIB_SRCS
   kdeprintdialog.cpp
 )
 
-if (X11_FOUND)
 set(kprintutils_LIB_SRCS
   ${kprintutils_LIB_SRCS}
   kcupsoptionswidget_p.cpp
@@ -22,7 +19,6 @@ set(kprintutils_UI
   ${kprintutils_UI}
   kcupsoptionspageswidget.ui
 )
-endif ()
 
 qt5_wrap_ui(kprintutils_LIB_SRCS ${kprintutils_UI})
 

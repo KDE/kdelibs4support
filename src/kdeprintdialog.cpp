@@ -21,9 +21,8 @@
  **/
 
 #include "kdeprintdialog.h"
-#include <config-kprintutils.h>
 
-#if HAVE_X11
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
 #include "kcupsoptionspageswidget_p.h"
 #include "kcupsoptionssettingswidget_p.h"
 #endif
@@ -45,7 +44,7 @@ QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
     if (pageSelectPolicy == SystemSelectsPages) {
         dialog->setOption(QAbstractPrintDialog::PrintPageRange, false);
     }
-#if HAVE_X11
+#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
     if (KCupsOptionsWidget::cupsAvailable()) {
         KCupsOptionsPagesWidget *cupsOptionsPagesTab = new KCupsOptionsPagesWidget(dialog);
         dialog->setOptionTabs(QList<QWidget *>() << cupsOptionsPagesTab << customTabs);
@@ -55,7 +54,7 @@ QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
     } else {
         dialog->setOptionTabs(customTabs);
     }
-#else //Not X11
+#else //Not Unix modulo Mac
     foreach (QWidget *w, customTabs) { // reparent to avoid leaks
         w->setParent(dialog);
     }
