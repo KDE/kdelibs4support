@@ -275,6 +275,11 @@ target_include_directories(KF5KDE4Support PUBLIC "$<BUILD_INTERFACE:${kde4suppor
 
 target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support/KDE>")
 
+set(platformLinkLibraries)
+if (APPLE)
+    set(platformLinkLibraries "-framework CoreFoundation -framework Carbon -lresolv")
+endif()
+
 target_link_libraries(KF5KDE4Support
 PUBLIC
    Qt5::Widgets
@@ -304,7 +309,9 @@ PRIVATE
    Qt5::Test # for qtest_kde.cpp
    ${KIO_EXTRA_LIBS}
    ${libkde4support_OPTIONAL_LIBS}
+   ${platformLinkLibraries}
 )
+
 
 # This flag is needed in order to be able to support files > 2GB even on
 # 32bit platforms. The default is to use the non-64bit aware syscalls on
