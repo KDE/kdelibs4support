@@ -708,7 +708,7 @@ public:
     /**
      * @return @c $XDG_DATA_HOME
      * See also http://www.freedesktop.org/standards/basedir/draft/basedir-spec/basedir-spec.html
-     * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
+     * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + '/'
      */
 #ifndef KDE_NO_DEPRECATED
     KDE4SUPPORT_DEPRECATED QString localxdgdatadir() const;
@@ -717,7 +717,7 @@ public:
     /**
      * @return @c $XDG_CONFIG_HOME
      * See also http://www.freedesktop.org/standards/basedir/draft/basedir-spec/basedir-spec.html
-     * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
+     * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + '/'
      */
 #ifndef KDE_NO_DEPRECATED
     KDE4SUPPORT_DEPRECATED QString localxdgconfdir() const;
