@@ -46,14 +46,13 @@ set_target_properties(KF5PrintUtils PROPERTIES
                       EXPORT_NAME PrintUtils
 )
 
-ecm_generate_headers(
+ecm_generate_headers(KPrintUtils_HEADERS
+  HEADER_NAMES
   KPrintPreview
   KDEPrintDialog
 
-  MODULE_NAME KPrintUtils
   REQUIRED_HEADERS KPrintUtils_HEADERS
 )
-install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/KPrintUtils DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
 install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/kprintutils_export.h
