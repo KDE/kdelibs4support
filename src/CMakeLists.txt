@@ -439,6 +439,7 @@ install(FILES
     kdecore/ktimezone.h
     kdecore/ktzfiletimezone.h
     kdecore/klocale.h
+    kdecore/kdefakes.h
 
     kio/kdiskfreespace.h
     kio/kdatatool.h
