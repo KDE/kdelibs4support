@@ -28,6 +28,7 @@
 #include <klocalizedstring.h>
 #include <qstandardpaths.h>
 #include <kurl.h>
+#include <kio/global.h>
 #include <QDBusInterface>
 #include <QDBusConnection>
 #include <QDBusReply>
@@ -298,6 +299,12 @@ QString KMimeType::favIconForUrl(const QUrl &url)
                         QString::fromLatin1("org.kde.FavIcon"));
     QDBusReply<QString> result = kded.call(QString::fromLatin1("iconForUrl"), url.toString());
     return result;              // default is QString()
+}
+
+QString KMimeType::iconNameForUrl(const QUrl &url, mode_t mode)
+{
+    Q_UNUSED(mode)
+    return KIO::iconNameForUrl(url);
 }
 
 QString KMimeType::comment() const

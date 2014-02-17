@@ -94,6 +94,19 @@ public:
     static QString favIconForUrl(const QUrl &url);
 
     /**
+     * Return the filename of the icon associated with the mimetype, for a given url.
+     * Use KIconLoader::loadMimeTypeIcon to load the icon.
+     * @param url URL for the file
+     * @param mode the mode of the file. The mode may modify the icon
+     *              with overlays that show special properties of the
+     *              icon. Use 0 for default
+     * @return the name of the icon. The name of a default icon if there is no icon
+     *         for the mime type
+     * @deprecated use KIO::iconNameForUrl
+     */
+    static QString iconNameForUrl(const QUrl &url, mode_t mode = 0);
+
+    /**
      * Returns the descriptive comment associated with the MIME type.
      *
      * @return The descriptive comment associated with the MIME type, if any.
