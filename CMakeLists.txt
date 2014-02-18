@@ -95,9 +95,9 @@ install(TARGETS kf5-config EXPORT KF5KDE4SupportTargets ${INSTALL_TARGETS_DEFAUL
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5KDE4Support")
 
-include(CMakePackageConfigHelpers)
+include(ECMPackageConfigHelpers)
 
-configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5KDE4SupportConfig.cmake.in"
+ecm_configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5KDE4SupportConfig.cmake.in"
                               "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfig.cmake"
                               INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
                               )
