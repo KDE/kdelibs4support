@@ -24,7 +24,7 @@
 #ifndef K_FONT_DIALOG_H
 #define K_FONT_DIALOG_H
 
-#include <QDialog>
+#include <kdialog.h>
 #include <kfontchooser.h>
 #include <kde4support_export.h>
 
@@ -54,7 +54,7 @@ class QStringList;
  *
  * @author Preston Brown <pbrown@kde.org>, Bernd Wuebben <wuebben@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KFontDialog : public QDialog
+class KDE4SUPPORT_DEPRECATED_EXPORT KFontDialog : public KDialog
 {
     Q_OBJECT
 

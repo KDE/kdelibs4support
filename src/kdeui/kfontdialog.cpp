@@ -45,7 +45,7 @@ KFontDialog::KFontDialog(QWidget *parent,
                          const KFontChooser::DisplayFlags &flags,
                          const QStringList &fontList,
                          Qt::CheckState *sizeIsRelativeState)
-    : QDialog(parent),
+    : KDialog(parent),
       d(new Private)
 {
     setWindowTitle(i18n("Select Font"));
@@ -55,15 +55,8 @@ KFontDialog::KFontDialog(QWidget *parent,
 
     connect(d->chooser, SIGNAL(fontSelected(QFont)), this, SIGNAL(fontSelected(QFont)));
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
-    buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
-    connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
-
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(d->chooser);
-    layout->addWidget(buttonBox);
-    setLayout(layout);
+    setButtons(KDialog::Ok | KDialog::Cancel);
+    setMainWidget(d->chooser);
 }
 
 KFontDialog::~KFontDialog()
