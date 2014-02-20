@@ -24,7 +24,6 @@
 
 #if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
 #include "kcupsoptionspageswidget_p.h"
-#include "kcupsoptionssettingswidget_p.h"
 #endif
 
 #include "klocalizedstring.h"
