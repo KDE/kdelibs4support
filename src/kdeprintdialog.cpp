@@ -31,25 +31,13 @@
 #include <QPrintDialog>
 #include <QLabel>
 
-QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-        PageSelectPolicy pageSelectPolicy,
-        const QList<QWidget *> &customTabs,
-        QWidget *parent)
+QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer, const QList<QWidget *> &customTabs, QWidget *parent)
 {
     QPrintDialog *dialog = new QPrintDialog(printer, parent);
-    // Windows and lpr don't support server side page range so default to not
-    // showing print range in dialog, it will be enabled automatically
-    // for systems where CUPS is available
-    if (pageSelectPolicy == SystemSelectsPages) {
-        dialog->setOption(QAbstractPrintDialog::PrintPageRange, false);
-    }
 #if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
     if (KCupsOptionsWidget::cupsAvailable()) {
         KCupsOptionsPagesWidget *cupsOptionsPagesTab = new KCupsOptionsPagesWidget(dialog);
         dialog->setOptionTabs(QList<QWidget *>() << cupsOptionsPagesTab << customTabs);
-        if (pageSelectPolicy == SystemSelectsPages) {
-            dialog->setOption(QAbstractPrintDialog::PrintPageRange, true);
-        }
     } else {
         dialog->setOptionTabs(customTabs);
     }
@@ -62,22 +50,7 @@ QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
     return dialog;
 }
 
-QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-        const QList<QWidget *> &customTabs,
-        QWidget *parent)
+QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer, QWidget *parent)
 {
-    return KdePrint::createPrintDialog(printer, KdePrint::ApplicationSelectsPages, customTabs, parent);
-}
-
-QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-        PageSelectPolicy pageSelectPolicy,
-        QWidget *parent)
-{
-    return KdePrint::createPrintDialog(printer, pageSelectPolicy, QList<QWidget *>(), parent);
-}
-
-QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer,
-        QWidget *parent)
-{
-    return KdePrint::createPrintDialog(printer, KdePrint::ApplicationSelectsPages, QList<QWidget *>(), parent);
+    return KdePrint::createPrintDialog(printer, QList<QWidget *>(), parent);
 }
