@@ -22,10 +22,6 @@
 
 #include "kdeprintdialog.h"
 
-#if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
-#include "kcupsoptionspageswidget_p.h"
-#endif
-
 #include "klocalizedstring.h"
 
 #include <QPrintDialog>
@@ -35,12 +31,7 @@ QPrintDialog *KdePrint::createPrintDialog(QPrinter *printer, const QList<QWidget
 {
     QPrintDialog *dialog = new QPrintDialog(printer, parent);
 #if defined(Q_OS_UNIX) && !defined(Q_OS_DARWIN)
-    if (KCupsOptionsWidget::cupsAvailable()) {
-        KCupsOptionsPagesWidget *cupsOptionsPagesTab = new KCupsOptionsPagesWidget(dialog);
-        dialog->setOptionTabs(QList<QWidget *>() << cupsOptionsPagesTab << customTabs);
-    } else {
-        dialog->setOptionTabs(customTabs);
-    }
+    dialog->setOptionTabs(customTabs);
 #else //Not Unix modulo Mac
     foreach (QWidget *w, customTabs) { // reparent to avoid leaks
         w->setParent(dialog);

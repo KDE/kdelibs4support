@@ -9,19 +9,6 @@ set(kprintutils_LIB_SRCS
   kdeprintdialog.cpp
 )
 
-set(kprintutils_LIB_SRCS
-  ${kprintutils_LIB_SRCS}
-  kcupsoptionswidget_p.cpp
-  kcupsoptionspageswidget_p.cpp
-)
-
-set(kprintutils_UI
-  ${kprintutils_UI}
-  kcupsoptionspageswidget.ui
-)
-
-qt5_wrap_ui(kprintutils_LIB_SRCS ${kprintutils_UI})
-
 add_library(KF5PrintUtils ${kprintutils_LIB_SRCS})
 generate_export_header(KF5PrintUtils BASE_NAME KPrintUtils)
 add_library(KF5::PrintUtils ALIAS KF5PrintUtils)
