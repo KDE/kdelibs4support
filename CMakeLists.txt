@@ -66,7 +66,8 @@ include(ECMMarkNonGuiExecutable)
 
 ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KDE4SUPPORT
                                  VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kde4support_version.h"
-                                 PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake")
+                                 PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake"
+                                 SOVERSION 5)
 
 # QUrl
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
