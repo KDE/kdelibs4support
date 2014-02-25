@@ -104,6 +104,7 @@ class KUrlPrivate;
  * Otherwise the URL would be invalid and the user wouldn't be able to use it in another
  * context.
  *
+ * @deprecated since 5.0; use QUrl directly
  */
 class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE KUrl : public QUrl // krazy:exclude=dpointer,qclasses (krazy can't deal with embedded classes)
 {
@@ -214,7 +215,7 @@ public:
          * set a correct HTTP referrer (some websites require it for downloading e.g. an image)
          * @param flags set NoTextExport to prevent setting plain/text data into @p mimeData
          *
-         * @deprecated use QMimeData::setUrls, followed by KUrlMimeData::setMetaData if you have metadata.
+         * @deprecated since 5.0, use QMimeData::setUrls, followed by KUrlMimeData::setMetaData if you have metadata.
          */
 #ifndef KDE_NO_DEPRECATED
         KDE4SUPPORT_DEPRECATED void populateMimeData(QMimeData *mimeData,
@@ -254,7 +255,7 @@ public:
          * @param flags         set NoTextExport to prevent setting plain/text
          *                      data into @p mimeData.
          * @since 4.2
-         * @deprecated use KUrlMimeData::setUrls, followed by KUrlMimeData::setMetaData if you have metadata.
+         * @deprecated since 5.0, use KUrlMimeData::setUrls, followed by KUrlMimeData::setMetaData if you have metadata.
          */
 #ifndef KDE_NO_DEPRECATED
         KDE4SUPPORT_DEPRECATED void populateMimeData(const KUrl::List &mostLocalUrls,
@@ -265,7 +266,7 @@ public:
 
         /**
          * Return true if @p mimeData contains URI data
-         * @deprecated use QMimeData::hasUrls
+         * @deprecated since 5.0, use QMimeData::hasUrls
          */
 #ifndef KDE_NO_DEPRECATED
         KDE4SUPPORT_DEPRECATED static bool canDecode(const QMimeData *mimeData);
@@ -273,7 +274,7 @@ public:
 
         /**
          * Return the list of mimeTypes that can be decoded by fromMimeData
-         * @deprecated use KUrlMimeData::mimeDataTypes
+         * @deprecated since 5.0, use KUrlMimeData::mimeDataTypes
          */
 #ifndef KDE_NO_DEPRECATED
         KDE4SUPPORT_DEPRECATED static QStringList mimeDataTypes();
@@ -282,7 +283,7 @@ public:
         /**
          * Flags to be used in fromMimeData.
          * @since 4.2.3
-         * @deprecated use KUrlMimeData
+         * @deprecated since 5.0, use KUrlMimeData
          */
         enum DecodeOptions {
             /**
@@ -310,7 +311,7 @@ public:
          * @param metaData optional pointer to a map holding the metadata
          * @return the list of urls
          * @since 4.2.3
-         * @deprecated use KUrlMimeData::urlsFromMimeData
+         * @deprecated since 5.0, use KUrlMimeData::urlsFromMimeData
          */
 #ifndef KDE_NO_DEPRECATED
         KDE4SUPPORT_DEPRECATED static KUrl::List fromMimeData(const QMimeData *mimeData,
@@ -332,7 +333,7 @@ public:
      * Usual constructor, to construct from a string.
      * @param urlOrPath An encoded URL or a path.
      *
-     * @deprecated use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
+     * @deprecated since 5.0, use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
      * and QUrl::fromUserInput() if it could be either.
      */
     KUrl(const QString &urlOrPath);
@@ -342,7 +343,7 @@ public:
      * the URL, in its encoded form, is strictly ascii.
      * @param urlOrPath An encoded URL, or a path.
      *
-     * @deprecated use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
+     * @deprecated since 5.0, use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
      * and QUrl::fromUserInput() if it could be either.
      */
     explicit KUrl(const char *urlOrPath);
@@ -352,7 +353,7 @@ public:
      * the URL, in its encoded form, is strictly ascii.
      * @param urlOrPath An encoded URL, or a path.
      *
-     * @deprecated use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
+     * @deprecated since 5.0, use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
      * and QUrl::fromUserInput() if it could be either.
      */
     explicit KUrl(const QByteArray &urlOrPath);
@@ -377,69 +378,53 @@ public:
      * Note that _rel_url should be encoded too, in any case.
      * So do NOT pass a path here (use setPath or addPath instead).
      *
-     * @deprecated use QUrl(_baseurl).resolved(QUrl(_rel_url))
+     * @deprecated since 5.0, use QUrl(_baseurl).resolved(QUrl(_rel_url))
      */
     KUrl(const KUrl &_baseurl, const QString &_rel_url);
 
     /**
      * Returns the protocol for the URL (i.e., file, http, etc.), lowercased.
-     * @see QUrl::scheme
+     * @deprecated since 5.0, use QUrl::scheme() instead
      */
     QString protocol() const;
 
     /**
-     * Sets the protocol for the URL (i.e., file, http, etc.)
-     * @param proto the new protocol of the URL (without colon)
+     * @deprecated since 5.0, use QUrl::setScheme() instead
      */
     void setProtocol(const QString &proto);
 
     /**
-     * Returns the decoded user name (login, user id, ...) included in the URL.
-     * @return the user name or QString() if there is no user name
+     * @deprecated since 5.0, use QUrl::userName() instead
      */
     QString user() const;
 
     /**
-     * Sets the user name (login, user id, ...) included in the URL.
-     *
-     * Special characters in the user name will appear encoded in the URL.
-     * @param user the name of the user or QString() to remove the user
+     * @deprecated since 5.0, use QUrl::setUserName() instead
      */
     void setUser(const QString &user);
 
     /**
-     * Test to see if this URL has a user name included in it.
-     * @return true if the URL has an non-empty user name
+     * @deprecated since 5.0, use QUrl::userName() and QString::isEmpty() instead
      */
     bool hasUser() const;
 
     /**
-     * Returns the decoded password (corresponding to user()) included in the URL.
-     * @return the password or QString() if it does not exist
+     * @deprecated since 5.0, use QUrl::password() instead
      **/
     QString pass() const;
 
     /**
-     * Sets the password (corresponding to user()) included in the URL.
-     *
-     * Special characters in the password will appear encoded in the URL.
-     * Note that a password can only appear in a URL string if you also set
-     * a user.
-     * @param pass the password to set or QString() to remove the password
-     * @see setUser
-     * @see hasUser
+     * @deprecated since 5.0, use QUrl::setPassword() instead
      **/
     void setPass(const QString &pass);
 
     /**
-     * Test to see if this URL has a password included in it.
-     * @return true if there is a non-empty password set
+     * @deprecated since 5.0, use QUrl::password() and QString::isEmpty() instead
      **/
     bool hasPass() const;
 
     /**
-     * Test to see if this URL has a hostname included in it.
-     * @return true if the URL has a host
+     * @deprecated since 5.0, use QUrl::host() and QString::isEmpty() instead
      **/
     bool hasHost() const;
 
@@ -449,16 +434,20 @@ public:
      * @return The current decoded path. This does not include the query. Can
      *         be QString() if no path is set.
      *
-     * @deprecated Use QUrl::path(). If RemoveTrailingSlash was used, use
+     * @deprecated since 5.0, use QUrl::path(). If RemoveTrailingSlash was used, use
      * url.adjusted(QUrl::StripTrailingSlash).path()
      */
     QString path(AdjustPathOption trailing = LeaveTrailingSlash) const;
 
     /**
      * @param trailing use to add or remove a trailing slash to/from the local path. see adjustPath
-
+     *
      * @return The current local path. Can
      *   be QString() if no path is set.
+     *
+     * @deprecated since 5.0, use QUrl::toLocalFile() instead; if
+     * RemoveTrailingSlash was used, use
+     * url.adjusted(QUrl::StripTrailingSlash).toLocalFile()
      */
     QString toLocalFile(AdjustPathOption trailing = LeaveTrailingSlash) const;
 
@@ -470,8 +459,7 @@ public:
     KDE4SUPPORT_DEPRECATED void setPath(const QString &path);
 
     /**
-     * Test to see if this URL has a path is included in it.
-     * @return true if there is a path
+     * @deprecated since 5.0, use QUrl::path() and QString::isEmpty()
      **/
     bool hasPath() const;
 
@@ -500,7 +488,7 @@ public:
      *
      * @param options use KeepDirSeparators if you don't want to remove consecutive
      *                occurrences of directory separator
-     * @deprecated use url.setPath(QDir::cleanPath(url.path())) in file-management code.
+     * @deprecated since 5.0, use url.setPath(QDir::cleanPath(url.path())) in file-management code.
      * No replacement available yet for the old HTTP issue mentionned above.
      */
     void cleanPath(const CleanPathOption &options = SimplifyDirSeparators);
@@ -527,6 +515,10 @@ public:
      * This is useful for HTTP. It looks first for '?' and decodes then.
      * The encoded path is the concatenation of the current path and the query.
      * @param _txt the new path and query.
+     *
+     * @deprecated since 5.0, use QUrl::setPath() and
+     * QUrl::fromPercentEncoding() to set the encoded path; use QUrl::setQuery()
+     * with an appropriate QUrl::ParsingMode value to set the query.
      */
     void setEncodedPathAndQuery(const QString &_txt);
 
@@ -553,6 +545,8 @@ public:
      * @param options a set of flags from EncodedPathAndQueryOption
      * @return The concatenation of the encoded path , '?' and the encoded query.
      *
+     * @deprecated since 5.0, use QUrl::path() and QUrl::query();
+     * QUrl::adjusted() can be used to remove a trailing slash if necessary.
      */
     QString encodedPathAndQuery(AdjustPathOption trailing = LeaveTrailingSlash, const EncodedPathAndQueryOptions &options = PermitEmptyPath) const;
 
@@ -562,7 +556,8 @@ public:
      *
      * The query should start with a '?'. If it doesn't '?' is prepended.
      *
-     * @deprecated use QUrl::setQuery(QString), but note that it doesn't start with '?' (it uses null vs empty, instead).
+     * @deprecated since 5.0, use QUrl::setQuery(QString), but note that it
+     * doesn't start with '?' (it uses null vs empty, instead).
      */
     void setQuery(const QString &query);
 
@@ -574,7 +569,9 @@ public:
      * An empty string means no query.
      * @return The encoded query, or QString() if there is none.
      *
-     * @deprecated use QByteArray QUrl::query(), but note that it doesn't start with '?'.
+     * @deprecated since 5.0, use QByteArray QUrl::query(), but note that it
+     * doesn't start with '?' (QUrl::hasQuery() can be used to distinguish
+     * between no query and an empty query).
      */
     QString query() const;
 
@@ -582,7 +579,7 @@ public:
      * Returns the @em encoded reference (or "fragment") of the URL (everything after '#').
      * @return the encoded reference, or QString("") if the reference part is empty,
      *   or QString() if the URL has no reference.
-     * @deprecated use QUrl::fragment(QUrl::FullyEncoded)
+     * @deprecated since 5.0, use QUrl::fragment(QUrl::FullyEncoded)
      */
     QString ref() const;
 
@@ -590,7 +587,7 @@ public:
      * Sets the reference/fragment part (everything after '#').
      * If you have an encoded fragment already (as a QByteArray), you can call setFragment directly.
      * @param fragment the @em encoded reference (or QString() to remove it).
-     * @deprecated use QUrl::setFragment()
+     * @deprecated since 5.0, use QUrl::setFragment()
      */
     void setRef(const QString &fragment);
 
@@ -599,7 +596,7 @@ public:
      * @return true if the URL has a reference part. In a URL like
      *         http://www.kde.org/kdebase.tar#tar:/README it would
      *         return true, too.
-     * @deprecated use QUrl::hasFragment()
+     * @deprecated since 5.0, use QUrl::hasFragment()
      */
     bool hasRef() const;
 
@@ -610,7 +607,7 @@ public:
      * @see split
      * @see hasSubUrl
      * @see encodedHtmlRef
-     * @deprecated use QUrl::fragment(QUrl::FullyDecoded)
+     * @deprecated since 5.0, use QUrl::fragment(QUrl::FullyDecoded)
      */
     QString htmlRef() const;
 
@@ -619,7 +616,7 @@ public:
      * @return the encoded reference, or QString("") if the reference part is empty,
      *   or QString() if the URL has no reference.
      * @see ref
-     * @deprecated use QUrl::fragment(QUrl::FullyEncoded)
+     * @deprecated since 5.0, use QUrl::fragment(QUrl::FullyEncoded)
      */
     QString encodedHtmlRef() const;
 
@@ -629,7 +626,7 @@ public:
      * @param ref The new reference. This is considered to be @em not encoded in
      *         contrast to setRef(). Use QString() to remove it.
      * @see htmlRef()
-     * @deprecated use QUrl::setFragment(ref, QUrl::DecodedMode)
+     * @deprecated since 5.0, use QUrl::setFragment(ref, QUrl::DecodedMode)
      */
     void setHTMLRef(const QString &ref);
 
@@ -637,7 +634,7 @@ public:
      * Checks whether there is a HTML reference.
      * @return true if the URL has an HTML-style reference.
      * @see htmlRef()
-     * @deprecated use QUrl::hasFragment()
+     * @deprecated since 5.0, use QUrl::hasFragment()
      */
     bool hasHTMLRef() const;
 
@@ -883,7 +880,7 @@ public:
      * Returns the URL as a string, using the standard conventions for mime data
      * (drag-n-drop or copy-n-paste).
      * Internally used by KUrl::List::fromMimeData, which is probably what you want to use instead.
-     * @deprecated use QMimeData::setUrls directly, or KUrlMimeData::setUrls
+     * @deprecated since 5.0, use QMimeData::setUrls directly, or KUrlMimeData::setUrls
      */
     QString toMimeDataString() const;
 
@@ -894,7 +891,7 @@ public:
      * file:///home. The algorithm tries to go up on the right-most URL. If that is not
      * possible it strips the right most URL. It continues stripping URLs.
      * @return a URL that is a level higher
-     * @deprecated use KIO::upUrl() instead, from kio/global.h
+     * @deprecated since 5.0, use KIO::upUrl() instead, from kio/global.h
      */
     KUrl upUrl() const;
 
@@ -943,7 +940,7 @@ public:
      * false is returned.
      * @see operator==. This function should be used if you want to
      * ignore trailing '/' characters.
-     * @deprecated Use equals() instead.
+     * @deprecated since 4.0, use equals() instead.
      */
 #ifndef KDE_NO_DEPRECATED
     KDE4SUPPORT_DEPRECATED bool cmp(const KUrl &u, bool ignore_trailing = false) const;
@@ -1058,7 +1055,7 @@ public:
      * @param text the local path
      * @return the new KUrl
      *
-     * @deprecated use QUrl::fromLocalFile
+     * @deprecated since 5.0, use QUrl::fromLocalFile
      */
 #ifndef KDE_NO_DEPRECATED
     static KDE4SUPPORT_DEPRECATED KUrl fromPath(const QString &text)
@@ -1068,9 +1065,7 @@ public:
 #endif
 
     /**
-     * \deprecated
-     * Since KDE4 you can pass both urls and paths to the KUrl constructors.
-     * Use KUrl(text) instead.
+     * @deprecated since 4.0, use QUrl() instead
      */
 #ifndef KDE_NO_DEPRECATED
     static KDE4SUPPORT_DEPRECATED KUrl fromPathOrUrl(const QString &text);
@@ -1091,7 +1086,7 @@ public:
      * set a correct HTTP referrer (some websites require it for downloading e.g. an image)
      * @param flags set NoTextExport to prevent setting plain/text data into @p mimeData
      *
-     * @deprecated use QMimeData::setUrls(QList<QUrl>() << url),
+     * @deprecated since 5.0, use QMimeData::setUrls(QList<QUrl>() << url),
      *      followed by KUrlMimeData::setMetaData if you have metadata.
      */
 #ifndef KDE_NO_DEPRECATED
@@ -1118,7 +1113,7 @@ public:
      *
      * @param _url URL to examine
      * @return true when the URL is likely to be "relative", false otherwise.
-     * @deprecated use QUrl(_url)::isRelative instead
+     * @deprecated since 5.0, use QUrl(_url)::isRelative instead
      */
     static bool isRelativeUrl(const QString &_url);
 
@@ -1170,7 +1165,7 @@ Q_DECLARE_METATYPE(KUrl::List)
  * Two malformed URLs with the same string representation
  * are nevertheless considered to be unequal.
  * That means no malformed URL equals anything else.
- * @deprecated use KUrl(_url1).equals(KUrl(_url2)) instead.
+ * @deprecated since 4.5, use QUrl(_url1) == QUrl(_url2) instead.
  */
 #ifndef KDE_NO_DEPRECATED
 KDE4SUPPORT_DEPRECATED_EXPORT bool urlcmp(const QString &_url1, const QString &_url2);   // KDE5: remove, KUrl::equals is better API
@@ -1186,7 +1181,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT bool urlcmp(const QString &_url1, const QString &_
  * @param _url1 A reference URL
  * @param _url2 A URL that will be compared with the reference URL
  * @param options a set of KUrl::EqualsOption flags
- * @deprecated use KUrl(_url1).equals(KUrl(_url2), options) instead.
+ * @deprecated since 4.5, use QUrl(_url1).adjusted(options) == QUrl(_url2).adjusted(options) instead.
  */
 #ifndef KDE_NO_DEPRECATED
 KDE4SUPPORT_DEPRECATED_EXPORT bool urlcmp(const QString &_url1, const QString &_url2, const KUrl::EqualsOptions &options);   // KDE5: remove, KUrl::equals is better API
