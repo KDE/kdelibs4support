@@ -149,6 +149,8 @@ set(libkde4support_SRCS
     kdeui/kdatetimewidget.cpp
     kdeui/kdatewidget.cpp
     kdeui/k4timezonewidget.cpp
+    kdeui/kdeprintdialog.cpp
+    kdeui/kprintpreview.cpp
 
     kio/kfilemetainfowidget.cpp
     kio/kdiskfreespace.cpp
@@ -513,6 +515,8 @@ install(FILES
     kdeui/kdatetimewidget.h
     kdeui/kdatewidget.h
     kdeui/k4timezonewidget.h
+    kdeui/kdeprintdialog.h
+    kdeui/kprintpreview.h
     kdecore/kde4support_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/kde4support_export_internal.h
     ${CMAKE_CURRENT_BINARY_DIR}/kdemacros.h

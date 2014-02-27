@@ -21,7 +21,7 @@
 #ifndef KDEPRINTDIALOG_H
 #define KDEPRINTDIALOG_H
 
-#include <kprintutils_export.h>
+#include <kde4support_export.h>
 
 #include <QtCore/QList>
 
@@ -54,7 +54,7 @@ namespace KdePrint
  * @param customTabs a list of custom widgets to show as tabs, the name printed on the tab will
  *                   be taken from the widgets windowTitle().
  */
-KPRINTUTILS_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, const QList<QWidget *> &customTabs,
+KDE4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, const QList<QWidget *> &customTabs,
                                                    QWidget *parent = 0);
 
 /**
@@ -66,7 +66,7 @@ KPRINTUTILS_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, const QLis
  * @param printer the QPrinter to apply settings to
  * @param parent the parent for the dialog
  */
-KPRINTUTILS_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, QWidget *parent = 0);
+KDE4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, QWidget *parent = 0);
 }
 
 #endif // KDEPRINTDIALOG_H
