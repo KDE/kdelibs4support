@@ -598,3 +598,38 @@ if (UNIX)
    set_target_properties(KF5KDE4Support PROPERTIES POST_INSTALL_SCRIPT ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake)
 endif ()
 
+########## DocBookXML 4.2 compatibility
+
+set (_legacy_docbookxml "4.2")
+find_package(DocBookXML4 ${_legacy_docbookxml})
+if (DocBookXML4_FOUND)
+    set(DOCBOOKXML_FOUND "TRUE")
+    set(DOCBOOKXML_CURRENTDTD_DIR ${DocBookXML4_DTD_DIR})
+    set(DOCBOOKXML_CURRENTDTD_VERSION ${_legacy_docbookxml})
+endif ()
+
+mark_as_advanced (DocBookXML4_DTD_DIR DocBookXML4_DTD_VERSION)
+
+set (_custom_dtd_kdex "customization/dtd/kdex.dtd")
+configure_file(${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex} )
+# WARNING: this is due to severe limitations on the windows platform to keep the dtd relocateable
+# see the .xsl.cmake files for a more verbose explanation below
+if(NOT WIN32)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}
+            DESTINATION ${DATA_INSTALL_DIR}/kdoctools5/customization/dtd )
+else()
+    # file(RELATIVE_PATH ...) returns wrong values for paths containing /../ (it doesn't normalize the path)
+    # To work around this we make sure the variable passed has all /../ elements
+    # removed using get_filename_component(... ABSOLUTE)
+    install(CODE
+        "get_filename_component(NORMALIZED_INSTALL_PATH \"${CMAKE_INSTALL_PREFIX}/${DATA_INSTALL_DIR}/kdoctools5/customization/dtd\" ABSOLUTE)
+        file(RELATIVE_PATH DocBookXML4_DTD_DIR \"${NORMALIZED_INSTALL_PATH}\" \"${DocBookXML4_DTD_DIR}\")
+        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install)"
+    )
+    get_filename_component(_custom_dtd_kdex_name ${_custom_dtd_kdex} NAME)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install DESTINATION ${DATA_INSTALL_DIR}/kdoctools5/customization/dtd RENAME ${_custom_dtd_kdex_name})
+endif()
+
+install(FILES "customization/catalog4.xml"
+        DESTINATION ${DATA_INSTALL_DIR}/kdoctools5/customization )
+

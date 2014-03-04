@@ -1,5 +1,6 @@
 <!--
-    Document Type Definition for DocBook XML as used in the KDE documentation
+    Document Type Definition for legacy DocBook XML 4.2 as used in the
+    KDE documentation
     
     Copyright (C) 2002 Frederik Fouvry
      
