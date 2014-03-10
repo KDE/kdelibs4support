@@ -204,7 +204,7 @@ endif ()
 if (WIN32)
     set(libkde4support_SRCS ${libkde4support_SRCS}
                             kdecore/klockfile_win.cpp
-                            util/kde_file_win.cpp
+                            kdecore/kde_file_win.cpp
                             kdecore/ktimezone_win.cpp
                             kdecore/klocale_win.cpp
                             )
