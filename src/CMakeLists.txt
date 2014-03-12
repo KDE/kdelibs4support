@@ -611,6 +611,9 @@ endif ()
 mark_as_advanced (DocBookXML4_DTD_DIR DocBookXML4_DTD_VERSION)
 
 set (_custom_dtd_kdex "customization/dtd/kdex.dtd")
+# The path to KDocTools resources is set as absolute, allowing the
+# installation of KDocTools and KDE4Support in different prefixes.
+set (_KDocTools_customization_dir "${KDOCTOOLS_CUSTOMIZATION_DIR}")
 configure_file(${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex} )
 # WARNING: this is due to severe limitations on the windows platform to keep the dtd relocateable
 # see the .xsl.cmake files for a more verbose explanation below

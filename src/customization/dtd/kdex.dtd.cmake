@@ -68,7 +68,7 @@
  -->
 <!ENTITY % rdbpool	    PUBLIC
   "-//KDE//ELEMENTS DocBook XML Pool Redeclarations V1.1//EN"	     
-  "rdbpool.elements"                                                 >
+  "@_KDocTools_customization_dir@/dtd/rdbpool.elements"                                                 >
 <!ENTITY % dbpool.redecl.module "INCLUDE"			     >
 
 <!-- Modifications in hierarchy
@@ -77,7 +77,7 @@
  -->
 <!ENTITY % rdbhier2	    PUBLIC
   "-//KDE//ELEMENTS DocBook XML Hierarchy Redeclarations 2 V1.0//EN"     
-  "rdbhier2.elements"                                                >
+  "@_KDocTools_customization_dir@/dtd/rdbhier2.elements"                                                >
 <!ENTITY % dbhier.redecl2.module "INCLUDE"			     >
 
 <!-- For Java-style refentries	   
@@ -110,7 +110,7 @@
 
 <!ENTITY % kde.modifications PUBLIC
   "-//KDE//ELEMENTS DocBook XML Modifications V1.1//EN"
-  "modifications.elements"                                           >
+  "@_KDocTools_customization_dir@/dtd/modifications.elements"                                           >
 %kde.modifications;
 
 
@@ -121,10 +121,10 @@
 
 <!ENTITY % kde.general.entities	PUBLIC
   "-//KDE//ENTITIES DocBook XML General Entity Declarations V1.2//EN"    
-  "../entities/general.entities"                                     >
+  "@_KDocTools_customization_dir@/entities/general.entities"                                     >
 %kde.general.entities;
 
 <!ENTITY % kde.i18n.entities PUBLIC
   "-//KDE//ENTITIES DocBook XML Localisation Entity Declarations V1.0//EN"
-  "../entities/l10n.entities"                                        >
+  "@_KDocTools_customization_dir@/entities/l10n.entities"                                        >
 %kde.i18n.entities;
