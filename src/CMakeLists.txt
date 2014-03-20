@@ -51,8 +51,6 @@ set(libkde4support_SRCS
     kdecore/kmimetyperepository.cpp
     kdecore/ksavefile.cpp
     kdecore/ksocketfactory.cpp
-    kdecore/k3socks.cpp
-    kdecore/k3sockssocketdevice.cpp
     kdecore/k3socketdevice.cpp
     kdecore/k3bufferedsocket.cpp
     kdecore/k3clientsocketbase.cpp
@@ -417,8 +415,6 @@ install(FILES
     kdecore/k3socketaddress.h
     kdecore/k3socketbase.h
     kdecore/k3socketdevice.h
-    kdecore/k3socks.h
-    kdecore/k3sockssocketdevice.h
     kdecore/k3streamsocket.h
     kdecore/kconfiggroup_kurl.h
     kdecore/kmimetype.h

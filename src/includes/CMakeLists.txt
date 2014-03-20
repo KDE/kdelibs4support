@@ -324,7 +324,6 @@ install( FILES
   KShortcutsDialog
   KShortcutsEditor
   KShortcutWidget
-  KSocks
   KSortableItem
   KSortableList
   KSpeech
@@ -698,7 +697,6 @@ install( FILES
   KNetwork/KSocketBase
   KNetwork/KSocketDevice
   KNetwork/KSocketDeviceFactory
-  KNetwork/KSocksSocketDevice
   KNetwork/KStreamSocket
   KNetwork/KUnixSocketAddress
 DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KNetwork COMPONENT Devel)

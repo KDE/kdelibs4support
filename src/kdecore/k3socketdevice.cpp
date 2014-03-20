@@ -63,7 +63,6 @@
 #include "k3resolver.h"
 #include "k3socketaddress.h"
 #include "k3socketbase.h"
-#include "k3socks.h"
 using namespace KNetwork;
 
 class KNetwork::KSocketDevicePrivate
