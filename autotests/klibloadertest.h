@@ -28,9 +28,6 @@ private Q_SLOTS:
     void initTestCase();
     void testNonWorking();
     void testFindLibrary();
-    void testWorking_KLibLoader_KGenericFactory();
-    void testWrongClass_KLibLoader_KGenericFactory();
-    void testWorking_KLibLoader_KPluginFactory();
     void testWorking_KPluginLoader_KGenericFactory();
     void testWorking_KPluginLoader_KPluginFactory();
 };

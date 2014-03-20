@@ -39,14 +39,6 @@ void KLibLoaderTest::initTestCase()
 
 void KLibLoaderTest::testNonWorking()
 {
-    int error = 0;
-    QObject *obj = KLibLoader::createInstance<QObject>("idontexist", this, QStringList(), &error);
-    QCOMPARE(obj, (QObject *)0);
-    QCOMPARE(error, (int)KLibLoader::ErrNoLibrary);
-    QString errorString = KLibLoader::errorString(error);
-    qDebug() << errorString;
-    QVERIFY(!errorString.isEmpty());
-
     KPluginFactory *factory = KPluginLoader("idontexist2").factory();
     QVERIFY(!factory);
 }
@@ -67,44 +59,7 @@ void KLibLoaderTest::testFindLibrary()
     QCOMPARE(library, expectedPath);
 }
 
-// old loader, old plugin
-void KLibLoaderTest::testWorking_KLibLoader_KGenericFactory()
-{
-    int error = 0;
-    QObject *obj = KLibLoader::createInstance<QObject>(s_kgenericFactoryModule, 0, QStringList(), &error);
-    if (error) {
-        qWarning() << "error=" << error << " lastErrorMessage=" << KLibLoader::self()->lastErrorMessage();
-    }
-    QVERIFY(obj != 0);
-    delete obj;
-}
-
-// old loader, old plugin
-void KLibLoaderTest::testWrongClass_KLibLoader_KGenericFactory()
-{
-    int error = 0;
-
-    KLibLoaderTest *obj = KLibLoader::createInstance<KLibLoaderTest>(s_kgenericFactoryModule, 0, QStringList(), &error);
-    QCOMPARE(obj, (KLibLoaderTest *)0);
-    QCOMPARE(error, (int)KLibLoader::ErrNoComponent);
-    QString errorString = KLibLoader::errorString(error);
-    qDebug() << errorString;
-    QVERIFY(!errorString.isEmpty());
-}
-
 static const char s_kpluginFactoryModule[] = "klibloadertestmodule4";
-
-// old loader, new plugin
-void KLibLoaderTest::testWorking_KLibLoader_KPluginFactory()
-{
-    int error = 0;
-    QObject *obj = KLibLoader::createInstance<QObject>(s_kpluginFactoryModule, 0, QStringList(), &error);
-    if (error) {
-        qWarning() << "error=" << error << " lastErrorMessage=" << KLibLoader::self()->lastErrorMessage();
-    }
-    QVERIFY(obj != 0);
-    delete obj;
-}
 
 // new loader, old plugin
 void KLibLoaderTest::testWorking_KPluginLoader_KGenericFactory()

@@ -135,28 +135,10 @@ KPluginFactory *KLibLoader::factory(const QString &_name, QLibrary::LoadHints hi
 
     KPluginFactory *fac = lib->factory();
     if (!fac) {
-        kLibLoaderPrivate()->errorString = errorString(ErrNoFactory);
+        kLibLoaderPrivate()->errorString = i18n("The library does not export a factory for creating components.");
         return 0;
     }
 
     return fac;
-}
-
-QString KLibLoader::errorString(int componentLoadingError)
-{
-    switch (componentLoadingError) {
-    case ErrNoServiceFound:
-        return i18n("No service matching the requirements was found.");
-    case ErrServiceProvidesNoLibrary:
-        return i18n("The service provides no library, the Library key is missing in the .desktop file.");
-    case ErrNoLibrary:
-        return kLibLoaderPrivate()->instance.lastErrorMessage();
-    case ErrNoFactory:
-        return i18n("The library does not export a factory for creating components.");
-    case ErrNoComponent:
-        return i18n("The factory does not support creating components of the specified type.");
-    default:
-        return i18n("KLibLoader: Unknown error");
-    }
 }
 
