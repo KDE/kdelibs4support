@@ -548,7 +548,6 @@ install(FILES
 
 # kparts/*.h
 install(FILES
-    kparts/componentfactory.h
     kparts/genericfactory.h
     kparts/factory.h
     kparts/listingextension.h

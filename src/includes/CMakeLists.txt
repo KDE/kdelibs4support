@@ -706,7 +706,6 @@ install( FILES
   KParts/BrowserHostExtension
   KParts/BrowserInterface
   KParts/BrowserRun
-  KParts/ComponentFactory
   KParts/DockMainWindow3
   KParts/Event
   KParts/Factory
