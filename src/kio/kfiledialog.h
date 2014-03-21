@@ -240,7 +240,7 @@ public:
      * When showing the filter to the user, the mimetypes will be automatically
      * translated into their description like `PNG image'. Multiple mimetypes
      * will be automatically summarized to a filter item `All supported files'.
-     * To add a filter item for all files matching @c '*', add @c all/allfiles
+     * To add a filter item for all files matching @c '*', add @c application/octet-stream
      * as mimetype.
      *
      * If the filter contains no unescaped @c '/', it is assumed that

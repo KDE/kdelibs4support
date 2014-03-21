@@ -60,8 +60,8 @@ void KFDTest::doit()
     dlg->setMode(KFile::File);
     dlg->setOperationMode(KFileDialog::Saving);
     QStringList filter;
-    filter << "all/allfiles" << "text/plain";
-    dlg->setMimeFilter(filter, "all/allfiles");
+    filter << "application/octet-stream" << "text/plain";
+    dlg->setMimeFilter(filter, "application/octet-stream");
 
     if (dlg->exec() == QDialog::Accepted) {
         KMessageBox::information(0, QString::fromLatin1("You selected the file: %1").arg(dlg->selectedUrl().toString()));
@@ -139,8 +139,8 @@ int main(int argc, char **argv)
             dlg->setMode(KFile::File);
             dlg->setOperationMode(KFileDialog::Saving);
             QStringList filter;
-            filter << "all/allfiles" << "text/plain";
-            dlg->setMimeFilter(filter, "all/allfiles");
+            filter << "application/octet-stream" << "text/plain";
+            dlg->setMimeFilter(filter, "application/octet-stream");
 #if 0 // SPLIT-TODO
             KUrlBar *urlBar = dlg->speedBar();
             if (urlBar) {
