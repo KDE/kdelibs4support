@@ -44,6 +44,7 @@ Q_GLOBAL_STATIC(KLibLoaderPrivate, kLibLoaderPrivate)
 
 KLibLoader *KLibLoader::self()
 {
+    qWarning() << "Using deprecated KLibLoader!";
     return &kLibLoaderPrivate()->instance;
 }
 
