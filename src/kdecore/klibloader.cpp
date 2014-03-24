@@ -128,17 +128,9 @@ void KLibLoader::unloadLibrary(const QString &)
 
 KPluginFactory *KLibLoader::factory(const QString &_name, QLibrary::LoadHints hint)
 {
-    KLibrary *lib = library(_name, hint);
-    if (!lib) {
-        return 0;
-    }
+    Q_UNUSED(hint)
 
-    KPluginFactory *fac = lib->factory();
-    if (!fac) {
-        kLibLoaderPrivate()->errorString = i18n("The library does not export a factory for creating components.");
-        return 0;
-    }
-
-    return fac;
+    KPluginLoader plugin(_name);
+    return plugin.factory();
 }
 
