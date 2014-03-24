@@ -25,9 +25,18 @@
 QTEST_MAIN(KLibLoaderTest)
 
 #include <klibloader.h>
-//#include <kstandarddirs.h>
-#include <QtCore/QDir>
+#include <QDir>
 #include <QDebug>
+
+// Only new-style plugins are supported, even though we are doing
+// loading with a deprecated class.
+static const char s_kpluginFactoryModule[] = "klibloadertestmodule4";
+#if defined(Q_OS_WIN) || defined(Q_OS_CYGWIN)
+static const char s_modExt[] = ".dll";
+#else
+static const char s_modExt[] = ".so";
+#endif
+#define MODULE_PATH(mod) QFileInfo(QFINDTESTDATA(QString::fromLatin1(mod) + s_modExt)).canonicalFilePath()
 
 void KLibLoaderTest::initTestCase()
 {
@@ -37,62 +46,72 @@ void KLibLoaderTest::initTestCase()
     //qDebug( "initTestCase: added %s to 'module' resource", qPrintable(libdir) );
 }
 
-void KLibLoaderTest::testNonWorking()
+void KLibLoaderTest::testFactory()
 {
-    KPluginFactory *factory = KPluginLoader("idontexist2").factory();
+    KPluginFactory *factory = KLibLoader::self()->factory(s_kpluginFactoryModule);
+    if (!factory) {
+        QVERIFY(factory);
+    } else {
+        QObject *obj = factory->create<QObject>();
+        QVERIFY(obj);
+        delete obj;
+    }
+}
+
+void KLibLoaderTest::testFactory_hints()
+{
+    // the hints will be ignored, but we want to check the call will still compile
+    KPluginFactory *factory = KLibLoader::self()->factory(s_kpluginFactoryModule,
+            QLibrary::ResolveAllSymbolsHint);
+    if (!factory) {
+        QVERIFY(factory);
+    } else {
+        QObject *obj = factory->create<QObject>();
+        QVERIFY(obj);
+        delete obj;
+    }
+}
+
+void KLibLoaderTest::testFactory_noexist()
+{
+    KPluginFactory *factory = KLibLoader::self()->factory("idontexist");
     QVERIFY(!factory);
 }
 
-// We need a module to dlopen, which uses a standard factory (e.g. not an ioslave)
-static const char s_kgenericFactoryModule[] = "klibloadertestmodule";
+void KLibLoaderTest::testLibrary()
+{
+    KLibrary *lib = KLibLoader::self()->library(s_kpluginFactoryModule);
+    QVERIFY(lib);
+    QVERIFY(lib->isLoaded());
+    QCOMPARE(lib->fileName(), MODULE_PATH(s_kpluginFactoryModule));
+}
+
+void KLibLoaderTest::testLibrary_hints()
+{
+    // the hints will be ignored, but we want to check the call will still compile
+    KLibrary *lib = KLibLoader::self()->library(s_kpluginFactoryModule,
+            QLibrary::ResolveAllSymbolsHint);
+    QVERIFY(lib);
+    QVERIFY(lib->isLoaded());
+    QCOMPARE(lib->fileName(), MODULE_PATH(s_kpluginFactoryModule));
+}
+
+void KLibLoaderTest::testLibrary_noexist()
+{
+    KLibrary *lib = KLibLoader::self()->library("idontexist");
+    QVERIFY(!lib);
+}
 
 void KLibLoaderTest::testFindLibrary()
 {
-    const QString library = KLibLoader::findLibrary(s_kgenericFactoryModule);
+    const QString library = KLibLoader::findLibrary(s_kpluginFactoryModule);
     QVERIFY(!library.isEmpty());
     const QString libraryPath = QFileInfo(library).canonicalFilePath();
-#if defined(Q_OS_WIN) || defined(Q_OS_CYGWIN)
-    const QString expectedPath = QFileInfo(QDir::currentPath()  + '/' + s_kgenericFactoryModule + ".dll").canonicalFilePath();
-#else
-    const QString expectedPath = QFileInfo(QDir::currentPath()  + '/' + s_kgenericFactoryModule + ".so").canonicalFilePath();
-#endif
-    QCOMPARE(library, expectedPath);
+    QCOMPARE(library, MODULE_PATH(s_kpluginFactoryModule));
 }
 
-static const char s_kpluginFactoryModule[] = "klibloadertestmodule4";
-
-// new loader, old plugin
-void KLibLoaderTest::testWorking_KPluginLoader_KGenericFactory()
+void KLibLoaderTest::testFindLibrary_noexist()
 {
-    KPluginLoader loader(s_kgenericFactoryModule);
-    KPluginFactory *factory = loader.factory();
-    if (!factory) {
-        qWarning() << "error=" << loader.errorString();
-        QVERIFY(factory);
-    } else {
-        QObject *obj = factory->create<QObject>();
-        if (!obj) {
-            qWarning() << "Error creating object";
-        }
-        QVERIFY(obj);
-        delete obj;
-    }
-}
-
-// new loader, new plugin
-void KLibLoaderTest::testWorking_KPluginLoader_KPluginFactory()
-{
-    KPluginLoader loader(s_kpluginFactoryModule);
-    KPluginFactory *factory = loader.factory();
-    if (!factory) {
-        qWarning() << "error=" << loader.errorString();
-        QVERIFY(factory);
-    } else {
-        QObject *obj = factory->create<QObject>();
-        if (!obj) {
-            qWarning() << "Error creating object";
-        }
-        QVERIFY(obj);
-        delete obj;
-    }
+    const QString library = KLibLoader::findLibrary("idontexist");
+    QVERIFY(library.isEmpty());
 }

@@ -26,10 +26,14 @@ class KLibLoaderTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase();
-    void testNonWorking();
+    void testFactory();
+    void testFactory_hints();
+    void testFactory_noexist();
+    void testLibrary();
+    void testLibrary_hints();
+    void testLibrary_noexist();
     void testFindLibrary();
-    void testWorking_KPluginLoader_KGenericFactory();
-    void testWorking_KPluginLoader_KPluginFactory();
+    void testFindLibrary_noexist();
 };
 
 #endif

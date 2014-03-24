@@ -16,7 +16,7 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include "klibloadertest4_module.h"
+#include "klibloadertest5_module.h"
 
 #include <kpluginfactory.h> // K_PLUGIN_FACTORY
 
@@ -35,4 +35,4 @@ KLibLoaderTestObject::~KLibLoaderTestObject()
     qDebug("KLibLoaderTestObject created with KPluginFactory, now deleted");
 }
 
-#include "klibloadertest4_module.moc"
+#include "klibloadertest5_module.moc"

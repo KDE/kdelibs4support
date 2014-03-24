@@ -79,27 +79,29 @@ kde4support_executable_tests(
 ########### module for klibloadertest ###############
 
 if(NOT KDE_NO_DEPRECATED)
-  set(klibloadertestmodule_PART_SRCS klibloadertest_module.cpp )
+  # this exists to check that code using the kde 3 macros still build,
+  # even though the module cannot be loaded
+  set(klibloadertestmodule3_PART_SRCS klibloadertest3_module.cpp )
 
-  add_library(klibloadertestmodule MODULE ${klibloadertestmodule_PART_SRCS})
-  set_target_properties(klibloadertestmodule PROPERTIES PREFIX "") # remove lib prefix - missing from cmake
+  add_library(klibloadertestmodule3 MODULE ${klibloadertestmodule3_PART_SRCS})
+  set_target_properties(klibloadertestmodule3 PROPERTIES PREFIX "") # remove lib prefix - missing from cmake
 
-  target_link_libraries(klibloadertestmodule KF5::KDE4Support Qt5::Test KF5::I18n KF5::Service KF5::CoreAddons)
+  target_link_libraries(klibloadertestmodule3 KF5::KDE4Support Qt5::Test KF5::I18n KF5::Service KF5::CoreAddons)
 
-  set_target_properties(klibloadertestmodule PROPERTIES SKIP_BUILD_RPATH FALSE BUILD_WITH_INSTALL_RPATH FALSE)
+  set_target_properties(klibloadertestmodule3 PROPERTIES SKIP_BUILD_RPATH FALSE BUILD_WITH_INSTALL_RPATH FALSE)
 endif()
 
-########### module for klibloadertest4 ###############
+########### module for klibloadertest5 ###############
 
-set(klibloadertestmodule4_PART_SRCS klibloadertest4_module.cpp )
+set(klibloadertestmodule5_PART_SRCS klibloadertest5_module.cpp )
 
-add_library(klibloadertestmodule4 MODULE ${klibloadertestmodule4_PART_SRCS})
-ecm_mark_as_test(klibloadertestmodule4)
-set_target_properties(klibloadertestmodule4 PROPERTIES PREFIX "") # remove lib prefix - missing from cmake
+add_library(klibloadertestmodule5 MODULE ${klibloadertestmodule4_PART_SRCS})
+ecm_mark_as_test(klibloadertestmodule5)
+set_target_properties(klibloadertestmodule5 PROPERTIES PREFIX "") # remove lib prefix - missing from cmake
 
-target_link_libraries(klibloadertestmodule4 KF5::KDE4Support Qt5::Test KF5::I18n KF5::Service KF5::CoreAddons)
+target_link_libraries(klibloadertestmodule5 KF5::KDE4Support Qt5::Test KF5::I18n KF5::Service KF5::CoreAddons)
 
-set_target_properties(klibloadertestmodule4 PROPERTIES SKIP_BUILD_RPATH FALSE BUILD_WITH_INSTALL_RPATH FALSE)
+set_target_properties(klibloadertestmodule5 PROPERTIES SKIP_BUILD_RPATH FALSE BUILD_WITH_INSTALL_RPATH FALSE)
 
 ########### klocaletest ###############
 
