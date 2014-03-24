@@ -774,38 +774,6 @@ DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KSettings COMPONENT Devel)
 
 
 install( FILES
-  KTextEditor/Attribute
-  KTextEditor/CodeCompletionInterface
-  KTextEditor/CodeCompletionModel
-  KTextEditor/CodeCompletionModelControllerInterface
-  KTextEditor/Command
-  KTextEditor/CommandExtension
-  KTextEditor/CommandInterface
-  KTextEditor/ConfigInterface
-  KTextEditor/ConfigPage
-  KTextEditor/Cursor
-  KTextEditor/Document
-  KTextEditor/Editor
-  KTextEditor/HighlightInterface
-  KTextEditor/MarkInterface
-  KTextEditor/ModificationInterface
-  KTextEditor/MovingCursor
-  KTextEditor/MovingInterface
-  KTextEditor/MovingRange
-  KTextEditor/ParameterizedSessionConfigInterface
-  KTextEditor/Plugin
-  KTextEditor/Range
-  KTextEditor/SearchInterface
-  KTextEditor/SessionConfigInterface
-  KTextEditor/TemplateInterface
-  KTextEditor/TemplateInterface2
-  KTextEditor/TextHintInterface
-  KTextEditor/VariableInterface
-  KTextEditor/View
-DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/KDE/KTextEditor COMPONENT Devel)
-
-
-install( FILES
   KUnitTest/Runner
   KUnitTest/SlotTester
   KUnitTest/TestResults
