@@ -245,7 +245,7 @@ check_include_files(sys/stat.h HAVE_SYS_STAT_H)
 check_include_files(sys/time.h HAVE_SYS_TIME_H)
 configure_file(kdecore/config-klockfile.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-klockfile.h)
 # we use this for the kstandarddirs unit tests
-get_target_property(KCONFIG_COMPILER_LOCATION KF5::kconfig_compiler_kf5 LOCATION)
+get_target_property(KCONFIG_COMPILER_LOCATION KF5::kconfig_compiler LOCATION)
 # Generate config-kstandarddirs.h
 configure_file(config-kstandarddirs.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kstandarddirs.h )
 
