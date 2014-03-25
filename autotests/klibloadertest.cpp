@@ -30,7 +30,7 @@ QTEST_MAIN(KLibLoaderTest)
 
 // Only new-style plugins are supported, even though we are doing
 // loading with a deprecated class.
-static const char s_kpluginFactoryModule[] = "klibloadertestmodule4";
+static const char s_kpluginFactoryModule[] = "klibloadertestmodule5";
 #if defined(Q_OS_WIN) || defined(Q_OS_CYGWIN)
 static const char s_modExt[] = ".dll";
 #else

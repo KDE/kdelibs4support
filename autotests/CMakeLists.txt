@@ -95,7 +95,7 @@ endif()
 
 set(klibloadertestmodule5_PART_SRCS klibloadertest5_module.cpp )
 
-add_library(klibloadertestmodule5 MODULE ${klibloadertestmodule4_PART_SRCS})
+add_library(klibloadertestmodule5 MODULE ${klibloadertestmodule5_PART_SRCS})
 ecm_mark_as_test(klibloadertestmodule5)
 set_target_properties(klibloadertestmodule5 PROPERTIES PREFIX "") # remove lib prefix - missing from cmake
 
