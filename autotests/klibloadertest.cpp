@@ -41,9 +41,8 @@ static const char s_modExt[] = ".so";
 void KLibLoaderTest::initTestCase()
 {
     const QString libdir = QDir::currentPath();
+    qDebug() << "Adding" << libdir << "to LD_LIBRARY_PATH";
     qputenv("LD_LIBRARY_PATH", qgetenv("LD_LIBRARY_PATH") + ":" + QFile::encodeName(libdir));
-    //KGlobal::dirs()->addResourceDir( "module", libdir );
-    //qDebug( "initTestCase: added %s to 'module' resource", qPrintable(libdir) );
 }
 
 void KLibLoaderTest::testFactory()
