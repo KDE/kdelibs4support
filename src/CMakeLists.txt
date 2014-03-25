@@ -334,7 +334,7 @@ endif ()
 
 
 if(NOT KIO_NO_NEPOMUK)
-  target_link_libraries(KF5::KDE4Support ${KDE4_NEPOMUK_LIBRARY} nepomukquery nepomukutils)
+    target_link_libraries(KF5KDE4Support PRIVATE ${KDE4_NEPOMUK_LIBRARY} nepomukquery nepomukutils)
 endif()
 
 if(NOT KIO_NO_NEPOMUK)
