@@ -344,11 +344,6 @@ public:
     }
 #endif
 
-    /**
-        @internal
-      */
-    bool notify(QObject *receiver, QEvent *event);
-
 public Q_SLOTS:
     /**
      * @deprecated
@@ -416,7 +411,6 @@ private:
     KApplicationPrivate *const d;
 
     Q_PRIVATE_SLOT(d, void _k_x11FilterDestroyed())
-    Q_PRIVATE_SLOT(d, void _k_checkAppStartedSlot())
     Q_PRIVATE_SLOT(d, void _k_slot_KToolInvocation_hook(QStringList &, QByteArray &))
 };
 

@@ -65,7 +65,6 @@
 
 bool KUniqueApplication::Private::s_nofork = false;
 bool KUniqueApplication::Private::s_multipleInstances = false;
-bool KUniqueApplication::Private::s_handleAutoStarted = false;
 #ifdef Q_OS_WIN
 /* private helpers from kapplication_win.cpp */
 #ifndef _WIN32_WCE
@@ -339,21 +338,8 @@ KComponentData KUniqueApplication::Private::initHack(bool configUnique)
 
 void KUniqueApplication::Private::_k_newInstanceNoFork()
 {
-    s_handleAutoStarted = false;
     q->newInstance();
     firstInstance = false;
-#if HAVE_X11
-    // KDE4 remove
-    // A hack to make startup notification stop for apps which override newInstance()
-    // and reuse an already existing window there, but use KWindowSystem::activateWindow()
-    // instead of KStartupInfo::setNewStartupId(). Therefore KWindowSystem::activateWindow()
-    // for now sets this flag. Automatically ending startup notification always
-    // would cause problem if the new window would show up with a small delay.
-    if (s_handleAutoStarted) {
-        KStartupInfo::handleAutoAppStartedSending();
-    }
-#endif
-    // What to do with the return value ?
 }
 
 bool KUniqueApplication::restoringSession()
@@ -391,7 +377,6 @@ int KUniqueApplication::newInstance()
 #ifndef KDE_NO_DEPRECATED
 void KUniqueApplication::setHandleAutoStarted()
 {
-    Private::s_handleAutoStarted = false;
 }
 #endif
 

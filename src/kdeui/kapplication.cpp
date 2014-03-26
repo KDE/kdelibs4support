@@ -134,7 +134,6 @@ public:
     KApplicationPrivate(KApplication *q, const QByteArray &cName)
         : q(q)
         , componentData(cName)
-        , app_started_timer(0)
         , session_save(false)
 #if HAVE_X11
         , oldIceIOErrorHandler(0)
@@ -151,7 +150,6 @@ public:
     KApplicationPrivate(KApplication *q, const KComponentData &cData)
         : q(q)
         , componentData(cData)
-        , app_started_timer(0)
         , session_save(false)
 #if HAVE_X11
         , oldIceIOErrorHandler(0)
@@ -168,7 +166,6 @@ public:
     KApplicationPrivate(KApplication *q)
         : q(q)
         , componentData(KCmdLineArgs::aboutData())
-        , app_started_timer(0)
         , session_save(false)
 #if HAVE_X11
         , oldIceIOErrorHandler(0)
@@ -200,7 +197,6 @@ public:
 #endif
 
     void _k_x11FilterDestroyed();
-    void _k_checkAppStartedSlot();
     void _k_slot_KToolInvocation_hook(QStringList &, QByteArray &);
 
     void init(bool GUIenabled = true);
@@ -208,7 +204,6 @@ public:
 
     KApplication *q;
     KComponentData componentData;
-    QTimer *app_started_timer;
     bool session_save;
 
 #if HAVE_X11
@@ -296,37 +291,6 @@ void KApplication::removeX11EventFilter(const QWidget *filter)
         delete x11Filter;
         x11Filter = 0;
     }
-}
-
-bool KApplication::notify(QObject *receiver, QEvent *event)
-{
-    QEvent::Type t = event->type();
-    if (t == QEvent::Show && receiver->isWidgetType()) {
-        QWidget *w = static_cast< QWidget * >(receiver);
-#if HAVE_X11
-        if (w->isTopLevel() && !KStartupInfo::startupId().isEmpty()) { // TODO better done using window group leader?
-            KStartupInfo::setWindowStartupId(w->winId(), KStartupInfo::startupId());
-        }
-#endif
-        if (w->isTopLevel() && !(w->windowFlags() & Qt::X11BypassWindowManagerHint) && w->windowType() != Qt::Popup && !event->spontaneous()) {
-            if (d->app_started_timer == NULL) {
-                d->app_started_timer = new QTimer(this);
-                connect(d->app_started_timer, SIGNAL(timeout()), SLOT(_k_checkAppStartedSlot()));
-            }
-            if (!d->app_started_timer->isActive()) {
-                d->app_started_timer->setSingleShot(true);
-                d->app_started_timer->start(0);
-            }
-        }
-    }
-    return QApplication::notify(receiver, event);
-}
-
-void KApplicationPrivate::_k_checkAppStartedSlot()
-{
-#if HAVE_X11
-    KStartupInfo::handleAutoAppStartedSending();
-#endif
 }
 
 #if HAVE_X11
