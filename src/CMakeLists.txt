@@ -527,7 +527,7 @@ install( FILES kdebug.areas kdebugrc DESTINATION ${CONFIG_INSTALL_DIR} )
 
 configure_file(kdecore/all_languages.desktop ${CMAKE_CURRENT_BINARY_DIR}/all_languages @ONLY)
 install( FILES ${CMAKE_CURRENT_BINARY_DIR}/all_languages DESTINATION ${LOCALE_INSTALL_DIR} RENAME kf5_all_languages )
-install( FILES kdecore/entry.desktop  DESTINATION  ${LOCALE_INSTALL_DIR}/en_US )
+install( FILES kdecore/entry.desktop  DESTINATION  ${LOCALE_INSTALL_DIR}/en_US RENAME kf5_entry.desktop )
 
 
 install( FILES kdeui/40.colors kdeui/Oxygen.colors kdeui/Web.colors kdeui/Royal.colors kdeui/Rainbow.colors

@@ -398,7 +398,7 @@ void KLocalePrivate::initFormat()
 {
     KConfigGroup cg(config(), "Locale");
 
-    KConfig entryFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("l10n/%1/entry.desktop").arg(m_country)));
+    KConfig entryFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("l10n/%1/kf5_entry.desktop").arg(m_country)));
     entryFile.setLocale(m_language);
     KConfigGroup entry(&entryFile, "KCM Locale");
 
@@ -495,7 +495,7 @@ void KLocalePrivate::initFormat()
 
     //Grammatical
     //Precedence here is l10n / i18n / config file
-    KConfig langCfg(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("%1/entry.desktop").arg(m_language)));
+    KConfig langCfg(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("%1/kf5_entry.desktop").arg(m_language)));
     KConfigGroup lang(&langCfg, "KCM Locale");
 #define read3ConfigBoolEntry(key, default, save) \
     save = entry.readEntry(key, default); \
@@ -2707,7 +2707,7 @@ QStringList KLocalePrivate::installedLanguages()
     Q_FOREACH (const QString &localeDir, localeDirs) {
         const QStringList entries = QDir(localeDir).entryList(QDir::Dirs);
         Q_FOREACH (const QString &d, entries) {
-            if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/entry.desktop"))) {
+            if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/kf5_entry.desktop"))) {
                 languages.append(d);
             }
         }
@@ -2734,7 +2734,7 @@ QStringList KLocalePrivate::allCountriesList() const
     Q_FOREACH (const QString &localeDir, localeDirs) {
         const QStringList entries = QDir(localeDir).entryList(QDir::Dirs);
         Q_FOREACH (const QString &d, entries) {
-            if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/entry.desktop"))) {
+            if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/kf5_entry.desktop"))) {
                 countries.append(d);
             }
         }
@@ -2745,7 +2745,7 @@ QStringList KLocalePrivate::allCountriesList() const
 QString KLocalePrivate::countryCodeToName(const QString &country) const
 {
     QString countryName;
-    QString entryFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("l10n/") + country.toLower() + QLatin1String("/entry.desktop"));
+    QString entryFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("l10n/") + country.toLower() + QLatin1String("/kf5_entry.desktop"));
     if (!entryFile.isEmpty()) {
         KConfig cfg(entryFile);
         KConfigGroup cg(&cfg, "KCM Locale");
