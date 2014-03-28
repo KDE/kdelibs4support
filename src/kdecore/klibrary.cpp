@@ -26,8 +26,8 @@
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
 
-// exported for the benefit of KLibLoader
-KSERVICE_EXPORT QString findLibrary(const QString &name)
+// not static for the benefit of KLibLoader
+QString findLibrary(const QString &name)
 {
     QString libname = KPluginLoader::findPlugin(name);
 #ifdef Q_OS_WIN

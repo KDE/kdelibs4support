@@ -44,6 +44,7 @@ set(libkde4support_SRCS
     kdecore/kkernel_mac.cpp
     kdecore/kkernel_win.cpp
     kdecore/klibloader.cpp
+    kdecore/klibrary.cpp
     kdecore/ktemporaryfile.cpp
     kdecore/ktempdir.cpp
     kdecore/kmd5.cpp
@@ -402,6 +403,7 @@ install(FILES
     kdecore/kdebug.h
     kdecore/kde_file.h
     kdecore/klibloader.h
+    kdecore/klibrary.h
     kdecore/ktemporaryfile.h
     kdecore/ktempdir.h
     kdecore/kmd5.h
