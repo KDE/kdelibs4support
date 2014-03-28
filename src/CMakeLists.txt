@@ -304,7 +304,6 @@ PUBLIC
    KF5::Parts
 PRIVATE
    KF5::UnitConversion
-   KF5::ItemViews
    KF5::GlobalAccel
    Qt5::Svg
    Qt5::Test # for qtest_kde.cpp

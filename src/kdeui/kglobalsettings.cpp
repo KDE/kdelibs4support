@@ -58,7 +58,6 @@ static QRgb qt_colorref2qrgb(COLORREF col)
 #include <config-kde4support.h>
 #if HAVE_X11
 #include <X11/Xlib.h>
-#include <xcb/xcb.h>
 #ifdef HAVE_XCURSOR // TODO NOT DEFINED ANYMORE. Can we drop X cursor themes?
 #include <X11/Xcursor/Xcursor.h>
 #endif
