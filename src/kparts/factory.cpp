@@ -30,8 +30,8 @@
 using namespace KParts;
 
 Factory::Factory(QObject *parent)
-    : KPluginFactory(0, parent)
 {
+    setParent(parent);
 }
 
 Factory::~Factory()
