@@ -15,7 +15,7 @@ include(CMakeFindFrameworks)
 
 set(KF5_VERSION "4.98.0")
 set(REQUIRED_QT_VERSION 5.2.0)
-find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg Concurrent PrintSupport Designer)
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg PrintSupport Designer)
 
 find_package(KF5Completion ${KF5_VERSION} REQUIRED)
 find_package(KF5Config ${KF5_VERSION} REQUIRED)
@@ -103,8 +103,11 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kde4support_version.h
 add_subdirectory(cmake)
 add_subdirectory(docs)
 add_subdirectory(src)
-add_subdirectory(autotests)
-add_subdirectory(tests)
+
+if (BUILD_TESTING)
+    add_subdirectory(autotests)
+    add_subdirectory(tests)
+endif ()
 
 
 set (KDE_VERSION_MAJOR 4)

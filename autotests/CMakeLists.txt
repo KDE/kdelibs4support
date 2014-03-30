@@ -1,6 +1,8 @@
 
 include(ECMMarkAsTest)
 
+find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Concurrent)
+
 include_directories("${CMAKE_CURRENT_BINARY_DIR}/../../..")
 
 macro(KDE4SUPPORT_EXECUTABLE_TESTS)
