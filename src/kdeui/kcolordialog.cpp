@@ -701,7 +701,7 @@ KColorTable::readNamedColor(void)
 
                 const QColor color(red, green, blue);
                 if (color.isValid()) {
-                    const QString colorName(i18ndc("kdelibs_colors4", "color", name.toLatin1().data()));
+                    const QString colorName(i18ndc("kdelibs_colors5", "color", name.toLatin1().data()));
                     list.append(colorName);
                     d->m_namedColorMap[ colorName ] = color;
                 }
