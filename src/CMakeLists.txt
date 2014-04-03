@@ -1,4 +1,5 @@
 add_subdirectory(includes)
+add_subdirectory(kdebugdialog)
 
 if(NOT HAVE_NEPOMUK)
    set(KIO_NO_NEPOMUK TRUE)
