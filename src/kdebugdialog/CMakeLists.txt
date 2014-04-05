@@ -6,9 +6,9 @@ set(kdebugdialog_SRCS
 
 qt5_wrap_ui(kdebugdialog_SRCS kdebugdialog.ui)
 
-add_executable(kdebugdialog ${kdebugdialog_SRCS})
+add_executable(kdebugdialog5 ${kdebugdialog_SRCS})
 
-target_link_libraries(kdebugdialog Qt5::Widgets KF5::ItemViews KF5::KDE4Support)
+target_link_libraries(kdebugdialog5 Qt5::Widgets KF5::ItemViews KF5::KDE4Support)
 
-install(TARGETS kdebugdialog ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kdebugdialog5 ${INSTALL_TARGETS_DEFAULT_ARGS})
 

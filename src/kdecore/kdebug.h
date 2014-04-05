@@ -38,7 +38,7 @@
  * messages you see. Debug message printing is controlled by (un)defining
  * QT_NO_DEBUG when compiling your source. If QT_NO_DEBUG is defined then debug
  * messages are not printed by default but can still be enabled by runtime
- * configuration, e.g. via kdebugdialog or by editing kdebugrc.
+ * configuration, e.g. via kdebugdialog5 or by editing kdebugrc.
  *
  * You can also control what you see: see QT_MESSAGE_PATTERN in the QDebug documentation.
  * This is new in Qt 5.0 and replaces the KDE_DEBUG_* variables from KDE 4.x.
@@ -345,7 +345,7 @@ public:
      * Register a debug area dynamically.
      * @param areaName the name of the area
      * @param enabled whether debug output should be enabled by default
-     * (users can override this in kdebugdialog or with DisableAll=true in kdebugrc)
+     * (users can override this in kdebugdialog5 or with DisableAll=true in kdebugrc)
      * @return the area code that was allocated for this area
      *
      * Typical usage:
