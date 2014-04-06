@@ -36,14 +36,14 @@ class KGenericFactoryBase : public KPluginFactory
 {
 public:
     explicit KGenericFactoryBase(const char *componentName)
-        : KPluginFactory(componentName)
+        : KPluginFactory()
     {
         s_self = this;
         s_createComponentDataCalled = false;
     }
 
     explicit KGenericFactoryBase(const KAboutData *data)
-        : KPluginFactory(data->componentName().toUtf8().constData())
+        : KPluginFactory()
     {
         KAboutData::registerPluginData(*data);
         s_self = this;
