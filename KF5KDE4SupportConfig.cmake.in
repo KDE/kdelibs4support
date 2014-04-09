@@ -1,0 +1,33 @@
+@PACKAGE_INIT@
+
+find_dependency(KF5KDELibs4Support "@KF5_VERSION@")
+
+if(NOT TARGET KF5::KDE4Support)
+    add_library(KF5::KDE4Support @KDELibs4Support_LIB_TYPE@ IMPORTED)
+
+    # Because CMake won't let us alias an imported target, we have to
+    # create a new imported target and copy the properties we care about
+    set(_copy_props
+        INTERFACE_INCLUDE_DIRECTORIES
+        INTERFACE_LINK_LIBRARIES
+        IMPORTED_CONFIGURATIONS
+    )
+    get_target_property(_configs KF5::KDELibs4Support IMPORTED_CONFIGURATIONS)
+    foreach(_config ${_configs})
+        set(_copy_props
+            ${_copy_props}
+            IMPORTED_LINK_DEPENDENT_LIBRARIES_${_config}
+            IMPORTED_LOCATION_${_config}
+            IMPORTED_SONAME_${_config}
+        )
+    endforeach()
+    foreach(_prop ${_copy_props})
+        get_target_property(_temp_prop KF5::KDELibs4Support "${_prop}")
+        set_target_properties(KF5::KDE4Support PROPERTIES "${_prop}" "${_temp_prop}")
+    endforeach()
+
+    message(AUTHOR_WARNING
+"  The KF5KDE4Support package is deprecated: use
+  find_package(KF5KDELibs4Support) or
+  find_package(KF5 COMPONENTS KDELibs4Support) instead.")
+endif()

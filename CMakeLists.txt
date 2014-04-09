@@ -106,6 +106,37 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h
         DESTINATION ${INCLUDE_INSTALL_DIR}
         COMPONENT Devel)
 
+
+
+#
+# Compatibility file
+#
+set(CMAKECONFIG_COMPAT_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5KDE4Support")
+if(BUILD_SHARED_LIBS)
+    set(KDELibs4Support_LIB_TYPE SHARED)
+else()
+    set(KDELibs4Support_LIB_TYPE STATIC)
+endif()
+ecm_configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KF5KDE4SupportConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfig.cmake"
+    INSTALL_DESTINATION "${CMAKECONFIG_COMPAT_INSTALL_DIR}"
+)
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake"
+    VERSION ${KF5_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_COMPAT_INSTALL_DIR}"
+    COMPONENT Devel
+)
+
+
+
 add_subdirectory(cmake)
 add_subdirectory(docs)
 add_subdirectory(src)
