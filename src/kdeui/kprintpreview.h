@@ -21,7 +21,7 @@
 #ifndef KPRINTPREVIEW_H
 #define KPRINTPREVIEW_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QDialog>
 #include <QPrinter>
@@ -40,7 +40,7 @@ class KPrintPreviewPrivate;
  * preview.exec();
  * @endcode
  */
-class KDE4SUPPORT_EXPORT KPrintPreview : public QDialog
+class KDELIBS4SUPPORT_EXPORT KPrintPreview : public QDialog
 {
     Q_OBJECT
 

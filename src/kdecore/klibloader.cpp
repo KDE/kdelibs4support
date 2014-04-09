@@ -59,7 +59,7 @@ KLibLoader::~KLibLoader()
 
 extern QString makeLibName(const QString &libname);
 
-extern KDE4SUPPORT_DEPRECATED_EXPORT QString findLibrary(const QString &name);
+extern KDELIBS4SUPPORT_DEPRECATED_EXPORT QString findLibrary(const QString &name);
 
 #ifdef Q_OS_WIN
 // removes "lib" prefix, if present

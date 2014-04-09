@@ -20,7 +20,7 @@
 #ifndef KSYSTEMTRAY_H
 #define KSYSTEMTRAY_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <kcomponentdata.h>
 #include <QSystemTrayIcon>
@@ -57,7 +57,7 @@ class QMovie;
  *
  * @author Matthias Ettrich <ettrich@kde.org>
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT KSystemTrayIcon : public QSystemTrayIcon //krazy:exclude=qclasses
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KSystemTrayIcon : public QSystemTrayIcon //krazy:exclude=qclasses
 {
     Q_OBJECT
 public:

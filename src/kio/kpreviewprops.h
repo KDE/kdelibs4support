@@ -21,7 +21,7 @@
 #define __KPREVIEWPROPS_H__
 
 #include <kpropertiesdialog.h>
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 class KFileMetaPreview;
 
@@ -29,7 +29,7 @@ class KFileMetaPreview;
  * PreviewProps plugin
  * This plugin displays a preview of the given file
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KPreviewPropsPlugin : public KPropertiesDialogPlugin
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KPreviewPropsPlugin : public KPropertiesDialogPlugin
 {
     Q_OBJECT
 

@@ -21,7 +21,7 @@
 #ifndef KDIALOGBUTTONBOX_H
 #define KDIALOGBUTTONBOX_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QDialogButtonBox>
 
@@ -42,7 +42,7 @@ class KDialogButtonBoxPrivate;
  * @author Olivier Goffart <ogoffart@kde.org>
  **/
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KDialogButtonBox : public QDialogButtonBox
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KDialogButtonBox : public QDialogButtonBox
 {
     Q_OBJECT
 

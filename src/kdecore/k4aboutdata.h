@@ -24,9 +24,9 @@
 #ifndef K4ABOUTDATA_H
 #define K4ABOUTDATA_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
-#ifdef KDE4SUPPORT_NO_DEPRECATED_NOISE
+#ifdef KDELIBS4SUPPORT_NO_DEPRECATED_NOISE
 #warning "This file is deprecated."
 #endif
 
@@ -71,7 +71,7 @@ class K4AboutData;
  *
  * @bc KDE4
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutPerson
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutPerson
 {
     friend class K4AboutData;
 public:
@@ -194,7 +194,7 @@ class K4AboutLicense;
  * classes.
  * @author Espen Sand (espen@kde.org), David Faure (faure@kde.org)
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutData
 {
 public:
     /**
@@ -895,7 +895,7 @@ private:
  * lookup. This is necessary because the translation catalogs are usually not
  * yet initialized at the point where K4AboutData is constructed.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutLicense
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutLicense
 {
     friend class K4AboutData;
 public:

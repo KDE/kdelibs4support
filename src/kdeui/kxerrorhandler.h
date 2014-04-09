@@ -28,7 +28,7 @@
 #include <QWidget>
 #include <QWidgetList>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <X11/Xlib.h>
 
 class KXErrorHandlerPrivate;
@@ -56,7 +56,7 @@ class KXErrorHandlerPrivate;
  * @author Lubos Lunak <l.lunak@kde.org>
  * @short Handler for X errors
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KXErrorHandler
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KXErrorHandler
 {
 public:
     /** This function simply wraps QX11Info::display(), to make sure the public interface doesn't require QtX11Extras */
@@ -80,7 +80,7 @@ public:
      * @deprecated Use the variant with XErrorEvent.
      */
 #ifndef KDE_NO_DEPRECATED
-    explicit KXErrorHandler(bool (*handler)(int request, int error_code, unsigned long resource_id), Display *dpy = display()) KDE4SUPPORT_DEPRECATED;
+    explicit KXErrorHandler(bool (*handler)(int request, int error_code, unsigned long resource_id), Display *dpy = display()) KDELIBS4SUPPORT_DEPRECATED;
 #endif
     /**
      * This function returns true if the error flag is set (i.e. no custom handler

@@ -104,7 +104,7 @@ private:
  * yourlibrary is the library name that you compiled your KPart into.
  */
 template <class T>
-class KDE4SUPPORT_DEPRECATED GenericFactory : public GenericFactoryBase<T>
+class KDELIBS4SUPPORT_DEPRECATED GenericFactory : public GenericFactoryBase<T>
 {
 public:
     GenericFactory() { }

@@ -21,7 +21,7 @@
 #ifndef KUNIQUEAPP_H
 #define KUNIQUEAPP_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <kapplication.h>
 
 /**
@@ -53,7 +53,7 @@
  * @see KApplication
  * @author Preston Brown <pbrown@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KUniqueApplication : public KApplication
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KUniqueApplication : public KApplication
 {
     Q_OBJECT
 public:
@@ -193,7 +193,7 @@ public:
      * @internal
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED static void setHandleAutoStarted();
+    KDELIBS4SUPPORT_DEPRECATED static void setHandleAutoStarted();
 #endif
 
 private:

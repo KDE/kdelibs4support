@@ -27,8 +27,8 @@
  * @brief The file contains macros and functions related to the KDE version.
  */
 
-#include <kde4support_export.h>
-#include <kde4support_version.h>
+#include <kdelibs4support_export.h>
+#include <kdelibs4support_version.h>
 
 /**
  * @def KDE_VERSION_STRING
@@ -45,26 +45,26 @@
  * or for a protocol (e.g. http) be careful that it is appropriate.
  * (Fictional) example: "4.0.90 (>=20070101)"
  */
-#define KDE_VERSION_STRING KDE4SUPPORT_VERSION_STRING
+#define KDE_VERSION_STRING KDELIBS4SUPPORT_VERSION_STRING
 
 /**
  * @def KDE_VERSION_MAJOR
  * @ingroup KDEMacros
  * @brief Major version of KDE, at compile time
  */
-#define KDE_VERSION_MAJOR KDE4SUPPORT_VERSION_MAJOR
+#define KDE_VERSION_MAJOR KDELIBS4SUPPORT_VERSION_MAJOR
 /**
  * @def KDE_VERSION_MINOR
  * @ingroup KDEMacros
  * @brief Minor version of KDE, at compile time
  */
-#define KDE_VERSION_MINOR KDE4SUPPORT_VERSION_MINOR
+#define KDE_VERSION_MINOR KDELIBS4SUPPORT_VERSION_MINOR
 /**
  * @def KDE_VERSION_RELEASE
  * @ingroup KDEMacros
  * @brief Release version of KDE, at compile time
  */
-#define KDE_VERSION_RELEASE KDE4SUPPORT_VERSION_PATCH
+#define KDE_VERSION_RELEASE KDELIBS4SUPPORT_VERSION_PATCH
 
 /**
  * @ingroup KDEMacros
@@ -123,25 +123,25 @@ namespace KDE
  * installed when the program was compiled.
  * @return the version number, encoded in a single uint
  */
-KDE4SUPPORT_DEPRECATED_EXPORT unsigned int version();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT unsigned int version();
 /**
  * @brief Returns the major number of KDE's version, e.g.
  * 4 for KDE 4.1.2.
  * @return the major version number
  */
-KDE4SUPPORT_DEPRECATED_EXPORT unsigned int versionMajor();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT unsigned int versionMajor();
 /**
  * @brief Returns the minor number of KDE's version, e.g.
  * 1 for KDE 4.1.2.
  * @return the minor version number
  */
-KDE4SUPPORT_DEPRECATED_EXPORT unsigned int versionMinor();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT unsigned int versionMinor();
 /**
  * @brief Returns the release of KDE's version, e.g.
  * 2 for KDE 4.1.2.
  * @return the release number
  */
-KDE4SUPPORT_DEPRECATED_EXPORT unsigned int versionRelease();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT unsigned int versionRelease();
 /**
  * @brief Returns the KDE version as string, e.g. "4.1.2".
  *
@@ -149,7 +149,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT unsigned int versionRelease();
  * the version number of KDE at runtime.
  * @return the KDE version. You can keep the string forever
  */
-KDE4SUPPORT_DEPRECATED_EXPORT const char *versionString();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT const char *versionString();
 }
 
 #endif // KDELIBS_KDEVERSION_H

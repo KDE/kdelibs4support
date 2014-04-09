@@ -20,12 +20,12 @@
 #ifndef KFILEWRITEPLUGIN_H
 #define KFILEWRITEPLUGIN_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QtCore/QVariant>
 
 class QUrl;
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileWritePlugin : public QObject
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileWritePlugin : public QObject
 {
     Q_OBJECT
     friend class KFileWriterProvider;

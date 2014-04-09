@@ -19,9 +19,9 @@
 #ifndef KCMDLINEARGS_H
 #define KCMDLINEARGS_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
-#ifdef KDE4SUPPORT_NO_DEPRECATED_NOISE
+#ifdef KDELIBS4SUPPORT_NO_DEPRECATED_NOISE
 #warning "This file is deprecated."
 #endif
 
@@ -48,7 +48,7 @@ class KCmdLineOptionsPrivate;
  *
  * @see KCmdLineArgs for additional usage information
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE KCmdLineOptions
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KCmdLineOptions
 {
     friend class KCmdLineArgs;
     friend class KCmdLineArgsStatic;
@@ -281,7 +281,7 @@ class K4AboutData;
  *  @author Waldo Bastian
  *  @version 0.0.4
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KCmdLineArgs
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KCmdLineArgs
 {
     friend class KApplication;
     friend class KCmdLineArgsList;

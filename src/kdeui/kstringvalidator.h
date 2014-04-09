@@ -22,7 +22,7 @@
 #ifndef KSTRINGVALIDATOR_H
 #define KSTRINGVALIDATOR_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QStringList>
 #include <QValidator>
@@ -58,7 +58,7 @@
  *
  * @author Marc Mutz <mutz@kde.org>
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KStringListValidator : public QValidator
 {
     Q_OBJECT
     Q_PROPERTY(QStringList stringList READ stringList WRITE setStringList)

@@ -23,7 +23,7 @@
 #define KRESTRICTEDLINE_H
 
 #include <klineedit.h>
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 class KRestrictedLinePrivate;
 /**
@@ -47,7 +47,7 @@ class KRestrictedLinePrivate;
  *
  * @deprecated from KF 5.0. Use QLineEdit instead, with a QValidator
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KRestrictedLine : public KLineEdit
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KRestrictedLine : public KLineEdit
 {
     Q_OBJECT
     Q_PROPERTY(QString validChars READ validChars WRITE setValidChars)

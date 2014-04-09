@@ -21,7 +21,7 @@
 #ifndef KFILEMETAINFOITEM_P_H
 #define KFILEMETAINFOITEM_P_H
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #ifndef KDE_NO_DEPRECATED
 #include <predicateproperties.h>

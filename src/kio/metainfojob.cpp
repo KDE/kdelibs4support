@@ -154,12 +154,12 @@ void MetaInfoJob::slotMetaInfo(KIO::Job *, const QByteArray &data)
     d->succeeded = true;
 }
 
-KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const KFileItemList &items)
+KDELIBS4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const KFileItemList &items)
 {
     return new MetaInfoJob(items);
 }
 
-KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const QList<QUrl> &items)
+KDELIBS4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const QList<QUrl> &items)
 {
     KFileItemList fileItems;
     foreach (const QUrl &url, items) {

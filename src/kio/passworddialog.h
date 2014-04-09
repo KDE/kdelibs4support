@@ -20,7 +20,7 @@
 #ifndef kio_pass_word_dialog_h
 #define kio_pass_word_dialog_h
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <kpassworddialog.h>
 
 namespace KIO
@@ -34,7 +34,7 @@ namespace KIO
  * instead of directly instantiating this dialog.
  * @short dialog for requesting login and password from the end user
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT PasswordDialog : public KPasswordDialog
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT PasswordDialog : public KPasswordDialog
 {
     Q_OBJECT
 

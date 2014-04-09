@@ -24,7 +24,7 @@
 #include <kfilemetainfo.h>
 #include <qtest.h>
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <QtCore/QThread>
 

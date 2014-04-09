@@ -25,7 +25,7 @@
 #include "k3socketaddress.h"
 
 #include <config-network.h>
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>

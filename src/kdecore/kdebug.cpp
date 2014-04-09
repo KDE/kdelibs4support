@@ -101,7 +101,7 @@
 #include "kdebugdbusiface_p.h"
 #include <QMutex>
 
-KDE4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface = false;
+KDELIBS4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface = false;
 
 class KNoDebugStream: public QIODevice
 {

@@ -20,7 +20,7 @@
 #ifndef __kparts_factory_h__
 #define __kparts_factory_h__
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <kpluginfactory.h>
 #include <kcomponentdata.h>
 
@@ -39,7 +39,7 @@ class Part;
  *
  * @see KPluginFactory.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT Factory : public KPluginFactory
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT Factory : public KPluginFactory
 {
     Q_OBJECT
 public:

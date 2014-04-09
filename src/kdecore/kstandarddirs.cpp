@@ -38,7 +38,7 @@
 #include <kservice_export.h>
 
 #include <config-kstandarddirs.h>
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <errno.h>
@@ -1991,7 +1991,7 @@ static QStringList lookupProfiles(const QString &mapFile)
     return profiles;
 }
 
-extern KDE4SUPPORT_DEPRECATED_EXPORT bool kde_kiosk_admin;
+extern KDELIBS4SUPPORT_DEPRECATED_EXPORT bool kde_kiosk_admin;
 
 bool KStandardDirs::addCustomized(KConfig *config)
 {

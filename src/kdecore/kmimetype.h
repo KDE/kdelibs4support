@@ -20,7 +20,7 @@
 #ifndef __kmimetype_h__
 #define __kmimetype_h__
 
-#include "kde4support_export.h"
+#include "kdelibs4support_export.h"
 
 #include <QtCore/QStringList>
 #include <QtCore/QList>
@@ -47,7 +47,7 @@ class KMimeTypePrivate;
  * @see KServiceType
  * @deprecated use QMimeType
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE KMimeType : public QSharedData
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KMimeType : public QSharedData
 {
     Q_DECLARE_PRIVATE(KMimeType)
 public:
@@ -348,7 +348,7 @@ public:
      * Use is(), parentMimeTypes(), or allParentMimeTypes() instead of parentMimeType()
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED QString parentMimeType() const;
+    KDELIBS4SUPPORT_DEPRECATED QString parentMimeType() const;
 #endif
 
     /**

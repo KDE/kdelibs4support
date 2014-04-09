@@ -32,7 +32,7 @@
  *
  * Exported for kbuildsycoca, for now
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KMimeTypeRepository
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KMimeTypeRepository
 {
 public:
     /**

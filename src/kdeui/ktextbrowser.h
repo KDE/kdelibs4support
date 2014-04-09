@@ -21,7 +21,7 @@
 #ifndef KTEXTBROWSER_H
 #define KTEXTBROWSER_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QTextBrowser>
 
@@ -53,7 +53,7 @@
  * @see QTextBrowser
  */
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KTextBrowser : public QTextBrowser
 {
     Q_OBJECT
     Q_PROPERTY(bool notifyClick READ isNotifyClick WRITE setNotifyClick)

@@ -27,7 +27,7 @@
 #ifndef KFILEDIALOG_H
 #define KFILEDIALOG_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QDialog>
 #include <kfile.h>
 #include <qmimetype.h>
@@ -71,7 +71,7 @@ class KFileDialogPrivate;
  * Note that when the KDE QPA theme plugin is installed, the KFileWidget will then
  * be used automatically.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileDialog : public QDialog
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileDialog : public QDialog
 {
     Q_OBJECT
 

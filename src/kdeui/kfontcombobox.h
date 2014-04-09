@@ -20,7 +20,7 @@
 #ifndef KFONTCOMBOBOX_P_H
 #define KFONTCOMBOBOX_P_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <kcombobox.h>
 
@@ -48,7 +48,7 @@ class KFontComboBoxPrivate;
  *
  * @deprecated Since KF 5.0, use QFontComboBox instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KFontComboBox : public KComboBox
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFontComboBox : public KComboBox
 {
     Q_OBJECT
 

@@ -26,12 +26,12 @@
 
 #include <QUrl>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 /**
  * The file treeview offers a treeview on the filesystem.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileTreeView : public QTreeView // exported only for kfiletreeviewtest
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileTreeView : public QTreeView // exported only for kfiletreeviewtest
 {
     Q_OBJECT
 

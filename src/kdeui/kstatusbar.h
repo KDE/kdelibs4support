@@ -22,7 +22,7 @@
 #ifndef KSTATUSBAR_H
 #define KSTATUSBAR_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QStatusBar>
 
 class QObject;
@@ -56,7 +56,7 @@ class KStatusBarPrivate;
 
  *  @see KActionCollection
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KStatusBar : public QStatusBar
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KStatusBar : public QStatusBar
 {
     Q_OBJECT
 

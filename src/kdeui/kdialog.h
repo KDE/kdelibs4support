@@ -28,7 +28,7 @@ class QPushButton;
 class QMenu;
 class KDialogPrivate;
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <kconfiggroup.h>
 #include <kguiitem.h>
 
@@ -125,7 +125,7 @@ class KDialogPrivate;
  * @author Olivier Goffart <ogoffart at kde.org>
  * @author Tobias Koenig <tokoe@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KDialog : public QDialog //krazy:exclude=qclasses
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KDialog : public QDialog //krazy:exclude=qclasses
 {
     Q_OBJECT
     Q_ENUMS(ButtonCode)
@@ -355,7 +355,7 @@ public:
      * @deprecated use KWindowConfig::restoreDialogSize() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void restoreDialogSize(const KConfigGroup &config);
+    KDELIBS4SUPPORT_DEPRECATED void restoreDialogSize(const KConfigGroup &config);
 #endif
 
     /**
@@ -369,7 +369,7 @@ public:
      * @deprecated use KWindowConfig::saveDialogSize() instead
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void saveDialogSize(KConfigGroup &config, KConfigGroup::WriteConfigFlags options = KConfigGroup::Normal) const;
+    KDELIBS4SUPPORT_DEPRECATED void saveDialogSize(KConfigGroup &config, KConfigGroup::WriteConfigFlags options = KConfigGroup::Normal) const;
 #endif
 
     /**

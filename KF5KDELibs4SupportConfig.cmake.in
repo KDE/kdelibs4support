@@ -21,7 +21,7 @@ find_dependency(Qt5DBus @REQUIRED_QT_VERSION@)
 find_dependency(Qt5Xml @REQUIRED_QT_VERSION@)
 find_dependency(Qt5PrintSupport @REQUIRED_QT_VERSION@)
 
-include("${CMAKE_CURRENT_LIST_DIR}/KF5KDE4SupportTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/KF5KDELibs4SupportTargets.cmake")
 
 include("${CMAKE_CURRENT_LIST_DIR}/ECMQt4To5Porting.cmake")
 include("${CMAKE_CURRENT_LIST_DIR}/KDE4Macros.cmake")
@@ -41,19 +41,19 @@ remove_definitions(
 # This is not intended to be a list of what frameworks each of the kde libraries
 # was broken into. KDE4_KDECORE_LIBS contains more than what used to be in
 # the kdecore library. That is a feature. These things should be big ugly warts
-# in any project using them. The KDE4Support module is not for long term use and
+# in any project using them. The KDELibs4Support module is not for long term use and
 # it is not for 'making code build with both Qt/KDE 4 and Qt/KF 5' for medium or
-# long term. In trivial cases, no use of KDE4Support will be pushed to the repo
+# long term. In trivial cases, no use of KDELibs4Support will be pushed to the repo
 # of the code being ported.
 #
 # The use-sequence is this:
-# 1. When starting to port something to KF5, find and use KDE4Support.
+# 1. When starting to port something to KF5, find and use KDELibs4Support.
 # 2. Port the C++ code to Qt5/KF5.
-# 3. Port the buildsystem away from KDE4Support.
-# 4. Remove the find_package for KDE4Support.
+# 3. Port the buildsystem away from KDELibs4Support.
+# 4. Remove the find_package for KDELibs4Support.
 
 set(KDE4_KDECORE_LIBS
-  KF5::KDE4Support
+  KF5::KDELibs4Support
   Qt5::Network
   Qt5::DBus
   Qt5::Xml
@@ -78,9 +78,9 @@ set(KDE4_KPARTS_LIBS ${KDE4_KPARTS_LIBS})
 set(KDE4_KUTILS_LIBS ${KDE4_KUTILS_LIBS})
 set(KDE4_KFILE_LIBS ${KDE4_KFILE_LIBS})
 set(KDE4_KHTML_LIBS ${KDE4_KHTML_LIBS})
-set(KDE4_KDE4SUPPORT_LIBS  ${KDE4_KDECORE_LIBS})
+set(KDE4_KDELIBS4SUPPORT_LIBS  ${KDE4_KDECORE_LIBS})
 
-set(KDE4_INCLUDES $<TARGET_PROPERTY:KF5::KDE4Support,INTERFACE_INCLUDE_DIRECTORIES>)
+set(KDE4_INCLUDES $<TARGET_PROPERTY:KF5::KDELibs4Support,INTERFACE_INCLUDE_DIRECTORIES>)
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC" OR (WIN32 AND "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel"))
   set (KDE4_ENABLE_EXCEPTIONS -EHsc)
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")

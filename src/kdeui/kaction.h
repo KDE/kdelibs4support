@@ -26,7 +26,7 @@
 #ifndef KACTION_H
 #define KACTION_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <kauthaction.h>
 
 #include <QWidgetAction>
@@ -208,7 +208,7 @@ class KShortcut;
  *
  * @see KStandardAction
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KAction : public QWidgetAction
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KAction : public QWidgetAction
 {
     Q_OBJECT
 
@@ -423,7 +423,7 @@ public:
      * Use isGlobalShortcutEnabled() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool globalShortcutAllowed() const;
+    KDELIBS4SUPPORT_DEPRECATED bool globalShortcutAllowed() const;
 #endif
 
     /**
@@ -435,7 +435,7 @@ public:
      *                if any.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setGlobalShortcutAllowed(bool allowed, GlobalShortcutLoading loading = Autoloading);
+    KDELIBS4SUPPORT_DEPRECATED void setGlobalShortcutAllowed(bool allowed, GlobalShortcutLoading loading = Autoloading);
 #endif
 
     /**

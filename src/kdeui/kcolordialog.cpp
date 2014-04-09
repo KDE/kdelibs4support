@@ -32,7 +32,7 @@
 #include "kcolordialog.h"
 #include "kcolordialog_p.h"
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <stdio.h>
 #include <stdlib.h>

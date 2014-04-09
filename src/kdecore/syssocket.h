@@ -29,7 +29,7 @@
 #error syssocket.h must be included before ksocketbase.h!
 #endif
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 // needed for Solaris, but shouldn't hurt on other operating systems
 // and to avoid ifdef mess, rather include them for all

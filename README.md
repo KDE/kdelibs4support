@@ -1,4 +1,4 @@
-# KDE4 Support
+# KDELibs 4 Support
 
 ## Introduction
 
@@ -14,12 +14,12 @@ this.
 
 Note that some of the classes in this framework, especially
 KStandardDirs, may not work correctly unless any libraries and other
-software using the KDE4 Support framework are installed to the same
-location as KDE4Support, although it may be sufficient to set the
+software using the KDELibs 4 Support framework are installed to the same
+location as KDELibs4Support, although it may be sufficient to set the
 KDEDIRS environment variable correctly.
 
 ## Links
 
 - Mailing list: <https://mail.kde.org/mailman/listinfo/kde-frameworks-devel>
 - IRC channel: #kde-devel on Freenode
-- Git repository: <https://projects.kde.org/projects/frameworks/kde4support/repository>
+- Git repository: <https://projects.kde.org/projects/frameworks/kdelibs4support/repository>

@@ -11,7 +11,7 @@
 #include <QtCore/QStringList>
 #include <QtCore/QString>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 /**
  * Methods to get information about image format names and
@@ -65,7 +65,7 @@ enum Mode { Reading, Writing };
  * @deprecated Use QIMageReader/QImageWriter::supportedMimeTypes() and
  * QFileDialog::setMimeTypeFilters() instead.
  */
-KDE4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
 #endif
 
 #if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
@@ -76,7 +76,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
  *         is not supported
  * @deprecated Use QMimeType::name() instead().
  */
-KDE4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeType);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeType);
 #endif
 
 #if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
@@ -87,7 +87,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeType);
  * @return a list of the type ids
  * @deprecated Use QImageReader/QImageWriter::supportedImageFormats() instead.
  */
-KDE4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
 #endif
 
 #if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
@@ -98,7 +98,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
  * @return a list if MIME types of the supported formats
  * @deprecated Use QImageReader/QImageWriter::supportedMimeTypes() instead.
  */
-KDE4SUPPORT_DEPRECATED_EXPORT QStringList mimeTypes(Mode mode = Writing);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList mimeTypes(Mode mode = Writing);
 #endif
 
 #if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
@@ -109,7 +109,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QStringList mimeTypes(Mode mode = Writing);
  * @return true if the type is supported
  * @deprecated Use QImageReader/QImageWriter::supportedMimeTypes() instead.
  **/
-KDE4SUPPORT_DEPRECATED_EXPORT bool isSupported(const QString &mimeType, Mode mode = Writing);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT bool isSupported(const QString &mimeType, Mode mode = Writing);
 #endif
 }
 

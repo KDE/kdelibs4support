@@ -26,7 +26,7 @@
 #ifndef _KTZFILETIMEZONE_H
 #define _KTZFILETIMEZONE_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <ktimezone.h>
 
 #include <QtCore/QString>
@@ -47,7 +47,7 @@ class KTzfileTimeZoneSourcePrivate;
  * @ingroup timezones
  * @author David Jarvie <djarvie@kde.org>.
  */
-class KDE4SUPPORT_EXPORT KTzfileTimeZone : public KTimeZone  //krazy:exclude=dpointer (no d-pointer for KTimeZone derived classes)
+class KDELIBS4SUPPORT_EXPORT KTzfileTimeZone : public KTimeZone  //krazy:exclude=dpointer (no d-pointer for KTimeZone derived classes)
 {
 public:
     /**
@@ -85,7 +85,7 @@ private:
  * @ingroup timezones
  * @author David Jarvie <djarvie@kde.org>.
  */
-class KDE4SUPPORT_EXPORT KTzfileTimeZoneBackend : public KTimeZoneBackend  //krazy:exclude=dpointer (non-const d-pointer for KTimeZoneBackend-derived classes)
+class KDELIBS4SUPPORT_EXPORT KTzfileTimeZoneBackend : public KTimeZoneBackend  //krazy:exclude=dpointer (non-const d-pointer for KTimeZoneBackend-derived classes)
 {
 public:
     /** Implements KTzfileTimeZone::KTzfileTimeZone(). */
@@ -133,7 +133,7 @@ private:
  * @ingroup timezones
  * @author David Jarvie <djarvie@kde.org>.
  */
-class KDE4SUPPORT_EXPORT KTzfileTimeZoneSource : public KTimeZoneSource
+class KDELIBS4SUPPORT_EXPORT KTzfileTimeZoneSource : public KTimeZoneSource
 {
 public:
     /**
@@ -208,7 +208,7 @@ public:
     virtual bool hasTransitions() const;
 
 private:
-    // Enable this if you add KDE4SUPPORT_EXPORT to this class
+    // Enable this if you add KDELIBS4SUPPORT_EXPORT to this class
     //KTzfileTimeZoneDataPrivate * const d;
 };
 

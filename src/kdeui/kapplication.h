@@ -22,9 +22,9 @@
 #define KAPP_H
 
 // Version macros. Never put this further down.
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
-#ifdef KDE4SUPPORT_NO_DEPRECATED_NOISE
+#ifdef KDELIBS4SUPPORT_NO_DEPRECATED_NOISE
 #warning "This file is deprecated."
 #endif
 
@@ -73,7 +73,7 @@ class KApplicationPrivate;
 * @short Controls and provides information to all KDE applications.
 * @author Matthias Kalle Dalheimer <kalle@kde.org>
 */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE KApplication : public QApplication
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KApplication : public QApplication
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.KApplication")
@@ -127,7 +127,7 @@ public:
       * @see sessionConfig()
       * @deprecated use qApp->isSessionRestored()
       */
-    inline KDE4SUPPORT_DEPRECATED bool isRestored() const
+    inline KDELIBS4SUPPORT_DEPRECATED bool isRestored() const
     {
         return QApplication::isSessionRestored();
     }
@@ -181,7 +181,7 @@ public:
      * @return the application icon
      * @deprecated Use QApplication::windowIcon()
      */
-    inline KDE4SUPPORT_DEPRECATED QPixmap icon() const
+    inline KDELIBS4SUPPORT_DEPRECATED QPixmap icon() const
     {
         int size = IconSize(KIconLoader::Desktop);
         return windowIcon().pixmap(size, size);
@@ -192,7 +192,7 @@ public:
      * @return the application's mini icon
      * @deprecated Use QApplication::windowIcon()
      */
-    inline KDE4SUPPORT_DEPRECATED QPixmap miniIcon() const
+    inline KDELIBS4SUPPORT_DEPRECATED QPixmap miniIcon() const
     {
         int size = IconSize(KIconLoader::Small);
         return windowIcon().pixmap(size, size);
@@ -224,7 +224,7 @@ public:
      * @deprecated use QTemporaryFile, QSaveFile or KAutoSaveFile instead
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED QString tempSaveName(const QString &pFilename);
+    static KDELIBS4SUPPORT_DEPRECATED QString tempSaveName(const QString &pFilename);
 #endif
 
     /**
@@ -263,7 +263,7 @@ public:
      * @return A truly unpredictable number in the range [0, RAND_MAX)
      * @deprecated Use KRandom::random()
      */
-    static inline KDE4SUPPORT_DEPRECATED int random()
+    static inline KDELIBS4SUPPORT_DEPRECATED int random()
     {
         return KRandom::random();
     }
@@ -274,7 +274,7 @@ public:
      * @return the random string
      * @deprecated use KRandom::randomString() instead.
      */
-    static inline KDE4SUPPORT_DEPRECATED QString randomString(int length)
+    static inline KDELIBS4SUPPORT_DEPRECATED QString randomString(int length)
     {
         return KRandom::randomString(length);
     }
@@ -337,7 +337,7 @@ public:
     *
     * </code>
     */
-    static inline KDE4SUPPORT_DEPRECATED QString geometryArgument()
+    static inline KDELIBS4SUPPORT_DEPRECATED QString geometryArgument()
     {
         KCmdLineArgs *args = KCmdLineArgs::parsedArgs("kde");
         return args->isSet("geometry") ? args->getOption("geometry") : QString();

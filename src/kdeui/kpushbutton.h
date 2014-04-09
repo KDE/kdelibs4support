@@ -26,7 +26,7 @@
 
 #include <kauthaction.h>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 class QDrag;
 class QMenu;
@@ -42,7 +42,7 @@ class QMenu;
  *
  * @author Carsten Pfeiffer <pfeiffer@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KPushButton : public QPushButton
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KPushButton : public QPushButton
 {
     Q_OBJECT
     Q_PROPERTY(bool isDragEnabled READ isDragEnabled WRITE setDragEnabled)

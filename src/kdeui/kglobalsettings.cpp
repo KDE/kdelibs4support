@@ -55,7 +55,7 @@ static QRgb qt_colorref2qrgb(COLORREF col)
     return qRgb(GetRValue(col), GetGValue(col), GetBValue(col));
 }
 #endif
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 #if HAVE_X11
 #include <X11/Xlib.h>
 #ifdef HAVE_XCURSOR // TODO NOT DEFINED ANYMORE. Can we drop X cursor themes?

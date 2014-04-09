@@ -18,7 +18,7 @@
 
 #include "kcmdlineargs.h"
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <sys/param.h>
 

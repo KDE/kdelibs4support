@@ -20,7 +20,7 @@
 #ifndef PREDICATEPROPERTIES_H
 #define PREDICATEPROPERTIES_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QtCore/QSharedData>
 #include <QtCore/QVariant>
 class QValidator;
@@ -33,12 +33,12 @@ class QValidator;
  *
  * @deprecated use Nepomuk::Types::Property instead
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT PredicateProperties
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT PredicateProperties
 {
     friend class PredicatePropertyProvider;
 public:
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED PredicateProperties(const QString &predicate = QString());
+    KDELIBS4SUPPORT_DEPRECATED PredicateProperties(const QString &predicate = QString());
 #endif
     PredicateProperties(const PredicateProperties &p);
     ~PredicateProperties();

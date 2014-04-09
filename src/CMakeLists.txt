@@ -36,7 +36,7 @@ add_subdirectory( kssl/kssl )
 add_subdirectory( kssl/kcm )
 add_subdirectory( kio/imageformats )
 
-set(libkde4support_SRCS
+set(libkdelibs4support_SRCS
     kdecore/k4aboutdata.cpp
     kdecore/kcomponentdata.cpp
     kdecore/kdebug.cpp
@@ -189,7 +189,7 @@ set(libkde4support_SRCS
 )
 
 if (NOT KIO_NO_NEPOMUK)
-    set(libkde4support_SRCS ${libkde4support_SRCS}
+    set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS}
         kio/kfilemetadatareader.cpp
         kio/kfilemetadatareaderprocess.cpp
         kio/kfilemetadataprovider.cpp
@@ -197,30 +197,30 @@ if (NOT KIO_NO_NEPOMUK)
 endif ()
 
 if (X11_FOUND)
-   set(libkde4support_SRCS ${libkde4support_SRCS} kdeui/kxerrorhandler.cpp )
-   list(APPEND libkde4support_OPTIONAL_LIBS Qt5::X11Extras ${X11_LIBRARIES})
+   set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS} kdeui/kxerrorhandler.cpp )
+   list(APPEND libkdelibs4support_OPTIONAL_LIBS Qt5::X11Extras ${X11_LIBRARIES})
 endif ()
 
 if (WIN32)
-    set(libkde4support_SRCS ${libkde4support_SRCS}
+    set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS}
                             kdecore/klockfile_win.cpp
                             kdecore/kde_file_win.cpp
                             kdecore/ktimezone_win.cpp
                             kdecore/klocale_win.cpp
                             )
 else()
-    set(libkde4support_SRCS ${libkde4support_SRCS} kdecore/klockfile_unix.cpp)
+    set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS} kdecore/klockfile_unix.cpp)
 endif ()
 
 if (APPLE)
-    set(libkde4support_SRCS ${libkde4support_SRCS}
+    set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS}
                             kdecore/klocale_mac.cpp
                             )
-    set(libkde4support_OPTIONAL_LIBS ${CARBON_LIBRARY})
+    set(libkdelibs4support_OPTIONAL_LIBS ${CARBON_LIBRARY})
 endif()
 
 if (UNIX)
-    set(libkde4support_SRCS ${libkde4support_SRCS}
+    set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS}
                             kdecore/klocale_unix.cpp
                             )
 endif()
@@ -242,7 +242,7 @@ configure_file(config-network.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-network
 
 check_function_exists(mmap HAVE_MMAP)
 check_symbol_exists(posix_madvise "sys/mman.h" HAVE_MADVISE)
-configure_file(config-kde4support.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kde4support.h )
+configure_file(config-kdelibs4support.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kdelibs4support.h )
 check_include_files(sys/stat.h HAVE_SYS_STAT_H)
 check_include_files(sys/time.h HAVE_SYS_TIME_H)
 configure_file(kdecore/config-klockfile.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-klockfile.h)
@@ -257,32 +257,32 @@ if (__KDE_HAVE_GCC_VISIBILITY)
 endif()
 configure_file(kdemacros.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kdemacros.h )
 
-add_library(KF5KDE4Support ${libkde4support_SRCS})
-generate_export_header(KF5KDE4Support BASE_NAME KDE4Support EXPORT_FILE_NAME kde4support_export_internal.h)
-add_library(KF5::KDE4Support ALIAS KF5KDE4Support)
+add_library(KF5KDELibs4Support ${libkdelibs4support_SRCS})
+generate_export_header(KF5KDELibs4Support BASE_NAME KDELibs4Support EXPORT_FILE_NAME kdelibs4support_export_internal.h)
+add_library(KF5::KDELibs4Support ALIAS KF5KDELibs4Support)
 
-target_include_directories(KF5KDE4Support PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/../../..")
+target_include_directories(KF5KDELibs4Support PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/../../..")
 
-set(kde4support_INCLUDES
+set(kdelibs4support_INCLUDES
   "${CMAKE_CURRENT_SOURCE_DIR}/kdecore"
   "${CMAKE_CURRENT_SOURCE_DIR}/kdeui"
   "${CMAKE_CURRENT_SOURCE_DIR}/kio"
   "${CMAKE_CURRENT_SOURCE_DIR}/kssl"
   "${CMAKE_CURRENT_BINARY_DIR}/kssl" # ksslconfig.h
   "${CMAKE_CURRENT_SOURCE_DIR}/kparts"
-  "${CMAKE_CURRENT_BINARY_DIR}/.." # kde4support_version.h
+  "${CMAKE_CURRENT_BINARY_DIR}/.." # kdelibs4support_version.h
   "${CMAKE_SOURCE_DIR}"
 )
-target_include_directories(KF5KDE4Support PUBLIC "$<BUILD_INTERFACE:${kde4support_INCLUDES}>")
+target_include_directories(KF5KDELibs4Support PUBLIC "$<BUILD_INTERFACE:${kdelibs4support_INCLUDES}>")
 
-target_include_directories(KF5KDE4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDE4Support/KDE>")
+target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDELibs4Support>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDELibs4Support/KDE>")
 
 set(platformLinkLibraries)
 if (APPLE)
     set(platformLinkLibraries "-framework CoreFoundation -framework Carbon -lresolv")
 endif()
 
-target_link_libraries(KF5KDE4Support
+target_link_libraries(KF5KDELibs4Support
 PUBLIC
    Qt5::Widgets
    Qt5::DBus
@@ -309,7 +309,7 @@ PRIVATE
    Qt5::Svg
    Qt5::Test # for qtest_kde.cpp
    ${KIO_EXTRA_LIBS}
-   ${libkde4support_OPTIONAL_LIBS}
+   ${libkdelibs4support_OPTIONAL_LIBS}
    ${platformLinkLibraries}
 )
 
@@ -330,23 +330,24 @@ int main() { return 0; }
 " _OFFT_IS_64BIT)
 
 if (NOT _OFFT_IS_64BIT)
-  target_compile_definitions(KF5KDE4Support PUBLIC -D_FILE_OFFSET_BITS=64)
+  target_compile_definitions(KF5KDELibs4Support PUBLIC -D_FILE_OFFSET_BITS=64)
 endif ()
 
 
 if(NOT KIO_NO_NEPOMUK)
-    target_link_libraries(KF5KDE4Support PRIVATE ${KDE4_NEPOMUK_LIBRARY} nepomukquery nepomukutils)
+    target_link_libraries(KF5KDELibs4Support PRIVATE ${KDE4_NEPOMUK_LIBRARY} nepomukquery nepomukutils)
 endif()
 
 if(NOT KIO_NO_NEPOMUK)
     add_executable(kfilemetadatareader kio/kfilemetadatareaderprocess.cpp)
-    target_link_libraries(kfilemetadatareader ${KDE4_NEPOMUK_LIBRARY} nepomukutils KF5::CoreAddons KF5::I18n KF5::KDE4Support)
+    target_link_libraries(kfilemetadatareader ${KDE4_NEPOMUK_LIBRARY} nepomukutils KF5::CoreAddons KF5::I18n KF5::KDELibs4Support)
     install(TARGETS kfilemetadatareader ${INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
 
-set_target_properties(KF5KDE4Support PROPERTIES VERSION ${KDE4SUPPORT_VERSION_STRING}
-                                                SOVERSION ${KDE4SUPPORT_SOVERSION}
-                                                EXPORT_NAME KDE4Support
+set_target_properties(KF5KDELibs4Support PROPERTIES
+    VERSION ${KDELibs4SUPPORT_VERSION_STRING}
+    SOVERSION ${KDELibs4SUPPORT_SOVERSION}
+    EXPORT_NAME KDELibs4Support
 )
 
 
@@ -370,7 +371,7 @@ qt5_add_resources(kdedeprecated_PART_SRCS kdedeprecated.qrc)
 
 add_library(kdedeprecated MODULE ${kdedeprecated_PART_SRCS})
 
-target_link_libraries(kdedeprecated KF5::KDE4Support
+target_link_libraries(kdedeprecated KF5::KDELibs4Support
                                     Qt5::Widgets
                                     Qt5::Designer
                                     KF5::ConfigCore
@@ -393,8 +394,8 @@ install(TARGETS kdedeprecated  DESTINATION ${QT_PLUGIN_INSTALL_DIR}/designer )
 
 add_subdirectory(pics)
 
-install(TARGETS KF5KDE4Support
-        EXPORT KF5KDE4SupportTargets
+install(TARGETS KF5KDELibs4Support
+        EXPORT KF5KDELibs4SupportTargets
         ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
@@ -515,11 +516,11 @@ install(FILES
     kdeui/k4timezonewidget.h
     kdeui/kdeprintdialog.h
     kdeui/kprintpreview.h
-    kdecore/kde4support_export.h
-    ${CMAKE_CURRENT_BINARY_DIR}/kde4support_export_internal.h
+    kdecore/kdelibs4support_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_export_internal.h
     ${CMAKE_CURRENT_BINARY_DIR}/kdemacros.h
     kdecore/kdeversion.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support COMPONENT Devel
 )
 
 configure_file(kssl/ksslconfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
@@ -545,7 +546,7 @@ install(FILES
     kio/metainfojob.h
     kio/passworddialog.h
     kio/netaccess.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/kio COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/kio COMPONENT Devel
 )
 
 # kparts/*.h
@@ -553,7 +554,7 @@ install(FILES
     kparts/genericfactory.h
     kparts/factory.h
     kparts/listingextension.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/kparts COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/kparts COMPONENT Devel
 )
 
 # knewstuff3/*.h
@@ -565,7 +566,7 @@ install( FILES
     knewstuff3/knewstuffaction.h
     knewstuff3/knewstuffbutton.h
     knewstuff3/uploaddialog.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE4Support/knewstuff3 COMPONENT Devel
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/knewstuff3 COMPONENT Devel
 )
 
 install( FILES
@@ -592,7 +593,7 @@ if (UNIX)
    # write a cmake script file which creates the symlink
    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake "exec_program(${CMAKE_COMMAND} ARGS -E create_symlink fileshareset \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${LIBEXEC_INSTALL_DIR}/filesharelist\")\n")
    # and add it as post-install script to any of the installed targets, so it will be executed during "make install"
-   set_target_properties(KF5KDE4Support PROPERTIES POST_INSTALL_SCRIPT ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake)
+   set_target_properties(KF5KDELibs4Support PROPERTIES POST_INSTALL_SCRIPT ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake)
 endif ()
 
 ########## DocBookXML 4.2 compatibility
@@ -609,7 +610,7 @@ mark_as_advanced (DocBookXML4_DTD_DIR DocBookXML4_DTD_VERSION)
 
 set (_custom_dtd_kdex "customization/dtd/kdex.dtd")
 # The path to KDocTools resources is set as absolute, allowing the
-# installation of KDocTools and KDE4Support in different prefixes.
+# installation of KDocTools and KDELibs4Support in different prefixes.
 set (_KDocTools_customization_dir "${KDOCTOOLS_CUSTOMIZATION_DIR}")
 configure_file(${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex} )
 # WARNING: this is due to severe limitations on the windows platform to keep the dtd relocateable

@@ -20,7 +20,7 @@
 #ifndef ktemporaryfile_h
 #define ktemporaryfile_h
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include "kglobal.h"
 
 #include <QtCore/QTemporaryFile>
@@ -49,7 +49,7 @@ class KTemporaryFilePrivate;
  *
  * @see QTemporaryFile
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KTemporaryFile : public QTemporaryFile
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KTemporaryFile : public QTemporaryFile
 {
 public:
     /**

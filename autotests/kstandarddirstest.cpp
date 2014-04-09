@@ -133,7 +133,7 @@ void KStandarddirsTest::testChangeSaveLocation()
     QCOMPARE_PATHS(KStandardDirs::realPath(cData.saveLocation("config")), newSaveLoc);
 }
 
-static bool isKde4supportInstalled()
+static bool isKdeLibs4supportInstalled()
 {
     return QFile::exists(CMAKE_INSTALL_PREFIX "/bin/kf5-config");
 }
@@ -171,8 +171,8 @@ static bool oneEndsWith(const QStringList &lst, const QString &str)
 
 void KStandarddirsTest::testFindAllResources()
 {
-    if (!isKde4supportInstalled()) {
-        QSKIP("KDE4Support is not installed yet");
+    if (!isKdeLibs4supportInstalled()) {
+        QSKIP("KDELibs4Support is not installed yet");
     }
 
     const QStringList dbusInterfaceFiles = KGlobal::dirs()->findAllResources("data", "dbus-1/interfaces/");
@@ -264,8 +264,8 @@ void KStandarddirsTest::testFindAllResourcesNewDir()
 
 void KStandarddirsTest::testFindDirs()
 {
-    if (!isKde4supportInstalled()) {
-        QSKIP("KDE4Support is not installed yet");
+    if (!isKdeLibs4supportInstalled()) {
+        QSKIP("KDELibs4Support is not installed yet");
     }
 
     const QString t = KStandardDirs::locateLocal("data", "locale/");
@@ -288,9 +288,9 @@ void KStandarddirsTest::testFindExeLibExec()
 #ifndef Q_OS_UNIX
     QSKIP("non-UNIX system");
 #endif
-    if (!isKde4supportInstalled()) {
+    if (!isKdeLibs4supportInstalled()) {
         // KStandardDirs::findExe only finds libexec executables in the installed location
-        QSKIP("KDE4Support is not installed yet");
+        QSKIP("KDELibs4Support is not installed yet");
     }
 
     // findExe with a result in libexec
@@ -382,8 +382,8 @@ void KStandarddirsTest::testLocate()
 
 void KStandarddirsTest::testRelativeLocation()
 {
-    if (!isKde4supportInstalled()) {
-        QSKIP("KDE4Support is not installed yet");
+    if (!isKdeLibs4supportInstalled()) {
+        QSKIP("KDELibs4Support is not installed yet");
     }
 
     const QString file = "kdebugrc";
@@ -393,8 +393,8 @@ void KStandarddirsTest::testRelativeLocation()
 
 void KStandarddirsTest::testAddResourceType()
 {
-    if (!isKde4supportInstalled()) {
-        QSKIP("KDE4Support is not installed yet");
+    if (!isKdeLibs4supportInstalled()) {
+        QSKIP("KDELibs4Support is not installed yet");
     }
 
     QString ret = KStandardDirs::locate("widgets", "pics/kdialog.png");
@@ -561,8 +561,8 @@ void KStandarddirsTest::testSymlinkResolution()
 // To find multithreading bugs: valgrind --tool=helgrind ./kstandarddirstest testThreads
 void KStandarddirsTest::testThreads()
 {
-    if (!isKde4supportInstalled()) {
-        QSKIP("KDE4Support is not installed yet");
+    if (!isKdeLibs4supportInstalled()) {
+        QSKIP("KDELibs4Support is not installed yet");
     }
     if (!m_canFindKConfig) {
         QSKIP("KDEDIRS does not contain the KConfig prefix");

@@ -27,7 +27,7 @@
 #ifndef KSHAREDPTR_H
 #define KSHAREDPTR_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QSharedData>
 
@@ -35,7 +35,7 @@
  * @deprecated
  * Use QSharedData instead.
  */
-typedef KDE4SUPPORT_DEPRECATED QSharedData KShared;
+typedef KDELIBS4SUPPORT_DEPRECATED QSharedData KShared;
 
 /**
  * \class KSharedPtr ksharedptr.h <KSharedPtr>
@@ -63,7 +63,7 @@ typedef KDE4SUPPORT_DEPRECATED QSharedData KShared;
  *
  */
 template< class T >
-class KDE4SUPPORT_DEPRECATED KSharedPtr
+class KDELIBS4SUPPORT_DEPRECATED KSharedPtr
 {
 public:
     /**

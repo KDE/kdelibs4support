@@ -21,7 +21,7 @@
 #ifndef KSESSIONMANAGER_H
 #define KSESSIONMANAGER_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QList>
 #include <QSessionManager>
@@ -45,7 +45,7 @@
   @see QApplication::saveStateRequest
   @see QApplication::commitDataRequest
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KSessionManager
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KSessionManager
 {
 public:
     KSessionManager();

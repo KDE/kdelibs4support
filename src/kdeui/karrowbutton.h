@@ -19,7 +19,7 @@
 #ifndef karrowbutton_h
 #define karrowbutton_h
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QPushButton>
 
 class KArrowButtonPrivate;
@@ -38,7 +38,7 @@ class KArrowButtonPrivate;
  *
  * @author Frerich Raabe
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KArrowButton : public QPushButton
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KArrowButton : public QPushButton
 {
     Q_OBJECT
     /**

@@ -19,7 +19,7 @@
 #ifndef QTEST_KDE_H
 #define QTEST_KDE_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QtTest/QtTest>
 #include <stdlib.h>
 #include <assert.h>
@@ -45,7 +45,7 @@ namespace QTest
  *         \p false on timeout
  * \deprecated since 5.0, use QSignalSpy::wait(timeout)
  */
-KDE4SUPPORT_DEPRECATED_EXPORT bool kWaitForSignal(QObject *obj, const char *signal, int timeout = 0);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT bool kWaitForSignal(QObject *obj, const char *signal, int timeout = 0);
 } // namespace QTest
 
 // By default, unit tests get no gui.

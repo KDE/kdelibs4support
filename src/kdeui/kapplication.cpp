@@ -21,7 +21,7 @@
 #include "kapplication.h"
 
 #include "kdeversion.h"
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <QtCore/QDir>
 #include <QtCore/QFile>
@@ -374,7 +374,7 @@ void KApplicationPrivate::init(bool GUIenabled)
 
     KApplication::KApp = q;
 
-    extern KDE4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface;
+    extern KDELIBS4SUPPORT_DEPRECATED_EXPORT bool kde_kdebug_enable_dbus_interface;
     kde_kdebug_enable_dbus_interface = true;
 
     parseCommandLine();

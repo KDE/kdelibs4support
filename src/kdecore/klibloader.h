@@ -18,7 +18,7 @@
 #ifndef KLIBLOADER_H
 #define KLIBLOADER_H
 
-#include "kde4support_export.h"
+#include "kdelibs4support_export.h"
 
 #include "kglobal.h"
 
@@ -34,7 +34,7 @@
 
 #ifndef KDE_NO_DEPRECATED
 
-class KDE4SUPPORT_DEPRECATED_EXPORT K_EXPORT_COMPONENT_FACTORY_is_deprecated_use_KPluginFactory
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT K_EXPORT_COMPONENT_FACTORY_is_deprecated_use_KPluginFactory
 {
 };
 
@@ -50,7 +50,7 @@ class KDE4SUPPORT_DEPRECATED_EXPORT K_EXPORT_COMPONENT_FACTORY_is_deprecated_use
  * @see QLibrary, KPluginLoader
  * @author Torben Weis <weis@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KLibLoader : public QObject //krazy:exclude=dpointer (private class is kept as a global static)
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KLibLoader : public QObject //krazy:exclude=dpointer (private class is kept as a global static)
 {
     friend class KLibLoaderPrivate;
 
@@ -99,14 +99,14 @@ public:
      * @deprecated since 4.0, use KPluginLoader, KService::createInstance or
      * QLibrary instead.
      */
-    static KDE4SUPPORT_DEPRECATED KLibLoader *self();
+    static KDELIBS4SUPPORT_DEPRECATED KLibLoader *self();
 
     /**
      * @deprecated since 5.0, if the library is in a plugin directory, use
      * KPluginLoader::findPlugin(); if it is in a library directory, pass the
      * name directly to QLibrary.
      */
-    static KDE4SUPPORT_DEPRECATED QString findLibrary(const QString &libname, const KComponentData &cData = KGlobal::mainComponent());
+    static KDELIBS4SUPPORT_DEPRECATED QString findLibrary(const QString &libname, const KComponentData &cData = KGlobal::mainComponent());
 
 private:
     ~KLibLoader();

@@ -22,7 +22,7 @@
 #ifndef KNUMVALIDATOR_H
 #define KNUMVALIDATOR_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QValidator>
 
@@ -39,7 +39,7 @@ class QString;
   @author Glen Parker <glenebob@nwlink.com>
   @deprecated use QIntValidator (or fix KIntValidator for non-decimal bases)
 */
-class KDE4SUPPORT_DEPRECATED_EXPORT KIntValidator : public QValidator
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KIntValidator : public QValidator
 {
 
 public:
@@ -103,7 +103,7 @@ private:
    @deprecated use QDoubleValidator (and QLocale)
 **/
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KDoubleValidator : public QDoubleValidator
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KDoubleValidator : public QDoubleValidator
 {
     Q_OBJECT
     Q_PROPERTY(bool acceptLocalizedNumbers READ acceptLocalizedNumbers WRITE setAcceptLocalizedNumbers)

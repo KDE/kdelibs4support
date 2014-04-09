@@ -31,7 +31,7 @@ class QUrl;
 typedef QList<KFileMetaInfoItem> KFileMetaInfoItemList;
 
 class KFileMetaInfoGroupPrivate;
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoGroup
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoGroup
 {
 public:
     KFileMetaInfoGroup();
@@ -55,7 +55,7 @@ class KFileMetaInfoPrivate;
  * will be retrieved and stored in the instance. The data can be inspected
  * through KFileMetaInfoItem objects.
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfo
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaInfo
 {
 public:
     /**
@@ -139,20 +139,20 @@ public:
      * Deprecated
      **/
     QStringList supportedKeys() const;
-    KDE4SUPPORT_DEPRECATED_EXPORT friend QDataStream &operator >>(QDataStream &s, KFileMetaInfo &)
+    KDELIBS4SUPPORT_DEPRECATED_EXPORT friend QDataStream &operator >>(QDataStream &s, KFileMetaInfo &)
     ;
-    KDE4SUPPORT_DEPRECATED_EXPORT friend QDataStream &operator <<(QDataStream &s, const KFileMetaInfo &);
+    KDELIBS4SUPPORT_DEPRECATED_EXPORT friend QDataStream &operator <<(QDataStream &s, const KFileMetaInfo &);
     /**
      * Deprecated
      **/
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED KFileMetaInfoGroupList preferredGroups() const;
+    KDELIBS4SUPPORT_DEPRECATED KFileMetaInfoGroupList preferredGroups() const;
 #endif
     /**
      * Deprecated
      **/
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED KFileMetaInfoGroupList supportedGroups() const;
+    KDELIBS4SUPPORT_DEPRECATED KFileMetaInfoGroupList supportedGroups() const;
 #endif
     KFileMetaInfoGroupList groups() const;
     QStringList keys() const;

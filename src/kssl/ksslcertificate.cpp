@@ -40,7 +40,7 @@
 
 #include <sys/types.h>
 
-#include <config-kde4support.h> // HAVE_SYS_STAT_H
+#include <config-kdelibs4support.h> // HAVE_SYS_STAT_H
 
 #if HAVE_SYS_STAT_H
 #include <sys/stat.h>

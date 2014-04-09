@@ -171,7 +171,7 @@ KTzfileTimeZoneSource *KSystemTimeZonesPrivate::tzfileSource()
 }
 
 // for the benefit of KTimeZoneTest
-KDE4SUPPORT_EXPORT void k_system_time_zone_private_reset_config()
+KDELIBS4SUPPORT_EXPORT void k_system_time_zone_private_reset_config()
 {
     // Remove any old zones from the collection
     const KTimeZones::ZoneMap oldZones = KSystemTimeZonesPrivate::instance()->zones();

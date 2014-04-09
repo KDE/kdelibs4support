@@ -23,7 +23,7 @@
 #define KSTRINGHANDLER_DEPRECATED_H
 
 #include <QString>
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 namespace KStringHandler
 {
@@ -40,7 +40,7 @@ namespace KStringHandler
   @since 4.1
   @deprecated Should use QCollator instead
  */
-KDE4SUPPORT_DEPRECATED_EXPORT int naturalCompare(const QString &a, const QString &b, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int naturalCompare(const QString &a, const QString &b, Qt::CaseSensitivity caseSensitivity = Qt::CaseSensitive);
 }
 
 #endif

@@ -21,7 +21,7 @@
 #ifndef _KTIMEZONE_WINDOWS_H
 #define _KTIMEZONE_WINDOWS_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <ktimezone.h>
 #include <ksystemtimezone.h>
@@ -40,7 +40,7 @@ class KSystemTimeZoneSourceWindowsPrivate;
  * @ingroup timezones
  * @author Marc Mutz <mutz@kde.org>, Till Adam <adam@kde.org>.
  */
-class KDE4SUPPORT_EXPORT KSystemTimeZoneSourceWindows : public KSystemTimeZoneSource
+class KDELIBS4SUPPORT_EXPORT KSystemTimeZoneSourceWindows : public KSystemTimeZoneSource
 {
 public:
     /**
@@ -73,7 +73,7 @@ private:
  * @ingroup timezones
  * @author Marc Mutz <mutz@kde.org>, Till Adam <adam@kde.org>.
  */
-class KDE4SUPPORT_EXPORT KSystemTimeZoneWindows : public KTimeZone  //krazy:exclude=dpointer (no d-pointer for KTimeZone derived classes)
+class KDELIBS4SUPPORT_EXPORT KSystemTimeZoneWindows : public KTimeZone  //krazy:exclude=dpointer (no d-pointer for KTimeZone derived classes)
 {
 public:
     /**

@@ -22,7 +22,7 @@
 
 #include "knuminput.h"
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 #if HAVE_LIMITS_H
 #include <limits.h>
 #endif

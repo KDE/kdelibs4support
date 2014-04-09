@@ -32,7 +32,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 static int s_umask;
 

@@ -19,7 +19,7 @@
 #ifndef KHBOX_H
 #define KHBOX_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QFrame>
 
@@ -37,7 +37,7 @@ class QChildEvent;
  *
  * @see KVBox
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KHBox : public QFrame
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KHBox : public QFrame
 {
     Q_OBJECT
 

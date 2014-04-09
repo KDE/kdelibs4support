@@ -22,7 +22,7 @@
 #ifndef KBUTTONGROUP_H
 #define KBUTTONGROUP_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QGroupBox>
 
 class QAbstractButton;
@@ -40,7 +40,7 @@ class QAbstractButton;
  *
  * @author Pino Toscano <toscano.pino@tiscali.it>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KButtonGroup : public QGroupBox
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KButtonGroup : public QGroupBox
 {
     Q_OBJECT
 

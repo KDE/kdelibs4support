@@ -28,7 +28,7 @@
 #include "k3socketdevice.h" //krazy:exclude=includes (KDE3 compat: not worth fixing)
 
 #include <config-network.h>
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <QMap>
 

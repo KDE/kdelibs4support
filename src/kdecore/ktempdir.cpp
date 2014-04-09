@@ -18,7 +18,7 @@
  **/
 
 #include "ktempdir.h"
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 #include <sys/types.h>
 
 #if HAVE_SYS_STAT_H

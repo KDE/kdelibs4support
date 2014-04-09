@@ -18,7 +18,7 @@
 #ifndef KLIBRARY_H
 #define KLIBRARY_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QLibrary>
 
@@ -34,7 +34,7 @@ class KPluginFactory;
  *
  * @deprecated since 5.0, use QLibrary and KPluginLoader::findPlugin() instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KLibrary : public QLibrary
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KLibrary : public QLibrary
 {
     Q_OBJECT
     Q_PROPERTY(QString fileName READ fileName WRITE setFileName)
@@ -53,7 +53,7 @@ public:
     /**
      * @deprecated since 4.0, use KPluginLoader::factory
      */
-    KDE4SUPPORT_DEPRECATED KPluginFactory *factory(const char *factoryname = 0)
+    KDELIBS4SUPPORT_DEPRECATED KPluginFactory *factory(const char *factoryname = 0)
     {
         // there is nothing sensible we can do: kdelibs 4 plugins depended on
         // support from Qt that no longer exists
@@ -63,7 +63,7 @@ public:
     /**
      * @deprecated since 5.0, use QLibrary::resolve
      */
-    KDE4SUPPORT_DEPRECATED void_function_ptr resolveFunction(const char *name)
+    KDELIBS4SUPPORT_DEPRECATED void_function_ptr resolveFunction(const char *name)
     {
         return resolve(name);
     }

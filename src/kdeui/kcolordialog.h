@@ -31,14 +31,14 @@
 #include <QTableWidget>
 #include <kcolorchoosermode.h>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 /**
 * A table of editable color cells.
 *
 * @author Martin Jones <mjones@kde.org>
 */
-class KDE4SUPPORT_DEPRECATED_EXPORT KColorCells : public QTableWidget
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KColorCells : public QTableWidget
 {
     Q_OBJECT
     Q_PROPERTY(bool acceptDrags READ acceptDrags WRITE setAcceptDrags)
@@ -114,7 +114,7 @@ private:
  *
  * \image html kcolorpatch.png "KDE Color Patch"
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KColorPatch : public QFrame
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KColorPatch : public QFrame
 {
     Q_OBJECT
     Q_PROPERTY(QColor color READ color WRITE setColor)
@@ -208,7 +208,7 @@ private:
  * the currently selected color is a KColorPatch.
  *
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KColorDialog : public KDialog
 {
     Q_OBJECT
     Q_PROPERTY(bool isAlphaChannelEnabled READ isAlphaChannelEnabled WRITE setAlphaChannelEnabled)

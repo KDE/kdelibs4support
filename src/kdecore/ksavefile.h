@@ -21,7 +21,7 @@
 #ifndef KSAVEFILE_H
 #define KSAVEFILE_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include "kbackup.h"
 
@@ -95,7 +95,7 @@
  *
  * @deprecated since 5.0, port to QSaveFile.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KSaveFile : public QFile
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KSaveFile : public QFile
 {
 public:
     /**

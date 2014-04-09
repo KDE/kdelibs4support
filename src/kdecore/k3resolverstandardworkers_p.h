@@ -41,7 +41,7 @@ namespace KNetwork
 {
 namespace Internal
 {
-extern void initStandardWorkers() KDE4SUPPORT_NO_EXPORT;
+extern void initStandardWorkers() KDELIBS4SUPPORT_NO_EXPORT;
 
 /**
  * @internal

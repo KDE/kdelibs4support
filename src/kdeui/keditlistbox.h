@@ -20,7 +20,7 @@
 #ifndef KEDITLISTBOX_H
 #define KEDITLISTBOX_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QGroupBox>
 #include <QStringListModel>
@@ -37,7 +37,7 @@ class KEditListBoxPrivate;
  *
  * @deprecated since 5.0 in favor of KEditListWidget embedded in a QGroupBox.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KEditListBox : public QGroupBox
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KEditListBox : public QGroupBox
 {
     Q_OBJECT
 
@@ -51,7 +51,7 @@ public:
     /**
      * Custom editor class
      **/
-    class KDE4SUPPORT_DEPRECATED CustomEditor
+    class KDELIBS4SUPPORT_DEPRECATED CustomEditor
     {
     public:
         CustomEditor();
@@ -116,7 +116,7 @@ public:
      * it will be checked if you press the Add-button. It is not
      * possible to enter items twice into the listbox.
      */
-    explicit KDE4SUPPORT_DEPRECATED KEditListBox(QWidget *parent, const char *name,
+    explicit KDELIBS4SUPPORT_DEPRECATED KEditListBox(QWidget *parent, const char *name,
             bool checkAtEntering = false, Buttons buttons = All);
     /**
      * Create an editable listbox.
@@ -126,7 +126,7 @@ public:
      * The same as the other constructor, additionally it takes
      * @p title, which will be the title of the frame around the listbox.
      */
-    explicit KDE4SUPPORT_DEPRECATED KEditListBox(const QString &title, QWidget *parent,
+    explicit KDELIBS4SUPPORT_DEPRECATED KEditListBox(const QString &title, QWidget *parent,
             const char *name, bool checkAtEntering = false,
             Buttons buttons = All);
 

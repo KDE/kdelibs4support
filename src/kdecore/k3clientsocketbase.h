@@ -28,7 +28,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include "k3socketbase.h"
 #include "k3resolver.h"
 
@@ -48,7 +48,7 @@ class KClientSocketBasePrivate;
  * @author Thiago Macieira <thiago@kde.org>
  * @deprecated Use KSocketFactory or KLocalSocket instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KClientSocketBase : public KActiveSocketBase
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KClientSocketBase : public KActiveSocketBase
 {
     Q_OBJECT
 

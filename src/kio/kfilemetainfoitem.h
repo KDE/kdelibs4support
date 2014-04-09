@@ -22,7 +22,7 @@
 #ifndef KFILEMETAINFOITEM_H
 #define KFILEMETAINFOITEM_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QtCore/QSharedData>
 
 class KFileWritePlugin;
@@ -30,7 +30,7 @@ class QVariant;
 class PredicateProperties;
 
 class KFileMetaInfoItemPrivate;
-class KDE4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoItem
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaInfoItem
 {
     friend class KFileMetaInfo;
     friend class KFileMetaInfoPrivate;
@@ -90,7 +90,7 @@ public:
      * @deprecated
      **/
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED const PredicateProperties &properties() const;
+    KDELIBS4SUPPORT_DEPRECATED const PredicateProperties &properties() const;
 #endif
     /**
      * Localized name of the predicate.

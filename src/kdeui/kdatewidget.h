@@ -20,7 +20,7 @@
 #ifndef KDATEWIDGET_H
 #define KDATEWIDGET_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QWidget>
 
@@ -41,7 +41,7 @@ class QDate;
  *
  * @author Waldo Bastian <bastian@kde.org>, John Layt <john@layt.net>
  */
-class KDE4SUPPORT_EXPORT KDateWidget : public QWidget
+class KDELIBS4SUPPORT_EXPORT KDateWidget : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(QDate date READ date WRITE setDate NOTIFY changed USER true)

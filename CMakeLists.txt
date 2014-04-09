@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 
-project(KDE4Support)
+project(KDELibs4Support)
 
 find_package(ECM 0.0.12 REQUIRED NO_MODULE)
 
@@ -52,9 +52,9 @@ endif ()
 include(ECMSetupVersion)
 include(ECMMarkNonGuiExecutable)
 
-ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KDE4SUPPORT
-                                 VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kde4support_version.h"
-                                 PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake"
+ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KDELIBS4SUPPORT
+                                 VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h"
+                                 PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfigVersion.cmake"
                                  SOVERSION 5)
 
 # QUrl
@@ -67,38 +67,44 @@ remove_definitions(-DQT_USE_QSTRINGBUILDER)
 
 # This one won't be needed when CMake 2.8.13 is depended on.
 add_definitions(
-  -DKDE4SUPPORT_DEPRECATED= # if KDE4SUPPORT_DEPRECATED is already defined the other deprecated macros won't be defined
-  -DKDE4SUPPORT_DEPRECATED_NO_EXPORT=KDE4SUPPORT_NO_EXPORT
-  -DKDE4SUPPORT_DEPRECATED_EXPORT=KDE4SUPPORT_EXPORT
+    -DKDELIBS4SUPPORT_DEPRECATED= # if KDELIBS4SUPPORT_DEPRECATED is already defined the other deprecated macros won't be defined
+    -DKDELIBS4SUPPORT_DEPRECATED_NO_EXPORT=KDELIBS4SUPPORT_NO_EXPORT
+    -DKDELIBS4SUPPORT_DEPRECATED_EXPORT=KDELIBS4SUPPORT_EXPORT
 )
 
 add_executable(kf5-config kde-config.cpp )
 ecm_mark_nongui_executable(kf5-config)
 
-target_link_libraries(kf5-config KF5::CoreAddons KF5::I18n KF5::ConfigCore KF5::KDE4Support)
+target_link_libraries(kf5-config KF5::CoreAddons KF5::I18n KF5::ConfigCore KF5::KDELibs4Support)
 target_include_directories(kf5-config PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/../..")
 
-install(TARGETS kf5-config EXPORT KF5KDE4SupportTargets ${INSTALL_TARGETS_DEFAULT_ARGS} ) # put this for now into the export set KDE4SupportTargets, so that it exists and is not empty
+install(TARGETS kf5-config EXPORT KF5KDELibs4SupportTargets ${INSTALL_TARGETS_DEFAULT_ARGS} ) # put this for now into the export set KDELibs4SupportTargets, so that it exists and is not empty
 
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5KDE4Support")
+set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5KDELibs4Support")
 
 include(ECMPackageConfigHelpers)
 
-ecm_configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/KF5KDE4SupportConfig.cmake.in"
-                              "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfig.cmake"
-                              INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-                              )
+ecm_configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KF5KDELibs4SupportConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+)
 
-install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfig.cmake"
-               "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake"
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"  COMPONENT Devel )
+install(FILES  "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfig.cmake"
+               "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfigVersion.cmake"
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel)
 
-install(EXPORT KF5KDE4SupportTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5KDE4SupportTargets.cmake NAMESPACE KF5:: )
+install(EXPORT KF5KDELibs4SupportTargets
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        FILE KF5KDELibs4SupportTargets.cmake
+        NAMESPACE KF5::)
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kde4support_version.h
-        DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel )
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h
+        DESTINATION ${INCLUDE_INSTALL_DIR}
+        COMPONENT Devel)
 
 add_subdirectory(cmake)
 add_subdirectory(docs)
@@ -141,7 +147,11 @@ install( FILES ${CMAKE_CURRENT_BINARY_DIR}/KDELibsDependencies.cmake
 install(CODE "set(EXPORT_FILES KDELibs4LibraryTargets.cmake)"
         CODE "set(EXPORT_INSTALL_DIR \"${CMAKECONFIG_INSTALL_DIR}\")"
         SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules/check_installed_exports_file.cmake" )
-install( EXPORT KF5KDE4SupportTargets DESTINATION ${CMAKECONFIG_INSTALL_DIR} NAMESPACE ${KDE4_TARGET_PREFIX} FILE KF5KDELibs4LibraryTargets.cmake  COMPONENT Devel)
+install(EXPORT KF5KDELibs4SupportTargets
+        DESTINATION ${CMAKECONFIG_INSTALL_DIR}
+        NAMESPACE ${KDE4_TARGET_PREFIX}
+        FILE KF5KDELibs4LibraryTargets.cmake
+        COMPONENT Devel)
 
 feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

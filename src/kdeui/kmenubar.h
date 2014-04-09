@@ -22,7 +22,7 @@
 #ifndef KMENUBAR_H
 #define KMENUBAR_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QMenuBar>
 
@@ -35,7 +35,7 @@
  * @author Daniel "Mosfet" Duley.
  */
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KMenuBar : public QMenuBar
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KMenuBar : public QMenuBar
 {
     Q_OBJECT
     Q_PROPERTY(bool topLevelMenu READ isTopLevelMenu WRITE setTopLevelMenu)

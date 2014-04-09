@@ -24,7 +24,7 @@
 #ifdef Q_OS_WIN
 
 #include <windows.h>
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 /**
  * @short Windows-specific functions needed in kdecore
@@ -37,26 +37,26 @@
 /**
  \return a value from MS Windows native registry for shell folder \a folder.
 */
-KDE4SUPPORT_DEPRECATED_EXPORT QString getWin32ShellFoldersPath(const QString &folder);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getWin32ShellFoldersPath(const QString &folder);
 
 /**
  Shows native MS Windows file property dialog for a file \a fileName.
  Return true on success. Only works for local absolute paths.
  Used by KPropertiesDialog, if possible.
 */
-KDE4SUPPORT_DEPRECATED_EXPORT bool showWin32FilePropertyDialog(const QString &fileName);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT bool showWin32FilePropertyDialog(const QString &fileName);
 
 /**
  \return two-letter locale name (like "en" or "pl") taken from MS Windows native registry.
  Useful when we don't want to rely on KSyCoCa.
  Used e.g. by kbuildsycoca application.
 */
-KDE4SUPPORT_DEPRECATED_EXPORT QByteArray getWin32LocaleName();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QByteArray getWin32LocaleName();
 
 /**
  \return true when the file is an executable on windows.
 */
-KDE4SUPPORT_DEPRECATED_EXPORT bool isExecutable(const QString &filename);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT bool isExecutable(const QString &filename);
 
 /**
  \return a value from MS Windows native registry.

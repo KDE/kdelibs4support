@@ -23,7 +23,7 @@
 
 #ifdef Q_OS_MACX
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QtCore/QString>
 
 #include <CoreFoundation/CFString.h>
@@ -45,17 +45,17 @@ QString convert_CFString_to_QString(CFStringRef str);
 /**
  * Fork and reexec to work around CoreFoundation issues.
   */
-KDE4SUPPORT_DEPRECATED_EXPORT void mac_fork_and_reexec_self();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT void mac_fork_and_reexec_self();
 
 /**
   * Initialize D-Bus Mac-specific stuff if necessary.
   */
-KDE4SUPPORT_DEPRECATED_EXPORT void mac_initialize_dbus();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT void mac_initialize_dbus();
 
 /**
   * Get the application name.
   */
-KDE4SUPPORT_DEPRECATED_EXPORT QString mac_app_filename();
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QString mac_app_filename();
 
 #endif  // Q_OS_MACX
 #endif  // KKERNEL_MAC_H

@@ -21,7 +21,7 @@
 
 #include "kmenubar.h"
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #include <stdio.h>
 

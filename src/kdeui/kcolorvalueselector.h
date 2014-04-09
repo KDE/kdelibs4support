@@ -23,10 +23,10 @@
 
 #include "kselector.h"
 #include "kcolorchoosermode.h"
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <QPixmap>
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KColorValueSelector : public KSelector
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KColorValueSelector : public KSelector
 {
     Q_OBJECT
     Q_PROPERTY(int hue READ hue WRITE setHue)

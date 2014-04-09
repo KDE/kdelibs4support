@@ -21,7 +21,7 @@
 #ifndef KLOCALE_H
 #define KLOCALE_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <ksharedconfig.h>
 
 // Include for providing source code compatibility
@@ -66,7 +66,7 @@ class KLocalePrivate;
   * Hans Petter Bieker <bieker@kde.org>, Lukas Tinkl <lukas.tinkl@suse.cz>
   * @short class for supporting locale settings
   */
-class KDE4SUPPORT_EXPORT KLocale
+class KDELIBS4SUPPORT_EXPORT KLocale
 {
 public:
     /**
@@ -329,7 +329,7 @@ public:
      *
      * @return Default number of fractional digits used by locale.
      */
-    KDE4SUPPORT_DEPRECATED int fracDigits() const;
+    KDELIBS4SUPPORT_DEPRECATED int fracDigits() const;
 
     /**
      * @since 4.4
@@ -627,7 +627,7 @@ public:
      *
      * @return If nouns are declined
      */
-    KDE4SUPPORT_DEPRECATED bool nounDeclension() const;
+    KDELIBS4SUPPORT_DEPRECATED bool nounDeclension() const;
 
     //KDE5 move to KDateTime namespace
     /**
@@ -988,7 +988,7 @@ public:
      * @see calendarSystem()
      * @return the name of the calendar system
      */
-    KDE4SUPPORT_DEPRECATED QString calendarType() const;
+    KDELIBS4SUPPORT_DEPRECATED QString calendarType() const;
 
     /**
      * @since 4.6
@@ -1011,7 +1011,7 @@ public:
      * @see setCalendarSystem()
      * @param calendarType the name of the calendar type
      */
-    KDE4SUPPORT_DEPRECATED void setCalendar(const QString &calendarType);
+    KDELIBS4SUPPORT_DEPRECATED void setCalendar(const QString &calendarType);
 
     /**
      * @since 4.6
@@ -1555,7 +1555,7 @@ public:
      *
      * @param digits The default number of digits to use.
      */
-    KDE4SUPPORT_DEPRECATED void setFracDigits(int digits);
+    KDELIBS4SUPPORT_DEPRECATED void setFracDigits(int digits);
 
     /**
      * @since 4.4

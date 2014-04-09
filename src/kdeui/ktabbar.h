@@ -22,7 +22,7 @@
 #ifndef KTABBAR_H
 #define KTABBAR_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QTabBar>
 
@@ -31,7 +31,7 @@
  *
  * \image html ktabbar.png "KDE Tab Bar"
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KTabBar: public QTabBar //krazy:exclude=qclasses
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KTabBar: public QTabBar //krazy:exclude=qclasses
 {
     Q_OBJECT
 
@@ -60,7 +60,7 @@ public:
      * URL from Konqueror to another application)!
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setTabReorderingEnabled(bool enable);
+    KDELIBS4SUPPORT_DEPRECATED void setTabReorderingEnabled(bool enable);
 #endif
 
     /**
@@ -69,7 +69,7 @@ public:
      * @deprecated Use QTabBar::isMovable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool isTabReorderingEnabled() const;
+    KDELIBS4SUPPORT_DEPRECATED bool isTabReorderingEnabled() const;
 #endif
 
     /**
@@ -81,12 +81,12 @@ public:
      * @deprecated Use QTabBar::setTabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setHoverCloseButton(bool);
+    KDELIBS4SUPPORT_DEPRECATED void setHoverCloseButton(bool);
 #endif
 
     /** @deprecated Use QTabBar::tabsClosable() instead. */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool hoverCloseButton() const;
+    KDELIBS4SUPPORT_DEPRECATED bool hoverCloseButton() const;
 #endif
 
     /**
@@ -97,12 +97,12 @@ public:
      * @deprecated Use QTabBar::setTabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setHoverCloseButtonDelayed(bool);
+    KDELIBS4SUPPORT_DEPRECATED void setHoverCloseButtonDelayed(bool);
 #endif
 
     /** @deprecated Use QTabBar::tabsClosable() instead. */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool hoverCloseButtonDelayed() const;
+    KDELIBS4SUPPORT_DEPRECATED bool hoverCloseButtonDelayed() const;
 #endif
 
     /**
@@ -115,7 +115,7 @@ public:
      * @deprecated Use QTabBar::setTabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setCloseButtonEnabled(bool);
+    KDELIBS4SUPPORT_DEPRECATED void setCloseButtonEnabled(bool);
 #endif
 
     /**
@@ -126,7 +126,7 @@ public:
      * @deprecated Use QTabBar::tabsClosable() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool isCloseButtonEnabled() const;
+    KDELIBS4SUPPORT_DEPRECATED bool isCloseButtonEnabled() const;
 #endif
 
     /**
@@ -137,7 +137,7 @@ public:
      * @deprecated Use QTabBar::setSelectionBehaviorOnRemove() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED void setTabCloseActivatePrevious(bool);
+    KDELIBS4SUPPORT_DEPRECATED void setTabCloseActivatePrevious(bool);
 #endif
 
     /**
@@ -147,7 +147,7 @@ public:
      * @deprecated Use QTabBar::selectionBehaviorOnRemove() instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool tabCloseActivatePrevious() const;
+    KDELIBS4SUPPORT_DEPRECATED bool tabCloseActivatePrevious() const;
 #endif
 
     /**

@@ -22,7 +22,7 @@
 
 #include <QUrl>
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 #if ! KIO_NO_NEPOMUK
 #define DISABLE_NEPOMUK_LEGACY
 #include "property.h"

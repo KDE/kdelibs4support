@@ -96,7 +96,7 @@ class KStreamSocketPrivate;
  * @version 0.9
  * @deprecated Use KSocketFactory or KLocalSocket instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KStreamSocket: public KClientSocketBase
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KStreamSocket: public KClientSocketBase
 {
     Q_OBJECT
 

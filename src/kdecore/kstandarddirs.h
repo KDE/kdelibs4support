@@ -23,9 +23,9 @@
 #ifndef KSTANDARDDIRS_H
 #define KSTANDARDDIRS_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
-#ifdef KDE4SUPPORT_NO_DEPRECATED_NOISE
+#ifdef KDELIBS4SUPPORT_NO_DEPRECATED_NOISE
 #warning "This file is deprecated."
 #endif
 
@@ -174,7 +174,7 @@ class KConfig;
  *
  * @deprecated since 5.0, use QStandardPaths, see KDE5PORTING.html for details
  **/
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE KStandardDirs
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KStandardDirs
 {
 public:
     /**
@@ -259,7 +259,7 @@ public:
      * @deprecated, use addResourceType(type, 0, relativename, priority)
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED bool addResourceType(const char *type,
+    KDELIBS4SUPPORT_DEPRECATED bool addResourceType(const char *type,
             const QString &relativename, bool priority = true);
 #endif
 
@@ -377,7 +377,7 @@ public:
      * In other apps, just use QFileInfo(fullPath).lastModified().toTime_t()
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED quint32 calcResourceHash(const char *type,
+    KDELIBS4SUPPORT_DEPRECATED quint32 calcResourceHash(const char *type,
             const QString &filename,
             SearchOptions options = NoSearchOptions) const;
 #endif
@@ -623,7 +623,7 @@ public:
      * See KDE5PORTING.html for how to port other resources.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED QString relativeLocation(const char *type, const QString &absPath) const;
+    KDELIBS4SUPPORT_DEPRECATED QString relativeLocation(const char *type, const QString &absPath) const;
 #endif
 
     /**
@@ -638,7 +638,7 @@ public:
      * @deprecated since 5.0, use QDir().mkpath(dir).
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED static bool makeDir(const QString &dir, int mode = 0755);
+    KDELIBS4SUPPORT_DEPRECATED static bool makeDir(const QString &dir, int mode = 0755);
 #endif
 
     /**
@@ -680,7 +680,7 @@ public:
      * @deprecated now returns % + type + / ...
      */
 #ifndef KDE_NO_DEPRECATED
-    static KDE4SUPPORT_DEPRECATED QString kde_default(const char *type);
+    static KDELIBS4SUPPORT_DEPRECATED QString kde_default(const char *type);
 #endif
 
     /**
@@ -689,7 +689,7 @@ public:
      * QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).join(QString(':'))
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED QString kfsstnd_prefixes();
+    KDELIBS4SUPPORT_DEPRECATED QString kfsstnd_prefixes();
 #endif
 
     /**
@@ -702,7 +702,7 @@ public:
      * QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) instead.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED QString localkdedir() const;
+    KDELIBS4SUPPORT_DEPRECATED QString localkdedir() const;
 #endif
 
     /**
@@ -711,7 +711,7 @@ public:
      * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + '/'
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED QString localxdgdatadir() const;
+    KDELIBS4SUPPORT_DEPRECATED QString localxdgdatadir() const;
 #endif
 
     /**
@@ -720,7 +720,7 @@ public:
      * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + '/'
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED QString localxdgconfdir() const;
+    KDELIBS4SUPPORT_DEPRECATED QString localxdgconfdir() const;
 #endif
 
     /**
@@ -739,7 +739,7 @@ public:
      * @deprecated since 5.0, use QFile::exists or QFileInfo::isFile()/isDir() to be more precise.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED static bool exists(const QString &fullPath);
+    KDELIBS4SUPPORT_DEPRECATED static bool exists(const QString &fullPath);
 #endif
 
     /**

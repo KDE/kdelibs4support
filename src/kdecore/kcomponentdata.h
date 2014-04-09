@@ -19,9 +19,9 @@
 #ifndef KCOMPONENTDATA_H
 #define KCOMPONENTDATA_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
-#ifdef KDE4SUPPORT_NO_DEPRECATED_NOISE
+#ifdef KDELIBS4SUPPORT_NO_DEPRECATED_NOISE
 #warning "This file is deprecated."
 #endif
 
@@ -48,7 +48,7 @@ class KComponentDataPrivate;
  * @author Torben Weis
  * @author Matthias Kretz <kretz@kde.org>
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT_NOISE KComponentData // krazy:exclude=dpointer (implicitly shared)
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KComponentData // krazy:exclude=dpointer (implicitly shared)
 {
 public:
     /**
@@ -153,14 +153,14 @@ public:
      *         constructor but a component name was set, a default constructed
      *         K4AboutData object is returned.
      */
-    KDE4SUPPORT_DEPRECATED const K4AboutData *aboutData() const;
+    KDELIBS4SUPPORT_DEPRECATED const K4AboutData *aboutData() const;
 
     /**
      * Sets the about data of this component.
      *
      * @since 4.5
      */
-    KDE4SUPPORT_DEPRECATED void setAboutData(const K4AboutData &aboutData);
+    KDELIBS4SUPPORT_DEPRECATED void setAboutData(const K4AboutData &aboutData);
 
     /**
      * Returns the name of the component.

@@ -22,7 +22,7 @@
 
 #include <QtCore/QStringList>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <limits.h>
 #include <float.h>
@@ -69,7 +69,7 @@ namespace KInputDialog
  * @deprecated since 5.0, use QInputDialog::getText() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const QString &label,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const QString &label,
         const QString &value = QString(), bool *ok = 0, QWidget *parent = 0,
         QValidator *validator = 0,
         const QString &mask = QString(),
@@ -95,7 +95,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const QStr
  * @deprecated since 5.0, use QInputDialog::getMultiLineText() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &caption,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &caption,
         const QString &label, const QString &value = QString(),
         bool *ok = 0, QWidget *parent = 0);
 #endif
@@ -124,7 +124,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &caption,
  * @deprecated since 5.0, use QInputDialog::getInt() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
         int value = 0, int minValue = INT_MIN, int maxValue = INT_MAX,
         int step = 1, int base = 10, bool *ok = 0, QWidget *parent = 0);
 #endif
@@ -135,7 +135,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QStri
  * @deprecated since 5.0, use QInputDialog::getInt() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
         int value = 0, int minValue = INT_MIN, int maxValue = INT_MAX,
         int step = 1, bool *ok = 0, QWidget *parent = 0);
 #endif
@@ -164,7 +164,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QStri
  * @deprecated since 5.0, use QInputDialog::getDouble() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
         double value = 0, double minValue = -DBL_MAX,
         double maxValue = DBL_MAX, double step = 0.1, int decimals = 1,
         bool *ok = 0, QWidget *parent = 0);
@@ -176,7 +176,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QSt
  * @deprecated since 5.0, use QInputDialog::getDouble() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
         double value = 0, double minValue = -DBL_MAX,
         double maxValue = DBL_MAX, int decimals = 1, bool *ok = 0,
         QWidget *parent = 0);
@@ -203,7 +203,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QSt
  * @deprecated since 5.0, use QInputDialog::getItem() instead
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const QString &label,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const QString &label,
         const QStringList &list, int current = 0, bool editable = false,
         bool *ok = 0, QWidget *parent = 0);
 #endif
@@ -230,7 +230,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const QStr
  *         (yet only one item allowed)
  */
 #ifndef KDE_NO_DEPRECATED
-KDE4SUPPORT_DEPRECATED_EXPORT QStringList getItemList(const QString &caption,
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList getItemList(const QString &caption,
         const QString &label, const QStringList &list = QStringList(),
         const QStringList &select = QStringList(), bool multiple = false,
         bool *ok = 0, QWidget *parent = 0);

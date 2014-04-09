@@ -21,7 +21,7 @@
 #ifndef KIO_METAINFOJOB_H
 #define KIO_METAINFOJOB_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <kio/job.h>
 #include <kfileitem.h>
 #include <kfilemetainfo.h>
@@ -37,7 +37,7 @@ class MetaInfoJobPrivate;
  * Note: this job doesn't even work as before, KFileItem::setMetaInfo
  * doesn't exist anymore.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob : public KIO::Job
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT MetaInfoJob : public KIO::Job
 {
     Q_OBJECT
 public:
@@ -118,7 +118,7 @@ private:
  * @return the MetaInfoJob to retrieve the items
  * @deprecated use strigi or KFileMetaInfo
  */
-KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *fileMetaInfo(const KFileItemList &items);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *fileMetaInfo(const KFileItemList &items);
 
 /**
  * Retrieves meta information for the given items.
@@ -127,7 +127,7 @@ KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *fileMetaInfo(const KFileItemList &ite
  * @return the MetaInfoJob to retrieve the items
  * @deprecated use strigi or KFileMetaInfo
  */
-KDE4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *fileMetaInfo(const QList<QUrl> &items);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *fileMetaInfo(const QList<QUrl> &items);
 }
 
 #endif

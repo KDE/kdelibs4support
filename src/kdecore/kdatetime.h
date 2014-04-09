@@ -26,7 +26,7 @@
 #ifndef _KDATETIME_H_
 #define _KDATETIME_H_
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QMetaType>
 #include <QtCore/QSharedDataPointer>
@@ -145,7 +145,7 @@ class KTimeZones;
  * @see <a href="http://www.w3.org/TR/timezone/">W3C: Working with Time Zones</a>
  * @author David Jarvie \<djarvie@kde.org\>.
  */
-class KDE4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
+class KDELIBS4SUPPORT_EXPORT KDateTime //krazy:exclude=dpointer (implicitly shared)
 {
 public:
     /**
@@ -196,7 +196,7 @@ public:
      * should be interpreted, i.e. which time zone (if any) the date/time is
      * expressed in.
      */
-    class KDE4SUPPORT_EXPORT Spec
+    class KDELIBS4SUPPORT_EXPORT Spec
     {
     public:
         /**
@@ -1073,7 +1073,7 @@ public:
      * @see secsTo(), addSecs(), daysTo()
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED inline qint64 secsTo_long(const KDateTime &other) const
+    KDELIBS4SUPPORT_DEPRECATED inline qint64 secsTo_long(const KDateTime &other) const
     {
         return secsTo(other);
     }
@@ -1442,7 +1442,7 @@ public:
      * @deprecated Since 5.0, we now supports all valid dates.
      */
 #ifndef KDE_NO_DEPRECATED
-    KDE4SUPPORT_DEPRECATED inline bool outOfRange() const
+    KDELIBS4SUPPORT_DEPRECATED inline bool outOfRange() const
     {
         return false;
     }
@@ -1603,8 +1603,8 @@ public:
      */
     static KDateTime realCurrentLocalDateTime();
 
-    friend QDataStream KDE4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime &dateTime);
-    friend QDataStream KDE4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime &dateTime);
+    friend QDataStream KDELIBS4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime &dateTime);
+    friend QDataStream KDELIBS4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime &dateTime);
 
 private:
     QSharedDataPointer<KDateTimePrivate> d;
@@ -1614,13 +1614,13 @@ Q_DECLARE_METATYPE(KDateTime)
 Q_DECLARE_METATYPE(KDateTime::Spec)
 
 /** Write @p spec to the datastream @p out, in binary format. */
-QDataStream KDE4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime::Spec &spec);
+QDataStream KDELIBS4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime::Spec &spec);
 /** Read a KDateTime::Spec object into @p spec from @p in, in binary format. */
-QDataStream KDE4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime::Spec &spec);
+QDataStream KDELIBS4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime::Spec &spec);
 
 /** Write @p dateTime to the datastream @p out, in binary format. */
-QDataStream KDE4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime &dateTime);
+QDataStream KDELIBS4SUPPORT_EXPORT &operator<<(QDataStream &out, const KDateTime &dateTime);
 /** Read a KDateTime object into @p dateTime from @p in, in binary format. */
-QDataStream KDE4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime &dateTime);
+QDataStream KDELIBS4SUPPORT_EXPORT &operator>>(QDataStream &in, KDateTime &dateTime);
 
 #endif

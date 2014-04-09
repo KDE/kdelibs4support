@@ -45,7 +45,7 @@
 #include <kurllabel.h>
 #include <kwindowconfig.h>
 
-#include <config-kde4support.h>
+#include <config-kdelibs4support.h>
 
 #if HAVE_X11
 #include <qx11info_x11.h>

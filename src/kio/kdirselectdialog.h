@@ -21,7 +21,7 @@
 #ifndef KDIRSELECTDIALOG_H
 #define KDIRSELECTDIALOG_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QDialog>
 #include <QUrl>
@@ -33,7 +33,7 @@ class QAbstractItemView;
  * @author Michael Jarrett <michaelj@corel.com>
  * @deprecated since 5.0, use QFileDialog::getExistingDirectoryUrl instead.
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KDirSelectDialog : public QDialog
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KDirSelectDialog : public QDialog
 {
     Q_OBJECT
 
@@ -85,7 +85,7 @@ public:
      * @deprecated since 5.0, use QFileDialog::getExistingDirectory (if localOnly was true)
      * or QFileDialog::getExistingDirectoryUrl (if localOnly was false) instead.
      */
-    static KDE4SUPPORT_DEPRECATED QUrl selectDirectory(const QUrl &startDir = QUrl(),
+    static KDELIBS4SUPPORT_DEPRECATED QUrl selectDirectory(const QUrl &startDir = QUrl(),
             bool localOnly = false, QWidget *parent = 0L,
             const QString &caption = QString());
 

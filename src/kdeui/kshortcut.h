@@ -27,7 +27,7 @@
 #ifndef KSHORTCUT_H
 #define KSHORTCUT_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QList>
 #include <QtCore/QHash>
@@ -55,7 +55,7 @@ class KShortcutPrivate;
 *  closeAction->setShortcut(closeShortcut);
 * \endcode
 */
-class KDE4SUPPORT_DEPRECATED_EXPORT KShortcut
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KShortcut
 {
 public:
     /**

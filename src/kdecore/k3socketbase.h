@@ -59,7 +59,7 @@
 #include <QtCore/QIODevice>
 #include <QtCore/QString>
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include "k3socketaddress.h"
 
 class QMutex;
@@ -83,7 +83,7 @@ class KSocketBasePrivate;
  * @author Thiago Macieira <thiago@kde.org>
  * @deprecated Use KSocketFactory or KLocalSocket instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KSocketBase
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KSocketBase
 {
 public:
     /**
@@ -457,7 +457,7 @@ private:
  * @author Thiago Macieira <thiago@kde.org>
  * @deprecated Use KSocketFactory or KLocalSocket instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KActiveSocketBase: public QIODevice, virtual public KSocketBase
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KActiveSocketBase: public QIODevice, virtual public KSocketBase
 {
     Q_OBJECT
 public:
@@ -770,7 +770,7 @@ protected:
  * @author Thiago Macieira <thiago@kde.org>
  * @deprecated Use KSocketFactory or KLocalSocket instead
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KPassiveSocketBase: virtual public KSocketBase
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KPassiveSocketBase: virtual public KSocketBase
 {
 public:
     /**

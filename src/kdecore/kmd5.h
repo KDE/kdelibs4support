@@ -34,7 +34,7 @@
 #ifndef KMD5_H
 #define KMD5_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <qglobal.h>
 
 class QByteArray;
@@ -91,7 +91,7 @@ class KMD5Private;
  * @see QCryptographicHash
  */
 
-class KDE4SUPPORT_DEPRECATED_EXPORT KMD5
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KMD5
 {
 public:
 

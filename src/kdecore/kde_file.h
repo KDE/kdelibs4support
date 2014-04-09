@@ -37,7 +37,7 @@
 #if defined _WIN32 || defined _WIN64
 #include <kde_file_win.h>
 #endif
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
 /* added not for Solaris and OpenSolaris platforms */
 
@@ -158,23 +158,23 @@ class QString;
 namespace KDE
 {
 /** replacement for ::access() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int access(const QString &path, int mode);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int access(const QString &path, int mode);
 /** replacement for ::chmod() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int chmod(const QString &path, mode_t mode);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int chmod(const QString &path, mode_t mode);
 /** replacement for ::fopen()/::fopen64() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT FILE *fopen(const QString &pathname, const char *mode);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT FILE *fopen(const QString &pathname, const char *mode);
 /** replacement for ::lstat()/::lstat64() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int lstat(const QString &path, KDE_struct_stat *buf);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int lstat(const QString &path, KDE_struct_stat *buf);
 /** replacement for ::mkdir() to handle pathnames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int mkdir(const QString &pathname, mode_t mode);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int mkdir(const QString &pathname, mode_t mode);
 /** replacement for ::open()/::open64() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int open(const QString &pathname, int flags, mode_t mode = 0);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int open(const QString &pathname, int flags, mode_t mode = 0);
 /** replacement for ::rename() to handle pathnames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int rename(const QString &in, const QString &out);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int rename(const QString &in, const QString &out);
 /** replacement for ::stat()/::stat64() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int stat(const QString &path, KDE_struct_stat *buf);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int stat(const QString &path, KDE_struct_stat *buf);
 /** replacement for ::utime() to handle filenames in a platform independent way */
-KDE4SUPPORT_DEPRECATED_EXPORT int utime(const QString &filename, struct utimbuf *buf);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int utime(const QString &filename, struct utimbuf *buf);
 #ifndef Q_OS_WIN
 inline int access(const QString &path, int mode)
 {

@@ -44,7 +44,7 @@ class QDateTime;
 class KSSLCertChain;
 class KSSLX509V3;
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 #include <ksslconfig.h>
 
 #include <QtCore/QList>
@@ -71,7 +71,7 @@ class X509;
  * @short KDE X.509 Certificate
  * @deprecated since 5.0, use QSslCertificate
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KSSLCertificate
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KSSLCertificate
 {
     friend class KSSL;
     friend class KSSLCertificateHome;
@@ -375,8 +375,8 @@ public:
     static QString getMD5DigestFromKDEKey(const QString &k);
 
 private:
-    KDE4SUPPORT_DEPRECATED_EXPORT friend int operator!=(KSSLCertificate &x, KSSLCertificate &y);
-    KDE4SUPPORT_DEPRECATED_EXPORT friend int operator==(KSSLCertificate &x, KSSLCertificate &y);
+    KDELIBS4SUPPORT_DEPRECATED_EXPORT friend int operator!=(KSSLCertificate &x, KSSLCertificate &y);
+    KDELIBS4SUPPORT_DEPRECATED_EXPORT friend int operator==(KSSLCertificate &x, KSSLCertificate &y);
 
     KSSLCertificatePrivate *d;
     int purposeToOpenSSL(KSSLPurpose p) const;
@@ -390,11 +390,11 @@ protected:
     KSSLValidation processError(int ec);
 };
 
-KDE4SUPPORT_DEPRECATED_EXPORT QDataStream &operator<<(QDataStream &s, const KSSLCertificate &r);
-KDE4SUPPORT_DEPRECATED_EXPORT QDataStream &operator>>(QDataStream &s, KSSLCertificate &r);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QDataStream &operator<<(QDataStream &s, const KSSLCertificate &r);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QDataStream &operator>>(QDataStream &s, KSSLCertificate &r);
 
-KDE4SUPPORT_DEPRECATED_EXPORT int operator==(KSSLCertificate &x, KSSLCertificate &y);
-KDE4SUPPORT_DEPRECATED_EXPORT inline int operator!=(KSSLCertificate &x, KSSLCertificate &y)
+KDELIBS4SUPPORT_DEPRECATED_EXPORT int operator==(KSSLCertificate &x, KSSLCertificate &y);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT inline int operator!=(KSSLCertificate &x, KSSLCertificate &y)
 {
     return !(x == y);
 }

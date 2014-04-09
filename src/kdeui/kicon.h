@@ -19,9 +19,9 @@
 #ifndef KICON_H
 #define KICON_H
 
-#include <kde4support_export.h>
+#include <kdelibs4support_export.h>
 
-#ifdef KDE4SUPPORT_NO_DEPRECATED_NOISE
+#ifdef KDELIBS4SUPPORT_NO_DEPRECATED_NOISE
 #warning "This file is deprecated."
 #endif
 
@@ -43,7 +43,7 @@ class QStringList;
  *
  * @deprecated use QIcon::fromTheme
  */
-class KDE4SUPPORT_DEPRECATED_EXPORT KIcon : public QIcon
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KIcon : public QIcon
 {
 public:
     /**
