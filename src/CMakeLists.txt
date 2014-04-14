@@ -36,7 +36,15 @@ add_subdirectory( kssl/kssl )
 add_subdirectory( kssl/kcm )
 add_subdirectory( kio/imageformats )
 
+if(WIN32)
+   set(libkdelibs4support_SRCS solid/networking_win.cpp)
+else()
+   set(libkdelibs4support_SRCS solid/networking.cpp)
+endif()
+
+
 set(libkdelibs4support_SRCS
+    ${libkdelibs4support_SRCS}
     kdecore/k4aboutdata.cpp
     kdecore/kcomponentdata.cpp
     kdecore/kdebug.cpp
@@ -186,7 +194,21 @@ set(libkdelibs4support_SRCS
     kio/kfiletreeview.cpp
 
     kparts/factory.cpp
+    solid/powermanagement.cpp
+    solid/networking.cpp
 )
+
+set_source_files_properties( solid/org.freedesktop.PowerManagement.xml
+                             solid/org.freedesktop.PowerManagement.Inhibit.xml
+                             solid/org.kde.Solid.PowerManagement.PolicyAgent.xml
+                             PROPERTIES NO_NAMESPACE TRUE)
+
+qt5_add_dbus_interface(libkdelibs4support_SRCS solid/org.kde.Solid.Networking.Client.xml
+                       org_kde_solid_networking_client)
+
+qt5_add_dbus_interfaces(libkdelibs4support_SRCS solid/org.freedesktop.PowerManagement.xml
+                        solid/org.freedesktop.PowerManagement.Inhibit.xml
+                        solid/org.kde.Solid.PowerManagement.PolicyAgent.xml)
 
 if (NOT KIO_NO_NEPOMUK)
     set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS}
@@ -270,6 +292,7 @@ set(kdelibs4support_INCLUDES
   "${CMAKE_CURRENT_SOURCE_DIR}/kssl"
   "${CMAKE_CURRENT_BINARY_DIR}/kssl" # ksslconfig.h
   "${CMAKE_CURRENT_SOURCE_DIR}/kparts"
+  "${CMAKE_CURRENT_SOURCE_DIR}/solid"
   "${CMAKE_CURRENT_BINARY_DIR}/.." # kdelibs4support_version.h
   "${CMAKE_SOURCE_DIR}"
 )
@@ -523,6 +546,12 @@ install(FILES
     DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support COMPONENT Devel
 )
 
+install(FILES
+    solid/networking.h
+    solid/powermanagement.h
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/solid COMPONENT Devel
+)
+
 configure_file(kssl/ksslconfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
 set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
 
@@ -595,6 +624,20 @@ if (UNIX)
    # and add it as post-install script to any of the installed targets, so it will be executed during "make install"
    set_target_properties(KF5KDELibs4Support PROPERTIES POST_INSTALL_SCRIPT ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake)
 endif ()
+
+#solid stuff
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.kde.Solid.Networking.Client.xml
+        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        RENAME kf5_org.kde.Solid.Networking.Client.xml)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.kde.Solid.PowerManagement.PolicyAgent.xml
+        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        RENAME kf5_org.kde.Solid.PowerManagement.PolicyAgent.xml)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.freedesktop.PowerManagement.xml
+        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        RENAME kf5_org.freedesktop.PowerManagement.xml)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.freedesktop.PowerManagement.Inhibit.xml
+        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        RENAME kf5_org.freedesktop.PowerManagement.Inhibit.xml)
 
 ########## DocBookXML 4.2 compatibility
 

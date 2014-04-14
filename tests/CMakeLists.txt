@@ -42,6 +42,16 @@ kdelibs4support_examples(
   kprintpreview_test
 )
 
+set(networkingclient_SRCS networkingclient.cpp ../src/solid/networking.cpp)
+qt5_wrap_ui(networkingclient_SRCS networkingclientview.ui)
+qt5_add_dbus_interface(networkingclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/solid/org.kde.Solid.Networking.Client.xml clientinterface)
+add_executable(networkingclient ${networkingclient_SRCS})
+
+target_link_libraries(networkingclient KF5::KDELibs4Support Qt5::Widgets)
+if(WIN32)
+    target_link_libraries(networkingclient Qt5::Network)
+endif()
+
 if (X11_FOUND)
   find_package(Qt5X11Extras 5.2.0 REQUIRED NO_MODULE)
   kdelibs4support_examples( kxerrorhandlertest )
