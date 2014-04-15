@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=kcmshell4 kcm_ssl
+Exec=kcmshell5 kcm_ssl
 Icon=preferences-system-ssl
 Type=Service
 X-KDE-ServiceTypes=KCModule
