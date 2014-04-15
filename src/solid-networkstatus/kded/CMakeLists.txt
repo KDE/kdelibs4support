@@ -56,7 +56,7 @@ qt5_add_dbus_adaptor(kded_networkstatus_PART_SRCS
 
 add_library(kded_networkstatus MODULE ${kded_networkstatus_PART_SRCS})
 
-target_link_libraries(kded_networkstatus KF5::DBusAddons KF5::Solid KF5::KDE4Support)
+target_link_libraries(kded_networkstatus KF5::DBusAddons KF5::Solid KF5::KDELibs4Support)
 
 if(QNTRACK_FOUND)
    target_link_libraries(kded_networkstatus ${QNTRACK_LIBRARIES})

@@ -27,7 +27,7 @@
 #include <QDBusServiceWatcher>
 #include <QMap>
 
-#include <KDebug>
+#include <kdebug.h>
 
 #include "network.h"
 #include "clientadaptor.h"

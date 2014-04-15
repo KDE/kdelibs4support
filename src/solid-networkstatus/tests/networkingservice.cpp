@@ -27,10 +27,10 @@
 #include <QTimer>
 
 #include <k4aboutdata.h>
-#include <KApplication>
-#include <KCmdLineArgs>
-#include <KDebug>
-#include <KLocale>
+#include <kapplication.h>
+#include <kcmdlineargs.h>
+#include <kdebug.h>
+#include <klocale.h>
 
 #include "networkingservice.h"
 #include "serviceinterface.h"

@@ -1,6 +1,6 @@
 add_subdirectory(includes)
 add_subdirectory(kdebugdialog)
-
+add_subdirectory(solid-networkstatus)
 if(NOT HAVE_NEPOMUK)
    set(KIO_NO_NEPOMUK TRUE)
 endif()

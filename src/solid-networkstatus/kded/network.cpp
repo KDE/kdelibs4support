@@ -20,7 +20,7 @@
 
 #include "network.h"
 
-#include <KDebug>
+#include <kdebug.h>
 
 Network::Network( const QString & name, int status, const QString & serviceName )
 	: m_name( name ), m_status( (Solid::Networking::Status)status ), m_service( serviceName )

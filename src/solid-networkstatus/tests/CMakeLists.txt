@@ -5,5 +5,5 @@ qt5_add_dbus_interface(networkingservice_SRCS ../org.kde.Solid.Networking.Servic
 
 add_executable(networkingservice networkingservice.cpp ${networkingservice_SRCS})
 
-target_link_libraries(networkingservice KF5::KDE4Support)
+target_link_libraries(networkingservice KF5::KDELibs4Support)
 

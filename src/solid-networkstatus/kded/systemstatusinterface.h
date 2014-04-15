@@ -37,7 +37,7 @@ public:
     virtual bool isSupported() const = 0;
     virtual QString serviceName() const = 0;
 
-signals:
+Q_SIGNALS:
     void statusChanged( Solid::Networking::Status status );
 };
 

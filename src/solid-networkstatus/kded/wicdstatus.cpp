@@ -25,7 +25,7 @@
 #include <QtDBus/QDBusReply>
 #include <QDBusMetaType>
 
-#include <KDebug>
+#include <kdebug.h>
 
 #define WICD_DBUS_SERVICE "org.wicd.daemon"
 #define WICD_DAEMON_DBUS_PATH "/org/wicd/daemon"
