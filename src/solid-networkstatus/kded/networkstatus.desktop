@@ -1,6 +1,20 @@
 [Desktop Entry]
 Name=Network Status
+Name[de]=Netzwerkstatus
+Name[nl]=Netwerkstatus
+Name[pt]=Estado da Rede
+Name[sk]=Stav siete
+Name[sv]=Nätverksstatus
+Name[uk]=Стан мережі
+Name[x-test]=xxNetwork Statusxx
 Comment=Tracks status of network interfaces and provides notification to applications using the network.
+Comment[de]=Überprüft den Status von Netzwerkschnittstellen und benachrichtigt Programme, die das Netzwerk verwenden
+Comment[nl]=Volgt de status van netwerkinterfaces en levert meldingen aan programma's die het netwerk gebruiken.
+Comment[pt]=Regista o estado das interfaces de rede e notifica as aplicações que necessitem da rede.
+Comment[sk]=Trasuje stav sieťových rozhraní a poskytuje pripomienky pre aplikácie používajúce sieť.
+Comment[sv]=Följer status hos nätverksgränssnitt och tillhandahåller underrättelser till program som använder nätverket.
+Comment[uk]=Стежить за станом інтерфейсів мережі і надає сповіщення програмам, які використовують мережу для роботи.
+Comment[x-test]=xxTracks status of network interfaces and provides notification to applications using the network.xx
 Type=Service
 X-KDE-ServiceTypes=KDEDModule
 X-KDE-ModuleType=Library
