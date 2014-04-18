@@ -1,15 +1,19 @@
 [Desktop Entry]
 Name=Network Status
+Name[ca]=Estat de la xarxa
 Name[de]=Netzwerkstatus
 Name[nl]=Netwerkstatus
+Name[pl]=Stan sieci
 Name[pt]=Estado da Rede
 Name[sk]=Stav siete
 Name[sv]=Nätverksstatus
 Name[uk]=Стан мережі
 Name[x-test]=xxNetwork Statusxx
 Comment=Tracks status of network interfaces and provides notification to applications using the network.
+Comment[ca]=Fa un seguiment de l'estat de les interfícies de xarxa i proporciona notificació a les aplicacions usant la xarxa.
 Comment[de]=Überprüft den Status von Netzwerkschnittstellen und benachrichtigt Programme, die das Netzwerk verwenden
 Comment[nl]=Volgt de status van netwerkinterfaces en levert meldingen aan programma's die het netwerk gebruiken.
+Comment[pl]=Śledzi stan interfejsów sieciowych przekazuje informacje do programów wykorzystujących sieć.
 Comment[pt]=Regista o estado das interfaces de rede e notifica as aplicações que necessitem da rede.
 Comment[sk]=Trasuje stav sieťových rozhraní a poskytuje pripomienky pre aplikácie používajúce sieť.
 Comment[sv]=Följer status hos nätverksgränssnitt och tillhandahåller underrättelser till program som använder nätverket.
