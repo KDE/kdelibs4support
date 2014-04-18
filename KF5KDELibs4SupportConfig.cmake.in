@@ -52,6 +52,8 @@ remove_definitions(
 # 3. Port the buildsystem away from KDELibs4Support.
 # 4. Remove the find_package for KDELibs4Support.
 
+set(KDE4_DBUS_INTERFACES_DIR "${PACKAGE_PREFIX_DIR}/@DBUS_INTERFACES_INSTALL_DIR@")
+
 set(KDE4_KDECORE_LIBS
   KF5::KDELibs4Support
   Qt5::Network
