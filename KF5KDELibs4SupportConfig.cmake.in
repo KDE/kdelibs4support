@@ -1,5 +1,10 @@
 @PACKAGE_INIT@
 
+# This needs to be set before finding dependencies, since it uses
+# PACKAGE_PREFIX_DIR, which may be overwritten by the config files
+# of other packages.
+set(KDE4_DBUS_INTERFACES_DIR "${PACKAGE_PREFIX_DIR}/@DBUS_INTERFACES_INSTALL_DIR@")
+
 find_dependency(KF5Auth "@KF5_VERSION@")
 find_dependency(KF5ConfigWidgets "@KF5_VERSION@")
 find_dependency(KF5CoreAddons "@KF5_VERSION@")
@@ -51,8 +56,6 @@ remove_definitions(
 # 2. Port the C++ code to Qt5/KF5.
 # 3. Port the buildsystem away from KDELibs4Support.
 # 4. Remove the find_package for KDELibs4Support.
-
-set(KDE4_DBUS_INTERFACES_DIR "${PACKAGE_PREFIX_DIR}/@DBUS_INTERFACES_INSTALL_DIR@")
 
 set(KDE4_KDECORE_LIBS
   KF5::KDELibs4Support
