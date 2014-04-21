@@ -371,6 +371,7 @@ public:
      * @param caption The name of the dialog widget.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getOpenFileName(parent, caption, startDir, filter)
      */
     static QString getOpenFileName(const QUrl &startDir = QUrl(),
                                    const QString &filter = QString(),
@@ -405,6 +406,7 @@ public:
      * @param caption The name of the dialog widget.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getOpenFileNames(parent, caption, startDir, filter)
      */
     static QStringList getOpenFileNames(const QUrl &startDir = QUrl(),
                                         const QString &filter = QString(),
@@ -429,6 +431,7 @@ public:
      * @param caption The name of the dialog widget.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getOpenFileUrl(parent, caption, startDir, filter)
      */
     static QUrl getOpenUrl(const QUrl &startDir = QUrl(),
                            const QString &filter = QString(),
@@ -453,6 +456,7 @@ public:
      * @param caption The name of the dialog widget.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getOpenFileUrls(parent, caption, startDir, filter)
      */
     static QList<QUrl> getOpenUrls(const QUrl &startDir = QUrl(),
                                    const QString &filter = QString(),
@@ -477,6 +481,7 @@ public:
      * @param caption The name of the dialog widget.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getSaveFileName(parent, caption, startDir, filter)
      */
     static QString getSaveFileName(const QUrl &startDir = QUrl(),
                                    const QString &filter = QString(),
@@ -504,6 +509,7 @@ public:
      * @see KFileWidget::KFileWidget()
      *
      * @since 4.4
+     * @deprecated use QFileDialog::getSaveFileName(parent, caption, startDir, filter, [selectedFilter], options)
      */
     static QString getSaveFileName(const QUrl &startDir,
                                    const QString &filter,
@@ -548,6 +554,7 @@ public:
      * @param caption The name of the dialog widget.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getSaveFileUrl(parent, caption, startDir, filter)
      */
     static QUrl getSaveUrl(const QUrl &startDir = QUrl(),
                            const QString &filter = QString(),
@@ -575,6 +582,7 @@ public:
      * @see KFileWidget::KFileWidget()
      *
      * @since 4.4
+     * @deprecated use QFileDialog::getSaveFileUrl(parent, caption, startDir, filter, [selectedFilter], options)
      */
     static QUrl getSaveUrl(const QUrl &startDir,
                            const QString &filter,
@@ -594,6 +602,7 @@ public:
      * @return the path to an existing local directory.
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getExistingDirectory(parent, caption, startDir)
      */
     static QString getExistingDirectory(const QUrl &startDir = QUrl(),
                                         QWidget *parent = 0,
@@ -612,6 +621,7 @@ public:
      * @return the url to an existing directory (local or remote).
      *
      * @see KFileWidget::KFileWidget()
+     * @deprecated use QFileDialog::getExistingDirectoryUrl(parent, caption, startDir)
      */
     static QUrl getExistingDirectoryUrl(const QUrl &startDir = QUrl(),
                                         QWidget *parent = 0,
