@@ -705,10 +705,9 @@ public:
      *
      * @return the map of query items or the empty map if the url has no
      * query items.
+     * @deprecated since 5.0, use QUrlQuery(url).queryItems()
      */
     QMap< QString, QString > queryItems(const QueryItemsOptions &options = 0) const;
-    // #### TODO port the above queryItems to look more like QUrl's
-    //using QUrl::queryItems; // temporary
 
     /**
      * Returns the value of a certain query item.
@@ -720,6 +719,7 @@ public:
      *
      * @return the value of the given query item name or QString() if the
      * specified item does not exist.
+     * @deprecated since 5.0, use QUrlQuery(url).queryItemValue(item)
      */
     QString queryItem(const QString &item) const;
 
@@ -730,6 +730,7 @@ public:
      *
      * @param _item Name of item to add
      * @param _value Value of item to add
+     * @deprecated since 5.0, use QUrlQuery(url), then addQueryItems(), then QUrl::setQuery()
      */
     void addQueryItem(const QString &_item, const QString &_value);
 
