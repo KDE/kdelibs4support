@@ -72,6 +72,8 @@ add_definitions(
     -DKDELIBS4SUPPORT_DEPRECATED_EXPORT=KDELIBS4SUPPORT_EXPORT
 )
 
+add_definitions(-DTRANSLATION_DOMAIN=\"kdelibs4support\")
+
 add_executable(kf5-config kde-config.cpp )
 ecm_mark_nongui_executable(kf5-config)
 
