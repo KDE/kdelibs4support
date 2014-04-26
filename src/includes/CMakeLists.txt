@@ -1,5 +1,6 @@
 install( FILES
   KACL
+  K4AboutData
   KAboutApplicationDialog
   KAboutData
   KAboutPerson
