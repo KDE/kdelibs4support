@@ -135,7 +135,7 @@ sounds
 locale
 locale
 services
-kde5/services
+kservices5
 servicetypes
 kservicetypes5
 wallpaper
@@ -186,7 +186,7 @@ static const char types_string[] =
     "sounds\0"
     "locale\0"
     "services\0"
-    "kde5/services\0"
+    "kservices5\0"
     "servicetypes\0"
     "kservicetypes5\0"
     "wallpaper\0"
@@ -195,9 +195,9 @@ static const char types_string[] =
     "exe\0"
     "bin\0"
     "module\0"
-    "%lib/kde5\0"
+    "%lib/plugins/kf5\0"
     "qtplugins\0"
-    "%lib/kde5/plugins\0"
+    "%lib/plugins\0"
     "kcfg\0"
     "config.kcfg\0"
     "emoticons\0"
@@ -218,13 +218,13 @@ static const char types_string[] =
     "\0";
 
 static const int types_indices[] = {
-    0,    5,    7,   12,   21,   26,   32,   32,
-    39,   46,   54,   60,   67,   67,   74,   83,
-    97,  110,  128,  138,  149,  149,  159,  163,
-    167,  174,  184,  194,  212,  217,  229,  229,
-    239,    5,  247,  260,  273,   26,  286,   46,
-    301,  314,  334,  347,  352,    5,  360,  373,
-    379,  397,   -1
+       0,    5,    7,   12,   21,   26,   32,   32,
+      39,   46,   54,   60,   67,   67,   74,   83,
+      94,  107,  122,  132,  143,  143,  153,  157,
+     161,  168,  185,  195,  208,  213,  225,  225,
+     235,    5,  243,  256,  269,   26,  282,   46,
+     297,  310,  330,  343,  348,    5,  356,  369,
+     375,  393,   -1
 };
 
 static void tokenize(QStringList &token, const QString &str,
