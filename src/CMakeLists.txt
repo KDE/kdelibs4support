@@ -298,7 +298,7 @@ set(kdelibs4support_INCLUDES
 )
 target_include_directories(KF5KDELibs4Support PUBLIC "$<BUILD_INTERFACE:${kdelibs4support_INCLUDES}>")
 
-target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDELibs4Support>" "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}/KDELibs4Support/KDE>")
+target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support>" "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/KDE>")
 
 set(platformLinkLibraries)
 if (APPLE)
@@ -364,7 +364,7 @@ endif()
 if(NOT KIO_NO_NEPOMUK)
     add_executable(kfilemetadatareader kio/kfilemetadatareaderprocess.cpp)
     target_link_libraries(kfilemetadatareader ${KDE4_NEPOMUK_LIBRARY} nepomukutils KF5::CoreAddons KF5::I18n KF5::KDELibs4Support)
-    install(TARGETS kfilemetadatareader ${INSTALL_TARGETS_DEFAULT_ARGS})
+    install(TARGETS kfilemetadatareader ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 endif()
 
 set_target_properties(KF5KDELibs4Support PROPERTIES
@@ -419,7 +419,7 @@ add_subdirectory(pics)
 
 install(TARGETS KF5KDELibs4Support
         EXPORT KF5KDELibs4SupportTargets
-        ${INSTALL_TARGETS_DEFAULT_ARGS})
+        ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
     kdecore/k4aboutdata.h
@@ -543,13 +543,13 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_export_internal.h
     ${CMAKE_CURRENT_BINARY_DIR}/kdemacros.h
     kdecore/kdeversion.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support COMPONENT Devel
+    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support COMPONENT Devel
 )
 
 install(FILES
     solid/networking.h
     solid/powermanagement.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/solid COMPONENT Devel
+    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/solid COMPONENT Devel
 )
 
 configure_file(kssl/ksslconfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
@@ -575,7 +575,7 @@ install(FILES
     kio/metainfojob.h
     kio/passworddialog.h
     kio/netaccess.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/kio COMPONENT Devel
+    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/kio COMPONENT Devel
 )
 
 # kparts/*.h
@@ -583,7 +583,7 @@ install(FILES
     kparts/genericfactory.h
     kparts/factory.h
     kparts/listingextension.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/kparts COMPONENT Devel
+    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/kparts COMPONENT Devel
 )
 
 # knewstuff3/*.h
@@ -595,7 +595,7 @@ install( FILES
     knewstuff3/knewstuffaction.h
     knewstuff3/knewstuffbutton.h
     knewstuff3/uploaddialog.h
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDELibs4Support/knewstuff3 COMPONENT Devel
+    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/knewstuff3 COMPONENT Devel
 )
 
 install( FILES
