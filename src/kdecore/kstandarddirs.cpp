@@ -137,7 +137,7 @@ locale
 services
 kde5/services
 servicetypes
-kde5/servicetypes
+kservicetypes5
 wallpaper
 wallpapers
 templates
@@ -188,7 +188,7 @@ static const char types_string[] =
     "services\0"
     "kde5/services\0"
     "servicetypes\0"
-    "kde5/servicetypes\0"
+    "kservicetypes5\0"
     "wallpaper\0"
     "wallpapers\0"
     "templates\0"

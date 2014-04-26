@@ -63,7 +63,7 @@ void KMimeTypeTest::initTestCase()
     bool mustUpdateKSycoca = false;
 
     // Create fake text/x-patch part.
-    const QString fakePatchPart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + "fakepatchpart.desktop";
+    const QString fakePatchPart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "fakepatchpart.desktop";
     const bool mustCreatePatchPart = !QFile::exists(fakePatchPart);
     if (mustCreatePatchPart) {
         mustUpdateKSycoca = true;
@@ -78,7 +78,7 @@ void KMimeTypeTest::initTestCase()
     }
 
     // Create fake text/plain part with a higher initial preference than the patch part.
-    const QString fakePart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + "faketextpart.desktop";
+    const QString fakePart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextpart.desktop";
     const bool mustCreate = !QFile::exists(fakePart);
     if (mustCreate) {
         mustUpdateKSycoca = true;
@@ -93,7 +93,7 @@ void KMimeTypeTest::initTestCase()
     }
 
     // Create fake text/plain ktexteditor plugin.
-    const QString fakePlugin = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + "faketextplugin.desktop";
+    const QString fakePlugin = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextplugin.desktop";
     const bool mustCreatePlugin = !QFile::exists(fakePlugin);
     if (mustCreatePlugin) {
         mustUpdateKSycoca = true;
@@ -152,11 +152,11 @@ void KMimeTypeTest::cleanupTestCase()
 {
     // If I want the konqueror unit tests to work, then I better not have a non-working part
     // as the preferred part for text/plain...
-    const QString fakePatchPart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + "fakepatchpart.desktop";
+    const QString fakePatchPart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "fakepatchpart.desktop";
     QFile::remove(fakePatchPart);
-    const QString fakePart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + "faketextpart.desktop";
+    const QString fakePart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextpart.desktop";
     QFile::remove(fakePart);
-    const QString fakePlugin = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + "faketextplugin.desktop";
+    const QString fakePlugin = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextplugin.desktop";
     QFile::remove(fakePlugin);
     QFile::remove(m_textPlainApp);
     QFile::remove(m_nonKdeApp);
@@ -736,7 +736,7 @@ void KMimeTypeTest::testMimeTypeTraderForAlias()
 
 void KMimeTypeTest::testHasServiceType1() // with services constructed with a full path (rare)
 {
-    QString faketextpartPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kde5/services/") + "faketextpart.desktop");
+    QString faketextpartPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + "faketextpart.desktop");
     QVERIFY(!faketextpartPath.isEmpty());
     KService faketextpart(faketextpartPath);
     QVERIFY(faketextpart.hasMimeType("text/plain"));
@@ -746,7 +746,7 @@ void KMimeTypeTest::testHasServiceType1() // with services constructed with a fu
     QVERIFY(!faketextpart.hasServiceType("KParts/ReadWritePart"));
     QVERIFY(!faketextpart.hasServiceType("KPluginInfo"));
 
-    QString textPluginPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kde5/services/") + "faketextplugin.desktop");
+    QString textPluginPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + "faketextplugin.desktop");
     QVERIFY(!textPluginPath.isEmpty());
     KService textPlugin(textPluginPath);
     QVERIFY(textPlugin.hasServiceType("KPluginInfo"));
