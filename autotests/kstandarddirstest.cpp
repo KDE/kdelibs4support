@@ -400,7 +400,7 @@ void KStandarddirsTest::testAddResourceType()
     QString ret = KStandardDirs::locate("widgets", "pics/kdialog.png");
     QCOMPARE(ret, QString()); // normal, there's no "widgets" resource in kstandarddirs by default
 
-    KGlobal::dirs()->addResourceType("widgets", "data", "kf5widgets/");
+    KGlobal::dirs()->addResourceType("widgets", "data", "kf5/widgets/");
     ret = KStandardDirs::locate("widgets", "pics/kdialog.png");
     QVERIFY(!ret.isEmpty());
 
