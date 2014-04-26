@@ -117,7 +117,7 @@ K4TimeZoneWidget::K4TimeZoneWidget(QWidget *parent, KTimeZones *db)
         listItem->setText(Private::CommentColumn, comment);
         listItem->setData(Private::CityColumn, Private::ZoneRole, tzName);   // store complete path in custom role
 
-        // Locate the flag from /l10n/%1/flag.png.
+        // Locate the flag from /l10n/%1/kf5_flag.png.
         QString flag = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString("locale/l10n/%1/flag.png").arg(zone.countryCode().toLower()));
         if (QFile::exists(flag)) {
             listItem->setIcon(Private::RegionColumn, QPixmap(flag));
