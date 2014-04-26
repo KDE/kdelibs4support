@@ -300,7 +300,7 @@ static QString relativeInstallPath(const char *type)
             return QFile::decodeName(LIB_INSTALL_DIR "/");
         }
         if (strcmp("libexec", type) == 0) {
-            return QFile::decodeName(LIB_INSTALL_DIR "/kde5/libexec/");
+            return QFile::decodeName(LIB_INSTALL_DIR "/libexec/");
         }
         if (strcmp("locale", type) == 0) {
             return QFile::decodeName(LOCALE_INSTALL_DIR "/");
@@ -1396,7 +1396,7 @@ static QString checkExecutable(const QString &path, bool ignoreExecBit)
         // problems with executables that work differently depending on name they are
         // run as (for example gunzip)
         orig.makeAbsolute();
-        return orig.filePath();
+        return QDir::cleanPath(orig.filePath());
     }
     //kDebug(180) << "checkExecutable(): failed, returning empty string";
     return QString();
@@ -1426,7 +1426,7 @@ QString KStandardDirs::findExe(const QString &appname,
     QFileInfo info;
 
     // absolute or relative path?
-    if (appname.contains(QDir::separator())) {
+    if (QDir::isAbsolutePath(appname)) {
         //kDebug(180) << "findExe(): absolute path given";
         QString path = checkExecutable(appname, options & IgnoreExecBit);
         return path;
@@ -1919,7 +1919,7 @@ void KStandardDirs::addKDEDefaults()
     // config resource: the XDG paths (xdg/config) have more priority than the KDE4 paths (share/config)
     addResourceType("config", "xdgconf", "/", true);
 
-    addResourceType("exe", "lib", "kde5/libexec", true);
+    addResourceType("exe", "lib", "libexec", true);
 
     addResourceDir("home", QDir::homePath(), false);
 

@@ -144,12 +144,12 @@ void KStandarddirsTest::testFindResource()
         QSKIP("KDEDIRS does not contain the KConfig prefix");
     }
 
-    const QString bin = KGlobal::dirs()->findResource("exe", "kconf_update" EXT);
+    const QString bin = KGlobal::dirs()->findResource("exe", "kf5/kconf_update" EXT);
     QVERIFY(!bin.isEmpty());
 #ifdef Q_OS_WIN
     QVERIFY(bin.endsWith("bin/kconf_update.exe"));
 #else
-    QVERIFY(bin.endsWith("kde5/libexec/kconf_update"));
+    QVERIFY(bin.endsWith("libexec/kf5/kconf_update"));
 #endif
     QVERIFY(!QDir::isRelativePath(bin));
 
@@ -294,9 +294,9 @@ void KStandarddirsTest::testFindExeLibExec()
     }
 
     // findExe with a result in libexec
-    const QString libexe = KGlobal::dirs()->findExe("fileshareset");
+    const QString libexe = KGlobal::dirs()->findExe("kf5/fileshareset");
     QVERIFY(!libexe.isEmpty());
-    QVERIFY(libexe.endsWith(LIB_INSTALL_DIR "/kde5/libexec/fileshareset" EXT, PATH_SENSITIVITY));
+    QVERIFY(libexe.endsWith(LIB_INSTALL_DIR "/libexec/kf5/fileshareset" EXT, PATH_SENSITIVITY));
 }
 
 void KStandarddirsTest::testFindExe()

@@ -46,7 +46,7 @@ static bool s_sharingEnabled;
 
 static QString findExe(const char *exeName)
 {
-    // Normally fileshareset and filesharelist are installed in kde4/libexec;
+    // Normally fileshareset and filesharelist are installed in libexec/kf5;
     // allow distributions to move it somewhere else in the PATH or in /usr/sbin.
     QString exe = QStandardPaths::findExecutable(exeName);
     if (exe.isEmpty()) {
