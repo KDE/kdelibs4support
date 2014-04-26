@@ -644,7 +644,7 @@ static const char *const *namedColorFilePath(void)
         "/usr/X11R6/lib/X11/rgb.txt",
         "/usr/openwin/lib/X11/rgb.txt", // for Solaris.
 #else /* systems without X11 */
-        "kdeui/rgb.txt",
+        "kf5/kdeui/rgb.txt",
 #endif
         0
     };

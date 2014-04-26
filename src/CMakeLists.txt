@@ -568,7 +568,7 @@ install( FILES kdeui/40.colors kdeui/Oxygen.colors kdeui/Web.colors kdeui/Royal.
 
 if (NOT X11_FOUND)
     # install our copy of the rgb.txt named colors list on systems without X11
-    install(FILES kdeui/rgb.txt DESTINATION ${DATA_INSTALL_DIR}/kdeui)
+    install(FILES kdeui/rgb.txt DESTINATION ${KF5_DATA_INSTALL_DIR}/kdeui)
 endif ()
 
 # kio/*.h
