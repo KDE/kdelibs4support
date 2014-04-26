@@ -670,7 +670,7 @@ KSSLCertificate::KSSLValidationList KSSLCertificate::validateVerbose(KSSLCertifi
         return errors;
     }
 
-    const QStringList qsl = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "kssl", QStandardPaths::LocateDirectory);
+    const QStringList qsl = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "kf5/kssl", QStandardPaths::LocateDirectory);
 
     if (qsl.isEmpty()) {
         errors << KSSLCertificate::NoCARoot;
