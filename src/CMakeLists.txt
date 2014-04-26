@@ -661,9 +661,9 @@ configure_file(${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_d
 # see the .xsl.cmake files for a more verbose explanation below
 if(NOT WIN32)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}
-            DESTINATION ${DATA_INSTALL_DIR}/kdoctools5/customization/dtd )
+        DESTINATION ${KF5_DATA_INSTALL_DIR}/kdoctools/customization/dtd )
 else()
-    get_filename_component(NORMALIZED_DTD_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/${DATA_INSTALL_DIR}/kdoctools5/customization/dtd" ABSOLUTE)
+    get_filename_component(NORMALIZED_DTD_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/${KF5_DATA_INSTALL_DIR}/kdoctools/customization/dtd" ABSOLUTE)
     # file(RELATIVE_PATH ...) returns wrong values for paths containing /../ (it doesn't normalize the path)
     # To work around this we make sure the variable passed has all /../ elements
     # removed using get_filename_component(... ABSOLUTE)
@@ -672,9 +672,9 @@ else()
         configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install)"
     )
     get_filename_component(_custom_dtd_kdex_name ${_custom_dtd_kdex} NAME)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install DESTINATION ${DATA_INSTALL_DIR}/kdoctools5/customization/dtd RENAME ${_custom_dtd_kdex_name})
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install DESTINATION ${KF5_DATA_INSTALL_DIR}/kdoctools/customization/dtd RENAME ${_custom_dtd_kdex_name})
 endif()
 
 install(FILES "customization/catalog4.xml"
-        DESTINATION ${DATA_INSTALL_DIR}/kdoctools5/customization )
+    DESTINATION ${KF5_DATA_INSTALL_DIR}/kdoctools/customization )
 
