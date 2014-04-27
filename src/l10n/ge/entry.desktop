@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Georgia
-Name[ca]=Geòrgia
-Name[de]=Georgien
-Name[hr]=Gruzija
-Name[ka]=საქართველო
-Name[nb]=Georgia
-Name[nl]=Georgië
-Name[nn]=Georgia
-Name[pl]=Gruzja
-Name[pt_BR]=Geórgia
-Name[se]=Georgia
-Name[sk]=Gruzínsko
-Name[sr]=Грузија
-Name[sr@ijekavian]=Грузија
-Name[sr@ijekavianlatin]=Gruzija
-Name[sr@latin]=Gruzija
-Name[sv]=Georgien
-Name[uk]=Грузія
-Name[x-test]=xxGeorgiaxx
 Region=easteurope
 Languages=ka,ru
 DecimalSymbol=,

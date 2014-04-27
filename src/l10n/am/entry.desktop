@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Armenia
-Name[ca]=Armènia
-Name[de]=Armenien
-Name[hr]=Armenija
-Name[ka]=სასომხეთი
-Name[nb]=Armenia
-Name[nl]=Armenië
-Name[nn]=Armenia
-Name[pl]=Armenia
-Name[pt_BR]=Armênia
-Name[se]=Armenia
-Name[sk]=Arménsko
-Name[sr]=Јерменија
-Name[sr@ijekavian]=Јерменија
-Name[sr@ijekavianlatin]=Jermenija
-Name[sr@latin]=Jermenija
-Name[sv]=Armenien
-Name[uk]=Вірменія
-Name[x-test]=xxArmeniaxx
 Region=middleeast
 Languages=hy
 DecimalSymbol=,

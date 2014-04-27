@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Vietnam
-Name[ca]=Vietnam
-Name[de]=Vietnam
-Name[hr]=Vijetnam
-Name[ka]=ვიეტნამი
-Name[nb]=Vietnam
-Name[nl]=Vietnam
-Name[nn]=Vietnam
-Name[pl]=Wietnam
-Name[pt_BR]=Vietnã
-Name[se]=Vietnam
-Name[sk]=Vietnam
-Name[sr]=Вијетнам
-Name[sr@ijekavian]=Вијетнам
-Name[sr@ijekavianlatin]=Vijetnam
-Name[sr@latin]=Vijetnam
-Name[sv]=Vietnam
-Name[uk]=В'єтнам
-Name[x-test]=xxVietnamxx
 Region=southeastasia
 Languages=vi
 DecimalSymbol=,

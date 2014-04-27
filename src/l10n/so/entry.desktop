@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Somalia
-Name[ca]=Somàlia
-Name[de]=Somalia
-Name[hr]=Somalija
-Name[ka]=სომალი
-Name[nb]=Somalia
-Name[nl]=Somalië
-Name[nn]=Somalia
-Name[pl]=Somalia
-Name[pt_BR]=Somália
-Name[se]=Somália
-Name[sk]=Somálsko
-Name[sr]=Сомалија
-Name[sr@ijekavian]=Сомалија
-Name[sr@ijekavianlatin]=Somalija
-Name[sr@latin]=Somalija
-Name[sv]=Somalia
-Name[uk]=Сомалі
-Name[x-test]=xxSomaliaxx
 Region=northafrica
 Languages=ar
 DecimalSymbol=,

@@ -1,24 +1,6 @@
 [KCM Locale]
 Author=Pedro Morais <morais@kde.org>
 Name=Portugal
-Name[ca]=Portugal
-Name[de]=Portugal
-Name[hr]=Portugal
-Name[ka]=პორტუგალია
-Name[nb]=Portugal
-Name[nl]=Portugal
-Name[nn]=Portugal
-Name[pl]=Portugalia
-Name[pt_BR]=Portugal
-Name[se]=Portugal
-Name[sk]=Portugalsko
-Name[sr]=Португал
-Name[sr@ijekavian]=Португал
-Name[sr@ijekavianlatin]=Portugal
-Name[sr@latin]=Portugal
-Name[sv]=Portugal
-Name[uk]=Португалія
-Name[x-test]=xxPortugalxx
 Region=westeurope
 Languages=pt
 DecimalSymbol=,

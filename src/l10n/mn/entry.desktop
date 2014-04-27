@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Mongolia
-Name[ca]=Mongòlia
-Name[de]=Mongolei
-Name[hr]=Mongolija
-Name[ka]=მონღოლეთი
-Name[nb]=Mongolia
-Name[nl]=Mongolië
-Name[nn]=Mongolia
-Name[pl]=Mongolia
-Name[pt_BR]=Mongólia
-Name[se]=Mongolia
-Name[sk]=Mongolsko
-Name[sr]=Монголија
-Name[sr@ijekavian]=Монголија
-Name[sr@ijekavianlatin]=Mongolija
-Name[sr@latin]=Mongolija
-Name[sv]=Mongoliet
-Name[uk]=Монголія
-Name[x-test]=xxMongoliaxx
 Region=eastasia
 Languages=mn
 #DecimalSymbol=,

@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Mauritania
-Name[ca]=Mauritània
-Name[de]=Mauretanien
-Name[hr]=Mauritanija
-Name[ka]=მავრიტანია
-Name[nb]=Mauritania
-Name[nl]=Mauritanië
-Name[nn]=Mauritania
-Name[pl]=Mauretania
-Name[pt_BR]=Mauritânia
-Name[se]=Mauritania
-Name[sk]=Mauritánia
-Name[sr]=Мауританија
-Name[sr@ijekavian]=Мауританија
-Name[sr@ijekavianlatin]=Mauritanija
-Name[sr@latin]=Mauritanija
-Name[sv]=Mauretanien
-Name[uk]=Мавританія
-Name[x-test]=xxMauritaniaxx
 Region=westafrica
 Languages=ar,en_GB
 #DecimalSymbol=,

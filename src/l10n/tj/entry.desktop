@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Tajikistan
-Name[ca]=Tadjikistan
-Name[de]=Tadschikistan
-Name[hr]=Tadžikistan
-Name[ka]=ტაჯიკეთი
-Name[nb]=Tadsjikistan
-Name[nl]=Tadzjikistan
-Name[nn]=Tadsjikistan
-Name[pl]=Tadżykistan
-Name[pt_BR]=Tadjiquistão
-Name[se]=Tažikistan
-Name[sk]=Tadžikistan
-Name[sr]=Таџикистан
-Name[sr@ijekavian]=Таџикистан
-Name[sr@ijekavianlatin]=Tadžikistan
-Name[sr@latin]=Tadžikistan
-Name[sv]=Tadzjikistan
-Name[uk]=Таджикистан
-Name[x-test]=xxTajikistanxx
 Region=centralasia
 Languages=tg
 #DecimalSymbol=,

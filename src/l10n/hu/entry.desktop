@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Hungary
-Name[ca]=Hongria
-Name[de]=Ungarn
-Name[hr]=Mađarska
-Name[ka]=უნგრეთი
-Name[nb]=Ungarn
-Name[nl]=Hongarije
-Name[nn]=Ungarn
-Name[pl]=Węgry
-Name[pt_BR]=Hungria
-Name[se]=Ungár
-Name[sk]=Maďarsko
-Name[sr]=Мађарска
-Name[sr@ijekavian]=Мађарска
-Name[sr@ijekavianlatin]=Mađarska
-Name[sr@latin]=Mađarska
-Name[sv]=Ungern
-Name[uk]=Угорщина
-Name[x-test]=xxHungaryxx
 Region=centraleurope
 Languages=hu
 DecimalSymbol=,

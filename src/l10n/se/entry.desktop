@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Sweden
-Name[ca]=Suècia
-Name[de]=Schweden
-Name[hr]=Švedska
-Name[ka]=შვედეთი
-Name[nb]=Sverige
-Name[nl]=Zweden
-Name[nn]=Sverige
-Name[pl]=Szwecja
-Name[pt_BR]=Suécia
-Name[se]=Ruoŧŧa
-Name[sk]=Švédsko
-Name[sr]=Шведска
-Name[sr@ijekavian]=Шведска
-Name[sr@ijekavianlatin]=Švedska
-Name[sr@latin]=Švedska
-Name[sv]=Sverige
-Name[uk]=Швеція
-Name[x-test]=xxSwedenxx
 Region=northeurope
 Languages=sv,se
 DecimalSymbol=,

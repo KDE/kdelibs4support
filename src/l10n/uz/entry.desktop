@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Uzbekistan
-Name[ca]=Uzbekistan
-Name[de]=Usbekistan
-Name[hr]=Uzbekistan
-Name[ka]=უზბეკეთი
-Name[nb]=Usbekistan
-Name[nl]=Oezbekistan
-Name[nn]=Usbekistan
-Name[pl]=Uzbekistan
-Name[pt_BR]=Uzbequistão
-Name[se]=Usbekistan
-Name[sk]=Uzbekistan
-Name[sr]=Узбекистан
-Name[sr@ijekavian]=Узбекистан
-Name[sr@ijekavianlatin]=Uzbekistan
-Name[sr@latin]=Uzbekistan
-Name[sv]=Uzbekistan
-Name[uk]=Узбекистан
-Name[x-test]=xxUzbekistanxx
 Region=centralasia
 Languages=uz
 DecimalSymbol=,

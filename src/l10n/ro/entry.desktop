@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Romania
-Name[ca]=Romania
-Name[de]=Rumänien
-Name[hr]=Rumunjska
-Name[ka]=რუმინეთი
-Name[nb]=Romania
-Name[nl]=Roemenië
-Name[nn]=Romania
-Name[pl]=Rumunia
-Name[pt_BR]=Romênia
-Name[se]=Románia
-Name[sk]=Rumunsko
-Name[sr]=Румунија
-Name[sr@ijekavian]=Румунија
-Name[sr@ijekavianlatin]=Rumunija
-Name[sr@latin]=Rumunija
-Name[sv]=Rumänien
-Name[uk]=Румунія
-Name[x-test]=xxRomaniaxx
 Region=easteurope
 Languages=ro
 DecimalSymbol=,

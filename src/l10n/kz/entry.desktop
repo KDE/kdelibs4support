@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Kazakhstan
-Name[ca]=Kazakhstan
-Name[de]=Kasachstan
-Name[hr]=Kazahstan
-Name[ka]=ყაზახეთი
-Name[nb]=Kasakhstan
-Name[nl]=Kazachstan
-Name[nn]=Kasakhstan
-Name[pl]=Kazachstan
-Name[pt_BR]=Cazaquistão
-Name[se]=Kasakhstan
-Name[sk]=Kazachstan
-Name[sr]=Казахстан
-Name[sr@ijekavian]=Казахстан
-Name[sr@ijekavianlatin]=Kazahstan
-Name[sr@latin]=Kazahstan
-Name[sv]=Kazakstan
-Name[uk]=Казахстан
-Name[x-test]=xxKazakhstanxx
 Region=centralasia
 Languages=kk,ru
 #DecimalSymbol=,
