@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Angola
+Name[ca]=Angola
+Name[hr]=Angola
+Name[ka]=ანგოლა
+Name[nb]=Angola
+Name[nl]=Angola
+Name[nn]=Angola
+Name[pt_BR]=Angola
+Name[se]=Angola
+Name[sk]=Angola
+Name[sr]=Ангола
+Name[sr@ijekavian]=Ангола
+Name[sr@ijekavianlatin]=Angola
+Name[sr@latin]=Angola
+Name[sv]=Angola
+Name[uk]=Ангола
+Name[x-test]=xxAngolaxx
 Region=southafrica
 Languages=pt
 #DecimalSymbol=,

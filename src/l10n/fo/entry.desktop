@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Faroe Islands
+Name[ca]=Illes Faroe
+Name[hr]=Farski otoci
+Name[ka]=ფარერის კუნძულები
+Name[nb]=Færøyene
+Name[nl]=Faeröer Eilanden
+Name[nn]=Færøyane
+Name[pt_BR]=Ilhas Feroe
+Name[se]=Fearsuolu
+Name[sk]=Faerské ostrovy
+Name[sr]=Фарска острва
+Name[sr@ijekavian]=Фарска острва
+Name[sr@ijekavianlatin]=Farska ostrva
+Name[sr@latin]=Farska ostrva
+Name[sv]=Färöarna
+Name[uk]=Фарерські острови
+Name[x-test]=xxFaroe Islandsxx
 Region=northeurope
 Languages=fa,da
 DecimalSymbol=,

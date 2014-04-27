@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Qatar
+Name[ca]=Qatar
+Name[hr]=Katar
+Name[ka]=კატარი
+Name[nb]=Qatar
+Name[nl]=Qatar
+Name[nn]=Qatar
+Name[pt_BR]=Catar
+Name[se]=Qatar
+Name[sk]=Katar
+Name[sr]=Катар
+Name[sr@ijekavian]=Катар
+Name[sr@ijekavianlatin]=Katar
+Name[sr@latin]=Katar
+Name[sv]=Qatar
+Name[uk]=Катар
+Name[x-test]=xxQatarxx
 Region=middleeast
 Languages=ar
 DecimalSymbol=,

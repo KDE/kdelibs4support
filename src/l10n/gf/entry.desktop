@@ -1,5 +1,19 @@
 [KCM Locale]
 Name=French Guiana
+Name[ca]=Guaiana Francesa
+Name[hr]=Francuska Gvajana
+Name[nb]=Fransk Guyana
+Name[nl]=Frans-Guyana
+Name[nn]=Fransk Guyana
+Name[pt_BR]=Guiana Francesa
+Name[sk]=Francúzska Guyana
+Name[sr]=Француска Гијана
+Name[sr@ijekavian]=Француска Гијана
+Name[sr@ijekavianlatin]=Francuska Gijana
+Name[sr@latin]=Francuska Gijana
+Name[sv]=Franska Guyana
+Name[uk]=Французька Гвіана
+Name[x-test]=xxFrench Guianaxx
 
 Region=southamerica
 Languages=fr

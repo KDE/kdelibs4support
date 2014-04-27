@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Thailand
+Name[ca]=Tailàndia
+Name[hr]=Tajland
+Name[ka]=ტაილანდი
+Name[nb]=Thailand
+Name[nl]=Thailand
+Name[nn]=Thailand
+Name[pt_BR]=Tailândia
+Name[se]=Thailand
+Name[sk]=Thajsko
+Name[sr]=Тајланд
+Name[sr@ijekavian]=Тајланд
+Name[sr@ijekavianlatin]=Tajland
+Name[sr@latin]=Tajland
+Name[sv]=Thailand
+Name[uk]=Таїланд
+Name[x-test]=xxThailandxx
 Region=southeastasia
 Languages=th
 DecimalSymbol=.

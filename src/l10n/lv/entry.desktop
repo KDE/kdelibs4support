@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Latvia
+Name[ca]=Letònia
+Name[hr]=Latvija
+Name[ka]=ლატვია
+Name[nb]=Latvia
+Name[nl]=Letland
+Name[nn]=Latvia
+Name[pt_BR]=Letônia
+Name[se]=Látvia
+Name[sk]=Lotyšsko
+Name[sr]=Летонија
+Name[sr@ijekavian]=Летонија
+Name[sr@ijekavianlatin]=Letonija
+Name[sr@latin]=Letonija
+Name[sv]=Lettland
+Name[uk]=Латвія
+Name[x-test]=xxLatviaxx
 Region=northeurope
 Languages=lv
 DecimalSymbol=,

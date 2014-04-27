@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Slovenia
+Name[ca]=Eslovènia
+Name[hr]=Slovenija
+Name[ka]=სლოვენია
+Name[nb]=Slovenia
+Name[nl]=Slovenië
+Name[nn]=Slovenia
+Name[pt_BR]=Eslovênia
+Name[se]=Slovenia
+Name[sk]=Slovinsko
+Name[sr]=Словенија
+Name[sr@ijekavian]=Словенија
+Name[sr@ijekavianlatin]=Slovenija
+Name[sr@latin]=Slovenija
+Name[sv]=Slovenien
+Name[uk]=Словенія
+Name[x-test]=xxSloveniaxx
 Author=lugos-slo@lugos.si
 Region=centraleurope
 Languages=sl

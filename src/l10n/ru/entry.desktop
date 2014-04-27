@@ -1,6 +1,22 @@
 [KCM Locale]
 Author=Denis Perchine <dyp@perchine.com>
 Name=Russia
+Name[ca]=Rússia
+Name[hr]=Rusija
+Name[ka]=რუსეთი
+Name[nb]=Russland
+Name[nl]=Rusland
+Name[nn]=Russland
+Name[pt_BR]=Rússia
+Name[se]=Ruošša
+Name[sk]=Rusko
+Name[sr]=Русија
+Name[sr@ijekavian]=Русија
+Name[sr@ijekavianlatin]=Rusija
+Name[sr@latin]=Rusija
+Name[sv]=Ryssland
+Name[uk]=Росія
+Name[x-test]=xxRussiaxx
 Region=easteurope
 Languages=ru
 DecimalSymbol=,

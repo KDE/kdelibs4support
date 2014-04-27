@@ -1,6 +1,22 @@
 [KCM Locale]
 Author=Ramon Casha <ramon.casha@megabyte.net>
 Name=Malta
+Name[ca]=Malta
+Name[hr]=Malta
+Name[ka]=მალტა
+Name[nb]=Malta
+Name[nl]=Malta
+Name[nn]=Malta
+Name[pt_BR]=Malta
+Name[se]=Malta
+Name[sk]=Malta
+Name[sr]=Малта
+Name[sr@ijekavian]=Малта
+Name[sr@ijekavianlatin]=Malta
+Name[sr@latin]=Malta
+Name[sv]=Malta
+Name[uk]=Мальта
+Name[x-test]=xxMaltaxx
 Region=southeurope
 Languages=mt,en_GB,en
 DecimalSymbol=.

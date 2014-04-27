@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=Indonesia
+Name[ca]=Indonèsia
+Name[hr]=Indonezija
+Name[ka]=ინდონეზია
+Name[nb]=Indonesia
+Name[nl]=Indonesië
+Name[nn]=Indonesia
+Name[pt_BR]=Indonésia
+Name[se]=Indonesia
+Name[sk]=Indonézia
+Name[sr]=Индонезија
+Name[sr@ijekavian]=Индонезија
+Name[sr@ijekavianlatin]=Indonezija
+Name[sr@latin]=Indonezija
+Name[sv]=Indonesien
+Name[uk]=Індонезія
+Name[x-test]=xxIndonesiaxx
 Region=southeastasia
 Languages=id
 DecimalSymbol=,

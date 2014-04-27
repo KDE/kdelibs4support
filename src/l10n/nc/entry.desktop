@@ -1,5 +1,21 @@
 [KCM Locale]
 Name=New Caledonia
+Name[ca]=Nova Caledònia
+Name[hr]=Nova Kaledonija
+Name[ka]=ახალი კალედონია
+Name[nb]=Ny-Caledonia
+Name[nl]=Nieuw Caledonië
+Name[nn]=Ny-Caledonia
+Name[pt_BR]=Nova Caledônia
+Name[se]=Ođđa Kaledonia
+Name[sk]=Nová Kaledónia
+Name[sr]=Нова Каледонија
+Name[sr@ijekavian]=Нова Каледонија
+Name[sr@ijekavianlatin]=Nova Kaledonija
+Name[sr@latin]=Nova Kaledonija
+Name[sv]=Nya Kaledonien
+Name[uk]=Нова Каледонія
+Name[x-test]=xxNew Caledoniaxx
 Region=oceania
 Languages=fr
 #DecimalSymbol=,
