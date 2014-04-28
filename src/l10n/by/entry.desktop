@@ -1,6 +1,24 @@
 [KCM Locale]
 Author=Eugene Zelenko <greendeath@mail.ru>
 Name=Belarus
+Name[ca]=Bielorússia
+Name[de]=Weißrussland
+Name[hr]=Bjelorusija
+Name[it]=Bielorussia
+Name[ka]=ბელარუსი
+Name[nb]=Hviterussland
+Name[nl]=Wit-Rusland
+Name[nn]=Kviterussland
+Name[pl]=Białoruś
+Name[pt]=Bielorrússia
+Name[pt_BR]=Bielorrússia
+Name[se]=Vilges-Ruošša
+Name[sk]=Bielorusko
+Name[sr]=Белорусија
+Name[sr@ijekavian]=Бјелорусија
+Name[sr@ijekavianlatin]=Bjelorusija
+Name[sr@latin]=Belorusija
+Name[sv]=Vitryssland
 Name[uk]=Білорусь
 Name[x-test]=xxBelarusxx
 Region=easteurope

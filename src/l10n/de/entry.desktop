@@ -1,5 +1,23 @@
 [KCM Locale]
 Name=Germany
+Name[ca]=Alemanya
+Name[de]=Deutschland
+Name[hr]=Njemačka
+Name[it]=Germania
+Name[ka]=გერმანია
+Name[nb]=Tyskland
+Name[nl]=Duitsland
+Name[nn]=Tyskland
+Name[pl]=Niemcy
+Name[pt]=Alemanha
+Name[pt_BR]=Alemanha
+Name[se]=Duiska
+Name[sk]=Nemecko
+Name[sr]=Немачка
+Name[sr@ijekavian]=Њемачка
+Name[sr@ijekavianlatin]=Njemačka
+Name[sr@latin]=Nemačka
+Name[sv]=Tyskland
 Name[uk]=Німеччина
 Name[x-test]=xxGermanyxx
 Region=centraleurope
