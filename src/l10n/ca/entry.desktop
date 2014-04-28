@@ -3,24 +3,6 @@
 #both [en_US] and [en_GB] settings refer to the Canadian English settings
 [KCM Locale]
 Name=Canada
-Name[ca]=Canadà
-Name[de]=Kanada
-Name[hr]=Kanada
-Name[it]=Canada
-Name[ka]=კანადა
-Name[nb]=Canada
-Name[nl]=Canada
-Name[nn]=Canada
-Name[pl]=Kanada
-Name[pt]=Canadá
-Name[pt_BR]=Canadá
-Name[se]=Kanada
-Name[sk]=Kanada
-Name[sr]=Канада
-Name[sr@ijekavian]=Канада
-Name[sr@ijekavianlatin]=Kanada
-Name[sr@latin]=Kanada
-Name[sv]=Kanada
 Name[uk]=Канада
 Name[x-test]=xxCanadaxx
 Region=northamerica
