@@ -1,22 +1,5 @@
 [KCM Locale]
 Name=Croatia
-Name[ca]=Croàcia
-Name[de]=Kroatien
-Name[hr]=Hrvatska
-Name[it]=Croazia
-Name[ka]=ხორვატია
-Name[nb]=Kroatia
-Name[nl]=Kroatië
-Name[nn]=Kroatia
-Name[pl]=Chorwacja
-Name[pt_BR]=Croácia
-Name[se]=Kroátia
-Name[sk]=Chorvátsko
-Name[sr]=Хрватска
-Name[sr@ijekavian]=Хрватска
-Name[sr@ijekavianlatin]=Hrvatska
-Name[sr@latin]=Hrvatska
-Name[sv]=Kroatien
 Name[uk]=Хорватія
 Name[x-test]=xxCroatiaxx
 Region=southeurope

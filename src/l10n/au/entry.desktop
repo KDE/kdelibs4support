@@ -1,22 +1,5 @@
 [KCM Locale]
 Name=Australia
-Name[ca]=Austràlia
-Name[de]=Australien
-Name[hr]=Australija
-Name[it]=Australia
-Name[ka]=ავსტრალია
-Name[nb]=Australia
-Name[nl]=Australië
-Name[nn]=Australia
-Name[pl]=Australia
-Name[pt_BR]=Austrália
-Name[se]=Austrália
-Name[sk]=Austrália
-Name[sr]=Аустралија
-Name[sr@ijekavian]=Аустралија
-Name[sr@ijekavianlatin]=Australija
-Name[sr@latin]=Australija
-Name[sv]=Australien
 Name[uk]=Австралія
 Name[x-test]=xxAustraliaxx
 Region=oceania

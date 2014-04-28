@@ -1,18 +1,5 @@
 [KCM Locale]
 Name=South Sudan
-Name[ca]=Sudan del Sud
-Name[de]=Südsudan
-Name[it]=Sud Sudan
-Name[nl]=Zuid-Soedan
-Name[nn]=Sør-Sudan
-Name[pl]=Południowy Sudan
-Name[pt_BR]=Sudão do Sul
-Name[sk]=Južný Sudán
-Name[sr]=Јужни Судан
-Name[sr@ijekavian]=Јужни Судан
-Name[sr@ijekavianlatin]=Južni Sudan
-Name[sr@latin]=Južni Sudan
-Name[sv]=Sydsudan
 Name[uk]=Південний Судан
 Name[x-test]=xxSouth Sudanxx
 Region=eastafrica
