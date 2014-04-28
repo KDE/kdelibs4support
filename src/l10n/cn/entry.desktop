@@ -1,6 +1,24 @@
 [KCM Locale]
 Author=i18n-translation@lists.linux.net.cn
 Name=China
+Name[ca]=Xina
+Name[de]=China
+Name[hr]=Kina
+Name[it]=Cina
+Name[ka]=ჩინეთი
+Name[nl]=China
+Name[nn]=Kina
+Name[pl]=Chiny
+Name[pt_BR]=China
+Name[se]=Kiinná
+Name[sk]=Čína
+Name[sr]=Кина
+Name[sr@ijekavian]=Кина
+Name[sr@ijekavianlatin]=Kina
+Name[sr@latin]=Kina
+Name[sv]=Kina
+Name[uk]=Китай
+Name[x-test]=xxChinaxx
 Region=eastasia
 Languages=zh_CN
 DecimalSymbol=.

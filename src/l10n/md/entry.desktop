@@ -1,5 +1,24 @@
 [KCM Locale]
 Name=Moldova
+Name[ca]=Moldàvia
+Name[de]=Moldawien
+Name[hr]=Moldova
+Name[it]=Moldavia
+Name[ka]=მოლდოვა
+Name[nb]=Moldova
+Name[nl]=Moldavië
+Name[nn]=Moldova
+Name[pl]=Mołdawia
+Name[pt_BR]=Moldávia
+Name[se]=Moldova
+Name[sk]=Moldavsko
+Name[sr]=Молдавија
+Name[sr@ijekavian]=Молдавија
+Name[sr@ijekavianlatin]=Moldavija
+Name[sr@latin]=Moldavija
+Name[sv]=Moldavien
+Name[uk]=Молдова
+Name[x-test]=xxMoldovaxx
 Region=easteurope
 Languages=ro,ru
 #DecimalSymbol=,

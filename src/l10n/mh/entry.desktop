@@ -1,5 +1,25 @@
 [KCM Locale]
 Name=Marshall Islands
+Name[ca]=Illes Marshall
+Name[de]=Marshall-Inseln
+Name[hr]=Marshall Otoci
+Name[it]=Isole Marshall
+Name[ka]=მარშალის კუნძულები
+Name[nb]=Marshalløyene
+Name[nl]=Marshall Eilanden
+Name[nn]=Marshalløyane
+Name[oc]=Illas Marshall
+Name[pl]=Wyspy Marshalla
+Name[pt_BR]=Ilhas Marshall
+Name[se]=Marshallsullot
+Name[sk]=Marshallove ostrovy
+Name[sr]=Маршалска острва
+Name[sr@ijekavian]=Маршалска острва
+Name[sr@ijekavianlatin]=Maršalska ostrva
+Name[sr@latin]=Maršalska ostrva
+Name[sv]=Marshallöarna
+Name[uk]=Маршаллові острови
+Name[x-test]=xxMarshall Islandsxx
 Region=oceania
 Languages=en_GB
 #DecimalSymbol=,

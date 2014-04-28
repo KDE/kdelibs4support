@@ -1,5 +1,24 @@
 [KCM Locale]
 Name=Japan
+Name[ca]=Japó
+Name[de]=Japan
+Name[hr]=Japan
+Name[it]=Giappone
+Name[ka]=იაპონია
+Name[nb]=Japan
+Name[nl]=Japan
+Name[nn]=Japan
+Name[pl]=Japonia
+Name[pt_BR]=Japão
+Name[se]=Japána
+Name[sk]=Japonsko
+Name[sr]=Јапан
+Name[sr@ijekavian]=Јапан
+Name[sr@ijekavianlatin]=Japan
+Name[sr@latin]=Japan
+Name[sv]=Japan
+Name[uk]=Японія
+Name[x-test]=xxJapanxx
 Region=eastasia
 Languages=ja
 DecimalSymbol=.

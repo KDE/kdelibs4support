@@ -1,5 +1,24 @@
 [KCM Locale]
 Name=Turkey
+Name[ca]=Turquia
+Name[de]=Türkei
+Name[hr]=Turska
+Name[it]=Turchia
+Name[ka]=თურქეთი
+Name[nb]=Tyrkia
+Name[nl]=Turkije
+Name[nn]=Tyrkia
+Name[pl]=Turcja
+Name[pt_BR]=Turquia
+Name[se]=Durka
+Name[sk]=Turecko
+Name[sr]=Турска
+Name[sr@ijekavian]=Турска
+Name[sr@ijekavianlatin]=Turska
+Name[sr@latin]=Turska
+Name[sv]=Turkiet
+Name[uk]=Туреччина
+Name[x-test]=xxTurkeyxx
 Region=southeurope
 Languages=tr
 DecimalSymbol=,

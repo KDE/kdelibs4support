@@ -1,6 +1,25 @@
 [KCM Locale]
 Author=Danko Ilik <danko@mindless.com>
 Name=Macedonia
+Name[ca]=Macedònia
+Name[de]=Mazedonien
+Name[hr]=Makedonija
+Name[it]=Macedonia
+Name[ka]=მაკედონია
+Name[nb]=Makedonia
+Name[nl]=Macedonië
+Name[nn]=Makedonia
+Name[pl]=Macedonia
+Name[pt_BR]=Macedônia
+Name[se]=Makedonia
+Name[sk]=Macedónsko
+Name[sr]=Македонија
+Name[sr@ijekavian]=Македонија
+Name[sr@ijekavianlatin]=Makedonija
+Name[sr@latin]=Makedonija
+Name[sv]=Makedonien
+Name[uk]=Македонія
+Name[x-test]=xxMacedoniaxx
 Languages=mk
 Region=southeurope
 DecimalSymbol=,

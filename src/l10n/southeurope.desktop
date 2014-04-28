@@ -1,2 +1,20 @@
 [KCM Locale]
 Name=Europe, Southern
+Name[ca]=Europa del Sud
+Name[de]=Europa, Südliches
+Name[hr]=Europa, južna
+Name[it]=Europa, meridionale
+Name[ka]=ევროპა, სამხრეთი
+Name[nl]=Europa, Zuid
+Name[nn]=Sør-Europa
+Name[pl]=Europa Południowa
+Name[pt_BR]=Europa Meridional
+Name[se]=Lulli-Eurohpa
+Name[sk]=Južná Európa
+Name[sr]=Европа, јужна
+Name[sr@ijekavian]=Европа, јужна
+Name[sr@ijekavianlatin]=Evropa, južna
+Name[sr@latin]=Evropa, južna
+Name[sv]=Europa, södra
+Name[uk]=Європа, південна
+Name[x-test]=xxEurope, Southernxx
