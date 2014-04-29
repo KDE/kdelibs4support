@@ -1,23 +1,5 @@
 [KCM Locale]
 Name=Ireland
-Name[ca]=Irlanda
-Name[de]=Irland
-Name[hr]=Irska
-Name[it]=Irlanda
-Name[ka]=ირლანდია
-Name[nb]=Irland
-Name[nl]=Ierland
-Name[nn]=Irland
-Name[pl]=Irlandia
-Name[pt]=Irlanda
-Name[pt_BR]=Irlanda
-Name[se]=Irlánda
-Name[sk]=Írsko
-Name[sr]=Ирска
-Name[sr@ijekavian]=Ирска
-Name[sr@ijekavianlatin]=Irska
-Name[sr@latin]=Irska
-Name[sv]=Irland
 Name[uk]=Ірландія
 Name[x-test]=xxIrelandxx
 Region=westeurope

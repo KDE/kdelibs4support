@@ -1,25 +1,6 @@
 [KCM Locale]
 # Western Samoa before 1997
 Name=Samoa
-Name[ca]=Samoa
-Name[de]=Samoa
-Name[hr]=Samoa
-Name[it]=Samoa
-Name[ka]=სამოა
-Name[nb]=Samoa
-Name[nl]=Samoa
-Name[nn]=Samoa
-Name[oc]=Samoa
-Name[pl]=Samoa
-Name[pt]=Samoa
-Name[pt_BR]=Samoa
-Name[se]=Samoa
-Name[sk]=Samoa
-Name[sr]=Самоа
-Name[sr@ijekavian]=Самоа
-Name[sr@ijekavianlatin]=Samoa
-Name[sr@latin]=Samoa
-Name[sv]=Samoa
 Name[uk]=Самоа
 Name[x-test]=xxSamoaxx
 Region=oceania
