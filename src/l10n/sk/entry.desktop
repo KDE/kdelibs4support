@@ -1,5 +1,23 @@
 [KCM Locale]
 Name=Slovakia
+Name[ca]=Eslovàquia
+Name[de]=Slowakei
+Name[hr]=Slovačka
+Name[it]=Slovacchia
+Name[ka]=სლოვაკია
+Name[nb]=Slovakia
+Name[nl]=Slowakije
+Name[nn]=Slovakia
+Name[pl]=Słowacja
+Name[pt]=Eslováquia
+Name[pt_BR]=Eslováquia
+Name[se]=Slovákia
+Name[sk]=Slovensko
+Name[sr]=Словачка
+Name[sr@ijekavian]=Словачка
+Name[sr@ijekavianlatin]=Slovačka
+Name[sr@latin]=Slovačka
+Name[sv]=Slovakien
 Name[uk]=Словаччина
 Name[x-test]=xxSlovakiaxx
 Region=centraleurope

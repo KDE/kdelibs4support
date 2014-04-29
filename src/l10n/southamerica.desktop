@@ -1,4 +1,21 @@
 [KCM Locale]
 Name=America, South
+Name[ca]=Amèrica del Sud
+Name[de]=Amerika, Südliches
+Name[hr]=Amerika, južna
+Name[it]=America, Sud
+Name[ka]=ამერიკა, სამხრეთი
+Name[nl]=Amerika, Zuid-
+Name[nn]=Sør-Amerika
+Name[pl]=Ameryka Południowa
+Name[pt]=América do Sul
+Name[pt_BR]=América do Sul
+Name[se]=Lulli-Amerihká
+Name[sk]=Južná Amerika
+Name[sr]=Америка, јужна
+Name[sr@ijekavian]=Америка, јужна
+Name[sr@ijekavianlatin]=Amerika, južna
+Name[sr@latin]=Amerika, južna
+Name[sv]=Amerika, syd
 Name[uk]=Америка, південна
 Name[x-test]=xxAmerica, Southxx

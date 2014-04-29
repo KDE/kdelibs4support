@@ -1,6 +1,24 @@
 [KCM Locale]
 Author=Eugene Onischenko <oneugene@ukr.net>
 Name=Ukraine
+Name[ca]=Ucraïna
+Name[de]=Ukraine
+Name[hr]=Ukrajina
+Name[it]=Ucraina
+Name[ka]=უკრაინა
+Name[nb]=Ukraina
+Name[nl]=Oekraïne
+Name[nn]=Ukraina
+Name[pl]=Ukraina
+Name[pt]=Ucrânia
+Name[pt_BR]=Ucrânia
+Name[se]=Ukraina
+Name[sk]=Ukrajina
+Name[sr]=Украјина
+Name[sr@ijekavian]=Украјина
+Name[sr@ijekavianlatin]=Ukrajina
+Name[sr@latin]=Ukrajina
+Name[sv]=Ukraina
 Name[uk]=Україна
 Name[x-test]=xxUkrainexx
 Region=easteurope

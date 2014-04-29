@@ -1,5 +1,23 @@
 [KCM Locale]
 Name=Albania
+Name[ca]=Albània
+Name[de]=Albanien
+Name[hr]=Albanija
+Name[it]=Albania
+Name[ka]=ალბანეთი
+Name[nb]=Albania
+Name[nl]=Albanië
+Name[nn]=Albania
+Name[pl]=Albania
+Name[pt]=Albânia
+Name[pt_BR]=Albânia
+Name[se]=Albánia
+Name[sk]=Albánsko
+Name[sr]=Албанија
+Name[sr@ijekavian]=Албанија
+Name[sr@ijekavianlatin]=Albanija
+Name[sr@latin]=Albanija
+Name[sv]=Albanien
 Name[uk]=Албанія
 Name[x-test]=xxAlbaniaxx
 Region=southeurope

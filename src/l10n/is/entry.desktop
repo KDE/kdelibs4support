@@ -1,5 +1,23 @@
 [KCM Locale]
 Name=Iceland
+Name[ca]=Islàndia
+Name[de]=Island
+Name[hr]=Island
+Name[it]=Islanda
+Name[ka]=ისლანდია
+Name[nb]=Island
+Name[nl]=IJsland
+Name[nn]=Island
+Name[pl]=Islandia
+Name[pt]=Islândia
+Name[pt_BR]=Islândia
+Name[se]=Islánda
+Name[sk]=Island
+Name[sr]=Исланд
+Name[sr@ijekavian]=Исланд
+Name[sr@ijekavianlatin]=Island
+Name[sr@latin]=Island
+Name[sv]=Island
 Name[uk]=Ісландія
 Name[x-test]=xxIcelandxx
 Region=northeurope
