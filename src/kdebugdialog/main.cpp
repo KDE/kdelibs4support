@@ -96,7 +96,7 @@ static KAbstractDebugDialog::AreaMap readAreas()
 
 int main(int argc, char ** argv)
 {
-    K4AboutData data( "kdebugdialog", 0, ki18n( "KDebugDialog"),
+    K4AboutData data( "kdebugdialog5", 0, ki18n( "KDebugDialog"),
             "1.0", ki18n("A dialog box for setting preferences for debug output"),
             K4AboutData::License_GPL, ki18n("Copyright 1999-2009, David Faure <email>faure@kde.org</email>"));
     data.addAuthor(ki18n("David Faure"), ki18n("Maintainer"), "faure@kde.org");
