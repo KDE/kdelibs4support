@@ -48,6 +48,7 @@ set(libkdelibs4support_SRCS
     ${libkdelibs4support_SRCS}
     kdecore/k4aboutdata.cpp
     kdecore/kcomponentdata.cpp
+    kdecore/kcurrencycode.cpp
     kdecore/kdebug.cpp
     kdecore/kdebugdbusiface.cpp
     kdecore/kdeversion.cpp
@@ -425,6 +426,7 @@ install(TARGETS KF5KDELibs4Support
 install(FILES
     kdecore/k4aboutdata.h
     kdecore/kcomponentdata.h
+    kdecore/kcurrencycode.h
     kdecore/kdebug.h
     kdecore/kde_file.h
     kdecore/klibloader.h

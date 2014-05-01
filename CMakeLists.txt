@@ -141,6 +141,7 @@ install(
 
 
 add_subdirectory(cmake)
+add_subdirectory(data)
 add_subdirectory(docs)
 add_subdirectory(src)
 
