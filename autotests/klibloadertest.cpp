@@ -82,7 +82,8 @@ void KLibLoaderTest::testLibrary()
     KLibrary *lib = KLibLoader::self()->library(s_kpluginFactoryModule);
     QVERIFY(lib);
     QVERIFY(lib->isLoaded());
-    QCOMPARE(lib->fileName(), MODULE_PATH(s_kpluginFactoryModule));
+    QCOMPARE(QFileInfo(lib->fileName()).canonicalFilePath(),
+             MODULE_PATH(s_kpluginFactoryModule));
 }
 
 void KLibLoaderTest::testLibrary_hints()
@@ -92,7 +93,8 @@ void KLibLoaderTest::testLibrary_hints()
             QLibrary::ResolveAllSymbolsHint);
     QVERIFY(lib);
     QVERIFY(lib->isLoaded());
-    QCOMPARE(lib->fileName(), MODULE_PATH(s_kpluginFactoryModule));
+    QCOMPARE(QFileInfo(lib->fileName()).canonicalFilePath(),
+             MODULE_PATH(s_kpluginFactoryModule));
 }
 
 void KLibLoaderTest::testLibrary_noexist()
@@ -105,8 +107,8 @@ void KLibLoaderTest::testFindLibrary()
 {
     const QString library = KLibLoader::findLibrary(s_kpluginFactoryModule);
     QVERIFY(!library.isEmpty());
-    const QString libraryPath = QFileInfo(library).canonicalFilePath();
-    QCOMPARE(library, MODULE_PATH(s_kpluginFactoryModule));
+    QCOMPARE(QFileInfo(library).canonicalFilePath(),
+             MODULE_PATH(s_kpluginFactoryModule));
 }
 
 void KLibLoaderTest::testFindLibrary_noexist()
