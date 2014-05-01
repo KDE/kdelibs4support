@@ -3,8 +3,6 @@ CurrencyCodeIsoAlpha3=TWD
 CurrencyCodeIsoNumeric3=901
 #Context for Name: Adjectival Country Name and Currency Name
 Name=New Taiwan Dollar
-Name[uk]=Новий тайванський долар
-Name[x-test]=xxNew Taiwan Dollarxx
 CurrencyNameIso=New Taiwan dollar
 CurrencyUnitSymbols=$,NT$,TWD
 CurrencyUnitSymbolDefault=$

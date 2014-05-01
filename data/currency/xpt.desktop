@@ -3,8 +3,6 @@ CurrencyCodeIsoAlpha3=XPT
 CurrencyCodeIsoNumeric3=962
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Platinum
-Name[uk]=Платина
-Name[x-test]=xxPlatinumxx
 CurrencyNameIso=Platinum
 CurrencyUnitSymbols=XPT
 CurrencyUnitSymbolDefault=XPT

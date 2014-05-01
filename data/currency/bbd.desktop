@@ -3,8 +3,6 @@ CurrencyCodeIsoAlpha3=BBD
 CurrencyCodeIsoNumeric3=052
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Barbados Dollar
-Name[uk]=Барбадоський долар
-Name[x-test]=xxBarbados Dollarxx
 CurrencyNameIso=Barbados dollar
 CurrencyUnitSymbols=$,Bds$,BBD
 CurrencyUnitSymbolDefault=$

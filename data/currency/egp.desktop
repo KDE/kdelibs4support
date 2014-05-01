@@ -3,8 +3,6 @@ CurrencyCodeIsoAlpha3=EGP
 CurrencyCodeIsoNumeric3=818
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Egyptian Pound
-Name[uk]=Єгипетський фунт
-Name[x-test]=xxEgyptian Poundxx
 CurrencyNameIso=Egyptian pound
 CurrencyUnitSymbols=£,LE,ج.م,EGP
 CurrencyUnitSymbolDefault=LE

@@ -3,8 +3,6 @@ CurrencyCodeIsoAlpha3=DJF
 CurrencyCodeIsoNumeric3=262
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Djibouti Franc
-Name[uk]=Франк Джибуті
-Name[x-test]=xxDjibouti Francxx
 CurrencyNameIso=Djibouti franc
 CurrencyUnitSymbols=Fdj,DJF
 CurrencyUnitSymbolDefault=Fdj

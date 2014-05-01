@@ -3,8 +3,6 @@ CurrencyCodeIsoAlpha3=LSL
 CurrencyCodeIsoNumeric3=426
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Lesotho Loti
-Name[uk]=Лесотське лоті
-Name[x-test]=xxLesotho Lotixx
 CurrencyNameIso=Lesotho loti
 CurrencyUnitSymbols=L,LSL
 CurrencyUnitSymbolDefault=L
