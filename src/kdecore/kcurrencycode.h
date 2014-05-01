@@ -20,7 +20,7 @@
 #ifndef KCURRENCYCODE_H
 #define KCURRENCYCODE_H
 
-#include <kunitconversion/kunitconversion_export.h>
+#include <kdelibs4support_export.h>
 
 #include <QtCore/QSharedDataPointer>
 #include <QtCore/QString>
@@ -41,8 +41,11 @@ class KCurrencyCodePrivate;
  * @see KLocale
  *
  * @author John Layt <john@layt.net>
+ *
+ * @deprecated since 5.0, a replacement will be provided by the KStandards
+ *             framework (not available in KDE Frameworks 5.0)
  */
-class KUNITCONVERSION_EXPORT KCurrencyCode
+class KDELIBS4SUPPORT_DEPRECATED_EXPORT KCurrencyCode
 {
 public:
     /**
