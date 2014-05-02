@@ -33,7 +33,7 @@
 static QString loadTimeFormat(const QString &country)
 {
     const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                         QString::fromLatin1("locale/l10n/%1/kf5_entry.desktop")
+                         QString::fromLatin1("kf5/locale/countries/%1/country.desktop")
                          .arg(country));
     if (file.isEmpty()) {
         return QString();

@@ -398,7 +398,7 @@ void KLocalePrivate::initFormat()
 {
     KConfigGroup cg(config(), "Locale");
 
-    KConfig entryFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("l10n/%1/kf5_entry.desktop").arg(m_country)));
+    KConfig entryFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("kf5/locale/countries/") + QString::fromLatin1("%1/country.desktop").arg(m_country)));
     entryFile.setLocale(m_language);
     KConfigGroup entry(&entryFile, "KCM Locale");
 
@@ -2730,11 +2730,11 @@ QString KLocalePrivate::languageCodeToName(const QString &language)
 QStringList KLocalePrivate::allCountriesList() const
 {
     QStringList countries;
-    const QStringList localeDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("locale/l10n"), QStandardPaths::LocateDirectory);
+    const QStringList localeDirs = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("kf5/locale/countries/"), QStandardPaths::LocateDirectory);
     Q_FOREACH (const QString &localeDir, localeDirs) {
         const QStringList entries = QDir(localeDir).entryList(QDir::Dirs);
         Q_FOREACH (const QString &d, entries) {
-            if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/kf5_entry.desktop"))) {
+            if (QFile::exists(localeDir + QLatin1Char('/') + d + QLatin1String("/country.desktop"))) {
                 countries.append(d);
             }
         }
@@ -2745,7 +2745,7 @@ QStringList KLocalePrivate::allCountriesList() const
 QString KLocalePrivate::countryCodeToName(const QString &country) const
 {
     QString countryName;
-    QString entryFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("locale/") + QString::fromLatin1("l10n/") + country.toLower() + QLatin1String("/kf5_entry.desktop"));
+    QString entryFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("kf5/locale/countries/") + country.toLower() + QLatin1String("/country.desktop"));
     if (!entryFile.isEmpty()) {
         KConfig cfg(entryFile);
         KConfigGroup cg(&cfg, "KCM Locale");
