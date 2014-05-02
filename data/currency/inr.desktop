@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=INR
 CurrencyCodeIsoNumeric3=356
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Indian Rupee
+Name[x-test]=xxIndian Rupeexx
 CurrencyNameIso=Indian rupee
 CurrencyUnitSymbols=₹,Rs.,रू,INR
 CurrencyUnitSymbolDefault=₹

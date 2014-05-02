@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=IRR
 CurrencyCodeIsoNumeric3=364
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Iranian Rial
+Name[x-test]=xxIranian Rialxx
 CurrencyNameIso=Iranian rial
 CurrencyUnitSymbols=﷼,IRR
 CurrencyUnitSymbolDefault=﷼

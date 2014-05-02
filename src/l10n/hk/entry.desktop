@@ -1,5 +1,6 @@
 [KCM Locale]
 Name=Hong Kong SAR(China)
+Name[nl]=Hong Kong SAR(China)
 Name[uk]=Гонконг SAR (Китай)
 Name[x-test]=xxHong Kong SAR(China)xx
 Region=eastasia

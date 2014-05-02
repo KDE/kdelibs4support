@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=GEL
 CurrencyCodeIsoNumeric3=981
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Georgian Lari
+Name[x-test]=xxGeorgian Larixx
 CurrencyNameIso=Lari
 CurrencyUnitSymbols=GEL
 CurrencyUnitSymbolDefault=GEL

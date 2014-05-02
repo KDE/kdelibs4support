@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=LAK
 CurrencyCodeIsoNumeric3=418
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Lao Kip
+Name[x-test]=xxLao Kipxx
 CurrencyNameIso=Kip
 CurrencyUnitSymbols=₭,₭N,LAK
 CurrencyUnitSymbolDefault=₭

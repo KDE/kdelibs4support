@@ -1,6 +1,7 @@
 [KCM Locale]
 Author=Kim Enkovaara <kim.enkovaara@iki.fi>
 Name=Finland
+Name[nl]=Finland
 Name[uk]=Фінляндія
 Name[x-test]=xxFinlandxx
 Region=northeurope

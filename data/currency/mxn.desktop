@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=MXN
 CurrencyCodeIsoNumeric3=484
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Mexican Peso
+Name[x-test]=xxMexican Pesoxx
 CurrencyNameIso=Mexican peso
 CurrencyUnitSymbols=$,Mex$,MXN
 CurrencyUnitSymbolDefault=$

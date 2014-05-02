@@ -1,6 +1,7 @@
 [KCM Locale]
 Author=Francois-Xavier Duranceau <duranceau@kde.org>
 Name=France
+Name[nl]=Frankrijk
 Name[uk]=Франція
 Name[x-test]=xxFrancexx
 Region=westeurope

@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Network Status
+Name[nl]=Netwerkstatus
 Name[uk]=Стан мережі
 Name[x-test]=xxNetwork Statusxx
 Comment=Tracks status of network interfaces and provides notification to applications using the network.
+Comment[nl]=Volgt de status van netwerkinterfaces en levert meldingen aan programma's die het netwerk gebruiken.
 Comment[uk]=Стежить за станом інтерфейсів мережі і надає сповіщення програмам, які використовують мережу для роботи.
 Comment[x-test]=xxTracks status of network interfaces and provides notification to applications using the network.xx
 Type=Service

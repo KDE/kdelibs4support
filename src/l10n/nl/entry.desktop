@@ -1,6 +1,7 @@
 [KCM Locale]
 Author=Rinse de Vries <rinse@kde.nl>
 Name=Netherlands
+Name[nl]=Nederland
 Name[uk]=Нідерланди
 Name[x-test]=xxNetherlandsxx
 Region=westeurope

@@ -2,6 +2,7 @@
 Type=ServiceType
 X-KDE-ServiceType=KDataTool
 Comment=KDE Data Tool
+Comment[nl]=KDE Data-hulpprogramma
 Comment[uk]=Засіб роботи з даними KDE
 Comment[x-test]=xxKDE Data Toolxx
 

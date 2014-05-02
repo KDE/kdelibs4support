@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=JOD
 CurrencyCodeIsoNumeric3=400
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Jordanian Dinar
+Name[x-test]=xxJordanian Dinarxx
 CurrencyNameIso=Jordanian dinar
 CurrencyUnitSymbols=JD,JOD
 CurrencyUnitSymbolDefault=JD

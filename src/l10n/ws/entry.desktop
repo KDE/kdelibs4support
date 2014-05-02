@@ -1,6 +1,7 @@
 [KCM Locale]
 # Western Samoa before 1997
 Name=Samoa
+Name[nl]=Samoa
 Name[uk]=Самоа
 Name[x-test]=xxSamoaxx
 Region=oceania

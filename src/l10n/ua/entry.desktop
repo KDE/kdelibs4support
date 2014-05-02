@@ -1,6 +1,7 @@
 [KCM Locale]
 Author=Eugene Onischenko <oneugene@ukr.net>
 Name=Ukraine
+Name[nl]=Oekraïne
 Name[uk]=Україна
 Name[x-test]=xxUkrainexx
 Region=easteurope

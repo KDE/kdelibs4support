@@ -1,6 +1,7 @@
 [KCM Locale]
 # FIXME Which Chinese??
 Name=Brunei Darussalam
+Name[nl]=Brunei Darussalam
 Name[uk]=Бруней
 Name[x-test]=xxBrunei Darussalamxx
 Region=southeastasia

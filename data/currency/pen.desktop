@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=PEN
 CurrencyCodeIsoNumeric3=604
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Peruvian Nuevo Sol
+Name[x-test]=xxPeruvian Nuevo Solxx
 CurrencyNameIso=Nuevo sol
 CurrencyUnitSymbols=S/.,PEN
 CurrencyUnitSymbolDefault=S/.

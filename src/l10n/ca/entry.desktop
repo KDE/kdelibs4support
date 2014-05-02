@@ -3,6 +3,7 @@
 #both [en_US] and [en_GB] settings refer to the Canadian English settings
 [KCM Locale]
 Name=Canada
+Name[nl]=Canada
 Name[uk]=Канада
 Name[x-test]=xxCanadaxx
 Region=northamerica

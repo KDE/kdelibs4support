@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=CUP
 CurrencyCodeIsoNumeric3=192
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Cuban Peso
+Name[x-test]=xxCuban Pesoxx
 CurrencyNameIso=Cuban peso
 CurrencyUnitSymbols=$,$MN,CUP
 CurrencyUnitSymbolDefault=$

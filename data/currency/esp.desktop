@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=ESP
 CurrencyCodeIsoNumeric3=724
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Spanish Peseta
+Name[x-test]=xxSpanish Pesetaxx
 CurrencyNameIso=Spanish peseta
 CurrencyUnitSymbols=Pta.,Pts.,Ptas,₧,ESP
 CurrencyUnitSymbolDefault=Pta.
