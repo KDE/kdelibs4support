@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=LBP
 CurrencyCodeIsoNumeric3=422
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Lebanese Pound
+Name[uk]=Ліванський фунт
 Name[x-test]=xxLebanese Poundxx
 CurrencyNameIso=Lebanese pound
 CurrencyUnitSymbols=ل.ل,LBP

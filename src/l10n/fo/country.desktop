@@ -1,5 +1,24 @@
 [KCM Locale]
 Name=Faroe Islands
+Name[ca]=Illes Faroe
+Name[cs]=Faerské ostrovy
+Name[de]=Färöer-Inseln
+Name[hr]=Farski otoci
+Name[ia]=Insulas Faroe, le
+Name[it]=Isole Faroe
+Name[ka]=ფარერის კუნძულები
+Name[nl]=Faroe Eilanden
+Name[nn]=Færøyane
+Name[pl]=Wyspy Faroe
+Name[pt]=Ilhas Faroe
+Name[pt_BR]=Ilhas Feroe
+Name[se]=Fearsuolu
+Name[sk]=Faerské ostrovy
+Name[sr]=Фарска острва
+Name[sr@ijekavian]=Фарска острва
+Name[sr@ijekavianlatin]=Farska ostrva
+Name[sr@latin]=Farska ostrva
+Name[sv]=Färöarna
 Name[uk]=Фарерські острови
 Name[x-test]=xxFaroe Islandsxx
 Region=northeurope

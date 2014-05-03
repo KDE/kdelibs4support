@@ -1,6 +1,25 @@
 [KCM Locale]
 Name=Estonia
+Name[ca]=Estònia
+Name[cs]=Estonsko
+Name[de]=Estland
+Name[hr]=Estonija
+Name[ia]=Estonia
+Name[it]=Estonia
+Name[ka]=ესტონეთი
+Name[nb]=Estland
 Name[nl]=Estland
+Name[nn]=Estland
+Name[pl]=Estonia
+Name[pt]=Estónia
+Name[pt_BR]=Estônia
+Name[se]=Estteeana
+Name[sk]=Estónsko
+Name[sr]=Естонија
+Name[sr@ijekavian]=Естонија
+Name[sr@ijekavianlatin]=Estonija
+Name[sr@latin]=Estonija
+Name[sv]=Estland
 Name[uk]=Естонія
 Name[x-test]=xxEstoniaxx
 Region=northeurope

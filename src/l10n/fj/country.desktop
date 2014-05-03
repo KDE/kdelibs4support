@@ -1,6 +1,25 @@
 [KCM Locale]
 Name=Fiji
+Name[ca]=Fiji
+Name[cs]=Fidži
+Name[de]=Fidschi
+Name[hr]=Fiji
+Name[ia]=Fiji
+Name[it]=Fiji
+Name[ka]=ფიჯი
+Name[nb]=Fiji
 Name[nl]=Fiji
+Name[nn]=Fiji
+Name[pl]=Fidżi
+Name[pt]=Fiji
+Name[pt_BR]=Fiji
+Name[se]=Fiji
+Name[sk]=Fidži
+Name[sr]=Фиџи
+Name[sr@ijekavian]=Фиџи
+Name[sr@ijekavianlatin]=Fidži
+Name[sr@latin]=Fidži
+Name[sv]=Fiji
 Name[uk]=Фіджі
 Name[x-test]=xxFijixx
 Region=oceania

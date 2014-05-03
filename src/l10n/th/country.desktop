@@ -1,6 +1,25 @@
 [KCM Locale]
 Name=Thailand
+Name[ca]=Tailàndia
+Name[cs]=Thajsko
+Name[de]=Thailand
+Name[hr]=Tajland
+Name[ia]=Thailanda
+Name[it]=Thailandia
+Name[ka]=ტაილანდი
+Name[nb]=Thailand
 Name[nl]=Thailand
+Name[nn]=Thailand
+Name[pl]=Tajlandia
+Name[pt]=Tailândia
+Name[pt_BR]=Tailândia
+Name[se]=Thailand
+Name[sk]=Thajsko
+Name[sr]=Тајланд
+Name[sr@ijekavian]=Тајланд
+Name[sr@ijekavianlatin]=Tajland
+Name[sr@latin]=Tajland
+Name[sv]=Thailand
 Name[uk]=Таїланд
 Name[x-test]=xxThailandxx
 Region=southeastasia

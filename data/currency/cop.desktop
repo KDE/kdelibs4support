@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=COP
 CurrencyCodeIsoNumeric3=170
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Colombian Peso
+Name[uk]=Колумбійське песо
 Name[x-test]=xxColombian Pesoxx
 CurrencyNameIso=Colombian peso
 CurrencyUnitSymbols=$,COL$,COP

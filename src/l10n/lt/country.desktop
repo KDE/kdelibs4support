@@ -1,6 +1,25 @@
 [KCM Locale]
 Name=Lithuania
+Name[ca]=Lituània
+Name[cs]=Litva
+Name[de]=Litauen
+Name[hr]=Litva
+Name[ia]=Lituania
+Name[it]=Lituania
+Name[ka]=ლიტვა
+Name[nb]=Litauen
 Name[nl]=Litouwen
+Name[nn]=Litauen
+Name[pl]=Litwa
+Name[pt]=Lituânia
+Name[pt_BR]=Lituânia
+Name[se]=Lietuva
+Name[sk]=Litva
+Name[sr]=Литванија
+Name[sr@ijekavian]=Литванија
+Name[sr@ijekavianlatin]=Litvanija
+Name[sr@latin]=Litvanija
+Name[sv]=Litauen
 Name[uk]=Литва
 Name[x-test]=xxLithuaniaxx
 Region=northeurope

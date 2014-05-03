@@ -1,6 +1,24 @@
 [KCM Locale]
 Name=Aruba
+Name[ca]=Aruba
+Name[cs]=Aruba
+Name[de]=Aruba
+Name[hr]=Aruba
+Name[ia]=Aruba
+Name[it]=Aruba
+Name[ka]=არუბა
 Name[nl]=Aruba
+Name[nn]=Aruba
+Name[pl]=Aruba
+Name[pt]=Aruba
+Name[pt_BR]=Aruba
+Name[se]=Áruba
+Name[sk]=Aruba
+Name[sr]=Аруба
+Name[sr@ijekavian]=Аруба
+Name[sr@ijekavianlatin]=Aruba
+Name[sr@latin]=Aruba
+Name[sv]=Aruba
 Name[uk]=Аруба
 Name[x-test]=xxArubaxx
 Region=caribbean

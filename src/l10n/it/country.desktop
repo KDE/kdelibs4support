@@ -1,6 +1,25 @@
 [KCM Locale]
 Name=Italy
+Name[ca]=Itàlia
+Name[cs]=Itálie
+Name[de]=Italien
+Name[hr]=Italija
+Name[ia]=Italia
+Name[it]=Italia
+Name[ka]=იტალია
+Name[nb]=Italia
 Name[nl]=Italië
+Name[nn]=Italia
+Name[pl]=Włochy
+Name[pt]=Itália
+Name[pt_BR]=Itália
+Name[se]=Itália
+Name[sk]=Taliansko
+Name[sr]=Италија
+Name[sr@ijekavian]=Италија
+Name[sr@ijekavianlatin]=Italija
+Name[sr@latin]=Italija
+Name[sv]=Italien
 Name[uk]=Італія
 Name[x-test]=xxItalyxx
 Region=southeurope

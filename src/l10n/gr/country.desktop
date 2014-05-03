@@ -1,6 +1,25 @@
 [KCM Locale]
 Name=Greece
+Name[ca]=Grècia
+Name[cs]=Řecko
+Name[de]=Griechenland
+Name[hr]=Grčka
+Name[ia]=Grecia
+Name[it]=Grecia
+Name[ka]=საბერძნეთი
+Name[nb]=Hellas
 Name[nl]=Griekenland
+Name[nn]=Hellas
+Name[pl]=Grecja
+Name[pt]=Grécia
+Name[pt_BR]=Grécia
+Name[se]=Greika
+Name[sk]=Grécko
+Name[sr]=Грчка
+Name[sr@ijekavian]=Грчка
+Name[sr@ijekavianlatin]=Grčka
+Name[sr@latin]=Grčka
+Name[sv]=Grekland
 Name[uk]=Греція
 Name[x-test]=xxGreecexx
 Region=southeurope
