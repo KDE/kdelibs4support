@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=HRK
 CurrencyCodeIsoNumeric3=191
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Croatian Kuna
+Name[ca]=Kuna croat
+Name[de]=Kroatische Kuna
+Name[nl]=Kroatische Kuna
 Name[uk]=Хорватська куна
 Name[x-test]=xxCroatian Kunaxx
 CurrencyNameIso=Croatian kuna

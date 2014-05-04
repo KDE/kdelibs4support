@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=AMD
 CurrencyCodeIsoNumeric3=051
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Armenian Dram
+Name[ca]=Dram armeni
+Name[de]=Armenischer Dram
+Name[nl]=Armeense Dram
 Name[uk]=Вірменський драм
 Name[x-test]=xxArmenian Dramxx
 CurrencyNameIso=Armenian dram

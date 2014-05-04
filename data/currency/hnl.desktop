@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=HNL
 CurrencyCodeIsoNumeric3=340
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Honduran Lempira
+Name[ca]=Lempira d'Hondures
+Name[de]=Honduranische Lempira
+Name[nl]=Hondurese Lempira
 Name[uk]=Гондураська лемпіра
 Name[x-test]=xxHonduran Lempiraxx
 CurrencyNameIso=Lempira

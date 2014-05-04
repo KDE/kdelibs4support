@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=IDR
 CurrencyCodeIsoNumeric3=360
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Indonesian Rupiah
+Name[ca]=Rupia d'Indonèsia
+Name[de]=Indonesische Rupiah
+Name[nl]=Indonesische Roepia
 Name[uk]=Індонезійська рупія
 Name[x-test]=xxIndonesian Rupiahxx
 CurrencyNameIso=Rupiah

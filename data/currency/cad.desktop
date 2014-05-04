@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=CAD
 CurrencyCodeIsoNumeric3=124
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Canadian Dollar
+Name[ca]=Dòlar canadenc
+Name[de]=Kanadischer Dollar
+Name[nl]=Canadese Dollar
 Name[uk]=Канадський долар
 Name[x-test]=xxCanadian Dollarxx
 CurrencyNameIso=Canadian dollar

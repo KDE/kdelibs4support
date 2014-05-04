@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=PTE
 CurrencyCodeIsoNumeric3=620
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Portuguese Escudo
+Name[ca]=Escut portuguès
+Name[de]=Portugiesischer Escudo
+Name[nl]=Portugese Escudo
 Name[uk]=Португальське ескудо
 Name[x-test]=xxPortuguese Escudoxx
 CurrencyNameIso=Portuguese escudo

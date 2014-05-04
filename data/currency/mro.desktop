@@ -3,6 +3,8 @@ CurrencyCodeIsoAlpha3=MRO
 CurrencyCodeIsoNumeric3=478
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Mauritanian Ouguiya
+Name[ca]=Ouguiya de Mauritània
+Name[de]=Ouguiya
 Name[uk]=Мавританська угія
 Name[x-test]=xxMauritanian Ouguiyaxx
 CurrencyNameIso=Ouguiya

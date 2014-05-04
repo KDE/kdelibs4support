@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=GHC
 CurrencyCodeIsoNumeric3=288
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Ghanaian Cedi
+Name[ca]=Cedi de Ghana
+Name[de]=Ghanaischer Cedi
+Name[nl]=Ghanese Cedi
 Name[uk]=Ганійське седі
 Name[x-test]=xxGhanaian Cedixx
 CurrencyNameIso=Ghanaian cedi

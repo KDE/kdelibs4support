@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=MZN
 CurrencyCodeIsoNumeric3=943
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Mozambican Metical
+Name[ca]=Metical de Moçambic
+Name[de]=Metical
+Name[nl]=Mozambikaanse metical
 Name[uk]=Мозамбікський метикал
 Name[x-test]=xxMozambican Meticalxx
 CurrencyNameIso=Metical

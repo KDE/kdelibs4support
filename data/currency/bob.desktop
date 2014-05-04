@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=BOB
 CurrencyCodeIsoNumeric3=068
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Bolivian Boliviano
+Name[ca]=Boliviano de Bolívia
+Name[de]=Bolivianischer Boliviano
+Name[nl]=Boliviaanse Boliviano
 Name[uk]=Болівійське болівіано
 Name[x-test]=xxBolivian Bolivianoxx
 CurrencyNameIso=Boliviano

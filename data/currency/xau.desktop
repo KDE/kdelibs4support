@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=XAU
 CurrencyCodeIsoNumeric3=959
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Gold
+Name[ca]=Or
+Name[de]=Gold
+Name[nl]=Goud
 Name[uk]=Золото
 Name[x-test]=xxGoldxx
 CurrencyNameIso=Gold

@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=CDF
 CurrencyCodeIsoNumeric3=976
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Congolese Franc
+Name[ca]=Franc congolès
+Name[de]=Kongo-Franc
+Name[nl]=Kongolese franc
 Name[uk]=Конголезький франк
 Name[x-test]=xxCongolese Francxx
 CurrencyNameIso=Franc Congolais

@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=AZM
 CurrencyCodeIsoNumeric3=031
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Azerbaijani Manat
+Name[ca]=Manat d'Azerbaidjan
+Name[de]=Aserbaidschan-Manat
+Name[nl]=Azerbeidzjaanse Manat
 Name[uk]=Азербайджанський манат
 Name[x-test]=xxAzerbaijani Manatxx
 CurrencyNameIso=Azerbaijani manat

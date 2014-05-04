@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=HUF
 CurrencyCodeIsoNumeric3=348
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Hungarian Forint
+Name[ca]=Fòrint hongarès
+Name[de]=Ungarischer Forint
+Name[nl]=Hongaarse Forint
 Name[uk]=Угорський форинт
 Name[x-test]=xxHungarian Forintxx
 CurrencyNameIso=Forint

@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=AWG
 CurrencyCodeIsoNumeric3=533
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Aruban Florin
+Name[ca]=Florí d'Aruba
+Name[de]=Aruba-Florin
+Name[nl]=Arubaanse Gulden
 Name[uk]=Гульден Аруби
 Name[x-test]=xxAruban Florinxx
 CurrencyNameIso=Aruban guilder

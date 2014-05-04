@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=INR
 CurrencyCodeIsoNumeric3=356
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Indian Rupee
+Name[ca]=Rupia índia
+Name[de]=Indische Rupie
+Name[nl]=Indiase Roepie
 Name[uk]=Індійська рупія
 Name[x-test]=xxIndian Rupeexx
 CurrencyNameIso=Indian rupee

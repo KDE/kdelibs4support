@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=JPY
 CurrencyCodeIsoNumeric3=392
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Japanese Yen
+Name[ca]=Ien japonès
+Name[de]=Japanischer Yen
+Name[nl]=Japanse Yen
 Name[uk]=Японська єна
 Name[x-test]=xxJapanese Yenxx
 CurrencyNameIso=Japanese yen

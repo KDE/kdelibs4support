@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=QAR
 CurrencyCodeIsoNumeric3=634
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Qatari Riyal
+Name[ca]=Riyal de Qatar
+Name[de]=Katar-Riyal
+Name[nl]=Qatarese rial
 Name[uk]=Катарський ріал
 Name[x-test]=xxQatari Riyalxx
 CurrencyNameIso=Qatari rial

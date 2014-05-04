@@ -3,6 +3,8 @@ CurrencyCodeIsoAlpha3=YER
 CurrencyCodeIsoNumeric3=886
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Yemeni Rial
+Name[ca]=Rial iemenita
+Name[de]=Jemen-Rial
 Name[uk]=Єменський ріал
 Name[x-test]=xxYemeni Rialxx
 CurrencyNameIso=Yemeni rial

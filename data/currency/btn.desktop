@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=BTN
 CurrencyCodeIsoNumeric3=064
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Bhutanese Ngultrum
+Name[ca]=Ngultrum de Bhutan
+Name[de]=Ngultrum von Bhutan
+Name[nl]=Bhutaanse Ngultrum
 Name[uk]=Бутанський нгультрум
 Name[x-test]=xxBhutanese Ngultrumxx
 CurrencyNameIso=Ngultrum

@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=CYP
 CurrencyCodeIsoNumeric3=196
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Cypriot Pound
+Name[ca]=Lliura xipriota
+Name[de]=Zypern-Pfund
+Name[nl]=Cypriotisch Pond
 Name[uk]=Кіпрський фунт
 Name[x-test]=xxCypriot Poundxx
 CurrencyNameIso=Cypriot pound

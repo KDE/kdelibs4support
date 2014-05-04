@@ -3,6 +3,8 @@ CurrencyCodeIsoAlpha3=TTD
 CurrencyCodeIsoNumeric3=780
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Trinidad and Tobago Dollar
+Name[ca]=Dòlar de Trinitat i Tobago
+Name[de]=Trinidad-und-Tobago-Dollar
 Name[uk]=Долар Тринідаду та Тобаго
 Name[x-test]=xxTrinidad and Tobago Dollarxx
 CurrencyNameIso=Trinidad and Tobago dollar

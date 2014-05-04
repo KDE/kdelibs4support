@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=ARS
 CurrencyCodeIsoNumeric3=032
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Argentine Peso
+Name[ca]=Pes argentí
+Name[de]=Argentinischer Peso
+Name[nl]=Argentijnse Peso
 Name[uk]=Аргентинське песо
 Name[x-test]=xxArgentine Pesoxx
 CurrencyNameIso=Argentine peso

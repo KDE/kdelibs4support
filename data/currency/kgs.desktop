@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=KGS
 CurrencyCodeIsoNumeric3=417
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Kyrgyzstani Som
+Name[ca]=Som de Kirguizistan
+Name[de]=Som
+Name[nl]=Kirgizische som
 Name[uk]=Киргизький сом
 Name[x-test]=xxKyrgyzstani Somxx
 CurrencyNameIso=Som

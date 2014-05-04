@@ -3,6 +3,8 @@ CurrencyCodeIsoAlpha3=SYP
 CurrencyCodeIsoNumeric3=760
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Syrian Pound
+Name[ca]=Lliura de Síria
+Name[de]=Syrisches Pfund
 Name[uk]=Сирійський фунт
 Name[x-test]=xxSyrian Poundxx
 CurrencyNameIso=Syrian pound

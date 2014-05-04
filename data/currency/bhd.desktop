@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=BHD
 CurrencyCodeIsoNumeric3=048
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Bahraini Dinar
+Name[ca]=Dinar de Bahrain
+Name[de]=Bahrain-Dinar
+Name[nl]=Bahreinse Dinar
 Name[uk]=Бахрейнський динар
 Name[x-test]=xxBahraini Dinarxx
 CurrencyNameIso=Bahraini dinar

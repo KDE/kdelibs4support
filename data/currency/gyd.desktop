@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=GYD
 CurrencyCodeIsoNumeric3=328
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Guyanese Dollar
+Name[ca]=Dòlar de Guyana
+Name[de]=Guyana-Dollar
+Name[nl]=Guyanese Dollar
 Name[uk]=Гайанський долар
 Name[x-test]=xxGuyanese Dollarxx
 CurrencyNameIso=Guyana dollar

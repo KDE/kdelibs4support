@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=DZD
 CurrencyCodeIsoNumeric3=012
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Algerian Dinar
+Name[ca]=Dinar d'Algèria
+Name[de]=Algerischer Dinar
+Name[nl]=Algerijnse Dinar
 Name[uk]=Алжирський динар
 Name[x-test]=xxAlgerian Dinarxx
 CurrencyNameIso=Algerian dinar

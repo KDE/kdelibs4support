@@ -3,6 +3,9 @@ CurrencyCodeIsoAlpha3=XOF
 CurrencyCodeIsoNumeric3=952
 #Context for Name: Adjectival Country Name and Currency Name
 Name=West African CFA Franc
+Name[ca]=Franc CFA de l'Àfrica Occidental
+Name[de]=CFA-Franc BCEAO
+Name[nl]=West Afrikaanse CFA-frank
 Name[uk]=Західно-африканський франк CFA
 Name[x-test]=xxWest African CFA Francxx
 CurrencyNameIso=CFA Franc BCEAO
