@@ -140,6 +140,9 @@ install(
 
 
 
+if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
+    ki18n_install(po)
+endif()
 add_subdirectory(cmake)
 add_subdirectory(data)
 add_subdirectory(docs)
