@@ -36,7 +36,7 @@ class KTemporaryFilePrivate;
  * followed by six random characters. You can call QTemporaryFile::setFileTemplate()
  * to change that.
  *
- * Porting to QTemporaryFile is simple: in apps, you can probably juse use the default constructor.
+ * Porting to QTemporaryFile is simple: in apps, you can probably just use the default constructor.
  *
  * In parts and plugins, you were probably passing a component data to KTemporaryFile, so instead use:
  * QTemporaryFile(QDir::tempPath() + QLatin1Char('/') + componentData.name() + QLatin1String("XXXXXX"))
