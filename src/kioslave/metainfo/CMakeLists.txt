@@ -16,7 +16,8 @@ target_link_libraries(kio_metainfo
    KF5::KIOCore
 )
 
-install(TARGETS kio_metainfo  DESTINATION ${PLUGIN_INSTALL_DIR} )
+set_target_properties(kio_metainfo PROPERTIES OUTPUT_NAME "metainfo")
+install(TARGETS kio_metainfo  DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kio)
 
 
 ########### install files ###############

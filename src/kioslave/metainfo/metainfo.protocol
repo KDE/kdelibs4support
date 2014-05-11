@@ -1,5 +1,5 @@
 [Protocol]
-exec=kio_metainfo
+exec=kf5/kio/metainfo
 protocol=metainfo
 input=stream
 output=stream
