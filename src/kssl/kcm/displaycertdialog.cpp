@@ -46,6 +46,7 @@ DisplayCertDialog::DisplayCertDialog(QWidget *parent)
     connect(m_nextButton, SIGNAL(clicked()), SLOT(nextClicked()));
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(this);
+    layout->addWidget(buttonBox);
     buttonBox->addButton(m_previousButton, QDialogButtonBox::ActionRole);
     buttonBox->addButton(m_nextButton, QDialogButtonBox::ActionRole);
     buttonBox->addButton(QDialogButtonBox::Ok);
