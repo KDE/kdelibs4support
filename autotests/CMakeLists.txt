@@ -1,5 +1,5 @@
 
-include(ECMMarkAsTest)
+include(ECMAddTests)
 
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Concurrent)
 
@@ -13,11 +13,45 @@ macro(KDELIBS4SUPPORT_EXECUTABLE_TESTS)
     endforeach()
 endmacro()
 
-macro(KDELIBS4SUPPORT_UNIT_TESTS)
-  foreach(_testname ${ARGN})
-    add_executable(${_testname} ${_testname}.cpp)
-    add_test(kdelibs4support-${_testname} ${_testname})
-    target_link_libraries(${_testname}
+
+ecm_add_tests( globalcleanuptest.cpp
+        kaccelgentest.cpp
+        kcalendartest.cpp
+        kdatetimetest.cpp
+        klocaletimeformattest.cpp
+        ktimezonestest.cpp
+        k4timezonewidget_unittest.cpp
+        kdebugtest.cpp
+        kbuttongrouptest.cpp
+        kdialog_unittest.cpp
+        kfadewidgeteffecttest.cpp
+        kconfigafterkglobaltest1.cpp
+        kconfigafterkglobaltest2.cpp
+        kdebug_unittest.cpp
+        kdebug_qcoreapptest.cpp
+        kmd5benchmark.cpp
+        ktabwidget_unittest.cpp
+        ktempdirtest.cpp
+        ktemporaryfiletest.cpp
+        kuniqueapptest.cpp
+        kurlmimetest.cpp
+        klibloadertest.cpp
+        ksavefiletest.cpp
+        kconfigcompattest.cpp
+        kglobalstatictest.cpp
+        kmimetypetest.cpp
+        kmimetype_nomimetypes.cpp
+        kstandarddirstest.cpp
+        kasciitest.cpp
+        kglobaltest.cpp
+        klockfiletest.cpp
+        kurltest.cpp
+        kfilemetainfotest.cpp
+        kglobalsettingstest.cpp
+        ksharedptrtest.cpp
+        naturalcomparetest.cpp
+    NAME_PREFIX "kdelibs4support-"
+    LINK_LIBRARIES
        KF5::KDELibs4Support
        Qt5::DBus
        Qt5::Widgets
@@ -29,49 +63,8 @@ macro(KDELIBS4SUPPORT_UNIT_TESTS)
        KF5::Crash
        KF5::KIOCore
        KF5::KIOWidgets
-    )
-    ecm_mark_as_test(${_testname})
-  endforeach(_testname)
-endmacro(KDELIBS4SUPPORT_UNIT_TESTS)
-
-kdelibs4support_unit_tests(
-  globalcleanuptest
-  kaccelgentest
-  kcalendartest
-  kdatetimetest
-  klocaletimeformattest
-  ktimezonestest
-  k4timezonewidget_unittest
-  kdebugtest
-  kbuttongrouptest
-  kdialog_unittest
-  kfadewidgeteffecttest
-  kconfigafterkglobaltest1
-  kconfigafterkglobaltest2
-  kdebug_unittest
-  kdebug_qcoreapptest
-  kmd5benchmark
-  ktabwidget_unittest
-  ktempdirtest
-  ktemporaryfiletest
-  kuniqueapptest
-  kurlmimetest
-  klibloadertest
-  ksavefiletest
-  kconfigcompattest
-  kglobalstatictest
-  kmimetypetest
-  kmimetype_nomimetypes
-  kstandarddirstest
-  kasciitest
-  kglobaltest
-  klockfiletest
-  kurltest
-  kfilemetainfotest
-  kglobalsettingstest
-  ksharedptrtest
-  naturalcomparetest
 )
+
 
 kdelibs4support_executable_tests(
   klockfile_testlock         # Helper for klockfiletest
@@ -108,19 +101,14 @@ set_target_properties(klibloadertestmodule5 PROPERTIES SKIP_BUILD_RPATH FALSE BU
 ########### klocaletest ###############
 
 # compile into the test since it's not exported
-set(klocaletest_SRCS klocaletest.cpp ../src/kdecore/kdayperiod.cpp)
-add_executable(klocaletest ${klocaletest_SRCS})
-add_test(kdelibs4support-klocaletest klocaletest)
-ecm_mark_as_test(klocaletest)
-target_link_libraries(klocaletest Qt5::Test Qt5::DBus KF5::I18n KF5::KDELibs4Support KF5::ConfigCore)
+ecm_add_test(klocaletest.cpp ../src/kdecore/kdayperiod.cpp
+    TEST_NAME "kdelibs4support-klocaletest"
+    LINK_LIBRARIES Qt5::Test Qt5::DBus KF5::I18n KF5::KDELibs4Support KF5::ConfigCore)
 
 ########### kdatetimeformattertest ###############
 
 # compile KDateTimeFormatter and KDayPeriod into the test since it's not exported
-set(kdatetimeformattertest_SRCS kdatetimeformattertest.cpp ../src/kdecore/kdatetimeformatter.cpp ../src/kdecore/kdayperiod.cpp)
-add_executable(kdatetimeformattertest ${kdatetimeformattertest_SRCS})
-add_test(kdelibs4support-kdatetimeformattertest kdatetimeformattertest)
-ecm_mark_as_test(kdatetimeformattertest)
-target_link_libraries(kdatetimeformattertest Qt5::Test KF5::I18n KF5::KDELibs4Support KF5::ConfigCore)
+ecm_add_test(kdatetimeformattertest.cpp ../src/kdecore/kdatetimeformatter.cpp ../src/kdecore/kdayperiod.cpp
+    TEST_NAME "kdelibs4support-kdatetimeformattertest" LINK_LIBRARIES Qt5::Test KF5::I18n KF5::KDELibs4Support KF5::ConfigCore)
 
 
