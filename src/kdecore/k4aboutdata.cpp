@@ -496,8 +496,9 @@ K4AboutData &K4AboutData::operator=(const K4AboutData &other)
 
 K4AboutData::operator KAboutData() const
 {
-    KAboutData aboutData(appName(), catalogName(), programName(), version(), shortDescription(),
-                         KAboutData::License_Unknown, copyrightStatement(),
+    // catalogName() is not used by KF5 KAboutData
+    KAboutData aboutData(appName(), programName(), version(), shortDescription(),
+                         KAboutLicense::Unknown, copyrightStatement(),
                          otherText(), d->_homepageAddress, bugAddress());
     for (auto it = d->_licenseList.constBegin(); it != d->_licenseList.constEnd(); ++it) {
         if (it->key() == K4AboutData::License_Custom) {
@@ -505,7 +506,7 @@ K4AboutData::operator KAboutData() const
         } else if (it->key() == K4AboutData::License_File) {
             aboutData.addLicenseTextFile(it->d->_pathToLicenseTextFile);
         } else {
-            aboutData.addLicense(static_cast<KAboutData::LicenseKey>(it->key()));
+            aboutData.addLicense(static_cast<KAboutLicense::LicenseKey>(it->key()));
         }
     }
     return aboutData;

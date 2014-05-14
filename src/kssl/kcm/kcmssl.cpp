@@ -34,8 +34,8 @@ KcmSsl::KcmSsl(QWidget *parent, const QVariantList &args)
     : KCModule(parent, args)
 {
     KAboutData *about = new KAboutData(
-        "kcm_ssl", 0, i18n("SSL Configuration Module"),
-        KCOREADDONS_VERSION_STRING, QString(), KAboutData::License_GPL,
+        "kcm_ssl", i18n("SSL Configuration Module"),
+        KCOREADDONS_VERSION_STRING, QString(), KAboutLicense::GPL,
         i18n("Copyright 2010 Andreas Hartmetz"));
     about->addAuthor(i18n("Andreas Hartmetz"), QString(), "ahartmetz@gmail.com");
     setAboutData(about);
