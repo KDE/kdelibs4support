@@ -1132,7 +1132,7 @@ bool KTimeZoneDataPrivate::isSecondOccurrence(const QDateTime &utcLocalTime, int
         return false;
     }
     // Find how long after the start of the latest phase 'dt' is
-    const int afterStart = transitions[transitionIndex].time().secsTo(utcLocalTime) - offset;
+    const qint64 afterStart = (transitions[transitionIndex].time().msecsTo(utcLocalTime) - offset) / 1000;
     return (afterStart < phaseDiff);
 }
 
