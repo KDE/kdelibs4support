@@ -1052,7 +1052,7 @@ int KFileDialog::exec()
     }
 
     setResult(res);
-    emit finished();
+    emit finished(res);
 
     if (res == QDialog::Accepted) {
         emit accepted();

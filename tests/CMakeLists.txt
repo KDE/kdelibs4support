@@ -42,7 +42,8 @@ kdelibs4support_examples(
   kprintpreview_test
 )
 
-set(networkingclient_SRCS networkingclient.cpp ../src/solid/networking.cpp)
+set(networkingclient_SRCS networkingclient.cpp )
+
 qt5_wrap_ui(networkingclient_SRCS networkingclientview.ui)
 qt5_add_dbus_interface(networkingclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/solid/org.kde.Solid.Networking.Client.xml clientinterface)
 add_executable(networkingclient ${networkingclient_SRCS})

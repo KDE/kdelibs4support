@@ -300,7 +300,7 @@ void KTimeZonesTest::currentOffset()
     // Find the current offset of a time zone
     time_t now = time(0);
     tm *tnow = localtime(&now);
-#if defined(HAVE_TM_GMTOFF)
+#if HAVE_TM_GMTOFF
     int offset = tnow->tm_gmtoff;
 #else
     int offset = 0;

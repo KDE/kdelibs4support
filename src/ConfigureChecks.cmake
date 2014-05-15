@@ -69,7 +69,11 @@ set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
 check_prototype_exists(gai_strerror netdb.h HAVE_GAI_STRERROR_PROTO)
 
 # check for existing datatypes
-set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
+if(WIN32)
+    set(CMAKE_EXTRA_INCLUDE_FILES "ws2tcpip.h")
+else()
+    set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
+endif()
 check_type_size("struct addrinfo" HAVE_STRUCT_ADDRINFO)
 set(CMAKE_EXTRA_INCLUDE_FILES "sys/socket.h;netdb.h")
 check_type_size("struct sockaddr_in6" HAVE_STRUCT_SOCKADDR_IN6)

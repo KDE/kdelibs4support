@@ -36,6 +36,11 @@
 #include <QtCore/QFile>
 #include <QBuffer>
 
+#ifdef Q_OS_WIN
+#include <windows.h>
+#include <sys/stat.h>
+#endif
+
 #ifndef S_ISSOCK
 #define S_ISSOCK(x) false
 #endif

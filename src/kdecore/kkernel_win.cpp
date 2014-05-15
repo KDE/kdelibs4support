@@ -219,7 +219,7 @@ QString getWin32RegistryValue(HKEY key, const QString &subKey, const QString &it
 
 bool showWin32FilePropertyDialog(const QString &fileName)
 {
-    QString path_ = QDir::convertSeparators(QFileInfo(fileName).absoluteFilePath());
+    QString path_ = QDir::toNativeSeparators(QFileInfo(fileName).absoluteFilePath());
 
 #ifndef _WIN32_WCE
     SHELLEXECUTEINFOW execInfo;

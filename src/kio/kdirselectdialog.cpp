@@ -59,6 +59,9 @@
 #include "kfileplacesview.h"
 #include "kfileplacesmodel.h"
 // ### add mutator for treeview!
+#ifdef stat
+#undef stat
+#endif
 
 class KDirSelectDialog::Private
 {

@@ -25,7 +25,6 @@
 #include "networking.h"
 #include "networking_p.h"
 
-#include "soliddefs_p.h"
 #include "org_kde_solid_networking_client.h"
 
 Q_GLOBAL_STATIC(Solid::NetworkingPrivate, globalNetworkManager)

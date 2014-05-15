@@ -38,6 +38,12 @@ find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 
+if(WIN32)
+    find_package(KDEWin REQUIRED)
+    INCLUDE_DIRECTORIES(${KDEWIN_INCLUDES})
+    LINK_LIBRARIES(${KDEWIN_LIBRARIES})
+endif()
+
 if (NOT APPLE)
     find_package(X11)
 endif()

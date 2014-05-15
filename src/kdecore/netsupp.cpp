@@ -999,7 +999,7 @@ int getnameinfo(const struct sockaddr *sa, kde_socklen_t salen,
 
 #endif // HAVE_GETADDRINFO
 
-#if !HAVE_INET_NTOP
+#if !HAVE_INET_NTOP && !defined(inet_ntop)
 
 #define KRF_inet_ntop   KRF_USING_OWN_INET_NTOP
 
@@ -1101,7 +1101,7 @@ const char *inet_ntop(int af, const void *cp, char *buf, size_t len)
 
 #endif  // HAVE_INET_NTOP
 
-#if !HAVE_INET_PTON
+#if !HAVE_INET_PTON && !defined(inet_pton)
 
 #define KRF_inet_pton       KRF_USING_OWN_INET_PTON
 int inet_pton(int af, const char *cp, void *buf)

@@ -365,7 +365,11 @@ void KSystemTimeZonesPrivate::readConfig(bool init)
         m_zoneinfoDir.truncate(m_zoneinfoDir.length() - 1);    // strip trailing '/'
     }
     if (!init) {
+#ifdef Q_OS_WIN
+        updateTimezoneInformation();
+#else
         updateZonetab();
+#endif
         setLocalZone();
     }
     //qDebug() << "readConfig(): local zone=" << m_localZoneName;

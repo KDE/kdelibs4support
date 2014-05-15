@@ -34,6 +34,10 @@
 
 #include <config-kdelibs4support.h>
 
+#ifdef Q_OS_WIN
+#include <kde_file_win.h>
+#endif
+
 static int s_umask;
 
 // Read umask before any threads are created to avoid race conditions
@@ -262,7 +266,8 @@ bool KSaveFile::finalize()
         //the standard rename call instead, which will do the copy without the
         //race condition.
 #ifdef Q_OS_WIN
-        else if (0 == kdewin32_rename(d->tempFileName, d->realFileName)) {
+        else if (0 == kdewin32_rename(QFile::encodeName(d->tempFileName).constData(),
+                                      QFile::encodeName(d->realFileName).constData())) {
 #else
         else if (0 == ::rename(QFile::encodeName(d->tempFileName).constData(),
                                QFile::encodeName(d->realFileName).constData())) {

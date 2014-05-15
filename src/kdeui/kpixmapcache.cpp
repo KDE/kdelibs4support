@@ -49,6 +49,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <string.h>
+#include <time.h>
 
 #if HAVE_MADVISE || HAVE_MMAP
 #include <sys/mman.h>

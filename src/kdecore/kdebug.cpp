@@ -831,12 +831,6 @@ QDebug operator<<(QDebug s, const KDateTime &time)
 }
 #endif
 
-QDebug operator<<(QDebug s, const QUrl &url)
-{
-    s.nospace() << "QUrl(" << url.toDisplayString() << ")";
-    return s.space();
-}
-
 void kClearDebugConfig()
 {
     if (!kDebug_data) {

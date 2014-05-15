@@ -57,7 +57,10 @@ static int kStoreUmask()
 }
 
 Q_CONSTRUCTOR_FUNCTION(kStoreUmask)
+#elif defined(Q_OS_WIN)
+#include <shellapi.h>
 #endif
+
 
 class KTempDir::Private
 {

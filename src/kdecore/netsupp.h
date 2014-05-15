@@ -302,7 +302,7 @@ extern KDELIBS4SUPPORT_DEPRECATED_EXPORT char *gai_strerror(int errorcode);
 
 #endif
 
-#if !HAVE_INET_PTON
+#if !HAVE_INET_PTON && !defined(inet_pton)
 
 namespace KDE
 {
@@ -313,7 +313,7 @@ extern KDELIBS4SUPPORT_DEPRECATED_EXPORT int inet_pton(int af, const char *cp, v
 # define inet_pton  KDE::inet_pton
 #endif
 
-#if !HAVE_INET_NTOP
+#if !HAVE_INET_NTOP && !defined(inet_ntop)
 
 namespace KDE
 {

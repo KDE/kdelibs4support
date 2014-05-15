@@ -262,7 +262,7 @@ void KApplication_activateWindowForProcess(const QString &executableName)
     if (winStruct.windowId == NULL) {
         return;
     }
-    KWindowSystem::forceActiveWindow(winStruct.windowId, 0);
+    KWindowSystem::forceActiveWindow((WId)winStruct.windowId, 0);
 }
 #endif
 

@@ -23,6 +23,8 @@
 #include <QStringList>
 #include <QLibrary>
 
+#include "kdebug.h"
+
 #include <windows.h>
 
 #include <memory>

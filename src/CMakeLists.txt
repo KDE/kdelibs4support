@@ -38,7 +38,8 @@ add_subdirectory( kssl/kcm )
 add_subdirectory( kio/imageformats )
 
 if(WIN32)
-   set(libkdelibs4support_SRCS solid/networking_win.cpp)
+   set(libkdelibs4support_SRCS solid/networking_win.cpp
+                               kdeui/kapplication_win.cpp)
 else()
    set(libkdelibs4support_SRCS solid/networking.cpp)
 endif()
@@ -197,7 +198,6 @@ set(libkdelibs4support_SRCS
 
     kparts/factory.cpp
     solid/powermanagement.cpp
-    solid/networking.cpp
 )
 
 set_source_files_properties( solid/org.freedesktop.PowerManagement.xml
