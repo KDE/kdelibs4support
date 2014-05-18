@@ -380,21 +380,11 @@ set_target_properties(KF5KDELibs4Support PROPERTIES
 
 include_directories(${Qt5Designer_INCLUDE_DIRS})
 
-add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/kdedeprecated.cpp
-  COMMAND "${KF5DESIGNERPLUGIN_GENERATOR_EXECUTABLE}" -o ${CMAKE_CURRENT_BINARY_DIR}/kdedeprecated.cpp ${CMAKE_CURRENT_SOURCE_DIR}/kdedeprecated.widgets
-  MAIN_DEPENDENCY kdedeprecated.widgets DEPENDS "${KF5DESIGNERPLUGIN_GENERATOR_EXECUTABLE}")
-
-qt5_generate_moc(${CMAKE_CURRENT_BINARY_DIR}/kdedeprecated.cpp ${CMAKE_CURRENT_BINARY_DIR}/kdedeprecated.moc)
-
-set(kdedeprecated_PART_SRCS
-   classpreviews.cpp
-   ${CMAKE_CURRENT_BINARY_DIR}/kdedeprecated.cpp
-   ${CMAKE_CURRENT_BINARY_DIR}/kdedeprecated.moc
+kf5designerplugin_add_plugin(kdedeprecated
+    kdedeprecated.widgets
+    kdedeprecated.qrc
+    classpreviews.cpp
 )
-
-qt5_add_resources(kdedeprecated_PART_SRCS kdedeprecated.qrc)
-
-add_library(kdedeprecated MODULE ${kdedeprecated_PART_SRCS})
 
 target_link_libraries(kdedeprecated KF5::KDELibs4Support
                                     Qt5::Widgets
@@ -404,14 +394,6 @@ target_link_libraries(kdedeprecated KF5::KDELibs4Support
                                     KF5::WidgetsAddons
                                     KF5::Auth
                                     )
-if(NOT WIN32)
-  set_target_properties(kdedeprecated PROPERTIES
-                                      INSTALL_RPATH_USE_LINK_PATH TRUE
-                                      SKIP_BUILD_RPATH TRUE
-                                      BUILD_WITH_INSTALL_RPATH TRUE
-                                      INSTALL_RPATH ${LIB_INSTALL_DIR}
-                       )
-endif()
 
 install(TARGETS kdedeprecated  DESTINATION ${QT_PLUGIN_INSTALL_DIR}/designer )
 
