@@ -186,6 +186,8 @@ public:
      * This will reset all default KGuiItem of all button.
      *
      * @param buttonMask Specifies what buttons will be made.
+     *
+     * @deprecated Since 5.0 use QDialogButtonBox
      */
     void setButtons(ButtonCodes buttonMask);
 
@@ -559,6 +561,8 @@ public Q_SLOTS:
      * @param caption Your caption. Do @p not include the application name
      * in this string. It will be added automatically according to the KDE
      * standard.
+     *
+     * @deprecated Since 5.0 use QWidget::setWindowTitle
      */
     virtual void setCaption(const QString &caption);
 
@@ -843,6 +847,8 @@ protected Q_SLOTS:
      * @endcode
      *
      * @param button is the type @a KDialog::ButtonCode
+     *
+     * @deprecated since 5.0 use QDialogButtonBox and connect to the clicked signal
      */
     virtual void slotButtonClicked(int button);
 
