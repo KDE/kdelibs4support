@@ -226,7 +226,7 @@ macro (KDE4_ADD_KDEINIT_EXECUTABLE _target_NAME )
 
    configure_file(${KF5Init_DIR}/kde5init_dummy.cpp.in ${CMAKE_CURRENT_BINARY_DIR}/${_target_NAME}_dummy.cpp)
    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/${_target_NAME}_dummy.cpp PROPERTIES SKIP_AUTOMOC TRUE)
-   # under Windows, build a normal executable and additionally a dummy kdeinit4_foo.lib, whose only purpose on windows is to
+   # under Windows, build a normal executable and additionally a dummy kdeinit5_foo.lib, whose only purpose on windows is to
    # keep the linking logic from the CMakeLists.txt on UNIX working (under UNIX all necessary libs are linked against the kdeinit
    # library instead against the executable, under windows we want to have everything in the executable, but for compatibility we have to
    # keep the library there-
@@ -248,14 +248,14 @@ macro (KDE4_ADD_KDEINIT_EXECUTABLE _target_NAME )
 
       kde4_add_executable(${_target_NAME} "${_nogui}" ${_SRCS} ${CMAKE_CURRENT_BINARY_DIR}/${_target_NAME}_dummy.cpp ${_resourcefile})
 
-      set_target_properties(kdeinit_${_target_NAME} PROPERTIES OUTPUT_NAME kdeinit4_${_target_NAME})
+      set_target_properties(kdeinit_${_target_NAME} PROPERTIES OUTPUT_NAME kdeinit5_${_target_NAME})
 
       target_link_libraries(${_target_NAME} kdeinit_${_target_NAME})
    else(WIN32)
 
       add_library(kdeinit_${_target_NAME} SHARED ${_SRCS})
 
-      set_target_properties(kdeinit_${_target_NAME} PROPERTIES OUTPUT_NAME kdeinit4_${_target_NAME})
+      set_target_properties(kdeinit_${_target_NAME} PROPERTIES OUTPUT_NAME kdeinit5_${_target_NAME})
 
       if (Q_WS_MAC)
 	      list(FIND _SRCS *.icns _icon_position)
