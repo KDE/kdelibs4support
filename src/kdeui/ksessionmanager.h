@@ -27,7 +27,6 @@
 #include <QSessionManager>
 
 /**
-   @deprecated
    Provides highlevel access to session management on a per-object
    base.
 
@@ -44,6 +43,7 @@
   @author Matthias Ettrich <ettrich@kde.org>
   @see QApplication::saveStateRequest
   @see QApplication::commitDataRequest
+  @deprecated Since 5.0 connect to signals emitted by QGuiApplication
  */
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT KSessionManager
 {
@@ -59,6 +59,8 @@ public:
        Return true to indicate a successful state save or false to
        indicate a problem and to halt the shutdown process (will
        implicitly call sm.cancel() ).
+
+       @deprecated Since 5.0 connect to the signal QGuiApplication::saveStateRequest(QSessionManager &)
      */
     virtual bool saveState(QSessionManager &sm);
     /**
@@ -69,6 +71,8 @@ public:
        Return true to indicate a successful commit of data or false to
        indicate a problem and to halt the shutdown process (will
        implicitly call sm.cancel() ).
+
+       @deprecated Since 5.0 connect to the signal QGuiApplication::commitDataRequest(QSessionManager &)
      */
     virtual bool commitData(QSessionManager &sm);
 
