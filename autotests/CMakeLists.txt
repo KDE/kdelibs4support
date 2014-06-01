@@ -50,7 +50,6 @@ ecm_add_tests( globalcleanuptest.cpp
         kglobalsettingstest.cpp
         ksharedptrtest.cpp
         naturalcomparetest.cpp
-    NAME_PREFIX "kdelibs4support-"
     LINK_LIBRARIES
        KF5::KDELibs4Support
        Qt5::DBus
