@@ -42,7 +42,7 @@
 #include <QTemporaryFile>
 
 #include "krandom.h"
-#include "kfilesystemtype_p.h"
+#include "kfilesystemtype.h"
 
 #include <unistd.h>
 #include <fcntl.h>
