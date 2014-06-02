@@ -55,6 +55,9 @@ qt5_add_dbus_adaptor(kded_networkstatus_PART_SRCS
 
 
 add_library(kded_networkstatus MODULE ${kded_networkstatus_PART_SRCS})
+set_target_properties(kded_networkstatus PROPERTIES
+    OUTPUT_NAME networkstatus
+)
 
 target_link_libraries(kded_networkstatus KF5::DBusAddons KF5::Solid KF5::KDELibs4Support)
 
@@ -62,7 +65,7 @@ if(QNTRACK_FOUND)
    target_link_libraries(kded_networkstatus ${QNTRACK_LIBRARIES})
 endif()
 
-install(TARGETS kded_networkstatus DESTINATION ${PLUGIN_INSTALL_DIR})
+install(TARGETS kded_networkstatus DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kded)
 
 install( FILES networkstatus.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
 
