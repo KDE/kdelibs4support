@@ -380,13 +380,13 @@ set_target_properties(KF5KDELibs4Support PROPERTIES
 
 include_directories(${Qt5Designer_INCLUDE_DIRS})
 
-kf5designerplugin_add_plugin(kdedeprecated
+kf5designerplugin_add_plugin(kf5deprecatedwidgets
     kdedeprecated.widgets
     kdedeprecated.qrc
     classpreviews.cpp
 )
 
-target_link_libraries(kdedeprecated KF5::KDELibs4Support
+target_link_libraries(kf5deprecatedwidgets KF5::KDELibs4Support
                                     Qt5::Widgets
                                     Qt5::Designer
                                     KF5::ConfigCore
@@ -395,7 +395,7 @@ target_link_libraries(kdedeprecated KF5::KDELibs4Support
                                     KF5::Auth
                                     )
 
-install(TARGETS kdedeprecated  DESTINATION ${QT_PLUGIN_INSTALL_DIR}/designer )
+install(TARGETS kf5deprecatedwidgets DESTINATION ${QT_PLUGIN_INSTALL_DIR}/designer)
 
 ##########
 
