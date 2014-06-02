@@ -378,8 +378,6 @@ set_target_properties(KF5KDELibs4Support PROPERTIES
 
 ########## Designer plugin
 
-include_directories(${Qt5Designer_INCLUDE_DIRS})
-
 kf5designerplugin_add_plugin(kf5deprecatedwidgets
     kdedeprecated.widgets
     kdedeprecated.qrc
