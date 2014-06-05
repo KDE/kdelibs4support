@@ -1132,7 +1132,7 @@ bool KTimeZoneDataPrivate::isSecondOccurrence(const QDateTime &utcLocalTime, int
         return false;
     }
     // Find how long after the start of the latest phase 'dt' is
-    const qint64 afterStart = (transitions[transitionIndex].time().msecsTo(utcLocalTime) - offset) / 1000;
+    const qint64 afterStart = transitions[transitionIndex].time().msecsTo(utcLocalTime)/1000 - offset;
     return (afterStart < phaseDiff);
 }
 
@@ -1307,7 +1307,7 @@ int KTimeZoneData::transitionIndex(const QDateTime &dt, int *secondIndex, bool *
             const int phaseDiff = nextPhase.utcOffset() - offset;
             if (phaseDiff > 0) {
                 // Get UTC equivalent as if 'dt' was in the next phase
-                if (dtutc.secsTo(d->transitions[next].time()) + nextPhase.utcOffset() < phaseDiff) {
+                if (dtutc.msecsTo(d->transitions[next].time())/1000 + nextPhase.utcOffset() <= phaseDiff) {
                     // The time falls in the gap between the two phases,
                     // so return an invalid value.
                     if (validTime) {
