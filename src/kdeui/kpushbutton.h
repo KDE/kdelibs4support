@@ -32,6 +32,8 @@ class QDrag;
 class QMenu;
 
 /**
+ * @deprecated since 5.0, use QPushButton instead
+ *
  * @brief A QPushButton with drag-support and KGuiItem support
  *
  * This is nothing but a QPushButton with drag-support and KGuiItem support.
@@ -67,6 +69,7 @@ public:
     /**
      * Constructor that takes a KGuiItem for the text, the icon, the tooltip
      * and the what's this help
+     * @deprecated since 5.0, use QPushButton and KGuiItem::assign(QPushButton *button, const KGuiItem &item).
      */
     explicit KPushButton(const KGuiItem &item, QWidget *parent = 0);
 
