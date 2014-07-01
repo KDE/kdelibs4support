@@ -53,6 +53,15 @@ if(WIN32)
     target_link_libraries(networkingclient Qt5::Network)
 endif()
 
+##### test for solid-networkstatus #####
+
+qt5_wrap_ui(networkingservice_SRCS networkingserviceview.ui)
+qt5_add_dbus_interface(networkingservice_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/solid-networkstatus/org.kde.Solid.Networking.Service.xml serviceinterface)
+add_executable(networkingservice networkingservice.cpp ${networkingservice_SRCS})
+target_link_libraries(networkingservice KF5::KDELibs4Support)
+
+###### kxerrorhandlertest #####
+
 if (X11_FOUND)
   find_package(Qt5X11Extras 5.2.0 REQUIRED NO_MODULE)
   kdelibs4support_examples( kxerrorhandlertest )
