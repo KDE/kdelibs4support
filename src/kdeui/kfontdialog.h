@@ -53,6 +53,8 @@ class QStringList;
  * \image html kfontdialog.png "KDE Font Dialog"
  *
  * @author Preston Brown <pbrown@kde.org>, Bernd Wuebben <wuebben@kde.org>
+ *
+ * @deprecated since 5.0, use QFontDialog instead
  */
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFontDialog : public KDialog
 {

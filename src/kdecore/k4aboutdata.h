@@ -70,6 +70,8 @@ class K4AboutData;
  * yet initialized at the point where K4AboutData is constructed.
  *
  * @bc KDE4
+ *
+ * @deprecated Instead, use KAboutData in KCoreAddons
  */
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE K4AboutPerson
 {

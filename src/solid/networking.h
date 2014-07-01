@@ -36,6 +36,8 @@ namespace Solid
  *
  * It also allows application to specify the connection and disconnection policies
  * that it would like to use, for the network.
+ *
+ * @deprecated since 5.0, use QNetworkConfiguration instead
  */
 namespace Networking
 {

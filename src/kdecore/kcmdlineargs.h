@@ -47,6 +47,8 @@ class KCmdLineOptionsPrivate;
  * handling functionality.
  *
  * @see KCmdLineArgs for additional usage information
+ *
+ * @deprecated since 5.0, port to QCommandLineParser in QtCore
  */
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KCmdLineOptions
 {
