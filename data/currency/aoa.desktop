@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=AOA
 CurrencyCodeIsoNumeric3=973
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Angolan Kwanza
+Name[ar]=الكوانزا الأنغولي
 Name[ca]=Kwanza d'Angola
 Name[de]=Angolischer Kwanza
 Name[en_GB]=Angolan Kwanza

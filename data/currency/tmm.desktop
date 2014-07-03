@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=TMM
 CurrencyCodeIsoNumeric3=795
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Turkmenistani Old Manat
+Name[ar]=المنات التركمانستاني القديم
 Name[ca]=Manat antic del Turkmenistan
 Name[de]=Alter Manat von Turkmenistan
 Name[en_GB]=Turkmenistani Old Manat

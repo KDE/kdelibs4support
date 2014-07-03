@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=KPW
 CurrencyCodeIsoNumeric3=408
 #Context for Name: Adjectival Country Name and Currency Name
 Name=North Korean Won
+Name[ar]=وون كوريا الشمالية
 Name[ca]=Won nord-coreà
 Name[de]=Nordkoreanischer Won
 Name[en_GB]=North Korean Won

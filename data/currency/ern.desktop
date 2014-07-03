@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=ERN
 CurrencyCodeIsoNumeric3=232
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Eritrean Nakfa
+Name[ar]=النقفة الإيريتيرية
 Name[ca]=Nakfa d'Eritrea
 Name[de]=Eritreischer Nakfa
 Name[en_GB]=Eritrean Nakfa

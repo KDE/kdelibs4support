@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=ZWL
 CurrencyCodeIsoNumeric3=932
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Zimbabwean Dollar
+Name[ar]=الدولار الزمبابوي
 Name[ca]=Dòlar de Zimbabwe
 Name[de]=Simbabwe-Dollar
 Name[en_GB]=Zimbabwean Dollar

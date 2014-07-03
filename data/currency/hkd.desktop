@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=HKD
 CurrencyCodeIsoNumeric3=344
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Hong Kong Dollar
+Name[ar]=الدولار الهونغ كونغي
 Name[ca]=Dòlar de Hong Kong
 Name[de]=Hongkong-Dollar
 Name[en_GB]=Hong Kong Dollar

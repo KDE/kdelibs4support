@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=GNF
 CurrencyCodeIsoNumeric3=324
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Guinean Franc
+Name[ar]=الفرنك الغيني
 Name[ca]=Franc de Guinea
 Name[de]=Franc Guinéen
 Name[en_GB]=Guinean Franc

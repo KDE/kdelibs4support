@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=SSP
 #CurrencyCodeIsoNumeric3=
 #Context for Name: Adjectival Country Name and Currency Name
 Name=South Sudanese Pound
+Name[ar]=جنيه جنوب السودان
 Name[ca]=Lliura de Sudan del Sud
 Name[de]=Südsudanesisches Pfund
 Name[en_GB]=South Sudanese Pound

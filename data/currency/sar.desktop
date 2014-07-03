@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=SAR
 CurrencyCodeIsoNumeric3=682
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Saudi Riyal
+Name[ar]=الريال السعودي
 Name[ca]=Riyal saudita
 Name[de]=Saudi Riyal
 Name[en_GB]=Saudi Riyal
