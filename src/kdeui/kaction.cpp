@@ -185,7 +185,7 @@ void KAction::setGlobalShortcut(const KShortcut &shortcut, ShortcutTypes type,
     }
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool KAction::globalShortcutAllowed() const
 {
     return isGlobalShortcutEnabled();
@@ -197,7 +197,7 @@ bool KAction::isGlobalShortcutEnabled() const
     return KGlobalAccel::self()->hasShortcut(this);
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 void KAction::setGlobalShortcutAllowed(bool allowed, GlobalShortcutLoading /* load */)
 {
     if (allowed) {

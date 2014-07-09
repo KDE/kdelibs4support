@@ -58,7 +58,7 @@ int main()
         {
             KXErrorHandler handle2(dpy);
             XGetWindowAttributes(dpy, w, &attr);
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
             {
                 KXErrorHandler handle3(handler3, dpy);
                 XSetInputFocus(dpy, w, RevertToParent, CurrentTime);

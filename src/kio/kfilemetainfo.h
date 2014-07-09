@@ -145,13 +145,13 @@ public:
     /**
      * Deprecated
      **/
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED KFileMetaInfoGroupList preferredGroups() const;
 #endif
     /**
      * Deprecated
      **/
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED KFileMetaInfoGroupList supportedGroups() const;
 #endif
     KFileMetaInfoGroupList groups() const;

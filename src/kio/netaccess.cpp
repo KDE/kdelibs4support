@@ -139,7 +139,7 @@ bool NetAccess::upload(const QString &src, const QUrl &target, QWidget *window)
     return kioNet.filecopyInternal(srcUrl, target, -1, KIO::Overwrite, window, false /*copy*/);
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::file_copy(const QUrl &src, const QUrl &target, QWidget *window)
 {
     NetAccess kioNet;
@@ -148,14 +148,14 @@ bool NetAccess::file_copy(const QUrl &src, const QUrl &target, QWidget *window)
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::copy(const QUrl &src, const QUrl &target, QWidget *window)
 {
     return file_copy(src, target, window);
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::dircopy(const QUrl &src, const QUrl &target, QWidget *window)
 {
     QList<QUrl> srcList;
@@ -164,7 +164,7 @@ bool NetAccess::dircopy(const QUrl &src, const QUrl &target, QWidget *window)
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::dircopy(const QList<QUrl> &srcList, const QUrl &target, QWidget *window)
 {
     NetAccess kioNet;
@@ -172,7 +172,7 @@ bool NetAccess::dircopy(const QList<QUrl> &srcList, const QUrl &target, QWidget 
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::move(const QUrl &src, const QUrl &target, QWidget *window)
 {
     QList<QUrl> srcList;
@@ -182,7 +182,7 @@ bool NetAccess::move(const QUrl &src, const QUrl &target, QWidget *window)
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::move(const QList<QUrl> &srcList, const QUrl &target, QWidget *window)
 {
     NetAccess kioNet;
@@ -190,7 +190,7 @@ bool NetAccess::move(const QList<QUrl> &srcList, const QUrl &target, QWidget *wi
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::exists(const QUrl &url, bool source, QWidget *window)
 {
     if (url.isLocalFile()) {
@@ -241,7 +241,7 @@ QUrl NetAccess::mostLocalUrl(const QUrl &url, QWidget *window)
     return url;
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::del(const QUrl &url, QWidget *window)
 {
     NetAccess kioNet;
@@ -249,7 +249,7 @@ bool NetAccess::del(const QUrl &url, QWidget *window)
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool NetAccess::mkdir(const QUrl &url, QWidget *window, int permissions)
 {
     NetAccess kioNet;

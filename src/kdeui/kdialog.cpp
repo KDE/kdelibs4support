@@ -1084,14 +1084,14 @@ void KDialog::closeEvent(QCloseEvent *event)
     }
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 void KDialog::restoreDialogSize(const KConfigGroup &cfg)
 {
     KWindowConfig::restoreWindowSize(windowHandle(), cfg);
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 void KDialog::saveDialogSize(KConfigGroup &config, KConfigGroup::WriteConfigFlags options) const
 {
     KWindowConfig::saveWindowSize(windowHandle(), config, options);

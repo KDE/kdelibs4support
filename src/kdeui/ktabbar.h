@@ -59,7 +59,7 @@ public:
      * dragging tabs out of the KTabBar (e.g., dragging the tab
      * URL from Konqueror to another application)!
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setTabReorderingEnabled(bool enable);
 #endif
 
@@ -68,7 +68,7 @@ public:
      *
      * @deprecated Use QTabBar::isMovable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool isTabReorderingEnabled() const;
 #endif
 
@@ -80,12 +80,12 @@ public:
      *
      * @deprecated Use QTabBar::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setHoverCloseButton(bool);
 #endif
 
     /** @deprecated Use QTabBar::tabsClosable() instead. */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool hoverCloseButton() const;
 #endif
 
@@ -96,12 +96,12 @@ public:
      *
      * @deprecated Use QTabBar::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setHoverCloseButtonDelayed(bool);
 #endif
 
     /** @deprecated Use QTabBar::tabsClosable() instead. */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool hoverCloseButtonDelayed() const;
 #endif
 
@@ -114,7 +114,7 @@ public:
      *
      * @deprecated Use QTabBar::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setCloseButtonEnabled(bool);
 #endif
 
@@ -125,7 +125,7 @@ public:
      *
      * @deprecated Use QTabBar::tabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool isCloseButtonEnabled() const;
 #endif
 
@@ -136,7 +136,7 @@ public:
      *
      * @deprecated Use QTabBar::setSelectionBehaviorOnRemove() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setTabCloseActivatePrevious(bool);
 #endif
 
@@ -146,7 +146,7 @@ public:
      *
      * @deprecated Use QTabBar::selectionBehaviorOnRemove() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool tabCloseActivatePrevious() const;
 #endif
 
@@ -170,7 +170,7 @@ Q_SIGNALS:
      */
     void emptyAreaContextMenu(const QPoint &globalPos);
     /** @deprecated use tabDoubleClicked(int) and newTabRequest() instead. */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void mouseDoubleClick(int);
 #endif
     /**
@@ -197,7 +197,7 @@ Q_SIGNALS:
      */
     void moveTab(int, int);
     /** @deprecated Use QTabBar::tabCloseRequested(int) instead. */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void closeRequest(int);
 #endif
 #ifndef QT_NO_WHEELEVENT
@@ -223,11 +223,11 @@ protected:
 
 protected Q_SLOTS:
     /** @deprecated */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void closeButtonClicked();
 #endif
     /** @deprecated */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void enableCloseButton();
 #endif
     virtual void activateDragSwitchTab();

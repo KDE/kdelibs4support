@@ -192,7 +192,7 @@ public:
     /**
      * @internal
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED static void setHandleAutoStarted();
 #endif
 

@@ -98,7 +98,7 @@ public:
      * @return the threshold for drag & drop in pixels
      * @deprecated since 5.0, use QApplication::startDragDistance() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED int dndEventDelay();
 #endif
 
@@ -109,7 +109,7 @@ public:
      * @return true if single click mode, or false if double click mode.
      * @deprecated since 5.0, use style->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick, 0, widget)
      **/
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED bool singleClick();
 #endif
 
@@ -485,7 +485,7 @@ public:
      * @return Returns true if user wants to show previews.
      * @deprecated since 5.0, use KProtocolInfo::showFilePreview
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED bool showFilePreview(const QUrl &);
 #endif
 
@@ -666,7 +666,7 @@ Q_SIGNALS:
      *
      * @deprecated since 5.0, use KIconLoader::iconChanged(int)
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void iconChanged(int group);
 #endif
 

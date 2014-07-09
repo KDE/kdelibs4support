@@ -79,7 +79,7 @@ public:
      * by XErrorEvent. If the function returns true, the error flag will be set.
      * @deprecated Use the variant with XErrorEvent.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     explicit KXErrorHandler(bool (*handler)(int request, int error_code, unsigned long resource_id), Display *dpy = display()) KDELIBS4SUPPORT_DEPRECATED;
 #endif
     /**

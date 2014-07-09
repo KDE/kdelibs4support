@@ -210,13 +210,13 @@
 #endif
 
 /**
- * @def KDE_NO_DEPRECATED
+ * @def KDELIBS4SUPPORT_NO_DEPRECATED
  * @ingroup KDEMacros
  *
- * The KDE_NO_DEPRECATED indicates if the deprecated symbols of the platform
+ * The KDELIBS4SUPPORT_NO_DEPRECATED indicates if the deprecated symbols of the platform
  * have been compiled out.
  */
-#cmakedefine KDE_NO_DEPRECATED
+#cmakedefine KDELIBS4SUPPORT_NO_DEPRECATED
 
 /**
  * @def KDE_ISLIKELY

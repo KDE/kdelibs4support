@@ -131,7 +131,7 @@ public:
      *
      * @return type of calendar system
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED virtual QString calendarType() const = 0;
 #endif
 
@@ -321,7 +321,7 @@ public:
      * @param d Day of month
      * @return true if the date is valid; otherwise returns false.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED virtual bool setYMD(QDate &date, int y, int m, int d) const
     {
         return setDate(date, y, m, d);
@@ -629,7 +629,7 @@ public:
      * @param yearNum returns the year the date belongs to
      * @return ISO week number, -1 if input date invalid
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED inline int weekNumber(const QDate &date, int *yearNum = 0) const
     {
         return week(date, KLocale::IsoWeekNumber, yearNum);
@@ -841,7 +841,7 @@ public:
      * @return year literal of the date, empty string if any error
      * @see year()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED virtual QString yearString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -862,7 +862,7 @@ public:
      * @return The month literal of the date, empty string if any error
      * @see month()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED virtual QString monthString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -883,7 +883,7 @@ public:
      * @return The day literal of the date, empty string if any error
      * @see day()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED virtual QString dayString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -906,7 +906,7 @@ public:
      * @param format format to return, either short or long
      * @return Year In Era literal of the date, empty string if any error
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString yearInEraString(const QDate &date, StringFormat format = ShortFormat) const
     {
         if (format == ShortFormat) {
@@ -930,7 +930,7 @@ public:
      * @return The day of year literal of the date, empty string if any error
      * @see dayOfYear()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString dayOfYearString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -953,7 +953,7 @@ public:
      * @return The day of week literal of the date, empty string if any error
      * @see dayOfWeek()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString dayOfWeekString(const QDate &date) const
     {
         return formatDate(date, KLocale::DayOfWeek, KLocale::ShortNumber);
@@ -973,7 +973,7 @@ public:
      * @return The day literal of the date, empty string if any error
      * @see weekNumber()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString weekNumberString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -997,7 +997,7 @@ public:
      * @return The months in year literal of the date, empty string if any error
      * @see monthsInYear()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString monthsInYearString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -1021,7 +1021,7 @@ public:
      * @return The weeks in year literal of the date, empty string if any error
      * @see weeksInYear()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString weeksInYearString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -1045,7 +1045,7 @@ public:
      * @return The days in year literal of the date, empty string if any error
      * @see daysInYear()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString daysInYearString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -1069,7 +1069,7 @@ public:
      * @return The days in month literal of the date, empty string if any error
      * @see daysInMonth()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString daysInMonthString(const QDate &date, StringFormat format = LongFormat) const
     {
         if (format == ShortFormat) {
@@ -1092,7 +1092,7 @@ public:
      * @return The days in week literal of the date, empty string if any error
      * @see daysInWeek()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString daysInWeekString(const QDate &date) const
     {
         return formatDate(date, KLocale::DaysInWeek, KLocale::ShortNumber);

@@ -258,7 +258,7 @@ public:
      *
      * @deprecated, use addResourceType(type, 0, relativename, priority)
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool addResourceType(const char *type,
             const QString &relativename, bool priority = true);
 #endif
@@ -376,7 +376,7 @@ public:
      * @deprecated since 5.0. Only kbuildsycoca needed the multi-dir version of this.
      * In other apps, just use QFileInfo(fullPath).lastModified().toTime_t()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED quint32 calcResourceHash(const char *type,
             const QString &filename,
             SearchOptions options = NoSearchOptions) const;
@@ -622,7 +622,7 @@ public:
      * @endcode
      * See KDE5PORTING.html for how to port other resources.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString relativeLocation(const char *type, const QString &absPath) const;
 #endif
 
@@ -637,7 +637,7 @@ public:
      * @return true if successful, false otherwise
      * @deprecated since 5.0, use QDir().mkpath(dir).
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED static bool makeDir(const QString &dir, int mode = 0755);
 #endif
 
@@ -679,7 +679,7 @@ public:
      * @see locateLocal()
      * @deprecated now returns % + type + / ...
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED QString kde_default(const char *type);
 #endif
 
@@ -688,7 +688,7 @@ public:
      * @deprecated since 5.0, there is no KDEDIRS anymore. If you care for XDG_DATA_DIRS instead, use this:
      * QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).join(QString(':'))
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString kfsstnd_prefixes();
 #endif
 
@@ -701,7 +701,7 @@ public:
      * Use QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) or
      * QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString localkdedir() const;
 #endif
 
@@ -710,7 +710,7 @@ public:
      * See also http://www.freedesktop.org/standards/basedir/draft/basedir-spec/basedir-spec.html
      * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + '/'
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString localxdgdatadir() const;
 #endif
 
@@ -719,7 +719,7 @@ public:
      * See also http://www.freedesktop.org/standards/basedir/draft/basedir-spec/basedir-spec.html
      * @deprecated since 5.0 use QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + '/'
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED QString localxdgconfdir() const;
 #endif
 
@@ -738,7 +738,7 @@ public:
      * @return @c true if the directory exists, @c false otherwise
      * @deprecated since 5.0, use QFile::exists or QFileInfo::isFile()/isDir() to be more precise.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED static bool exists(const QString &fullPath);
 #endif
 

@@ -217,7 +217,7 @@ public:
          *
          * @deprecated since 5.0, use QMimeData::setUrls, followed by KUrlMimeData::setMetaData if you have metadata.
          */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
         KDELIBS4SUPPORT_DEPRECATED void populateMimeData(QMimeData *mimeData,
                 const KUrl::MetaDataMap &metaData = MetaDataMap(),
                 MimeDataFlags flags = DefaultMimeDataFlags) const;
@@ -257,7 +257,7 @@ public:
          * @since 4.2
          * @deprecated since 5.0, use KUrlMimeData::setUrls, followed by KUrlMimeData::setMetaData if you have metadata.
          */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
         KDELIBS4SUPPORT_DEPRECATED void populateMimeData(const KUrl::List &mostLocalUrls,
                 QMimeData *mimeData,
                 const KUrl::MetaDataMap &metaData = MetaDataMap(),
@@ -268,7 +268,7 @@ public:
          * Return true if @p mimeData contains URI data
          * @deprecated since 5.0, use QMimeData::hasUrls
          */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
         KDELIBS4SUPPORT_DEPRECATED static bool canDecode(const QMimeData *mimeData);
 #endif
 
@@ -276,7 +276,7 @@ public:
          * Return the list of mimeTypes that can be decoded by fromMimeData
          * @deprecated since 5.0, use KUrlMimeData::mimeDataTypes
          */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
         KDELIBS4SUPPORT_DEPRECATED static QStringList mimeDataTypes();
 #endif
 
@@ -313,7 +313,7 @@ public:
          * @since 4.2.3
          * @deprecated since 5.0, use KUrlMimeData::urlsFromMimeData
          */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
         KDELIBS4SUPPORT_DEPRECATED static KUrl::List fromMimeData(const QMimeData *mimeData,
                 DecodeOptions decodeOptions = PreferKdeUrls,
                 KUrl::MetaDataMap *metaData = 0);
@@ -943,7 +943,7 @@ public:
      * ignore trailing '/' characters.
      * @deprecated since 4.0, use equals() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool cmp(const KUrl &u, bool ignore_trailing = false) const;
 #endif
 
@@ -1058,7 +1058,7 @@ public:
      *
      * @deprecated since 5.0, use QUrl::fromLocalFile
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED KUrl fromPath(const QString &text)
     {
         return fromLocalFile(text);
@@ -1068,7 +1068,7 @@ public:
     /**
      * @deprecated since 4.0, use QUrl() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED KUrl fromPathOrUrl(const QString &text);
 #endif
 
@@ -1090,7 +1090,7 @@ public:
      * @deprecated since 5.0, use QMimeData::setUrls(QList<QUrl>() << url),
      *      followed by KUrlMimeData::setMetaData if you have metadata.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void populateMimeData(QMimeData *mimeData,
             const MetaDataMap &metaData = MetaDataMap(),
             MimeDataFlags flags = DefaultMimeDataFlags) const;
@@ -1168,7 +1168,7 @@ Q_DECLARE_METATYPE(KUrl::List)
  * That means no malformed URL equals anything else.
  * @deprecated since 4.5, use QUrl(_url1) == QUrl(_url2) instead.
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT bool urlcmp(const QString &_url1, const QString &_url2);   // KDE5: remove, KUrl::equals is better API
 #endif
 
@@ -1184,7 +1184,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT bool urlcmp(const QString &_url1, const QStrin
  * @param options a set of KUrl::EqualsOption flags
  * @deprecated since 4.5, use QUrl(_url1).adjusted(options) == QUrl(_url2).adjusted(options) instead.
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT bool urlcmp(const QString &_url1, const QString &_url2, const KUrl::EqualsOptions &options);   // KDE5: remove, KUrl::equals is better API
 #endif
 

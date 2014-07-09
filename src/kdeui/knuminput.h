@@ -60,7 +60,7 @@ public:
      * @param parent parent widget
      * \deprecated - use the version without the below parameter instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED KNumInput(QWidget *parent, KNumInput *below);
 #endif
 
@@ -224,7 +224,7 @@ public:
      *
      * \deprecated use the version without the below parameter instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED KIntNumInput(KNumInput *below, int value, QWidget *parent, int base = 10);
 #endif
 
@@ -279,7 +279,7 @@ public:
     /**
      * @deprecated Use the other setRange function and setSliderEnabled instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setRange(int min, int max, int singleStep, bool slider);
 #endif
 
@@ -514,7 +514,7 @@ public:
      *
      * \deprecated use the version without below instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED KDoubleNumInput(KNumInput *below,
                                            double lower, double upper, double value, QWidget *parent = 0, double singleStep = 0.02,
                                            int precision = 2);
@@ -595,7 +595,7 @@ public:
      */
     void setDecimals(int decimals);
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setPrecision(int precision)
     {
         setDecimals(precision);

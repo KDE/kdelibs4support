@@ -193,7 +193,7 @@ public:
      * @return true if successful, false for failure
      * @deprecated since 5.0, use KIO::file_copy + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool file_copy(const QUrl &src, const QUrl &target, QWidget *window = 0);
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool copy(const QUrl &src, const QUrl &target,
             QWidget *window = 0);
@@ -220,7 +220,7 @@ public:
      * @return true if successful, false for failure
      * @deprecated since 5.0, use KIO::copy + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool dircopy(const QUrl &src, const QUrl &target, QWidget *window);
 #endif
 
@@ -228,7 +228,7 @@ public:
      * Overloaded method, which takes a list of source URLs
      * @deprecated since 5.0, use KIO::copy + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool dircopy(const QList<QUrl> &src, const QUrl &target, QWidget *window = 0L);
 #endif
     /**
@@ -236,7 +236,7 @@ public:
      * Moves or renames one file or directory.
      * @deprecated since 5.0, use KIO::move + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool move(const QUrl &src, const QUrl &target, QWidget *window = 0L);
 #endif
 
@@ -245,7 +245,7 @@ public:
      * Moves or renames a list of files or directories.
      * @deprecated since 5.0, use KIO::move + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool move(const QList<QUrl> &src, const QUrl &target, QWidget *window = 0L);
 #endif
 
@@ -266,7 +266,7 @@ public:
      *
      * @deprecated use the StatSide enum instead of the bool source
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool exists(const QUrl &url, bool source, QWidget *window);
 #endif
 
@@ -339,7 +339,7 @@ public:
      * @return true on success, false on failure.
      * @deprecated since 5.0, use KIO::del + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool del(const QUrl &url, QWidget *window);
 #endif
 
@@ -359,7 +359,7 @@ public:
      * @return true on success, false on failure.
      * @deprecated since 5.0, use KIO::mkdir + job->ui()->setWindow() + job->exec() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED_EXPORT bool mkdir(const QUrl &url, QWidget *window, int permissions = -1);
 #endif
 

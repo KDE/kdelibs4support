@@ -38,7 +38,7 @@ KFileMetaInfoItem::KFileMetaInfoItem(const QString &pp,
                                      const QVariant &v, KFileWritePlugin *w, bool e)
     : d(new KFileMetaInfoItemPrivate())
 {
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     d->pp = pp;
 #else
 #if ! KIO_NO_NEPOMUK
@@ -62,7 +62,7 @@ KFileMetaInfoItem::operator=(const KFileMetaInfoItem &item)
 const QString &
 KFileMetaInfoItem::name() const
 {
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     return d->pp.name();
 #else
 #if ! KIO_NO_NEPOMUK
@@ -117,7 +117,7 @@ KFileMetaInfoItem::isSkipped() const
     // ########## TODO implement (vandenoever)
     return false;
 }
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 const PredicateProperties &
 KFileMetaInfoItem::properties() const
 {

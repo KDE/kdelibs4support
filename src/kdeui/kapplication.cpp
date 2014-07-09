@@ -865,7 +865,7 @@ void KApplication::updateRemoteUserTimestamp(const QString &service, int time)
 #endif
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 QString KApplication::tempSaveName(const QString &pFilename)
 {
     QString aFilename;

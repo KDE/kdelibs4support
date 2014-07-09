@@ -23,7 +23,7 @@
 
 #include <config-kdelibs4support.h>
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 #include <predicateproperties.h>
 #else
 #if ! KIO_NO_NEPOMUK
@@ -40,7 +40,7 @@ class KFileMetaInfoItemPrivate : public QSharedData
 {
 public:
     KFileMetaInfoItemPrivate() : writer(0) {}
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     PredicateProperties pp;
 #else
 #if ! KIO_NO_NEPOMUK

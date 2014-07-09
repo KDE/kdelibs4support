@@ -215,7 +215,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KAction : public QWidgetAction
     Q_PROPERTY(KShortcut shortcut READ shortcut WRITE setShortcut)
     Q_PROPERTY(bool shortcutConfigurable READ isShortcutConfigurable WRITE setShortcutConfigurable)
     Q_PROPERTY(KShortcut globalShortcut READ globalShortcut WRITE setGlobalShortcut)
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     Q_PROPERTY(bool globalShortcutAllowed READ globalShortcutAllowed WRITE setGlobalShortcutAllowed)
 #endif
     Q_PROPERTY(bool globalShortcutEnabled READ isGlobalShortcutEnabled)
@@ -422,7 +422,7 @@ public:
      * Defaults to false.
      * Use isGlobalShortcutEnabled() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool globalShortcutAllowed() const;
 #endif
 
@@ -434,7 +434,7 @@ public:
      * \param loading if Autoloading, assign to this action the global shortcut it has previously had
      *                if any.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setGlobalShortcutAllowed(bool allowed, GlobalShortcutLoading loading = Autoloading);
 #endif
 

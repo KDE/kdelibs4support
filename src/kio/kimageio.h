@@ -52,7 +52,7 @@ namespace KImageIO
  **/
 enum Mode { Reading, Writing };
 
-#if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
+#if !defined(KDELIBS4SUPPORT_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
 /**
  * Returns a list of patterns of all KImageIO supported formats.
  *
@@ -68,7 +68,7 @@ enum Mode { Reading, Writing };
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
 #endif
 
-#if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
+#if !defined(KDELIBS4SUPPORT_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
 /**
  * Returns the type of a MIME type.
  * @param mimeType the MIME type to search
@@ -79,7 +79,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeType);
 #endif
 
-#if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
+#if !defined(KDELIBS4SUPPORT_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
 /**
  * Returns a list of all KImageIO supported formats.
  *
@@ -90,7 +90,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeTyp
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
 #endif
 
-#if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
+#if !defined(KDELIBS4SUPPORT_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
 /**
  *  Returns a list of MIME types for all KImageIO supported formats.
  *
@@ -101,7 +101,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList mimeTypes(Mode mode = Writing);
 #endif
 
-#if !defined(KDE_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
+#if !defined(KDELIBS4SUPPORT_NO_DEPRECATED) && !defined(DOXYGEN_SHOULD_SKIP_THIS)
 /**
  * Test to see whether a MIME type is supported to reading/writing.
  * @param _mimeType the MIME type to check

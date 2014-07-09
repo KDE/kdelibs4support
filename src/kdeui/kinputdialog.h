@@ -68,7 +68,7 @@ namespace KInputDialog
  *
  * @deprecated since 5.0, use QInputDialog::getText() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const QString &label,
         const QString &value = QString(), bool *ok = 0, QWidget *parent = 0,
         QValidator *validator = 0,
@@ -94,7 +94,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const 
  * @return String user entered if Ok was pressed, else a null string
  * @deprecated since 5.0, use QInputDialog::getMultiLineText() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &caption,
         const QString &label, const QString &value = QString(),
         bool *ok = 0, QWidget *parent = 0);
@@ -123,7 +123,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &captio
  * @return Number user entered if Ok was pressed, else 0
  * @deprecated since 5.0, use QInputDialog::getInt() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
         int value = 0, int minValue = INT_MIN, int maxValue = INT_MAX,
         int step = 1, int base = 10, bool *ok = 0, QWidget *parent = 0);
@@ -134,7 +134,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const Q
  * above except it assumes base to be 10, i.e. accepts decimal numbers.
  * @deprecated since 5.0, use QInputDialog::getInt() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
         int value = 0, int minValue = INT_MIN, int maxValue = INT_MAX,
         int step = 1, bool *ok = 0, QWidget *parent = 0);
@@ -163,7 +163,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const Q
  * @return Number user entered if Ok was pressed, else 0
  * @deprecated since 5.0, use QInputDialog::getDouble() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
         double value = 0, double minValue = -DBL_MAX,
         double maxValue = DBL_MAX, double step = 0.1, int decimals = 1,
@@ -175,7 +175,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const
  * the above function.
  * @deprecated since 5.0, use QInputDialog::getDouble() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
         double value = 0, double minValue = -DBL_MAX,
         double maxValue = DBL_MAX, int decimals = 1, bool *ok = 0,
@@ -202,7 +202,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const
  *         a text entered by the user.
  * @deprecated since 5.0, use QInputDialog::getItem() instead
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const QString &label,
         const QStringList &list, int current = 0, bool editable = false,
         bool *ok = 0, QWidget *parent = 0);
@@ -229,7 +229,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const 
  * @deprecated since 5.0, use QInputDialog with the option UseListViewForComboBoxItems instead
  *         (yet only one item allowed)
  */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList getItemList(const QString &caption,
         const QString &label, const QStringList &list = QStringList(),
         const QStringList &select = QStringList(), bool multiple = false,

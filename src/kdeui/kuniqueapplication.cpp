@@ -374,7 +374,7 @@ int KUniqueApplication::newInstance()
     return 0; // do nothing in default implementation
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 void KUniqueApplication::setHandleAutoStarted()
 {
 }

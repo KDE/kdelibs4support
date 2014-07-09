@@ -534,7 +534,7 @@ KUrl::operator QVariant() const
     return qVariantFromValue(*this);
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool KUrl::cmp(const KUrl &u, bool ignore_trailing) const
 {
     return equals(u, ignore_trailing ? CompareWithoutTrailingSlash : EqualsOptions(0));
@@ -1452,7 +1452,7 @@ void KUrl::_setEncodedUrl(const QByteArray &url)
     }
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool urlcmp(const QString &_url1, const QString &_url2)
 {
     return QUrl(_url1, QUrl::TolerantMode) == QUrl(_url2, QUrl::TolerantMode);
@@ -1479,7 +1479,7 @@ bool urlcmp(const QString &_url1, const QString &_url2)
 }
 #endif
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool urlcmp(const QString &_url1, const QString &_url2, const KUrl::EqualsOptions &_options)
 {
     // Both empty ?
@@ -1527,7 +1527,7 @@ bool urlcmp(const QString &_url1, const QString &_url2, const KUrl::EqualsOption
 #endif
 
 // static
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KUrl KUrl::fromPathOrUrl(const QString &text)
 {
     KUrl url;

@@ -223,7 +223,7 @@ public:
      * @return A new filename for auto-saving.
      * @deprecated use QTemporaryFile, QSaveFile or KAutoSaveFile instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     static KDELIBS4SUPPORT_DEPRECATED QString tempSaveName(const QString &pFilename);
 #endif
 

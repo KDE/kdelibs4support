@@ -1072,7 +1072,7 @@ public:
      * @return number of seconds difference
      * @see secsTo(), addSecs(), daysTo()
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED inline qint64 secsTo_long(const KDateTime &other) const
     {
         return secsTo(other);
@@ -1441,7 +1441,7 @@ public:
      * @see isValid()
      * @deprecated Since 5.0, we now supports all valid dates.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED inline bool outOfRange() const
     {
         return false;

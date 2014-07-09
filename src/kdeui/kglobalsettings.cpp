@@ -579,7 +579,7 @@ KGlobalSettings::GraphicEffects KGlobalSettings::graphicEffectsLevelDefault()
     return ComplexAnimationEffects;
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool KGlobalSettings::showFilePreview(const QUrl &url)
 {
     KConfigGroup g(KSharedConfig::openConfig(), "PreviewSettings");

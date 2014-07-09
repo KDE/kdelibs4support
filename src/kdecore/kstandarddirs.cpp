@@ -509,7 +509,7 @@ void KStandardDirs::addXdgDataPrefix(const QString &_dir, bool priority)
     }
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 QString KStandardDirs::kfsstnd_prefixes()
 {
     return d->m_prefixes.join(QString(QLatin1Char(':')));
@@ -623,7 +623,7 @@ QString KStandardDirs::findResource(const char *type,
     }
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 static quint32 updateHash(const QString &file, quint32 hash)
 {
     KDE_struct_stat buff;
@@ -1545,7 +1545,7 @@ static void tokenize(QStringList &tokens, const QString &str,
     }
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 QString KStandardDirs::kde_default(const char *type)
 {
     return QString(QLatin1Char('%')) + QString::fromLatin1(type) + QLatin1Char('/');
@@ -2114,7 +2114,7 @@ bool KStandardDirs::addCustomized(KConfig *config)
     return configDirsChanged;
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 QString KStandardDirs::localkdedir() const
 {
     // Return the prefix to use for saving
@@ -2132,7 +2132,7 @@ QString KStandardDirs::localxdgconfdir() const
     // Return the prefix to use for saving
     return d->xdgconf_prefixes.first();
 }
-#endif // KDE_NO_DEPRECATED
+#endif // KDELIBS4SUPPORT_NO_DEPRECATED
 
 // just to make code more readable without macros
 QString KStandardDirs::locate(const char *type,

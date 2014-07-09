@@ -46,7 +46,7 @@ namespace KParts
     class Part;
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 namespace KDEPrivate
 {
     template <class Base>

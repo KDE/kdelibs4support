@@ -257,7 +257,7 @@ class QObject;
 //KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE QDebug operator<<(QDebug s, const KDateTime &time);
 
 #if 1 || defined(KDE3_SUPPORT)
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 class KDELIBS4SUPPORT_DEPRECATED_NOISE kndbgstream { };
 typedef QDebug kdbgstream;
 

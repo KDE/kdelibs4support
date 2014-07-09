@@ -28,7 +28,7 @@
 #include <klocalizedstring.h>
 #include <kdebug.h>
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 
 /* @internal */
 template <class T>

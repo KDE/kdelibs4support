@@ -99,7 +99,7 @@ KNumInput::KNumInput(QWidget *parent)
     KConfigDialogManager::changedMap()->insert("KDoubleSpinBox", SIGNAL(valueChanged(double)));
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KNumInput::KNumInput(QWidget *parent, KNumInput *below)
     : QWidget(parent), d(new KNumInputPrivate(this, below))
 {
@@ -337,7 +337,7 @@ public:
           blockRelative(0) {}
 };
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KIntNumInput::KIntNumInput(KNumInput *below, int val, QWidget *parent, int _base)
     : KNumInput(parent, below)
     , d(new KIntNumInputPrivate(this, val))
@@ -472,7 +472,7 @@ void KIntNumInput::setRange(int lower, int upper, int singleStep)
     setSliderEnabled(priv->slider);
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 void KIntNumInput::setRange(int lower, int upper, int singleStep, bool slider)
 {
     setRange(lower, upper, singleStep);
@@ -714,7 +714,7 @@ KDoubleNumInput::KDoubleNumInput(double lower, double upper, double value, QWidg
     initWidget(value, lower, upper, singleStep, precision);
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDoubleNumInput::KDoubleNumInput(KNumInput *below,
                                  double lower, double upper, double value, QWidget *parent,
                                  double singleStep, int precision)

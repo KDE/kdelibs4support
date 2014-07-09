@@ -124,7 +124,7 @@ private Q_SLOTS:
         }
     }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     void testSetHidden()
     {
         KTabWidget w;

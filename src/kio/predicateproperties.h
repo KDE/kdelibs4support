@@ -37,7 +37,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT PredicateProperties
 {
     friend class PredicatePropertyProvider;
 public:
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED PredicateProperties(const QString &predicate = QString());
 #endif
     PredicateProperties(const PredicateProperties &p);

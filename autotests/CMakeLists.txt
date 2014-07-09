@@ -72,7 +72,7 @@ kdelibs4support_executable_tests(
 
 ########### module for klibloadertest ###############
 
-if(NOT KDE_NO_DEPRECATED)
+if(NOT KDELIBS4SUPPORT_NO_DEPRECATED)
   # this exists to check that code using the kde 3 macros still build,
   # even though the module cannot be loaded
   set(klibloadertestmodule3_PART_SRCS klibloadertest3_module.cpp )

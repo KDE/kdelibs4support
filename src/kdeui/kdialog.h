@@ -356,7 +356,7 @@ public:
      * @param config The config group to read from.
      * @deprecated use KWindowConfig::restoreDialogSize() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void restoreDialogSize(const KConfigGroup &config);
 #endif
 
@@ -370,7 +370,7 @@ public:
      * @param options passed to KConfigGroup::writeEntry()
      * @deprecated use KWindowConfig::saveDialogSize() instead
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void saveDialogSize(KConfigGroup &config, KConfigGroup::WriteConfigFlags options = KConfigGroup::Normal) const;
 #endif
 

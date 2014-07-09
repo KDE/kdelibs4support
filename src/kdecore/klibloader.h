@@ -32,7 +32,7 @@
 #include "kpluginloader.h"
 #include "klibrary.h"
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT K_EXPORT_COMPONENT_FACTORY_is_deprecated_use_KPluginFactory
 {

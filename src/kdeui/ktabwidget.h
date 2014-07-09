@@ -44,7 +44,7 @@ class QTab;
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT KTabWidget : public QTabWidget //krazy:exclude=qclasses
 {
     Q_OBJECT
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     Q_PROPERTY(bool tabReorderingEnabled READ isTabReorderingEnabled WRITE setTabReorderingEnabled)
     Q_PROPERTY(bool hoverCloseButton READ hoverCloseButton WRITE setHoverCloseButton)
     Q_PROPERTY(bool hoverCloseButtonDelayed READ hoverCloseButtonDelayed WRITE setHoverCloseButtonDelayed)
@@ -86,7 +86,7 @@ public:
      *
      * @deprecated Use QTabWidget::isMovable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool isTabReorderingEnabled() const;
 #endif
 
@@ -96,7 +96,7 @@ public:
      *
      * @deprecated Use QTabWidget::tabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool hoverCloseButton() const;
 #endif
 
@@ -106,7 +106,7 @@ public:
      *
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool hoverCloseButtonDelayed() const;
 #endif
 
@@ -117,7 +117,7 @@ public:
      *
      * @deprecated Use QTabWidget::tabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool isCloseButtonEnabled() const;
 #endif
 
@@ -127,7 +127,7 @@ public:
      *
      * @deprecated Use tabBar()->selectionBehaviorOnRemove() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool tabCloseActivatePrevious() const;
 #endif
 
@@ -143,7 +143,7 @@ public:
      *
      * @deprecated since 5.0, use tabBar()->hide() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void setTabBarHidden(bool hide);
 #endif
 
@@ -154,7 +154,7 @@ public:
      *
      * @deprecated since 5.0, use tabBar()->isHidden() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED bool isTabBarHidden() const;
 #endif
 
@@ -182,7 +182,7 @@ public:
     /**
      * @deprecated use tabText
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     inline KDELIBS4SUPPORT_DEPRECATED QString label(int index) const
     {
         return tabText(index);
@@ -192,7 +192,7 @@ public:
     /**
      * @deprecated use tabText
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     inline KDELIBS4SUPPORT_DEPRECATED QString tabLabel(QWidget *w) const
     {
         return tabText(indexOf(w));
@@ -202,7 +202,7 @@ public:
     /**
      * @deprecated use setTabText
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     inline KDELIBS4SUPPORT_DEPRECATED void setTabLabel(QWidget *w, const QString &l)
     {
         setTabText(indexOf(w), l);
@@ -252,7 +252,7 @@ public Q_SLOTS:
      * dragging tabs out of the KTabBar (e.g., dragging the tab
      * URL from Konqueror to another application)!
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void setTabReorderingEnabled(bool enable);
 #endif
 
@@ -263,7 +263,7 @@ public Q_SLOTS:
      *
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void setHoverCloseButton(bool enable);
 #endif
 
@@ -273,7 +273,7 @@ public Q_SLOTS:
      *
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void setHoverCloseButtonDelayed(bool delayed);
 #endif
 
@@ -286,7 +286,7 @@ public Q_SLOTS:
      *
      * @deprecated Use QTabWidget::setTabsClosable() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void setCloseButtonEnabled(bool);
 #endif
 
@@ -296,7 +296,7 @@ public Q_SLOTS:
      *
      * @deprecated Use tabBar()->setSelectionBehaviorOnRemove() instead.
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     QT_MOC_COMPAT void setTabCloseActivatePrevious(bool previous);
 #endif
 
@@ -341,7 +341,7 @@ Q_SIGNALS:
      */
     void contextMenu(QWidget *, const QPoint &);
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     /**
      * A tab was moved from first to second index. This signal is only
      * possible after you have called setTabReorderingEnabled( true ).
@@ -397,7 +397,7 @@ protected:
     /**
      * @deprecated  This method has no effect and should not be called
      */
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void currentChanged(int);
 #endif
 

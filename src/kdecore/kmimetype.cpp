@@ -317,7 +317,7 @@ QString KMimeType::comment() const
     return d_ptr->m_qmime.comment();
 }
 
-#ifndef KDE_NO_DEPRECATED
+#ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 QString KMimeType::parentMimeType() const
 {
     const QStringList parents = d_ptr->m_qmime.parentMimeTypes();
