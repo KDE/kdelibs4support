@@ -31,6 +31,7 @@
 #include <QtCore/QObject>
 #include <QtCore/QSharedDataPointer>
 #include "k3socketaddress.h"
+#include "kdemacros.h"
 
 ////////////////////////
 // Forward declarations
@@ -176,21 +177,17 @@ public:
      */
     KResolverEntry &operator=(const KResolverEntry &other);
 
-#ifdef MAKE_KDECORE_LIB
     /**
      * Dummy operator== for compilers which need a complete
      * instantiated class when exporting to a shared lib
      */
-    //KDE_DUMMY_COMPARISON_OPERATOR(KResolverEntry)
-#endif
+    KDE_DUMMY_COMPARISON_OPERATOR(KResolverEntry)
 
 private:
     QSharedDataPointer<KResolverEntryPrivate> d;
 };
 
-#ifdef MAKE_KDECORE_LIB
-//KDE_DUMMY_QHASH_FUNCTION(KResolverEntry)
-#endif
+KDE_DUMMY_QHASH_FUNCTION(KResolverEntry)
 
 class KResolverResultsPrivate;
 /**
