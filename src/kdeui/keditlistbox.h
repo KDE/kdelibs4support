@@ -51,7 +51,7 @@ public:
     /**
      * Custom editor class
      **/
-    class KDELIBS4SUPPORT_DEPRECATED CustomEditor
+    class KDELIBS4SUPPORT_DEPRECATED_EXPORT CustomEditor
     {
     public:
         CustomEditor();
