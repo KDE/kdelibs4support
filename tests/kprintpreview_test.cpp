@@ -35,7 +35,8 @@ int main(int argc, char **argv)
 
     QPainter painter;
     painter.begin(&printer);
-    painter.drawText(printer.pageRect(), QStringLiteral("Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+    // please don't use QStringLiteral since it can't be used with a concatenated string parameter on all platforms
+    painter.drawText(printer.pageRect(), QLatin1String("Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
                      "Nam malesuada massa dolor, sed sollicitudin turpis congue eu. Pellentesque ac risus felis. Etiam scelerisque "
                      "leo vitae mauris condimentum malesuada. Praesent tortor neque, egestas non elit vitae, accumsan mattis augue. "
                      "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque ligula ligula, convallis ac felis in, "
