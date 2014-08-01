@@ -746,7 +746,7 @@ public:
      *             all text behind the last '/' in the current path is erased and
      *             @p _txt is appended then. It does not matter whether @p _txt starts
      *             with '/' or not.
-     * @deprecated since 5.0, use u = u.adjusted(QUrl::RemoveFileName); followed by
+     * @deprecated since 5.0, use u = u.adjusted(QUrl::RemoveFilename); followed by
      * u.setPath(u.path() + txt);
      */
     void setFileName(const QString &_txt);
