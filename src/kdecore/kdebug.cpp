@@ -71,6 +71,7 @@
 #include <QtCore/QCoreApplication>
 #include <QUrl>
 #include <qstandardpaths.h>
+#include <qlogging.h>
 
 #include <stdlib.h> // abort
 #include <unistd.h> // getpid
@@ -163,6 +164,17 @@ private:
     int m_priority;
 };
 
+// can remove this #if clause when depending on Qt 5.4
+#if QT_VERSION < QT_VERSION_CHECK(5, 4, 0)
+extern Q_CORE_EXPORT QString qMessageFormatString(QtMsgType type, const QMessageLogContext & context,
+                                                  const QString & str);
+
+QString qFormatLogMessage(QtMsgType type, const QMessageLogContext & context, const QString & str)
+{
+    return qMessageFormatString(type, context, str);
+}
+#endif
+
 class KFileDebugStream: public KNoDebugStream
 {
     // Q_OBJECT
@@ -175,9 +187,7 @@ public:
                 QByteArray buf = QByteArray::fromRawData(data, len);
 
                 // Apply QT_MESSAGE_PATTERN
-                extern Q_CORE_EXPORT QString qMessageFormatString(QtMsgType type, const QMessageLogContext & context,
-                        const QString & str);
-                const QString formatted = qMessageFormatString(QtDebugMsg /*hack*/, context, QString::fromUtf8(buf));
+                const QString formatted = qFormatLogMessage(QtDebugMsg /*hack*/, context, QString::fromUtf8(buf));
                 buf = formatted.toUtf8();
 
                 aOutputFile.write(buf.trimmed());
