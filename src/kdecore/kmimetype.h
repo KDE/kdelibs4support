@@ -45,7 +45,7 @@ class KMimeTypePrivate;
  * services (apps and components) "which can open text/plain".
  *
  * @see KServiceType
- * @deprecated use QMimeType
+ * @deprecated use QMimeType, see https://community.kde.org/Frameworks/Porting_Notes#Mime_Types
  */
 class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KMimeType : public QSharedData
 {
@@ -386,8 +386,8 @@ public:
     /**
      * Do not use name()=="somename" anymore, to check for a given mimetype.
      * For mimetype inheritance to work, use is("somename") instead.
-     * Warning, do not use inherits(), that's the servicetype inheritance concept!
      * is() also supports mimetype aliases.
+     * @deprecated since KF5, use QMimeType::inherits
      */
     bool is(const QString &mimeTypeName) const;
 
