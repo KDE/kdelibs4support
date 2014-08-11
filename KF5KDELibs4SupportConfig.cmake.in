@@ -26,6 +26,10 @@ find_dependency(Qt5DBus @REQUIRED_QT_VERSION@)
 find_dependency(Qt5Xml @REQUIRED_QT_VERSION@)
 find_dependency(Qt5PrintSupport @REQUIRED_QT_VERSION@)
 
+if(WIN32)
+    find_dependency(KDEWin)
+endif()
+
 include("${CMAKE_CURRENT_LIST_DIR}/KF5KDELibs4SupportTargets.cmake")
 
 include("${CMAKE_CURRENT_LIST_DIR}/ECMQt4To5Porting.cmake")

@@ -338,6 +338,11 @@ PRIVATE
    ${platformLinkLibraries}
 )
 
+if(WIN32)
+    target_include_directories(KF5KDELibs4Support PUBLIC "${KDEWIN_INCLUDES}")
+    message(STATUS "${KDEWIN_LIBRARIES}")
+    target_link_libraries(KF5KDELibs4Support PUBLIC "${KDEWIN_LIBRARIES}")
+endif()
 
 # This flag is needed in order to be able to support files > 2GB even on
 # 32bit platforms. The default is to use the non-64bit aware syscalls on
