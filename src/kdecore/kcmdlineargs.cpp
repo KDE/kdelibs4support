@@ -1548,9 +1548,8 @@ QUrl KCmdLineArgs::makeURL(const QByteArray &_urlArg)
         return result; // Absolute path.
     }
 
-    QUrl qurl(urlArg);
-    if (qurl.isRelative() || fileInfo.exists()) {
-        QUrl result = QUrl::fromLocalFile(cwd() + QLatin1Char('/') + urlArg);
+    if (fileInfo.isRelative() && fileInfo.exists()) {
+        QUrl result = QUrl::fromLocalFile(fileInfo.absoluteFilePath());
 #if 0 //Qt5 TODO: QUrlInfo::cleanPath
         result.cleanPath(); //This did use KUrl::cleanPath()
 #endif
