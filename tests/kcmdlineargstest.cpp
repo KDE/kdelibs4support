@@ -61,28 +61,6 @@ main(int argc, char *argv[])
         printf("%d: %s\n", i, args->url(i).toEncoded().data());
     }
 
-    // Check how KCmdLineArgs::url() works
-    QUrl u = KCmdLineArgs::makeURL(QByteArray("/tmp"));
-    qDebug() << u;
-    assert(u.toLocalFile() == QLatin1String("/tmp"));
-    u = KCmdLineArgs::makeURL(QByteArray("foo"));
-    qDebug() << u << "  expected: " << QUrl(QDir::currentPath() + QLatin1String("/foo"));
-    assert(u.toLocalFile() == QDir::currentPath() + QLatin1String("/foo"));
-    u = KCmdLineArgs::makeURL(QByteArray("http://www.kde.org"));
-    qDebug() << u;
-    assert(u.toString() == QLatin1String("http://www.kde.org"));
-
-    QFile file(QLatin1String("a:b"));
-#ifndef Q_OS_WIN
-    bool ok = file.open(QIODevice::WriteOnly);
-    Q_UNUSED(ok) // silence warnings
-    assert(ok);
-#endif
-    u = KCmdLineArgs::makeURL(QByteArray("a:b"));
-    qDebug() << u.toLocalFile();
-    assert(u.isLocalFile());
-    assert(u.toLocalFile().endsWith(QLatin1String("a:b")));
-
     args->clear(); // Free up memory.
 
 //   return app.exec();

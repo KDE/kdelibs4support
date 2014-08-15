@@ -17,6 +17,7 @@ endmacro()
 ecm_add_tests( globalcleanuptest.cpp
         kaccelgentest.cpp
         kcalendartest.cpp
+        kcmdlineargs_unittest.cpp
         kdatetimetest.cpp
         klocaletimeformattest.cpp
         ktimezonestest.cpp
