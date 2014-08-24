@@ -192,9 +192,15 @@ public:
     /**
      * The component currently active (useful in a multi-component
      * application, such as a KParts application).
-     * Don't use this - it's mainly for KAboutDialog and KBugReport.
+     * Don't use this - it was mainly for KAboutDialog and KBugReport.
+     *
+     * They now use KAboutData::applicationData() by default, or a specific KAboutData can be given
+     * to them. KHelpMenu always creates them with the application data.
+     * So this is now obsolete, the about-app and bug-report dialog simply use the app data
+     * rather than the active plugin data.
+     *
      * @internal
-     * @since 5.0
+     * @since 5.0 (moved from KGlobal, but later on KComponentData was deprecated anyway)
      */
     static const KComponentData &activeComponent(); //krazy:exclude=constref (don't mess up ref-counting)
 
@@ -202,8 +208,11 @@ public:
      * Set the active component for use by KAboutDialog and KBugReport.
      * To be used only by a multi-component (KParts) application.
      *
+     * Since 5.0, KAboutDialog and KBugReport don't look at this anymore,
+     * so consider just removing the call. See activeComponent() for more details.
+     *
      * @see activeComponent()
-     * @since 5.0
+     * @since 5.0 (moved from KGlobal, but later on KComponentData was deprecated anyway)
      */
     static void setActiveComponent(const KComponentData &d);
 

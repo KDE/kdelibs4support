@@ -505,7 +505,9 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT void setAllowQuit(bool allowQuit);
  * application, such as a KParts application).
  * Don't use this - it's mainly for KAboutDialog and KBugReport.
  * @internal
- * @deprecated since 5.0 use KComponentData::activeComponent()
+ * @deprecated since 5.0 see KComponentData::activeComponent() about
+ * why you should do without this concept (or let your app remember the active
+ * part/plugin if it cares)
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT KComponentData activeComponent();
 
@@ -514,7 +516,8 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT KComponentData activeComponent();
  * To be used only by a multi-component (KParts) application.
  *
  * @see activeComponent()
- * @deprecated since 5.0 use KComponentData::setActiveComponent
+ * @deprecated since 5.0 see KComponentData::setActiveComponent about
+ * why you can probably just remove the call.
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT void setActiveComponent(const KComponentData &d);
 
