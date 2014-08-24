@@ -28,9 +28,6 @@
 
 #include <kconfig.h>
 #include <k4aboutdata.h>
-#if 0 // TEMP_KF5_REENABLE
-#include <klocale.h>
-#endif
 
 class KComponentDataPrivate
 {

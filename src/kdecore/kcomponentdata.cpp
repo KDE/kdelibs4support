@@ -96,7 +96,7 @@ public:
         mainComponent = c;
         KAboutData::setApplicationData(KAboutData(*c.aboutData()));
         KConfig::setMainConfigName(c.aboutData()->appName() + QLatin1String("rc"));
-#if 0 // TEMP_KF5_REENABLE
+#if 0 // no longer available in KF5
         KLocale::setMainCatalog(c.catalogName());
 #endif
         KComponentData::setActiveComponent(c);
@@ -295,7 +295,7 @@ const KComponentData &KComponentData::activeComponent()
 void KComponentData::setActiveComponent(const KComponentData &c)
 {
     globalStatic()->activeComponent = c;
-#if 0 // TEMP_KF5_REENABLE
+#if 0 // no longer available in KF5
     if (c.isValid()) {
         KLocale::global()->setActiveCatalog(c.catalogName());
     }
