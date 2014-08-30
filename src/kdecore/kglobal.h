@@ -430,7 +430,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT mode_t umask();
  * and as you know static objects are EVIL.
  * @param str the string to create
  * @return the static string
- * @deprecated since 5.0, use QLatin1Literal()
+ * @deprecated since 5.0, use QLatin1String() or QStringLiteral()
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT const QString &staticQString(const char *str); //krazy:exclude=constref (doesn't make sense otherwise)
 

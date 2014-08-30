@@ -503,6 +503,8 @@ Q_SIGNALS:
     /**
      * Emitted when the action is triggered. Also provides the state of the
      * keyboard modifiers and mouse buttons at the time.
+     * @deprecated since 5.0, use triggered() signal from QAction and check for
+     * QApplication::mouseButtons() and QApplication::keyboardModifiers() in the slot.
      */
     void triggered(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
 
