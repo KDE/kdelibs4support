@@ -1161,6 +1161,10 @@ QStringList KStandardDirs::KStandardDirsPrivate::resourceDirs(const char *type, 
         candidates = *dirCacheIt;
     } else { // filling cache
         //qDebug() << this << "resourceDirs(" << type << "), not in cache";
+        q->addResourceDir("socket", QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation));
+        q->addResourceDir("tmp", QStandardPaths::writableLocation(QStandardPaths::TempLocation));
+        q->addResourceDir("cache", QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation));
+
         QDir testdir;
 
         bool restrictionActive = false;

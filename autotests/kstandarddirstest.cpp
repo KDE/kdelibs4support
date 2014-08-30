@@ -92,6 +92,9 @@ void KStandarddirsTest::testSaveLocation()
 
     const QString saveLocAppData = KGlobal::dirs()->saveLocation("appdata");
     QCOMPARE_PATHS(saveLocAppData, m_dataHome + "/kstandarddirstest/");
+
+    const QString saveTmp = KGlobal::dirs()->saveLocation("tmp");
+    QCOMPARE_PATHS(saveTmp, QDir::tempPath() + '/');
 }
 
 void KStandarddirsTest::testLocateLocal()
