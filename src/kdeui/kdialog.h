@@ -368,7 +368,7 @@ public:
      *
      * @param config The config group to read from.
      * @param options passed to KConfigGroup::writeEntry()
-     * @deprecated use KWindowConfig::saveDialogSize() instead
+     * @deprecated use KWindowConfig::saveWindowSize() instead
      */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void saveDialogSize(KConfigGroup &config, KConfigGroup::WriteConfigFlags options = KConfigGroup::Normal) const;
