@@ -1131,6 +1131,8 @@ public:
      * @param base_url the URL to derive from
      * @param url new URL
      * @see adjustPath()
+     * @deprecated since 5.0, check that the URLs have the same scheme+host+port+user+pass,
+     * then make the path relative with QDir(base_url.path()).relativeFilePath(url.path())
      */
     static QString relativeUrl(const KUrl &base_url, const KUrl &url);
 
@@ -1142,6 +1144,8 @@ public:
      * @param path the new target directory
      * @param isParent A pointer to a boolean which, if provided, will be set to reflect
      * whether @p path has @p base_dir is a parent dir.
+     * @deprecated since 5.0, use QDir(base_dir).relativeFilePath(path). isParent can be
+     * replaced with a call to startsWith("..") on the result value.
      */
     static QString relativePath(const QString &base_dir, const QString &path, bool *isParent = 0);
 
