@@ -74,9 +74,9 @@
 #include <QCoreApplication>
 
 #ifdef Q_OS_WIN
-static Qt::CaseSensitivity cs = Qt::CaseInsensitive;
+static const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 #else
-static Qt::CaseSensitivity cs = Qt::CaseSensitive;
+static const Qt::CaseSensitivity cs = Qt::CaseSensitive;
 #endif
 
 class KStandardDirs::KStandardDirsPrivate
