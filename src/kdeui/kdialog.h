@@ -574,6 +574,8 @@ public Q_SLOTS:
      * standard.
      * @param modified Specify whether the document is modified. This displays
      * an additional sign in the title bar, usually "**".
+     *
+     * @deprecated Since 5.0 use QWidget::setWindowTitle and QWidget::setWindowModified.
      */
     virtual void setCaption(const QString &caption, bool modified);
 
