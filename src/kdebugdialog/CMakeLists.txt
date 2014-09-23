@@ -4,7 +4,7 @@ set(kdebugdialog_SRCS
    kdebugdialog.cpp 
    klistdebugdialog.cpp )
 
-qt5_wrap_ui(kdebugdialog_SRCS kdebugdialog.ui)
+ki18n_wrap_ui(kdebugdialog_SRCS kdebugdialog.ui)
 
 add_executable(kdebugdialog5 ${kdebugdialog_SRCS})
 
