@@ -330,7 +330,7 @@ K4Style::SubElement K4Style::newSubElement(const QString &element)
 QString K4Style::defaultStyle()
 {
 #if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
-    return QString("oxygen");
+    return QString("breeze");
 #else
     return QString(); // native style
 #endif
