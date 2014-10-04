@@ -748,6 +748,8 @@ public:
      * and returns the canonicalized absolute pathname.
      * The resulting path will have no symbolic link, '/./'
      * or '/../' components.
+     * @deprecated since 5.0, port to QDir::canonicalPath, but note that it returns
+     * an empty string if filename doesn't exist!
      */
     static QString realPath(const QString &dirname);
 
@@ -757,6 +759,8 @@ public:
      * and returns the canonicalized absolute pathname.
      * The resulting path will have no symbolic link, '/./'
      * or '/../' components.
+     * @deprecated since 5.0, port to QFileInfo::canonicalFilePath, but note that it returns
+     * an empty string if filename doesn't exist!
      */
     static QString realFilePath(const QString &filename);
 
