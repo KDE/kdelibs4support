@@ -474,12 +474,16 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT const QString &staticQString(const QString &st
  *
  * Note that for this to happen you must call qApp->setQuitOnLastWindowClosed(false),
  * in main() for instance.
+ *
+ * @deprecated since 5.0, use QEventLoopLocker, its constructor does the equivalent of ref
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT void ref();
 
 /**
  * Tells KGlobal that one operation such as those described in ref() just finished.
  * This call makes the QApplication quit if the counter is back to 0.
+ *
+ * @deprecated since 5.0, use QEventLoopLocker, its destructor does the equivalent of unref
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT void deref();
 
@@ -497,6 +501,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT void deref();
  * and use KGlobal::ref() + KGlobal::deref() in that object.
  *
  * @since 4.1.1
+ * @deprecated since 5.0, not necessary anymore, with QCoreApplication and QEventLoopLocker
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT void setAllowQuit(bool allowQuit);
 
