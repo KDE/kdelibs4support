@@ -730,7 +730,7 @@ public:
      *
      * @param _item Name of item to add
      * @param _value Value of item to add
-     * @deprecated since 5.0, use QUrlQuery(url), then addQueryItems(), then QUrl::setQuery()
+     * @deprecated since 5.0, use QUrlQuery(url), then addQueryItem(), then QUrl::setQuery()
      */
     void addQueryItem(const QString &_item, const QString &_value);
 
