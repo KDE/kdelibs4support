@@ -38,6 +38,7 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QStringList>
 #include <QtCore/QSharedData>
+#include <QtCore/QSharedPointer>
 
 #include <klocale.h>
 #include <klocalizedstring.h>
