@@ -139,7 +139,6 @@ KPrintPreview::KPrintPreview(QPrinter *printer, QWidget *parent)
     printer->setOutputFileName(d->filename);
 
     QVBoxLayout *layout = new QVBoxLayout;
-    layout->setMargin(0);
     setLayout(layout);
 
     layout->addWidget(d->mainWidget, 1);
