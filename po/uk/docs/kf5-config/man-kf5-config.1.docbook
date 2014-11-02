@@ -1,0 +1,274 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Ukrainian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Інструкція користувача &kde;</title>
+<author
+><firstname
+>Stephan</firstname
+> <surname
+>Kulow</surname
+> <affiliation
+><address
+><email
+>coolo@kde.org</email
+></address
+></affiliation>
+</author>
+<date
+>28 вересня 2007 року</date>
+<productname
+>Стільничне середовище KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kf5-config</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kf5-config</command
+></refname>
+<refpurpose
+>Виводить шляхи, куди встановлено &kde;</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kf5-config</command
+> <arg
+>--expandvars</arg
+> <arg
+>--prefix</arg
+> <arg
+>--exec-prefix</arg
+> <arg
+>--libsuffix</arg
+> <arg
+>--localprefix</arg
+> <arg
+>--version</arg
+> <arg
+>--types</arg
+> <arg
+>--path <replaceable
+>тип</replaceable
+></arg
+> <arg
+>--userpath <replaceable
+>тип</replaceable
+></arg
+> <arg
+>--install <replaceable
+>тип</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Опис</title>
+<para
+>kf5-config — це програма, яка працює у командному рядку і використовується для отримання інформації щодо шляхів встановлення &kde; і шляхів користувача &kde;.</para>
+
+<para
+>Користуйтесь цією програмою для визначення місць, де у вашій системі знаходяться різні частини встановленого &kde;. </para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>Параметри</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--expandvars</option
+></term>
+<listitem>
+<para
+>розгортає ${prefix} і ${exec_prefix} у виводі</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--prefix</option
+></term>
+<listitem>
+<para
+>Префікс компіляції бібліотек &kde;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--exec-prefix</option
+></term>
+<listitem>
+<para
+>Префікс exec_prefix для бібліотек &kde;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--libsuffix</option
+></term>
+<listitem>
+<para
+>Суфікс у шляху до бібліотек, заданий під час компіляції</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--localprefix</option
+></term>
+<listitem>
+<para
+>Префікс у $<envar
+>HOME</envar
+>, який використовується для запису файлів</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>Вставлений під час компіляції у бібліотеки рядок з версією &kde;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--types</option
+></term>
+<listitem>
+<para
+>Виводить список всіх доступних типів ресурсів &kde;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--path <replaceable
+>тип</replaceable
+></option
+></term>
+<listitem>
+<para
+>Шукає шлях для вказаного <replaceable
+>типу</replaceable
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--userpath <replaceable
+>тип</replaceable
+></option
+></term>
+<listitem>
+<para
+>Шляхи користувача для типів: desktop|autostart|trash|document</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--install <replaceable
+>тип</replaceable
+></option
+></term>
+<listitem>
+<para
+>Шлях для встановлення файлів ресурсів вказаного типу</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Приклади</title>
+
+<para
+>Вивести каталог найвищого рівня встановленого &kde;:</para>
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --prefix</command
+> </userinput
+> </para>
+
+<para
+>Вивести список всіх типів ресурсів:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --types</command
+> </userinput
+> </para>
+
+<para
+>Вивести шлях до встановлених зображень тла стільниці:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --path wallpaper</command
+> </userinput
+> </para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Прочитайте також</title>
+<para
+>kdeoptions(7)</para>
+</refsect1>
+
+<refsect1>
+<title
+>Вади</title>
+<para
+>Відомих вад немає.</para>
+</refsect1>
+
+</refentry>
