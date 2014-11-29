@@ -3,7 +3,7 @@
 set(kcmssl_SRCS kcmssl.cpp cacertificatespage.cpp displaycertdialog.cpp)
 
 #todo: port to include klocalizedstring.h
-qt5_wrap_ui(kcmssl_SRCS cacertificates.ui displaycert.ui)
+ki18n_wrap_ui(kcmssl_SRCS cacertificates.ui displaycert.ui)
 
 add_library(kcm_ssl MODULE ${kcmssl_SRCS})
 target_link_libraries(kcm_ssl

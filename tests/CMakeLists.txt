@@ -44,7 +44,7 @@ kdelibs4support_examples(
 
 set(networkingclient_SRCS networkingclient.cpp )
 
-qt5_wrap_ui(networkingclient_SRCS networkingclientview.ui)
+ki18n_wrap_ui(networkingclient_SRCS networkingclientview.ui)
 qt5_add_dbus_interface(networkingclient_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/solid/org.kde.Solid.Networking.Client.xml clientinterface)
 add_executable(networkingclient ${networkingclient_SRCS})
 
@@ -55,7 +55,7 @@ endif()
 
 ##### test for solid-networkstatus #####
 
-qt5_wrap_ui(networkingservice_SRCS networkingserviceview.ui)
+ki18n_wrap_ui(networkingservice_SRCS networkingserviceview.ui)
 qt5_add_dbus_interface(networkingservice_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/solid-networkstatus/org.kde.Solid.Networking.Service.xml serviceinterface)
 add_executable(networkingservice networkingservice.cpp ${networkingservice_SRCS})
 target_link_libraries(networkingservice KF5::KDELibs4Support)
