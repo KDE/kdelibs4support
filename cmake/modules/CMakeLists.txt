@@ -125,5 +125,5 @@ install(FILES ${cmakeFiles}
 if(NOT CMAKE_VERSION VERSION_GREATER 2.8.12)
   # create and install a man page for the kdelibs cmake modules
   add_custom_target(KDECMakeModulesManPage ALL COMMAND ${CMAKE_COMMAND} -DCMAKE_MODULE_PATH=${CMAKE_CURRENT_SOURCE_DIR} --help-custom-modules ${CMAKE_CURRENT_BINARY_DIR}/kdecmake.1)
-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdecmake.1 DESTINATION "${MAN_INSTALL_DIR}/man1")
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdecmake.1 DESTINATION "${KDE_INSTALL_MANDIR}/man1")
 endif()

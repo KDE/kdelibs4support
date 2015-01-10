@@ -88,7 +88,7 @@ install(TARGETS kf5-config EXPORT KF5KDELibs4SupportTargets ${KF5_INSTALL_TARGET
 
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
-set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5KDELibs4Support")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5KDELibs4Support")
 
 include(ECMPackageConfigHelpers)
 
@@ -109,7 +109,7 @@ install(EXPORT KF5KDELibs4SupportTargets
         NAMESPACE KF5::)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h
-        DESTINATION ${KF5_INCLUDE_INSTALL_DIR}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
         COMPONENT Devel)
 
 
@@ -117,7 +117,7 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h
 #
 # Compatibility file
 #
-set(CMAKECONFIG_COMPAT_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5KDE4Support")
+set(CMAKECONFIG_COMPAT_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5KDE4Support")
 if(BUILD_SHARED_LIBS)
     set(KDELibs4Support_LIB_TYPE SHARED)
 else()
@@ -168,7 +168,7 @@ set (KDE_VERSION_STRING "${KDE_VERSION} (KDE Frameworks >= 20121130)")
 #set (KDE_VERSION_STRING "${KDE_VERSION}")
 
 include(CreateKDELibsDependenciesFile.cmake)
-set(CMAKECONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake/KDELibs4)
+set(CMAKECONFIG_INSTALL_DIR ${KDE_INSTALL_LIBDIR}/cmake/KDELibs4)
 
 # Used in configure_file() and install(EXPORT)
 set(KDE4_TARGET_PREFIX KDE4__)

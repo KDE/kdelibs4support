@@ -16,6 +16,6 @@ install( FILES
   svg+xml-compressed.desktop
   wbmp.desktop
   webp.desktop
-  DESTINATION ${SERVICES_INSTALL_DIR}/qimageioplugins/ )
+  DESTINATION ${KDE_INSTALL_KSERVICES5DIR}/qimageioplugins/ )
 
-install( FILES qimageio_plugin.desktop DESTINATION  ${SERVICETYPES_INSTALL_DIR}/ )
+install( FILES qimageio_plugin.desktop DESTINATION  ${KDE_INSTALL_KSERVICETYPES5DIR}/ )

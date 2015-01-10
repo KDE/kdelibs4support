@@ -65,7 +65,7 @@ if(QNTRACK_FOUND)
    target_link_libraries(kded_networkstatus ${QNTRACK_LIBRARIES})
 endif()
 
-install(TARGETS kded_networkstatus DESTINATION ${PLUGIN_INSTALL_DIR}/kf5/kded)
+install(TARGETS kded_networkstatus DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
 
-install( FILES networkstatus.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
+install( FILES networkstatus.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR}/kded)
 

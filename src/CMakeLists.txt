@@ -300,7 +300,7 @@ set(kdelibs4support_INCLUDES
 )
 target_include_directories(KF5KDELibs4Support PUBLIC "$<BUILD_INTERFACE:${kdelibs4support_INCLUDES}>")
 
-target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support>" "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/KDE>")
+target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support>" "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/KDE>")
 
 set(platformLinkLibraries)
 if (APPLE)
@@ -379,7 +379,7 @@ target_link_libraries(kf5deprecatedwidgets KF5::KDELibs4Support
                                     KF5::Auth
                                     )
 
-install(TARGETS kf5deprecatedwidgets DESTINATION ${QT_PLUGIN_INSTALL_DIR}/designer)
+install(TARGETS kf5deprecatedwidgets DESTINATION ${KDE_INSTALL_QTPLUGINDIR}/designer)
 
 ##########
 
@@ -512,30 +512,30 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_export_internal.h
     ${CMAKE_CURRENT_BINARY_DIR}/kdemacros.h
     kdecore/kdeversion.h
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support COMPONENT Devel
 )
 
 install(FILES
     solid/networking.h
     solid/powermanagement.h
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/solid COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/solid COMPONENT Devel
 )
 
 configure_file(kssl/ksslconfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
 set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
 
-install( FILES kdebug.areas kdebugrc DESTINATION ${CONFIG_INSTALL_DIR} )
+install( FILES kdebug.areas kdebugrc DESTINATION ${KDE_INSTALL_CONFDIR} )
 
 configure_file(kdecore/all_languages.desktop ${CMAKE_CURRENT_BINARY_DIR}/all_languages @ONLY)
-install( FILES ${CMAKE_CURRENT_BINARY_DIR}/all_languages DESTINATION ${LOCALE_INSTALL_DIR} RENAME kf5_all_languages )
+install( FILES ${CMAKE_CURRENT_BINARY_DIR}/all_languages DESTINATION ${KDE_INSTALL_LOCALEDIR} RENAME kf5_all_languages )
 
 
 install( FILES kdeui/40.colors kdeui/Oxygen.colors kdeui/Web.colors kdeui/Royal.colors kdeui/Rainbow.colors
-         DESTINATION ${CONFIG_INSTALL_DIR}/colors)
+         DESTINATION ${KDE_INSTALL_CONFDIR}/colors)
 
 if (NOT X11_FOUND)
     # install our copy of the rgb.txt named colors list on systems without X11
-    install(FILES kdeui/rgb.txt DESTINATION ${KF5_DATA_INSTALL_DIR}/kdeui)
+    install(FILES kdeui/rgb.txt DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kdeui)
 endif ()
 
 # kio/*.h
@@ -543,7 +543,7 @@ install(FILES
     kio/metainfojob.h
     kio/passworddialog.h
     kio/netaccess.h
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/kio COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/kio COMPONENT Devel
 )
 
 # kparts/*.h
@@ -551,7 +551,7 @@ install(FILES
     kparts/genericfactory.h
     kparts/factory.h
     kparts/listingextension.h
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/kparts COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/kparts COMPONENT Devel
 )
 
 # knewstuff3/*.h
@@ -563,7 +563,7 @@ install( FILES
     knewstuff3/knewstuffaction.h
     knewstuff3/knewstuffbutton.h
     knewstuff3/uploaddialog.h
-    DESTINATION ${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/knewstuff3 COMPONENT Devel
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/knewstuff3 COMPONENT Devel
 )
 
 install( FILES
@@ -576,35 +576,35 @@ install( FILES
     kio/kscan.desktop
     kio/kdatatool.desktop
     kio/kfilewrite.desktop
-    DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
+    DESTINATION  ${KDE_INSTALL_KSERVICETYPES5DIR} )
 
 # install the fileshareset and filesharelist scripts, they are not required on windows
 if (UNIX)
-   install(PROGRAMS kio/fileshareset DESTINATION ${KF5_LIBEXEC_INSTALL_DIR} )
+   install(PROGRAMS kio/fileshareset DESTINATION ${KDE_INSTALL_LIBEXECDIR_KF5} )
 
    install(CODE "
-     set(FILESHARESET_PATH \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${KF5_LIBEXEC_INSTALL_DIR}/fileshareset\")
+     set(FILESHARESET_PATH \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_LIBEXECDIR_KF5}/fileshareset\")
         EXECUTE_PROCESS(COMMAND sh -c \"chown 0 '\${FILESHARESET_PATH}' && chmod u+s '\${FILESHARESET_PATH}'\")
    ")
 
    # write a cmake script file which creates the symlink
-   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake "exec_program(${CMAKE_COMMAND} ARGS -E create_symlink fileshareset \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${KF5_LIBEXEC_INSTALL_DIR}/filesharelist\")\n")
+   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake "exec_program(${CMAKE_COMMAND} ARGS -E create_symlink fileshareset \"\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_LIBEXECDIR_KF5}/filesharelist\")\n")
    # and add it as post-install script to any of the installed targets, so it will be executed during "make install"
    set_target_properties(KF5KDELibs4Support PROPERTIES POST_INSTALL_SCRIPT ${CMAKE_CURRENT_BINARY_DIR}/make_fileshare_symlink.cmake)
 endif ()
 
 #solid stuff
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.kde.Solid.Networking.Client.xml
-        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
         RENAME kf5_org.kde.Solid.Networking.Client.xml)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.kde.Solid.PowerManagement.PolicyAgent.xml
-        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
         RENAME kf5_org.kde.Solid.PowerManagement.PolicyAgent.xml)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.freedesktop.PowerManagement.xml
-        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
         RENAME kf5_org.freedesktop.PowerManagement.xml)
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/solid/org.freedesktop.PowerManagement.Inhibit.xml
-        DESTINATION ${DBUS_INTERFACES_INSTALL_DIR}
+        DESTINATION ${KDE_INSTALL_DBUSINTERFACEDIR}
         RENAME kf5_org.freedesktop.PowerManagement.Inhibit.xml)
 
 ########## DocBookXML 4.2 compatibility
@@ -628,9 +628,9 @@ configure_file(${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_d
 # see the .xsl.cmake files for a more verbose explanation below
 if(NOT WIN32)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}
-        DESTINATION ${KF5_DATA_INSTALL_DIR}/kdoctools/customization/dtd )
+        DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kdoctools/customization/dtd )
 else()
-    get_filename_component(NORMALIZED_DTD_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/${KF5_DATA_INSTALL_DIR}/kdoctools/customization/dtd" ABSOLUTE)
+    get_filename_component(NORMALIZED_DTD_INSTALL_PATH "${CMAKE_INSTALL_PREFIX}/${KDE_INSTALL_DATADIR_KF5}/kdoctools/customization/dtd" ABSOLUTE)
     # file(RELATIVE_PATH ...) returns wrong values for paths containing /../ (it doesn't normalize the path)
     # To work around this we make sure the variable passed has all /../ elements
     # removed using get_filename_component(... ABSOLUTE)
@@ -639,9 +639,9 @@ else()
         configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install)"
     )
     get_filename_component(_custom_dtd_kdex_name ${_custom_dtd_kdex} NAME)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install DESTINATION ${KF5_DATA_INSTALL_DIR}/kdoctools/customization/dtd RENAME ${_custom_dtd_kdex_name})
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kdoctools/customization/dtd RENAME ${_custom_dtd_kdex_name})
 endif()
 
 install(FILES "customization/catalog4.xml"
-    DESTINATION ${KF5_DATA_INSTALL_DIR}/kdoctools/customization )
+    DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kdoctools/customization )
 

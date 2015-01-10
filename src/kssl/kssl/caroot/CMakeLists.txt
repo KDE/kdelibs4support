@@ -3,7 +3,7 @@
 
 ########### install files ###############
 
-install( FILES ca-bundle.crt  DESTINATION  ${KF5_DATA_INSTALL_DIR}/kssl )
+install( FILES ca-bundle.crt  DESTINATION  ${KDE_INSTALL_DATADIR_KF5}/kssl )
 
 
 
