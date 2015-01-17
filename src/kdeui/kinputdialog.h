@@ -21,6 +21,7 @@
 #define KINPUTDIALOG_H
 
 #include <QtCore/QStringList>
+#include <QWidget>
 
 #include <kdelibs4support_export.h>
 

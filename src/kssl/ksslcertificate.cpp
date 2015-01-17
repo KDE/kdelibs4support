@@ -30,6 +30,7 @@
 #include <QtCore/QStandardPaths>
 #include <QtCore/QDate>
 #include <QDebug>
+#include <QDataStream>
 #include <qplatformdefs.h>
 #include <qtemporaryfile.h>
 

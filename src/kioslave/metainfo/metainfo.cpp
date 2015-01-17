@@ -21,6 +21,7 @@
 #include <QCoreApplication>
 #include <QUrl>
 #include <QDebug>
+#include <QDataStream>
 #include <kfilemetainfo.h>
 #include <klocalizedstring.h>
 #include <stdlib.h>

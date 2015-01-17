@@ -22,6 +22,7 @@
 #include "kcalendarsystem.h"
 
 #include <QDebug>
+#include <QDataStream>
 
 /*****************************************************************************
  *

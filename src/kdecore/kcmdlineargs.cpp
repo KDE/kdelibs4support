@@ -39,6 +39,7 @@
 #include <QtCore/QHash>
 #include <QtCore/QTextCodec>
 #include <QtCore/QUrl>
+#include <QtCore/QDataStream>
 
 #include "k4aboutdata.h"
 

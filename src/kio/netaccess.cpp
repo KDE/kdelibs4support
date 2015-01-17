@@ -35,6 +35,7 @@
 #include <QtCore/QFileInfo>
 #include <QtCore/QMetaClassInfo>
 #include <QtCore/QTextStream>
+#include <QtCore/QDataStream>
 #include <qtemporaryfile.h>
 
 #include <klocalizedstring.h>
