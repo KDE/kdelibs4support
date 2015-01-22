@@ -42,6 +42,7 @@
 #include <QtCore/QDataStream>
 
 #include "k4aboutdata.h"
+#include <kcoreaddons_version.h>
 
 // -----------------------------------------------------------------------------
 // Design notes:
@@ -889,14 +890,15 @@ KCmdLineArgsStatic::parseAllArgs()
 #endif
             else if ((option == "version") || (option == "v")) {
                 KCmdLineArgs::enable_i18n();
-#pragma message("KDE5 TODO: use kcoreaddons version number")
                 staticObj()->printQ(i18nc("@info:shell message on appcmd --version; do not translate 'Development Platform'"
                                           "%3 application name, other %n version strings",
                                           "Qt: %1\n"
                                           "KDE Development Platform: %2\n"
-                                          "%3: %4\n").arg(QString::fromLatin1(qVersion()),
-                                                  QString::fromLatin1("TODO" /*KDE_VERSION_STRING*/),
-                                                  staticObj()->about->programName(), staticObj()->about->version()));
+                                          "%3: %4\n",
+                                          QString::fromLatin1(qVersion()),
+                                          QString::fromLatin1(KCOREADDONS_VERSION_STRING),
+                                          staticObj()->about->programName(),
+                                          staticObj()->about->version()));
                 exit(0);
             } else if (option == "license") {
                 KCmdLineArgs::enable_i18n();
