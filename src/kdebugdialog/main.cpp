@@ -21,6 +21,7 @@
 #include "klistdebugdialog.h"
 #include <kcmdlineargs.h>
 #include <k4aboutdata.h>
+#include <kdelibs4configmigrator.h>
 
 #include <QTextStream>
 #include <klocale.h>
@@ -96,6 +97,10 @@ static KAbstractDebugDialog::AreaMap readAreas()
 
 int main(int argc, char ** argv)
 {
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("kdebugdialog"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("kdebugrc"));
+    migrate.migrate();
+
     K4AboutData data( "kdebugdialog5", 0, ki18n( "KDebugDialog"),
             "1.0", ki18n("A dialog box for setting preferences for debug output"),
             K4AboutData::License_GPL, ki18n("Copyright 1999-2009, David Faure <faure@kde.org>"));
