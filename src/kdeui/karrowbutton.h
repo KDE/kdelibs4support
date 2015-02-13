@@ -63,7 +63,7 @@ public:
     /**
      * Reimplemented from QPushButton.
      */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
     /**
     * Returns the arrow type
@@ -93,7 +93,7 @@ protected:
     /**
      * Reimplemented from QPushButton.
      */
-    virtual void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
 
 private:
     KArrowButtonPrivate *const d;

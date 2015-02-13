@@ -58,11 +58,11 @@ public:
     /**
      * Validates the text, and return the result.  Does not modify the parameters.
      */
-    virtual State validate(QString &, int &) const;
+    State validate(QString &, int &) const Q_DECL_OVERRIDE;
     /**
      * Fixes the text if possible, providing a valid string.  The parameter may be modified.
      */
-    virtual void fixup(QString &) const;
+    void fixup(QString &) const Q_DECL_OVERRIDE;
     /**
      * Sets the minimum and maximum values allowed.
      * If @p top is greater than @p bottom, it is set to the value of @p bottom.
@@ -122,7 +122,7 @@ public:
     virtual ~KDoubleValidator();
 
     /** Overloaded for internal reasons. The API is not affected. */
-    virtual QValidator::State validate(QString &input, int &pos) const;
+    QValidator::State validate(QString &input, int &pos) const Q_DECL_OVERRIDE;
 
     /** @return whether localized numbers are accepted (default: true) */
     bool acceptLocalizedNumbers() const;

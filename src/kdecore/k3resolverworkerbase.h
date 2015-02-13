@@ -317,7 +317,7 @@ template<class Worker>
 class KResolverWorkerFactory: public KResolverWorkerFactoryBase
 {
 public:
-    virtual KResolverWorkerBase *create() const
+    KResolverWorkerBase *create() const Q_DECL_OVERRIDE
     {
         return new Worker;
     }

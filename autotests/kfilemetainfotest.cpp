@@ -38,7 +38,7 @@ public:
     KFileMetaInfoThread(const QString &fileName);
 
 protected:
-    virtual void run();
+    void run() Q_DECL_OVERRIDE;
 
 private:
     QString m_fileName;

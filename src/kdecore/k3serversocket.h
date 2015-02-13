@@ -171,7 +171,7 @@ protected:
     /**
      * Sets the socket options. Reimplemented from KSocketBase.
      */
-    virtual bool setSocketOptions(int opts);
+    bool setSocketOptions(int opts) Q_DECL_OVERRIDE;
 
 public:
     /**
@@ -310,7 +310,7 @@ public:
      * really does bind the socket. No lookup is performed. The bound() signal
      * will be emitted.
      */
-    virtual bool bind(const KResolverEntry &address);
+    bool bind(const KResolverEntry &address) Q_DECL_OVERRIDE;
 
     /**
      * Puts this socket into listening mode. Reimplemented from KPassiveSocketBase.
@@ -325,12 +325,12 @@ public:
      *                            queue without accept() being called
      * @returns true if the socket is now in listening mode.
      */
-    virtual bool listen(int backlog = 5); // 5 is arbitrary
+    bool listen(int backlog = 5) Q_DECL_OVERRIDE; // 5 is arbitrary
 
     /**
      * Closes this socket.
      */
-    virtual void close();
+    void close() Q_DECL_OVERRIDE;
 
     /**
      * Toggles whether the accepted socket will be buffered or not.
@@ -357,17 +357,17 @@ public:
      * @sa KBufferedSocket
      * @sa setAcceptBuffered
      */
-    virtual KStreamSocket *accept();
+    KStreamSocket *accept() Q_DECL_OVERRIDE;
 
     /**
      * Returns this socket's local address.
      */
-    virtual KSocketAddress localAddress() const;
+    KSocketAddress localAddress() const Q_DECL_OVERRIDE;
 
     /**
      * Returns this socket's externally-visible address if know.
      */
-    virtual KSocketAddress externalAddress() const;
+    KSocketAddress externalAddress() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void lookupFinishedSlot();

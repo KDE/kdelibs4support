@@ -163,7 +163,7 @@ public:
      * @param service the service
      */
     virtual bool bind(const QString &node = QString(),
-                      const QString &service = QString());
+                      const QString &service = QString()) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from KClientSocketBase. Connect this socket to this
@@ -173,7 +173,7 @@ public:
      * really does bind the socket. No lookup is performed. The bound()
      * signal will be emitted.
      */
-    virtual bool bind(const KResolverEntry &entry);
+    bool bind(const KResolverEntry &entry) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from KClientSocketBase.
@@ -199,13 +199,13 @@ public:
      */
     virtual bool connect(const QString &node = QString(),
                          const QString &service = QString(),
-                         OpenMode mode = ReadWrite);
+                         OpenMode mode = ReadWrite) Q_DECL_OVERRIDE;
 
     /**
      * Unshadowing from KClientSocketBase.
      */
     virtual bool connect(const KResolverEntry &entry,
-                         OpenMode mode = ReadWrite);
+                         OpenMode mode = ReadWrite) Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
     /**

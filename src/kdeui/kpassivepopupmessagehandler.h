@@ -43,7 +43,7 @@ public:
     /**
      * @copydoc KMessageHandler::message
      */
-    virtual void message(KMessage::MessageType messageType, const QString &text, const QString &caption);
+    void message(KMessage::MessageType messageType, const QString &text, const QString &caption) Q_DECL_OVERRIDE;
 
 private:
     /**

@@ -351,7 +351,7 @@ public:
     void setConfirmOverwrite(bool enable);
 
     /** @see QWidget::sizeHint() */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
     /**
      * Creates a modal file dialog and return the selected
@@ -805,16 +805,16 @@ protected:
     /**
      * Reimplemented to animate the cancel button.
      */
-    virtual void keyPressEvent(QKeyEvent *e);
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented for saving the dialog geometry.
      */
-    virtual void hideEvent(QHideEvent *event);
+    void hideEvent(QHideEvent *event) Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     virtual void slotOk();
-    virtual void accept();
+    void accept() Q_DECL_OVERRIDE;
     virtual void slotCancel();
 
 private:

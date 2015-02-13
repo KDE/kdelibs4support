@@ -72,12 +72,12 @@ public:
     /**
      * Calculate the recommended size for this hbox.
      */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
     /**
      * Calculate the recommended minimum size for this hbox.
      */
-    virtual QSize minimumSizeHint() const;
+    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
 
 protected:
     /*
@@ -85,7 +85,7 @@ protected:
      */
     KHBox(bool vertical, QWidget *parent);
 
-    virtual void childEvent(QChildEvent *ev);
+    void childEvent(QChildEvent *ev) Q_DECL_OVERRIDE;
 
 private:
     class Private;

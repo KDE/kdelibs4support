@@ -29,7 +29,7 @@
 class KTestMessageHandler : public KMessageHandler
 {
 public:
-    virtual void message(KMessage::MessageType type, const QString &text, const QString &caption)
+    void message(KMessage::MessageType type, const QString &text, const QString &caption) Q_DECL_OVERRIDE
     {
         Q_UNUSED(type);
         Q_UNUSED(caption);

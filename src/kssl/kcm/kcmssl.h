@@ -31,9 +31,9 @@ class KcmSsl : public KCModule
 public:
     KcmSsl(QWidget *parent, const QVariantList &);
 
-    virtual void load();
-    virtual void save();
-    virtual void defaults();
+    void load() Q_DECL_OVERRIDE;
+    void save() Q_DECL_OVERRIDE;
+    void defaults() Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void pageChanged(bool isChanged);

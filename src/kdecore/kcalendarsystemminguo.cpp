@@ -32,11 +32,11 @@ public:
     explicit KCalendarSystemMinguoPrivate(KCalendarSystemMinguo *q);
     virtual ~KCalendarSystemMinguoPrivate();
 
-    virtual void loadDefaultEraList();
-    virtual int daysInMonth(int year, int month) const;
-    virtual int daysInYear(int year) const;
-    virtual bool isLeapYear(int year) const;
-    virtual int earliestValidYear() const;
+    void loadDefaultEraList() Q_DECL_OVERRIDE;
+    int daysInMonth(int year, int month) const Q_DECL_OVERRIDE;
+    int daysInYear(int year) const Q_DECL_OVERRIDE;
+    bool isLeapYear(int year) const Q_DECL_OVERRIDE;
+    int earliestValidYear() const Q_DECL_OVERRIDE;
 };
 
 //Override only a few of the Gregorian private methods

@@ -30,7 +30,7 @@ private:
 
     int steps;
 
-    void timerEvent(QTimerEvent *);
+    void timerEvent(QTimerEvent *) Q_DECL_OVERRIDE;
 };
 
 void MyWidget::timerEvent(QTimerEvent *)

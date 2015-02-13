@@ -540,12 +540,12 @@ public:
     /**
      * Reimplemented from QDialog.
      */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from QDialog.
      */
-    virtual QSize minimumSizeHint() const;
+    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
 
     /**
      * Allow embedding the dialogs based on KDialog into a graphics view. By default embedding is not allowed, dialogs
@@ -815,7 +815,7 @@ protected:
      * Emits the #hidden signal. You can connect to that signal to
      * detect when a dialog has been closed.
      */
-    virtual void hideEvent(QHideEvent *);
+    void hideEvent(QHideEvent *) Q_DECL_OVERRIDE;
 
     /**
      * Detects when a dialog is being closed from the window manager
@@ -823,12 +823,12 @@ protected:
      * is activated. Otherwise standard QDialog behavior
      * will take place.
      */
-    virtual void closeEvent(QCloseEvent *e);
+    void closeEvent(QCloseEvent *e) Q_DECL_OVERRIDE;
 
     /**
      * @internal
      */
-    virtual void keyPressEvent(QKeyEvent *);
+    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     /**

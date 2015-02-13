@@ -138,7 +138,7 @@ class KColorCellsItemDelegate: public QStyledItemDelegate
 {
 public:
     KColorCellsItemDelegate(KColorCells *parent): QStyledItemDelegate(parent) {}
-    virtual void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE
     {
         QStyleOptionViewItemV4 opt(option);
         initStyleOption(&opt, index);

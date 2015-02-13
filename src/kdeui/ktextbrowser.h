@@ -95,17 +95,17 @@ protected:
      * the QTextBrowser method explicitly, like this:
      * <code>myTextBrowser->QTextBrowser::setSource(url)</code>
      */
-    void setSource(const QUrl &name);
+    void setSource(const QUrl &name) Q_DECL_OVERRIDE;
 
     /**
      * Makes sure Key_Escape is ignored
      */
-    virtual void keyPressEvent(QKeyEvent *event);
+    void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented to support Qt2 behavior (Ctrl-Wheel = fast scroll)
      */
-    virtual void wheelEvent(QWheelEvent *event);
+    void wheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
 
     /**
     * Re-implemented for internal reasons.  API not affected.
@@ -113,7 +113,7 @@ protected:
     * See QLineEdit::createPopupMenu().
     */
 
-    virtual void contextMenuEvent(QContextMenuEvent *event);
+    void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
 
 Q_SIGNALS:
     /**

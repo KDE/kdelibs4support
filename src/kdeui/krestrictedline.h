@@ -83,8 +83,8 @@ Q_SIGNALS:
     void  invalidChar(int);
 
 protected:
-    void keyPressEvent(QKeyEvent *e);
-    void inputMethodEvent(QInputMethodEvent *e);
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void inputMethodEvent(QInputMethodEvent *e) Q_DECL_OVERRIDE;
 
 private:
     KRestrictedLinePrivate *const d;

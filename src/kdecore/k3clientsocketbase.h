@@ -107,7 +107,7 @@ protected:
     /**
      * Sets the socket options. Reimplemented from KSocketBase.
      */
-    virtual bool setSocketOptions(int opts);
+    bool setSocketOptions(int opts) Q_DECL_OVERRIDE;
 
 public:
     /**
@@ -213,7 +213,7 @@ public:
      * really does bind the socket. No lookup is performed. The bound()
      * signal will be emitted.
      */
-    virtual bool bind(const KResolverEntry &address);
+    bool bind(const KResolverEntry &address) Q_DECL_OVERRIDE;
 
     /**
      * Attempts to connect to a given hostname and service,
@@ -253,20 +253,20 @@ public:
      * Reimplemented from KSocketBase.
      */
     virtual bool connect(const KResolverEntry &address,
-                         OpenMode mode = ReadWrite);
+                         OpenMode mode = ReadWrite) Q_DECL_OVERRIDE;
 
     /**
      * Disconnects the socket.
      * Note that not all socket types can disconnect.
      */
-    virtual bool disconnect();
+    bool disconnect() Q_DECL_OVERRIDE;
 
     /**
      * Opens the socket. Reimplemented from QIODevice.
      *
      * You should not call this function; instead, use connect()
      */
-    virtual bool open(OpenMode mode);
+    bool open(OpenMode mode) Q_DECL_OVERRIDE;
 
     /**
      * Closes the socket. Reimplemented from QIODevice.
@@ -274,7 +274,7 @@ public:
      * The closing of the socket causes the emission of the
      * signal closed().
      */
-    virtual void close();
+    void close() Q_DECL_OVERRIDE;
 
     /**
      * This call is not supported on unbuffered sockets.
@@ -286,22 +286,22 @@ public:
      * Returns the number of bytes available on this socket.
      * Reimplemented from KSocketBase.
      */
-    virtual qint64 bytesAvailable() const;
+    qint64 bytesAvailable() const Q_DECL_OVERRIDE;
 
     /**
      * Waits for more data. Reimplemented from KSocketBase.
      */
-    virtual qint64 waitForMore(int msecs, bool *timeout = 0L);
+    qint64 waitForMore(int msecs, bool *timeout = 0L) Q_DECL_OVERRIDE;
 
     /**
      * Returns the local socket address. Reimplemented from KSocketBase.
      */
-    virtual KSocketAddress localAddress() const;
+    KSocketAddress localAddress() const Q_DECL_OVERRIDE;
 
     /**
      * Returns the peer socket address. Reimplemented from KSocketBase.
      */
-    virtual KSocketAddress peerAddress() const;
+    KSocketAddress peerAddress() const Q_DECL_OVERRIDE;
 
     /**
      * Returns true if the readyRead signal is set to be emitted.
@@ -449,18 +449,18 @@ protected:
     /**
      * Reads data from a socket. Reimplemented from KSocketBase.
      */
-    virtual qint64 readData(char *data, qint64 maxlen, KSocketAddress *from);
+    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from) Q_DECL_OVERRIDE;
 
     /**
      * Peeks data from the socket. Reimplemented from KSocketBase.
      */
-    virtual qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from);
+    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from) Q_DECL_OVERRIDE;
 
     /**
      * @overload
      * Writes data to the socket. Reimplemented from KSocketBase.
      */
-    virtual qint64 writeData(const char *data, qint64 len, const KSocketAddress *to);
+    qint64 writeData(const char *data, qint64 len, const KSocketAddress *to) Q_DECL_OVERRIDE;
 
     /**
      * Sets the socket state to @p state. This function does not

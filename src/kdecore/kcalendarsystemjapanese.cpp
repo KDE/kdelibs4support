@@ -32,8 +32,8 @@ public:
     explicit KCalendarSystemJapanesePrivate(KCalendarSystemJapanese *q);
     virtual ~KCalendarSystemJapanesePrivate();
 
-    virtual void loadDefaultEraList();
-    virtual int earliestValidYear() const;
+    void loadDefaultEraList() Q_DECL_OVERRIDE;
+    int earliestValidYear() const Q_DECL_OVERRIDE;
 };
 
 //Override only a few of the Gregorian private methods

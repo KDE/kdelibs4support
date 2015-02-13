@@ -56,9 +56,9 @@ public:
     static void init();
     static bool isBlacklisted(const QString &);
 
-    virtual bool preprocess();
-    virtual bool run();
-    virtual bool postprocess()
+    bool preprocess() Q_DECL_OVERRIDE;
+    bool run() Q_DECL_OVERRIDE;
+    bool postprocess() Q_DECL_OVERRIDE
     {
         return true;
     }
@@ -79,9 +79,9 @@ public:
     virtual ~KStandardWorker();
     bool sanityCheck();
 
-    virtual bool preprocess();
-    virtual bool run();
-    virtual bool postprocess();
+    bool preprocess() Q_DECL_OVERRIDE;
+    bool run() Q_DECL_OVERRIDE;
+    bool postprocess() Q_DECL_OVERRIDE;
 
     bool resolveScopeId();
     bool resolveService();
@@ -103,9 +103,9 @@ public:
     { }
 
     virtual ~KGetAddrinfoWorker();
-    virtual bool preprocess();
-    virtual bool run();
-    virtual bool postprocess()
+    bool preprocess() Q_DECL_OVERRIDE;
+    bool run() Q_DECL_OVERRIDE;
+    bool postprocess() Q_DECL_OVERRIDE
     {
         return true;
     }

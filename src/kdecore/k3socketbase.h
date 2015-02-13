@@ -479,12 +479,12 @@ public:
     /**
      * @reimp
      */
-    virtual void setSocketDevice(KSocketDevice *device);
+    void setSocketDevice(KSocketDevice *device) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented from QIODevice.
      */
-    virtual bool open(OpenMode mode);
+    bool open(OpenMode mode) Q_DECL_OVERRIDE;
 
     /**
      * Binds this socket to the given address.
@@ -539,31 +539,31 @@ public:
     /**
      * Sockets are sequential
      */
-    virtual bool isSequential() const;
+    bool isSequential() const Q_DECL_OVERRIDE;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return 0.
      */
-    virtual qint64 size() const;
+    qint64 size() const Q_DECL_OVERRIDE;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return 0.
      */
-    virtual qint64 pos() const;
+    qint64 pos() const Q_DECL_OVERRIDE;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return false.
      */
-    virtual bool seek(qint64);
+    bool seek(qint64) Q_DECL_OVERRIDE;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return true.
      */
-    virtual bool atEnd() const;
+    bool atEnd() const Q_DECL_OVERRIDE;
 
     /**
      * Reads data from the socket.
@@ -697,7 +697,7 @@ protected:
      * Reimplemented from QIODevice. See QIODevice::readData for
      * more information.
      */
-    virtual qint64 readData(char *data, qint64 len);
+    qint64 readData(char *data, qint64 len) Q_DECL_OVERRIDE;
 
     /** @overload
      * Receives data and the source address.
@@ -732,7 +732,7 @@ protected:
      * Reimplemented from QIODevice. See QIODevice::writeData for
      * more information.
      */
-    virtual qint64 writeData(const char *data, qint64 len);
+    qint64 writeData(const char *data, qint64 len) Q_DECL_OVERRIDE;
 
     /** @overload
      * Writes the given data to the destination address.

@@ -184,7 +184,7 @@ Q_SIGNALS:
     void released(int);
 
 protected:
-    bool eventFilter(QObject *object, QEvent *event);
+    bool eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
 
 private:
     KStatusBarPrivate *const d;

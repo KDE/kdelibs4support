@@ -205,21 +205,21 @@ Q_SIGNALS:
 #endif
 
 protected:
-    virtual void mouseDoubleClickEvent(QMouseEvent *event);
-    virtual void mousePressEvent(QMouseEvent *event);
-    virtual void mouseMoveEvent(QMouseEvent *event);
-    virtual void mouseReleaseEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 #ifndef QT_NO_WHEELEVENT
-    virtual void wheelEvent(QWheelEvent *event);
+    void wheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
 #endif
 
-    virtual void dragEnterEvent(QDragEnterEvent *event);
-    virtual void dragMoveEvent(QDragMoveEvent *event);
-    virtual void dropEvent(QDropEvent *event);
+    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
+    void dragMoveEvent(QDragMoveEvent *event) Q_DECL_OVERRIDE;
+    void dropEvent(QDropEvent *event) Q_DECL_OVERRIDE;
 
-    virtual void paintEvent(QPaintEvent *event);
-    virtual void leaveEvent(QEvent *event);
-    virtual QSize tabSizeHint(int index) const;
+    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void leaveEvent(QEvent *event) Q_DECL_OVERRIDE;
+    QSize tabSizeHint(int index) const Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     /** @deprecated */
@@ -233,7 +233,7 @@ protected Q_SLOTS:
     virtual void activateDragSwitchTab();
 
 protected:
-    virtual void tabLayoutChange();
+    void tabLayoutChange() Q_DECL_OVERRIDE;
 
 private:
     QPoint closeButtonPos(int tabIndex) const;

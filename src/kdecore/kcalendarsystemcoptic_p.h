@@ -40,27 +40,27 @@ public:
     explicit KCalendarSystemCoptic(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemCoptic();
 
-    virtual QString calendarType() const;
-    virtual KLocale::CalendarSystem calendarSystem() const;
+    QString calendarType() const Q_DECL_OVERRIDE;
+    KLocale::CalendarSystem calendarSystem() const Q_DECL_OVERRIDE;
 
-    virtual QDate epoch() const;
-    virtual QDate earliestValidDate() const;
-    virtual QDate latestValidDate() const;
+    QDate epoch() const Q_DECL_OVERRIDE;
+    QDate earliestValidDate() const Q_DECL_OVERRIDE;
+    QDate latestValidDate() const Q_DECL_OVERRIDE;
 
-    virtual QString monthName(int month, int year, MonthNameFormat format = LongName) const;
-    virtual QString monthName(const QDate &date, MonthNameFormat format = LongName) const;
+    QString monthName(int month, int year, MonthNameFormat format = LongName) const Q_DECL_OVERRIDE;
+    QString monthName(const QDate &date, MonthNameFormat format = LongName) const Q_DECL_OVERRIDE;
 
-    virtual QString weekDayName(int weekDay, WeekDayNameFormat format = LongDayName) const;
-    virtual QString weekDayName(const QDate &date, WeekDayNameFormat format = LongDayName) const;
+    QString weekDayName(int weekDay, WeekDayNameFormat format = LongDayName) const Q_DECL_OVERRIDE;
+    QString weekDayName(const QDate &date, WeekDayNameFormat format = LongDayName) const Q_DECL_OVERRIDE;
 
-    virtual bool isLunar() const;
-    virtual bool isLunisolar() const;
-    virtual bool isSolar() const;
-    virtual bool isProleptic() const;
+    bool isLunar() const Q_DECL_OVERRIDE;
+    bool isLunisolar() const Q_DECL_OVERRIDE;
+    bool isSolar() const Q_DECL_OVERRIDE;
+    bool isProleptic() const Q_DECL_OVERRIDE;
 
 protected:
-    virtual bool julianDayToDate(qint64 jd, int &year, int &month, int &day) const;
-    virtual bool dateToJulianDay(int year, int month, int day, qint64 &jd) const;
+    bool julianDayToDate(qint64 jd, int &year, int &month, int &day) const Q_DECL_OVERRIDE;
+    bool dateToJulianDay(int year, int month, int day, qint64 &jd) const Q_DECL_OVERRIDE;
     KCalendarSystemCoptic(KCalendarSystemCopticPrivate &dd, const KSharedConfig::Ptr, const KLocale *locale);
 
 private:

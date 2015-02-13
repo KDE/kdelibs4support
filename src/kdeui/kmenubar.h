@@ -80,18 +80,18 @@ public:
     virtual void setFrameStyle(int);
     virtual void setLineWidth(int);
     virtual void setMargin(int);
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 protected Q_SLOTS:
     void slotReadConfig();
 protected:
-    virtual void resizeEvent(QResizeEvent *);
-    virtual bool eventFilter(QObject *, QEvent *);
+    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
 #pragma message("Port to Qt5 native filter")
 #if 0
     virtual bool x11Event(XEvent *);
 #endif
-    virtual void closeEvent(QCloseEvent *);
-    virtual void paintEvent(QPaintEvent *);
+    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
 private Q_SLOTS:
     void updateFallbackSize();
     void selectionTimeout();

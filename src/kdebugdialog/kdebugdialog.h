@@ -44,8 +44,8 @@ public:
     explicit KDebugDialog(const AreaMap& areaMap, QWidget *parent = 0);
     virtual ~KDebugDialog();
 
-    void doLoad() {}
-    void doSave();
+    void doLoad() Q_DECL_OVERRIDE {}
+    void doSave() Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
     void slotDebugAreaChanged(QTreeWidgetItem*);

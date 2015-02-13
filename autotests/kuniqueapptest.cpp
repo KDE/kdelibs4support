@@ -33,7 +33,7 @@ class TestApp : public KUniqueApplication
     Q_OBJECT
 public:
     TestApp() : KUniqueApplication("TestApp"), m_callCount(0) { }
-    virtual int newInstance();
+    int newInstance() Q_DECL_OVERRIDE;
     int callCount() const
     {
         return m_callCount;

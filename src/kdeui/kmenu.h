@@ -141,13 +141,13 @@ Q_SIGNALS:
     void aboutToShowContextMenu(KMenu *menu, QAction *menuAction, QMenu *ctxMenu);
 
 protected:
-    virtual void closeEvent(QCloseEvent *);
-    virtual void keyPressEvent(QKeyEvent *e);
-    virtual void mouseReleaseEvent(QMouseEvent *e);
-    virtual void mousePressEvent(QMouseEvent *e);
-    virtual bool focusNextPrevChild(bool next);
-    virtual void contextMenuEvent(QContextMenuEvent *e);
-    virtual void hideEvent(QHideEvent *);
+    void closeEvent(QCloseEvent *) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    bool focusNextPrevChild(bool next) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *e) Q_DECL_OVERRIDE;
+    void hideEvent(QHideEvent *) Q_DECL_OVERRIDE;
 
 private:
     QString underlineText(const QString &text, uint length);

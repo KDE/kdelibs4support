@@ -130,7 +130,7 @@ public:
      * Reimplemented to add arrow for delayed menu
      * @since 4.4
      */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
     /**
      * Returns the action object associated with this button, or 0 if it does not have one
@@ -172,17 +172,17 @@ protected:
     /**
      * Reimplemented to add drag-support
      */
-    virtual void mousePressEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
     /**
      * Reimplemented to add drag-support
      */
-    virtual void mouseMoveEvent(QMouseEvent *);
+    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
 
     /**
      * Reimplemented to add arrow for delayed menu
      * @since 4.4
      */
-    virtual void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
 
     /**
      * Starts a drag (dragCopy() by default) using dragObject()

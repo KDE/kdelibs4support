@@ -1129,14 +1129,14 @@ public:
                               const char *sourceText,
                               const char *comment
                               , int n
-                             ) const
+                             ) const Q_DECL_OVERRIDE
     {
         return KLocalizedString::translateQt(context, sourceText, comment
                                              , n
                                             );
     }
 
-    virtual bool isEmpty() const
+    bool isEmpty() const Q_DECL_OVERRIDE
     {
         return false;
     }

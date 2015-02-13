@@ -78,7 +78,7 @@ protected:
     /**
      * \internal
      */
-    void paintEvent(QPaintEvent *);
+    void paintEvent(QPaintEvent *) Q_DECL_OVERRIDE;
 
     /**
      * \internal

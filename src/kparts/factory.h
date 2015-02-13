@@ -121,7 +121,7 @@ protected:
     /**
      * Reimplemented from KPluginFactory. Calls createPart()
      */
-    virtual QObject *createObject(QObject *parent = 0, const char *classname = "QObject", const QStringList &args = QStringList());
+    QObject *createObject(QObject *parent = 0, const char *classname = "QObject", const QStringList &args = QStringList()) Q_DECL_OVERRIDE;
 
 };
 

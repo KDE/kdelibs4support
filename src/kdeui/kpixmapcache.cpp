@@ -138,7 +138,7 @@ public:
     KPCMemoryDevice(char *start, quint32 *size, quint32 available);
     virtual ~KPCMemoryDevice();
 
-    virtual qint64 size() const
+    qint64 size() const Q_DECL_OVERRIDE
     {
         return *mSize;
     }
@@ -146,11 +146,11 @@ public:
     {
         *mSize = s;
     }
-    virtual bool seek(qint64 pos);
+    bool seek(qint64 pos) Q_DECL_OVERRIDE;
 
 protected:
-    virtual qint64 readData(char *data, qint64 maxSize);
-    virtual qint64 writeData(const char *data, qint64 maxSize);
+    qint64 readData(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
+    qint64 writeData(const char *data, qint64 maxSize) Q_DECL_OVERRIDE;
 
 private:
     char *mMemory;

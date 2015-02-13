@@ -34,18 +34,18 @@ public:
     virtual ~KCalendarSystemIndianNationalPrivate();
 
     // Virtual methods each calendar system must re-implement
-    virtual void loadDefaultEraList();
-    virtual int monthsInYear(int year) const;
-    virtual int daysInMonth(int year, int month) const;
-    virtual int daysInYear(int year) const;
-    virtual bool isLeapYear(int year) const;
-    virtual bool hasLeapMonths() const;
-    virtual bool hasYearZero() const;
-    virtual int maxMonthsInYear() const;
-    virtual int earliestValidYear() const;
-    virtual int latestValidYear() const;
-    virtual QString monthName(int month, int year, KLocale::DateTimeComponentFormat format, bool possessive) const;
-    virtual QString weekDayName(int weekDay, KLocale::DateTimeComponentFormat format) const;
+    void loadDefaultEraList() Q_DECL_OVERRIDE;
+    int monthsInYear(int year) const Q_DECL_OVERRIDE;
+    int daysInMonth(int year, int month) const Q_DECL_OVERRIDE;
+    int daysInYear(int year) const Q_DECL_OVERRIDE;
+    bool isLeapYear(int year) const Q_DECL_OVERRIDE;
+    bool hasLeapMonths() const Q_DECL_OVERRIDE;
+    bool hasYearZero() const Q_DECL_OVERRIDE;
+    int maxMonthsInYear() const Q_DECL_OVERRIDE;
+    int earliestValidYear() const Q_DECL_OVERRIDE;
+    int latestValidYear() const Q_DECL_OVERRIDE;
+    QString monthName(int month, int year, KLocale::DateTimeComponentFormat format, bool possessive) const Q_DECL_OVERRIDE;
+    QString weekDayName(int weekDay, KLocale::DateTimeComponentFormat format) const Q_DECL_OVERRIDE;
 };
 
 // Shared d pointer base class definitions
