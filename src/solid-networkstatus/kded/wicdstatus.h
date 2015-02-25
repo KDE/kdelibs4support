@@ -32,9 +32,9 @@ class WicdStatus : public SystemStatusInterface
 public:
     WicdStatus( QObject *parent = 0 );
 
-    /* reimp */ Solid::Networking::Status status() const Q_DECL_OVERRIDE;
-    /* reimp */ bool isSupported() const Q_DECL_OVERRIDE;
-    /* reimp */ QString serviceName() const Q_DECL_OVERRIDE;
+    Solid::Networking::Status status() const Q_DECL_OVERRIDE;
+    bool isSupported() const Q_DECL_OVERRIDE;
+    QString serviceName() const Q_DECL_OVERRIDE;
 
 private Q_SLOTS:
     void wicdStateChanged();
