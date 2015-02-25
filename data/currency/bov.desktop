@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=BOV
 CurrencyCodeIsoNumeric3=984
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Bolivian Mvdol
+Name[bs]=bolivijski mvdol
 Name[ca]=Mvdol de Bolívia
 Name[cs]=Bolívijský mvdol
 Name[da]=Boliviansk mvdol
