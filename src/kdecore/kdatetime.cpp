@@ -943,7 +943,7 @@ KDateTime KDateTime::toUtc() const
         return *this;
     }
     if (d->dateOnly()) {
-        return KDateTime(d->date(), UTC);
+        return KDateTime(d->date(), Spec(UTC));
     }
     QDateTime udt = d->toUtc();
     if (!udt.isValid()) {
