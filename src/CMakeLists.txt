@@ -619,10 +619,13 @@ endif ()
 
 mark_as_advanced (DocBookXML4_DTD_DIR DocBookXML4_DTD_VERSION)
 
+include(uriencode)
 set (_custom_dtd_kdex "customization/dtd/kdex.dtd")
 # The path to KDocTools resources is set as absolute, allowing the
 # installation of KDocTools and KDELibs4Support in different prefixes.
 set (_KDocTools_customization_dir "${KDOCTOOLS_CUSTOMIZATION_DIR}")
+kdelibs4support_encode_uri(DocBookXML4_DTD_DIR)
+kdelibs4support_encode_uri(_KDocTools_customization_dir)
 configure_file(${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex} )
 # WARNING: this is due to severe limitations on the windows platform to keep the dtd relocateable
 # see the .xsl.cmake files for a more verbose explanation below
@@ -636,6 +639,8 @@ else()
     # removed using get_filename_component(... ABSOLUTE)
     install(CODE
         "file(RELATIVE_PATH DocBookXML4_DTD_DIR \"${NORMALIZED_DTD_INSTALL_PATH}\" \"${DocBookXML4_DTD_DIR}\")
+        include(${CMAKE_SOURCE_DIR}/cmake/uriencode.cmake)
+        kdelibs4support_encode_uri(DocBookXML4_DTD_DIR)
         configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install)"
     )
     get_filename_component(_custom_dtd_kdex_name ${_custom_dtd_kdex} NAME)
