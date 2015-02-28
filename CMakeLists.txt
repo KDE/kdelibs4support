@@ -95,6 +95,7 @@ include(ECMPackageConfigHelpers)
 ecm_configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KF5KDELibs4SupportConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfig.cmake"
+    PATH_VARS KDE_INSTALL_DBUSINTERFACEDIR
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
