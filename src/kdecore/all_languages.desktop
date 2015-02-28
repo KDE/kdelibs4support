@@ -2149,6 +2149,7 @@ Name[zh_TW]=嘉泰羅尼亞語
 [ca@valencia]
 Name=Catalan (Valencian)
 Name[ar]=الكاتالونية (ڤلنسية)
+Name[ast]=Catalán (Valencianu)
 Name[bg]=Каталонски (Валенсиански)
 Name[bs]=Katalonski(Valensijski)
 Name[ca]=Català (Valencià)
@@ -17632,6 +17633,7 @@ Name[zh_TW]=科薩語
 [x-test]
 Name=KDE Test Language
 Name[ar]=لغة كدي الاختبارية
+Name[ast]=Llingua de comprobación KDE
 Name[bg]=Пробен език за KDE
 Name[bs]=KDE Test jezik
 Name[ca]=Idioma de proves del KDE
