@@ -1,0 +1,276 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % German "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>&kde;-Benutzerhandbuch</title>
+<author
+><firstname
+>Stephan</firstname
+> <surname
+>Kulow</surname
+> <affiliation
+><address
+><email
+>coolo@kde.org</email
+></address
+></affiliation>
+</author>
+<date
+>2007-09-28</date>
+<productname
+>K Desktop Environment</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kf5-config</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kf5-config</command
+></refname>
+<refpurpose
+>Gibt die Installationspfade von &kde; aus</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kf5-config</command
+> <arg
+>--expandvars</arg
+> <arg
+>--prefix</arg
+> <arg
+>--exec-prefix</arg
+> <arg
+>--libsuffix</arg
+> <arg
+>--localprefix</arg
+> <arg
+>--version</arg
+> <arg
+>--types</arg
+> <arg
+>--path <replaceable
+>type</replaceable
+></arg
+> <arg
+>--userpath <replaceable
+>type</replaceable
+></arg
+> <arg
+>--install <replaceable
+>type</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beschreibung</title>
+<para
+>kf5-config ist Befehlszeilenprogramm, mit dem Informationen über die &kde;-Installation oder Benutzerpfade abgerufen werden können.</para>
+
+<para
+>Verwenden Sie dieses Programm zur Abfrage der verschiedenen Aspekte der auf Ihrem System vorliegenden &kde;-Installation. </para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>Optionen</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--expandvars</option
+></term>
+<listitem>
+<para
+>${prefix} und ${exec_prefix} bei der Ausgabe expandieren</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--prefix</option
+></term>
+<listitem>
+<para
+>Einkompiliertes prefix für &kde;-Bibliotheken</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--exec-prefix</option
+></term>
+<listitem>
+<para
+>Einkompiliertes exec_prefix für &kde;-Bibliotheken</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--libsuffix</option
+></term>
+<listitem>
+<para
+>Bei der Kompilierung gesetztes <quote
+>library path suffix</quote
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--localprefix</option
+></term>
+<listitem>
+<para
+>Präfix für das Schreiben von Dateien in $<envar
+>HOME</envar
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>Einkompilierte Versionszeichenkette für &kde;-Bibliotheken</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--types</option
+></term>
+<listitem>
+<para
+>Ausgabe der Liste aller verfügbaren &kde;-Ressourcetypen</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--path <replaceable
+>Typ</replaceable
+></option
+></term>
+<listitem>
+<para
+>Suchpfad für den angegebenen <replaceable
+>Typ</replaceable
+></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--userpath <replaceable
+>Typ</replaceable
+></option
+></term>
+<listitem>
+<para
+>Benutzerpfade für die Typen: desktop|autostart|trash|document</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--install <replaceable
+>Typ</replaceable
+></option
+></term>
+<listitem>
+<para
+>Präfix, in dem Ressourcen-Dateien abgelegt werden</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Beispiele</title>
+
+<para
+>Ausgabe des Basisordners der &kde;-Installation:</para>
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --prefix</command
+> </userinput
+> </para>
+
+<para
+>Ausgabe einer Liste aller Ressourcentypen:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --types</command
+> </userinput
+> </para>
+
+<para
+>Ausgabe des Pfades des installierten Arbeitsflächenhintergrunds:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --path wallpaper</command
+> </userinput
+> </para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Siehe auch</title>
+<para
+>kdeoptions(7)</para>
+</refsect1>
+
+<refsect1>
+<title
+>Fehler</title>
+<para
+>Keine bekannt.</para>
+</refsect1>
+
+</refentry>
