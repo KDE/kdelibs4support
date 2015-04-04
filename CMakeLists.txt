@@ -13,7 +13,7 @@ include(FeatureSummary)
 include(GenerateExportHeader)
 include(CMakeFindFrameworks)
 
-set(KF5_VERSION "5.8.0") # handled by release scripts
+set(KF5_VERSION "5.9.0") # handled by release scripts
 set(KF5_DEP_VERSION "5.8.0") # handled by release scripts
 set(REQUIRED_QT_VERSION 5.2.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg PrintSupport Designer)
