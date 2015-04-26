@@ -62,7 +62,7 @@
 #include <kopenssl.h>
 #include "ksslx509v3.h"
 
-static char hv[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+static const char hv[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
 class KSSLCertificatePrivate
 {
