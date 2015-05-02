@@ -529,6 +529,7 @@ int KCalendarSystemPrivate::differenceYearNumbers(int fromYear, int toYear) cons
 QString KCalendarSystemPrivate::simpleDateString(const QString &str) const
 {
     QString newStr;
+    newStr.reserve(str.length());
     for (int i = 0; i < str.length(); i++) {
         if (str.at(i).isLetterOrNumber()) {
             newStr.append(str.at(i));
