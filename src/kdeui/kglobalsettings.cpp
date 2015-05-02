@@ -76,7 +76,7 @@ class KGlobalSettings::Private
 {
 public:
     Private(KGlobalSettings *q)
-    : q(q), activated(false), paletteCreated(false), mLargeFont(0), mMouseSettings(0)
+    : q(q), activated(false), paletteCreated(false), mMouseSettings(0), mLargeFont(0)
 #if HAVE_X11
         , isX11(QX11Info::isPlatformX11())
 #endif
