@@ -537,8 +537,8 @@ QString KCalendarSystemPrivate::simpleDateString(const QString &str) const
             newStr.append(QLatin1Char(' '));
         }
     }
-    newStr.simplified();
-    return newStr;
+
+    return newStr.simplified();
 }
 
 // If we ever want to support a calendar system with another week length,this
