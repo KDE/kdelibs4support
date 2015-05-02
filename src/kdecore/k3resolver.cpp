@@ -565,7 +565,7 @@ QString KResolver::errorString(int errorcode, int syserror)
 
     QString msg = i18n(messages + messages_indices[-errorcode]);
     if (errorcode == SystemError) {
-        msg.arg(QString::fromLocal8Bit(strerror(syserror)));
+        msg = msg.arg(QString::fromLocal8Bit(strerror(syserror)));
     }
 
     return msg;
