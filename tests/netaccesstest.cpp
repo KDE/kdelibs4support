@@ -22,20 +22,21 @@
 #include <kio/netaccess.h>
 #include <kio/job.h>
 #include <QtCore/QFile>
-#ifdef Q_OS_WIN
-#include <QDir>
-#endif
+#include <QTemporaryFile>
 
 int main(int argc, char **argv)
 {
     QApplication::setApplicationName("netaccesstest");
     QApplication app(argc, argv);
     QUrl srcURL("http://download.kde.org/README");
-#ifdef Q_OS_WIN
-    QUrl tmpURL("file://" + QDir::tempPath() + "/netaccesstest_README");
-#else
-    QUrl tmpURL("file:/tmp/netaccesstest_README");
-#endif
+    QTemporaryFile tmpFile;
+
+    if (!tmpFile.open()) {
+        qCritical() << "temporary file creation failed";
+        return 1;
+    }
+
+    QUrl tmpURL(QUrl::fromLocalFile(tmpFile.fileName()));
 
     for (uint i = 0; i < 4; ++i) {
         qDebug() << "file_copy";
