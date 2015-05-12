@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 {
     QApplication::setApplicationName("netaccesstest");
     QApplication app(argc, argv);
-    QUrl srcURL("ftp://ftp.kde.org/pub/kde/README");
+    QUrl srcURL("http://download.kde.org/README");
 #ifdef Q_OS_WIN
     QUrl tmpURL("file://" + QDir::tempPath() + "/netaccesstest_README");
 #else
