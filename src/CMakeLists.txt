@@ -122,7 +122,6 @@ set(libkdelibs4support_SRCS
     kdeui/kdialog.cpp
     kdeui/kdialogqueue.cpp
     kdeui/kfontcombobox.cpp
-    kdeui/fonthelpers.cpp
     kdeui/kfontdialog.cpp
     kdeui/khuesaturationselect.cpp
     kdeui/kpassivepopupmessagehandler.cpp

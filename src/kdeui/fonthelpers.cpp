@@ -36,7 +36,7 @@ I18N_NOOP2("@item Font name", "Monospace")
 
 #endif
 
-void splitFontString(const QString &name, QString *family, QString *foundry)
+static void splitFontString(const QString &name, QString *family, QString *foundry)
 {
     int p1 = name.indexOf('[');
     if (p1 < 0) {
@@ -58,7 +58,7 @@ void splitFontString(const QString &name, QString *family, QString *foundry)
     }
 }
 
-QString translateFontName(const QString &name)
+static QString translateFontName(const QString &name)
 {
     QString family, foundry;
     splitFontString(name, &family, &foundry);
@@ -90,7 +90,7 @@ static bool localeLessThan(const QString &a, const QString &b)
     return QString::localeAwareCompare(a, b) < 0;
 }
 
-QStringList translateFontNameList(const QStringList &names,
+static QStringList translateFontNameList(const QStringList &names,
                                   QHash<QString, QString> *trToRawNames)
 {
     // Generic fonts, in the inverse of desired order.
