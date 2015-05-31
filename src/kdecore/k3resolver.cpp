@@ -421,7 +421,7 @@ void KResolver::setProtocol(int protonum, const char *name)
 bool KResolver::start()
 {
     if (!isRunning()) {
-        d->results.empty();
+        d->results.clear();
 
         // is there anything to be queued?
         if (d->input.node.isEmpty() && d->input.service.isEmpty()) {

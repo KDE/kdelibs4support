@@ -125,7 +125,7 @@ void KServerSocket::setAddress(const QString &service)
 {
     d->resolver.setNodeName(QString());
     d->resolver.setServiceName(service);
-    d->resolverResults.empty();
+    d->resolverResults.clear();
     if (d->state <= KServerSocketPrivate::LookupDone) {
         d->state = KServerSocketPrivate::None;
     }
@@ -135,7 +135,7 @@ void KServerSocket::setAddress(const QString &node, const QString &service)
 {
     d->resolver.setNodeName(node);
     d->resolver.setServiceName(service);
-    d->resolverResults.empty();
+    d->resolverResults.clear();
     if (d->state <= KServerSocketPrivate::LookupDone) {
         d->state = KServerSocketPrivate::None;
     }

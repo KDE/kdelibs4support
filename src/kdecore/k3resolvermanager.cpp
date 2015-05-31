@@ -603,7 +603,7 @@ void KResolverManager::doNotifying(RequestData *p)
             p->obj->status = !r.isEmpty() ?
                              KResolver::Success : KResolver::Failed;
         } else {
-            r.empty();
+            r.clear();
             r.setError(p->obj->errorcode, p->obj->syserror);
         }
 
