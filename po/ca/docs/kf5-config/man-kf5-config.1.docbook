@@ -1,0 +1,274 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Catalan  "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual d'usuari del &kde;</title>
+<author
+><firstname
+>Stephan</firstname
+> <surname
+>Kulow</surname
+> <affiliation
+><address
+><email
+>coolo@kde.org</email
+></address
+></affiliation>
+</author>
+<date
+>28-09-2007</date>
+<productname
+>Entorn d'escriptori K</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kf5-config</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kf5-config</command
+></refname>
+<refpurpose
+>Imprimeix els camins de la instal·lació del &kde;</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kf5-config</command
+> <arg
+>--expandvars</arg
+> <arg
+>--prefix</arg
+> <arg
+>--exec-prefix</arg
+> <arg
+>--libsuffix</arg
+> <arg
+>--localprefix</arg
+> <arg
+>--version</arg
+> <arg
+>--types</arg
+> <arg
+>--path <replaceable
+>type</replaceable
+></arg
+> <arg
+>--userpath <replaceable
+>type</replaceable
+></arg
+> <arg
+>--install <replaceable
+>type</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descripció</title>
+<para
+>kf5-config és un programa de línia d'ordres emprat per a rebre informació quant a la instal·lació del &kde; o els camins d'ús.</para>
+
+<para
+>Aquest programa s'usa per a determinar els diversos aspectes de a on resideix instal·lat el &kde; sobre el vostre sistema. </para
+> 
+
+</refsect1>
+
+<refsect1>
+<title
+>Opcions</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--expandvars</option
+></term>
+<listitem>
+<para
+>expandeix ${prefix} i ${exec_prefix} en la sortida</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--prefix</option
+></term>
+<listitem>
+<para
+>Les biblioteques &kde; han estat compilades sobre prefix</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--exec-prefix</option
+></term>
+<listitem>
+<para
+>Les biblioteques &kde; han estat compilades sobre exec_prefix</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--libsuffix</option
+></term>
+<listitem>
+<para
+>El camí de les biblioteques es troba al sufix</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--localprefix</option
+></term>
+<listitem>
+<para
+>Prefix en $<envar
+>HOME</envar
+> usat per a escriure fitxers</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>Les biblioteques &kde; han estat compilades en la versió</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--types</option
+></term>
+<listitem>
+<para
+>Imprimeix a pantalla una llista de tots els tipus de recurs &kde; disponibles</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--path <replaceable
+>tipus</replaceable
+></option
+></term>
+<listitem>
+<para
+>Cerca el camí per al <replaceable
+>tipus</replaceable
+> especificat</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--userpath <replaceable
+>tipus</replaceable
+></option
+></term>
+<listitem>
+<para
+>Camins d'usuari per als tipus: desktop|autostart|trash|document</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--install <replaceable
+>tipus</replaceable
+></option
+></term>
+<listitem>
+<para
+>Prefix a on instal·lar els fitxers de recurs</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Exemples</title>
+
+<para
+>Imprimir el directori arrel de la instal·lació del &kde;:</para>
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --prefix</command
+> </userinput
+> </para>
+
+<para
+>Imprimir una llista de tots els tipus recursos:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --types</command
+> </userinput
+> </para>
+
+<para
+>Imprimir el camí del fons d'escriptori que teniu instal·lat:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --path fons_d'escriptori</command
+> </userinput
+> </para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Veure també</title>
+<para
+>kdeoptions(7)</para>
+</refsect1>
+
+<refsect1>
+<title
+>Errors</title>
+<para
+>No se'n coneixen.</para>
+</refsect1>
+
+</refentry>
