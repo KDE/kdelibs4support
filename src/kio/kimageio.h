@@ -62,7 +62,7 @@ enum Mode { Reading, Writing };
  * @param mode Tells whether to retrieve modes that can be read or written.
  * @return a space-separated list of file globs that describe the
  * supported formats
- * @deprecated Use QIMageReader/QImageWriter::supportedMimeTypes() and
+ * @deprecated since 5.0, use QIMageReader/QImageWriter::supportedMimeTypes() and
  * QFileDialog::setMimeTypeFilters() instead.
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
@@ -74,7 +74,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString pattern(Mode mode = Reading);
  * @param mimeType the MIME type to search
  * @return type id(s) of the MIME type or QStringList() if the MIME type
  *         is not supported
- * @deprecated Use QMimeType::name() instead().
+ * @deprecated since 5.0, use QMimeType::suffixes() instead().
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeType);
 #endif
@@ -85,7 +85,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList typeForMime(const QString &mimeTyp
  *
  * @param mode Tells whether to retrieve modes that can be read or written.
  * @return a list of the type ids
- * @deprecated Use QImageReader/QImageWriter::supportedImageFormats() instead.
+ * @deprecated since 5.0, use QImageReader/QImageWriter::supportedImageFormats() instead.
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
 #endif
@@ -96,7 +96,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList types(Mode mode = Writing);
  *
  * @param mode Tells whether to retrieve modes that can be read or written.
  * @return a list if MIME types of the supported formats
- * @deprecated Use QImageReader/QImageWriter::supportedMimeTypes() instead.
+ * @deprecated since 5.0, use QImageReader/QImageWriter::supportedMimeTypes() instead.
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList mimeTypes(Mode mode = Writing);
 #endif
@@ -107,7 +107,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList mimeTypes(Mode mode = Writing);
  * @param _mimeType the MIME type to check
  * @param _mode Tells whether to check for reading or writing capabilities
  * @return true if the type is supported
- * @deprecated Use QImageReader/QImageWriter::supportedMimeTypes() instead.
+ * @deprecated since 5.0, use QImageReader/QImageWriter::supportedMimeTypes() instead.
  **/
 KDELIBS4SUPPORT_DEPRECATED_EXPORT bool isSupported(const QString &mimeType, Mode mode = Writing);
 #endif

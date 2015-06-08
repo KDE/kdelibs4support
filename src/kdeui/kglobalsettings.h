@@ -321,8 +321,9 @@ public:
     /**
      * Returns the default fixed font.
      * @return the default fixed font.
+     * @deprecated since 5.0, use QFontDatabase::systemFont(QFontDatabase::FixedFont)
      */
-    static QFont fixedFont();
+    static KDELIBS4SUPPORT_DEPRECATED QFont fixedFont();
 
     /**
      * Returns the default toolbar font.
