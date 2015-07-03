@@ -59,6 +59,7 @@ private Q_SLOTS:
     void testFromThread();
     void testThreads();
     void testProperties();
+    void testIsNull();
 private:
     QString m_nonKdeApp;
     QString m_textPlainApp;

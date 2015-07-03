@@ -55,7 +55,7 @@ public:
         Ptr(KMimeType *ptr = 0) : QExplicitlySharedDataPointer<KMimeType>(ptr) {}
         bool isNull() const
         {
-            return *this;
+            return !constData();
         }
     };
     typedef QList<Ptr> List;

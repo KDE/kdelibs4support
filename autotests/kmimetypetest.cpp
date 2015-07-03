@@ -894,3 +894,10 @@ void KMimeTypeTest::testProperties()
 #endif
 }
 
+void KMimeTypeTest::testIsNull()
+{
+    KMimeType::Ptr ptr;
+    QVERIFY(ptr.isNull());
+    ptr = KMimeType::mimeType(QStringLiteral("image/jpeg"));
+    QVERIFY(!ptr.isNull());
+}
