@@ -1,5 +1,7 @@
 # KDELibs 4 Support
 
+Legacy support for kdelibs 4 compatibility
+
 ## Introduction
 
 This framework provides code and utilities to ease the transition from
