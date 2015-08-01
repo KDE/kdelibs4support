@@ -308,15 +308,16 @@ void KStandarddirsTest::testFindExe()
         QSKIP("KDEDIRS does not contain the KConfig prefix");
     }
 
-    // findExe with a result in bin
-    const QString binexe = KGlobal::dirs()->findExe("kconfig_compiler_kf5");
-    QVERIFY(!binexe.isEmpty());
-    QCOMPARE_PATHS(KCONFIG_COMPILER_LOCATION, binexe);
+    const QString exeFileName = QStringLiteral("kreadconfig5");
 
-#ifndef Q_OS_MAC // kconfig_compiler_kf5 is a bundle on Mac, so the below doesn't work
+    // findExe with a result in bin
+    const QString binexe = KGlobal::dirs()->findExe(exeFileName);
+    QVERIFY(!binexe.isEmpty());
+    QCOMPARE_PATHS(binexe, QStandardPaths::findExecutable(exeFileName));
+
     // Check the "exe" resource too
     QString binexePath1 = KStandardDirs::realFilePath(binexe);
-    QString binexePath2 = KGlobal::dirs()->locate("exe", "kconfig_compiler_kf5");
+    QString binexePath2 = KGlobal::dirs()->locate("exe", exeFileName);
     QCOMPARE_PATHS(binexePath1, binexePath2);
 
     // Check realFilePath behavior with complete command lines, like KRun does
@@ -325,7 +326,6 @@ void KStandarddirsTest::testFindExe()
     QCOMPARE(fromKStdDirs, cmd);
     const QString fromQFileInfo = QFileInfo(cmd).canonicalFilePath();
     QVERIFY(fromQFileInfo.isEmpty()); // !! different result, since this doesn't exist as a file
-#endif
 
 #ifdef Q_OS_UNIX
     // findExe with relative path
