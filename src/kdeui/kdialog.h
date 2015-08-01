@@ -354,7 +354,7 @@ public:
      * @note the group must be set before calling
      *
      * @param config The config group to read from.
-     * @deprecated use KWindowConfig::restoreDialogSize() instead
+     * @deprecated use KWindowConfig::restoreWindowSize() instead
      */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED void restoreDialogSize(const KConfigGroup &config);
