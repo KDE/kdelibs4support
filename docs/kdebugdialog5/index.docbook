@@ -17,8 +17,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-12-20</date>
-<releaseinfo>1.0 &kde; 4.8</releaseinfo>
+<date>2015-07-31</date>
+<releaseinfo>Frameworks 5.13</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -32,6 +32,15 @@
 It features a simple and a full mode.</para>
 <para>In order to be able to make changes  
 <guilabel>Disable all debug output</guilabel> has to be unchecked.</para>
+
+<note>
+<para>Only for applications using the Frameworks library kdelibs4support.</para>
+<para>kDebug() has been deprecated in &kde; Frameworks 5, in favour of &Qt;'s builtin categorized
+logging, see<ulink  url="http://doc.qt.io/qt-5/qloggingcategory.html">QLoggingCategory</ulink>.
+Use the program <ulink url="https://projects.kde.org/projects/kde/kdeutils/kdebugsettings">kdebugsettings</ulink>
+to enable/disable qCDebug.
+</para>
+</note>
 
 <variablelist>
 <varlistentry>
@@ -115,7 +124,8 @@ message.</para>
 
 <para>When you close the dialog by pressing <guibutton>OK</guibutton>,
 your entries apply immediately and are saved in
-<filename>$<envar>KDEHOME</envar>/share/config/kdebugrc</filename>. When you press
+<filename>$<envar>XDG_CONFIG_HOME</envar>/kdebugrc</filename> 
+(~/.config/kdebugrc by default). When you press
 <guibutton>Cancel</guibutton>, your entries are discarded and the old
 ones are restored.</para>
 
