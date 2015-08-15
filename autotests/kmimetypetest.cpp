@@ -40,10 +40,13 @@
 
 #include <QtConcurrent>
 
-int initializeLang()
+extern KSERVICE_EXPORT bool kservice_require_kded;
+
+static int initializeLang()
 {
     qputenv("LC_ALL", "en_US");
     qputenv("LANG", "en_US");
+    kservice_require_kded = false;
     return 0;
 }
 
@@ -510,6 +513,7 @@ void KMimeTypeTest::testAllMimeTypes()
                 && name != "application/x-x509-ca-cert"
                 && name != "application/x-vnd.kde.kexi" // due to /usr/share/mime/packages/kde.xml from KDE4
                 && name != "application/x-kexiproject-sqlite" // due to /usr/share/mime/packages/kde.xml from KDE4
+                && name != "application/vnd.sun.xml.base" // libreoffice.xml messing things up yet again
            ) {
             QCOMPARE(lookedupMime->name(), name);
             // if this fails, you have an alias defined as a real mimetype too!
