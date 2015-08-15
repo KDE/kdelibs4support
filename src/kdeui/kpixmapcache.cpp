@@ -991,7 +991,7 @@ void KPixmapCache::Private::init()
 
     // Find locations of the files
     const QString cacheDir = QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation);
-    mEnabled = QDir().mkpath(cacheDir);
+    mEnabled = QDir().mkpath(cacheDir + "/kpc");
     mIndexFile = cacheDir + "/kpc/" + mName + ".index";
     mDataFile  = cacheDir + "/kpc/" + mName + ".data";
     mLockFileName = cacheDir + "/kpc/" + mName + ".lock";
