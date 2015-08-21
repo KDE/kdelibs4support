@@ -58,6 +58,7 @@ add_library(kded_networkstatus MODULE ${kded_networkstatus_PART_SRCS})
 set_target_properties(kded_networkstatus PROPERTIES
     OUTPUT_NAME networkstatus
 )
+kcoreaddons_desktop_to_json(kded_networkstatus networkstatus.desktop)
 
 target_link_libraries(kded_networkstatus KF5::DBusAddons KF5::Solid KF5::KDELibs4Support)
 
@@ -66,6 +67,3 @@ if(QNTRACK_FOUND)
 endif()
 
 install(TARGETS kded_networkstatus DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kded)
-
-install( FILES networkstatus.desktop DESTINATION ${KDE_INSTALL_KSERVICES5DIR}/kded)
-

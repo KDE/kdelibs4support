@@ -44,10 +44,9 @@
 #include <kpluginfactory.h>
 #include "ntracknetworkstate.h"
 
-K_PLUGIN_FACTORY(NetworkStatusFactory,
-                 registerPlugin<NetworkStatusModule>();
-    )
-K_EXPORT_PLUGIN(NetworkStatusFactory("networkstatus"))
+K_PLUGIN_FACTORY_WITH_JSON(NetworkStatusFactory,
+                           "networkstatus.json",
+                           registerPlugin<NetworkStatusModule>();)
 
 // INTERNALLY USED STRUCTS AND TYPEDEFS
 
