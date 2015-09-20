@@ -47,7 +47,7 @@ if(WIN32)
     find_package(KDEWin REQUIRED)
 endif()
 
-if (NOT APPLE)
+if (NOT APPLE AND NOT WIN32)
     find_package(X11)
 endif()
 set(HAVE_X11 ${X11_FOUND})
