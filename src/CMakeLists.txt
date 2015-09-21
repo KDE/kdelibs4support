@@ -342,6 +342,7 @@ if(WIN32)
     target_include_directories(KF5KDELibs4Support PUBLIC "${KDEWIN_INCLUDES}")
     message(STATUS "${KDEWIN_LIBRARIES}")
     target_link_libraries(KF5KDELibs4Support PUBLIC "${KDEWIN_LIBRARIES}")
+    target_compile_definitions(KF5KDELibs4Support PUBLIC ${KDEWIN_DEFINITIONS})
 endif()
 
 
