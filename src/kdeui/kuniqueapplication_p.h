@@ -39,7 +39,7 @@ public:
     bool processingRequest;
     bool firstInstance;
 
-    static bool s_nofork;
+    static bool s_startOwnInstance;
     static bool s_multipleInstances;
     static bool s_handleAutoStarted;
 };

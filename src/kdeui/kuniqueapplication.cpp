@@ -63,7 +63,7 @@
 #include <kkernel_mac.h>
 #endif
 
-bool KUniqueApplication::Private::s_nofork = false;
+bool KUniqueApplication::Private::s_startOwnInstance = false;
 bool KUniqueApplication::Private::s_multipleInstances = false;
 #ifdef Q_OS_WIN
 /* private helpers from kapplication_win.cpp */
@@ -111,10 +111,10 @@ KUniqueApplication::start(StartFlags flags)
 
     addCmdLineOptions(); // Make sure to add cmd line options
 #if defined(Q_OS_WIN) || defined(Q_OS_MACX)
-    Private::s_nofork = true;
+    Private::s_startOwnInstance = true;
 #else
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs("kuniqueapp");
-    Private::s_nofork = !args->isSet("fork");
+    Private::s_startOwnInstance = !args->isSet("fork");
 #endif
 
     QString appName = KCmdLineArgs::aboutData()->appName();
@@ -129,8 +129,7 @@ KUniqueApplication::start(StartFlags flags)
 
     bool forceNewProcess = Private::s_multipleInstances || flags & NonUniqueInstance;
 
-    if (Private::s_nofork) {
-
+    if (Private::s_startOwnInstance) {
 #if defined(Q_OS_DARWIN) || defined (Q_OS_MAC)
         mac_initialize_dbus();
 #endif
@@ -167,6 +166,10 @@ KUniqueApplication::start(StartFlags flags)
 #ifndef Q_OS_WIN
     int fd[2];
     signed char result;
+    // We use result to talk between child and parent. It can be
+    // 0: App already running please call newInstance on it
+    // 1: App was not running, child will call newInstance on itself
+    // -1: Error, Can't start DBus service
     if (0 > pipe(fd)) {
         kError() << "KUniqueApplication: pipe() failed!" << endl;
         ::exit(255);
@@ -221,9 +224,10 @@ KUniqueApplication::start(StartFlags flags)
         }
 #endif
     }
-    result = 0;
+    result = 1;
     ::write(fd[1], &result, 1);
     ::close(fd[1]);
+    Private::s_startOwnInstance = true;
     return true; // Finished.
     default:
         // Parent
@@ -253,7 +257,8 @@ KUniqueApplication::start(StartFlags flags)
         ::close(fd[0]);
 
         if (result != 0) {
-            ::exit(result);    // Error occurred in child.
+            // Only -1 is actually an error
+            ::exit(result == -1 ? -1 : 0);
         }
 
 #endif
@@ -308,7 +313,7 @@ KUniqueApplication::KUniqueApplication(bool GUIenabled, bool configUnique)
     // the sanity checking happened in initHack
     new KUniqueApplicationAdaptor(this);
 
-    if (Private::s_nofork)
+    if (Private::s_startOwnInstance)
         // Can't call newInstance directly from the constructor since it's virtual...
     {
         QTimer::singleShot(0, this, SLOT(_k_newInstanceNoFork()));
