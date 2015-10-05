@@ -65,6 +65,11 @@ void WicdStatus::wicdStateChanged()
     Solid::Networking::Status status = Solid::Networking::Unknown;
     QDBusMessage message = m_wicd.call("GetConnectionStatus");
 
+    if (message.type() == QDBusMessage::ErrorMessage) {
+        emit statusChanged( status );
+        return;
+    }
+
     if (message.arguments().count() == 0) {
         emit statusChanged( status );
         return;
