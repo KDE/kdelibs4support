@@ -20,8 +20,3 @@ software using the KDELibs 4 Support framework are installed to the same
 location as KDELibs4Support, although it may be sufficient to set the
 KDEDIRS environment variable correctly.
 
-## Links
-
-- Mailing list: <https://mail.kde.org/mailman/listinfo/kde-frameworks-devel>
-- IRC channel: #kde-devel on Freenode
-- Git repository: <https://projects.kde.org/projects/frameworks/kdelibs4support/repository>
