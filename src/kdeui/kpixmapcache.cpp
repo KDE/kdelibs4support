@@ -63,7 +63,7 @@ extern "C" int madvise(caddr_t addr, size_t len, int advice);
 #endif
 #endif
 
-#define KPIXMAPCACHE_VERSION 0x000208
+#define KPIXMAPCACHE_VERSION 0x000209
 
 namespace
 {
@@ -129,7 +129,7 @@ struct KPixmapCacheIndexHeader {
 
     // These belong only to this header type.
     quint32 cacheId;
-    QDateTime  timestamp;
+    time_t  timestamp;
 };
 
 class KPCMemoryDevice : public QIODevice
@@ -279,7 +279,7 @@ public:
     QString mLockFileName;
     QMutex mMutex;
 
-    QDateTime mTimestamp;
+    quint32 mTimestamp;
     quint32 mCacheId;  // Unique id, will change when cache is recreated
     int mCacheLimit;
     RemoveStrategy mRemoveStrategy: 4;
@@ -1047,13 +1047,13 @@ void KPixmapCache::setValid(bool valid)
 QDateTime KPixmapCache::timestamp() const
 {
     ensureInited();
-    return d->mTimestamp;
+    return QDateTime::fromTime_t(d->mTimestamp);
 }
 
 void KPixmapCache::setTimestamp(const QDateTime &ts)
 {
     ensureInited();
-    d->mTimestamp = ts;
+    d->mTimestamp = ts.toTime_t();
 
     // Write to file
     KPCLockFile lock(d->mLockFileName);
@@ -1074,7 +1074,7 @@ void KPixmapCache::setTimestamp(const QDateTime &ts)
         return;
     }
 
-    header.timestamp = ts;
+    header.timestamp = ts.toTime_t();
     device->seek(0);
     device->write(reinterpret_cast<char *>(&header), sizeof header);
 
@@ -1154,7 +1154,7 @@ bool KPixmapCache::recreateCacheFiles()
     }
 
     d->mCacheId = QDateTime::currentDateTime().toTime_t();
-    d->mTimestamp = QDateTime::currentDateTime();
+    d->mTimestamp = QDateTime::currentDateTime().toTime_t();
 
     // We can't know the full size until custom headers written.
     // mmapFiles() will take care of correcting the size.
