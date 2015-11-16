@@ -78,6 +78,7 @@ Name[zh_CN]=SSL 首选项
 Name[zh_TW]=SSL 喜好設定
 Comment=SSL Versions and Certificates
 Comment[ar]=إصدارات وشهادات SSL
+Comment[ast]=Versiones y certificaos SSL
 Comment[bg]=Версии и сертификати на SSL
 Comment[bs]=SSL verzije i certifikati
 Comment[ca]=Versions i certificats SSL
