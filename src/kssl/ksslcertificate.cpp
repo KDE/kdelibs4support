@@ -1017,7 +1017,7 @@ QDateTime KSSLCertificate::getQDTNotAfter() const
 
 int operator==(KSSLCertificate &x, KSSLCertificate &y)
 {
-#ifndef KSSL_HAVE_SSL
+#if !KSSL_HAVE_SSL
     return 1;
 #else
     if (!KOSSL::self()->X509_cmp(x.getCert(), y.getCert())) {
