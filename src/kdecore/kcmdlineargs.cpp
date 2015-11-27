@@ -818,7 +818,7 @@ KCmdLineArgsStatic::findOption(const QByteArray &optv, const QByteArray &_opt,
             return;
         }
         KCmdLineArgs::enable_i18n();
-        KCmdLineArgs::usageError(QObject::tr("Unknown option '%1'.").arg(QString::fromLocal8Bit(_opt.data())));
+        KCmdLineArgs::usageError(i18n("Unknown option '%1'.", QString::fromLocal8Bit(_opt.data())));
     }
 
     if ((result & 4) != 0) {
@@ -832,13 +832,13 @@ KCmdLineArgsStatic::findOption(const QByteArray &optv, const QByteArray &_opt,
                 return;
             }
             KCmdLineArgs::enable_i18n();
-            KCmdLineArgs::usageError(QObject::tr("Unknown option '%1'.").arg(QString::fromLocal8Bit(_opt.data())));
+            KCmdLineArgs::usageError(i18n("Unknown option '%1'.", QString::fromLocal8Bit(_opt.data())));
         }
         if (argument.isEmpty()) {
             i++;
             if (i >= staticObj()->all_argc) {
                 KCmdLineArgs::enable_i18n();
-                KCmdLineArgs::usageError(i18nc("@info:shell %1 is cmdoption name", "'%1' missing.").arg(QString::fromLocal8Bit(opt_name.data())));
+                KCmdLineArgs::usageError(i18nc("@info:shell %1 is cmdoption name", "'%1' missing.", QString::fromLocal8Bit(opt_name.data())));
             }
             argument = staticObj()->all_argv[i];
         }
@@ -918,7 +918,7 @@ KCmdLineArgsStatic::parseAllArgs()
                             }
                             authorlist += QString::fromLatin1("    ") + (*it).name() + email + QLatin1Char('\n');
                         }
-                        staticObj()->printQ(i18nc("the 2nd argument is a list of name+address, one on each line", "%1 was written by\n%2").arg(QString(staticObj()->about->programName()), authorlist));
+                        staticObj()->printQ(i18nc("the 2nd argument is a list of name+address, one on each line", "%1 was written by\n%2", QString(staticObj()->about->programName()), authorlist));
                     }
                 } else {
                     staticObj()->printQ(QObject::tr("This application was written by somebody who wants to remain anonymous."));
