@@ -97,10 +97,6 @@ static KAbstractDebugDialog::AreaMap readAreas()
 
 int main(int argc, char ** argv)
 {
-    Kdelibs4ConfigMigrator migrate(QStringLiteral("kdebugdialog"));
-    migrate.setConfigFiles(QStringList() << QStringLiteral("kdebugrc"));
-    migrate.migrate();
-
     K4AboutData data( "kdebugdialog5", "kdelibs4support", ki18n( "KDebugDialog"),
             "1.0", ki18n("A dialog box for setting preferences for debug output"),
             K4AboutData::License_GPL, ki18n("Copyright 1999-2009, David Faure <faure@kde.org>"));
@@ -116,6 +112,10 @@ int main(int argc, char ** argv)
     KUniqueApplication::addCmdLineOptions();
     KUniqueApplication app;
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    Kdelibs4ConfigMigrator migrate(QStringLiteral("kdebugdialog"));
+    migrate.setConfigFiles(QStringList() << QStringLiteral("kdebugrc"));
+    migrate.migrate();
+
 
     KAbstractDebugDialog * dialog;
     if (args->isSet("fullmode")) {
