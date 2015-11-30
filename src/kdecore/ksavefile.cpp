@@ -21,7 +21,7 @@
 */
 
 #include "ksavefile.h"
-
+#include <KLocalizedString>
 #include <QDir>
 #include <QTemporaryFile>
 
@@ -96,14 +96,14 @@ bool KSaveFile::open(OpenMode flags)
 
     if (d->realFileName.isEmpty()) {
         d->error = QFile::OpenError;
-        d->errorString = tr("No target filename has been given.");
+        d->errorString = i18n("No target filename has been given.");
         return false;
     }
 
     if (!d->tempFileName.isNull()) {
 #if 0 // do not set an error here, this open() fails, but the file itself is without errors
         d->error = QFile::OpenError;
-        d->errorString = tr("Already opened.");
+        d->errorString = i18n("Already opened.");
 #endif
         return false;
     }
@@ -132,11 +132,11 @@ bool KSaveFile::open(OpenMode flags)
         QDir parentDir = fileInfo.dir();
         if (!QFileInfo(parentDir.absolutePath()).isWritable()) {
             d->error = QFile::PermissionsError;
-            d->errorString = tr("Insufficient permissions in target directory.");
+            d->errorString = i18n("Insufficient permissions in target directory.");
             return false;
         }
         d->error = QFile::OpenError;
-        d->errorString = tr("Unable to open temporary file.");
+        d->errorString = i18n("Unable to open temporary file.");
         return false;
     }
 
@@ -246,7 +246,7 @@ bool KSaveFile::finalize()
                 if (errno != EINTR)
                 {
                     d->error = QFile::WriteError;
-                    d->errorString = tr("Synchronization to disk failed");
+                    d->errorString = i18n("Synchronization to disk failed");
                     break;
                 }
             }
@@ -277,7 +277,7 @@ bool KSaveFile::finalize()
             success = true;
         } else {
             d->error = QFile::OpenError;
-            d->errorString = tr("Error during rename.");
+            d->errorString = i18n("Error during rename.");
             QFile::remove(d->tempFileName);
         }
     } else { // direct overwrite

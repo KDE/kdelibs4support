@@ -921,14 +921,14 @@ KCmdLineArgsStatic::parseAllArgs()
                         staticObj()->printQ(i18nc("the 2nd argument is a list of name+address, one on each line", "%1 was written by\n%2", QString(staticObj()->about->programName()), authorlist));
                     }
                 } else {
-                    staticObj()->printQ(QObject::tr("This application was written by somebody who wants to remain anonymous."));
+                    staticObj()->printQ(i18n("This application was written by somebody who wants to remain anonymous."));
                 }
                 if (staticObj()->about) {
                     if (!staticObj()->about->customAuthorTextEnabled()) {
                         if (staticObj()->about->bugAddress().isEmpty() || staticObj()->about->bugAddress() == QLatin1String("submit@bugs.kde.org")) {
-                            staticObj()->printQ(QObject::tr("Please use http://bugs.kde.org to report bugs.\n"));
+                            staticObj()->printQ(i18n("Please use http://bugs.kde.org to report bugs.\n"));
                         } else {
-                            staticObj()->printQ(QObject::tr("Please report bugs to %1.\n").arg(staticObj()->about->bugAddress()));
+                            staticObj()->printQ(i18n("Please report bugs to %1.\n", staticObj()->about->bugAddress()));
                         }
                     } else {
                         staticObj()->printQ(staticObj()->about->customAuthorPlainText() + QLatin1Char('\n'));
@@ -958,7 +958,7 @@ KCmdLineArgsStatic::parseAllArgs()
                     continue;
                 }
                 KCmdLineArgs::enable_i18n();
-                KCmdLineArgs::usageError(QObject::tr("Unexpected argument '%1'.").arg(staticObj()->escape(staticObj()->decodeInput(staticObj()->all_argv[i]))));
+                KCmdLineArgs::usageError(i18n("Unexpected argument '%1'.", staticObj()->escape(staticObj()->decodeInput(staticObj()->all_argv[i]))));
             } else {
                 appOptions->d->addArgument(staticObj()->all_argv[i]);
                 if (everythingAfterArgIsArgs) {
@@ -1071,7 +1071,7 @@ KCmdLineArgs::usageError(const QString &error)
     }
     fprintf(stderr, "%s: %s\n", staticObj()->appName, localError.data());
 
-    QString tmp = QObject::tr("Use --help to get a list of available command line options.");
+    QString tmp = i18n("Use --help to get a list of available command line options.");
     localError = staticObj()->encodeOutput(tmp);
     fprintf(stderr, "%s: %s\n", staticObj()->appName, localError.data());
     exit(254);
@@ -1093,12 +1093,12 @@ KCmdLineArgs::usage(const QByteArray &id)
 
     if ((*args)->d->id.isEmpty() && ((*args)->d->options.d->names.size() > 0) &&
             !(*args)->d->options.d->names[0].startsWith('+')) {
-        usage = QObject::tr("[options] ") + usage;
+        usage = i18n("[options] ") + usage;
     }
 
     while (true) {
         if (!(*args)->d->name.isEmpty()) {
-            usage = QObject::tr("[%1-options]").arg((*args)->d->name.toString()) + QLatin1Char(' ') + usage;
+            usage = i18n("[%1-options]", (*args)->d->name.toString()) + QLatin1Char(' ') + usage;
         }
         if (args == staticObj()->argsList->begin()) {
             break;
@@ -1119,29 +1119,29 @@ KCmdLineArgs::usage(const QByteArray &id)
         }
     }
 
-    staticObj()->printQ(QObject::tr("Usage: %1 %2\n").arg(QString::fromLocal8Bit(staticObj()->appName)).arg(staticObj()->escape(usage)));
+    staticObj()->printQ(i18n("Usage: %1 %2\n", QString::fromLocal8Bit(staticObj()->appName), staticObj()->escape(usage)));
     staticObj()->printQ(QLatin1Char('\n') + staticObj()->about->shortDescription() + QLatin1Char('\n'));
 
-    staticObj()->printQ(QObject::tr("\nGeneric options:\n"));
+    staticObj()->printQ(i18n("\nGeneric options:\n"));
     staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help"), -25)
-                        .arg(QObject::tr("Show help about options")));
+                        .arg(i18n("Show help about options")));
 
     args = staticObj()->argsList->begin();
     while (args != staticObj()->argsList->end()) {
         if (!(*args)->d->name.isEmpty() && !(*args)->d->id.isEmpty()) {
             QString option = QString::fromLatin1("--help-%1").arg(QString::fromLatin1((*args)->d->id.data()));
-            QString desc = QObject::tr("Show %1 specific options").arg((*args)->d->name.toString());
+            QString desc = i18n("Show %1 specific options", (*args)->d->name.toString());
 
             staticObj()->printQ(optionFormatString.arg(option, -25).arg(desc));
         }
         ++args;
     }
 
-    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help-all"), -25).arg(QObject::tr("Show all options")));
-    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--author"), -25).arg(QObject::tr("Show author information")));
-    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("-v, --version"), -25).arg(QObject::tr("Show version information")));
-    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--license"), -25).arg(QObject::tr("Show license information")));
-    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--"), -25).arg(QObject::tr("End of options")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--help-all"), -25).arg(i18n("Show all options")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--author"), -25).arg(i18n("Show author information")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("-v, --version"), -25).arg(i18n("Show version information")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--license"), -25).arg(i18n("Show license information")));
+    staticObj()->printQ(optionFormatString.arg(QString::fromLatin1("--"), -25).arg(i18n("End of options")));
 
     args = staticObj()->argsList->begin(); // Sets current to 1st.
 
@@ -1161,9 +1161,9 @@ KCmdLineArgs::usage(const QByteArray &id)
         bool hasOptions = false;
         QString optionsHeader;
         if (!(*args)->d->name.isEmpty()) {
-            optionsHeader = QObject::tr("\n%1 options:\n").arg((*args)->d->name.toString());
+            optionsHeader = i18n("\n%1 options:\n", (*args)->d->name.toString());
         } else {
-            optionsHeader = QObject::tr("\nOptions:\n");
+            optionsHeader = i18n("\nOptions:\n");
         }
 
         while (args != staticObj()->argsList->end()) {
@@ -1216,7 +1216,7 @@ KCmdLineArgs::usage(const QByteArray &id)
 
                 if (name.startsWith('+')) {
                     if (!hasArgs) {
-                        staticObj()->printQ(QObject::tr("\nArguments:\n"));
+                        staticObj()->printQ(i18n("\nArguments:\n"));
                         hasArgs = true;
                     }
 

@@ -264,13 +264,13 @@ QString K4AboutLicense::text() const
         }
     // fall through
     default:
-        result += QObject::tr("No licensing terms for this program have been specified.\n"
+        result += i18n("No licensing terms for this program have been specified.\n"
                               "Please check the documentation or the source for any\n"
                               "licensing terms.\n");
     }
 
     if (knownLicense) {
-        result += QObject::tr("This program is distributed under the terms of the %1.").arg(name(K4AboutData::ShortName));
+        result += i18n("This program is distributed under the terms of the %1.", name(K4AboutData::ShortName));
         if (!pathToFile.isEmpty()) {
             result += lineFeed;
         }
