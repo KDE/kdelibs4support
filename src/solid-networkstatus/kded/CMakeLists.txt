@@ -58,7 +58,7 @@ add_library(kded_networkstatus MODULE ${kded_networkstatus_PART_SRCS})
 set_target_properties(kded_networkstatus PROPERTIES
     OUTPUT_NAME networkstatus
 )
-kcoreaddons_desktop_to_json(kded_networkstatus networkstatus.desktop)
+kcoreaddons_desktop_to_json(kded_networkstatus networkstatus.desktop SERVICE_TYPES kdedmodule.desktop)
 
 target_link_libraries(kded_networkstatus KF5::DBusAddons KF5::Solid KF5::KDELibs4Support)
 
