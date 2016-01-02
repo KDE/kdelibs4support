@@ -1,0 +1,345 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Brazilian-Portuguese "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual do Usuário do kf5-config</title>
+<author
+><firstname
+>Stephan</firstname
+> <surname
+>Kulow</surname
+> <affiliation
+><address
+><email
+>coolo@kde.org</email
+></address
+></affiliation>
+</author>
+<date
+>31/07/2015</date>
+<releaseinfo
+>Frameworks 5.13</releaseinfo>
+<productname
+>KDE Frameworks</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kf5-config</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kf5-config</command
+></refname>
+<refpurpose
+>Mostra os caminhos da instalação do &Qt; e Frameworks</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kf5-config</command
+> <arg
+>--expandvars</arg
+> <arg
+>--prefix</arg
+> <arg
+>--exec-prefix</arg
+> <arg
+>--libsuffix</arg
+> <arg
+>--localprefix</arg
+> <arg
+>--version</arg
+> <arg
+>--kde-version</arg
+> <arg
+>--types</arg
+> <arg
+>--path <replaceable
+>tipo</replaceable
+></arg
+> <arg
+>--userpath <replaceable
+>tipo</replaceable
+></arg
+> <arg
+>--install <replaceable
+>tipo</replaceable
+></arg
+> <arg
+>--qt-prefix</arg
+> <arg
+>--qt-binaries</arg
+> <arg
+>--qt-libraries</arg
+> <arg
+>--qt-plugins</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descrição</title>
+<para
+>O kf5-config é um programa de linha de comando que é usado para obter informações sobre os caminhos de instalação do Frameworks ou dos usuários.</para>
+
+<para
+>Use este programa para determinar onde residem os vários aspectos da instalação do Frameworks no seu sistema. </para
+> 
+
+<note
+><para
+>O kf5-config é basicamente um substituto obsoleto para o kde4-config, já que a ferramenta recomendada é o qtpaths (que é disponibilizada pelo &Qt;). </para
+></note>
+</refsect1>
+
+<refsect1>
+<title
+>Opções</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--expandvars</option
+></term>
+<listitem>
+<para
+>expande o ${prefix} e o ${exec_prefix} no resultado</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--prefix</option
+></term>
+<listitem>
+<para
+>O prefixo pré-compilado para as bibliotecas do Frameworks</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--exec-prefix</option
+></term>
+<listitem>
+<para
+>O prefixo de executáveis pré-compilado para as bibliotecas do Frameworks</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--libsuffix</option
+></term>
+<listitem>
+<para
+>O sufixo pré-compilado do local das bibliotecas</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--localprefix</option
+></term>
+<listitem>
+<para
+>O prefixo usado na $<envar
+>HOME</envar
+> para salvar os arquivos</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>String de versão e compilação do &Qt; para as bibliotecas dos Frameworks e do kf5-config</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--kde-version</option
+></term>
+<listitem>
+<para
+>O texto pré-compilado da versão das bibliotecas do Frameworks</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--types</option
+></term>
+<listitem>
+<para
+>Imprime uma lista com todos os tipos de recursos do &kde; disponíveis</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--path <replaceable
+>tipo</replaceable
+></option
+></term>
+<listitem>
+<para
+>Procura no local pelo <replaceable
+>tipo</replaceable
+> indicado</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--userpath <replaceable
+>tipo</replaceable
+></option
+></term>
+<listitem>
+<para
+>Os caminhos do usuário para os tipos: desktop|document</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--install <replaceable
+>tipo</replaceable
+></option
+></term>
+<listitem>
+<para
+>O prefixo onde instalar os arquivos de recursos</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-prefix</option
+></term>
+<listitem>
+<para
+>Prefixo de instalação do &Qt;</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-binaries</option
+></term>
+<listitem>
+<para
+>Localização dos binários do &Qt; instalados</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-libraries</option
+></term>
+<listitem>
+<para
+>Localização das bibliotecas do &Qt; instaladas</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-plugins</option
+></term>
+<listitem>
+<para
+>Localização dos plugins do &Qt; instalados</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Exemplos</title>
+
+<para
+>Imprimir a pasta de instalação de topo do Frameworks:</para>
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --prefix</command
+> </userinput
+> </para>
+
+<para
+>Imprimir uma lista com todos os tipos de recursos:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --types</command
+> </userinput
+> </para>
+
+<para
+>Imprimir o local de instalação dos papéis de parede:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --path wallpaper</command
+> </userinput
+> </para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Veja também</title>
+<para
+>kf5options(7)</para>
+</refsect1>
+
+<refsect1>
+<title
+>Problemas</title>
+<para
+>Nenhum conhecido.</para>
+</refsect1>
+
+</refentry>
