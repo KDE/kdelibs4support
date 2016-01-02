@@ -297,16 +297,18 @@ KLockFile::LockResult KLockFile::Private::lockFileOExcl(QT_STATBUF &st_buf)
     }
     // We hold the lock, continue.
     if (!m_file.open(fd, QIODevice::WriteOnly)) {
+        close(fd);
         return LockError;
     }
-    mustCloseFd = true;
     writeIntoLockFile(m_file);
 
     // stat to get the modification time
     const int result = QT_LSTAT(QFile::encodeName(m_fileName).data(), &st_buf);
     if (result != 0) {
+        close(fd);
         return KLockFile::LockError;
     }
+    mustCloseFd = true;
     return KLockFile::LockOK;
 }
 

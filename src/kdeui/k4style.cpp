@@ -1172,8 +1172,14 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
         }
 
         quint64 key = quint64(option->rect.height()) << 32 | color.rgba();
-        SelectionTiles *tiles = d->selectionCache.object(key);
-        if (!tiles && hasSolidBackground) {
+        SelectionTiles tiles;
+        SelectionTiles *tilesPtr = d->selectionCache.object(key);
+        if (tilesPtr) {
+            // We can't use tilesPtr directly since obj lifetime is different
+            // if we QCache::insert() vs. use ret value from QCache::object().
+            tiles = *tilesPtr;
+        }
+        if (!tilesPtr && hasSolidBackground) {
             QImage image(32 + 16, option->rect.height(), QImage::Format_ARGB32_Premultiplied);
             image.fill(0);
 
@@ -1202,12 +1208,11 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
 
             QPixmap pixmap = QPixmap::fromImage(image);
 
-            tiles = new SelectionTiles;
-            tiles->left   = pixmap.copy(0, 0, 8, image.height());
-            tiles->center = pixmap.copy(8, 0, 32, image.height());
-            tiles->right  = pixmap.copy(40, 0, 8, image.height());
+            tiles.left   = pixmap.copy(0, 0, 8, image.height());
+            tiles.center = pixmap.copy(8, 0, 32, image.height());
+            tiles.right  = pixmap.copy(40, 0, 8, image.height());
 
-            d->selectionCache.insert(key, tiles);
+            d->selectionCache.insert(key, new SelectionTiles(tiles));
         } else if (hasCustomBackground && !hasSolidBackground) {
             const QPointF oldBrushOrigin = painter->brushOrigin();
             painter->setBrushOrigin(opt->rect.topLeft());
@@ -1235,15 +1240,15 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
         bool reverseLayout = option->direction == Qt::RightToLeft;
 
         if (!reverseLayout ? roundedLeft : roundedRight) {
-            painter->drawPixmap(r.topLeft(), tiles->left);
+            painter->drawPixmap(r.topLeft(), tiles.left);
             r.adjust(8, 0, 0, 0);
         }
         if (!reverseLayout ? roundedRight : roundedLeft) {
-            painter->drawPixmap(r.right() - 8 + 1, r.top(), tiles->right);
+            painter->drawPixmap(r.right() - 8 + 1, r.top(), tiles.right);
             r.adjust(0, 0, -8, 0);
         }
         if (r.isValid()) {
-            painter->drawTiledPixmap(r, tiles->center);
+            painter->drawTiledPixmap(r, tiles.center);
         }
 
         return;
