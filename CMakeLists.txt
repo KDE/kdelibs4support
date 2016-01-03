@@ -42,6 +42,7 @@ find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
 find_package(KF5DBusAddons ${KF5_DEP_VERSION} REQUIRED)
+find_package(KDED ${KF5_DEP_VERSION} REQUIRED)
 
 if(WIN32)
     find_package(KDEWin REQUIRED)
