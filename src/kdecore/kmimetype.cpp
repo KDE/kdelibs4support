@@ -29,12 +29,8 @@
 #include <qstandardpaths.h>
 #include <kurl.h>
 #include <kio/global.h>
-#include <QDBusInterface>
-#include <QDBusConnection>
-#include <QDBusReply>
 
 #include <QtCore/QFile>
-#include <QBuffer>
 
 #ifdef Q_OS_WIN
 #include <windows.h>
@@ -293,17 +289,7 @@ KMimeType::~KMimeType()
 
 QString KMimeType::favIconForUrl(const QUrl &url)
 {
-    if (url.isLocalFile()
-            || !url.scheme().startsWith(QLatin1String("http"))
-            || !KMimeTypeRepository::self()->useFavIcons()) {
-        return QString();
-    }
-
-    QDBusInterface kded(QString::fromLatin1("org.kde.kded5"),
-                        QString::fromLatin1("/modules/favicons"),
-                        QString::fromLatin1("org.kde.FavIcon"));
-    QDBusReply<QString> result = kded.call(QString::fromLatin1("iconForUrl"), url.toString());
-    return result;              // default is QString()
+    return KIO::favIconForUrl(url);
 }
 
 QString KMimeType::iconNameForUrl(const QUrl &url, mode_t mode)
