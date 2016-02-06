@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=COU
 CurrencyCodeIsoNumeric3=970
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Colombian Unidad de Valor Real
+Name[ast]=Unidá colombiana de valor real
 Name[bg]=Колумбийски реал (обменна единица)
 Name[bn]=Colombian Unidad de Valor Real
 Name[bs]=kolumbijski unidad di valor real
