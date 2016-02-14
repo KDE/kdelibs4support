@@ -40,6 +40,7 @@ kdelibs4support_examples(
   kdatewidgettest
   kfiletreeviewtest
   kprintpreview_test
+  genericfactory
 )
 
 set(networkingclient_SRCS networkingclient.cpp )

@@ -52,7 +52,7 @@ public:
     }
 
     static const KComponentData &componentData();
-    static KAboutData *aboutData();
+    static K4AboutData *aboutData();
     virtual KComponentData partComponentData()
     {
         return componentData();
@@ -67,7 +67,7 @@ protected:
 private:
     static GenericFactoryBase<T> *s_self;
     static KComponentData *s_componentData;
-    static KAboutData *s_aboutData;
+    static K4AboutData *s_aboutData;
 };
 
 /**
@@ -80,12 +80,12 @@ private:
  *  1) There needs to be a public constructor with the following signature:
  *         MyPart( QWidget *parentWidget, QObject *parent, const QStringList& args )
  *
- *  2) It needs to provide one static method to create a KAboutData object per
+ *  2) It needs to provide one static method to create a K4AboutData object per
  *     request, holding information about the component's name, its authors, license, etc.
  *     The signature of that static method has to be
- *         KAboutData *createAboutData()
+ *         K4AboutData *createAboutData()
  *
- * The template will take care of memory management of the KComponentData and the KAboutData object,
+ * The template will take care of memory management of the KComponentData and the K4AboutData object,
  * meaning ownership of what createAboutData returns is passed to the caller (this template) .
  *
  * For advanced use you can also inherit from the template and re-implement additionally the
@@ -174,7 +174,7 @@ KComponentData *GenericFactoryBase<T>::s_componentData = 0;
  * @internal
  */
 template <class T>
-KAboutData *GenericFactoryBase<T>::s_aboutData = 0;
+K4AboutData *GenericFactoryBase<T>::s_aboutData = 0;
 
 /**
  * @internal
@@ -196,7 +196,7 @@ const KComponentData &GenericFactoryBase<T>::componentData()
  * @internal
  */
 template <class T>
-KAboutData *GenericFactoryBase<T>::aboutData()
+K4AboutData *GenericFactoryBase<T>::aboutData()
 {
     if (!s_aboutData) {
         s_aboutData = T::createAboutData();
