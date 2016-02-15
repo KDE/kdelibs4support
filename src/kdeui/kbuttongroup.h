@@ -30,7 +30,7 @@ class QAbstractButton;
 /**
  * @deprecated since 5.0, use QGroupBox and QButtonGroup instead
  *
- * @short Group box with index of the selected button
+ * @short Group box with index of the selected button.
  * KButtonGroup is a simple group box that can keep track of the current selected
  * button of the ones added to it.
  *
