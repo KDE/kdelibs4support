@@ -380,6 +380,9 @@ void KApplicationPrivate::init(bool GUIenabled)
     parseCommandLine();
 
     QGuiApplication::setDesktopSettingsAware(false);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
+    QGuiApplication::setFallbackSessionManagementEnabled(false);
+#endif
 
 #if HAVE_X11
     isX11 = (QGuiApplication::platformName() == QStringLiteral("xcb"));
@@ -471,6 +474,12 @@ void KApplicationPrivate::init(bool GUIenabled)
 
     q->connect(KToolInvocation::self(), SIGNAL(kapplication_hook(QStringList&,QByteArray&)),
                q, SLOT(_k_slot_KToolInvocation_hook(QStringList&,QByteArray&)));
+
+    q->connect(q, SIGNAL(commitDataRequest(QSessionManager&)),
+               q, SLOT(commitData(QSessionManager&)));
+    q->connect(q, SIGNAL(saveStateRequest(QSessionManager&)),
+               q, SLOT(saveState(QSessionManager&)));
+
 
 #ifdef Q_OS_MAC
     // This is a QSystemTrayIcon instead of K* because we can't be sure q is a QWidget
@@ -577,11 +586,13 @@ void KApplication::commitData(QSessionManager &sm)
                 continue;
             }
 
+            // leave KMainWindows alone because they are handled by KMWSessionManager
             if (!w->isHidden() && !w->inherits("KMainWindow")) {
                 QCloseEvent e;
                 sendEvent(w, &e);
                 if (!e.isAccepted()) {
-                    break;    //canceled
+                    canceled = true;
+                    break;
                 }
 
                 donelist.append(w);
@@ -596,6 +607,10 @@ void KApplication::commitData(QSessionManager &sm)
         sm.setRestartHint(QSessionManager::RestartNever);
     } else {
         sm.setRestartHint(QSessionManager::RestartIfRunning);
+    }
+
+    if (canceled) {
+        sm.cancel();
     }
     d->session_save = false;
 }

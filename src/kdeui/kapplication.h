@@ -155,20 +155,6 @@ public:
     void enableSessionManagement();
 
     /**
-     * Reimplemented for internal purposes, mainly the highlevel
-     *  handling of session management with KSessionManager.
-     * @internal
-     */
-    void commitData(QSessionManager &sm);
-
-    /**
-     * Reimplemented for internal purposes, mainly the highlevel
-     *  handling of session management with KSessionManager.
-     * @internal
-     */
-    void saveState(QSessionManager &sm);
-
-    /**
      * @deprecated since 5.0, use QGuiApplication::isSavingSession()
      *
      * Returns true if the application is currently saving its session
@@ -358,6 +344,21 @@ public Q_SLOTS:
      * @see KUserTimestamp::updateUserTimestamp
      */
     Q_SCRIPTABLE void updateUserTimestamp(int time = 0);
+
+    /**
+     * Slot connected to QGuiApplication::commitDataRequest() to implement highlevel
+     *  handling of session management with KSessionManager.
+     * @internal
+     */
+    void commitData(QSessionManager &sm);
+
+    /**
+     * Slot connected to QGuiApplication::saveStateRequest() to implement highlevel
+     *  handling of session management with KSessionManager.
+     * @internal
+     */
+    void saveState(QSessionManager &sm);
+
 
     // D-Bus Q_SLOTS:
     Q_SCRIPTABLE void reparseConfiguration();
