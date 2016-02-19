@@ -379,7 +379,7 @@ void KApplicationPrivate::init(bool GUIenabled)
 
     parseCommandLine();
 
-    QApplication::setDesktopSettingsAware(false);
+    QGuiApplication::setDesktopSettingsAware(false);
 
 #if HAVE_X11
     isX11 = (QGuiApplication::platformName() == QStringLiteral("xcb"));
