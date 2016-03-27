@@ -24,6 +24,8 @@ if (NOT HAVE_QSSLSOCKET)
    message(FATAL_ERROR "KDE Requires Qt to be built with SSL support")
 endif (NOT HAVE_QSSLSOCKET)
 
+set(CMAKE_REQUIRED_LIBRARIES "")
+
 check_include_files("sys/types.h;sys/socket.h;net/if.h" HAVE_NET_IF_H)
 check_include_files("sys/filio.h" HAVE_SYS_FILIO_H)
 check_include_files(stropts.h HAVE_STROPTS_H)
