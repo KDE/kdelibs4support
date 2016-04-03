@@ -17,8 +17,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2015-07-31</date>
-<releaseinfo>Frameworks 5.13</releaseinfo>
+<date>2016-04-02</date>
+<releaseinfo>Frameworks 5.21</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -37,7 +37,7 @@ It features a simple and a full mode.</para>
 <para>Only for applications using the Frameworks library kdelibs4support.</para>
 <para>kDebug() has been deprecated in &kde; Frameworks 5, in favour of &Qt;'s builtin categorized
 logging, see<ulink  url="http://doc.qt.io/qt-5/qloggingcategory.html">QLoggingCategory</ulink>.
-Use the program <ulink url="https://projects.kde.org/projects/kde/kdeutils/kdebugsettings">kdebugsettings</ulink>
+Use the program <ulink url="https://quickgit.kde.org/?p=kdebugsettings.git">kdebugsettings</ulink>
 to enable/disable qCDebug.
 </para>
 </note>
