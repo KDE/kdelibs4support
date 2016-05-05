@@ -860,10 +860,20 @@ bool      KDateTime::isNull() const
 {
     return d->dt().isNull();
 }
+
 bool      KDateTime::isValid() const
 {
-    return d->specType != Invalid  &&  d->dt().isValid();
+    switch (d->specType)
+    {
+        case Invalid:
+            return false;
+	case ClockTime:
+            return d->dt().date().isValid() && d->dt().time().isValid();
+	default:
+            return d->dt().isValid();
+    }
 }
+
 bool      KDateTime::isDateOnly() const
 {
     return d->dateOnly();

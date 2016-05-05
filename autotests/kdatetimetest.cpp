@@ -437,6 +437,7 @@ void KDateTimeTest::constructors()
     QTime t(3, 45, 14);
     QDateTime dtLocal(d, t, Qt::LocalTime);
     QDateTime dtUTC(d, t, Qt::UTC);
+    QDateTime dtLocal2(QDate(2016,03,27), QTime(1,0,0));  //Europe/London daylight savings change time
     KTimeZone london = KSystemTimeZones::zone("Europe/London");
 
     QByteArray originalZone = qgetenv("TZ");   // save the original local time zone
@@ -805,6 +806,21 @@ void KDateTimeTest::constructors()
     QCOMPARE(datetime_ClockTime.dateTime(), dtLocal);
     QCOMPARE(datetime_ClockTime.date(), dtLocal.date());
     QCOMPARE(datetime_ClockTime.time(), dtLocal.time());
+
+    KDateTime datetime_ClockTime1(dtLocal2, KDateTime::ClockTime);
+    QVERIFY(!datetime_ClockTime1.isNull());
+    QVERIFY(datetime_ClockTime1.isValid());
+    QVERIFY(!datetime_ClockTime1.isDateOnly());
+    QCOMPARE(datetime_ClockTime1.timeType(), KDateTime::ClockTime);
+    QVERIFY(!datetime_ClockTime1.isUtc());
+    QVERIFY(!datetime_ClockTime1.isOffsetFromUtc());
+    QVERIFY(!datetime_ClockTime1.isLocalZone());
+    QVERIFY(datetime_ClockTime1.isClockTime());
+    QCOMPARE(datetime_ClockTime1.utcOffset(), 0);
+    QVERIFY(!datetime_ClockTime1.timeZone().isValid());
+    QCOMPARE(datetime_ClockTime1.dateTime(), dtLocal2);
+    QCOMPARE(datetime_ClockTime1.date(), dtLocal2.date());
+    QCOMPARE(datetime_ClockTime1.time(), dtLocal2.time());
 
     KDateTime datetime_ClockTime2(dtUTC, KDateTime::ClockTime);
     QVERIFY(!datetime_ClockTime2.isNull());
