@@ -204,6 +204,7 @@ void KUrlTest::testIsLocalFile()
     KUrl local_file_2("file://www.kde.org/my/file");
     QVERIFY(!local_file_2.isLocalFile());
 
+#if 0
     // exactly like in kurl.cpp, getenv("HOSTNAME") can be different...
     char hostname[ 256 ];
     hostname[ 0 ] = '\0';
@@ -218,8 +219,9 @@ void KUrlTest::testIsLocalFile()
     KUrl local_file_3;
     local_file_3.setHost(QString::fromLatin1(hostname));
     local_file_3.setPath("/my/file");
-    qDebug("URL=%s\n", qPrintable(local_file_3.url()));
+    qDebug("URL=%s", qPrintable(local_file_3.url()));
     QVERIFY(local_file_3.isLocalFile());
+#endif
 
     KUrl local_file_4("file:///my/file");
     QVERIFY(local_file_4.isLocalFile());
