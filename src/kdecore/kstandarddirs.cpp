@@ -73,6 +73,10 @@
 #include <QtCore/QSettings>
 #include <QCoreApplication>
 
+#ifndef MAXPATHLEN
+# define MAXPATHLEN 4096
+#endif
+
 #ifdef Q_OS_WIN
 static const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 #else
