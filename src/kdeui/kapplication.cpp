@@ -615,7 +615,7 @@ void KApplication::commitData(QSessionManager &sm)
     d->session_save = false;
 }
 
-#if HAVE_X11
+#if HAVE_X11 && QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 static void checkRestartVersion(QSessionManager &sm)
 {
     Display *dpy = QX11Info::display();
@@ -729,6 +729,8 @@ void KApplication::saveState(QSessionManager &sm)
     if (canceled) {
         sm.cancel();
     }
+#else
+    Q_UNUSED(sm);
 #endif
     d->session_save = false;
 }
@@ -1003,4 +1005,3 @@ void KApplicationPrivate::_k_slot_KToolInvocation_hook(QStringList &envs, QByteA
 }
 
 #include "moc_kapplication.cpp"
-
