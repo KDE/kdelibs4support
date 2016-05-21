@@ -22,6 +22,7 @@
 #include "kcalendarsystemprivate_p.h"
 #include "kcalendarsystem.h"
 #include "kcalendarera_p.h"
+#include "kdebug.h"
 
 KDateTimeParser::KDateTimeParser()
 {
