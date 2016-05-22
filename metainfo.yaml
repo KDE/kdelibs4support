@@ -7,3 +7,7 @@ platforms:
 portingAid: true
 deprecated: true
 release: true
+
+public_lib: true
+group: Frameworks
+subgroup: Porting Aids
