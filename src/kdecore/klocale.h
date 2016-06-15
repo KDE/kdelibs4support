@@ -926,6 +926,16 @@ public:
      * Use this to determine if the user wants a 12 hour clock.
      *
      * @return If the user wants 12h clock
+     * @deprecated. A possible equivalent would be:
+     * @code
+     * static bool use12Clock()
+     * {
+     *     const QString str = QLocale().timeFormat();
+     *     // 'A' or 'a' means am/pm is shown (and then 'h' uses 12-hour format)
+     *     // but 'H' forces a 24-hour format anyway, even with am/pm shown.
+     *     return str.contains(QLatin1Char('a'), Qt::CaseInsensitive) && !str.contains(QLatin1Char('H'));
+     * }
+     * @endcode
      */
     bool use12Clock() const;
 
