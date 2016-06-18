@@ -32,10 +32,15 @@
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 
+void setupLocale()
+{
+    qputenv("LC_ALL", "C");
+}
+Q_CONSTRUCTOR_FUNCTION(setupLocale)
+
 void
 KLocaleTest::initTestCase()
 {
-    qputenv("LC_ALL", "C");
     QStandardPaths::enableTestMode(true);
 
     KLocale::global()->setCountry(QLatin1String("C"), 0);
