@@ -31,11 +31,7 @@
 #include "klocale_unix_p.h"
 #endif
 
-#include <QMutex>
-#include <QThread>
-#include <QCoreApplication>
 #include <QtCore/QDateTime>
-#include <QtCore/QTextCodec>
 
 #include "kconfig.h"
 #include "kdatetime.h"
@@ -301,33 +297,11 @@ class KGlobalLocaleStatic
 {
 public:
     KGlobalLocaleStatic()
-        : locale(),
-          mutex(QMutex::Recursive),
-          inited(false)
+        : locale()
     {
     }
 
-    // This cannot be called from the constructor, because the LanguageChange event
-    // calls tr() which calls KLocale::global(), so KLocale::global() must exist already.
-    void init()
-    {
-        QMutexLocker lock(&mutex);
-        // If there's no QApp, postpone initialization
-        QCoreApplication *coreApp = QCoreApplication::instance();
-        if (inited || !coreApp) {
-            return;
-        }
-        inited = true;
-        QTextCodec::setCodecForLocale(locale.codecForEncoding());
-        if (coreApp->thread() != QThread::currentThread()) {
-            qFatal("KLocale::global() must be called from the main thread before using i18n() in threads. KApplication takes care of this. If not using KApplication, call KLocale::global() during initialization.");
-        } else {
-            QCoreApplication::installTranslator(new KDETranslator(coreApp));
-        }
-    }
     KLocale locale;
-    QMutex mutex;
-    bool inited;
 };
 
 Q_GLOBAL_STATIC(KGlobalLocaleStatic, s_globalLocale)
@@ -335,7 +309,6 @@ Q_GLOBAL_STATIC(KGlobalLocaleStatic, s_globalLocale)
 KLocale *KLocale::global()
 {
     KGlobalLocaleStatic *glob = s_globalLocale();
-    glob->init();
     return &glob->locale;
 }
 
@@ -409,13 +382,6 @@ QStringList KLocale::currencyCodeList() const
 {
     return d->currencyCodeList();
 }
-
-/* Just copy in for now to keep diff clean, remove later
-QString KLocalePrivate::formatDateTime(const KLocale *locale, const QDateTime &dateTime, KLocale::DateFormat format,
-                                       bool includeSeconds, int daysTo, int secsTo)
-{
-}
-*/
 
 QString KLocale::formatDateTime(const QDateTime &dateTime, KLocale::DateFormat format, bool includeSeconds) const
 {
