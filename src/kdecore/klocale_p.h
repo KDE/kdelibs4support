@@ -1114,32 +1114,4 @@ private:
     bool        m_utf8FileEncoding;
 };
 
-#include <QtCore/QTranslator>
-#include <QDebug>
-
-class KDETranslator : public QTranslator
-{
-public:
-    KDETranslator(QObject *parent) : QTranslator(parent)
-    {
-        setObjectName(QLatin1String("kdetranslator"));
-    }
-
-    virtual QString translate(const char *context,
-                              const char *sourceText,
-                              const char *comment
-                              , int n
-                             ) const Q_DECL_OVERRIDE
-    {
-        return KLocalizedString::translateQt(context, sourceText, comment
-                                             , n
-                                            );
-    }
-
-    bool isEmpty() const Q_DECL_OVERRIDE
-    {
-        return false;
-    }
-};
-
 #endif /* KLOCALE_P_H */
