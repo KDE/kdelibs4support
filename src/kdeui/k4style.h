@@ -1484,7 +1484,7 @@ private:
     const QObject *clickedLabel;
 
     template<typename T>
-    static T extractOptionHelper(T *);
+    static T extractOptionHelper(T);
 
 public:
     /** @name QStyle Methods
@@ -1581,7 +1581,7 @@ class K4StyleFactory: public QStylePlugin
 
 // get the pointed-to type from a pointer
 template<typename T>
-T K4Style::extractOptionHelper(T *)
+T K4Style::extractOptionHelper(T)
 {
     return T();
 }
