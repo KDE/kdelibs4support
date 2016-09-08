@@ -1483,9 +1483,6 @@ private:
     // fitt's law label support: QLabel focusing its buddy widget
     const QObject *clickedLabel;
 
-    template<typename T>
-    static T extractOptionHelper(T);
-
 public:
     /** @name QStyle Methods
      * These are methods reimplemented from QStyle. Usually it's not necessary to
@@ -1579,13 +1576,6 @@ class K4StyleFactory: public QStylePlugin
     }
 };
 
-// get the pointed-to type from a pointer
-template<typename T>
-T K4Style::extractOptionHelper(T)
-{
-    return T();
-}
-
 template<typename T>
 T K4Style::extractOption(Option *option)
 {
@@ -1597,7 +1587,7 @@ T K4Style::extractOption(Option *option)
         // and dynamic_cast fails.
         // This is still partially broken as it doesn't take into account subclasses.
         // ### KDE5 do this somehow differently
-        if (qstrcmp(typeid(*option).name(), typeid(extractOptionHelper(static_cast<T>(0))).name()) == 0) {
+        if (qstrcmp(typeid(*option).name(), typeid(std::remove_pointer<T>::type()).name()) == 0) {
             return static_cast<T>(option);
         }
     }
