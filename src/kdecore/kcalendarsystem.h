@@ -144,7 +144,6 @@ public:
      */
     virtual KLocale::CalendarSystem calendarSystem() const = 0;
 
-    //KDE5 make virtual?
     /**
      * @since 4.6
      *
@@ -264,7 +263,6 @@ public:
      */
     virtual bool setDate(QDate &date, int year, int month, int day) const;
 
-    //KDE5 make virtual?
     /**
      * @since 4.4
      *
@@ -277,7 +275,6 @@ public:
      */
     bool setDate(QDate &date, int year, int dayOfYear) const;
 
-    //KDE5 make virtual?
     /**
      * @since 4.5
      *
@@ -328,7 +325,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @since 4.5
      *
@@ -365,7 +361,6 @@ public:
      */
     virtual int day(const QDate &date) const;
 
-    //KDE5 make virtual?
     /**
      * @since 4.5
      *
@@ -378,7 +373,6 @@ public:
      */
     QString eraName(const QDate &date, StringFormat format = ShortFormat) const;
 
-    //KDE5 make virtual?
     /**
      * @since 4.5
      *
@@ -391,7 +385,6 @@ public:
      */
     QString eraYear(const QDate &date, StringFormat format = ShortFormat) const;
 
-    //KDE5 make virtual?
     /**
      * @since 4.5
      *
@@ -434,7 +427,6 @@ public:
         return isValid(d) ? d : QDate();
     }
 
-    //KDE5 make virtual?
     /**
      * Returns the difference between two dates in years, months and days.
      * The difference is always caculated from the earlier date to the later
@@ -456,7 +448,6 @@ public:
     void dateDifference(const QDate &fromDate, const QDate &toDate,
                         int *yearsDiff, int *monthsDiff, int *daysDiff, int *direction) const;
 
-    //KDE5 make virtual?
     /**
     * Returns the difference between two dates in completed calendar years.
     * The returned value will be negative if @p fromDate > @p toDate.
@@ -469,7 +460,6 @@ public:
     */
     int yearsDifference(const QDate &fromDate, const QDate &toDate) const;
 
-    //KDE5 make virtual?
     /**
      * Returns the difference between two dates in completed calendar months
      * The returned value will be negative if @p fromDate > @p toDate.
@@ -702,7 +692,6 @@ public:
      */
     bool isLeapYear(const QDate &date) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -713,7 +702,6 @@ public:
      */
     QDate firstDayOfYear(int year) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -724,7 +712,6 @@ public:
      */
     QDate lastDayOfYear(int year) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -735,7 +722,6 @@ public:
      */
     QDate firstDayOfYear(const QDate &date = QDate::currentDate()) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -746,7 +732,6 @@ public:
      */
     QDate lastDayOfYear(const QDate &date = QDate::currentDate()) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -758,7 +743,6 @@ public:
      */
     QDate firstDayOfMonth(int year, int month) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -770,7 +754,6 @@ public:
      */
     QDate lastDayOfMonth(int year, int month) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -781,7 +764,6 @@ public:
      */
     QDate firstDayOfMonth(const QDate &date = QDate::currentDate()) const;
 
-    //KDE5 Make virtual?
     /**
      * @since 4.6
      *
@@ -894,7 +876,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -917,7 +898,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -941,7 +921,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -960,7 +939,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -984,7 +962,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -1008,7 +985,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -1032,7 +1008,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -1056,7 +1031,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -1080,7 +1054,6 @@ public:
     }
 #endif
 
-    //KDE5 make virtual?
     /**
      * @deprecated use formatDate(QDate, KLocale::DateTimeComponent, KLocale::DateTimeComponentFormat)
      *
@@ -1099,7 +1072,6 @@ public:
     }
 #endif
 
-    //KDE5 make protected or remove?
     /**
      * @deprecated for internal use only
      *
@@ -1111,7 +1083,6 @@ public:
      */
     virtual int yearStringToInteger(const QString &sNum, int &iLength) const;
 
-    //KDE5 make protected or remove?
     /**
      * @deprecated for internal use only
      *
@@ -1123,7 +1094,6 @@ public:
      */
     virtual int monthStringToInteger(const QString &sNum, int &iLength) const;
 
-    //KDE5 make protected or remove?
     /**
      * @deprecated for internal use only
      *
@@ -1153,7 +1123,6 @@ public:
      */
     virtual QString formatDate(const QDate &fromDate, KLocale::DateFormat toFormat = KLocale::LongDate) const;
 
-    //KDE5 Make virtual
     /**
      * @since 4.4
      *
@@ -1273,7 +1242,6 @@ public:
     QString formatDate(const QDate &fromDate, const QString &toFormat,
                        KLocale::DateTimeFormatStandard formatStandard = KLocale::KdeFormat) const;
 
-    //KDE5 Make virtual
     /**
      * @since 4.4
      *
@@ -1293,7 +1261,6 @@ public:
     QString formatDate(const QDate &fromDate, const QString &toFormat, KLocale::DigitSet digitSet,
                        KLocale::DateTimeFormatStandard formatStandard = KLocale::KdeFormat) const;
 
-    //KDE5 Make virtual
     /**
      * @since 4.6
      *
@@ -1369,7 +1336,6 @@ public:
      */
     virtual QDate readDate(const QString &dateString, const QString &dateFormat, bool *ok = 0) const;
 
-    //KDE5 Make virtual
     /**
      * Converts a localized date string to a QDate, using the specified @p format.
      * You will usually not want to use this method.
@@ -1432,7 +1398,6 @@ public:
     QDate readDate(const QString &dateString, const QString &dateFormat, bool *ok,
                    KLocale::DateTimeFormatStandard formatStandard) const;
 
-    //KDE5 Make virtual
     /**
      * @since 4.6
      *
@@ -1464,7 +1429,6 @@ public:
      */
     int shortYearWindowStartYear() const;
 
-    //KDE5 Make virtual
     /**
      * @since 4.6
      *

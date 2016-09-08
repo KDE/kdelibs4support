@@ -629,7 +629,6 @@ public:
      */
     KDELIBS4SUPPORT_DEPRECATED bool nounDeclension() const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.6
      *
@@ -665,7 +664,6 @@ public:
         QDateCalendar = GregorianCalendar /**< @deprecated Alias for GregorianCalendar */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.6
      *
@@ -682,7 +680,6 @@ public:
         SimpleWeek        =  3  /**< Week 1 starts Jan 1st ends after 7 days */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.4
      *
@@ -694,7 +691,6 @@ public:
         UnicodeFormat     /**< UNICODE Standard (Qt/Java/OSX/Windows) */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.6
      *
@@ -712,7 +708,6 @@ public:
         //StrictParsing    /**< Parse Date/Time strictly to the format. */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.6
      *
@@ -758,7 +753,6 @@ public:
     };
     Q_DECLARE_FLAGS(DateTimeComponents, DateTimeComponent)
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.6
      *
@@ -777,7 +771,6 @@ public:
         LongName                     /**< Long text format, e.g. Monday for Monday */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * Format for date string.
      */
@@ -795,7 +788,6 @@ public:
         IsoOrdinalDate    /**< ISO-8601 Ordinal Date format YYYY-DDD, e.g. 2009-001 */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * Returns a string formatted to the current locale's conventions
      * regarding dates.
@@ -807,7 +799,6 @@ public:
      */
     QString formatDate(const QDate &date, DateFormat format = LongDate) const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * Returns a string formatted to the current locale's conventions
      * regarding both date and time.
@@ -822,7 +813,6 @@ public:
     QString formatDateTime(const QDateTime &dateTime, DateFormat format = ShortDate,
                            bool includeSecs = false) const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * Options for formatting date-time values.
      */
@@ -832,7 +822,6 @@ public:
     };
     Q_DECLARE_FLAGS(DateTimeFormatOptions, DateTimeFormatOption)
 
-    //KDE5 move to KDateTime namespace
     /**
      * Returns a string formatted to the current locale's conventions
      * regarding both date and time.
@@ -870,7 +859,6 @@ public:
      */
     QString formatTime(const QTime &pTime, bool includeSecs = false, bool isDuration = false) const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.4
      *
@@ -897,7 +885,6 @@ public:
     };
     Q_DECLARE_FLAGS(TimeFormatOptions, TimeFormatOption)
 
-    //KDE5 move to KDateTime namespace
     /**
      * @since 4.4
      *
@@ -988,7 +975,6 @@ public:
      */
     const KCalendarSystem *calendar() const;
 
-    //KDE5 remove
     /**
      * @deprecated use calendarSystem() instead
      *
@@ -1011,7 +997,6 @@ public:
      */
     KLocale::CalendarSystem calendarSystem() const;
 
-    //KDE5 remove
     /**
      * @deprecated use setCalendarSystem() instead
      *
@@ -1045,7 +1030,6 @@ public:
      */
     void setWeekNumberSystem(KLocale::WeekNumberSystem weekNumberSystem);
 
-    //KDE5 remove in favour of const version
     /**
      * @since 4.6
      *
@@ -1090,7 +1074,6 @@ public:
      */
     double readNumber(const QString &numStr, bool *ok = 0) const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * Converts a localized date string to a QDate.  This method will try all
      * ReadDateFlag formats in preferred order to read a valid date.
@@ -1106,7 +1089,6 @@ public:
      */
     QDate readDate(const QString &str, bool *ok = 0) const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * Converts a localized date string to a QDate, using the specified format.
      * You will usually not want to use this method.
@@ -1114,7 +1096,6 @@ public:
      */
     QDate readDate(const QString &intstr, const QString &fmt, bool *ok = 0) const;
 
-    //KDE5 move to KDateTime namespace
     /**
      * Flags for readDate()
      */
@@ -1131,7 +1112,6 @@ public:
                                            ISO Week date format (YYYY-DDD) */
     };
 
-    //KDE5 move to KDateTime namespace
     /**
      * Converts a localized date string to a QDate.
      * This method is stricter than readDate(str,&ok): it will only accept
