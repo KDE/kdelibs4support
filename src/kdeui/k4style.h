@@ -1587,7 +1587,7 @@ T K4Style::extractOption(Option *option)
         // and dynamic_cast fails.
         // This is still partially broken as it doesn't take into account subclasses.
         // ### KDE5 do this somehow differently
-        if (qstrcmp(typeid(*option).name(), typeid(std::remove_pointer<T>::type).name()) == 0) {
+        if (qstrcmp(typeid(*option).name(), typeid(typename std::remove_pointer<T>::type).name()) == 0) {
             return static_cast<T>(option);
         }
     }
