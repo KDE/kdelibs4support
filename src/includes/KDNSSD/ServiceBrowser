@@ -1,1 +1,1 @@
-#include <kdnssd/servicebrowser.h>
+#include <dnssd/servicebrowser.h>
