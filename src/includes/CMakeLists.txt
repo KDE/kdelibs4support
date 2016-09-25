@@ -472,7 +472,6 @@ install( FILES
   ConversionCheck/type_toQVariant
 DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/ConversionCheck COMPONENT Devel)
 
-
 install( FILES
   KDNSSD/Configuration
   KDNSSD/DomainBrowser
@@ -787,18 +786,13 @@ DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/KWallet COMPONENT 
 
 
 install( FILES
-  Solid/AcAdapter
-  Solid/AudioInterface
   Solid/Battery
   Solid/Block
-  Solid/Button
   Solid/Camera
   Solid/Device
   Solid/DeviceInterface
   Solid/DeviceNotifier
-  Solid/DvbInterface
   Solid/GenericInterface
-  Solid/NetworkInterface
   Solid/NetworkShare
   Solid/Networking
   Solid/OpticalDisc
@@ -851,78 +845,6 @@ install( FILES
   khtml/MousePressEvent
   khtml/MouseReleaseEvent
 DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/khtml COMPONENT Devel)
-
-
-install(FILES
-  Nepomuk/File
-  Nepomuk/KRatingPainter
-  Nepomuk/KRatingWidget
-  Nepomuk/MassUpdateJob
-  Nepomuk/Resource
-  Nepomuk/ResourceManager
-  Nepomuk/Service
-  Nepomuk/Tag
-  Nepomuk/TagWidget
-  Nepomuk/Thing
-  Nepomuk/Variant
-DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/Nepomuk COMPONENT Devel)
-
-
-install(FILES
-  Nepomuk/Types/Class
-  Nepomuk/Types/Literal
-  Nepomuk/Types/Ontology
-  Nepomuk/Types/Property
-DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/Nepomuk/Types COMPONENT Devel)
-
-
-install(FILES
-  Nepomuk/Query/AndTerm
-  Nepomuk/Query/ComparisonTerm
-  Nepomuk/Query/FileQuery
-  Nepomuk/Query/GroupTerm
-  Nepomuk/Query/LiteralTerm
-  Nepomuk/Query/NegationTerm
-  Nepomuk/Query/OptionalTerm
-  Nepomuk/Query/OrTerm
-  Nepomuk/Query/Query
-  Nepomuk/Query/QueryParser
-  Nepomuk/Query/QueryServiceClient
-  Nepomuk/Query/ResourceTerm
-  Nepomuk/Query/ResourceTypeTerm
-  Nepomuk/Query/Result
-  Nepomuk/Query/SimpleTerm
-  Nepomuk/Query/StandardQuery
-  Nepomuk/Query/Term
-DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/Nepomuk/Query COMPONENT Devel)
-
-
-install(FILES
-  Nepomuk/Utils/DynamicResourceFacet
-  Nepomuk/Utils/Facet
-  Nepomuk/Utils/FacetWidget
-  Nepomuk/Utils/ProxyFacet
-  Nepomuk/Utils/ResourceModel
-  Nepomuk/Utils/SearchWidget
-  Nepomuk/Utils/SimpleFacet
-  Nepomuk/Utils/SimpleResourceModel
-DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/Nepomuk/Utils COMPONENT Devel)
-
-
-install(FILES
-  Nepomuk/Vocabulary/NCAL
-  Nepomuk/Vocabulary/NCO
-  Nepomuk/Vocabulary/NDO
-  Nepomuk/Vocabulary/NEXIF
-  Nepomuk/Vocabulary/NFO
-  Nepomuk/Vocabulary/NIE
-  Nepomuk/Vocabulary/NMM
-  Nepomuk/Vocabulary/NMO
-  Nepomuk/Vocabulary/NUAO
-  Nepomuk/Vocabulary/PIMO
-  Nepomuk/Vocabulary/TMO
-DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE/Nepomuk/Vocabulary COMPONENT Devel)
-
 
 install(FILES
   KUnitConversion/Converter
