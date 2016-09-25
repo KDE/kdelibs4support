@@ -522,6 +522,8 @@ install(FILES
 
 configure_file(kssl/ksslconfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
 set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h )
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kssl/ksslconfig.h 
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support COMPONENT Devel)
 
 install( FILES kdebug.areas kdebugrc DESTINATION ${KDE_INSTALL_CONFDIR} )
 
