@@ -27,7 +27,7 @@
 class KCatalog;
 class KDayPeriod;
 
-class KLocalePrivate
+class KDELIBS4SUPPORT_EXPORT KLocalePrivate
 {
 public:
     /**
