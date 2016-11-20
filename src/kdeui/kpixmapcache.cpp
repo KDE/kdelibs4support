@@ -1158,7 +1158,7 @@ bool KPixmapCache::recreateCacheFiles()
 
     // We can't know the full size until custom headers written.
     // mmapFiles() will take care of correcting the size.
-    KPixmapCacheIndexHeader indexHeader = { {0}, KPIXMAPCACHE_VERSION, 0, d->mCacheId, d->mTimestamp };
+    KPixmapCacheIndexHeader indexHeader = { {static_cast<time_t>(0)}, KPIXMAPCACHE_VERSION, 0, d->mCacheId, static_cast<time_t>(d->mTimestamp) };
     memcpy(indexHeader.magic, KPC_MAGIC, sizeof(indexHeader.magic));
 
     indexfile.write(reinterpret_cast<char *>(&indexHeader), sizeof indexHeader);
