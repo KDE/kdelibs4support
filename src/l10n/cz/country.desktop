@@ -1,5 +1,10 @@
 [KCM Locale]
 Name=Czechia
+Name[pt]=República Checa
+Name[sv]=Tjeckien
+Name[uk]=Чехія
+Name[x-test]=xxCzechiaxx
+Name[zh_TW]=捷克
 Region=centraleurope
 Languages=cs
 DecimalSymbol=,
