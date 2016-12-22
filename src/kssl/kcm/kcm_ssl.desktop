@@ -12,6 +12,7 @@ X-DocPath=kcontrol5/kcm_ssl/index.html
 
 Name=SSL Preferences
 Name[ar]=تفضيلات SSL
+Name[ast]=Preferencies SSL
 Name[bg]=Настройки на SSL
 Name[bs]=SSL postavke
 Name[ca]=Preferències SSL
@@ -78,6 +79,7 @@ Name[zh_CN]=SSL 首选项
 Name[zh_TW]=SSL 喜好設定
 Comment=SSL Versions and Certificates
 Comment[ar]=إصدارات وشهادات SSL
+Comment[ast]=Versiones y certificaos SSL
 Comment[bg]=Версии и сертификати на SSL
 Comment[bs]=SSL verzije i certifikati
 Comment[ca]=Versions i certificats SSL
@@ -143,6 +145,7 @@ Comment[zh_CN]=SSL 版本和证书
 Comment[zh_TW]=SSL 版本與憑證
 
 X-KDE-Keywords=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS
+X-KDE-Keywords[ast]=SSL;Seguranza;Rede;Redes;Protocolu;Protocolos;Certificaos;Cifráu;HTTPS
 X-KDE-Keywords[bg]=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS,Сигурност,Мрежа,Протокол,Удостоверение,Сертификат,Шифриране
 X-KDE-Keywords[bs]=SSL,Security,Network,Protocol,Certificates,Encryption,HTTPS,Sigurnost,Mreža,Kriptografija,Certifikati
 X-KDE-Keywords[ca]=SSL,Seguretat,Xarxa,Protocol,Certificats,Encriptatge,HTTPS

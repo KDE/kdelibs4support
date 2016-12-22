@@ -693,6 +693,7 @@ Name[zh_TW]=阿薩姆語
 [ast]
 Name=Asturian
 Name[ar]=الإستوريانية
+Name[ast]=Asturianu
 Name[bg]=Астурийски
 Name[bs]=Asturski
 Name[ca]=Asturià
@@ -17457,6 +17458,7 @@ Name[zh_TW]=科薩語
 [x-test]
 Name=KDE Test Language
 Name[ar]=لغة كدي الاختبارية
+Name[ast]=Llingua de prueba de KDE
 Name[bg]=Пробен език за KDE
 Name[bs]=KDE Test jezik
 Name[ca]=Idioma de proves del KDE
