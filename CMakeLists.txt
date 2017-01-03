@@ -96,9 +96,9 @@ install(TARGETS kf5-config EXPORT KF5KDELibs4SupportTargets ${KF5_INSTALL_TARGET
 # create a Config.cmake and a ConfigVersion.cmake file and install them
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5KDELibs4Support")
 
-include(ECMPackageConfigHelpers)
+include(CMakePackageConfigHelpers)
 
-ecm_configure_package_config_file(
+configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KF5KDELibs4SupportConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfig.cmake"
     PATH_VARS KDE_INSTALL_DBUSINTERFACEDIR
@@ -130,7 +130,7 @@ if(BUILD_SHARED_LIBS)
 else()
     set(KDELibs4Support_LIB_TYPE STATIC)
 endif()
-ecm_configure_package_config_file(
+configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KF5KDE4SupportConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfig.cmake"
     INSTALL_DESTINATION "${CMAKECONFIG_COMPAT_INSTALL_DIR}"
