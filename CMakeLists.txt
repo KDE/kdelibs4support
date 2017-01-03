@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(KDELibs4Support)
+set(KF5_VERSION "5.30.0") # handled by release scripts
+set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
+project(KDELibs4Support VERSION ${KF5_VERSION})
 
 include(FeatureSummary)
 find_package(ECM 5.29.0  NO_MODULE)
@@ -17,8 +19,6 @@ include(KDECMakeSettings)
 include(GenerateExportHeader)
 include(CMakeFindFrameworks)
 
-set(KF5_VERSION "5.30.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.29.0") # handled by release scripts
 set(REQUIRED_QT_VERSION 5.5.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg PrintSupport Designer)
 
@@ -63,7 +63,7 @@ endif ()
 include(ECMSetupVersion)
 include(ECMMarkNonGuiExecutable)
 
-ecm_setup_version(${KF5_VERSION} VARIABLE_PREFIX KDELIBS4SUPPORT
+ecm_setup_version(PROJECT VARIABLE_PREFIX KDELIBS4SUPPORT
                                  VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h"
                                  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfigVersion.cmake"
                                  SOVERSION 5)
