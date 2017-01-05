@@ -116,7 +116,7 @@ protected:
      *
      * @returns the newly created part.
      */
-    virtual Part *createPartObject(QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList()) = 0;
+    Part *createPartObject(QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList()) Q_DECL_OVERRIDE = 0;
 
     /**
      * Reimplemented from KPluginFactory. Calls createPart()

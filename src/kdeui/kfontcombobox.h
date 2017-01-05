@@ -102,7 +102,7 @@ public:
      *
      * @return recommended size
      */
-    virtual QSize sizeHint() const;
+    QSize sizeHint() const Q_DECL_OVERRIDE;
 
 public Q_SLOTS:
     /**
@@ -122,7 +122,7 @@ Q_SIGNALS:
     void currentFontChanged(const QFont &font);
 
 protected:
-    bool event(QEvent *e);
+    bool event(QEvent *e) Q_DECL_OVERRIDE;
 
 private:
 

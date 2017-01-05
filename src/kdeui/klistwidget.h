@@ -91,12 +91,12 @@ Q_SIGNALS:
     void doubleClicked(QListWidgetItem *item, const QPoint &pos);
 
 protected:
-    virtual void keyPressEvent(QKeyEvent *e);
-    virtual void focusOutEvent(QFocusEvent *e);
-    virtual void leaveEvent(QEvent *e);
-    virtual void mousePressEvent(QMouseEvent *e);
-    virtual void mouseDoubleClickEvent(QMouseEvent *e);
-    virtual void mouseReleaseEvent(QMouseEvent *e);
+    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void focusOutEvent(QFocusEvent *e) Q_DECL_OVERRIDE;
+    void leaveEvent(QEvent *e) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mouseDoubleClickEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
 
 private:
     class KListWidgetPrivate;

@@ -35,7 +35,7 @@ public:
     KFileMetaPropsPlugin(KPropertiesDialog *_props);
     virtual ~KFileMetaPropsPlugin();
 
-    virtual void applyChanges();
+    void applyChanges() Q_DECL_OVERRIDE;
 
     /**
      * Tests whether the file specified by _items has a 'MetaInfo' plugin.
