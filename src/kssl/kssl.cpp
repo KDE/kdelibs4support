@@ -73,7 +73,7 @@ KSSL::KSSL(bool init)
     m_bAutoReconfig = true;
     m_cfg = new KSSLSettings();
 #if KSSL_HAVE_SSL
-    d->m_ssl = 0L;
+    d->m_ssl = nullptr;
 #endif
 
     if (init) {
@@ -127,7 +127,7 @@ bool KSSL::initialize()
 
     d->m_meth = d->kossl->SSLv23_client_method();
     d->m_ctx = d->kossl->SSL_CTX_new(d->m_meth);
-    if (d->m_ctx == 0L) {
+    if (d->m_ctx == nullptr) {
         return false;
     }
 
@@ -156,7 +156,7 @@ void KSSL::close()
     if (d->m_ssl) {
         d->kossl->SSL_shutdown(d->m_ssl);
         d->kossl->SSL_free(d->m_ssl);
-        d->m_ssl = 0L;
+        d->m_ssl = nullptr;
     }
 
     d->kossl->SSL_CTX_free(d->m_ctx);

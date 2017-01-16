@@ -70,7 +70,7 @@ public:
      * Creates a null pointer.
      */
     inline KSharedPtr()
-        : d(0) { }
+        : d(nullptr) { }
 
     /**
      * Creates a new pointer.
@@ -146,7 +146,7 @@ public:
      */
     inline operator bool() const
     {
-        return (d != 0);
+        return (d != nullptr);
     }
 
     /**

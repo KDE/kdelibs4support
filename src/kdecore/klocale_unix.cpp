@@ -22,7 +22,7 @@
 KLocaleUnixPrivate::KLocaleUnixPrivate(KLocale *q_ptr, KSharedConfig::Ptr config)
     : KLocalePrivate(q_ptr)
 {
-    init(QString(), QString(), config, 0);
+    init(QString(), QString(), config, nullptr);
 }
 
 KLocaleUnixPrivate::KLocaleUnixPrivate(KLocale *q_ptr,

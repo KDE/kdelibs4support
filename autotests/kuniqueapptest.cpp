@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     KCmdLineOptions options;
     options.add("!+[argument]", ki18n("arguments passed to new instance"));
 
-    K4AboutData about("kuniqueapptest", 0, ki18n("kuniqueapptest"), "version");
+    K4AboutData about("kuniqueapptest", nullptr, ki18n("kuniqueapptest"), "version");
     KCmdLineArgs::init(argc, argv, &about);
     KCmdLineArgs::addCmdLineOptions(options);
     KUniqueApplication::addCmdLineOptions();

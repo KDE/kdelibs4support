@@ -125,7 +125,7 @@ public:
       * @see KFileWidget::KFileWidget()
       */
     KFileDialog(const QUrl &startDir, const QString &filter,
-                QWidget *parent, QWidget *widget = 0);
+                QWidget *parent, QWidget *widget = nullptr);
 
     /**
      * Destructs the file dialog.
@@ -375,7 +375,7 @@ public:
      */
     static QString getOpenFileName(const QUrl &startDir = QUrl(),
                                    const QString &filter = QString(),
-                                   QWidget *parent = 0,
+                                   QWidget *parent = nullptr,
                                    const QString &caption = QString());
 
     /**
@@ -410,7 +410,7 @@ public:
      */
     static QStringList getOpenFileNames(const QUrl &startDir = QUrl(),
                                         const QString &filter = QString(),
-                                        QWidget *parent = 0,
+                                        QWidget *parent = nullptr,
                                         const QString &caption = QString());
 
     /**
@@ -435,7 +435,7 @@ public:
      */
     static QUrl getOpenUrl(const QUrl &startDir = QUrl(),
                            const QString &filter = QString(),
-                           QWidget *parent = 0,
+                           QWidget *parent = nullptr,
                            const QString &caption = QString());
 
     /**
@@ -460,7 +460,7 @@ public:
      */
     static QList<QUrl> getOpenUrls(const QUrl &startDir = QUrl(),
                                    const QString &filter = QString(),
-                                   QWidget *parent = 0,
+                                   QWidget *parent = nullptr,
                                    const QString &caption = QString());
 
     /**
@@ -485,7 +485,7 @@ public:
      */
     static QString getSaveFileName(const QUrl &startDir = QUrl(),
                                    const QString &filter = QString(),
-                                   QWidget *parent = 0,
+                                   QWidget *parent = nullptr,
                                    const QString &caption = QString());
 
     /**
@@ -558,7 +558,7 @@ public:
      */
     static QUrl getSaveUrl(const QUrl &startDir = QUrl(),
                            const QString &filter = QString(),
-                           QWidget *parent = 0,
+                           QWidget *parent = nullptr,
                            const QString &caption = QString());
 
     /**
@@ -605,7 +605,7 @@ public:
      * @deprecated use QFileDialog::getExistingDirectory(parent, caption, startDir)
      */
     static QString getExistingDirectory(const QUrl &startDir = QUrl(),
-                                        QWidget *parent = 0,
+                                        QWidget *parent = nullptr,
                                         const QString &caption = QString());
 
     /**
@@ -624,7 +624,7 @@ public:
      * @deprecated use QFileDialog::getExistingDirectoryUrl(parent, caption, startDir)
      */
     static QUrl getExistingDirectoryUrl(const QUrl &startDir = QUrl(),
-                                        QWidget *parent = 0,
+                                        QWidget *parent = nullptr,
                                         const QString &caption = QString());
 
     /**
@@ -640,7 +640,7 @@ public:
      * @see KFileWidget::KFileWidget()
      */
     static QUrl getImageOpenUrl(const QUrl &startDir = QUrl(),
-                                QWidget *parent = 0,
+                                QWidget *parent = nullptr,
                                 const QString &caption = QString());
 
     /**

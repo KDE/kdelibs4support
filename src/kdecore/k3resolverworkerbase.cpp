@@ -37,7 +37,7 @@ using namespace KNetwork;
 using namespace KNetwork::Internal;
 
 KResolverWorkerBase::KResolverWorkerBase()
-    : th(0L), input(0L), m_finished(0), m_reserved(0)
+    : th(nullptr), input(nullptr), m_finished(0), m_reserved(0)
 {
 }
 
@@ -122,7 +122,7 @@ bool KResolverWorkerBase::enqueue(KResolverWorkerBase *worker)
 {
     RequestData *myself = th->data;
     RequestData *newrequest = new RequestData;
-    newrequest->obj = 0;
+    newrequest->obj = nullptr;
     newrequest->input = input; // same input
     newrequest->requestor = myself;
     newrequest->nRequests = 0;
@@ -134,19 +134,19 @@ bool KResolverWorkerBase::enqueue(KResolverWorkerBase *worker)
 
 bool KResolverWorkerBase::checkResolver()
 {
-    assert(th != 0L);
+    assert(th != nullptr);
     return th->checkResolver();
 }
 
 void KResolverWorkerBase::acquireResolver()
 {
-    assert(th != 0L);
+    assert(th != nullptr);
     th->acquireResolver();
 }
 
 void KResolverWorkerBase::releaseResolver()
 {
-    assert(th != 0L);
+    assert(th != nullptr);
     th->releaseResolver();
 }
 

@@ -97,12 +97,12 @@ namespace KSocketFactory
  * @threadsafe
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QString &protocol, const QString &host,
-        quint16 port, QObject *parent = 0);
+        quint16 port, QObject *parent = nullptr);
 
 /**
  * @overload
  */
-KDELIBS4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QUrl &url, QObject *parent = 0);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QTcpSocket *connectToHost(const QUrl &url, QObject *parent = nullptr);
 
 /**
  * @overload
@@ -145,13 +145,13 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT void connectToHost(QTcpSocket *socket, const Q
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QTcpSocket *synchronousConnectToHost(const QString &protocol,
         const QString &host,
         quint16 port, int msecs = 30000,
-        QObject *parent = 0);
+        QObject *parent = nullptr);
 
 /**
  * @overload
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QTcpSocket *synchronousConnectToHost(const QUrl &url, int msecs = 30000,
-        QObject *parent = 0);
+        QObject *parent = nullptr);
 
 /**
  * @overload
@@ -187,12 +187,12 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT void synchronousConnectToHost(QTcpSocket *sock
  *                  QTcpServer constructor
  */
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QTcpServer *listen(const QString &protocol, const QHostAddress &address = QHostAddress::Any,
-        quint16 port = 0, QObject *parent = 0);
+        quint16 port = 0, QObject *parent = nullptr);
 
 // These functions below aren't done yet
 // Undocumented -> don't use!
 
-KDELIBS4SUPPORT_DEPRECATED_EXPORT QUdpSocket *datagramSocket(const QString &protocol, const QString &host, QObject *parent = 0);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT QUdpSocket *datagramSocket(const QString &protocol, const QString &host, QObject *parent = nullptr);
 
 #ifndef QT_NO_NETWORKPROXY
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QNetworkProxy proxyForConnection(const QString &protocol, const QString &host);

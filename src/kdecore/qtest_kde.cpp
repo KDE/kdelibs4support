@@ -25,7 +25,7 @@ class KDESignalSpy : public QObject
     Q_OBJECT
 public:
     KDESignalSpy(QObject *obj, const char *signal, int timeout)
-        : QObject(0), m_obj(obj), m_emitted(false)
+        : QObject(nullptr), m_obj(obj), m_emitted(false)
     {
         connect(obj, signal, this, SLOT(slotSignalEmitted()));
         if (timeout > 0) {
@@ -44,7 +44,7 @@ private Q_SLOTS:
     void slotSignalEmitted()
     {
         m_emitted = true;
-        disconnect(m_obj, 0, this, 0);
+        disconnect(m_obj, nullptr, this, nullptr);
         m_timer.stop();
         m_loop.quit();
     }

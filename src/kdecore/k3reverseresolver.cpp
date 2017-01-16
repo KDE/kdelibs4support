@@ -57,7 +57,7 @@ class ReverseThread: public KResolverWorkerBase
 {
 public:
     ReverseThread(const KSocketAddress &addr, int flags)
-        : m_addr(addr), m_flags(flags), m_parent(0L)
+        : m_addr(addr), m_flags(flags), m_parent(nullptr)
     { }
 
     virtual ~ReverseThread()
@@ -109,7 +109,7 @@ public:
     bool success;
 
     inline KReverseResolverPrivate(const KSocketAddress &_addr)
-        : addr(_addr), worker(0L), success(false)
+        : addr(_addr), worker(nullptr), success(false)
     { }
 };
 
@@ -123,14 +123,14 @@ KReverseResolver::KReverseResolver(const KSocketAddress &addr, int flags,
 KReverseResolver::~KReverseResolver()
 {
     if (d->worker) {
-        d->worker->m_parent = 0L;
+        d->worker->m_parent = nullptr;
     }
     delete d;
 }
 
 bool KReverseResolver::isRunning() const
 {
-    return d->worker != 0L;
+    return d->worker != nullptr;
 }
 
 bool KReverseResolver::success() const
@@ -160,7 +160,7 @@ const KSocketAddress &KReverseResolver::address() const
 
 bool KReverseResolver::start()
 {
-    if (d->worker != 0L) {
+    if (d->worker != nullptr) {
         return true;    // already started
     }
 
@@ -168,9 +168,9 @@ bool KReverseResolver::start()
     d->worker->m_parent = this;
 
     RequestData *req = new RequestData;
-    req->obj = 0L;
-    req->input = 0L;
-    req->requestor = 0L;
+    req->obj = nullptr;
+    req->input = nullptr;
+    req->requestor = nullptr;
     req->worker = d->worker;
     KResolverManager::manager()->dispatch(req);
     return true;
@@ -189,7 +189,7 @@ bool KReverseResolver::event(QEvent *e)
 
     // don't delete d->worker!
     // KResolverManager::doNotifying takes care of that, if it hasn't already
-    d->worker = 0L;
+    d->worker = nullptr;
 
     // emit signal
     emit finished(*this);

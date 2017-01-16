@@ -45,7 +45,7 @@ public:
     /**
      * Creates a new hbox.
      */
-    explicit KHBox(QWidget *parent = 0);
+    explicit KHBox(QWidget *parent = nullptr);
 
     /**
      * Destructor.

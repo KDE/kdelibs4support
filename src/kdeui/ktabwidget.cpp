@@ -361,7 +361,7 @@ bool KTabWidget::tabCloseActivatePrevious() const
 
 int KTabWidget::tabBarWidthForMaxChars(int maxLength)
 {
-    const int hframe  = tabBar()->style()->pixelMetric(QStyle::PM_TabBarTabHSpace, 0L, tabBar());
+    const int hframe  = tabBar()->style()->pixelMetric(QStyle::PM_TabBarTabHSpace, nullptr, tabBar());
 
     const QFontMetrics fm = tabBar()->fontMetrics();
     int x = 0;
@@ -380,7 +380,7 @@ int KTabWidget::tabBarWidthForMaxChars(int maxLength)
             iw += KIconLoader::SizeSmall * 3 / 2;
         }
 #endif
-        x += (tabBar()->style()->sizeFromContents(QStyle::CT_TabBarTab, 0L,
+        x += (tabBar()->style()->sizeFromContents(QStyle::CT_TabBarTab, nullptr,
                 QSize(qMax(lw + hframe + iw, QApplication::globalStrut().width()), 0),
                 this)).width();
     }

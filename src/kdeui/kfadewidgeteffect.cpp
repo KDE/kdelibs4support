@@ -94,14 +94,14 @@ QPixmap KFadeWidgetEffectPrivate::transition(const QPixmap &from, const QPixmap 
 }
 
 KFadeWidgetEffect::KFadeWidgetEffect(QWidget *destWidget)
-    : QWidget(destWidget ? destWidget->parentWidget() : 0),
+    : QWidget(destWidget ? destWidget->parentWidget() : nullptr),
       d_ptr(new KFadeWidgetEffectPrivate(destWidget))
 {
     Q_D(KFadeWidgetEffect);
     d->q_ptr = this;
     Q_ASSERT(destWidget && destWidget->parentWidget());
     if (!destWidget || !destWidget->parentWidget() || !destWidget->isVisible() ||
-            !style()->styleHint(QStyle::SH_Widget_Animate, 0, this)) {
+            !style()->styleHint(QStyle::SH_Widget_Animate, nullptr, this)) {
         d->disabled = true;
         hide();
         return;

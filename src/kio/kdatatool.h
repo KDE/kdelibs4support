@@ -135,7 +135,7 @@ public:
      * @param parent the parent of the QObject (or 0 for parent-less KDataTools)
      * @return a pointer to the created data tool or 0 on error.
      */
-    KDataTool *createTool(QObject *parent = 0) const;
+    KDataTool *createTool(QObject *parent = nullptr) const;
 
     /**
      * The KDataToolInfo's service that is represented by this class.
@@ -251,7 +251,7 @@ public:
      * The data-tool is only created when a menu-item, that relates to it, is activated.
      * @param parent the parent of the QObject (or 0 for parent-less KDataTools)
      */
-    KDataTool(QObject *parent = 0);
+    KDataTool(QObject *parent = nullptr);
 
     /**
      * Destructor

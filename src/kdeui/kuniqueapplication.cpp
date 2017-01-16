@@ -86,7 +86,7 @@ KUniqueApplication::addCmdLineOptions()
 static QDBusConnectionInterface *tryToInitDBusConnection()
 {
     // Check the D-Bus connection health
-    QDBusConnectionInterface *dbusService = 0;
+    QDBusConnectionInterface *dbusService = nullptr;
     QDBusConnection sessionBus = QDBusConnection::sessionBus();
     if (!sessionBus.isConnected() || !(dbusService = sessionBus.interface())) {
         kError() << "KUniqueApplication: Cannot find the D-Bus session server: " << sessionBus.lastError().message() << endl;
@@ -97,7 +97,7 @@ static QDBusConnectionInterface *tryToInitDBusConnection()
 
 bool KUniqueApplication::start()
 {
-    return start(0);
+    return start(nullptr);
 }
 
 bool
@@ -207,15 +207,15 @@ KUniqueApplication::start(StartFlags flags)
 
 #if HAVE_X11
         KStartupInfoId id;
-        if (kapp != NULL) { // KApplication constructor unsets the env. variable
+        if (kapp != nullptr) { // KApplication constructor unsets the env. variable
             id.initId(kapp->startupId());
         } else {
             id = KStartupInfo::currentStartupIdEnv();
         }
         if (!id.none()) {
             // notice about pid change
-            Display *disp = XOpenDisplay(NULL);
-            if (disp != NULL) { // use extra X connection
+            Display *disp = XOpenDisplay(nullptr);
+            if (disp != nullptr) { // use extra X connection
                 KStartupInfoData data;
                 data.addPid(getpid());
                 KStartupInfo::sendChangeX(disp, id, data);
@@ -274,7 +274,7 @@ KUniqueApplication::start(StartFlags flags)
         QByteArray new_asn_id;
 #if HAVE_X11
         KStartupInfoId id;
-        if (kapp != NULL) { // KApplication constructor unsets the env. variable
+        if (kapp != nullptr) { // KApplication constructor unsets the env. variable
             id.initId(kapp->startupId());
         } else {
             id = KStartupInfo::currentStartupIdEnv();

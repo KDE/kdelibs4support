@@ -71,8 +71,8 @@ namespace KInputDialog
  */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const QString &label,
-        const QString &value = QString(), bool *ok = 0, QWidget *parent = 0,
-        QValidator *validator = 0,
+        const QString &value = QString(), bool *ok = nullptr, QWidget *parent = nullptr,
+        QValidator *validator = nullptr,
         const QString &mask = QString(),
         const QString &whatsThis = QString(),
         const QStringList &completionList = QStringList());
@@ -98,7 +98,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const 
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &caption,
         const QString &label, const QString &value = QString(),
-        bool *ok = 0, QWidget *parent = 0);
+        bool *ok = nullptr, QWidget *parent = nullptr);
 #endif
 
 /**
@@ -127,7 +127,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getMultiLineText(const QString &captio
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
         int value = 0, int minValue = INT_MIN, int maxValue = INT_MAX,
-        int step = 1, int base = 10, bool *ok = 0, QWidget *parent = 0);
+        int step = 1, int base = 10, bool *ok = nullptr, QWidget *parent = nullptr);
 #endif
 
 /**
@@ -138,7 +138,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const Q
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const QString &label,
         int value = 0, int minValue = INT_MIN, int maxValue = INT_MAX,
-        int step = 1, bool *ok = 0, QWidget *parent = 0);
+        int step = 1, bool *ok = nullptr, QWidget *parent = nullptr);
 #endif
 
 /**
@@ -168,7 +168,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT int getInteger(const QString &caption, const Q
 KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
         double value = 0, double minValue = -DBL_MAX,
         double maxValue = DBL_MAX, double step = 0.1, int decimals = 1,
-        bool *ok = 0, QWidget *parent = 0);
+        bool *ok = nullptr, QWidget *parent = nullptr);
 #endif
 
 /**
@@ -179,8 +179,8 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const QString &label,
         double value = 0, double minValue = -DBL_MAX,
-        double maxValue = DBL_MAX, int decimals = 1, bool *ok = 0,
-        QWidget *parent = 0);
+        double maxValue = DBL_MAX, int decimals = 1, bool *ok = nullptr,
+        QWidget *parent = nullptr);
 #endif
 
 /**
@@ -206,7 +206,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT double getDouble(const QString &caption, const
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const QString &label,
         const QStringList &list, int current = 0, bool editable = false,
-        bool *ok = 0, QWidget *parent = 0);
+        bool *ok = nullptr, QWidget *parent = nullptr);
 #endif
 
 /**
@@ -234,7 +234,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getItem(const QString &caption, const 
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QStringList getItemList(const QString &caption,
         const QString &label, const QStringList &list = QStringList(),
         const QStringList &select = QStringList(), bool multiple = false,
-        bool *ok = 0, QWidget *parent = 0);
+        bool *ok = nullptr, QWidget *parent = nullptr);
 #endif
 }
 

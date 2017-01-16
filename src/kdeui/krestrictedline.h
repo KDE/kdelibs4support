@@ -58,7 +58,7 @@ public:
      * Constructor
      *  @param parent   pointer to the parent widget
      */
-    explicit KRestrictedLine(QWidget *parent = 0);
+    explicit KRestrictedLine(QWidget *parent = nullptr);
 
     /**
      * Destructs the restricted line editor.

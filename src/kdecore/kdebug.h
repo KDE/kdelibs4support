@@ -82,8 +82,8 @@
  * @internal
  * Returns a debug stream that may or may not output anything.
  */
-KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE QDebug kDebugStream(QtMsgType level, int area, const char *file = 0,
-        int line = -1, const char *funcinfo = 0);
+KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE QDebug kDebugStream(QtMsgType level, int area, const char *file = nullptr,
+        int line = -1, const char *funcinfo = nullptr);
 
 /**
  * @internal
@@ -303,7 +303,7 @@ class KDebug                    //krazy= ?
     QtMsgType level;
 public:
     class Block;
-    explicit inline KDebug(QtMsgType type, const char *f = 0, int l = -1, const char *info = 0)
+    explicit inline KDebug(QtMsgType type, const char *f = nullptr, int l = -1, const char *info = nullptr)
         : file(f), funcinfo(info), line(l), level(type)
     {
 #ifdef KDE4_CMAKE_TOPLEVEL_DIR_LENGTH // set by FindKDE4Internal.cmake

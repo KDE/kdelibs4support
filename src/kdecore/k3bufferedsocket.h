@@ -68,7 +68,7 @@ public:
      * @param parent      the parent object for this object
      */
     explicit KBufferedSocket(const QString &node = QString(), const QString &service = QString(),
-                             QObject *parent = 0L);
+                             QObject *parent = nullptr);
 
     /**
      * Destructor.
@@ -103,7 +103,7 @@ public:
     /**
      * Make use of buffers.
      */
-    qint64 waitForMore(int msecs, bool *timeout = 0L) Q_DECL_OVERRIDE;
+    qint64 waitForMore(int msecs, bool *timeout = nullptr) Q_DECL_OVERRIDE;
 
     /**
      * Catch changes.

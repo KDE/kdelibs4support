@@ -109,7 +109,7 @@
 #include <QActionEvent>
 #include <kcomponentdata.h>
 
-KApplication *KApplication::KApp = 0L;
+KApplication *KApplication::KApp = nullptr;
 
 #if HAVE_X11
 static Atom atom_DesktopWindow;
@@ -123,7 +123,7 @@ template class QList<KSessionManager *>;
 void KApplication_init_windows();
 #endif
 
-static KApplicationPrivate *kapp_priv = 0;
+static KApplicationPrivate *kapp_priv = nullptr;
 
 /*
   Private data to make keeping binary compatibility easier
@@ -136,12 +136,12 @@ public:
         , componentData(cName)
         , session_save(false)
 #if HAVE_X11
-        , oldIceIOErrorHandler(0)
-        , oldXErrorHandler(0)
-        , oldXIOErrorHandler(0)
+        , oldIceIOErrorHandler(nullptr)
+        , oldXErrorHandler(nullptr)
+        , oldXIOErrorHandler(nullptr)
         , isX11(false)
 #endif
-        , pSessionConfig(0)
+        , pSessionConfig(nullptr)
         , bSessionManagement(true)
     {
         kapp_priv = this;
@@ -152,12 +152,12 @@ public:
         , componentData(cData)
         , session_save(false)
 #if HAVE_X11
-        , oldIceIOErrorHandler(0)
-        , oldXErrorHandler(0)
-        , oldXIOErrorHandler(0)
+        , oldIceIOErrorHandler(nullptr)
+        , oldXErrorHandler(nullptr)
+        , oldXIOErrorHandler(nullptr)
         , isX11(false)
 #endif
-        , pSessionConfig(0)
+        , pSessionConfig(nullptr)
         , bSessionManagement(true)
     {
         kapp_priv = this;
@@ -168,12 +168,12 @@ public:
         , componentData(KCmdLineArgs::aboutData())
         , session_save(false)
 #if HAVE_X11
-        , oldIceIOErrorHandler(0)
-        , oldXErrorHandler(0)
-        , oldXIOErrorHandler(0)
+        , oldIceIOErrorHandler(nullptr)
+        , oldXErrorHandler(nullptr)
+        , oldXIOErrorHandler(nullptr)
         , isX11(false)
 #endif
-        , pSessionConfig(0)
+        , pSessionConfig(nullptr)
         , bSessionManagement(true)
     {
         kapp_priv = this;
@@ -235,7 +235,7 @@ extern "C" {
 }
 #endif
 
-static QList< QPointer< QWidget > > *x11Filter = 0;
+static QList< QPointer< QWidget > > *x11Filter = nullptr;
 
 /**
    * Installs a handler for the SIGPIPE signal. It is thrown when you write to
@@ -251,7 +251,7 @@ static void installSigpipeHandler()
     act.sa_handler = SIG_IGN;
     sigemptyset(&act.sa_mask);
     act.sa_flags = 0;
-    sigaction(SIGPIPE, &act, 0);
+    sigaction(SIGPIPE, &act, nullptr);
 #endif
 }
 
@@ -283,18 +283,18 @@ void KApplication::removeX11EventFilter(const QWidget *filter)
             it.hasNext();
         ) {
         QWidget *w = it.next().data();
-        if (w == filter || w == NULL) {
+        if (w == filter || w == nullptr) {
             it.remove();
         }
     }
     if (x11Filter->isEmpty()) {
         delete x11Filter;
-        x11Filter = 0;
+        x11Filter = nullptr;
     }
 }
 
 #if HAVE_X11
-static SmcConn mySmcConnection = 0;
+static SmcConn mySmcConnection = nullptr;
 #else
 // FIXME(E): Implement for Qt Embedded
 // Possibly "steal" XFree86's libSM?
@@ -349,7 +349,7 @@ http://thread.gmane.org/gmane.comp.kde.devel.frameworks/1122
     emit kapp->aboutToQuit();
 #endif
 
-    if (oldIceIOErrorHandler != NULL) {
+    if (oldIceIOErrorHandler != nullptr) {
         (*oldIceIOErrorHandler)(conn);
     }
     exit(1);
@@ -414,7 +414,7 @@ void KApplicationPrivate::init(bool GUIenabled)
     // sanity checking, to make sure we've connected
     extern void qDBusBindToApplication();
     qDBusBindToApplication();
-    QDBusConnectionInterface *bus = 0;
+    QDBusConnectionInterface *bus = nullptr;
     if (!QDBusConnection::sessionBus().isConnected() || !(bus = QDBusConnection::sessionBus().interface())) {
         kFatal(240) << "Session bus not found" << endl <<
                     "To circumvent this problem try the following command (with Linux and bash)" << endl <<
@@ -468,7 +468,7 @@ void KApplicationPrivate::init(bool GUIenabled)
     // Trigger initial settings
     KGlobalSettings::self()->activate();
 
-    KMessage::setMessageHandler(new KMessageBoxMessageHandler(0));
+    KMessage::setMessageHandler(new KMessageBoxMessageHandler(nullptr));
 
     KGestureMap::self()->installEventFilterOnMe(q);
 
@@ -809,23 +809,23 @@ KApplication::~KApplication()
 {
 #if HAVE_X11
     if (d->isX11) {
-        if (d->oldXErrorHandler != NULL) {
+        if (d->oldXErrorHandler != nullptr) {
             XSetErrorHandler(d->oldXErrorHandler);
         }
-        if (d->oldXIOErrorHandler != NULL) {
+        if (d->oldXIOErrorHandler != nullptr) {
             XSetIOErrorHandler(d->oldXIOErrorHandler);
         }
-        if (d->oldIceIOErrorHandler != NULL) {
+        if (d->oldIceIOErrorHandler != nullptr) {
             IceSetIOErrorHandler(d->oldIceIOErrorHandler);
         }
     }
 #endif
 
     delete d;
-    KApp = 0;
+    KApp = nullptr;
 
 #if HAVE_X11
-    mySmcConnection = 0;
+    mySmcConnection = nullptr;
 #endif
 }
 

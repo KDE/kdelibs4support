@@ -30,7 +30,7 @@ class WicdStatus : public SystemStatusInterface
 {
     Q_OBJECT
 public:
-    WicdStatus( QObject *parent = 0 );
+    WicdStatus( QObject *parent = nullptr );
 
     Solid::Networking::Status status() const Q_DECL_OVERRIDE;
     bool isSupported() const Q_DECL_OVERRIDE;

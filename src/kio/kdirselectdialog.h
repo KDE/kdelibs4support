@@ -47,7 +47,7 @@ public:
      */
     explicit KDirSelectDialog(const QUrl &startDir = QUrl(),
                               bool localOnly = false,
-                              QWidget *parent = 0L);
+                              QWidget *parent = nullptr);
 
     /**
      * Destroys the directory selection dialog.
@@ -86,7 +86,7 @@ public:
      * or QFileDialog::getExistingDirectoryUrl (if localOnly was false) instead.
      */
     static KDELIBS4SUPPORT_DEPRECATED QUrl selectDirectory(const QUrl &startDir = QUrl(),
-            bool localOnly = false, QWidget *parent = 0L,
+            bool localOnly = false, QWidget *parent = nullptr,
             const QString &caption = QString());
 
     /**

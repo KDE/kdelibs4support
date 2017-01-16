@@ -36,7 +36,7 @@
 class KPushButton::KPushButtonPrivate
 {
 public:
-    KPushButtonPrivate(KPushButton *_parent) : parent(_parent), m_dragEnabled(false), decorator(0)
+    KPushButtonPrivate(KPushButton *_parent) : parent(_parent), m_dragEnabled(false), decorator(nullptr)
     {
     }
 
@@ -58,12 +58,12 @@ public:
 void KPushButton::KPushButtonPrivate::slotPressedInternal()
 {
     if (!delayedMenu.isNull()) {
-        if (delayedMenuTimer == 0) {
+        if (delayedMenuTimer == nullptr) {
             delayedMenuTimer = new QTimer(parent);
             delayedMenuTimer->setSingleShot(true);
             connect(delayedMenuTimer, SIGNAL(timeout()), parent, SLOT(slotDelayedMenuTimeout()));
         }
-        const int delay = parent->style()->styleHint(QStyle::SH_ToolButton_PopupDelay, 0, parent);
+        const int delay = parent->style()->styleHint(QStyle::SH_ToolButton_PopupDelay, nullptr, parent);
         delayedMenuTimer->start((delay <= 0) ? 150 : delay);
     }
 }
@@ -81,7 +81,7 @@ void KPushButton::KPushButtonPrivate::slotDelayedMenuTimeout()
     if (!delayedMenu.isNull()) {
         parent->setMenu(delayedMenu);
         parent->showMenu();
-        parent->setMenu(0);
+        parent->setMenu(nullptr);
     }
 }
 
@@ -122,7 +122,7 @@ void KPushButton::initWidget(const KGuiItem &item)
             this, SIGNAL(authorized(KAuth::Action)));
 
     d->itemType = (KStandardGuiItem::StandardItem) 0;
-    d->delayedMenuTimer = 0;
+    d->delayedMenuTimer = nullptr;
 
     connect(this, SIGNAL(pressed()), this, SLOT(slotPressedInternal()));
     connect(this, SIGNAL(clicked()), this, SLOT(slotClickedInternal()));
@@ -157,7 +157,7 @@ void KPushButton::setText(const QString &text)
 
 void KPushButton::setIcon(const QIcon &icon)
 {
-    const bool useIcons = style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons, 0, this);
+    const bool useIcons = style()->styleHint(QStyle::SH_DialogButtonBox_ButtonsHaveIcons, nullptr, this);
     if (useIcons || text().isEmpty()) {
         QPushButton::setIcon(icon);
     } else {
@@ -195,7 +195,7 @@ void KPushButton::mouseMoveEvent(QMouseEvent *e)
 
 QDrag *KPushButton::dragObject()
 {
-    return 0;
+    return nullptr;
 }
 
 void KPushButton::startDrag()
@@ -239,7 +239,7 @@ QSize KPushButton::sizeHint() const
     }
     const QSize sz = QPushButton::sizeHint();
     if (tempSetMenu) {
-        const_cast<KPushButton *>(this)->setMenu(0);
+        const_cast<KPushButton *>(this)->setMenu(nullptr);
     }
     return sz;
 }

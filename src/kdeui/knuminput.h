@@ -53,7 +53,7 @@ public:
      * window. If parent is another widget, this widget becomes a child
      * window inside parent. The new widget is deleted when its parent is deleted.
      */
-    explicit KNumInput(QWidget *parent = 0);
+    explicit KNumInput(QWidget *parent = nullptr);
 
     /**
      * @param below A pointer to another KNumInput.
@@ -192,7 +192,7 @@ public:
      * Constructs an input control for integer values
      * with base 10 and initial value 0.
      */
-    explicit KIntNumInput(QWidget *parent = 0);
+    explicit KIntNumInput(QWidget *parent = nullptr);
     /**
      * Constructor
      * It constructs a QSpinBox that allows the input of integer numbers
@@ -204,7 +204,7 @@ public:
      * @param base   numeric base used for display
      * @param parent parent QWidget
      */
-    explicit KIntNumInput(int value, QWidget *parent = 0, int base = 10);
+    explicit KIntNumInput(int value, QWidget *parent = nullptr, int base = 10);
 
     /**
      * Constructor
@@ -473,7 +473,7 @@ public:
      * Constructs an input control for double values
      * with initial value 0.00.
      */
-    explicit KDoubleNumInput(QWidget *parent = 0);
+    explicit KDoubleNumInput(QWidget *parent = nullptr);
 
     /**
      * Constructor
@@ -485,7 +485,7 @@ public:
      * @param precision number of digits after the decimal point
      * @param parent parent QWidget
      */
-    KDoubleNumInput(double lower, double upper, double value, QWidget *parent = 0, double singleStep = 0.01,
+    KDoubleNumInput(double lower, double upper, double value, QWidget *parent = nullptr, double singleStep = 0.01,
                     int precision = 2);
 
     /**
@@ -516,7 +516,7 @@ public:
      */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     KDELIBS4SUPPORT_DEPRECATED KDoubleNumInput(KNumInput *below,
-                                           double lower, double upper, double value, QWidget *parent = 0, double singleStep = 0.02,
+                                           double lower, double upper, double value, QWidget *parent = nullptr, double singleStep = 0.02,
                                            int precision = 2);
 #endif
 
@@ -736,7 +736,7 @@ public:
      *  and a slider, with minimal value 0, maximal value 99, step 1, base 10
      *  and initial value 0.
      */
-    explicit KIntSpinBox(QWidget *parent = 0);
+    explicit KIntSpinBox(QWidget *parent = nullptr);
 
     /**
      *  Constructor.

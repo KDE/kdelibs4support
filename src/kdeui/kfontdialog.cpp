@@ -34,7 +34,7 @@ class KFontDialog::Private
 {
 public:
     Private()
-        : chooser(0)
+        : chooser(nullptr)
     {
     }
 

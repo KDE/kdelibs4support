@@ -135,7 +135,7 @@ QString KCalendarSystem::calendarLabel(KLocale::CalendarSystem calendarSystem, c
 
 KCalendarSystemPrivate::KCalendarSystemPrivate(KCalendarSystem *q_ptr)
     : q(q_ptr),
-      m_eraList(0),
+      m_eraList(nullptr),
       m_shortYearWindowStartYear(2000)
 {
 }
@@ -251,12 +251,12 @@ int KCalendarSystemPrivate::isoWeeksInYear(int year) const
 
 int KCalendarSystemPrivate::regularWeeksInYear(int year, int weekStartDay, int firstWeekNumber) const
 {
-    return regularWeekNumber(lastDayOfYear(year), weekStartDay, firstWeekNumber, 0);
+    return regularWeekNumber(lastDayOfYear(year), weekStartDay, firstWeekNumber, nullptr);
 }
 
 int KCalendarSystemPrivate::simpleWeeksInYear(int year) const
 {
-    return simpleWeekNumber(lastDayOfYear(year), 0);
+    return simpleWeekNumber(lastDayOfYear(year), nullptr);
 }
 
 // Reimplement if special maths handling required, e.g. Hebrew.
@@ -272,7 +272,7 @@ void KCalendarSystemPrivate::dateDifference(const QDate &fromDate, const QDate &
     int dir = 1;
 
     if (toDate < fromDate) {
-        dateDifference(toDate, fromDate, &dy, &dm, &dd, 0);
+        dateDifference(toDate, fromDate, &dy, &dm, &dd, nullptr);
         dir = -1;
     } else if (toDate > fromDate) {
 
@@ -1400,7 +1400,7 @@ QDate KCalendarSystem::firstDayOfMonth(const QDate &date) const
 
     if (isValid(date)) {
         int year, month;
-        getDate(date, &year, &month, 0);
+        getDate(date, &year, &month, nullptr);
         return d->firstDayOfMonth(year, month);
     }
 
@@ -1414,7 +1414,7 @@ QDate KCalendarSystem::lastDayOfMonth(const QDate &date) const
 
     if (isValid(date)) {
         int year, month;
-        getDate(date, &year, &month, 0);
+        getDate(date, &year, &month, nullptr);
         return d->lastDayOfMonth(year, month);
     }
 
@@ -1453,7 +1453,7 @@ QString KCalendarSystem::monthName(const QDate &date, MonthNameFormat format) co
 {
     if (isValid(date)) {
         int year, month;
-        getDate(date, &year, &month, 0);
+        getDate(date, &year, &month, nullptr);
         return monthName(month, year, format);
     }
 
@@ -1724,13 +1724,13 @@ QString KCalendarSystem::formatDate(const QDate &date, KLocale::DateTimeComponen
         switch (format) {
         case KLocale::LongNumber:
         case KLocale::LongName:
-            return d->stringFromInteger(week(date, weekNumberSystem, 0), 2, QLatin1Char('0'));
+            return d->stringFromInteger(week(date, weekNumberSystem, nullptr), 2, QLatin1Char('0'));
         case KLocale::ShortName:
         case KLocale::NarrowName:
         case KLocale::ShortNumber:
         case KLocale::DefaultComponentFormat:
         default:
-            return d->stringFromInteger(week(date, weekNumberSystem, 0), 0, QLatin1Char('0'));
+            return d->stringFromInteger(week(date, weekNumberSystem, nullptr), 0, QLatin1Char('0'));
         }
     case KLocale::WeekYear: {
         int weekYear;

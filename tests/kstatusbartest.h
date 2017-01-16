@@ -12,7 +12,7 @@ class testWindow  : public KXmlGuiWindow
     Q_OBJECT
 
 public:
-    testWindow(QWidget *parent = 0);
+    testWindow(QWidget *parent = nullptr);
     ~testWindow();
 
 public Q_SLOTS:

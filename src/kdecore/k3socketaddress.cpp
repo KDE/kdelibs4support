@@ -74,8 +74,8 @@ static const char localhostV6_data[] = { 0, 0, 0, 0,  0, 0, 0, 0,  0, 0, 0, 0,  
 
 const KIpAddress KIpAddress::localhostV4(&localhostV4_data, 4);
 const KIpAddress KIpAddress::localhostV6(&localhostV6_data, 6);
-const KIpAddress KIpAddress::anyhostV4(0L, 4);
-const KIpAddress KIpAddress::anyhostV6(0L, 6);
+const KIpAddress KIpAddress::anyhostV4(nullptr, 4);
+const KIpAddress KIpAddress::anyhostV6(nullptr, 6);
 
 // helper function to test if an IPv6 v4-mapped address is equal to its IPv4 counterpart
 static bool check_v4mapped(const quint32 *v6addr, quint32 v4addr)
@@ -179,7 +179,7 @@ bool KIpAddress::setAddress(const void *raw, int version)
     }
 
     m_version = version;
-    if (raw != 0L) {
+    if (raw != nullptr) {
         memcpy(m_data, raw, version == 4 ? 4 : 16);
     } else {
         memset(m_data, 0, 16);
@@ -261,14 +261,14 @@ public:
     KSocketAddressData()
         : ref(this)
     {
-        addr.generic = 0L;
+        addr.generic = nullptr;
         curlen = 0;
         invalidate();
     }
 
     ~KSocketAddressData()
     {
-        if (addr.generic != 0L) {
+        if (addr.generic != nullptr) {
             free(addr.generic);
         }
     }
@@ -300,7 +300,7 @@ public:
             }
 
         // create new space
-        dup(0L, SOCKADDR_IN_LEN);
+        dup(nullptr, SOCKADDR_IN_LEN);
 
         addr.in->sin_family = AF_INET;
 #if HAVE_STRUCT_SOCKADDR_SA_LEN
@@ -325,7 +325,7 @@ public:
             }
 
         // make room
-        dup(0L, SOCKADDR_IN6_LEN);
+        dup(nullptr, SOCKADDR_IN6_LEN);
 #ifdef AF_INET6
         addr.in6->sin6_family = AF_INET6;
 #endif
@@ -368,7 +368,7 @@ void KSocketAddressData::dup(const sockaddr *sa, quint16 len, bool clear)
         addr.generic = (sockaddr *)realloc(addr.generic, curlen);
     }
 
-    if (sa != 0L) {
+    if (sa != nullptr) {
         memcpy(addr.generic, sa, len); // copy
 
         // now, normalise the data
@@ -425,8 +425,8 @@ KSocketAddress::~KSocketAddress()
 {
     // prevent double-deletion, since we're already being deleted
     if (d) {
-        d->ref.KInetSocketAddress::d = 0L;
-        d->ref.KUnixSocketAddress::d = 0L;
+        d->ref.KInetSocketAddress::d = nullptr;
+        d->ref.KUnixSocketAddress::d = nullptr;
         delete d;
     }
 }
@@ -444,7 +444,7 @@ KSocketAddress &KSocketAddress::operator =(const KSocketAddress &other)
 const sockaddr *KSocketAddress::address() const
 {
     if (d->invalid()) {
-        return 0L;
+        return nullptr;
     }
     return d->addr.generic;
 }
@@ -452,14 +452,14 @@ const sockaddr *KSocketAddress::address() const
 sockaddr *KSocketAddress::address()
 {
     if (d->invalid()) {
-        return 0L;
+        return nullptr;
     }
     return d->addr.generic;
 }
 
 KSocketAddress &KSocketAddress::setAddress(const sockaddr *sa, quint16 len)
 {
-    if (sa != 0L && len >= MIN_SOCKADDR_LEN) {
+    if (sa != nullptr && len >= MIN_SOCKADDR_LEN) {
         d->dup(sa, len);
     } else {
         d->invalidate();
@@ -478,7 +478,7 @@ quint16 KSocketAddress::length() const
 
 KSocketAddress &KSocketAddress::setLength(quint16 len)
 {
-    d->dup((sockaddr *)0L, len, false);
+    d->dup((sockaddr *)nullptr, len, false);
 
     return *this;
 }
@@ -494,7 +494,7 @@ int KSocketAddress::family() const
 KSocketAddress &KSocketAddress::setFamily(int family)
 {
     if (d->invalid()) {
-        d->dup((sockaddr *)0L, MIN_SOCKADDR_LEN);
+        d->dup((sockaddr *)nullptr, MIN_SOCKADDR_LEN);
     }
     d->addr.generic->sa_family = family;
 
@@ -957,7 +957,7 @@ QString KUnixSocketAddress::pathname() const
 
 KUnixSocketAddress &KUnixSocketAddress::setPathname(const QString &path)
 {
-    d->dup(0L, MIN_SOCKADDR_UN_LEN + path.length());
+    d->dup(nullptr, MIN_SOCKADDR_UN_LEN + path.length());
     d->addr.un->sun_family = AF_UNIX;
     strcpy(d->addr.un->sun_path, QFile::encodeName(path));
 

@@ -90,7 +90,7 @@ public:
      * @param parent      the parent object (see QObject)
      */
     explicit KReverseResolver(const KSocketAddress &addr, int flags = 0,
-                              QObject *parent = 0L);
+                              QObject *parent = nullptr);
 
     /**
      * Destructor.

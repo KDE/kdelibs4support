@@ -363,8 +363,8 @@ bool KStreamSocket::bindLocallyFor(const KResolverEntry &peer)
 
 void KStreamSocket::connectionSucceeded(const KResolverEntry &peer)
 {
-    QObject::disconnect(socketDevice()->readNotifier(), 0, this, SLOT(connectionEvent()));
-    QObject::disconnect(socketDevice()->writeNotifier(), 0, this, SLOT(connectionEvent()));
+    QObject::disconnect(socketDevice()->readNotifier(), nullptr, this, SLOT(connectionEvent()));
+    QObject::disconnect(socketDevice()->writeNotifier(), nullptr, this, SLOT(connectionEvent()));
 
     resetError();
     KActiveSocketBase::open(ReadWrite | Unbuffered);

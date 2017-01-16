@@ -38,7 +38,7 @@ public:
      * Constructs a KUndoStack with @p parent as parent
      * @param parent parent of the object
      */
-    KUndoStack(QObject *parent = 0);
+    KUndoStack(QObject *parent = nullptr);
 
     /**
      * Creates an redo action with the default shortcut and icon and adds it to @p actionCollection

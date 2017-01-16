@@ -537,7 +537,7 @@ KUrl::operator QVariant() const
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 bool KUrl::cmp(const KUrl &u, bool ignore_trailing) const
 {
-    return equals(u, ignore_trailing ? CompareWithoutTrailingSlash : EqualsOptions(0));
+    return equals(u, ignore_trailing ? CompareWithoutTrailingSlash : EqualsOptions(nullptr));
 }
 #endif
 

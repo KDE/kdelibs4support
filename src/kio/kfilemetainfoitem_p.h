@@ -39,7 +39,7 @@ class KFileWritePlugin;
 class KFileMetaInfoItemPrivate : public QSharedData
 {
 public:
-    KFileMetaInfoItemPrivate() : writer(0) {}
+    KFileMetaInfoItemPrivate() : writer(nullptr) {}
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
     PredicateProperties pp;
 #else

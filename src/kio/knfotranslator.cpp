@@ -107,7 +107,7 @@ static const TranslationItem g_translations[] = {
     { "translation.translated", I18N_NOOP2_NOSTRIP("@label Number of translated strings", "Translated") },
     { "translation.translation_date", I18N_NOOP2_NOSTRIP("@label", "Translation Date") },
     { "translation.untranslated", I18N_NOOP2_NOSTRIP("@label Number of untranslated strings", "Untranslated") },
-    { 0, 0, 0 } // mandatory last entry
+    { nullptr, nullptr, nullptr } // mandatory last entry
 };
 
 class KNfoTranslatorSingleton
@@ -160,7 +160,7 @@ KNfoTranslator::KNfoTranslator() :
     m_hash()
 {
     const TranslationItem *item = &g_translations[0];
-    while (item->key != 0) {
+    while (item->key != nullptr) {
         m_hash.insert(item->key, i18nc(item->context, item->value));
         ++item;
     }

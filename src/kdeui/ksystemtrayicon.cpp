@@ -61,7 +61,7 @@ public:
         hasQuit = false;
         onAllDesktops = false;
         window = parent;
-        movie = 0;
+        movie = nullptr;
 #ifdef Q_OS_WIN
         if (window) {
             window->installEventFilter(this);
@@ -357,7 +357,7 @@ void KSystemTrayIcon::toggleActive()
 
 bool KSystemTrayIcon::parentWidgetTrayClose() const
 {
-    if (kapp != NULL && kapp->sessionSaving()) {
+    if (kapp != nullptr && kapp->sessionSaving()) {
         return false;    // normal close
     }
     return true;

@@ -109,7 +109,7 @@ public:
      * @param parent  the parent QObject object
      */
     explicit KStreamSocket(const QString &node = QString(), const QString &service = QString(),
-                           QObject *parent = 0L);
+                           QObject *parent = nullptr);
 
     /**
      * Destructor. This closes the socket.

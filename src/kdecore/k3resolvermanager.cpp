@@ -250,7 +250,7 @@ static const int maxThreads = 5;
 static pid_t pid;       // FIXME -- disable when everything is ok
 
 KResolverThread::KResolverThread()
-    : data(0L)
+    : data(nullptr)
 {
 }
 
@@ -316,7 +316,7 @@ static KResolverManager *globalManager;
 
 KResolverManager *KResolverManager::manager()
 {
-    if (globalManager == 0L) {
+    if (globalManager == nullptr) {
         new KResolverManager();
     }
     return globalManager;
@@ -404,7 +404,7 @@ RequestData *KResolverManager::findData(KResolverThread *th)
     }
 
     // found nothing!
-    return 0L;
+    return nullptr;
 }
 
 // this function is called by KResolverThread::run
@@ -422,7 +422,7 @@ void KResolverManager::releaseData(KResolverThread *, RequestData *data)
     }
 
     data->worker->m_finished = true;
-    data->worker->th = 0L;    // this releases the object
+    data->worker->th = nullptr;    // this releases the object
 
     // handle finished requests
     handleFinished();
@@ -447,7 +447,7 @@ void KResolverManager::handleFinished()
     it.toBack();
     while (it.hasPrevious()) {
         RequestData *curr = it.previous();
-        if (curr->worker->th == 0L) {
+        if (curr->worker->th == nullptr) {
             if (handleFinishedItem(curr)) {
                 it.remove();
                 doneRequests.enqueue(curr);
@@ -542,7 +542,7 @@ KResolverWorkerBase *KResolverManager::findWorker(KResolverPrivate *p)
     }
 
     // found no worker
-    return 0L;
+    return nullptr;
 }
 
 void KResolverManager::doNotifying(RequestData *p)
@@ -649,7 +649,7 @@ void KResolverManager::enqueue(KResolver *obj, RequestData *requestor)
 
     // when processing a new request, find the most
     // suitable worker
-    if ((newrequest->worker = findWorker(obj->d)) == 0L) {
+    if ((newrequest->worker = findWorker(obj->d)) == nullptr) {
         // oops, problem
         // cannot find a worker class for this guy
         obj->d->status = KResolver::Failed;
@@ -722,14 +722,14 @@ void KResolverManager::dispatch(RequestData *data)
         // yes, a new thread should be started
 
         // find if there's a finished one
-        KResolverThread *th = 0L;
+        KResolverThread *th = nullptr;
         for (int i = 0; i < workers.size(); ++i)
             if (!workers[i]->isRunning()) {
                 th = workers[i];
                 break;
             }
 
-        if (th == 0L) {
+        if (th == nullptr) {
             // no, create one
             th = new KResolverThread;
             workers.append(th);
@@ -793,10 +793,10 @@ bool KResolverManager::dequeueNew(KResolver *obj)
             d->syserror = 0;
 
             // disengage from the running threads
-            curr->obj = 0L;
-            curr->input = 0L;
+            curr->obj = nullptr;
+            curr->input = nullptr;
             if (curr->worker) {
-                curr->worker->input = 0L;
+                curr->worker->input = nullptr;
             }
 
             d->mutex.unlock();

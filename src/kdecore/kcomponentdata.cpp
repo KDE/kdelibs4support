@@ -39,7 +39,7 @@
 #endif
 
 KComponentData::KComponentData()
-    : d(0)
+    : d(nullptr)
 {
 }
 
@@ -172,13 +172,13 @@ KComponentData::~KComponentData()
 {
     if (d) {
         d->deref();
-        d = 0;
+        d = nullptr;
     }
 }
 
 bool KComponentData::isValid() const
 {
-    return (d != 0);
+    return (d != nullptr);
 }
 
 void KComponentDataPrivate::lazyInit()
@@ -220,7 +220,7 @@ void KComponentDataPrivate::configInit()
         KConfigGroup cg(sharedConfig, "KDE Action Restrictions");
         QString kioskException = cg.readEntry("kiosk_exception");
         if (!cg.readEntry("custom_config", true)) {
-            sharedConfig = 0;
+            sharedConfig = nullptr;
         }
     }
 
@@ -232,7 +232,7 @@ void KComponentDataPrivate::configInit()
     // Check if we are excempt from kiosk restrictions
     if (kde_kiosk_admin && !kde_kiosk_exception && !qgetenv("KDE_KIOSK_NO_RESTRICTIONS").isEmpty()) {
         kde_kiosk_exception = true;
-        sharedConfig = 0;
+        sharedConfig = nullptr;
         configInit(); // Reread...
     }
 }

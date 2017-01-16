@@ -46,7 +46,7 @@ void queuedDetailedErrorWId(WId parent_id,  const QString &text,
 {
     KMessageBox_exec_hook = &queued_dialog_exec;
     (void) detailedErrorWId(parent_id, text, details, caption);
-    KMessageBox_exec_hook = 0;
+    KMessageBox_exec_hook = nullptr;
 }
 
 void queuedMessageBox(QWidget *parent, DialogType type, const QString &text, const QString &caption, Options options)
@@ -59,7 +59,7 @@ void queuedMessageBoxWId(WId parent_id, DialogType type, const QString &text, co
     KMessageBox_exec_hook = &queued_dialog_exec;
     (void) messageBoxWId(parent_id, type, text, caption, KStandardGuiItem::yes(),
                          KStandardGuiItem::no(), KStandardGuiItem::cancel(), QString(), options);
-    KMessageBox_exec_hook = 0;
+    KMessageBox_exec_hook = nullptr;
 }
 
 void queuedMessageBox(QWidget *parent, DialogType type, const QString &text, const QString &caption)
@@ -71,7 +71,7 @@ void queuedMessageBoxWId(WId parent_id, DialogType type, const QString &text, co
 {
     KMessageBox_exec_hook = &queued_dialog_exec;
     (void) messageBoxWId(parent_id, type, text, caption);
-    KMessageBox_exec_hook = 0;
+    KMessageBox_exec_hook = nullptr;
 }
 
 } // KMessageBox

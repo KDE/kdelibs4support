@@ -379,7 +379,7 @@ K4AboutLicense K4AboutLicense::byKeyword(const QString &rawKeyword)
 
     K4AboutData::LicenseKey license = ldict.value(keyword.toLatin1(),
                                       K4AboutData::License_Custom);
-    return K4AboutLicense(license, 0);
+    return K4AboutLicense(license, nullptr);
 }
 
 class K4AboutData::Private
@@ -810,7 +810,7 @@ QString K4AboutData::organizationDomain() const
 const char *K4AboutData::internalBugAddress() const
 {
     if (d->_bugEmailAddress.isEmpty()) {
-        return 0;
+        return nullptr;
     }
     return d->_bugEmailAddress.constData();
 }

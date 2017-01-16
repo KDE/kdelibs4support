@@ -51,15 +51,15 @@ static inline int calcDiffByTen(int x, int y)
 class KNumInputPrivate
 {
 public:
-    KNumInputPrivate(KNumInput *q, KNumInput *below = 0) :
+    KNumInputPrivate(KNumInput *q, KNumInput *below = nullptr) :
         q(q),
-        previousNumInput(0),
-        nextNumInput(0),
+        previousNumInput(nullptr),
+        nextNumInput(nullptr),
         column1Width(0),
         column2Width(0),
-        label(0),
-        slider(0),
-        labelAlignment(0)
+        label(nullptr),
+        slider(nullptr),
+        labelAlignment(nullptr)
     {
         if (below) {
             nextNumInput = below->d->nextNumInput;
@@ -135,8 +135,8 @@ void KNumInput::setLabel(const QString &label, Qt::Alignment a)
 {
     if (label.isEmpty()) {
         delete d->label;
-        d->label = 0;
-        d->labelAlignment = 0;
+        d->label = nullptr;
+        d->labelAlignment = nullptr;
     } else {
         if (!d->label) {
             d->label = new QLabel(this);
@@ -445,7 +445,7 @@ void KIntNumInput::setSliderEnabled(bool slider)
             layout(true);
         }
         delete priv->slider;
-        priv->slider = 0;
+        priv->slider = nullptr;
     }
 }
 
@@ -686,7 +686,7 @@ class KDoubleNumInput::KDoubleNumInputPrivate
 {
 public:
     KDoubleNumInputPrivate(double r)
-        : spin(0),
+        : spin(nullptr),
           referencePoint(r),
           blockRelative(0),
           exponentRatio(1.0) {}
@@ -964,7 +964,7 @@ void KDoubleNumInput::setSliderEnabled(bool enabled)
             layout(true);
         }
         delete priv->slider;
-        priv->slider = 0;
+        priv->slider = nullptr;
     }
 }
 

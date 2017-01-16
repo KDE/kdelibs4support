@@ -78,7 +78,7 @@ public:
      **/
     explicit KStringListValidator(const QStringList &list = QStringList(),
                                   bool rejecting = true, bool fixupEnabled = false,
-                                  QObject *parent = 0);
+                                  QObject *parent = nullptr);
 
     /**
      * Destroys the string validator.

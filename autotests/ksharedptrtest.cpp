@@ -67,7 +67,7 @@ void KSharedPtrTest::testWithStrings()
     QCOMPARE(w.count(), 3);
 
 //  v->clear();
-    v = 0;
+    v = nullptr;
     QVERIFY(u);
     QVERIFY(!u.isUnique());
     QCOMPARE(u.count(), 2);

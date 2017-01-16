@@ -50,7 +50,7 @@ public:
      */
     PasswordDialog(const QString &prompt, const QString &user,
                    bool enableKeep = false, bool modal = true,
-                   QWidget *parent = 0);
+                   QWidget *parent = nullptr);
 
     /**
      * Destructor

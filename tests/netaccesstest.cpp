@@ -41,7 +41,7 @@ int main(int argc, char **argv)
     for (uint i = 0; i < 4; ++i) {
         qDebug() << "file_copy";
         KIO::Job *job = KIO::file_copy(srcURL, tmpURL, -1, KIO::Overwrite);
-        if (!KIO::NetAccess::synchronousRun(job, 0)) {
+        if (!KIO::NetAccess::synchronousRun(job, nullptr)) {
             qCritical() << "file_copy failed: " << KIO::NetAccess::lastErrorString();
             return 1;
         } else {

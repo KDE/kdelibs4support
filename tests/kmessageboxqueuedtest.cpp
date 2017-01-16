@@ -27,7 +27,7 @@ class TriggerObject : public QObject
 {
     Q_OBJECT
 public:
-    TriggerObject(QWidget *parent = 0)
+    TriggerObject(QWidget *parent = nullptr)
         : QObject(parent), m_widget(parent) {}
 
 public Q_SLOTS:

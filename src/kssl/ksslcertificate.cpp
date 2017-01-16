@@ -93,7 +93,7 @@ KSSLCertificate::KSSLCertificate()
     d = new KSSLCertificatePrivate;
     d->m_stateCached = false;
 #if KSSL_HAVE_SSL
-    d->m_cert = NULL;
+    d->m_cert = nullptr;
 #endif
 }
 
@@ -102,7 +102,7 @@ KSSLCertificate::KSSLCertificate(const KSSLCertificate &x)
     d = new KSSLCertificatePrivate;
     d->m_stateCached = false;
 #if KSSL_HAVE_SSL
-    d->m_cert = NULL;
+    d->m_cert = nullptr;
     setCert(KOSSL::self()->X509_dup(const_cast<KSSLCertificate &>(x).getCert()));
     KSSLCertChain *c = x.d->_chain.replicate();
     setChain(c->rawChain());
@@ -127,7 +127,7 @@ KSSLCertChain &KSSLCertificate::chain()
 
 KSSLCertificate *KSSLCertificate::fromX509(X509 *x5)
 {
-    KSSLCertificate *n = NULL;
+    KSSLCertificate *n = nullptr;
 #if KSSL_HAVE_SSL
     if (x5) {
         n = new KSSLCertificate;
@@ -139,17 +139,17 @@ KSSLCertificate *KSSLCertificate::fromX509(X509 *x5)
 
 KSSLCertificate *KSSLCertificate::fromString(const QByteArray &cert)
 {
-    KSSLCertificate *n = NULL;
+    KSSLCertificate *n = nullptr;
 #if KSSL_HAVE_SSL
     if (cert.isEmpty()) {
-        return NULL;
+        return nullptr;
     }
 
     QByteArray qba = QByteArray::fromBase64(cert);
     unsigned char *qbap = reinterpret_cast<unsigned char *>(qba.data());
-    X509 *x5c = KOSSL::self()->d2i_X509(NULL, &qbap, qba.size());
+    X509 *x5c = KOSSL::self()->d2i_X509(nullptr, &qbap, qba.size());
     if (!x5c) {
-        return NULL;
+        return nullptr;
     }
 
     n = new KSSLCertificate;
@@ -163,7 +163,7 @@ QString KSSLCertificate::getSubject() const
     QString rc = "";
 
 #if KSSL_HAVE_SSL
-    char *t = d->kossl->X509_NAME_oneline(d->kossl->X509_get_subject_name(d->m_cert), 0, 0);
+    char *t = d->kossl->X509_NAME_oneline(d->kossl->X509_get_subject_name(d->m_cert), nullptr, 0);
     if (!t) {
         return rc;
     }
@@ -329,7 +329,7 @@ QString KSSLCertificate::getKeyType() const
 QString KSSLCertificate::getPublicKeyText() const
 {
     QString rc = "";
-    char *x = NULL;
+    char *x = nullptr;
 
 #if KSSL_HAVE_SSL
     EVP_PKEY *pkey = d->kossl->X509_get_pubkey(d->m_cert);
@@ -428,7 +428,7 @@ QString KSSLCertificate::getIssuer() const
     QString rc = "";
 
 #if KSSL_HAVE_SSL
-    char *t = d->kossl->X509_NAME_oneline(d->kossl->X509_get_issuer_name(d->m_cert), 0, 0);
+    char *t = d->kossl->X509_NAME_oneline(d->kossl->X509_get_issuer_name(d->m_cert), nullptr, 0);
 
     if (!t) {
         return rc;
@@ -581,7 +581,7 @@ X509 *KSSLCertificate::getCert()
 #if KSSL_HAVE_SSL
     return d->m_cert;
 #endif
-    return 0;
+    return nullptr;
 }
 
 // pull in the callback.  It's common across multiple files but we want
@@ -641,7 +641,7 @@ KSSLCertificate::KSSLValidation KSSLCertificate::validate(KSSLCertificate::KSSLP
 // CRL files?  we don't do that yet
 KSSLCertificate::KSSLValidationList KSSLCertificate::validateVerbose(KSSLCertificate::KSSLPurpose purpose)
 {
-    return validateVerbose(purpose, 0);
+    return validateVerbose(purpose, nullptr);
 }
 
 KSSLCertificate::KSSLValidationList KSSLCertificate::validateVerbose(KSSLCertificate::KSSLPurpose purpose, KSSLCertificate *ca)
@@ -720,7 +720,7 @@ KSSLCertificate::KSSLValidationList KSSLCertificate::validateVerbose(KSSLCertifi
             continue;
         }
 
-        d->kossl->X509_STORE_CTX_init(certStoreCTX, certStore, d->m_cert, NULL);
+        d->kossl->X509_STORE_CTX_init(certStoreCTX, certStore, d->m_cert, nullptr);
         if (d->_chain.isValid()) {
             d->kossl->X509_STORE_CTX_set_chain(certStoreCTX, (STACK_OF(X509) *)d->_chain.rawChain());
         }
@@ -730,7 +730,7 @@ KSSLCertificate::KSSLValidationList KSSLCertificate::validateVerbose(KSSLCertifi
 
         d->kossl->X509_STORE_CTX_set_purpose(certStoreCTX, purposeToOpenSSL(purpose));
 
-        KSSL_X509CallBack_ca = ca ? ca->d->m_cert : 0;
+        KSSL_X509CallBack_ca = ca ? ca->d->m_cert : nullptr;
         KSSL_X509CallBack_ca_found = false;
 
         certStoreCTX->error = X509_V_OK;
@@ -1000,7 +1000,7 @@ QString KSSLCertificate::getNotAfter() const
 QDateTime KSSLCertificate::getQDTNotBefore() const
 {
 #if KSSL_HAVE_SSL
-    return ASN1_UTCTIME_QDateTime(X509_get_notBefore(d->m_cert), NULL);
+    return ASN1_UTCTIME_QDateTime(X509_get_notBefore(d->m_cert), nullptr);
 #else
     return QDateTime::currentDateTime();
 #endif
@@ -1009,7 +1009,7 @@ QDateTime KSSLCertificate::getQDTNotBefore() const
 QDateTime KSSLCertificate::getQDTNotAfter() const
 {
 #if KSSL_HAVE_SSL
-    return ASN1_UTCTIME_QDateTime(X509_get_notAfter(d->m_cert), NULL);
+    return ASN1_UTCTIME_QDateTime(X509_get_notAfter(d->m_cert), nullptr);
 #else
     return QDateTime::currentDateTime();
 #endif
@@ -1151,7 +1151,7 @@ QByteArray KSSLCertificate::toDer()
 {
     QByteArray qba;
 #if KSSL_HAVE_SSL
-    int certlen = d->kossl->i2d_X509(getCert(), NULL);
+    int certlen = d->kossl->i2d_X509(getCert(), nullptr);
     if (certlen >= 0) {
         // These should technically be unsigned char * but it doesn't matter
         // for our purposes
@@ -1264,7 +1264,7 @@ bool KSSLCertificate::setCert(const QString &cert)
     QByteArray qba, qbb = cert.toLocal8Bit();
     qba = QByteArray::fromBase64(qbb);
     unsigned char *qbap = reinterpret_cast<unsigned char *>(qba.data());
-    X509 *x5c = KOSSL::self()->d2i_X509(NULL, &qbap, qba.size());
+    X509 *x5c = KOSSL::self()->d2i_X509(nullptr, &qbap, qba.size());
     if (x5c) {
         setCert(x5c);
         return true;
@@ -1288,7 +1288,7 @@ QStringList KSSLCertificate::subjAltNames() const
     QStringList rc;
 #if KSSL_HAVE_SSL
     STACK_OF(GENERAL_NAME) *names;
-    names = (STACK_OF(GENERAL_NAME) *)d->kossl->X509_get_ext_d2i(d->m_cert, NID_subject_alt_name, 0, 0);
+    names = (STACK_OF(GENERAL_NAME) *)d->kossl->X509_get_ext_d2i(d->m_cert, NID_subject_alt_name, nullptr, nullptr);
 
     if (!names) {
         return rc;

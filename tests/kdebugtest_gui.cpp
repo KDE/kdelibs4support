@@ -7,7 +7,7 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    QWidget widget(0);
+    QWidget widget(nullptr);
     widget.setGeometry(45, 54, 120, 80);
     widget.show();
 

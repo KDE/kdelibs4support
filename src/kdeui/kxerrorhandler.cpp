@@ -44,13 +44,13 @@ public:
     XErrorEvent error_event;
 };
 
-KXErrorHandler **KXErrorHandler::handlers = NULL;
+KXErrorHandler **KXErrorHandler::handlers = nullptr;
 int KXErrorHandler::pos = 0;
 int KXErrorHandler::size = 0;
 
 KXErrorHandler::KXErrorHandler(Display *dpy)
-    :   user_handler1(NULL),
-        user_handler2(NULL),
+    :   user_handler1(nullptr),
+        user_handler2(nullptr),
         old_handler(XSetErrorHandler(handler_wrapper)),
         d(new KXErrorHandlerPrivate(dpy))
 {
@@ -60,7 +60,7 @@ KXErrorHandler::KXErrorHandler(Display *dpy)
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KXErrorHandler::KXErrorHandler(bool (*handler)(int request, int error_code, unsigned long resource_id), Display *dpy)
     :   user_handler1(handler),
-        user_handler2(NULL),
+        user_handler2(nullptr),
         old_handler(XSetErrorHandler(handler_wrapper)),
         d(new KXErrorHandlerPrivate(dpy))
 {
@@ -69,7 +69,7 @@ KXErrorHandler::KXErrorHandler(bool (*handler)(int request, int error_code, unsi
 #endif
 
 KXErrorHandler::KXErrorHandler(int (*handler)(Display *, XErrorEvent *), Display *dpy)
-    :   user_handler1(NULL),
+    :   user_handler1(nullptr),
         user_handler2(handler),
         old_handler(XSetErrorHandler(handler_wrapper)),
         d(new KXErrorHandlerPrivate(dpy))
@@ -123,11 +123,11 @@ int KXErrorHandler::handle(Display *dpy, XErrorEvent *e)
         // it's for us
         //qDebug( "Handling: %p", static_cast< void* >( this ));
         bool error = false;
-        if (user_handler1 != NULL) {
+        if (user_handler1 != nullptr) {
             if (user_handler1(e->request_code, e->error_code, e->resourceid)) {
                 error = true;
             }
-        } else if (user_handler2 != NULL) {
+        } else if (user_handler2 != nullptr) {
             if (user_handler2(dpy, e) != 0) {
                 error = true;
             }

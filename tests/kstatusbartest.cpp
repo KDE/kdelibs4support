@@ -19,7 +19,7 @@
 #include "kstatusbartest.h"
 
 testWindow::testWindow(QWidget *)
-    : KXmlGuiWindow(0)
+    : KXmlGuiWindow(nullptr)
 {
     // Setup Menus
     menuBar = new KMenuBar(this);
@@ -80,7 +80,7 @@ void testWindow::slotClick(int id)
         break;
 
     case 2:
-        QMessageBox::information(0, "Go to line", "Enter line number:", "where?");
+        QMessageBox::information(nullptr, "Go to line", "Enter line number:", "where?");
         statusbar->changeItem("16543", 2);
         break;
     }

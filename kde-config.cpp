@@ -151,7 +151,7 @@ int main(int argc, char **argv)
             "xdgconf-autostart", I18N_NOOP("XDG autostart directory"),
             "tmp", I18N_NOOP("Temporary files (specific for both current host and current user)"),
             "socket", I18N_NOOP("UNIX Sockets (specific for both current host and current user)"),
-            0, 0
+            nullptr, nullptr
         };
         Q_FOREACH (const QString &type, types) {
             int index = 0;

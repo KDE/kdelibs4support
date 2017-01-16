@@ -11,17 +11,17 @@ int main(int argc, char **argv)
     QString usr, pass, comment, label;
     label = "Site:";
     comment = "<b>localhost</b>";
-    int res = KIO::PasswordDialog::getNameAndPassword(usr, pass, 0L,
+    int res = KIO::PasswordDialog::getNameAndPassword(usr, pass, nullptr,
               QString(), false,
               QString(), comment,
               label);
     if (res == QDialog::Accepted)
-        KMessageBox::information(0L, QString("You entered:\n"
+        KMessageBox::information(nullptr, QString("You entered:\n"
                                              "  Username: %1\n"
                                              "  Password: %2").arg(usr).arg(pass),
                                  "Test Result");
     else
-        KMessageBox::information(0L, "Password dialog was canceled!",
+        KMessageBox::information(nullptr, "Password dialog was canceled!",
                                  "Test Result");
 
     return 0;

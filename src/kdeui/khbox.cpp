@@ -25,7 +25,7 @@
 
 KHBox::KHBox(QWidget *parent)
     : QFrame(parent),
-      d(0)
+      d(nullptr)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(0);
@@ -36,7 +36,7 @@ KHBox::KHBox(QWidget *parent)
 
 KHBox::KHBox(bool /*vertical*/, QWidget *parent)
     : QFrame(parent),
-      d(0)
+      d(nullptr)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setSpacing(0);

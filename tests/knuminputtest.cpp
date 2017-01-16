@@ -163,7 +163,7 @@ int main(int argc, char **argv)
 
     QApplication a(argc, argv);
 
-    TopLevel *toplevel = new TopLevel(0);
+    TopLevel *toplevel = new TopLevel(nullptr);
     toplevel->show();
     a.exec();
 }

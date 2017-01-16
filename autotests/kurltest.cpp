@@ -1858,7 +1858,7 @@ void KUrlTest::testOtherProtocols()
 void KUrlTest::testUtf8()
 {
     QTextCodec *codec = QTextCodec::codecForName("ISO-8859-1");
-    QVERIFY(codec != 0);
+    QVERIFY(codec != nullptr);
     QTextCodec::setCodecForLocale(codec);
 
 #if 0
@@ -2045,11 +2045,11 @@ void KUrlTest::testQueryItem()
                   "Subject=subscribe+me&"
                   "body=subscribe+mutz%40kde.org&"
                   "Cc=majordomo%40lists.kde.org");
-    QCOMPARE(QStringList(queryUrl.queryItems(0).keys()).join(", "),
+    QCOMPARE(QStringList(queryUrl.queryItems(nullptr).keys()).join(", "),
              QString("Cc, Subject, body"));
     QCOMPARE(QStringList(queryUrl.queryItems(KUrl::CaseInsensitiveKeys).keys()).join(", "),
              QString("body, cc, subject"));
-    QCOMPARE(QStringList(queryUrl.queryItems(0).values()).join(", "),
+    QCOMPARE(QStringList(queryUrl.queryItems(nullptr).values()).join(", "),
              QString("majordomo@lists.kde.org, subscribe me, subscribe mutz@kde.org"));
     QCOMPARE(QStringList(queryUrl.queryItems(KUrl::CaseInsensitiveKeys).values()).join(", "),
              QString("subscribe mutz@kde.org, majordomo@lists.kde.org, subscribe me"));

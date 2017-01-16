@@ -60,8 +60,8 @@ public:
      * @param text Text to display in the dialog
      * @param flags The widget flags
      */
-    explicit KProgressDialog(QWidget *parent = 0, const QString &caption = QString(),
-                             const QString &text = QString(), Qt::WindowFlags flags = 0);
+    explicit KProgressDialog(QWidget *parent = nullptr, const QString &caption = QString(),
+                             const QString &text = QString(), Qt::WindowFlags flags = nullptr);
 
     /**
      * Destructor

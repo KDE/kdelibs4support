@@ -764,7 +764,7 @@ public:
      * @return local date/time, or invalid date/time if error
      * @see toUtc(), convert()
      */
-    QDateTime toZoneTime(const QDateTime &utcDateTime, bool *secondOccurrence = 0) const;
+    QDateTime toZoneTime(const QDateTime &utcDateTime, bool *secondOccurrence = nullptr) const;
 
     /**
      * Returns the current offset of this time zone to UTC or the local
@@ -801,7 +801,7 @@ public:
      *         occurs, 0 is returned.
      * @see offsetAtUtc(), currentOffset()
      */
-    virtual int offsetAtZoneTime(const QDateTime &zoneDateTime, int *secondOffset = 0) const;
+    virtual int offsetAtZoneTime(const QDateTime &zoneDateTime, int *secondOffset = nullptr) const;
 
     /**
      * Returns the offset of this time zone to UTC at the given UTC date/time.
@@ -932,7 +932,7 @@ public:
      *         defined range of the transition data or if @p dt does not occur
      * @see transitionIndex(), hasTransitions(), transitions()
      */
-    const KTimeZone::Transition *transition(const QDateTime &dt, const Transition **secondTransition = 0, bool *validTime = 0) const;
+    const KTimeZone::Transition *transition(const QDateTime &dt, const Transition **secondTransition = nullptr, bool *validTime = nullptr) const;
 
     /**
      * Find the index to the last daylight savings time transition at or before
@@ -956,7 +956,7 @@ public:
      *         does not occur
      * @see transition(), transitions(), hasTransitions()
      */
-    int transitionIndex(const QDateTime &dt, int *secondIndex = 0, bool *validTime = 0) const;
+    int transitionIndex(const QDateTime &dt, int *secondIndex = nullptr, bool *validTime = nullptr) const;
 
     /**
      * Return the times of all daylight saving transitions to a given time zone
@@ -1096,7 +1096,7 @@ protected:
      *
      * @see data()
      */
-    void setData(KTimeZoneData *data, KTimeZoneSource *source = 0);
+    void setData(KTimeZoneData *data, KTimeZoneSource *source = nullptr);
 
 private:
     KTimeZoneBackend *d;
@@ -1418,7 +1418,7 @@ public:
      *         defined range of the transition data or if @p dt does not occur
      * @see transitionIndex(), hasTransitions(), transitions()
      */
-    const KTimeZone::Transition *transition(const QDateTime &dt, const KTimeZone::Transition **secondTransition = 0, bool *validTime = 0) const;
+    const KTimeZone::Transition *transition(const QDateTime &dt, const KTimeZone::Transition **secondTransition = nullptr, bool *validTime = nullptr) const;
 
     /**
      * Find the index to the last daylight savings time transition at or before
@@ -1442,7 +1442,7 @@ public:
      *         does not occur
      * @see transition(), transitions(), hasTransitions()
      */
-    int transitionIndex(const QDateTime &dt, int *secondIndex = 0, bool *validTime = 0) const;
+    int transitionIndex(const QDateTime &dt, int *secondIndex = nullptr, bool *validTime = nullptr) const;
 
     /**
      * Return the times of all daylight saving transitions to a given time zone

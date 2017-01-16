@@ -46,8 +46,8 @@ public:
     {
         delete s_aboutData;
         delete s_componentData;
-        s_aboutData = 0;
-        s_componentData = 0;
+        s_aboutData = nullptr;
+        s_componentData = nullptr;
         s_self = 0;
     }
 
@@ -168,13 +168,13 @@ GenericFactoryBase<T> *GenericFactoryBase<T>::s_self = 0;
  * @internal
  */
 template <class T>
-KComponentData *GenericFactoryBase<T>::s_componentData = 0;
+KComponentData *GenericFactoryBase<T>::s_componentData = nullptr;
 
 /**
  * @internal
  */
 template <class T>
-K4AboutData *GenericFactoryBase<T>::s_aboutData = 0;
+K4AboutData *GenericFactoryBase<T>::s_aboutData = nullptr;
 
 /**
  * @internal

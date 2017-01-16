@@ -448,7 +448,7 @@ public:
      *
      * @param parent the parent object (see QObject)
      */
-    KResolver(QObject *parent = 0L);
+    KResolver(QObject *parent = nullptr);
 
     /**
      * Constructor with host and service names.
@@ -462,7 +462,7 @@ public:
      * @param parent      the parent object (see QObject)
      */
     explicit KResolver(const QString &nodename, const QString &servicename = QString(),
-                       QObject *parent = 0L);
+                       QObject *parent = nullptr);
 
     /**
      * Destructor.
@@ -615,7 +615,7 @@ public:
      * @param protonum        the protocol number we want
      * @param name        the protocol name
      */
-    void setProtocol(int protonum, const char *name = 0L);
+    void setProtocol(int protonum, const char *name = nullptr);
 
     /**
      * Starts the name resolution asynchronously.

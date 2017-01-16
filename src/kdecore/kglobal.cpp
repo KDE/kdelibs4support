@@ -63,8 +63,8 @@ class KGlobalPrivate
 {
 public:
     inline KGlobalPrivate()
-        : dirs(0),
-          stringDict(0)
+        : dirs(nullptr),
+          stringDict(nullptr)
     {
         // the umask is read here before any threads are created to avoid race conditions
         mode_t tmp = 0;
@@ -75,9 +75,9 @@ public:
     inline ~KGlobalPrivate()
     {
         delete dirs;
-        dirs = 0;
+        dirs = nullptr;
         delete stringDict;
-        stringDict = 0;
+        stringDict = nullptr;
     }
 
     KStandardDirs *dirs;
@@ -123,7 +123,7 @@ KGlobal::LocaleWrapper KGlobal::locale()
 
 bool KGlobal::hasLocale()
 {
-    return QCoreApplication::instance() != 0;
+    return QCoreApplication::instance() != nullptr;
 }
 
 KCharsets *KGlobal::charsets()
@@ -231,7 +231,7 @@ void KGlobal::setAllowQuit(bool allowQuit)
 QObject *KGlobal::findDirectChild_helper(const QObject *parent, const QMetaObject &mo)
 {
     if (!parent) {
-        return 0;
+        return nullptr;
     }
 
     const QObjectList &children = parent->children();
@@ -241,6 +241,6 @@ QObject *KGlobal::findDirectChild_helper(const QObject *parent, const QMetaObjec
             return obj;
         }
     }
-    return 0;
+    return nullptr;
 
 }

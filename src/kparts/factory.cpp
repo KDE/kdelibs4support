@@ -69,7 +69,7 @@ KComponentData Factory::partComponentDataFromLibrary(const QString &libraryName)
 
 Part *Factory::createPartObject(QWidget *, QObject *, const char *, const QStringList &)
 {
-    return 0;
+    return nullptr;
 }
 
 QObject *Factory::createObject(QObject *parent, const char *classname, const QStringList &args)

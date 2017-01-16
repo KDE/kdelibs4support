@@ -42,7 +42,7 @@ public:
     {
         refCount.fetchAndStoreOrdered(-0x00FFFFFF); //prevent a reentering of the dtor
 
-        sharedConfig = 0;   //delete the config object first, because it could access the standard dirs while syncing
+        sharedConfig = nullptr;   //delete the config object first, because it could access the standard dirs while syncing
     }
 
     inline void ref()

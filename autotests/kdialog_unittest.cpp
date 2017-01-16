@@ -86,7 +86,7 @@ private Q_SLOTS:
         KDialog::ButtonCode id = KDialog::Apply;
         dialog.setDefaultButton(id);
         QCOMPARE(dialog.defaultButton(), id);
-        QCOMPARE(dialog.button(id), static_cast<QPushButton *>(0));
+        QCOMPARE(dialog.button(id), static_cast<QPushButton *>(nullptr));
 
         dialog.setButtons(KDialog::Ok | KDialog::Apply
                           | KDialog::Cancel | KDialog::No | KDialog::Yes);
@@ -211,7 +211,7 @@ private Q_SLOTS:
         dialog->button(button)->click();
         QCOMPARE(qAcceptedSpy.count(), emitAccepted);
         QCOMPARE(qRejectedSpy.count(), emitRejected);
-        QCoreApplication::sendPostedEvents(0, QEvent::DeferredDelete);
+        QCoreApplication::sendPostedEvents(nullptr, QEvent::DeferredDelete);
         QVERIFY(dialogPointer.isNull()); // deletion happened
     }
 

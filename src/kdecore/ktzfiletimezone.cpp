@@ -172,7 +172,7 @@ KTimeZoneData *KTzfileTimeZoneSource::parse(const KTimeZone &zone) const
     QFile f(path);
     if (!f.open(QIODevice::ReadOnly)) {
         qCritical() << "Cannot open " << f.fileName() << endl;
-        return 0;
+        return nullptr;
     }
     QDataStream str(&f);
 
@@ -180,7 +180,7 @@ KTimeZoneData *KTzfileTimeZoneSource::parse(const KTimeZone &zone) const
     str >> T_ >> Z_ >> i_ >> f_;
     if (T_ != 'T' || Z_ != 'Z' || i_ != 'i' || f_ != 'f') {
         qCritical() << "Not a TZFILE: " << f.fileName() << endl;
-        return 0;
+        return nullptr;
     }
     // Discard 16 bytes reserved for future use
     unsigned i;
@@ -251,7 +251,7 @@ KTimeZoneData *KTzfileTimeZoneSource::parse(const KTimeZone &zone) const
         delete data;
         delete[] transitionTimes;
         delete[] localTimeTypes;
-        return 0;
+        return nullptr;
     }
     QByteArray array(abbrCharCount, 0);
     str.readRawData(array.data(), array.size());
@@ -262,7 +262,7 @@ KTimeZoneData *KTzfileTimeZoneSource::parse(const KTimeZone &zone) const
         delete data;
         delete[] transitionTimes;
         delete[] localTimeTypes;
-        return 0;
+        return nullptr;
     }
     quint8 n = 0;
     QList<QByteArray> abbreviations;
@@ -310,7 +310,7 @@ KTimeZoneData *KTzfileTimeZoneSource::parse(const KTimeZone &zone) const
     // Find the starting offset from UTC to use before the first transition time.
     // This is first non-daylight savings local time type, or if there is none,
     // the first local time type.
-    LocalTimeType *firstLtt = 0;
+    LocalTimeType *firstLtt = nullptr;
     ltt = localTimeTypes;
     for (i = 0;  i < nLocalTimeTypes;  ++ltt, ++i) {
         if (!ltt->isdst) {

@@ -43,7 +43,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT Factory : public KPluginFactory
 {
     Q_OBJECT
 public:
-    Factory(QObject *parent = 0);
+    Factory(QObject *parent = nullptr);
     virtual ~Factory();
 
     /**
@@ -73,7 +73,7 @@ public:
      * important for reference counting, and allows unloading the
      * library automatically once all its objects have been destroyed.
      */
-    Part *createPart(QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList());
+    Part *createPart(QWidget *parentWidget = nullptr, QObject *parent = nullptr, const char *classname = "KParts::Part", const QStringList &args = QStringList());
 
     /**
      * If you have a part contained in a shared library you might want to query
@@ -116,12 +116,12 @@ protected:
      *
      * @returns the newly created part.
      */
-    Part *createPartObject(QWidget *parentWidget = 0, QObject *parent = 0, const char *classname = "KParts::Part", const QStringList &args = QStringList()) Q_DECL_OVERRIDE = 0;
+    Part *createPartObject(QWidget *parentWidget = nullptr, QObject *parent = nullptr, const char *classname = "KParts::Part", const QStringList &args = QStringList()) Q_DECL_OVERRIDE = 0;
 
     /**
      * Reimplemented from KPluginFactory. Calls createPart()
      */
-    QObject *createObject(QObject *parent = 0, const char *classname = "QObject", const QStringList &args = QStringList()) Q_DECL_OVERRIDE;
+    QObject *createObject(QObject *parent = nullptr, const char *classname = "QObject", const QStringList &args = QStringList()) Q_DECL_OVERRIDE;
 
 };
 

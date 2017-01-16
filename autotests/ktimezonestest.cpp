@@ -93,7 +93,7 @@ void KTimeZonesTest::refcount()
     KTimeZones timezones;
     timezones.add(*zone1);
     delete zone1;
-    zone1 = 0;
+    zone1 = nullptr;
     KTimeZone tz = timezones.zone("Zone1");
     QVERIFY(tz.isValid());
     QCOMPARE(tz.name(), QString("Zone1"));
@@ -299,7 +299,7 @@ void KTimeZonesTest::currentOffset()
     ::tzset();
 
     // Find the current offset of a time zone
-    time_t now = time(0);
+    time_t now = time(nullptr);
     tm *tnow = localtime(&now);
 #if HAVE_TM_GMTOFF
     int offset = tnow->tm_gmtoff;

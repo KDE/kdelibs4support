@@ -36,11 +36,11 @@ public:
     /**
      * Constructs a widget for color selection.
      */
-    explicit KColorValueSelector(QWidget *parent = 0);
+    explicit KColorValueSelector(QWidget *parent = nullptr);
     /**
      * Constructs a widget for color selection with a given orientation
      */
-    explicit KColorValueSelector(Qt::Orientation o, QWidget *parent = 0);
+    explicit KColorValueSelector(Qt::Orientation o, QWidget *parent = nullptr);
 
     ~KColorValueSelector();
 

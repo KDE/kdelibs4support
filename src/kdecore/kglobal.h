@@ -550,7 +550,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT QObject *findDirectChild_helper(const QObject 
 template<typename T>
 KDELIBS4SUPPORT_DEPRECATED inline T findDirectChild(const QObject *object)
 {
-    return static_cast<T>(findDirectChild_helper(object, (static_cast<T>(0))->staticMetaObject));
+    return static_cast<T>(findDirectChild_helper(object, (static_cast<T>(nullptr))->staticMetaObject));
 }
 }
 

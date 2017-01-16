@@ -260,7 +260,7 @@ QString getKde4Prefix();
 
 static QString relativeInstallPath(const char *type)
 {
-    Q_ASSERT(type != NULL);
+    Q_ASSERT(type != nullptr);
 
     switch (type[0]) {
     case 'c':
@@ -523,7 +523,7 @@ bool KStandardDirs::addResourceType(const char *type,
                                     const QString &relativename,
                                     bool priority)
 {
-    return addResourceType(type, 0, relativename, priority);
+    return addResourceType(type, nullptr, relativename, priority);
 }
 #endif
 
@@ -813,7 +813,7 @@ static void lookupDirectory(const QString &path, const QString &relPart,
 
         struct dirent *ep;
 
-        while ((ep = readdir(dp)) != 0L) {
+        while ((ep = readdir(dp)) != nullptr) {
             QString fn(QFile::decodeName(ep->d_name));
             if (fn == QString::fromLatin1(".") || fn == QString::fromLatin1("..") || fn.at(fn.length() - 1) == QLatin1Char('~')) {
                 continue;
@@ -948,7 +948,7 @@ static void lookupPrefix(const QString &prefix, const QString &relpath,
 
         struct dirent *ep;
 
-        while ((ep = readdir(dp)) != 0L) {
+        while ((ep = readdir(dp)) != nullptr) {
             QString fn(QFile::decodeName(ep->d_name));
             if (fn == QLatin1String(".") || fn == QLatin1String("..") || fn.at(fn.length() - 1) == QLatin1Char('~')) {
                 continue;
@@ -1076,7 +1076,7 @@ KStandardDirs::realPath(const QString &dirname)
     memset(realpath_buffer, 0, MAXPATHLEN + 1);
 
     /* If the path contains symlinks, get the real name */
-    if (realpath(QFile::encodeName(dirname).constData(), realpath_buffer) != 0) {
+    if (realpath(QFile::encodeName(dirname).constData(), realpath_buffer) != nullptr) {
         // success, use result from realpath
         int len = strlen(realpath_buffer);
         realpath_buffer[len] = '/';
@@ -1135,7 +1135,7 @@ KStandardDirs::realFilePath(const QString &filename)
     memset(realpath_buffer, 0, MAXPATHLEN + 1);
 
     /* If the path contains symlinks, get the real name */
-    if (realpath(QFile::encodeName(filename).constData(), realpath_buffer) != 0) {
+    if (realpath(QFile::encodeName(filename).constData(), realpath_buffer) != nullptr) {
         // success, use result from realpath
         return QFile::decodeName(realpath_buffer);
     }
@@ -1223,7 +1223,7 @@ QStringList KStandardDirs::KStandardDirsPrivate::resourceDirs(const char *type, 
                 }
             }
 
-            const QStringList *prefixList = 0;
+            const QStringList *prefixList = nullptr;
             const BasePrefix basePrefix = basePrefixForResource(type);
             if (basePrefix == XdgConf) {
                 prefixList = &(xdgconf_prefixes);
@@ -1914,13 +1914,13 @@ void KStandardDirs::addKDEDefaults()
     }
     // end XDG_DATA_XXX
 
-    addResourceType("lib", 0, LIB_INSTALL_DIR "/");
+    addResourceType("lib", nullptr, LIB_INSTALL_DIR "/");
 
     addResourceType("qtplugins", "lib", "plugins");
 
     uint index = 0;
     while (types_indices[index] != -1) {
-        addResourceType(types_string + types_indices[index], 0, types_string + types_indices[index + 1], true);
+        addResourceType(types_string + types_indices[index], nullptr, types_string + types_indices[index + 1], true);
         index += 2;
     }
 
@@ -1932,7 +1932,7 @@ void KStandardDirs::addKDEDefaults()
     addResourceDir("home", QDir::homePath(), false);
 
     addResourceType("autostart", "xdgconf-autostart", "/"); // merge them, start with xdg autostart
-    addResourceType("autostart", NULL, "share/autostart"); // KDE ones are higher priority - KDE 5: deprecated, use xdgconf-autostart
+    addResourceType("autostart", nullptr, "share/autostart"); // KDE ones are higher priority - KDE 5: deprecated, use xdgconf-autostart
 
     QString appName = QCoreApplication::applicationName();
     addResourceType("appdata", "data", appName + QLatin1Char('/'), true);

@@ -153,7 +153,7 @@ template <class Product, class ParentType = QObject>
 class KDELIBS4SUPPORT_DEPRECATED KGenericFactory : public KGenericFactoryBase<Product>
 {
 public:
-    explicit KGenericFactory(const char *componentName = 0)
+    explicit KGenericFactory(const char *componentName = nullptr)
         : KGenericFactoryBase<Product>(componentName)
     {}
 
@@ -244,7 +244,7 @@ class KGenericFactory< KTypeList<Product, ProductListTail>, QObject >
     : public KGenericFactoryBase<KTypeList<Product, ProductListTail> >
 {
 public:
-    explicit KGenericFactory(const char *componentName  = 0)
+    explicit KGenericFactory(const char *componentName  = nullptr)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(componentName)
     {}
 
@@ -337,7 +337,7 @@ class KGenericFactory< KTypeList<Product, ProductListTail>,
     : public KGenericFactoryBase<KTypeList<Product, ProductListTail> >
 {
 public:
-    explicit KGenericFactory(const char *componentName  = 0)
+    explicit KGenericFactory(const char *componentName  = nullptr)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(componentName)
     {}
     explicit KGenericFactory(const KAboutData *data)

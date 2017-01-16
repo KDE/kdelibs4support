@@ -56,7 +56,7 @@ KFDTest::KFDTest(const QUrl &startDir, QObject *parent, const char *name)
 
 void KFDTest::doit()
 {
-    KFileDialog *dlg = new KFileDialog(m_startDir, QString(), 0L);
+    KFileDialog *dlg = new KFileDialog(m_startDir, QString(), nullptr);
     dlg->setMode(KFile::File);
     dlg->setOperationMode(KFileDialog::Saving);
     QStringList filter;
@@ -64,7 +64,7 @@ void KFDTest::doit()
     dlg->setMimeFilter(filter, "application/octet-stream");
 
     if (dlg->exec() == QDialog::Accepted) {
-        KMessageBox::information(0, QString::fromLatin1("You selected the file: %1").arg(dlg->selectedUrl().toString()));
+        KMessageBox::information(nullptr, QString::fromLatin1("You selected the file: %1").arg(dlg->selectedUrl().toString()));
     }
 
 //     qApp->quit();
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
         }
 
         else if (argv1 == QLatin1String("heap")) {
-            KFileDialog *dlg = new KFileDialog(startDir, QString(), 0L);
+            KFileDialog *dlg = new KFileDialog(startDir, QString(), nullptr);
             dlg->setMode(KFile::File);
             dlg->setOperationMode(KFileDialog::Saving);
             QStringList filter;
@@ -181,7 +181,7 @@ int main(int argc, char **argv)
         else {
             KFileDialog dlg(startDir,
                             QString::fromLatin1("*|All Files\n"
-                                                "*.lo *.o *.la|All libtool Files"), 0);
+                                                "*.lo *.o *.la|All libtool Files"), nullptr);
 //    dlg.setFilter( "*.kdevelop" );
             dlg.setMode(KFile::Files |
                         KFile::Directory |
@@ -216,7 +216,7 @@ int main(int argc, char **argv)
         }
 
     if (!(name1.isNull()))
-        KMessageBox::information(0, QLatin1String("You selected the file ") + name1,
+        KMessageBox::information(nullptr, QLatin1String("You selected the file ") + name1,
                                  QLatin1String("Your Choice"));
     return 0;
 }

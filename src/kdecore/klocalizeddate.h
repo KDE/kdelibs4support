@@ -152,7 +152,7 @@ public:
      * @param date the QDate to set the KLocalizedDate to, defaults to invalid date
      * @param calendar the calendar system to use, defaults to the global
      */
-    explicit KLocalizedDate(const QDate &date = QDate(), const KCalendarSystem *calendar = 0);
+    explicit KLocalizedDate(const QDate &date = QDate(), const KCalendarSystem *calendar = nullptr);
 
     /**
      * Constructs a localized date with the given year, month and day.
@@ -170,7 +170,7 @@ public:
      * @param day the day to set the KLocalizedDate to
      * @param calendar the calendar system to use, defaults to the global
      */
-    KLocalizedDate(int year, int month, int day, const KCalendarSystem *calendar = 0);
+    KLocalizedDate(int year, int month, int day, const KCalendarSystem *calendar = nullptr);
 
     /**
      * Copy constructor
@@ -492,7 +492,7 @@ public:
      * @param yearNum returns the year the date belongs to
      * @return localized week number, -1 if input date invalid
      */
-    int week(int *yearNum = 0) const;
+    int week(int *yearNum = nullptr) const;
 
     /**
      * Returns the Week Number for the date in the required Week Number System.
@@ -515,7 +515,7 @@ public:
      * @param yearNum returns the year the date belongs to
      * @return week number, -1 if input date invalid
      */
-    int week(KLocale::WeekNumberSystem weekNumberSystem, int *yearNum = 0) const;
+    int week(KLocale::WeekNumberSystem weekNumberSystem, int *yearNum = nullptr) const;
 
     /**
      * Returns number of months in the year
@@ -771,7 +771,7 @@ public:
      */
     static KLocalizedDate readDate(const QString &dateString,
                                    KLocale::DateTimeParseMode parseMode = KLocale::LiberalParsing,
-                                   const KCalendarSystem *calendar = 0);
+                                   const KCalendarSystem *calendar = nullptr);
 
     /**
      * Converts a localized date string to a KLocalizedDate using either the
@@ -794,7 +794,7 @@ public:
     static KLocalizedDate readDate(const QString &dateString,
                                    KLocale::ReadDateFlags formatFlags,
                                    KLocale::DateTimeParseMode parseMode = KLocale::LiberalParsing,
-                                   const KCalendarSystem *calendar = 0);
+                                   const KCalendarSystem *calendar = nullptr);
 
     /**
      * Converts a localized date string to a KLocalizedDate using either the
@@ -819,7 +819,7 @@ public:
                                    const QString &dateFormat,
                                    KLocale::DateTimeParseMode parseMode = KLocale::LiberalParsing,
                                    KLocale::DateTimeFormatStandard formatStandard = KLocale::KdeFormat,
-                                   const KCalendarSystem *calendar = 0);
+                                   const KCalendarSystem *calendar = nullptr);
 
     /**
      * Returns a KLocalizedDate containing a date @p years years later.

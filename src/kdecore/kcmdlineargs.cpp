@@ -259,15 +259,15 @@ Q_GLOBAL_STATIC(KCmdLineArgsStatic, staticObj)
 KCmdLineArgsStatic::KCmdLineArgsStatic()
 {
     // Global data
-    argsList = 0;
+    argsList = nullptr;
     all_argc = 0;
-    all_argv = 0;
-    appName = 0;
+    all_argv = nullptr;
+    appName = nullptr;
     mCwd.clear();
-    about = 0;
+    about = nullptr;
     parsed = false;
     ignoreUnknown = false;
-    mStdargs = 0;
+    mStdargs = nullptr;
 
     // Text codec.
     codec = QTextCodec::codecForLocale();
@@ -340,8 +340,8 @@ public:
         : options(_options)
         , name(_name)
         , id(_id)
-        , parsedOptionList(0)
-        , parsedArgList(0)
+        , parsedOptionList(nullptr)
+        , parsedArgList(nullptr)
         , isQt(id == "qt")
     {
     }
@@ -433,7 +433,7 @@ void
 KCmdLineArgs::initIgnore(int _argc, char **_argv, const QByteArray &_appname)
 {
     init(_argc, _argv,
-         new K4AboutData(_appname, 0, ki18n(_appname.data()), "unknown", ki18n("KDE Application")));
+         new K4AboutData(_appname, nullptr, ki18n(_appname.data()), "unknown", ki18n("KDE Application")));
     staticObj()->ignoreUnknown = true;
 }
 
@@ -615,7 +615,7 @@ KCmdLineArgs::loadAppArgs(QDataStream &ds)
 KCmdLineArgs *KCmdLineArgs::parsedArgs(const QByteArray &id)
 {
     if (!staticObj()->argsList) {
-        return 0;
+        return nullptr;
     }
     KCmdLineArgsList::Iterator args = staticObj()->argsList->begin();
     while (args != staticObj()->argsList->end()) {
@@ -628,7 +628,7 @@ KCmdLineArgs *KCmdLineArgs::parsedArgs(const QByteArray &id)
         ++args;
     }
 
-    return 0;
+    return nullptr;
 }
 
 void KCmdLineArgsStatic::removeArgs(const QByteArray &id)
@@ -1010,14 +1010,14 @@ KCmdLineArgs::qtArgv()
         addStdCmdLineOptions(CmdLineArgKDE | CmdLineArgQt);    // Lazy bastards!
     }
 
-    if (s_qt_argv != NULL) {
+    if (s_qt_argv != nullptr) {
         return s_qt_argv;
     }
 
     if (!(staticObj()->mStdargs & KCmdLineArgs::CmdLineArgQt)) {
         s_qt_argv = new char *[2];
         s_qt_argv[0] = qstrdup(staticObj()->all_argc ? staticObj()->all_argv[0] : "");
-        s_qt_argv[1] = 0;
+        s_qt_argv[1] = nullptr;
 
         return s_qt_argv;
     }
@@ -1045,7 +1045,7 @@ KCmdLineArgs::qtArgv()
     for (; i < count; i++) {
         s_qt_argv[i + 1] = qstrdup(args->d->parsedArgList->at(i).data());
     }
-    s_qt_argv[i + 1] = 0;
+    s_qt_argv[i + 1] = nullptr;
 
     return s_qt_argv;
 }
@@ -1081,7 +1081,7 @@ void
 KCmdLineArgs::usage(const QByteArray &id)
 {
     enable_i18n();
-    Q_ASSERT(staticObj()->argsList != 0); // It's an error to call usage(...) without
+    Q_ASSERT(staticObj()->argsList != nullptr); // It's an error to call usage(...) without
     // having done addCmdLineOptions first!
 
     QString optionFormatString = QString::fromLatin1("  %1 %2\n");
@@ -1305,14 +1305,14 @@ KCmdLineArgs::setCwd(const QByteArray &cwd)
 void
 KCmdLineArgs::clear()
 {
-    delete d->parsedArgList;     d->parsedArgList = 0;
-    delete d->parsedOptionList;  d->parsedOptionList = 0;
+    delete d->parsedArgList;     d->parsedArgList = nullptr;
+    delete d->parsedOptionList;  d->parsedOptionList = nullptr;
 }
 
 void
 KCmdLineArgs::reset()
 {
-    delete staticObj()->argsList; staticObj()->argsList = 0;
+    delete staticObj()->argsList; staticObj()->argsList = nullptr;
     staticObj()->parsed = false;
 }
 
@@ -1346,10 +1346,10 @@ KCmdLineArgsPrivate::load(QDataStream &ds)
     ds >> (*(parsedArgList));
 
     if (parsedOptionList->count() == 0) {
-        delete parsedOptionList;  parsedOptionList = 0;
+        delete parsedOptionList;  parsedOptionList = nullptr;
     }
     if (parsedArgList->count() == 0) {
-        delete parsedArgList;     parsedArgList = 0;
+        delete parsedArgList;     parsedArgList = nullptr;
     }
 }
 

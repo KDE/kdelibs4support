@@ -49,7 +49,7 @@ QString toString(Solid::Networking::Status st)
 }
 
 TestClient::TestClient()
-    : QMainWindow(0),
+    : QMainWindow(nullptr),
       m_status(AppDisconnected), m_view(new QWidget(this))
 {
     ui.setupUi(m_view);

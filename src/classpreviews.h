@@ -35,7 +35,7 @@
 class KDialogPreview : public QDialog
 {
 public:
-    KDialogPreview(QWidget *parent = 0);
+    KDialogPreview(QWidget *parent = nullptr);
 };
 
 #endif // CLASSPREVIEWS_H

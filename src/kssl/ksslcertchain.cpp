@@ -69,7 +69,7 @@ public:
 KSSLCertChain::KSSLCertChain()
     : d(new KSSLCertChainPrivate)
 {
-    _chain = NULL;
+    _chain = nullptr;
 }
 
 KSSLCertChain::~KSSLCertChain()
@@ -155,13 +155,13 @@ void KSSLCertChain::setChain(const QList<KSSLCertificate *> &chain)
             d->kossl->X509_free(x5);
         }
         sk_X509_free(x);
-        _chain = NULL;
+        _chain = nullptr;
     }
 
     if (chain.isEmpty()) {
         return;
     }
-    _chain = (void *)sk_new(NULL);
+    _chain = (void *)sk_new(nullptr);
     foreach (KSSLCertificate *x, chain) {
         sk_X509_push((STACK_OF(X509) *)_chain, d->kossl->X509_dup(x->getCert()));
     }
@@ -183,14 +183,14 @@ void KSSLCertChain::setChain(void *stack_of_x509)
             d->kossl->X509_free(x5);
         }
         sk_X509_free(x);
-        _chain = NULL;
+        _chain = nullptr;
     }
 
     if (!stack_of_x509) {
         return;
     }
 
-    _chain = (void *)sk_new(NULL);
+    _chain = (void *)sk_new(nullptr);
     STACK_OF(X509) *x = (STACK_OF(X509) *)stack_of_x509;
 
     for (int i = 0; i < sk_X509_num(x); i++) {

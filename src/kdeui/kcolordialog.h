@@ -219,7 +219,7 @@ public:
     /**
      * Constructs a color selection dialog.
      */
-    explicit KColorDialog(QWidget *parent = 0L, bool modal = false);
+    explicit KColorDialog(QWidget *parent = nullptr, bool modal = false);
     /**
      * Destroys the color selection dialog.
      */
@@ -240,7 +240,7 @@ public:
      *                 return, holds the selected color.
      * @returns QDialog::result().
      */
-    static int getColor(QColor &theColor, QWidget *parent = 0L);
+    static int getColor(QColor &theColor, QWidget *parent = nullptr);
 
     /**
      * Creates a modal color dialog, lets the user choose a
@@ -257,7 +257,7 @@ public:
      * @param defaultColor color selected by the "default color" checkbox
      * @returns QDialog::result().
      */
-    static int getColor(QColor &theColor, const QColor &defaultColor, QWidget *parent = 0L);
+    static int getColor(QColor &theColor, const QColor &defaultColor, QWidget *parent = nullptr);
 
     /**
      * Gets the color from the pixel at point p on the screen.

@@ -43,7 +43,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KListWidget : public QListWidget
     Q_OBJECT
 
 public:
-    explicit KListWidget(QWidget *parent = 0);
+    explicit KListWidget(QWidget *parent = nullptr);
 
     ~KListWidget();
 

@@ -76,7 +76,7 @@ class KGlobalSettings::Private
 {
 public:
     Private(KGlobalSettings *q)
-    : q(q), activated(false), paletteCreated(false), mMouseSettings(0), mLargeFont(0)
+    : q(q), activated(false), paletteCreated(false), mMouseSettings(nullptr), mLargeFont(nullptr)
 #if HAVE_X11
         , isX11(QX11Info::isPlatformX11())
 #endif
@@ -141,7 +141,7 @@ KGlobalSettings *KGlobalSettings::self()
 }
 
 KGlobalSettings::KGlobalSettings()
-    : QObject(0), d(new Private(this))
+    : QObject(nullptr), d(new Private(this))
 {
     connect(this, SIGNAL(kdisplayFontChanged()), SIGNAL(appearanceChanged()));
 }
@@ -938,7 +938,7 @@ void KGlobalSettings::Private::dropMouseSettingsCache()
 {
 #ifndef Q_OS_WIN
     delete self()->d->mMouseSettings;
-    self()->d->mMouseSettings = 0;
+    self()->d->mMouseSettings = nullptr;
 #endif
 }
 

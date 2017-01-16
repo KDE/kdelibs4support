@@ -40,10 +40,10 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KDeviceListModel : public QAbstractItemM
 {
     Q_OBJECT
 public:
-    explicit KDeviceListModel(QObject *parent = 0);
-    explicit KDeviceListModel(const QString &predicate, QObject *parent = 0);
+    explicit KDeviceListModel(QObject *parent = nullptr);
+    explicit KDeviceListModel(const QString &predicate, QObject *parent = nullptr);
     explicit KDeviceListModel(const Solid::Predicate &predicate,
-                              QObject *parent = 0);
+                              QObject *parent = nullptr);
     ~KDeviceListModel();
 
     /**

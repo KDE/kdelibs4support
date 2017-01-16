@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 
     // example 2
     {
-        QDialog *w = new QDialog(0);
+        QDialog *w = new QDialog(nullptr);
         w->setObjectName("Vertical");
         w->setModal(true);
         w->setWindowTitle("Example 2 ");

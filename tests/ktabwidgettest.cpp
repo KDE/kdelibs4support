@@ -13,8 +13,8 @@
 #include "ktabwidgettest.h"
 
 Test::Test(QWidget *parent)
-    : QWidget(parent), mChange(0), mLeftWidget(0), mRightWidget(0),
-      mLeftPopup(0), mRightPopup(0), mTabbarContextPopup(0), mContextPopup(0)
+    : QWidget(parent), mChange(0), mLeftWidget(nullptr), mRightWidget(nullptr),
+      mLeftPopup(nullptr), mRightPopup(nullptr), mTabbarContextPopup(nullptr), mContextPopup(nullptr)
 
 {
     resize(600, 300);
@@ -24,8 +24,8 @@ Test::Test(QWidget *parent)
     topLayout->setSpacing(0);
 
     mWidget = new KTabWidget(this);
-    mWidget->addTab(new QLabel("Testlabel 1", 0), "&One");
-    mWidget->addTab(new QLabel("Testlabel 2", 0), "Two");
+    mWidget->addTab(new QLabel("Testlabel 1", nullptr), "&One");
+    mWidget->addTab(new QLabel("Testlabel 2", nullptr), "Two");
     mWidget->addTab(new QWidget(), SmallIcon("konsole"), "Three");
     mWidget->addTab(new QWidget(), "Four");
     mWidget->setTabTextColor(0, Qt::red);
@@ -190,7 +190,7 @@ void Test::toggleLeftPopup(bool state)
         }
         mLeftWidget->setMenu(mLeftPopup);
     } else {
-        mLeftWidget->setMenu(0);
+        mLeftWidget->setMenu(nullptr);
     }
 }
 
@@ -242,7 +242,7 @@ void Test::toggleRightPopup(bool state)
         }
         mRightWidget->setMenu(mRightPopup);
     } else {
-        mRightWidget->setMenu(0);
+        mRightWidget->setMenu(nullptr);
     }
 }
 

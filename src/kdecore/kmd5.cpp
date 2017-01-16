@@ -238,7 +238,7 @@ QByteArray KMD5::base64Digest()
 
 void KMD5::init()
 {
-    d = 0;
+    d = nullptr;
     reset();
 }
 

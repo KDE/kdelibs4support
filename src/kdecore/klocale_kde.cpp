@@ -98,10 +98,10 @@ KLocalePrivate::KLocalePrivate(KLocale *q_ptr)
       m_config(KSharedConfig::Ptr()),
       m_country(QString()),
       m_language(QString()),
-      m_languages(0),
-      m_calendar(0),
-      m_currency(0),
-      m_codecForEncoding(0)
+      m_languages(nullptr),
+      m_calendar(nullptr),
+      m_currency(nullptr),
+      m_codecForEncoding(nullptr)
 {
 }
 
@@ -128,7 +128,7 @@ KSharedConfig::Ptr KLocalePrivate::config()
 void KLocalePrivate::copy(const KLocalePrivate &rhs)
 {
     // Parent KLocale
-    q = 0;
+    q = nullptr;
 
     // Config
     m_config = rhs.m_config;
@@ -139,14 +139,14 @@ void KLocalePrivate::copy(const KLocalePrivate &rhs)
 
     // Language settings
     m_language = rhs.m_language;
-    m_languages = 0;
+    m_languages = nullptr;
     m_languageList = rhs.m_languageList;
     m_languageSensitiveDigits = rhs.m_languageSensitiveDigits;
     m_nounDeclension = rhs.m_nounDeclension;
 
     // Calendar settings
     m_calendarSystem = rhs.m_calendarSystem;
-    m_calendar = 0;
+    m_calendar = nullptr;
     m_weekStartDay = rhs.m_weekStartDay;
     m_workingWeekStartDay = rhs.m_workingWeekStartDay;
     m_workingWeekEndDay = rhs.m_workingWeekEndDay;
@@ -172,7 +172,7 @@ void KLocalePrivate::copy(const KLocalePrivate &rhs)
 
     // Currency settings
     m_currencyCode = rhs.m_currencyCode;
-    m_currency = 0;
+    m_currency = nullptr;
     m_currencyCodeList = rhs.m_currencyCodeList;
 
     // Money settings
@@ -227,7 +227,7 @@ void KLocalePrivate::init(const QString &language, const QString &country,
     if (m_config != KSharedConfig::Ptr()) {
         cg = m_config->group(QLatin1String("Locale"));
         useEnvironmentVariables = false;
-    } else if (tempConfig == 0 || tempConfig == KSharedConfig::openConfig().data()) {
+    } else if (tempConfig == nullptr || tempConfig == KSharedConfig::openConfig().data()) {
         cg = KSharedConfig::openConfig()->group(QLatin1String("Locale"));
         useEnvironmentVariables = true;
     } else {
@@ -260,7 +260,7 @@ void KLocalePrivate::initConfig(KConfig *config)
         m_config->setLocale(m_language);
     } else {
         // If no config given then use the global
-        if (config == 0 || config == KSharedConfig::openConfig().data()) {
+        if (config == nullptr || config == KSharedConfig::openConfig().data()) {
             KSharedConfig::openConfig()->setLocale(m_language);
         } else {
             config->setLocale(m_language);
@@ -2277,7 +2277,7 @@ bool KLocalePrivate::useDefaultLanguage() const
 
 void KLocalePrivate::initEncoding()
 {
-    m_codecForEncoding = 0;
+    m_codecForEncoding = nullptr;
 
     // This all made more sense when we still had the EncodingEnum config key.
 
@@ -2689,7 +2689,7 @@ bool KLocalePrivate::setEncoding(int mibEnum)
         m_codecForEncoding = codec;
     }
 
-    return codec != 0;
+    return codec != nullptr;
 }
 
 QStringList KLocalePrivate::allLanguagesList()
@@ -2824,7 +2824,7 @@ void KLocalePrivate::setCalendarSystem(KLocale::CalendarSystem calendarSystem)
 {
     m_calendarSystem = calendarSystem;
     delete m_calendar;
-    m_calendar = 0;
+    m_calendar = nullptr;
 }
 
 QString KLocalePrivate::calendarType() const

@@ -43,8 +43,8 @@ public:
 
     KBufferedSocketPrivate()
     {
-        input = 0L;
-        output = 0L;
+        input = nullptr;
+        output = nullptr;
     }
 };
 
@@ -128,7 +128,7 @@ qint64 KBufferedSocket::readData(char *data, qint64 maxlen, KSocketAddress *from
         resetError();
         return d->input->consumeBuffer(data, maxlen);
     }
-    return KStreamSocket::readData(data, maxlen, 0L);
+    return KStreamSocket::readData(data, maxlen, nullptr);
 }
 
 qint64 KBufferedSocket::peekData(char *data, qint64 maxlen, KSocketAddress *from)
@@ -143,7 +143,7 @@ qint64 KBufferedSocket::peekData(char *data, qint64 maxlen, KSocketAddress *from
         resetError();
         return d->input->consumeBuffer(data, maxlen, false);
     }
-    return KStreamSocket::peekData(data, maxlen, 0L);
+    return KStreamSocket::peekData(data, maxlen, nullptr);
 }
 
 qint64 KBufferedSocket::writeData(const char *data, qint64 len,
@@ -173,7 +173,7 @@ qint64 KBufferedSocket::writeData(const char *data, qint64 len,
         return d->output->feedBuffer(data, len);
     }
 
-    return KStreamSocket::writeData(data, len, 0L);
+    return KStreamSocket::writeData(data, len, nullptr);
 }
 
 void KBufferedSocket::enableRead(bool enable)
@@ -231,8 +231,8 @@ void KBufferedSocket::setInputBuffering(bool enable)
     QMutexLocker locker(mutex());
     if (!enable) {
         delete d->input;
-        d->input = 0L;
-    } else if (d->input == 0L) {
+        d->input = nullptr;
+    } else if (d->input == nullptr) {
         d->input = new KSocketBuffer;
     }
 }
@@ -242,8 +242,8 @@ void KBufferedSocket::setOutputBuffering(bool enable)
     QMutexLocker locker(mutex());
     if (!enable) {
         delete d->output;
-        d->output = 0L;
-    } else if (d->output == 0L) {
+        d->output = nullptr;
+    } else if (d->output == nullptr) {
         d->output = new KSocketBuffer;
     }
 }

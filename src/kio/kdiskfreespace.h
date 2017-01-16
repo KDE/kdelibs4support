@@ -39,7 +39,7 @@ public:
     /**
      * Constructor
      */
-    explicit KDiskFreeSpace(QObject *parent = 0);
+    explicit KDiskFreeSpace(QObject *parent = nullptr);
 
     /**
      * Destructor - this object autodeletes itself when it's done

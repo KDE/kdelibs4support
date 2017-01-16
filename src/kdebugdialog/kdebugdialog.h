@@ -41,7 +41,7 @@ class KDebugDialog : public KAbstractDebugDialog, public Ui_KDebugDialog
     Q_OBJECT
 
 public:
-    explicit KDebugDialog(const AreaMap& areaMap, QWidget *parent = 0);
+    explicit KDebugDialog(const AreaMap& areaMap, QWidget *parent = nullptr);
     virtual ~KDebugDialog();
 
     void doLoad() Q_DECL_OVERRIDE {}

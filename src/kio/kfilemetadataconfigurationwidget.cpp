@@ -75,7 +75,7 @@ KFileMetaDataConfigurationWidget::Private::Private(KFileMetaDataConfigurationWid
 #if ! KIO_NO_NEPOMUK
     m_provider(0),
 #endif
-    m_metaDataList(0),
+    m_metaDataList(nullptr),
     q(parent)
 {
     m_metaDataList = new QListWidget(q);
@@ -116,12 +116,12 @@ void KFileMetaDataConfigurationWidget::Private::addItem(const QUrl &uri)
         "http://www.semanticdesktop.org/ontologies/2007/01/19/nie#mimeType",        // = fixed item kfileitem#type
         "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName",        // hide this property always
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",                          // = fixed item kfileitem#type
-        0 // mandatory last entry
+        nullptr // mandatory last entry
     };
 
     int i = 0;
     const QString key = uri.toString();
-    while (hiddenProperties[i] != 0) {
+    while (hiddenProperties[i] != nullptr) {
         if (key == QLatin1String(hiddenProperties[i])) {
             // the item is hidden
             return;

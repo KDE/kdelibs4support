@@ -30,7 +30,7 @@ class KListWidget::KListWidgetPrivate
 public:
     KListWidgetPrivate(KListWidget *q)
         : q(q),
-          m_pCurrentItem(0),
+          m_pCurrentItem(nullptr),
           m_eventPos()
     {
     }
@@ -91,7 +91,7 @@ void KListWidget::KListWidgetPrivate::_k_slotOnViewport()
     }
 
     m_pAutoSelect->stop();
-    m_pCurrentItem = 0;
+    m_pCurrentItem = nullptr;
 }
 
 void KListWidget::KListWidgetPrivate::_k_slotSettingsChanged(int category)

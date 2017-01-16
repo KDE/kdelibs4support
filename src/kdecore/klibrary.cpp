@@ -59,17 +59,17 @@ QString findLibrary(const QString &name)
 }
 
 KLibrary::KLibrary(QObject *parent)
-    : QLibrary(parent), d_ptr(0)
+    : QLibrary(parent), d_ptr(nullptr)
 {
 }
 
 KLibrary::KLibrary(const QString &name, QObject *parent)
-    : QLibrary(findLibrary(name), parent), d_ptr(0)
+    : QLibrary(findLibrary(name), parent), d_ptr(nullptr)
 {
 }
 
 KLibrary::KLibrary(const QString &name, int verNum, QObject *parent)
-    : QLibrary(findLibrary(name), verNum, parent), d_ptr(0)
+    : QLibrary(findLibrary(name), verNum, parent), d_ptr(nullptr)
 {
 }
 

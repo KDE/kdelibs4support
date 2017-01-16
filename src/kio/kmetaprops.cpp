@@ -43,7 +43,7 @@ public:
 };
 
 KFileMetaPropsPlugin::KFileMetaPropsPluginPrivate::KFileMetaPropsPluginPrivate() :
-    m_fileMetaDataWidget(0)
+    m_fileMetaDataWidget(nullptr)
 {
 }
 
@@ -79,7 +79,7 @@ void KFileMetaPropsPlugin::KFileMetaPropsPluginPrivate::configureShownMetaData()
     KConfigGroup dialogConfig(KSharedConfig::openConfig(), "KFileMetaPropsPlugin");
     KWindowConfig::restoreWindowSize(dialog->windowHandle(), dialogConfig);
 
-    if ((dialog->exec() == QDialog::Accepted) && (dialog != 0)) {
+    if ((dialog->exec() == QDialog::Accepted) && (dialog != nullptr)) {
         configWidget->save();
 
         // TODO: Check whether a kind of refresh() method might make sense
@@ -89,10 +89,10 @@ void KFileMetaPropsPlugin::KFileMetaPropsPluginPrivate::configureShownMetaData()
         m_fileMetaDataWidget->setItems(items);
     }
 
-    if (dialog != 0) {
+    if (dialog != nullptr) {
         KWindowConfig::saveWindowSize(dialog->windowHandle(), dialogConfig);
         delete dialog;
-        dialog = 0;
+        dialog = nullptr;
     }
 }
 

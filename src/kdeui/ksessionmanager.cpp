@@ -21,7 +21,7 @@
 #include "ksessionmanager.h"
 
 KSessionManager::KSessionManager():
-    d(0)
+    d(nullptr)
 {
     sessionClients().removeAll(this);
     sessionClients().append(this);

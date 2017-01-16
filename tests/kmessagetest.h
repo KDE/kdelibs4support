@@ -25,7 +25,7 @@ class KMessage_Test : public QWidget
 {
     Q_OBJECT
 public:
-    KMessage_Test(QWidget *parent = 0);
+    KMessage_Test(QWidget *parent = nullptr);
 
 private Q_SLOTS:
     void showError();

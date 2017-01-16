@@ -291,7 +291,7 @@ public:
     /**
      * Waits for more data. Reimplemented from KSocketBase.
      */
-    qint64 waitForMore(int msecs, bool *timeout = 0L) Q_DECL_OVERRIDE;
+    qint64 waitForMore(int msecs, bool *timeout = nullptr) Q_DECL_OVERRIDE;
 
     /**
      * Returns the local socket address. Reimplemented from KSocketBase.

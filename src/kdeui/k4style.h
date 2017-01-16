@@ -254,7 +254,7 @@ protected:
         */
         static EventualSubtype *defaultOption()
         {
-            static EventualSubtype *theDefault = 0; //### function static, not very nice,
+            static EventualSubtype *theDefault = nullptr; //### function static, not very nice,
             //but avoids need for explicit instantiation.
 
             if (!theDefault) {
@@ -1402,7 +1402,7 @@ protected:
      * @param w the actual widget this call is related to
      */
     virtual int widgetLayoutProp(WidgetType widgetType, int metric,
-                                 const QStyleOption *opt = 0, const QWidget *w = 0) const;
+                                 const QStyleOption *opt = nullptr, const QWidget *w = nullptr) const;
 
     /**
      * @brief Draws primitives which are used inside K4Style.
@@ -1436,8 +1436,8 @@ protected:
                                      const QStyleOption *opt,
                                      const QRect &r, const QPalette &pal,
                                      State flags, QPainter *p,
-                                     const QWidget *widget = 0,
-                                     Option *kOpt    = 0) const;
+                                     const QWidget *widget = nullptr,
+                                     Option *kOpt    = nullptr) const;
 private:
     ///Should we use a side text here?
     bool useSideText(const QStyleOptionProgressBar *opt)     const;
@@ -1494,7 +1494,7 @@ public:
 //@{
     void drawControl(ControlElement   elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const Q_DECL_OVERRIDE;
     void drawPrimitive(PrimitiveElement elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const Q_DECL_OVERRIDE;
-    int  pixelMetric(PixelMetric    metric, const QStyleOption *opt = 0, const QWidget *w = 0) const Q_DECL_OVERRIDE;
+    int  pixelMetric(PixelMetric    metric, const QStyleOption *opt = nullptr, const QWidget *w = nullptr) const Q_DECL_OVERRIDE;
     QRect subElementRect(SubElement    subRect, const QStyleOption *opt, const QWidget *w) const Q_DECL_OVERRIDE;
     QSize sizeFromContents(ContentsType     type, const QStyleOption *opt,
                            const QSize &contentsSize, const QWidget *w) const Q_DECL_OVERRIDE;
@@ -1523,17 +1523,17 @@ public:
                         int alignment, const QPixmap &pixmap) const Q_DECL_OVERRIDE;
     QPalette standardPalette() const Q_DECL_OVERRIDE;
     QPixmap standardPixmap(StandardPixmap standardPixmap, const QStyleOption *opt,
-                           const QWidget *widget = 0) const Q_DECL_OVERRIDE; //### kde5 remove
+                           const QWidget *widget = nullptr) const Q_DECL_OVERRIDE; //### kde5 remove
     QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap &pixmap,
                                 const QStyleOption *opt) const Q_DECL_OVERRIDE;
     bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
 
     int layoutSpacing(QSizePolicy::ControlType control1,
                       QSizePolicy::ControlType control2, Qt::Orientation orientation,
-                      const QStyleOption *option = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+                      const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
 
-    QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = 0,
-                       const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+    QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr,
+                       const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
 //@}
 private:
     K4StylePrivate *const d;
@@ -1572,7 +1572,7 @@ class K4StyleFactory: public QStylePlugin
             return new T();
         }
 
-        return 0;
+        return nullptr;
     }
 };
 
@@ -1595,7 +1595,7 @@ T K4Style::extractOption(Option *option)
     //### warn if cast failed?
 
     //since T is a pointer type, need this to get to the static.
-    return static_cast<T>(0)->defaultOption();
+    return static_cast<T>(nullptr)->defaultOption();
 }
 
 #define K_EXPORT_K4STYLE(name,type) template<> const char* kstyleName<type>() { return name; } \

@@ -293,8 +293,8 @@ public:
     struct MmapInfo {
         MmapInfo()
         {
-            file = 0;
-            indexHeader = 0;
+            file = nullptr;
+            indexHeader = nullptr;
         }
         QFile *file;  // If this is not null, then the file is mmapped
 
@@ -413,7 +413,7 @@ bool KPixmapCache::Private::mmapFile(const QString &filename, MmapInfo *info, in
     if (!info->file->open(QIODevice::ReadWrite)) {
         kDebug(264) << "Couldn't open" << filename;
         delete info->file;
-        info->file = 0;
+        info->file = nullptr;
         return false;
     }
 
@@ -427,16 +427,16 @@ bool KPixmapCache::Private::mmapFile(const QString &filename, MmapInfo *info, in
     if (info->file->size() < info->available && !info->file->resize(info->available)) {
         kError(264) << "Couldn't resize" << filename << "to" << newsize;
         delete info->file;
-        info->file = 0;
+        info->file = nullptr;
         return false;
     }
 
     //void* indexMem = mmap(0, info->available, PROT_READ | PROT_WRITE, MAP_SHARED, info->file->handle(), 0);
     void *indexMem = info->file->map(0, info->available);
-    if (indexMem == 0) {
+    if (indexMem == nullptr) {
         kError() << "mmap failed for" << filename;
         delete info->file;
-        info->file = 0;
+        info->file = nullptr;
         return false;
     }
     info->indexHeader = reinterpret_cast<KPixmapCacheIndexHeader *>(indexMem);
@@ -462,18 +462,18 @@ void KPixmapCache::Private::unmmapFile(MmapInfo *info)
 {
     if (info->file) {
         info->file->unmap(reinterpret_cast<uchar *>(info->indexHeader));
-        info->indexHeader = 0;
+        info->indexHeader = nullptr;
         info->available = 0;
         info->size = 0;
 
         delete info->file;
-        info->file = 0;
+        info->file = nullptr;
     }
 }
 
 QIODevice *KPixmapCache::Private::indexDevice()
 {
-    QIODevice *device = 0;
+    QIODevice *device = nullptr;
 
     if (mIndexMmapInfo.file) {
         // Make sure the file still exists
@@ -496,7 +496,7 @@ QIODevice *KPixmapCache::Private::indexDevice()
         // to do return 0 in the else portion of the prior test.
         if (!q->isValid()) {
             delete device;
-            return 0;
+            return nullptr;
         }
     }
 
@@ -509,7 +509,7 @@ QIODevice *KPixmapCache::Private::indexDevice()
         if (!q->isValid() || !file->open(QIODevice::ReadWrite)) {
             kDebug(264) << "Couldn't open index file" << mIndexFile;
             delete file;
-            return 0;
+            return nullptr;
         }
 
         device = file;
@@ -522,7 +522,7 @@ QIODevice *KPixmapCache::Private::indexDevice()
     if (sizeof indexHeader != numRead) {
         kError(264) << "Unable to read header from pixmap cache index.";
         delete device;
-        return 0;
+        return nullptr;
     }
 
     if (indexHeader.cacheId != mCacheId) {
@@ -531,7 +531,7 @@ QIODevice *KPixmapCache::Private::indexDevice()
 
         init();
         if (!q->isValid()) {
-            return 0;
+            return nullptr;
         } else {
             return indexDevice(); // Careful, this is a recursive call.
         }
@@ -552,7 +552,7 @@ QIODevice *KPixmapCache::Private::dataDevice()
 
             // Index file has also been recreated so we cannot continue with
             //  modifying the data file because it would make things inconsistent.
-            return 0;
+            return nullptr;
         }
 
         fi.refresh();
@@ -562,7 +562,7 @@ QIODevice *KPixmapCache::Private::dataDevice()
                        reinterpret_cast<char *>(mDataMmapInfo.indexHeader),
                        &mDataMmapInfo.size, mDataMmapInfo.available);
         } else {
-            return 0;
+            return nullptr;
         }
     }
 
@@ -572,12 +572,12 @@ QIODevice *KPixmapCache::Private::dataDevice()
         // Index file has also been recreated so we cannot continue with
         //  modifying the data file because it would make things inconsistent.
         delete file;
-        return 0;
+        return nullptr;
     }
     if (!file->open(QIODevice::ReadWrite)) {
         kDebug(264) << "Couldn't open data file" << mDataFile;
         delete file;
-        return 0;
+        return nullptr;
     }
     return file;
 }
@@ -647,7 +647,7 @@ int KPixmapCache::Private::findOffset(const QString &key)
             stream >> foffset >> timesused;
             // Update statistics
             timesused++;
-            lastused = ::time(0);
+            lastused = ::time(nullptr);
             stream.device()->seek(stream.device()->pos() - sizeof(quint32));
             stream << timesused << lastused;
             delete device;
@@ -787,7 +787,7 @@ void KPixmapCache::Private::writeIndexEntry(QDataStream &stream, const QString &
     // Write the data
     stream << key << (qint32)dataoffset;
     // Statistics (# of uses and last used timestamp)
-    stream << (quint32)1 << (quint32)::time(0);
+    stream << (quint32)1 << (quint32)::time(nullptr);
     // Write (empty) children offsets
     stream << (qint32)0 << (qint32)0;
 

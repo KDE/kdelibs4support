@@ -52,7 +52,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE KMimeType : public QSharedData
     Q_DECLARE_PRIVATE(KMimeType)
 public:
     struct Ptr : QExplicitlySharedDataPointer<KMimeType> {
-        Ptr(KMimeType *ptr = 0) : QExplicitlySharedDataPointer<KMimeType>(ptr) {}
+        Ptr(KMimeType *ptr = nullptr) : QExplicitlySharedDataPointer<KMimeType>(ptr) {}
         bool isNull() const
         {
             return !constData();
@@ -180,7 +180,7 @@ public:
      */
     static Ptr findByUrl(const QUrl &url, mode_t mode = 0,
                          bool is_local_file = false, bool fast_mode = false,
-                         int *accuracy = 0);
+                         int *accuracy = nullptr);
     /**
      * Finds a KMimeType with the given @p url.
      * This function looks at mode_t first.
@@ -209,7 +209,7 @@ public:
      * @return A pointer to the matching mimetype. 0 is never returned.
      */
     static Ptr findByPath(const QString &path, mode_t mode = 0,
-                          bool fast_mode = false, int *accuracy = 0);
+                          bool fast_mode = false, int *accuracy = nullptr);
 
     /**
      * Tries to find out the MIME type of a data chunk by looking for
@@ -221,7 +221,7 @@ public:
      * @return a pointer to the KMimeType. "application/octet-stream" is
      *          returned if the type can not be found this way.
      */
-    static Ptr findByContent(const QByteArray &data, int *accuracy = 0);
+    static Ptr findByContent(const QByteArray &data, int *accuracy = nullptr);
 
     /**
      * Tries to find out the MIME type of filename/url and a data chunk.
@@ -239,7 +239,7 @@ public:
      *          accuracy of the match (which is in the range 0..100)
      */
     static Ptr findByNameAndContent(const QString &name, const QByteArray &data,
-                                    mode_t mode = 0, int *accuracy = 0);
+                                    mode_t mode = 0, int *accuracy = nullptr);
 
     /**
      * Tries to find out the MIME type of a data chunk by looking for
@@ -252,7 +252,7 @@ public:
      *          returned if the type can not be found this way.
      * @since 4.4
      */
-    static Ptr findByContent(QIODevice *device, int *accuracy = 0);
+    static Ptr findByContent(QIODevice *device, int *accuracy = nullptr);
 
     /**
      * Tries to find out the MIME type of filename/url and a data chunk.
@@ -273,7 +273,7 @@ public:
      * @since 4.4
      */
     static Ptr findByNameAndContent(const QString &name, QIODevice *device,
-                                    mode_t mode = 0, int *accuracy = 0);
+                                    mode_t mode = 0, int *accuracy = nullptr);
 
     /**
      * Tries to find out the MIME type of a file by looking for
@@ -288,7 +288,7 @@ public:
      * @return a pointer to the KMimeType, or the default mimetype
      *         (application/octet-stream) if the file cannot be opened.
      */
-    static Ptr findByFileContent(const QString &fileName, int *accuracy = 0);
+    static Ptr findByFileContent(const QString &fileName, int *accuracy = nullptr);
 
     /**
      * Returns whether a file has an internal format that is not human readable.

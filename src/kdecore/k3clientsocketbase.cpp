@@ -404,8 +404,8 @@ void KClientSocketBase::lookupFinishedSlot()
         return;
     }
 
-    QObject::disconnect(&d->peerResolver, 0L, this, SLOT(lookupFinishedSlot()));
-    QObject::disconnect(&d->localResolver, 0L, this, SLOT(lookupFinishedSlot()));
+    QObject::disconnect(&d->peerResolver, nullptr, this, SLOT(lookupFinishedSlot()));
+    QObject::disconnect(&d->localResolver, nullptr, this, SLOT(lookupFinishedSlot()));
     if (d->peerResolver.status() < 0 || d->localResolver.status() < 0) {
         setState(Idle);       // backtrack
         setError(LookupFailure);

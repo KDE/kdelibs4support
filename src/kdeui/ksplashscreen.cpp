@@ -26,7 +26,7 @@
 
 KSplashScreen::KSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f)
     : QSplashScreen(pixmap, f),
-      d(0)
+      d(nullptr)
 {
     QRect desk = KGlobalSettings::splashScreenDesktopGeometry();
     resize(pixmap.width(), pixmap.height());

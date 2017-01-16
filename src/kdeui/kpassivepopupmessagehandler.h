@@ -38,7 +38,7 @@ public:
      * @brief Create a new KPassivePopupMessageHandler
      * @param parent Parent widget to use for the KPassivePopup.
      */
-    explicit KPassivePopupMessageHandler(QWidget *parent = 0);
+    explicit KPassivePopupMessageHandler(QWidget *parent = nullptr);
 
     /**
      * @copydoc KMessageHandler::message

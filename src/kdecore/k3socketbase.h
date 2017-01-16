@@ -662,7 +662,7 @@ public:
      *
      * @returns the number of bytes available
      */
-    virtual qint64 waitForMore(int msecs, bool *timeout = 0L) = 0;
+    virtual qint64 waitForMore(int msecs, bool *timeout = nullptr) = 0;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.

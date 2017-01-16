@@ -32,7 +32,7 @@ public:
     /**
      * Constructs a hue/saturation selection widget.
      */
-    explicit KHueSaturationSelector(QWidget *parent = 0);
+    explicit KHueSaturationSelector(QWidget *parent = nullptr);
 
     /**
      * Destructor.

@@ -18,7 +18,7 @@ main(int argc, char *argv[])
     options.add("baud <baudrate>", ki18n("set baudrate"), "9600");
     options.add("+file(s)", ki18n("Files to load"));
 
-    KCmdLineArgs::init(argc, argv, "testapp", 0,
+    KCmdLineArgs::init(argc, argv, "testapp", nullptr,
                        ki18n("TestApp"), "v0.0.2",
                        ki18n("This is a test program.\n"
                              "1999 (c) Waldo Bastian"));

@@ -94,7 +94,7 @@ QString ASN1_UTCTIME_QString(ASN1_UTCTIME *tm)
 
 QString ASN1_INTEGER_QString(ASN1_INTEGER *aint)
 {
-    char *rep = KOSSL::self()->i2s_ASN1_INTEGER(NULL, aint);
+    char *rep = KOSSL::self()->i2s_ASN1_INTEGER(nullptr, aint);
     QString yy = rep;
     KOSSL::self()->OPENSSL_free(rep);
     return yy;

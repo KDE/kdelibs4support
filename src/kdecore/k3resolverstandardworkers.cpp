@@ -527,7 +527,7 @@ bool GetAddrInfoThread::run()
 
         // if we are here, lookup succeeded
         QString canon;
-        const char *previous_canon = 0L;
+        const char *previous_canon = nullptr;
 
         for (addrinfo *p = result; p; p = p->ai_next) {
             // cache the last canon name to avoid doing the ToUnicode processing unnecessarily
@@ -940,7 +940,7 @@ bool KStandardWorker::postprocess()
         }
 
         delete rr;
-        resultList[i - 1] = 0L;
+        resultList[i - 1] = nullptr;
     }
 
     resultList.clear();

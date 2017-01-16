@@ -55,7 +55,7 @@ namespace KdePrint
  *                   be taken from the widgets windowTitle().
  */
 KDELIBS4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, const QList<QWidget *> &customTabs,
-                                                   QWidget *parent = 0);
+                                                   QWidget *parent = nullptr);
 
 /**
  * Creates a printer dialog for a QPrinter.
@@ -66,7 +66,7 @@ KDELIBS4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, const 
  * @param printer the QPrinter to apply settings to
  * @param parent the parent for the dialog
  */
-KDELIBS4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, QWidget *parent = 0);
+KDELIBS4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, QWidget *parent = nullptr);
 }
 
 #endif // KDEPRINTDIALOG_H

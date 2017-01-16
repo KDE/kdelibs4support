@@ -33,8 +33,8 @@
 #include "klocale_p.h"
 
 KDateTimeFormatter::KDateTimeFormatter()
-    : m_englishLocale(0),
-      m_englishCalendar(0)
+    : m_englishLocale(nullptr),
+      m_englishCalendar(nullptr)
 {
 }
 
@@ -56,7 +56,7 @@ QString KDateTimeFormatter::formatDate(const QDate &fromDate,
         return QString();
     }
 
-    return formatDateTime(KDateTime(fromDate), toFormat, 0, calendar, locale, digitSet, formatStandard);
+    return formatDateTime(KDateTime(fromDate), toFormat, nullptr, calendar, locale, digitSet, formatStandard);
 }
 
 QString KDateTimeFormatter::formatTime(const QTime &fromTime,

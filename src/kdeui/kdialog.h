@@ -167,7 +167,7 @@ public:
      * @param parent The parent of the dialog.
      * @param flags  The widget flags passed to the QDialog constructor
      */
-    explicit KDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+    explicit KDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
     /**
      * Destroys the dialog.
@@ -472,7 +472,7 @@ public:
      * @return the created caption
      */
     static QString makeStandardCaption(const QString &userCaption,
-                                       QWidget *window = 0,
+                                       QWidget *window = nullptr,
                                        CaptionFlags flags = HIGCompliantCaption);
 
     /**
@@ -863,7 +863,7 @@ protected Q_SLOTS:
     void updateGeometry();
 
 protected:
-    KDialog(KDialogPrivate &dd, QWidget *parent, Qt::WindowFlags flags = 0);
+    KDialog(KDialogPrivate &dd, QWidget *parent, Qt::WindowFlags flags = nullptr);
     KDialogPrivate *const d_ptr;
 
 private:

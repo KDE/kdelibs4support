@@ -39,8 +39,8 @@ KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &la
                                        const QString &value, QWidget *parent,
                                        QValidator *validator, const QString &mask)
     : QDialog(parent),
-      m_label(0), m_lineEdit(0), m_intSpinBox(0),
-      m_doubleSpinBox(0), m_comboBox(0), m_listBox(0), m_buttonBox(0)
+      m_label(nullptr), m_lineEdit(nullptr), m_intSpinBox(nullptr),
+      m_doubleSpinBox(nullptr), m_comboBox(nullptr), m_listBox(nullptr), m_buttonBox(nullptr)
 {
     setWindowTitle(caption);
     setModal(true);
@@ -85,8 +85,8 @@ KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &la
 KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &label,
                                        const QString &value, QWidget *parent)
     : QDialog(parent),
-      m_label(0), m_lineEdit(0), m_intSpinBox(0),
-      m_doubleSpinBox(0), m_comboBox(0), m_buttonBox(0)
+      m_label(nullptr), m_lineEdit(nullptr), m_intSpinBox(nullptr),
+      m_doubleSpinBox(nullptr), m_comboBox(nullptr), m_buttonBox(nullptr)
 {
     setWindowTitle(caption);
     setModal(true);
@@ -122,8 +122,8 @@ KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &la
                                        int value, int minValue, int maxValue, int step, int base,
                                        QWidget *parent)
     : QDialog(parent),
-      m_label(0), m_lineEdit(0), m_intSpinBox(0),
-      m_doubleSpinBox(0), m_comboBox(0), m_listBox(0), m_buttonBox(0)
+      m_label(nullptr), m_lineEdit(nullptr), m_intSpinBox(nullptr),
+      m_doubleSpinBox(nullptr), m_comboBox(nullptr), m_listBox(nullptr), m_buttonBox(nullptr)
 {
     setWindowTitle(caption);
     setModal(true);
@@ -160,8 +160,8 @@ KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &la
                                        double value, double minValue, double maxValue, double step, int decimals,
                                        QWidget *parent)
     : QDialog(parent),
-      m_label(0), m_lineEdit(0), m_intSpinBox(0),
-      m_doubleSpinBox(0), m_comboBox(0), m_listBox(0), m_buttonBox(0)
+      m_label(nullptr), m_lineEdit(nullptr), m_intSpinBox(nullptr),
+      m_doubleSpinBox(nullptr), m_comboBox(nullptr), m_listBox(nullptr), m_buttonBox(nullptr)
 {
     setWindowTitle(caption);
     setModal(true);
@@ -196,8 +196,8 @@ KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &la
 KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &label,
                                        const QStringList &list, int current, bool editable, QWidget *parent)
     : QDialog(parent),
-      m_label(0), m_lineEdit(0), m_intSpinBox(0),
-      m_doubleSpinBox(0), m_comboBox(0), m_listBox(0), m_buttonBox(0)
+      m_label(nullptr), m_lineEdit(nullptr), m_intSpinBox(nullptr),
+      m_doubleSpinBox(nullptr), m_comboBox(nullptr), m_listBox(nullptr), m_buttonBox(nullptr)
 {
     setWindowTitle(caption);
     setModal(true);
@@ -249,8 +249,8 @@ KInputDialogHelper::KInputDialogHelper(const QString &caption, const QString &la
                                        const QStringList &list, const QStringList &select, bool multiple,
                                        QWidget *parent)
     : QDialog(parent),
-      m_label(0), m_lineEdit(0), m_intSpinBox(0),
-      m_doubleSpinBox(0), m_comboBox(0), m_listBox(0), m_buttonBox(0)
+      m_label(nullptr), m_lineEdit(nullptr), m_intSpinBox(nullptr),
+      m_doubleSpinBox(nullptr), m_comboBox(nullptr), m_listBox(nullptr), m_buttonBox(nullptr)
 {
     setWindowTitle(caption);
     setModal(true);

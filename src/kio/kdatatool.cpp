@@ -37,7 +37,7 @@ class KDataToolInfo::KDataToolInfoPrivate
 {
 public:
     KDataToolInfoPrivate()
-        : service(0)
+        : service(nullptr)
     {}
 
     KService::Ptr service;
@@ -58,7 +58,7 @@ KDataToolInfo::KDataToolInfo(const KService::Ptr &service, const QString &compon
     if (!d->service && !d->service->serviceTypes().contains("KDataTool")) {
         /*qDebug() << "The service" << d->service->name()
                        << "does not feature the service type KDataTool";*/
-        d->service = 0;
+        d->service = nullptr;
     }
 }
 
@@ -137,7 +137,7 @@ QStringList KDataToolInfo::userCommands() const
 KDataTool *KDataToolInfo::createTool(QObject *parent) const
 {
     if (!d->service) {
-        return 0;
+        return nullptr;
     }
 
     KDataTool *tool = d->service->createInstance<KDataTool>(parent);

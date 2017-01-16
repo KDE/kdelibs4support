@@ -42,11 +42,11 @@ public:
     };
 
     explicit KFileMetaInfoWidget(KFileMetaInfoItem item,
-                                 QValidator *val = 0,
-                                 QWidget *parent = 0);
+                                 QValidator *val = nullptr,
+                                 QWidget *parent = nullptr);
 
-    KFileMetaInfoWidget(KFileMetaInfoItem item, Mode mode, QValidator *val = 0,
-                        QWidget *parent = 0);
+    KFileMetaInfoWidget(KFileMetaInfoItem item, Mode mode, QValidator *val = nullptr,
+                        QWidget *parent = nullptr);
 
     virtual ~KFileMetaInfoWidget();
 

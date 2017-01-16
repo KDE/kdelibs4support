@@ -33,7 +33,7 @@ public:
         : mReorderStartTab(-1),
           mReorderPreviousTab(-1),
           mDragSwitchTab(-1),
-          mActivateDragSwitchTabTimer(0),
+          mActivateDragSwitchTabTimer(nullptr),
           mTabReorderingEnabled(false),
           mMiddleMouseTabMoveInProgress(false)
     {

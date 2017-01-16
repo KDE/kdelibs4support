@@ -51,12 +51,12 @@ public:
     /**
      * Constructs a date selection widget.
      */
-    explicit KDateWidget(QWidget *parent = 0);
+    explicit KDateWidget(QWidget *parent = nullptr);
 
     /**
      * Constructs a date selection widget with the initial date set to @p date.
      */
-    explicit KDateWidget(const QDate &date, QWidget *parent = 0);
+    explicit KDateWidget(const QDate &date, QWidget *parent = nullptr);
 
     /**
      * Destructs the date selection widget.
@@ -90,7 +90,7 @@ public:
      *
      * @return @c true if the calendar system was successfully set, @c false otherwise
      */
-    bool setCalendar(KCalendarSystem *calendar = 0);
+    bool setCalendar(KCalendarSystem *calendar = nullptr);
 
     /**
      * @since 4.6

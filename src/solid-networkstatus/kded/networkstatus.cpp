@@ -55,8 +55,8 @@ typedef QMap< QString, Network * > NetworkMap;
 class NetworkStatusModule::Private
 {
 public:
-    Private() : status( Solid::Networking::Unknown ), backend( 0 ), serviceWatcher( 0 ),
-                backendAppearedWatcher( 0 ), backendDisappearedWatcher ( 0 )
+    Private() : status( Solid::Networking::Unknown ), backend( nullptr ), serviceWatcher( nullptr ),
+                backendAppearedWatcher( nullptr ), backendDisappearedWatcher ( nullptr )
     {
 
     }
@@ -214,10 +214,10 @@ void NetworkStatusModule::backendRegistered()
     backends.clear();
 
     delete d->backendAppearedWatcher;
-    d->backendAppearedWatcher = 0;
+    d->backendAppearedWatcher = nullptr;
 
     delete d->backendDisappearedWatcher;
-    d->backendDisappearedWatcher = 0;
+    d->backendDisappearedWatcher = nullptr;
     init();
 }
 
@@ -246,13 +246,13 @@ void NetworkStatusModule::init()
         }
     }
 
-    if (d->backendAppearedWatcher == 0) {
+    if (d->backendAppearedWatcher == nullptr) {
         d->backendAppearedWatcher = new QDBusServiceWatcher(this);
         d->backendAppearedWatcher->setConnection(QDBusConnection::systemBus());
         d->backendAppearedWatcher->setWatchMode(QDBusServiceWatcher::WatchForRegistration);
     }
 
-    if ( d->backend == 0 ) {
+    if ( d->backend == nullptr ) {
         // if none found watch for all backends registration.
         for ( int i = 0; i < backends.count(); i++ ) {
             d->backendAppearedWatcher->addWatchedService(backends.value(i)->serviceName());
@@ -265,7 +265,7 @@ void NetworkStatusModule::init()
         connect(d->backendAppearedWatcher, SIGNAL(serviceRegistered(const QString &)), SLOT(backendRegistered()));
 
         // watch for the selected bakend unregistration.
-        if (d->backendDisappearedWatcher == 0) {
+        if (d->backendDisappearedWatcher == nullptr) {
             d->backendDisappearedWatcher = new QDBusServiceWatcher(this);
             d->backendDisappearedWatcher->setConnection(QDBusConnection::systemBus());
             d->backendDisappearedWatcher->setWatchMode(QDBusServiceWatcher::WatchForUnregistration);

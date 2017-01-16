@@ -127,7 +127,7 @@ KFileMetaInfoItem::properties() const
 bool
 KFileMetaInfoItem::isEditable() const
 {
-    return d->writer != 0;
+    return d->writer != nullptr;
 }
 QString
 KFileMetaInfoItem::suffix() const

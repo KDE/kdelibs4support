@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 
     QApplication app(argc, argv);
 
-    KEditListBox::CustomEditor editor(new KComboBox(true, 0));
+    KEditListBox::CustomEditor editor(new KComboBox(true, nullptr));
     KEditListBox *box = new KEditListBox(QLatin1String("KEditListBox"),
                                          editor);
 

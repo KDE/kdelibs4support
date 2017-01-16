@@ -31,7 +31,7 @@
 #include <kfiletreeview_p.h>
 
 Window::Window()
-    : KMainWindow(0)
+    : KMainWindow(nullptr)
 {
     setObjectName("Test FileTreeView");
 

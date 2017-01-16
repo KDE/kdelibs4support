@@ -75,7 +75,7 @@ void KDialogPrivate::queuedLayoutUpdate()
 
     // Don't lose the focus widget when re-creating the layout.
     // Testcase: KOrganizer's "Select Categories" dialog
-    QPointer<QWidget> focusWidget = mMainWidget ? mMainWidget->focusWidget() : 0;
+    QPointer<QWidget> focusWidget = mMainWidget ? mMainWidget->focusWidget() : nullptr;
 
     if (q->layout() && q->layout() != mTopLayout) {
         qWarning() << q->metaObject()->className() << "created with a layout; don't do that, KDialog takes care of it, use mainWidget or setMainWidget instead";
@@ -220,7 +220,7 @@ void KDialog::setButtons(ButtonCodes buttonMask)
         d->mButtonList.clear();
 
         delete d->mButtonBox;
-        d->mButtonBox = 0;
+        d->mButtonBox = nullptr;
     }
 
     if (buttonMask & Cancel) {
@@ -335,7 +335,7 @@ void KDialog::setDefaultButton(ButtonCode newDefaultButton)
         QPushButton *b = button(newDefaultButton);
         if (b) {
             b->setDefault(true);
-            if (focusWidget() == 0 || oldDefaultHadFocus) {
+            if (focusWidget() == nullptr || oldDefaultHadFocus) {
                 // No widget had focus yet, or the old default button had
                 // -> ok to give focus to the new default button, so that it's
                 // really default (Enter triggers it).
@@ -523,7 +523,7 @@ void KDialog::setPlainCaption(const QString &caption)
         win->setWindowTitle(caption);
 #if HAVE_X11
         if (QGuiApplication::platformName() == QStringLiteral("xcb")) {
-            NETWinInfo info(QX11Info::connection(), win->winId(), QX11Info::appRootWindow(), 0);
+            NETWinInfo info(QX11Info::connection(), win->winId(), QX11Info::appRootWindow(), nullptr);
             info.setName(caption.toUtf8().constData());
         }
 #endif
@@ -669,7 +669,7 @@ bool KDialog::avoidArea(QWidget *widget, const QRect &area, int screen)
 void KDialog::showButtonSeparator(bool state)
 {
     Q_D(KDialog);
-    if ((d->mActionSeparator != 0) == state) {
+    if ((d->mActionSeparator != nullptr) == state) {
         return;
     }
     if (state) {
@@ -681,7 +681,7 @@ void KDialog::showButtonSeparator(bool state)
         d->mActionSeparator->setOrientation(d->mButtonOrientation);
     } else {
         delete d->mActionSeparator;
-        d->mActionSeparator = 0;
+        d->mActionSeparator = nullptr;
     }
 
     d->setupLayout();
@@ -702,7 +702,7 @@ void KDialog::incrementInitialSize(const QSize &size)
 QPushButton *KDialog::button(ButtonCode id) const
 {
     Q_D(const KDialog);
-    return d->mButtonList.value(id, 0);
+    return d->mButtonList.value(id, nullptr);
 }
 
 void KDialog::enableButton(ButtonCode id, bool state)
@@ -1008,7 +1008,7 @@ void KDialog::slotButtonClicked(int button)
 void KDialog::enableLinkedHelp(bool state)
 {
     Q_D(KDialog);
-    if ((d->mUrlHelp != 0) == state) {
+    if ((d->mUrlHelp != nullptr) == state) {
         return;
     }
     if (state) {
@@ -1026,7 +1026,7 @@ void KDialog::enableLinkedHelp(bool state)
         d->mUrlHelp->show();
     } else {
         delete d->mUrlHelp;
-        d->mUrlHelp = 0;
+        d->mUrlHelp = nullptr;
     }
 
     d->setupLayout();

@@ -45,7 +45,7 @@ void KGlobalSettingsTest::initTestCase()
     // settings.
     qputenv("KDE_FULL_SESSION", "1");
 
-    QDBusConnectionInterface *bus = 0;
+    QDBusConnectionInterface *bus = nullptr;
     if (!QDBusConnection::sessionBus().isConnected() || !(bus = QDBusConnection::sessionBus().interface())) {
         QFAIL("Session bus not found");
     }

@@ -106,7 +106,7 @@ static const ColorCollectionNameType colorCollectionName[] = {
     { "Rainbow.colors", I18N_NOOP2("palette name", "Rainbow Colors") },
     { "Royal.colors",  I18N_NOOP2("palette name", "Royal Colors") },
     { "Web.colors",    I18N_NOOP2("palette name", "Web Colors") },
-    { 0, 0 } // end of data
+    { nullptr, nullptr } // end of data
 };
 
 enum ColorCollectionIndices {
@@ -216,7 +216,7 @@ QColor KColorCells::color(int index) const
 {
     QTableWidgetItem *tmpItem = item(index / columnCount(), index % columnCount());
 
-    if (tmpItem != 0) {
+    if (tmpItem != nullptr) {
         return tmpItem->data(Qt::BackgroundRole).value<QColor>();
     }
 
@@ -270,7 +270,7 @@ void KColorCells::setColor(int column, const QColor &color)
 
     QTableWidgetItem *tableItem = item(tableRow, tableColumn);
 
-    if (tableItem == 0) {
+    if (tableItem == nullptr) {
         tableItem = new QTableWidgetItem();
         setItem(tableRow, tableColumn, tableItem);
     }
@@ -565,8 +565,8 @@ public:
 KColorTable::KColorTable(QWidget *parent, int minWidth, int cols)
     : QWidget(parent), d(new KColorTablePrivate(this))
 {
-    d->cells = 0;
-    d->mPalette = 0;
+    d->cells = nullptr;
+    d->mPalette = nullptr;
     d->mMinWidth = minWidth;
     d->mCols = cols;
     d->i18n_namedColors  = i18n("Named Colors");
@@ -646,7 +646,7 @@ static const char *const *namedColorFilePath(void)
 #else /* systems without X11 */
         "kf5/kdeui/rgb.txt",
 #endif
-        0
+        nullptr
     };
     return path;
 }
@@ -819,8 +819,8 @@ KColorTable::setColors(const QString &_collectionName)
             d->mNamedColorList->show();
             readNamedColor();
 
-            delete d->cells; d->cells = 0;
-            delete d->mPalette; d->mPalette = 0;
+            delete d->cells; d->cells = nullptr;
+            delete d->mPalette; d->mPalette = nullptr;
         } else {
             d->mNamedColorList->hide();
             d->sv->show();
@@ -883,7 +883,7 @@ KColorTable::addToCustomColors(const QColor &color)
     d->mPalette->addColor(color);
     d->mPalette->save();
     delete d->mPalette;
-    d->mPalette = 0;
+    d->mPalette = nullptr;
     setColors(i18nc("palette name", colorCollectionName[customColorIndex].m_displayName));
 }
 
@@ -897,7 +897,7 @@ KColorTable::addToRecentColors(const QColor &color)
     bool recentIsSelected = false;
     if (d->mPalette && d->mPalette->name() == colorCollectionName[ recentColorIndex ].m_fileName) {
         delete d->mPalette;
-        d->mPalette = 0;
+        d->mPalette = nullptr;
         recentIsSelected = true;
     }
     KColorCollection *recentPal = new KColorCollection(colorCollectionName[ recentColorIndex ].m_fileName);
@@ -1000,7 +1000,7 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
     d->bRecursion = true;
     d->bColorPicking = false;
     d->bAlphaEnabled = false;
-    d->cbDefaultColor = 0L;
+    d->cbDefaultColor = nullptr;
     d->_mode = ChooserClassic;
     connect(this, SIGNAL(okClicked()), this, SLOT(slotWriteSettings()));
     connect(this, SIGNAL(closeClicked()), this, SLOT(slotWriteSettings()));

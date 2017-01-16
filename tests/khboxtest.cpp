@@ -7,7 +7,7 @@ KHBoxTest::KHBoxTest(QWidget *parentWidget)
 {
     pbAdd = new QPushButton(QLatin1String("Add a button"), this);
     connect(pbAdd, SIGNAL(clicked()), this, SLOT(slotAdd()));
-    pbRemove = 0;
+    pbRemove = nullptr;
 }
 
 void KHBoxTest::slotAdd()
@@ -23,14 +23,14 @@ void KHBoxTest::slotRemove()
 {
     pbAdd->setEnabled(true);
     pbRemove->deleteLater();
-    pbRemove = 0;
+    pbRemove = nullptr;
 }
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
 
-    KHBoxTest *toplevel = new KHBoxTest(0);
+    KHBoxTest *toplevel = new KHBoxTest(nullptr);
     toplevel->show();
     app.exec();
 }

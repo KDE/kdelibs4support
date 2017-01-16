@@ -296,11 +296,11 @@ KStreamSocket *KServerSocket::accept()
         if (!blocking()) {
             listen();
             setError(WouldBlock);
-            return NULL;
+            return nullptr;
         } else if (!listen())
             // error happened during listen
         {
-            return NULL;
+            return nullptr;
         }
     }
 
@@ -309,11 +309,11 @@ KStreamSocket *KServerSocket::accept()
         bool timedout;
         if (!socketDevice()->poll(d->timeout, &timedout)) {
             copyError();
-            return NULL;
+            return nullptr;
         }
 
         if (timedout) {
-            return 0L;
+            return nullptr;
         }
     }
 
@@ -322,7 +322,7 @@ KStreamSocket *KServerSocket::accept()
     if (!accepted) {
         // error happened during accept
         copyError();
-        return NULL;
+        return nullptr;
     }
 
     KStreamSocket *streamsocket;

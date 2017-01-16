@@ -47,7 +47,7 @@ public:
     QRect itemTextRect(const QFontMetrics &metrics, const QRect &rectangle, int alignment,
                        bool enabled, const QString &text) const Q_DECL_OVERRIDE;
     int layoutSpacing(QSizePolicy::ControlType control1, QSizePolicy::ControlType control2, Qt::Orientation orientation,
-                      const QStyleOption *option = 0, const QWidget *widget = 0) const Q_DECL_OVERRIDE;
+                      const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
     int pixelMetric(PixelMetric metric, const QStyleOption *option, const QWidget *widget) const Q_DECL_OVERRIDE;
     void polish(QWidget *widget) Q_DECL_OVERRIDE;
     void polish(QApplication *application) Q_DECL_OVERRIDE;

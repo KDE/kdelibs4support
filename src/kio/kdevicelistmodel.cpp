@@ -266,7 +266,7 @@ void KDeviceListModel::Private::removeBranch(const QString &udi)
     q->beginRemoveRows(indexForItem(parent),
                        item->row(), item->row());
 
-    item->setParent(0);
+    item->setParent(nullptr);
     deviceItems.remove(udi);
     delete item;
 

@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
     svalue = KInputDialog::getText("_caption", "_label:", "_value", &ok);
     kDebug() << "value1: " << svalue << ", ok: " << ok;
 
-    QRegExpValidator validator(QRegExp("[0-9]{3}\\-[0-9]{3}\\-[0-9]{4}"), 0);
-    svalue = KInputDialog::getText("_caption", "_label:", "_value", &ok, 0L,
+    QRegExpValidator validator(QRegExp("[0-9]{3}\\-[0-9]{3}\\-[0-9]{4}"), nullptr);
+    svalue = KInputDialog::getText("_caption", "_label:", "_value", &ok, nullptr,
                                    &validator);
     kDebug() << "value2: " << svalue << ", ok: " << ok;
 
-    svalue = KInputDialog::getText("_caption", "_label:", "_value", &ok, 0L, 0L,
-                                   0L, "900.900.900.900");
+    svalue = KInputDialog::getText("_caption", "_label:", "_value", &ok, nullptr, nullptr,
+                                   nullptr, "900.900.900.900");
     kDebug() << "value1: " << svalue << ", ok: " << ok;
 
     ivalue = KInputDialog::getInteger("_caption", "_label:", 64, 0, 255,

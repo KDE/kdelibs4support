@@ -43,8 +43,8 @@ public:
         : q(host)
         , printer(_printer)
         , mainWidget(new QWidget(host))
-        , previewPart(0)
-        , failMessage(0)
+        , previewPart(nullptr)
+        , failMessage(nullptr)
     {
         mainWidget->setLayout(new QVBoxLayout);
 
@@ -79,7 +79,7 @@ void KPrintPreviewPrivate::getPart()
         return;
     }
 
-    KPluginFactory *factory(0);
+    KPluginFactory *factory(nullptr);
     const KService::List offers =
         KMimeTypeTrader::self()->query("application/pdf", "KParts/ReadOnlyPart");
 

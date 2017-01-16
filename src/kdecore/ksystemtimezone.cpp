@@ -155,11 +155,11 @@ KTimeZone                KSystemTimeZonesPrivate::m_localZone;
 QString                  KSystemTimeZonesPrivate::m_localZoneName;
 QString                  KSystemTimeZonesPrivate::m_zoneinfoDir;
 QString                  KSystemTimeZonesPrivate::m_zonetab;
-KSystemTimeZoneSource   *KSystemTimeZonesPrivate::m_source = 0;
+KSystemTimeZoneSource   *KSystemTimeZonesPrivate::m_source = nullptr;
 bool                     KSystemTimeZonesPrivate::m_ktimezonedError = true;
-KTzfileTimeZoneSource   *KSystemTimeZonesPrivate::m_tzfileSource = 0;
-KSystemTimeZones        *KSystemTimeZonesPrivate::m_parent = 0;
-KSystemTimeZonesPrivate *KSystemTimeZonesPrivate::m_instance = 0;
+KTzfileTimeZoneSource   *KSystemTimeZonesPrivate::m_tzfileSource = nullptr;
+KSystemTimeZones        *KSystemTimeZonesPrivate::m_parent = nullptr;
+KSystemTimeZonesPrivate *KSystemTimeZonesPrivate::m_instance = nullptr;
 
 KTzfileTimeZoneSource *KSystemTimeZonesPrivate::tzfileSource()
 {
@@ -188,7 +188,7 @@ Q_GLOBAL_STATIC(KTimeZone, simulatedLocalZone)
 #endif
 
 KSystemTimeZones::KSystemTimeZones()
-    : d(0)
+    : d(nullptr)
 {
     QDBusConnection dbus = QDBusConnection::sessionBus();
     const QString dbusIface = QString::fromLatin1(KTIMEZONED_DBUS_IFACE);
@@ -759,7 +759,7 @@ bool       KSystemTimeZoneSourcePrivate::TZIsSaved = false;
 bool       KSystemTimeZoneSourcePrivate::multiParse = false;
 
 KSystemTimeZoneSource::KSystemTimeZoneSource()
-    : d(0)
+    : d(nullptr)
 //  : d(new KSystemTimeZoneSourcePrivate)
 {
 }

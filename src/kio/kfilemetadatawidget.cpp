@@ -101,7 +101,7 @@ KFileMetaDataWidget::Private::Private(KFileMetaDataWidget *parent) :
 #if ! KIO_NO_NEPOMUK
     m_provider(0),
 #endif
-    m_gridLayout(0),
+    m_gridLayout(nullptr),
     q(parent)
 {
     initMetaInfoSettings();
@@ -164,10 +164,10 @@ void KFileMetaDataWidget::Private::initMetaInfoSettings()
             "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
             "kfileitem#owner",
             "kfileitem#permissions",
-            0 // mandatory last entry
+            nullptr // mandatory last entry
         };
 
-        for (int i = 0; disabledProperties[i] != 0; ++i) {
+        for (int i = 0; disabledProperties[i] != nullptr; ++i) {
             settings.writeEntry(disabledProperties[i], false);
         }
 
@@ -369,7 +369,7 @@ bool KFileMetaDataWidget::isReadOnly() const
 
 QSize KFileMetaDataWidget::sizeHint() const
 {
-    if (d->m_gridLayout == 0) {
+    if (d->m_gridLayout == nullptr) {
         return QWidget::sizeHint();
     }
 

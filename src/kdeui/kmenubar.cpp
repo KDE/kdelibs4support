@@ -72,7 +72,7 @@ public:
             topLevel(false),
             wasTopLevel(false),
 #if HAVE_X11
-            selection(NULL),
+            selection(nullptr),
             isX11(QX11Info::isPlatformX11()),
 #endif
             min_size(0, 0)
@@ -213,7 +213,7 @@ void KMenuBar::setTopLevelMenuInternal(bool top_level)
     } else {
 #if HAVE_X11
         delete d->selection;
-        d->selection = NULL;
+        d->selection = nullptr;
 #endif
         setAttribute(Qt::WA_NoSystemBackground, false);
         setBackgroundRole(QPalette::Button);

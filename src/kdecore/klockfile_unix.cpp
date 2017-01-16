@@ -469,7 +469,7 @@ KLockFile::LockResult KLockFile::lock(LockFlags options)
             n = n * 2;
         }
 
-        select(0, 0, 0, 0, &tv);
+        select(0, nullptr, nullptr, nullptr, &tv);
     }
     if (result == LockOK) {
         d->isLocked = true;

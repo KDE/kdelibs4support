@@ -102,7 +102,7 @@ public:
      * The parameter is used to specify which socket this object is used as
      * a device for.
      */
-    explicit KSocketDevice(const KSocketBase * = 0L, QObject *objparent = 0L);
+    explicit KSocketDevice(const KSocketBase * = nullptr, QObject *objparent = nullptr);
 
     /**
      * Constructs a new object around an already-open socket.
@@ -205,7 +205,7 @@ public:
      * This function is a wrapper against poll(). This function will wait
      * for any read events.
      */
-    qint64 waitForMore(int msecs, bool *timeout = 0L) Q_DECL_OVERRIDE;
+    qint64 waitForMore(int msecs, bool *timeout = nullptr) Q_DECL_OVERRIDE;
 
     /**
      * Returns this socket's local address.
@@ -262,18 +262,18 @@ public:
     /**
      * Reads data and the source address from this socket.
      */
-    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from = 0L) Q_DECL_OVERRIDE;
+    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from = nullptr) Q_DECL_OVERRIDE;
 
     /**
      * Peeks the data in the socket and the source address.
      */
-    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from = 0L) Q_DECL_OVERRIDE;
+    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from = nullptr) Q_DECL_OVERRIDE;
 
     /**
      * Writes the given data to the given destination address.
      */
     virtual qint64 writeData(const char *data, qint64 len,
-                             const KSocketAddress *to = 0L) Q_DECL_OVERRIDE;
+                             const KSocketAddress *to = nullptr) Q_DECL_OVERRIDE;
 
     /**
      * Executes a poll in the socket, via select(2) or poll(2).
@@ -293,8 +293,8 @@ public:
      * @param timedout    on exit, will contain true if the polling timed out
      * @return true if the poll call succeeded and false if an error occurred
      */
-    virtual bool poll(bool *input, bool *output, bool *exception = 0L,
-                      int timeout = -1, bool *timedout = 0L);
+    virtual bool poll(bool *input, bool *output, bool *exception = nullptr,
+                      int timeout = -1, bool *timedout = nullptr);
 
     /**
      * Shorter version to poll for any events in a socket. This call
@@ -307,7 +307,7 @@ public:
      * @param timedout    on exit, will contain true if the polling timed out
      * @return true if the poll call succeeded and false if an error occurred
      */
-    bool poll(int timeout = -1, bool *timedout = 0L);
+    bool poll(int timeout = -1, bool *timedout = nullptr);
 
 protected:
     /**
@@ -317,7 +317,7 @@ protected:
      *
      * @param parent  the parent, if any
      */
-    explicit KSocketDevice(bool, const KSocketBase *parent = 0L);
+    explicit KSocketDevice(bool, const KSocketBase *parent = nullptr);
 
     /**
      * Creates a socket notifier of the given type.

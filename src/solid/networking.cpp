@@ -32,7 +32,7 @@ Solid::NetworkingPrivate::NetworkingPrivate()
     : netStatus(Solid::Networking::Unknown),
       connectPolicy(Solid::Networking::Managed),
       disconnectPolicy(Solid::Networking::Managed),
-      iface(0)
+      iface(nullptr)
 {
     QDBusServiceWatcher *watcher = new QDBusServiceWatcher("org.kde.kded5", QDBusConnection::sessionBus(),
             QDBusServiceWatcher::WatchForOwnerChange, this);

@@ -316,7 +316,7 @@ public:
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
         KDELIBS4SUPPORT_DEPRECATED static KUrl::List fromMimeData(const QMimeData *mimeData,
                 DecodeOptions decodeOptions = PreferKdeUrls,
-                KUrl::MetaDataMap *metaData = 0);
+                KUrl::MetaDataMap *metaData = nullptr);
 #endif
     };
     /**
@@ -707,7 +707,7 @@ public:
      * query items.
      * @deprecated since 5.0, use QUrlQuery(url).queryItems()
      */
-    QMap< QString, QString > queryItems(const QueryItemsOptions &options = 0) const;
+    QMap< QString, QString > queryItems(const QueryItemsOptions &options = nullptr) const;
 
     /**
      * Returns the value of a certain query item.
@@ -993,7 +993,7 @@ public:
      * equals(u, KUrl::CompareWithoutTrailingSlash|KUrl::AllowEmptyPath) needs manual handling
      * (it was mostly unused).
      */
-    bool equals(const KUrl &u, const EqualsOptions &options = 0) const;
+    bool equals(const KUrl &u, const EqualsOptions &options = nullptr) const;
 
     /**
      * Checks whether the given URL is parent of this URL.
@@ -1147,7 +1147,7 @@ public:
      * @deprecated since 5.0, use QDir(base_dir).relativeFilePath(path). isParent can be
      * replaced with a call to startsWith("..") on the result value.
      */
-    static QString relativePath(const QString &base_dir, const QString &path, bool *isParent = 0);
+    static QString relativePath(const QString &base_dir, const QString &path, bool *isParent = nullptr);
 
 private:
     void _setQuery(const QString &query);

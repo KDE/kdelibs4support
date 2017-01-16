@@ -72,7 +72,7 @@ public:
      * @param parent the QWidget's parent, or 0
      * @return the KScanDialog, or 0 if the function failed
      */
-    static KScanDialog *getScanDialog(QWidget *parent = 0);
+    static KScanDialog *getScanDialog(QWidget *parent = nullptr);
     /**
      * Destructs the scan dialog.
      */
@@ -101,7 +101,7 @@ protected:
      */
     explicit KScanDialog(int dialogFace = Tabbed,
                          int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
-                         QWidget *parent = 0);
+                         QWidget *parent = nullptr);
 
     /**
      * Returns the current id for an image. You can use that in your subclass
@@ -179,7 +179,7 @@ public:
      * @param parent the QWidget's parent, or 0
      * @return the KOCRDialog, or 0 if the function failed
      */
-    static KOCRDialog *getOCRDialog(QWidget *parent = 0);
+    static KOCRDialog *getOCRDialog(QWidget *parent = nullptr);
     ~KOCRDialog();
 
 protected:
@@ -194,7 +194,7 @@ protected:
      * @param modal if true the dialog is model
      */
     explicit KOCRDialog(int dialogFace = Tabbed, int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
-                        QWidget *parent = 0L, bool modal = false);
+                        QWidget *parent = nullptr, bool modal = false);
 
     /**
      * Returns the current id for an image. You can use that in your subclass

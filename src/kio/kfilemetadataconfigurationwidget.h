@@ -47,7 +47,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaDataConfigurationWidget : publi
     Q_OBJECT
 
 public:
-    explicit KFileMetaDataConfigurationWidget(QWidget *parent = 0);
+    explicit KFileMetaDataConfigurationWidget(QWidget *parent = nullptr);
     virtual ~KFileMetaDataConfigurationWidget();
 
     /**

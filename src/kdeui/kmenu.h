@@ -46,7 +46,7 @@ public:
     /**
      * Constructs a KMenu.
      */
-    explicit KMenu(QWidget *parent = 0L);
+    explicit KMenu(QWidget *parent = nullptr);
 
     /**
      * Constructs a KMenu.
@@ -54,7 +54,7 @@ public:
      *              into another menu as a submenu.
      * \param parent the parent QWidget object
      */
-    explicit KMenu(const QString &title, QWidget *parent = 0L);
+    explicit KMenu(const QString &title, QWidget *parent = nullptr);
 
     /**
      * Destructs the object
@@ -64,12 +64,12 @@ public:
     /**
      * Inserts a title item with no icon.
      */
-    QAction *addTitle(const QString &text, QAction *before = 0L);
+    QAction *addTitle(const QString &text, QAction *before = nullptr);
 
     /**
      * Inserts a title item with the given icon and title.
      */
-    QAction *addTitle(const QIcon &icon, const QString &text, QAction *before = 0L);
+    QAction *addTitle(const QIcon &icon, const QString &text, QAction *before = nullptr);
 
     /**
      * Enables keyboard navigation by searching for the entered key sequence.

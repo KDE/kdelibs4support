@@ -1282,7 +1282,7 @@ public:
      * @return KDateTime value, or an invalid KDateTime if either parameter is invalid
      * @see setFromStringDefault(), toString(), QString::fromString()
      */
-    static KDateTime fromString(const QString &string, TimeFormat format = ISODate, bool *negZero = 0);
+    static KDateTime fromString(const QString &string, TimeFormat format = ISODate, bool *negZero = nullptr);
 
     /**
      * Returns the KDateTime represented by @p string, using the @p format
@@ -1417,7 +1417,7 @@ public:
      * @see setFromStringDefault(), toString()
      */
     static KDateTime fromString(const QString &string, const QString &format,
-                                const KTimeZones *zones = 0, bool offsetIfAmbiguous = true);
+                                const KTimeZones *zones = nullptr, bool offsetIfAmbiguous = true);
 
     /**
      * Sets the default time specification for use by fromString() when no time

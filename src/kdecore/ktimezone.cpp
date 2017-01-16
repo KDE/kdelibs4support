@@ -296,7 +296,7 @@ public:
 class KTimeZonePrivate : public QSharedData
 {
 public:
-    KTimeZonePrivate() : source(0), data(0), refCount(1), cachedTransitionIndex(-1) {}
+    KTimeZonePrivate() : source(nullptr), data(nullptr), refCount(1), cachedTransitionIndex(-1) {}
     KTimeZonePrivate(KTimeZoneSource *src, const QString &nam,
                      const QString &country, float lat, float lon, const QString &cmnt);
     KTimeZonePrivate(const KTimeZonePrivate &);
@@ -325,7 +325,7 @@ private:
     static KTimeZoneSource *mUtcSource;
 };
 
-KTimeZoneSource *KTimeZonePrivate::mUtcSource = 0;
+KTimeZoneSource *KTimeZonePrivate::mUtcSource = nullptr;
 
 KTimeZonePrivate::KTimeZonePrivate(KTimeZoneSource *src, const QString &nam,
                                    const QString &country, float lat, float lon, const QString &cmnt)
@@ -335,7 +335,7 @@ KTimeZonePrivate::KTimeZonePrivate(KTimeZoneSource *src, const QString &nam,
       comment(cmnt),
       latitude(lat),
       longitude(lon),
-      data(0),
+      data(nullptr),
       refCount(1),
       cachedTransitionIndex(-1)
 {
@@ -365,7 +365,7 @@ KTimeZonePrivate::KTimeZonePrivate(const KTimeZonePrivate &rhs)
     if (rhs.data) {
         data = rhs.data->clone();
     } else {
-        data = 0;
+        data = nullptr;
     }
 }
 
@@ -387,7 +387,7 @@ KTimeZonePrivate &KTimeZonePrivate::operator=(const KTimeZonePrivate &rhs)
     if (rhs.data) {
         data = rhs.data->clone();
     } else {
-        data = 0;
+        data = nullptr;
     }
     // refCount is unchanged
     return *this;
@@ -437,7 +437,7 @@ KTimeZoneBackend::~KTimeZoneBackend()
     if (d && --d->refCount == 0) {
         delete d;
     }
-    d = 0;
+    d = nullptr;
 }
 
 KTimeZoneBackend &KTimeZoneBackend::operator=(const KTimeZoneBackend &other)
@@ -508,8 +508,8 @@ int KTimeZoneBackend::offsetAtZoneTime(const KTimeZone *caller, const QDateTime 
 #endif
     bool validTime;
     int secondIndex = -1;
-    index = caller->transitionIndex(zoneDateTime, (secondOffset ? &secondIndex : 0), &validTime);
-    const KTimeZone::Transition *tr = (index >= 0) ? &transitions[index] : 0;
+    index = caller->transitionIndex(zoneDateTime, (secondOffset ? &secondIndex : nullptr), &validTime);
+    const KTimeZone::Transition *tr = (index >= 0) ? &transitions[index] : nullptr;
     const int offset = tr ? tr->phase().utcOffset()
                        : validTime ? (d->data ? d->data->previousUtcOffset() : KTimeZone::InvalidOffset)
                        : KTimeZone::InvalidOffset;
@@ -550,7 +550,7 @@ int KTimeZoneBackend::offsetAtUtc(const KTimeZone *caller, const QDateTime &utcD
     index = caller->transitionIndex(utcDateTime);
     d->cachedTransitionIndex = index;   // cache transition data
     d->cachedTransitionTimesValid = false;
-    const KTimeZone::Transition *tr = (index >= 0) ? &transitions.at(index) : 0;
+    const KTimeZone::Transition *tr = (index >= 0) ? &transitions.at(index) : nullptr;
     return tr ? tr->phase().utcOffset() : (d->data ? d->data->previousUtcOffset() : KTimeZone::InvalidOffset);
 }
 
@@ -717,7 +717,7 @@ const KTimeZone::Transition *KTimeZone::transition(const QDateTime &dt, const Tr
         if (validTime) {
             *validTime = false;
         }
-        return 0;
+        return nullptr;
     }
     return d->d->data->transition(dt, secondTransition, validTime);
 }
@@ -757,7 +757,7 @@ KTimeZoneSource *KTimeZone::source() const
 const KTimeZoneData *KTimeZone::data(bool create) const
 {
     if (!isValid()) {
-        return 0;
+        return nullptr;
     }
     if (create && !d->d->data && d->d->source->useZoneParse()) {
         d->d->data = d->d->source->parse(*this);
@@ -886,7 +886,7 @@ int KTimeZone::offset(time_t t) const
 int KTimeZone::currentOffset(Qt::TimeSpec basis) const
 {
     // Get current offset of this time zone to UTC
-    const time_t now = time(0);
+    const time_t now = time(nullptr);
     const int secs = offset(now);
 
     switch (basis) {
@@ -1272,11 +1272,11 @@ const KTimeZone::Transition *KTimeZoneData::transition(const QDateTime &dt, cons
         bool *validTime) const
 {
     int secondIndex;
-    const int index = transitionIndex(dt, (secondTransition ? &secondIndex : 0), validTime);
+    const int index = transitionIndex(dt, (secondTransition ? &secondIndex : nullptr), validTime);
     if (secondTransition) {
-        *secondTransition = (secondIndex >= 0) ? &d->transitions[secondIndex] : 0;
+        *secondTransition = (secondIndex >= 0) ? &d->transitions[secondIndex] : nullptr;
     }
-    return (index >= 0) ? &d->transitions[index] : 0;
+    return (index >= 0) ? &d->transitions[index] : nullptr;
 }
 
 int KTimeZoneData::transitionIndex(const QDateTime &dt, int *secondIndex, bool *validTime) const

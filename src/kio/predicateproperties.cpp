@@ -69,7 +69,7 @@ PredicateProperties::operator=(const PredicateProperties &pp)
 const QString &
 PredicateProperties::name() const
 {
-    if (d == 0) {
+    if (d == nullptr) {
         return Private::nullString;
     }
     return (d->name.isEmpty()) ? d->key : d->name;
@@ -106,7 +106,7 @@ PredicateProperties::type() const
 QValidator *
 PredicateProperties::createValidator() const
 {
-    return 0;
+    return nullptr;
 }
 const PredicateProperties &
 PredicateProperties::parent() const

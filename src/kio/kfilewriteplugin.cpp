@@ -25,7 +25,7 @@
 #include <QDebug>
 
 KFileWritePlugin::KFileWritePlugin(QObject *parent, const QStringList &)
-    : QObject(parent), d(0)
+    : QObject(parent), d(nullptr)
 {
 }
 
@@ -56,7 +56,7 @@ KFileWriterProvider::loadPlugin(const QString &key)
     const KService::List offers = KServiceTypeTrader::self()->query(
                                       "KFileWrite", constraint);
     if (offers.isEmpty()) {
-        return 0;
+        return nullptr;
     }
     return offers.first()->createInstance<KFileWritePlugin>();
 }

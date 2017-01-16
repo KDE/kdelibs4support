@@ -146,12 +146,12 @@ bool KSocketBuffer::setSize(qint64 size)
     }
 
     // discard from the beginning
-    return (m_length - m_size) == consumeBuffer(0L, m_length - m_size, true);
+    return (m_length - m_size) == consumeBuffer(nullptr, m_length - m_size, true);
 }
 
 qint64 KSocketBuffer::feedBuffer(const char *data, qint64 len)
 {
-    if (data == 0L || len == 0) {
+    if (data == nullptr || len == 0) {
         return 0;    // nothing to write
     }
     if (isFull()) {
@@ -292,7 +292,7 @@ qint64 KSocketBuffer::sendTo(KActiveSocketBase *dev, qint64 len)
     // discard data that has been written
     // this updates m_length too
     if (written) {
-        consumeBuffer(0L, written);
+        consumeBuffer(nullptr, written);
     }
 
     return written;

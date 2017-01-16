@@ -110,7 +110,7 @@ K4StylePrivate::K4StylePrivate()
 
 // ----------------------------------------------------------------------------
 
-K4Style::K4Style() : clickedLabel(0), d(new K4StylePrivate)
+K4Style::K4Style() : clickedLabel(nullptr), d(new K4StylePrivate)
 {
     //Set up some default metrics...
     setWidgetLayoutProp(WT_Generic, Generic::DefaultFrameWidth, 2);
@@ -247,7 +247,7 @@ K4Style::~K4Style()
     // this is just for stupid msvc compiler to force the creation of
     // DoubleButtonOption::defaultOption() inside kstyle lib
     // hope the optimizer won't throw it away
-    const DoubleButtonOption *bOpt = extractOption<const DoubleButtonOption *>(NULL);
+    const DoubleButtonOption *bOpt = extractOption<const DoubleButtonOption *>(nullptr);
     Q_UNUSED(bOpt)
 #ifdef __GNUC__
 #warning "mem leak: need to delete bOpt"
@@ -349,7 +349,7 @@ static inline int customStyleElement(QStyle::StyleHint type, const QString &elem
 
     const QString originalName = widget->objectName();
     widget->setObjectName(element);
-    const int id = widget->style()->styleHint(type, 0, widget);
+    const int id = widget->style()->styleHint(type, nullptr, widget);
     widget->setObjectName(originalName);
     return id;
 }
@@ -2779,7 +2779,7 @@ QRect K4Style::marginAdjustedTab(const QStyleOptionTab *tabOpt, int property) co
     QRect idializedGeometry = vertical ? QRect(0, 0, r.height(), r.width())
                               : QRect(0, 0, r.width(),  r.height());
 
-    QRect contentArea = insideMargin(idializedGeometry, WT_TabBar, property, tabOpt, 0);
+    QRect contentArea = insideMargin(idializedGeometry, WT_TabBar, property, tabOpt, nullptr);
 
     int leftMargin  = contentArea.x();
     int rightMargin = idializedGeometry.width() - 1 - contentArea.right();
@@ -3081,7 +3081,7 @@ void  K4Style::drawComplexControl(ComplexControl cc, const QStyleOptionComplex *
 
                 if (slider->state & State_HasFocus) {
                     QRect focus = subElementRect(SE_SliderFocusRect, slider, w);
-                    drawKStylePrimitive(WT_Slider, Generic::FocusIndicator, opt, focus, pal, flags, p, w, 0);
+                    drawKStylePrimitive(WT_Slider, Generic::FocusIndicator, opt, focus, pal, flags, p, w, nullptr);
                 }
             }
         } //option OK
@@ -3165,7 +3165,7 @@ void  K4Style::drawComplexControl(ComplexControl cc, const QStyleOptionComplex *
                 if (cb->state & State_HasFocus) {
                     QRect editField = subControlRect(CC_ComboBox, opt, SC_ComboBoxEditField, w);
                     QRect focusRect = insideMargin(editField, WT_ComboBox, ComboBox::FocusMargin, opt, w);
-                    drawKStylePrimitive(WT_ComboBox, Generic::FocusIndicator, opt, focusRect, pal, flags, p, w, 0);
+                    drawKStylePrimitive(WT_ComboBox, Generic::FocusIndicator, opt, focusRect, pal, flags, p, w, nullptr);
                 }
             }
 
@@ -3812,7 +3812,7 @@ QStyle::SubControl K4Style::hitTestComplexControl(ComplexControl cc, const QStyl
             //This is one of the up/down buttons. First, decide which one it is.
             if (preceeds(pt, groove, opt)) {
                 //"Upper" button
-                if (widgetLayoutProp(WT_ScrollBar, ScrollBar::DoubleTopButton, 0, w)) {
+                if (widgetLayoutProp(WT_ScrollBar, ScrollBar::DoubleTopButton, nullptr, w)) {
                     QRect buttonRect = internalSubControlRect(CC_ScrollBar, opt, SC_ScrollBarSubLine, w);
                     return buttonPortion(buttonRect, pt, opt);
                 } else {
@@ -3820,7 +3820,7 @@ QStyle::SubControl K4Style::hitTestComplexControl(ComplexControl cc, const QStyl
                 }
             } else {
                 //"Bottom" button
-                if (widgetLayoutProp(WT_ScrollBar, ScrollBar::DoubleBotButton, 0, w)) {
+                if (widgetLayoutProp(WT_ScrollBar, ScrollBar::DoubleBotButton, nullptr, w)) {
                     QRect buttonRect = internalSubControlRect(CC_ScrollBar, opt, SC_ScrollBarAddLine, w);
                     return buttonPortion(buttonRect, pt, opt);
                 } else {
@@ -4130,7 +4130,7 @@ bool K4Style::eventFilter(QObject *obj, QEvent *ev)
                 }
 
                 if (clickedLabel) {
-                    clickedLabel = 0;
+                    clickedLabel = nullptr;
                     lbl->update();
                 }
 
@@ -4149,7 +4149,7 @@ bool K4Style::eventFilter(QObject *obj, QEvent *ev)
                     foOpts.palette = lbl->palette();
                     foOpts.rect    = foRect;
                     drawKStylePrimitive(WT_Generic, Generic::FocusIndicator, &foOpts,
-                                        foRect, lbl->palette(), 0, &p, lbl);
+                                        foRect, lbl->palette(), nullptr, &p, lbl);
                 }
                 break;
 

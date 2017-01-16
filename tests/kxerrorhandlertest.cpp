@@ -42,7 +42,7 @@ bool handler3(int request, int error_code, unsigned long resourceid)
 
 int main()
 {
-    Display *dpy = XOpenDisplay(NULL);
+    Display *dpy = XOpenDisplay(nullptr);
     XSetWindowAttributes attrs;
     Window w = XCreateWindow(dpy, DefaultRootWindow(dpy), 0, 0, 100, 100, 0, CopyFromParent, CopyFromParent,
                              CopyFromParent, 0, &attrs);

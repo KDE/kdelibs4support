@@ -20,7 +20,7 @@
 
 KVBox::KVBox(QWidget *parent)
     : KHBox(true, parent),
-      d(0)
+      d(nullptr)
 {
 }
 

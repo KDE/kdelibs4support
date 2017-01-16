@@ -117,7 +117,7 @@ void KIntValidator::fixup(QString &str) const
         return;
     }
 
-    val = str.toInt(0, d->_base);
+    val = str.toInt(nullptr, d->_base);
 
     if (val < d->_min) {
         val = d->_min;

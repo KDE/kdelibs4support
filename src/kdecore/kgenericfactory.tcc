@@ -203,7 +203,7 @@ namespace KDEPrivate
         inline static QObject *create( QWidget *, QObject *,
                                        const char *,
                                        const QStringList & )
-        { return 0; }
+        { return nullptr; }
     };
 
      // this specialized template we 'reach' at the end of a typelist
@@ -215,7 +215,7 @@ namespace KDEPrivate
         inline static QObject *create( QWidget *, QObject *,
                                        const char *,
                                        const QStringList & )
-        { return 0; }
+        { return nullptr; }
     };
 
     template <class Product, class ProductListTail>

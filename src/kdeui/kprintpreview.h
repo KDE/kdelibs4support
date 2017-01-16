@@ -58,7 +58,7 @@ public:
      *                print preview
      * @param parent  pointer to the parent widget for the dialog
      */
-    explicit KPrintPreview(QPrinter *printer, QWidget *parent = 0);
+    explicit KPrintPreview(QPrinter *printer, QWidget *parent = nullptr);
     virtual ~KPrintPreview();
 
     /**

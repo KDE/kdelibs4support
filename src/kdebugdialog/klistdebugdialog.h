@@ -38,7 +38,7 @@ class KListDebugDialog : public KAbstractDebugDialog
     Q_OBJECT
 
 public:
-    explicit KListDebugDialog(const AreaMap& areaMap, QWidget *parent = 0);
+    explicit KListDebugDialog(const AreaMap& areaMap, QWidget *parent = nullptr);
     virtual ~KListDebugDialog() {}
 
     void activateArea( const QByteArray& area, bool activate );

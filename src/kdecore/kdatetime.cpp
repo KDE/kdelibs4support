@@ -2628,7 +2628,7 @@ QDateTime fromStr(const QString &string, const QString &format, int &utcOffset,
                 break;
             case 'A':
             case 'a': {   // week day name in English
-                int dow = matchDay(str, s, 0);
+                int dow = matchDay(str, s, nullptr);
                 if (dow <= 0  || (dayOfWeek != NO_NUMBER && dayOfWeek != dow)) {
                     return QDateTime();
                 }
@@ -2637,7 +2637,7 @@ QDateTime fromStr(const QString &string, const QString &format, int &utcOffset,
             }
             case 'B':
             case 'b': {   // month name in English
-                int m = matchMonth(str, s, 0);
+                int m = matchMonth(str, s, nullptr);
                 if (m <= 0  || (month != NO_NUMBER && month != m)) {
                     return QDateTime();
                 }

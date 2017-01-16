@@ -89,27 +89,27 @@ public:
     char *func_Pchar()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     const char *func_KPchar()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     const volatile char *func_VKPchar()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     const volatile unsigned long long *const volatile func_KVPKVull()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     const void *const volatile *func_KPKVvoid()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
 
     QList<int> func_ai()
@@ -144,7 +144,7 @@ public:
     T *func_template1()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     template<Something val>
     long func_template2()
@@ -159,17 +159,17 @@ public:
     fptr func_fptr()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     pmf func_pmf()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
-    uglypmf func_uglypmf(uglypmf = 0)
+    uglypmf func_uglypmf(uglypmf = nullptr)
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     QMap<QString, uglypmf> func_uglypmf2()
     {
@@ -246,7 +246,7 @@ template<typename T> class TestClass2
     T *func_template1()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     template<TestClass1::Something val>
     long func_template2()
@@ -274,7 +274,7 @@ template<typename T, TestClass1::Something v> class TestClass3
     S *func_template1()
     {
         kDebug();
-        return 0;
+        return nullptr;
     }
     template<TestClass1::Something val>
     long func_template2()
@@ -383,7 +383,7 @@ void testKDebug()
     kError(1202) << "Error !!!";
     kError() << "Error with no area";
 
-    kDebug() << "Printing a null QObject pointer: " << (QObject *)0;
+    kDebug() << "Printing a null QObject pointer: " << (QObject *)nullptr;
 
     kDebug() << "char " << '^' << " " << char(26);
     QPoint p(0, 9);

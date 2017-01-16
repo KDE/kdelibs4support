@@ -36,7 +36,7 @@ class KActionPrivate
 {
 public:
     KActionPrivate()
-        : q(0), decorator(0)
+        : q(nullptr), decorator(nullptr)
     {
     }
 

@@ -54,24 +54,24 @@ public:
     /**
      * Default constructor.
      */
-    explicit KPushButton(QWidget *parent = 0);
+    explicit KPushButton(QWidget *parent = nullptr);
 
     /**
      * Constructor, that sets the button-text to @p text
      */
-    explicit KPushButton(const QString &text, QWidget *parent = 0);
+    explicit KPushButton(const QString &text, QWidget *parent = nullptr);
 
     /**
      * Constructor, that sets an icon and the button-text to @p text
      */
-    KPushButton(const QIcon &icon, const QString &text, QWidget *parent = 0);
+    KPushButton(const QIcon &icon, const QString &text, QWidget *parent = nullptr);
 
     /**
      * Constructor that takes a KGuiItem for the text, the icon, the tooltip
      * and the what's this help
      * @deprecated since 5.0, use QPushButton and KGuiItem::assign(QPushButton *button, const KGuiItem &item).
      */
-    explicit KPushButton(const KGuiItem &item, QWidget *parent = 0);
+    explicit KPushButton(const KGuiItem &item, QWidget *parent = nullptr);
 
     /**
      * Destructs the button.

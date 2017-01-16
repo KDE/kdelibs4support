@@ -14,7 +14,7 @@ class Test : public QWidget
 {
     Q_OBJECT
 public:
-    Test(QWidget *parent = 0);
+    Test(QWidget *parent = nullptr);
 
 private Q_SLOTS:
     void addTab();

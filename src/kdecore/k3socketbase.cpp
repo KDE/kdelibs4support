@@ -68,7 +68,7 @@ KSocketBase::KSocketBase()
 {
     d->socketOptions = Blocking;
     d->socketError = 0;
-    d->device = 0L;
+    d->device = nullptr;
     d->capabilities = 0;
 #ifdef Q_OS_WIN
     KNetwork_initSocket();
@@ -155,7 +155,7 @@ KSocketDevice *KSocketBase::socketDevice() const
     }
 
     KSocketBase *that = const_cast<KSocketBase *>(this);
-    KSocketDevice *dev = 0;
+    KSocketDevice *dev = nullptr;
     if (d->capabilities) {
         dev = KSocketDevice::createDefault(that, d->capabilities);
     }
@@ -169,7 +169,7 @@ KSocketDevice *KSocketBase::socketDevice() const
 void KSocketBase::setSocketDevice(KSocketDevice *device)
 {
     QMutexLocker locker(mutex());
-    if (d->device == 0L) {
+    if (d->device == nullptr) {
         d->device = device;
     }
 }
@@ -183,7 +183,7 @@ int KSocketBase::setRequestedCapabilities(int add, int remove)
 
 bool KSocketBase::hasDevice() const
 {
-    return d->device != 0L;
+    return d->device != nullptr;
 }
 
 void KSocketBase::setError(SocketError error)
@@ -314,7 +314,7 @@ bool KSocketBase::isFatalError(int code)
 
 void KSocketBase::unsetSocketDevice()
 {
-    d->device = 0L;
+    d->device = nullptr;
 }
 
 QMutex *KSocketBase::mutex() const
@@ -394,7 +394,7 @@ qint64 KActiveSocketBase::read(char *data, qint64 len, KSocketAddress &from)
 
 qint64 KActiveSocketBase::peek(char *data, qint64 len)
 {
-    return peekData(data, len, 0L);
+    return peekData(data, len, nullptr);
 }
 
 qint64 KActiveSocketBase::peek(char *data, qint64 len, KSocketAddress &from)
@@ -425,12 +425,12 @@ void KActiveSocketBase::ungetChar(char)
 
 qint64 KActiveSocketBase::readData(char *data, qint64 len)
 {
-    return readData(data, len, 0L);
+    return readData(data, len, nullptr);
 }
 
 qint64 KActiveSocketBase::writeData(const char *data, qint64 len)
 {
-    return writeData(data, len, 0L);
+    return writeData(data, len, nullptr);
 }
 
 void KActiveSocketBase::setError(SocketError error)

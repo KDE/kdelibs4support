@@ -90,7 +90,7 @@ public:
     /**
      * Create an editable listbox.
      */
-    explicit KEditListBox(QWidget *parent = 0);
+    explicit KEditListBox(QWidget *parent = nullptr);
 
     /**
      * Create an editable listbox.
@@ -98,7 +98,7 @@ public:
      * The same as the other constructor, additionally it takes
      * @p title, which will be the title of the groupbox around the listbox.
      */
-    explicit KEditListBox(const QString &title, QWidget *parent = 0);
+    explicit KEditListBox(const QString &title, QWidget *parent = nullptr);
 
 // ### KDE5: remove name arguments and simplify (merge?!) constructors
 
@@ -143,7 +143,7 @@ public:
      */
     KEditListBox(const QString &title,
                  const CustomEditor &customEditor,
-                 QWidget *parent = 0, const char *name = 0,
+                 QWidget *parent = nullptr, const char *name = nullptr,
                  bool checkAtEntering = false, Buttons buttons = All);
 
     virtual ~KEditListBox();

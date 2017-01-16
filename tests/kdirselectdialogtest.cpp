@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     }
     QUrl u = KDirSelectDialog::selectDirectory(startDir);
     if (u.isValid())
-        KMessageBox::information(NULL,
+        KMessageBox::information(nullptr,
                                  QString("You selected the url: %1")
                                  .arg(u.toString()), "Selected URL");
 

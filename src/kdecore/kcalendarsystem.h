@@ -94,7 +94,7 @@ public:
      */
     static KCalendarSystem *create(KLocale::CalendarSystem calendarSystem = KLocale::QDateCalendar,
                                    KSharedConfig::Ptr config = KSharedConfig::Ptr(),
-                                   const KLocale *locale = 0);
+                                   const KLocale *locale = nullptr);
 
     /**
      * @since 4.6
@@ -620,7 +620,7 @@ public:
      * @return ISO week number, -1 if input date invalid
      */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
-    KDELIBS4SUPPORT_DEPRECATED inline int weekNumber(const QDate &date, int *yearNum = 0) const
+    KDELIBS4SUPPORT_DEPRECATED inline int weekNumber(const QDate &date, int *yearNum = nullptr) const
     {
         return week(date, KLocale::IsoWeekNumber, yearNum);
     }
@@ -668,7 +668,7 @@ public:
      * @param yearNum returns the year the date belongs to
      * @return week number, -1 if input date invalid
      */
-    int week(const QDate &date, KLocale::WeekNumberSystem weekNumberSystem = KLocale::DefaultWeekNumber, int *yearNum = 0) const;
+    int week(const QDate &date, KLocale::WeekNumberSystem weekNumberSystem = KLocale::DefaultWeekNumber, int *yearNum = nullptr) const;
 
     /**
      * Returns whether a given year is a leap year.
@@ -1299,7 +1299,7 @@ public:
      *
      * @return the string converted to a QDate
      */
-    virtual QDate readDate(const QString &str, bool *ok = 0) const;
+    virtual QDate readDate(const QString &str, bool *ok = nullptr) const;
 
     /**
      * Converts a localized date string to a QDate.
@@ -1319,7 +1319,7 @@ public:
      *
      * @return the string converted to a QDate
      */
-    virtual QDate readDate(const QString &str, KLocale::ReadDateFlags flags, bool *ok = 0) const;
+    virtual QDate readDate(const QString &str, KLocale::ReadDateFlags flags, bool *ok = nullptr) const;
 
     /**
      * Converts a localized date string to a QDate, using the specified @p format.
@@ -1334,7 +1334,7 @@ public:
      * @see formatDate
      * @see KLocale::readDate
      */
-    virtual QDate readDate(const QString &dateString, const QString &dateFormat, bool *ok = 0) const;
+    virtual QDate readDate(const QString &dateString, const QString &dateFormat, bool *ok = nullptr) const;
 
     /**
      * Converts a localized date string to a QDate, using the specified @p format.

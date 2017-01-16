@@ -29,10 +29,10 @@ void KAsciiTest::testkasciistricmp()
     QVERIFY(kasciistricmp("test", "Test") == 0);
     QVERIFY(kasciistricmp("TeSt", "tEst") == 0);
 
-    QVERIFY(kasciistricmp(0, 0) == 0);
+    QVERIFY(kasciistricmp(nullptr, nullptr) == 0);
     QVERIFY(kasciistricmp("", "") == 0);
-    QVERIFY(kasciistricmp(0, "") < 0);
-    QVERIFY(kasciistricmp("", 0) > 0);
+    QVERIFY(kasciistricmp(nullptr, "") < 0);
+    QVERIFY(kasciistricmp("", nullptr) > 0);
 
     QVERIFY(kasciistricmp("", "foo") < 0);
     QVERIFY(kasciistricmp("foo", "") > 0);

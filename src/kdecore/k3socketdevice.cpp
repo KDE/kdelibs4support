@@ -75,7 +75,7 @@ public:
 
     inline KSocketDevicePrivate()
     {
-        input = output = exception = 0L;
+        input = output = exception = nullptr;
         af = proto = 0;
     }
 };
@@ -91,7 +91,7 @@ KSocketDevice::KSocketDevice(const KSocketBase *parent, QObject *objparent)
 }
 
 KSocketDevice::KSocketDevice(int fd, OpenMode mode)
-    : KActiveSocketBase(0L), m_sockfd(fd), d(new KSocketDevicePrivate)
+    : KActiveSocketBase(nullptr), m_sockfd(fd), d(new KSocketDevicePrivate)
 {
     if (mode) {
         mode |= Unbuffered;
@@ -108,7 +108,7 @@ KSocketDevice::KSocketDevice(QObject *parent)
 }
 
 KSocketDevice::KSocketDevice(bool, const KSocketBase *parent)
-    : KActiveSocketBase(0L), m_sockfd(-1), d(new KSocketDevicePrivate)
+    : KActiveSocketBase(nullptr), m_sockfd(-1), d(new KSocketDevicePrivate)
 {
     // do not set parent
     if (parent) {
@@ -230,7 +230,7 @@ void KSocketDevice::close()
         delete d->output;
         delete d->exception;
 
-        d->input = d->output = d->exception = 0L;
+        d->input = d->output = d->exception = nullptr;
 #ifdef Q_OS_WIN
         ::closesocket(m_sockfd);
 #else
@@ -240,7 +240,7 @@ void KSocketDevice::close()
         ::close(m_sockfd);
 #endif
     }
-    setOpenMode(0);       // closed
+    setOpenMode(nullptr);       // closed
 
     m_sockfd = -1;
 }
@@ -366,7 +366,7 @@ KSocketDevice *KSocketDevice::accept()
     if (m_sockfd == -1) {
         // can't accept without a socket
         setError(NotCreated);
-        return 0L;
+        return nullptr;
     }
 
     struct sockaddr sa;
@@ -378,7 +378,7 @@ KSocketDevice *KSocketDevice::accept()
         } else {
             setError(UnknownError);
         }
-        return NULL;
+        return nullptr;
     }
 
     return new KSocketDevice(newfd);
@@ -437,7 +437,7 @@ qint64 KSocketDevice::waitForMore(int msecs, bool *timeout)
     }
 
     bool input;
-    if (!poll(&input, 0, 0, msecs, timeout)) {
+    if (!poll(&input, nullptr, nullptr, msecs, timeout)) {
         return -1;    // failed polling
     }
 
@@ -451,7 +451,7 @@ static int do_read_common(int sockfd, char *data, qint64 maxlen, KSocketAddress 
         from->setLength(len = 128); // arbitrary length
         retval = ::recvfrom(sockfd, data, maxlen, peek ? MSG_PEEK : 0, from->address(), &len);
     } else {
-        retval = ::recvfrom(sockfd, data, maxlen, peek ? MSG_PEEK : 0, NULL, NULL);
+        retval = ::recvfrom(sockfd, data, maxlen, peek ? MSG_PEEK : 0, nullptr, nullptr);
     }
 
     if (retval == -1) {
@@ -483,7 +483,7 @@ qint64 KSocketDevice::readData(char *data, qint64 maxlen, KSocketAddress *from)
         return -1;    // nothing to do here
     }
 
-    if (data == 0L || maxlen == 0) {
+    if (data == nullptr || maxlen == 0) {
         return 0;    // user doesn't want to read
     }
 
@@ -505,7 +505,7 @@ qint64 KSocketDevice::peekData(char *data, qint64 maxlen, KSocketAddress *from)
         return -1;    // nothing to do here
     }
 
-    if (data == 0L || maxlen == 0) {
+    if (data == nullptr || maxlen == 0) {
         return 0;    // user doesn't want to read
     }
 
@@ -527,12 +527,12 @@ qint64 KSocketDevice::writeData(const char *data, qint64 len, const KSocketAddre
         return -1;    // can't write to unopen socket
     }
 
-    if (data == 0L || len == 0) {
+    if (data == nullptr || len == 0) {
         return 0;    // nothing to be written
     }
 
     ssize_t retval;
-    if (to != 0L) {
+    if (to != nullptr) {
         retval = ::sendto(m_sockfd, data, len, 0, to->address(), to->length());
     } else
 #ifdef Q_OS_WIN
@@ -656,7 +656,7 @@ QSocketNotifier *KSocketDevice::readNotifier() const
 
     if (m_sockfd == -1) {
         // socket doesn't exist; can't create notifier
-        return 0L;
+        return nullptr;
     }
 
     return d->input = createNotifier(QSocketNotifier::Read);
@@ -675,7 +675,7 @@ QSocketNotifier *KSocketDevice::writeNotifier() const
 
     if (m_sockfd == -1) {
         // socket doesn't exist; can't create notifier
-        return 0L;
+        return nullptr;
     }
 
     return d->output = createNotifier(QSocketNotifier::Write);
@@ -694,7 +694,7 @@ QSocketNotifier *KSocketDevice::exceptionNotifier() const
 
     if (m_sockfd == -1) {
         // socket doesn't exist; can't create notifier
-        return 0L;
+        return nullptr;
     }
 
     return d->exception = createNotifier(QSocketNotifier::Exception);
@@ -828,7 +828,7 @@ bool KSocketDevice::poll(int timeout, bool *timedout)
 QSocketNotifier *KSocketDevice::createNotifier(QSocketNotifier::Type type) const
 {
     if (m_sockfd == -1) {
-        return 0L;
+        return nullptr;
     }
 
     return new QSocketNotifier(m_sockfd, type);
@@ -891,7 +891,7 @@ static factoryMap factories;
 KSocketDevice *KSocketDevice::createDefault(KSocketBase *parent)
 {
     KSocketDevice *device = dynamic_cast<KSocketDevice *>(parent);
-    if (device != 0L) {
+    if (device != nullptr) {
         return device;
     }
 
@@ -906,7 +906,7 @@ KSocketDevice *KSocketDevice::createDefault(KSocketBase *parent)
 KSocketDevice *KSocketDevice::createDefault(KSocketBase *parent, int capabilities)
 {
     KSocketDevice *device = dynamic_cast<KSocketDevice *>(parent);
-    if (device != 0L) {
+    if (device != nullptr) {
         return device;
     }
 
@@ -919,7 +919,7 @@ KSocketDevice *KSocketDevice::createDefault(KSocketBase *parent, int capabilitie
             return it.value()->create(parent);
         }
 
-    return 0L;            // no default
+    return nullptr;            // no default
 }
 
 KSocketDeviceFactoryBase *

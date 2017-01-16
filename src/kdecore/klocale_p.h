@@ -454,19 +454,19 @@ public:
      * @internal Converts a localized date string to a QDate.
      * The worker of the same-name KLocale API function.
      */
-    virtual QDate readDate(const QString &str, bool *ok = 0);
+    virtual QDate readDate(const QString &str, bool *ok = nullptr);
 
     /**
      * @internal Converts a localized date string to a QDate, using the specified format.
      * The worker of the same-name KLocale API function.
      */
-    virtual QDate readDate(const QString &intstr, const QString &fmt, bool *ok = 0);
+    virtual QDate readDate(const QString &intstr, const QString &fmt, bool *ok = nullptr);
 
     /**
      * @internal Converts a localized date string to a QDate.
      * The worker of the same-name KLocale API function.
      */
-    virtual QDate readDate(const QString &str, KLocale::ReadDateFlags flags, bool *ok = 0);
+    virtual QDate readDate(const QString &str, KLocale::ReadDateFlags flags, bool *ok = nullptr);
 
     /**
      * @deprecated replaced by formatLocaleTime()
@@ -485,20 +485,20 @@ public:
      * @internal Converts a localized time string to a QTime.
      * The worker of the same-name KLocale API function.
      */
-    virtual QTime readTime(const QString &str, bool *ok = 0) const;
+    virtual QTime readTime(const QString &str, bool *ok = nullptr) const;
 
     /**
      * @deprecated replaced by readLocaleTime()
      * @internal Converts a localized time string to a QTime.
      * The worker of the same-name KLocale API function.
      */
-    virtual QTime readTime(const QString &str, KLocale::ReadTimeFlags flags, bool *ok = 0) const;
+    virtual QTime readTime(const QString &str, KLocale::ReadTimeFlags flags, bool *ok = nullptr) const;
 
     /**
      * @internal Converts a localized time string to a QTime.
      * The worker of the same-name KLocale API function.
      */
-    virtual QTime readLocaleTime(const QString &str, bool *ok = 0,
+    virtual QTime readLocaleTime(const QString &str, bool *ok = nullptr,
                                  KLocale::TimeFormatOptions options = KLocale::TimeDefault,
                                  KLocale::TimeProcessingOptions processing = KLocale::ProcessNonStrict) const;
 
@@ -521,7 +521,7 @@ public:
      * The worker of the same-name KLocale API function.
      */
     virtual QString formatDateTime(const KDateTime &dateTime, KLocale::DateFormat format = KLocale::ShortDate,
-                                   KLocale::DateTimeFormatOptions options = 0);
+                                   KLocale::DateTimeFormatOptions options = nullptr);
 
     /**
      * @internal Returns converted duration as a string
@@ -687,7 +687,7 @@ public:
      * @internal Converts a localized numeric string to a double.
      * The worker of the same-name KLocale API function.
      */
-    virtual double readNumber(const QString &numStr, bool *ok = 0) const;
+    virtual double readNumber(const QString &numStr, bool *ok = nullptr) const;
 
     /**************************
      **  Currency settings   **
@@ -874,7 +874,7 @@ public:
      * @internal Converts a localized monetary string to a double.
      * The worker of the same-name KLocale API function.
      */
-    virtual double readMoney(const QString &numStr, bool *ok = 0) const;
+    virtual double readMoney(const QString &numStr, bool *ok = nullptr) const;
 
     /***************************
      **    Units settings     **

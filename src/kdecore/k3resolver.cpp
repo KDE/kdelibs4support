@@ -89,7 +89,7 @@ public:
 
 // default constructor
 KResolverEntry::KResolverEntry() :
-    d(0L)
+    d(nullptr)
 {
 }
 
@@ -120,7 +120,7 @@ KResolverEntry::KResolverEntry(const struct sockaddr *sa, quint16 salen, int soc
 
 // copy constructor
 KResolverEntry::KResolverEntry(const KResolverEntry &that) :
-    d(0L)
+    d(nullptr)
 {
     *this = that;
 }
@@ -409,7 +409,7 @@ void KResolver::setProtocol(int protonum, const char *name)
     // case the given protocol name doesn't exist
 
     d->input.protocolName = name;
-    if (protonum == 0 && name != 0L && *name != '\0') {
+    if (protonum == 0 && name != nullptr && *name != '\0') {
         // must look up the protocol number
         d->input.protocol = KResolver::protocolNumber(name);
     } else {
@@ -428,7 +428,7 @@ bool KResolver::start()
             d->status = KResolver::Success;
             emitFinished();
         } else {
-            KResolverManager::manager()->enqueue(this, 0L);
+            KResolverManager::manager()->enqueue(this, nullptr);
         }
     }
 
@@ -635,13 +635,13 @@ QList<QByteArray> KResolver::protocolName(int protonum)
         } else {
             break;
         }
-    } while (pe == 0L);
+    } while (pe == nullptr);
 # endif
 #endif
 
     // Do common processing
     QList<QByteArray> lst;
-    if (pe != NULL) {
+    if (pe != nullptr) {
         lst.append(pe->p_name);
         for (char **p = pe->p_aliases; *p; p++) {
             lst.append(*p);
@@ -659,7 +659,7 @@ QList<QByteArray> KResolver::protocolName(int protonum)
 
 QList<QByteArray> KResolver::protocolName(const char *protoname)
 {
-    struct protoent *pe = 0L;
+    struct protoent *pe = nullptr;
 #if !HAVE_GETPROTOBYNAME_R
     QMutexLocker locker(&getXXbyYYmutex);
 
@@ -688,19 +688,19 @@ QList<QByteArray> KResolver::protocolName(const char *protoname)
         if (getprotobyname_r(protoname, &protobuf, buf, buflen, &pe) == ERANGE)
 #  endif
         {
-            pe = 0L;
+            pe = nullptr;
             buflen += 1024;
             delete [] buf;
         } else {
             break;
         }
-    } while (pe == 0L);
+    } while (pe == nullptr);
 # endif
 #endif
 
     // Do common processing
     QList<QByteArray> lst;
-    if (pe != NULL) {
+    if (pe != nullptr) {
         lst.append(pe->p_name);
         for (char **p = pe->p_aliases; *p; p++) {
             lst.append(*p);
@@ -718,7 +718,7 @@ QList<QByteArray> KResolver::protocolName(const char *protoname)
 
 int KResolver::protocolNumber(const char *protoname)
 {
-    struct protoent *pe = 0L;
+    struct protoent *pe = nullptr;
 #if !HAVE_GETPROTOBYNAME_R
     QMutexLocker locker(&getXXbyYYmutex);
 
@@ -748,19 +748,19 @@ int KResolver::protocolNumber(const char *protoname)
         if (getprotobyname_r(protoname, &protobuf, buf, buflen, &pe) == ERANGE)
 #  endif
         {
-            pe = 0L;
+            pe = nullptr;
             buflen += 1024;
             delete [] buf;
         } else {
             break;
         }
-    } while (pe == 0L);
+    } while (pe == nullptr);
 # endif
 #endif
 
     // Do common processing
     int protonum = -1;
-    if (pe != NULL) {
+    if (pe != nullptr) {
         protonum = pe->p_proto;
     }
 
@@ -775,7 +775,7 @@ int KResolver::protocolNumber(const char *protoname)
 
 int KResolver::servicePort(const char *servname, const char *protoname)
 {
-    struct servent *se = 0L;
+    struct servent *se = nullptr;
 #if !HAVE_GETSERVBYNAME_R
     QMutexLocker locker(&getXXbyYYmutex);
 
@@ -804,19 +804,19 @@ int KResolver::servicePort(const char *servname, const char *protoname)
         if (getservbyname_r(servname, protoname, &servbuf, buf, buflen, &se) == ERANGE)
 #  endif
         {
-            se = 0L;
+            se = nullptr;
             buflen += 1024;
             delete [] buf;
         } else {
             break;
         }
-    } while (se == 0L);
+    } while (se == nullptr);
 # endif
 #endif
 
     // Do common processing
     int servport = -1;
-    if (se != NULL) {
+    if (se != nullptr) {
         servport = ntohs(se->s_port);
     }
 
@@ -831,7 +831,7 @@ int KResolver::servicePort(const char *servname, const char *protoname)
 
 QList<QByteArray> KResolver::serviceName(const char *servname, const char *protoname)
 {
-    struct servent *se = 0L;
+    struct servent *se = nullptr;
 #if !HAVE_GETSERVBYNAME_R
     QMutexLocker locker(&getXXbyYYmutex);
 
@@ -860,19 +860,19 @@ QList<QByteArray> KResolver::serviceName(const char *servname, const char *proto
         if (getservbyname_r(servname, protoname, &servbuf, buf, buflen, &se) == ERANGE)
 #  endif
         {
-            se = 0L;
+            se = nullptr;
             buflen += 1024;
             delete [] buf;
         } else {
             break;
         }
-    } while (se == 0L);
+    } while (se == nullptr);
 # endif
 #endif
 
     // Do common processing
     QList<QByteArray> lst;
-    if (se != NULL) {
+    if (se != nullptr) {
         lst.append(se->s_name);
         for (char **p = se->s_aliases; *p; p++) {
             lst.append(*p);
@@ -890,7 +890,7 @@ QList<QByteArray> KResolver::serviceName(const char *servname, const char *proto
 
 QList<QByteArray> KResolver::serviceName(int port, const char *protoname)
 {
-    struct servent *se = 0L;
+    struct servent *se = nullptr;
 #if !HAVE_GETSERVBYPORT_R
     QMutexLocker locker(&getXXbyYYmutex);
 
@@ -919,19 +919,19 @@ QList<QByteArray> KResolver::serviceName(int port, const char *protoname)
         if (getservbyport_r(port, protoname, &servbuf, buf, buflen, &se) == ERANGE)
 #  endif
         {
-            se = 0L;
+            se = nullptr;
             buflen += 1024;
             delete [] buf;
         } else {
             break;
         }
-    } while (se == 0L);
+    } while (se == nullptr);
 # endif
 #endif
 
     // Do common processing
     QList<QByteArray> lst;
-    if (se != NULL) {
+    if (se != nullptr) {
         lst.append(se->s_name);
         for (char **p = se->s_aliases; *p; p++) {
             lst.append(*p);

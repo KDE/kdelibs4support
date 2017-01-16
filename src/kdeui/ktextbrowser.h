@@ -65,7 +65,7 @@ public:
      * @param parent Parent of the widget.
      * @param notifyClick @p true causes signals to be emitted.
      */
-    explicit KTextBrowser(QWidget *parent = 0, bool notifyClick = false);
+    explicit KTextBrowser(QWidget *parent = nullptr, bool notifyClick = false);
 
     /**
      * Destroys the text browser.

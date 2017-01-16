@@ -58,7 +58,7 @@ QString toString( Solid::Networking::Status st )
   return str;
 }
 
-TestService::TestService() : KMainWindow( 0 ),
+TestService::TestService() : KMainWindow( nullptr ),
     m_service( new OrgKdeSolidNetworkingServiceInterface( "org.kde.kded5", "/modules/networkstatus", QDBusConnection::sessionBus(), this ) ),
     m_status ( Solid::Networking::Unconnected ),
     m_nextStatus( Solid::Networking::Unconnected ),
@@ -212,7 +212,7 @@ static const char version[] = "v0.1";
 
 int main( int argc, char** argv )
 {
-    K4AboutData about("KNetworkStatusTestService", 0, ki18n("knetworkstatustestservice"), version, ki18n(description), K4AboutData::License_GPL, ki18n("(C) 2007 Will Stephenson"), KLocalizedString(), 0, "wstephenson@kde.org");
+    K4AboutData about("KNetworkStatusTestService", nullptr, ki18n("knetworkstatustestservice"), version, ki18n(description), K4AboutData::License_GPL, ki18n("(C) 2007 Will Stephenson"), KLocalizedString(), nullptr, "wstephenson@kde.org");
     about.addAuthor( ki18n("Will Stephenson"), KLocalizedString(), "wstephenson@kde.org" );
     KCmdLineArgs::init(argc, argv, &about);
 

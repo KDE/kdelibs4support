@@ -404,7 +404,7 @@ KLocalizedDate KLocalizedDate::readDate(const QString &dateString,
     if (!calendar) {
         calendar = KLocale::global()->calendar();
     }
-    return KLocalizedDate(calendar->readDate(dateString, dateFormat, 0, formatStandard));
+    return KLocalizedDate(calendar->readDate(dateString, dateFormat, nullptr, formatStandard));
 }
 
 /*****************************************************************************

@@ -362,7 +362,7 @@ static QTreeWidgetItem *findImmediateChild(QTreeWidgetItem *parent, const QStrin
             return candidate;
         }
     }
-    return 0;
+    return nullptr;
 }
 
 bool CaCertificatesPage::addCertificateItem(const KSslCaCertificate &caCert)

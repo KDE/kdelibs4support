@@ -109,7 +109,7 @@ public:
      *                 and formatting options).
      */
     KLocale(const QString &language, const QString &country = QString(),
-            KConfig *config = 0);
+            KConfig *config = nullptr);
 
     /**
      * Copy constructor
@@ -833,7 +833,7 @@ public:
      * @return The date and time as a string
      */
     QString formatDateTime(const KDateTime &dateTime, DateFormat format = ShortDate,
-                           DateTimeFormatOptions options = 0) const;
+                           DateTimeFormatOptions options = nullptr) const;
 
     /**
      * Use this to determine whether in dates a possessive form of month
@@ -1061,7 +1061,7 @@ public:
      *
      * @return The string converted to a double
      */
-    double readMoney(const QString &numStr, bool *ok = 0) const;
+    double readMoney(const QString &numStr, bool *ok = nullptr) const;
 
     /**
      * Converts a localized numeric string to a double.
@@ -1072,7 +1072,7 @@ public:
      *
      * @return The string converted to a double
      */
-    double readNumber(const QString &numStr, bool *ok = 0) const;
+    double readNumber(const QString &numStr, bool *ok = nullptr) const;
 
     /**
      * Converts a localized date string to a QDate.  This method will try all
@@ -1087,14 +1087,14 @@ public:
      * @return The string converted to a QDate
      * @see KCalendarSystem::readDate()
      */
-    QDate readDate(const QString &str, bool *ok = 0) const;
+    QDate readDate(const QString &str, bool *ok = nullptr) const;
 
     /**
      * Converts a localized date string to a QDate, using the specified format.
      * You will usually not want to use this method.
      * @see KCalendarSystem::readDate()
      */
-    QDate readDate(const QString &intstr, const QString &fmt, bool *ok = 0) const;
+    QDate readDate(const QString &intstr, const QString &fmt, bool *ok = nullptr) const;
 
     /**
      * Flags for readDate()
@@ -1125,7 +1125,7 @@ public:
      * @return The string converted to a QDate
      * @see KCalendarSystem::readDate()
      */
-    QDate readDate(const QString &str, ReadDateFlags flags, bool *ok = 0) const;
+    QDate readDate(const QString &str, ReadDateFlags flags, bool *ok = nullptr) const;
 
     /**
      * Converts a localized time string to a QTime.
@@ -1139,7 +1139,7 @@ public:
      *
      * @return The string converted to a QTime
      */
-    QTime readTime(const QString &str, bool *ok = 0) const;
+    QTime readTime(const QString &str, bool *ok = nullptr) const;
 
     /**
      * Flags for the old version of readTime()
@@ -1166,7 +1166,7 @@ public:
      *
      * @return The string converted to a QTime
      */
-    QTime readTime(const QString &str, ReadTimeFlags flags, bool *ok = 0) const;
+    QTime readTime(const QString &str, ReadTimeFlags flags, bool *ok = nullptr) const;
 
     /**
      * Additional processing options for readLocaleTime().
@@ -1202,7 +1202,7 @@ public:
      *
      * @return The string converted to a QTime
      */
-    QTime readLocaleTime(const QString &str, bool *ok = 0,
+    QTime readLocaleTime(const QString &str, bool *ok = nullptr,
                          TimeFormatOptions options = KLocale::TimeDefault,
                          TimeProcessingOptions processing = ProcessNonStrict) const;
 

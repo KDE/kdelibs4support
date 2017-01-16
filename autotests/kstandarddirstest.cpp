@@ -132,7 +132,7 @@ void KStandarddirsTest::testChangeSaveLocation()
     // Can we change the save location?
     const QString newSaveLoc = m_configHome + "/newconfigdir/";
     //cData.addResourceDir("config", newSaveLoc); // can't be done, absolute paths have less priority than relative paths
-    cData.addResourceType("config", 0, "newconfigdir");
+    cData.addResourceType("config", nullptr, "newconfigdir");
     QCOMPARE_PATHS(KStandardDirs::realPath(cData.saveLocation("config")), newSaveLoc);
 }
 
@@ -413,7 +413,7 @@ void KStandarddirsTest::testAddResourceType()
     const QStringList files = KGlobal::dirs()->findAllResources("widgets", "pics/*", KStandardDirs::NoDuplicates);
     QVERIFY(files.count() >= 10);
 
-    KGlobal::dirs()->addResourceType("xdgdata-ontology", 0, "ontology");
+    KGlobal::dirs()->addResourceType("xdgdata-ontology", nullptr, "ontology");
     const QStringList ontologyDirs = KGlobal::dirs()->resourceDirs("xdgdata-ontology");
     QCOMPARE(ontologyDirs.first(), KStandardDirs::realPath(QString(qgetenv("XDG_DATA_HOME")) + "/ontology/"));
     if (QFile::exists("/usr/share/ontology") &&
@@ -535,7 +535,7 @@ void KStandarddirsTest::testSymlinkResolution()
     QVERIFY(QFile::link("real", symlink));
     QVERIFY(QFileInfo(symlink).isSymLink());
     QVERIFY(!QFile::exists(expected));
-    KGlobal::dirs()->addResourceType("david", 0, "symlink/test");
+    KGlobal::dirs()->addResourceType("david", nullptr, "symlink/test");
     QVERIFY(!QFile::exists(expected));
     const QString saveLoc = KGlobal::dirs()->resourceDirs("david").first();
     QVERIFY(!QFile::exists(expected));

@@ -270,7 +270,7 @@ struct KDebugPrivate {
     typedef QHash<unsigned int, Area> Cache;
 
     KDebugPrivate()
-        : config(0), kDebugDBusIface(0), m_disableAll(false)
+        : config(nullptr), kDebugDBusIface(nullptr), m_disableAll(false)
     {
         Q_ASSERT(int(QtDebugMsg) == 0);
         Q_ASSERT(int(QtFatalMsg) == 3);
@@ -760,7 +760,7 @@ static QString maybeDemangledName(char *name)
             // if we forget about this line and the one that undoes its effect we don't change the
             // internal data of the QByteArray::fromRawData() ;)
             name[mangledNameEnd] = 0;
-            char *demangled = abi::__cxa_demangle(name + mangledNameStart + 1, 0, 0, &status);
+            char *demangled = abi::__cxa_demangle(name + mangledNameStart + 1, nullptr, nullptr, &status);
             name[mangledNameEnd] = '+';
             if (demangled) {
                 QString ret = QString::fromLatin1(name, mangledNameStart + 1) +
@@ -847,7 +847,7 @@ void kClearDebugConfig()
     KDebugPrivate *d = kDebug_data;
     QMutexLocker locker(&d->mutex);
     delete d->config;
-    d->config = 0;
+    d->config = nullptr;
 
     KDebugPrivate::Cache::Iterator it = d->cache.begin(),
                                    end = d->cache.end();
@@ -925,10 +925,10 @@ public:
 };
 
 KDebug::Block::Block(const char *label, int area)
-    : m_area(area), d(0)
+    : m_area(area), d(nullptr)
 {
     if (hasNullOutputQtDebugMsg(area)) {
-        d = 0; // remember, for the dtor
+        d = nullptr; // remember, for the dtor
     } else {
         d = new Private;
         d->m_label = label;

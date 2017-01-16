@@ -43,7 +43,7 @@ public:
      *
      * @param parent The parent widget.
      */
-    explicit KVBox(QWidget *parent = 0);
+    explicit KVBox(QWidget *parent = nullptr);
 
     /**
      * Destructor.

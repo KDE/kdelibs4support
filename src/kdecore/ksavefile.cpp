@@ -234,7 +234,7 @@ bool KSaveFile::finalize()
 #ifdef Q_OS_UNIX
     static int extraSync = -1;
     if (extraSync < 0) {
-        extraSync = getenv("KDE_EXTRA_FSYNC") != 0 ? 1 : 0;
+        extraSync = getenv("KDE_EXTRA_FSYNC") != nullptr ? 1 : 0;
     }
     if (extraSync) {
         if (flush()) {

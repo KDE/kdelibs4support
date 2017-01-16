@@ -30,7 +30,7 @@ class SystemStatusInterface : public QObject
 {
     Q_OBJECT
 protected:
-    SystemStatusInterface( QObject *parent = 0 );
+    SystemStatusInterface( QObject *parent = nullptr );
 
 public:
     virtual Solid::Networking::Status status() const = 0;

@@ -64,7 +64,7 @@ static unsigned char ASCIIToLower(unsigned char ch)
 char *kAsciiToLower(char *s)
 {
     if (!s) {
-        return 0;
+        return nullptr;
     }
     for (unsigned char *p = (unsigned char *) s; *p; ++p) {
         *p = ASCIIToLower(*p);
@@ -88,7 +88,7 @@ static unsigned char ASCIIToUpper(unsigned char ch)
 char *kAsciiToUpper(char *s)
 {
     if (!s) {
-        return 0;
+        return nullptr;
     }
     for (unsigned char *p = (unsigned char *) s; *p; ++p) {
         *p = ASCIIToUpper(*p);

@@ -41,7 +41,7 @@ public:
      *
      * @param parent The parent widget.
      */
-    explicit KTabBar(QWidget *parent = 0);
+    explicit KTabBar(QWidget *parent = nullptr);
 
     /**
      * Destroys the tab bar.

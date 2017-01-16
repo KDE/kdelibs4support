@@ -55,7 +55,7 @@ void MD5_testSuite();
 void testCodec(const char *, Codec, bool);
 void MD5_verify(const char *, const char *, bool);
 void MD5_file(const char *, bool rawOutput = false);
-void MD5_string(const char *, const char *expected = 0, bool rawOutput = false);
+void MD5_string(const char *, const char *expected = nullptr, bool rawOutput = false);
 
 long readContent(const QFile &f, long count, QByteArray &buf)
 {
@@ -314,7 +314,7 @@ int main(int argc, char *argv[])
     options.add("z", ki18n("run a preset message-digest test"));
     options.add("+command", ki18n("[input1, input2,...]"));
 
-    KCmdLineArgs::init(argc, argv, "kmdcodectest", 0,
+    KCmdLineArgs::init(argc, argv, "kmdcodectest", nullptr,
                        ki18n("KMDCodecTest"), "1.0",
                        ki18n("Unit test for md5, base64 encode/decode "
                              "and uuencode/decode facilities"));
@@ -361,7 +361,7 @@ int main(int argc, char *argv[])
                     testCodec(args->arg(i).toLocal8Bit().constData(), type, isFile);
                 } else {
                     if (isString) {
-                        MD5_string(args->arg(i).toLocal8Bit().constData(), 0, args->isSet("r"));
+                        MD5_string(args->arg(i).toLocal8Bit().constData(), nullptr, args->isSet("r"));
                     } else {
                         MD5_file(args->arg(i).toLocal8Bit().constData(), args->isSet("r"));
                     }

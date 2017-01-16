@@ -24,7 +24,7 @@
 class KDeviceListItem::Private
 {
 public:
-    Private() : parent(0) {}
+    Private() : parent(nullptr) {}
 
     ~Private()
     {

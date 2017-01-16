@@ -44,20 +44,20 @@ public:
      */
     typedef void (*void_function_ptr)();
 
-    explicit KLibrary(QObject *parent = 0);
-    explicit KLibrary(const QString &name, QObject *parent = 0);
-    KLibrary(const QString &name, int verNum, QObject *parent = 0);
+    explicit KLibrary(QObject *parent = nullptr);
+    explicit KLibrary(const QString &name, QObject *parent = nullptr);
+    KLibrary(const QString &name, int verNum, QObject *parent = nullptr);
 
     virtual ~KLibrary();
 
     /**
      * @deprecated since 4.0, use KPluginLoader::factory
      */
-    KDELIBS4SUPPORT_DEPRECATED KPluginFactory *factory(const char *factoryname = 0)
+    KDELIBS4SUPPORT_DEPRECATED KPluginFactory *factory(const char *factoryname = nullptr)
     {
         // there is nothing sensible we can do: kdelibs 4 plugins depended on
         // support from Qt that no longer exists
-        Q_UNUSED(factoryname) return 0;
+        Q_UNUSED(factoryname) return nullptr;
     }
 
     /**

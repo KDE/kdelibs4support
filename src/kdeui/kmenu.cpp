@@ -105,12 +105,12 @@ KMenu::KMenuPrivate::KMenuPrivate(KMenu *_parent)
     , noMatches(false)
     , shortcuts(false)
     , autoExec(false)
-    , lastHitAction(0L)
-    , lastHoveredAction(0L)
+    , lastHitAction(nullptr)
+    , lastHoveredAction(nullptr)
     , mouseButtons(Qt::NoButton)
     , keyboardModifiers(Qt::NoModifier)
-    , ctxMenu(0)
-    , highlightedAction(0)
+    , ctxMenu(nullptr)
+    , highlightedAction(nullptr)
 {
     resetKeyboardVars();
     KAcceleratorManager::manage(parent);
@@ -231,7 +231,7 @@ void KMenu::keyPressEvent(QKeyEvent *e)
         return;
     }
 
-    QAction *a = 0L;
+    QAction *a = nullptr;
     bool firstpass = true;
     QString keyString = e->text();
 
@@ -276,7 +276,7 @@ void KMenu::keyPressEvent(QKeyEvent *e)
             d->resetKeyboardVars();
 
             // clear active item
-            setActiveAction(0L);
+            setActiveAction(nullptr);
             return;
 
         } else if (d->noMatches) {
@@ -284,7 +284,7 @@ void KMenu::keyPressEvent(QKeyEvent *e)
             d->resetKeyboardVars();
 
             // clear active item
-            setActiveAction(0L);
+            setActiveAction(nullptr);
 
         } else {
             // the key sequence is not a null string
@@ -339,7 +339,7 @@ void KMenu::keyPressEvent(QKeyEvent *e)
                 }
 
                 // set the original text if it's a different item
-                if (d->lastHitAction != a || d->lastHitAction == 0L) {
+                if (d->lastHitAction != a || d->lastHitAction == nullptr) {
                     d->originalText = a->text();
                 }
 
@@ -407,7 +407,7 @@ void KMenu::KMenuPrivate::resetKeyboardVars(bool _noMatches)
     // Clean up keyboard variables
     if (lastHitAction) {
         lastHitAction->setText(originalText);
-        lastHitAction = 0L;
+        lastHitAction = nullptr;
     }
 
     if (!noMatches) {
@@ -518,7 +518,7 @@ void KMenu::KMenuPrivate::showCtxMenu(const QPoint &pos)
     highlightedAction = parent->activeAction();
 
     if (!highlightedAction) {
-        KMenuSetActionData(parent, 0, 0);
+        KMenuSetActionData(parent, nullptr, nullptr);
         return;
     }
 
@@ -540,7 +540,7 @@ void KMenu::KMenuPrivate::skipTitles(QKeyEvent *event)
         parent->keyPressEvent(event);
         action = qobject_cast<QWidgetAction *>(parent->activeAction());
         if (firstAction == action) { // we looped and only found titles
-            parent->setActiveAction(0);
+            parent->setActiveAction(nullptr);
             break;
         }
     }
@@ -555,7 +555,7 @@ QAction *KMenu::contextMenuFocusAction()
 {
     if (KMenu *menu = qobject_cast<KMenu *>(QApplication::activePopupWidget())) {
         if (!menu->d->lastHoveredAction) {
-            return 0;
+            return nullptr;
         }
         QVariant var = menu->d->lastHoveredAction->data();
         KMenuContext ctx = var.value<KMenuContext>();
@@ -563,7 +563,7 @@ QAction *KMenu::contextMenuFocusAction()
         return ctx.action();
     }
 
-    return 0L;
+    return nullptr;
 }
 
 void KMenu::contextMenuEvent(QContextMenuEvent *e)
@@ -604,8 +604,8 @@ void KMenu::hideEvent(QHideEvent *e)
  */
 
 KMenuContext::KMenuContext()
-    : m_menu(0L)
-    , m_action(0L)
+    : m_menu(nullptr)
+    , m_action(nullptr)
 {
 }
 

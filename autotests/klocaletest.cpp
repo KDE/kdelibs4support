@@ -43,7 +43,7 @@ KLocaleTest::initTestCase()
 {
     QStandardPaths::enableTestMode(true);
 
-    KLocale::global()->setCountry(QLatin1String("C"), 0);
+    KLocale::global()->setCountry(QLatin1String("C"), nullptr);
     KLocale::global()->setThousandsSeparator(QLatin1String(","));
 }
 

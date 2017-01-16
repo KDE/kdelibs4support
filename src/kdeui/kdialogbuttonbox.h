@@ -89,7 +89,7 @@ public:
       *
       * @return A pointer to the new button.
       */
-    KPushButton *addButton(const KGuiItem &guiitem, ButtonRole role, QObject *receiver = 0, const char *slot = 0);
+    KPushButton *addButton(const KGuiItem &guiitem, ButtonRole role, QObject *receiver = nullptr, const char *slot = nullptr);
 
     using QDialogButtonBox::addButton;
 

@@ -82,11 +82,11 @@ static void dofreeaddrinfo(struct addrinfo *ai)
 {
     while (ai) {
         struct addrinfo *ai2 = ai;
-        if (ai->ai_canonname != NULL) {
+        if (ai->ai_canonname != nullptr) {
             free(ai->ai_canonname);
         }
 
-        if (ai->ai_addr != NULL) {
+        if (ai->ai_addr != nullptr) {
             free(ai->ai_addr);
         }
 
@@ -98,13 +98,13 @@ static void dofreeaddrinfo(struct addrinfo *ai)
 void kde_freeaddrinfo(struct kde_addrinfo *ai)
 {
     if (ai->origin == KAI_LOCALUNIX) {
-        struct addrinfo *p, *last = NULL;
+        struct addrinfo *p, *last = nullptr;
         /* We've added one AF_UNIX socket in here, to the
          * tail of the linked list. We have to find it */
         for (p = ai->data; p; p = p->ai_next) {
             if (p->ai_family == AF_UNIX) {
                 if (last) {
-                    last->ai_next = NULL;
+                    last->ai_next = nullptr;
                     freeaddrinfo(ai->data);
                 }
                 dofreeaddrinfo(p);
@@ -128,12 +128,12 @@ make_unix(const char *name, const char *serv)
     int len;
 
     p = (addrinfo *)malloc(sizeof(*p));
-    if (p == NULL) {
-        return NULL;
+    if (p == nullptr) {
+        return nullptr;
     }
     memset(p, 0, sizeof(*p));
 
-    if (name != NULL) {
+    if (name != nullptr) {
         buf = name;
     } else {
         buf = serv;
@@ -146,10 +146,10 @@ make_unix(const char *name, const char *serv)
     }
 
     _sun = (sockaddr_un *)malloc(len);
-    if (_sun == NULL) {
+    if (_sun == nullptr) {
         // Oops
         free(p);
-        return NULL;
+        return nullptr;
     }
 
     _sun->sun_family = AF_UNIX;
@@ -238,24 +238,24 @@ int kde_getaddrinfo(const char *name, const char *service,
 
     // allocate memory for results
     res = (kde_addrinfo *)malloc(sizeof(*res));
-    if (res == NULL) {
+    if (res == nullptr) {
         return EAI_MEMORY;
     }
-    res->data = NULL;
+    res->data = nullptr;
     res->origin = KAI_SYSTEM; // at first, it'll be only system data
 
-    struct addrinfo *last = NULL;
+    struct addrinfo *last = nullptr;
 
     // Skip the getaddrinfo call and the ipv6 check for a UNIX socket.
     if (hint && (hint->ai_family == PF_UNIX)) {
-        if (service == NULL || *service == '\0') {
+        if (service == nullptr || *service == '\0') {
             goto out;    // can't be Unix if no service was requested
         }
 
         // Unix sockets must be localhost
         // That is, either name is NULL or, if it's not, it must be empty,
         // "*" or "localhost"
-        if (name != NULL && !(name[0] == '\0' || (name[0] == '*' && name[1] == '\0') ||
+        if (name != nullptr && !(name[0] == '\0' || (name[0] == '*' && name[1] == '\0') ||
                               strcmp("localhost", name) == 0)) {
             goto out;    // isn't localhost
         }
@@ -298,21 +298,21 @@ int kde_getaddrinfo(const char *name, const char *service,
 
     // Now we have to check whether the user could want a Unix socket
 
-    if (service == NULL || *service == '\0') {
+    if (service == nullptr || *service == '\0') {
         goto out;    // can't be Unix if no service was requested
     }
 
     // Unix sockets must be localhost
     // That is, either name is NULL or, if it's not, it must be empty,
     // "*" or "localhost"
-    if (name != NULL && !(name[0] == '\0' || (name[0] == '*' && name[1] == '\0') ||
+    if (name != nullptr && !(name[0] == '\0' || (name[0] == '*' && name[1] == '\0') ||
                           strcmp("localhost", name) == 0)) {
         goto out;    // isn't localhost
     }
 
     // Unix sockets can only be returned if the user asked for a PF_UNSPEC
     // or PF_UNIX socket type or gave us a NULL hint
-    if (hint != NULL && (hint->ai_family != PF_UNSPEC && hint->ai_family != PF_UNIX)) {
+    if (hint != nullptr && (hint->ai_family != PF_UNSPEC && hint->ai_family != PF_UNIX)) {
         goto out;    // user doesn't want Unix
     }
 
@@ -332,12 +332,12 @@ int kde_getaddrinfo(const char *name, const char *service,
 
 do_unix:
     // So, give the user a PF_UNIX socket
-    p = make_unix(NULL, service);
-    if (p == NULL) {
+    p = make_unix(nullptr, service);
+    if (p == nullptr) {
         err = EAI_MEMORY;
         goto out;
     }
-    if (hint != NULL) {
+    if (hint != nullptr) {
         p->ai_socktype = hint->ai_socktype;
     }
     if (p->ai_socktype == 0) {
@@ -354,7 +354,7 @@ do_unix:
     return 0;
 
 out:
-    if (res->data != NULL) {
+    if (res->data != nullptr) {
         freeaddrinfo(res->data);
     }
     free(res);

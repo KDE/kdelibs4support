@@ -49,7 +49,7 @@ KLibLoader *KLibLoader::self()
 }
 
 KLibLoader::KLibLoader()
-    : QObject(0)
+    : QObject(nullptr)
 {
 }
 
@@ -91,7 +91,7 @@ QString KLibLoader::findLibrary(const QString &_name, const KComponentData &cDat
 KLibrary *KLibLoader::library(const QString &_name, QLibrary::LoadHints hint)
 {
     if (_name.isEmpty()) {
-        return 0;
+        return nullptr;
     }
 
     KLibrary *lib = new KLibrary(_name);
@@ -100,7 +100,7 @@ KLibrary *KLibLoader::library(const QString &_name, QLibrary::LoadHints hint)
     if (lib->fileName().isEmpty()) {
         kLibLoaderPrivate()->errorString = i18n("Library \"%1\" not found", _name);
         delete lib;
-        return 0;
+        return nullptr;
     }
 
     lib->setLoadHints(hint);
@@ -110,7 +110,7 @@ KLibrary *KLibLoader::library(const QString &_name, QLibrary::LoadHints hint)
     if (!lib->isLoaded()) {
         kLibLoaderPrivate()->errorString = lib->errorString();
         delete lib;
-        return 0;
+        return nullptr;
     }
 
     kLibLoaderPrivate()->cleanuphandler.add(lib);

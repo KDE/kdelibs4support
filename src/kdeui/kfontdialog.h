@@ -79,11 +79,11 @@ public:
      *        calling sizeIsRelative().
      *
      */
-    explicit KFontDialog(QWidget *parent = 0,
+    explicit KFontDialog(QWidget *parent = nullptr,
                          const KFontChooser::DisplayFlags &flags =
                              KFontChooser::NoDisplayFlags,
                          const QStringList &fontlist = QStringList(),
-                         Qt::CheckState *sizeIsRelativeState = 0);
+                         Qt::CheckState *sizeIsRelativeState = nullptr);
 
     ~KFontDialog();
     /**
@@ -137,8 +137,8 @@ public:
     static int getFont(QFont &theFont,
                        const KFontChooser::DisplayFlags &flags =
                            KFontChooser::NoDisplayFlags,
-                       QWidget *parent = 0L,
-                       Qt::CheckState *sizeIsRelativeState = 0L);
+                       QWidget *parent = nullptr,
+                       Qt::CheckState *sizeIsRelativeState = nullptr);
 
     /**
      * Creates a modal font difference dialog, lets the user choose a selection
@@ -176,8 +176,8 @@ public:
                            KFontChooser::FontDiffFlags &diffFlags,
                            const KFontChooser::DisplayFlags &flags =
                                KFontChooser::NoDisplayFlags,
-                           QWidget *parent = 0L,
-                           Qt::CheckState *sizeIsRelativeState = 0L);
+                           QWidget *parent = nullptr,
+                           Qt::CheckState *sizeIsRelativeState = nullptr);
 
     /**
      * When you are not only interested in the font selected, but also
@@ -201,8 +201,8 @@ public:
     static int getFontAndText(QFont &theFont, QString &theString,
                               const KFontChooser::DisplayFlags &flags =
                                   KFontChooser::NoDisplayFlags,
-                              QWidget *parent = 0L,
-                              Qt::CheckState *sizeIsRelativeState = 0L);
+                              QWidget *parent = nullptr,
+                              Qt::CheckState *sizeIsRelativeState = nullptr);
 
 Q_SIGNALS:
     /**

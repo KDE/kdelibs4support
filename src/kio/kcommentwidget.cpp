@@ -35,8 +35,8 @@
 KCommentWidget::KCommentWidget(QWidget *parent) :
     QWidget(parent),
     m_readOnly(false),
-    m_label(0),
-    m_sizeHintHelper(0),
+    m_label(nullptr),
+    m_sizeHintHelper(nullptr),
     m_comment()
 {
     m_label = new QLabel(this);
@@ -140,7 +140,7 @@ void KCommentWidget::slotLinkActivated(const QString &link)
 
     if (dialog->exec() == QDialog::Accepted) {
         const QString oldText = m_comment;
-        if (dialog != 0) {
+        if (dialog != nullptr) {
             setText(editor->toPlainText());
         }
         if (oldText != m_comment) {
@@ -148,10 +148,10 @@ void KCommentWidget::slotLinkActivated(const QString &link)
         }
     }
 
-    if (dialog != 0) {
+    if (dialog != nullptr) {
         KWindowConfig::saveWindowSize(dialog->windowHandle(), dialogConfig);
         delete dialog;
-        dialog = 0;
+        dialog = nullptr;
     }
 }
 
