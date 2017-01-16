@@ -113,7 +113,7 @@ void KFontFamilyDelegate::paint(QPainter *painter,
         QString scriptsSpec = i18nc("Numeric IDs of scripts for font previews",
                                     // i18n: Integer which indicates the script you used in the sample text
                                     // for font previews in your language. For the possible values, see
-                                    // http://doc.trolltech.com/qfontdatabase.html#WritingSystem-enum
+                                    // https://doc.qt.io/qt-5/qfontdatabase.html#WritingSystem-enum
                                     // If the sample text contains several scripts, their IDs can be given
                                     // as a comma-separated list (e.g. for Japanese it is "1,27").
                                     "1");
