@@ -1302,12 +1302,12 @@ int KTimeZoneData::transitionIndex(const QDateTime &dt, int *secondIndex, bool *
         const int count = d->transitions.count();
         const int next = (index >= 0) ? index + 1 : 0;
         if (next < count) {
-            KTimeZone::Phase nextPhase = d->transitions[next].phase();
-            const int offset = (index >= 0) ? d->transitions[index].phase().utcOffset() : d->prePhase.utcOffset();
+            KTimeZone::Phase nextPhase = d->transitions.at(next).phase();
+            const int offset = (index >= 0) ? d->transitions.at(index).phase().utcOffset() : d->prePhase.utcOffset();
             const int phaseDiff = nextPhase.utcOffset() - offset;
             if (phaseDiff > 0) {
                 // Get UTC equivalent as if 'dt' was in the next phase
-                if (dtutc.msecsTo(d->transitions[next].time())/1000 + nextPhase.utcOffset() <= phaseDiff) {
+                if (dtutc.msecsTo(d->transitions.at(next).time())/1000 + nextPhase.utcOffset() <= phaseDiff) {
                     // The time falls in the gap between the two phases,
                     // so return an invalid value.
                     if (validTime) {
