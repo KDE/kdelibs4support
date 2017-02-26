@@ -300,10 +300,9 @@ KFileDialog::~KFileDialog()
 
 void KFileDialog::setLocationLabel(const QString &text)
 {
-    if (d->native) {
-        return;    // not available
+    if (d->w) {
+        d->w->setLocationLabel(text);
     }
-    d->w->setLocationLabel(text);
 }
 
 void KFileDialog::setFilter(const QString &filter)
@@ -317,17 +316,15 @@ void KFileDialog::setFilter(const QString &filter)
 
 QString KFileDialog::currentFilter() const
 {
-    if (d->native) {
-        return QString();    // not available
+    if (d->w) {
+        return d->w->currentFilter();
     }
-    return d->w->currentFilter();
+    return QString();    // not available
 }
 
 void KFileDialog::setMimeFilter(const QStringList &mimeTypes,
                                 const QString &defaultType)
 {
-    d->w->setMimeFilter(mimeTypes, defaultType);
-
     if (d->native) {
         QString allExtensions;
         QStringList filters = mime2KdeFilter(mimeTypes, &allExtensions);
@@ -335,7 +332,9 @@ void KFileDialog::setMimeFilter(const QStringList &mimeTypes,
             filters.prepend(allExtensions + QLatin1Char('|') + i18n("All Supported Files"));
         }
         d->native->filter = filters.join(QLatin1String("\n"));
+        return;
     }
+    d->w->setMimeFilter(mimeTypes, defaultType);
 }
 
 void KFileDialog::clearFilter()
@@ -368,55 +367,53 @@ QMimeType KFileDialog::currentFilterMimeType()
 
 void KFileDialog::setPreviewWidget(KPreviewWidgetBase *w)
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        d->w->setPreviewWidget(w);
     }
-    d->w->setPreviewWidget(w);
 }
 
 void KFileDialog::setInlinePreviewShown(bool show)
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        d->w->setInlinePreviewShown(show);
     }
-    d->w->setInlinePreviewShown(show);
 }
 
 // This is only used for the initial size when no configuration has been saved
 QSize KFileDialog::sizeHint() const
 {
-    return d->w->dialogSizeHint();
+    if (d->w) {
+        return d->w->dialogSizeHint();
+    }
+    return QSize();
 }
 
 // This slot still exists mostly for compat purposes; for subclasses which reimplement slotOk
 void KFileDialog::slotOk()
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        d->w->slotOk();
     }
-    d->w->slotOk();
 }
 
 // This slot still exists mostly for compat purposes; for subclasses which reimplement accept
 void KFileDialog::accept()
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        setResult(QDialog::Accepted);   // keep old behavior; probably not needed though
+        d->w->accept();
+        KConfigGroup cfgGroup(KSharedConfig::openConfig(), ConfigGroup);
+        QDialog::accept();
     }
-    setResult(QDialog::Accepted);   // keep old behavior; probably not needed though
-    d->w->accept();
-    KConfigGroup cfgGroup(KSharedConfig::openConfig(), ConfigGroup);
-    QDialog::accept();
 }
 
 // This slot still exists mostly for compat purposes; for subclasses which reimplement slotCancel
 void KFileDialog::slotCancel()
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        d->w->slotCancel();
+        reject();
     }
-    d->w->slotCancel();
-    reject();
 }
 
 void KFileDialog::setUrl(const QUrl &url, bool clearforward)
@@ -601,7 +598,7 @@ QList<QUrl> KFileDialogPrivate::getOpenUrls(const QUrl &startDir,
 
 void KFileDialog::setConfirmOverwrite(bool enable)
 {
-    if (operationMode() == KFileDialog::Saving) {
+    if (d->w && operationMode() == KFileDialog::Saving) {
         d->w->setConfirmOverwrite(enable);
     }
 }
@@ -869,43 +866,57 @@ KFile::Modes KFileDialog::mode() const
 
 QPushButton *KFileDialog::okButton() const
 {
-    return d->w->okButton();
+    if (d->w) {
+        return d->w->okButton();
+    }
+    return nullptr;
 }
 
 QPushButton *KFileDialog::cancelButton() const
 {
-    return d->w->cancelButton();
+    if (d->w) {
+        return d->w->cancelButton();
+    }
+    return nullptr;
 }
 
 KUrlComboBox *KFileDialog::locationEdit() const
 {
-    return d->w->locationEdit();
+    if (d->w) {
+        return d->w->locationEdit();
+    }
+    return nullptr;
 }
 
 KFileFilterCombo *KFileDialog::filterWidget() const
 {
-    return d->w->filterWidget();
+    if (d->w) {
+        return d->w->filterWidget();
+    }
+    return nullptr;
 }
 
 KActionCollection *KFileDialog::actionCollection() const
 {
-    return d->w->actionCollection();
+    if (d->w) {
+        return d->w->actionCollection();
+    }
+    return nullptr;
 }
 
 void KFileDialog::setKeepLocation(bool keep)
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        d->w->setKeepLocation(keep);
     }
-    d->w->setKeepLocation(keep);
 }
 
 bool KFileDialog::keepsLocation() const
 {
-    if (d->native) {
-        return false;
+    if (d->w) {
+        return d->w->keepsLocation();
     }
-    return d->w->keepsLocation();
+    return false;
 }
 
 void KFileDialog::setOperationMode(OperationMode mode)
@@ -927,27 +938,23 @@ KFileDialog::OperationMode KFileDialog::operationMode() const
 
 void KFileDialog::keyPressEvent(QKeyEvent *e)
 {
-    if (d->native) {
-        return;
-    }
-
-    if (e->key() == Qt::Key_Escape) {
-        e->accept();
-        d->w->cancelButton()->animateClick();
-    } else {
-        QDialog::keyPressEvent(e);
+    if (d->w) {
+        if (e->key() == Qt::Key_Escape) {
+            e->accept();
+            d->w->cancelButton()->animateClick();
+        } else {
+            QDialog::keyPressEvent(e);
+        }
     }
 }
 
 void KFileDialog::hideEvent(QHideEvent *e)
 {
-    if (d->native) {
-        return;
+    if (d->w) {
+        KWindowConfig::saveWindowSize(windowHandle(), d->cfgGroup, KConfigBase::Persistent);
+
+        QDialog::hideEvent(e);
     }
-
-    KWindowConfig::saveWindowSize(windowHandle(), d->cfgGroup, KConfigBase::Persistent);
-
-    QDialog::hideEvent(e);
 }
 
 // static
@@ -967,7 +974,10 @@ void KFileDialog::setStartDir(const QUrl &directory)
 
 KToolBar *KFileDialog::toolBar() const
 {
-    return d->w->toolBar();
+    if (d->w) {
+        return d->w->toolBar();
+    }
+    return nullptr;
 }
 
 KFileWidget *KFileDialog::fileWidget()
