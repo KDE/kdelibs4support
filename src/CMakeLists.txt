@@ -645,7 +645,7 @@ else()
         set(CMAKE_MODULE_PATH \"${CMAKE_MODULE_PATH}\")
         kdelibs4support_encode_uri(DocBookXML4_DTD_DIR)
         kdelibs4support_encode_uri(_KDocTools_customization_dir)
-        configure_file(${CMAKE_CURRENT_SOURCE_DIR}/${_custom_dtd_kdex}.cmake ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install)"
+        configure_file(\"${CMAKE_CURRENT_SOURCE_DIR}/${_custom_dtd_kdex}.cmake\" \"${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install\")"
     )
     get_filename_component(_custom_dtd_kdex_name ${_custom_dtd_kdex} NAME)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_custom_dtd_kdex}.install DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kdoctools/customization/dtd RENAME ${_custom_dtd_kdex_name})
