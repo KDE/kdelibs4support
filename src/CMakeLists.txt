@@ -641,7 +641,7 @@ else()
     install(CODE
         "file(RELATIVE_PATH DocBookXML4_DTD_DIR \"${NORMALIZED_DTD_INSTALL_PATH}\" \"${DocBookXML4_DTD_DIR}\")
         file(RELATIVE_PATH _KDocTools_customization_dir \"${NORMALIZED_DTD_INSTALL_PATH}\" \"${_KDocTools_customization_dir}\")
-        include(${CMAKE_SOURCE_DIR}/cmake/uriencode.cmake)
+        include(\"${CMAKE_SOURCE_DIR}/cmake/uriencode.cmake\")
         set(CMAKE_MODULE_PATH \"${CMAKE_MODULE_PATH}\")
         kdelibs4support_encode_uri(DocBookXML4_DTD_DIR)
         kdelibs4support_encode_uri(_KDocTools_customization_dir)
