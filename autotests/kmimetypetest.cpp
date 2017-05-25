@@ -142,7 +142,7 @@ void KMimeTypeTest::initTestCase()
 
     if (mustUpdateKSycoca) {
         // Update ksycoca in ~/.kde-unit-test after creating the above
-        QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
+        QProcess::execute(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME), QStringList());
     }
 
     QVERIFY(KService::serviceByStorageId("fake_nonkde_application.desktop"));
@@ -165,7 +165,7 @@ void KMimeTypeTest::cleanupTestCase()
     QFile::remove(m_nonKdeApp);
     QProcess proc;
     proc.setProcessChannelMode(QProcess::MergedChannels); // silence kbuildsycoca output
-    proc.start(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME));
+    proc.start(QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME), QStringList());
     proc.waitForFinished();
 }
 
