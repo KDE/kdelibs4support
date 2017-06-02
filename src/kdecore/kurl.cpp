@@ -966,7 +966,7 @@ static QString toPrettyPercentEncoding(const QString &input, bool forFragment)
     result.reserve(input.length());
     for (int i = 0; i < input.length(); ++i) {
         const QChar c = input.at(i);
-        register ushort u = c.unicode();
+        ushort u = c.unicode();
         if (u < 0x20
                 || (!forFragment && u == '?') // don't escape '?' in fragments, not needed and wrong (#173101)
                 || u == '#' || u == '%'
