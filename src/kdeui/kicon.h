@@ -57,18 +57,18 @@ public:
      *                 loaded from the emblems icons and up to four (one per
      *                 corner) is currently supported
      */
-    explicit KIcon(const QString &iconName, KIconLoader *iconLoader,
+    KDELIBS4SUPPORT_DEPRECATED explicit KIcon(const QString &iconName, KIconLoader *iconLoader,
                    const QStringList &overlays);
 
     /**
      * \overload
      */
-    explicit KIcon(const QString &iconName, KIconLoader *iconLoader);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIcon(const QString &iconName, KIconLoader *iconLoader);
 
     /**
      * \overload
      */
-    explicit KIcon(const QString &iconName);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIcon(const QString &iconName);
 
     /**
      * Copy constructor which takes any QIcon.
@@ -76,7 +76,7 @@ public:
      * \param copy the icon to copy.  This should have once been a KIcon,
      *             if you want to preserve KDE icon effects.
      */
-    explicit KIcon(const QIcon &copy);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIcon(const QIcon &copy);
 
     /**
      * Constructor for a null icon.

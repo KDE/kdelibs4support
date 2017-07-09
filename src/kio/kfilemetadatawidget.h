@@ -47,7 +47,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaDataWidget : public QWidget
     Q_PROPERTY(bool readOnly READ isReadOnly WRITE setReadOnly)
 
 public:
-    explicit KFileMetaDataWidget(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KFileMetaDataWidget(QWidget *parent = nullptr);
     virtual ~KFileMetaDataWidget();
 
     /**

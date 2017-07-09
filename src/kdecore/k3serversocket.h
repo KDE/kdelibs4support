@@ -137,7 +137,7 @@ public:
      * @param service     the service name to listen on
      * @param parent      the parent QObject object
      */
-    explicit KServerSocket(const QString &service, QObject *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KServerSocket(const QString &service, QObject *parent = nullptr);
 
     /**
      * Construct this object specifying the node and service names to listen on.

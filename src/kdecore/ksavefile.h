@@ -108,7 +108,7 @@ public:
      *
      * @param filename the path of the file
      */
-    explicit KSaveFile(const QString &filename);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSaveFile(const QString &filename);
 
     /**
      * Destructor.

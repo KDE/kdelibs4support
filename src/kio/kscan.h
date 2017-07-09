@@ -99,7 +99,7 @@ protected:
      * @param parent The QWidget's parent, or 0
      * @see KPageDialog
      */
-    explicit KScanDialog(int dialogFace = Tabbed,
+    KDELIBS4SUPPORT_DEPRECATED explicit KScanDialog(int dialogFace = Tabbed,
                          int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
                          QWidget *parent = nullptr);
 
@@ -193,7 +193,7 @@ protected:
      * @param parent the QWidget's parent, or 0
      * @param modal if true the dialog is model
      */
-    explicit KOCRDialog(int dialogFace = Tabbed, int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
+    KDELIBS4SUPPORT_DEPRECATED explicit KOCRDialog(int dialogFace = Tabbed, int buttonMask = QDialogButtonBox::Close | QDialogButtonBox::Help,
                         QWidget *parent = nullptr, bool modal = false);
 
     /**

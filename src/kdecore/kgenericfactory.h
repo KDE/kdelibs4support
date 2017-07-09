@@ -35,14 +35,14 @@ template <class T>
 class KGenericFactoryBase : public KPluginFactory
 {
 public:
-    explicit KGenericFactoryBase(const char *componentName)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactoryBase(const char *componentName)
         : KPluginFactory()
     {
         s_self = this;
         s_createComponentDataCalled = false;
     }
 
-    explicit KGenericFactoryBase(const KAboutData *data)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactoryBase(const KAboutData *data)
         : KPluginFactory()
     {
         KAboutData::registerPluginData(*data);
@@ -153,11 +153,11 @@ template <class Product, class ParentType = QObject>
 class KDELIBS4SUPPORT_DEPRECATED KGenericFactory : public KGenericFactoryBase<Product>
 {
 public:
-    explicit KGenericFactory(const char *componentName = nullptr)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactory(const char *componentName = nullptr)
         : KGenericFactoryBase<Product>(componentName)
     {}
 
-    explicit KGenericFactory(const KAboutData *data)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactory(const KAboutData *data)
         : KGenericFactoryBase<Product>(data)
     {}
 
@@ -244,11 +244,11 @@ class KGenericFactory< KTypeList<Product, ProductListTail>, QObject >
     : public KGenericFactoryBase<KTypeList<Product, ProductListTail> >
 {
 public:
-    explicit KGenericFactory(const char *componentName  = nullptr)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactory(const char *componentName  = nullptr)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(componentName)
     {}
 
-    explicit KGenericFactory(const KAboutData *data)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactory(const KAboutData *data)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(data)
     {}
 
@@ -337,10 +337,10 @@ class KGenericFactory< KTypeList<Product, ProductListTail>,
     : public KGenericFactoryBase<KTypeList<Product, ProductListTail> >
 {
 public:
-    explicit KGenericFactory(const char *componentName  = nullptr)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactory(const char *componentName  = nullptr)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(componentName)
     {}
-    explicit KGenericFactory(const KAboutData *data)
+    KDELIBS4SUPPORT_DEPRECATED explicit KGenericFactory(const KAboutData *data)
         : KGenericFactoryBase<KTypeList<Product, ProductListTail> >(data)
     {}
 

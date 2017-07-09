@@ -238,7 +238,7 @@ static class h_date *toHebrew(const QDate &date)
 class KCalendarSystemHebrewPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemHebrewPrivate(KCalendarSystemHebrew *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemHebrewPrivate(KCalendarSystemHebrew *q);
 
     virtual ~KCalendarSystemHebrewPrivate();
 

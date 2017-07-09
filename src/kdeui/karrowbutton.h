@@ -53,7 +53,7 @@ public:
      * @param parent This button's parent
      * @param arrow The direction the arrrow should be pointing in
      */
-    explicit KArrowButton(QWidget *parent = nullptr, Qt::ArrowType arrow = Qt::UpArrow);
+    KDELIBS4SUPPORT_DEPRECATED explicit KArrowButton(QWidget *parent = nullptr, Qt::ArrowType arrow = Qt::UpArrow);
 
     /**
      * Destructor.

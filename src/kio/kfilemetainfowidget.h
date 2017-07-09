@@ -41,7 +41,7 @@ public:
         Reserve = 0xff
     };
 
-    explicit KFileMetaInfoWidget(KFileMetaInfoItem item,
+    KDELIBS4SUPPORT_DEPRECATED explicit KFileMetaInfoWidget(KFileMetaInfoItem item,
                                  QValidator *val = nullptr,
                                  QWidget *parent = nullptr);
 

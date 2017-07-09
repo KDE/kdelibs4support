@@ -54,7 +54,7 @@ public:
       * addButton() are laid out from top to bottom, otherwise they
       * are laid out from left to right.
       */
-    explicit KDialogButtonBox(QWidget *parent, Qt::Orientation _orientation = Qt::Horizontal);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDialogButtonBox(QWidget *parent, Qt::Orientation _orientation = Qt::Horizontal);
 
     /**
       * Free private data field

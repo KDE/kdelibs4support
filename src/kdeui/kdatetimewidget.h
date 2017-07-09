@@ -44,13 +44,13 @@ public:
     /**
      * Constructs a date and time selection widget.
      */
-    explicit KDateTimeWidget(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateTimeWidget(QWidget *parent = nullptr);
 
     /**
      * Constructs a date and time selection widget with the initial date and
      * time set to @p datetime.
      */
-    explicit KDateTimeWidget(const QDateTime &datetime,
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateTimeWidget(const QDateTime &datetime,
                              QWidget *parent = nullptr);
 
     /**

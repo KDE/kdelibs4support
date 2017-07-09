@@ -89,7 +89,7 @@ public:
      *                locale-related preferences (such as language, country,
      *                and formatting options).
      */
-    explicit KLocale(KSharedConfig::Ptr config = KSharedConfig::Ptr());
+    KDELIBS4SUPPORT_DEPRECATED explicit KLocale(KSharedConfig::Ptr config = KSharedConfig::Ptr());
 
     /**
      * Constructs a KLocale.

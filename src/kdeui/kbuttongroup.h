@@ -51,7 +51,7 @@ public:
     /**
      * Construct a new empty KGroupBox.
      */
-    explicit KButtonGroup(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KButtonGroup(QWidget *parent = nullptr);
 
     /**
      * Destroys the widget.

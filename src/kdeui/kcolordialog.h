@@ -219,7 +219,7 @@ public:
     /**
      * Constructs a color selection dialog.
      */
-    explicit KColorDialog(QWidget *parent = nullptr, bool modal = false);
+    KDELIBS4SUPPORT_DEPRECATED explicit KColorDialog(QWidget *parent = nullptr, bool modal = false);
     /**
      * Destroys the color selection dialog.
      */

@@ -64,7 +64,7 @@ public:
     /**
      *  Constructs a status bar. @p parent is usually KMainWindow.
      */
-    explicit KStatusBar(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KStatusBar(QWidget *parent = nullptr);
 
     /**
      *  Destructor.

@@ -70,7 +70,7 @@ public:
      * @param timeZones The time zone database to use. If 0, the system time zone
      *                  database is used.
      */
-    explicit K4TimeZoneWidget(QWidget *parent = nullptr, KTimeZones *timeZones = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit K4TimeZoneWidget(QWidget *parent = nullptr, KTimeZones *timeZones = nullptr);
 
     /**
      * Destroys the time zone selection widget.

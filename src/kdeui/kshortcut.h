@@ -80,7 +80,7 @@ public:
      * sequence as primary shortcut.
      * @param primary Qt key sequence to add
      */
-    explicit KShortcut(const QKeySequence &primary);
+    KDELIBS4SUPPORT_DEPRECATED explicit KShortcut(const QKeySequence &primary);
 
     /**
      * Creates a new shortcut with the given Qt key sequences
@@ -101,7 +101,7 @@ public:
      * @see Qt::Key
      */
     // TODO KDE5 move to QShortcut
-    explicit KShortcut(int keyQtPri, int keyQtAlt = 0);
+    KDELIBS4SUPPORT_DEPRECATED explicit KShortcut(int keyQtPri, int keyQtAlt = 0);
 
     /**
      * Copy constructor.
@@ -118,7 +118,7 @@ public:
      * @see QKeySequence::fromString(const QString&, SequenceFormat)
      */
     // TODO KDE5 move to QShortcut
-    explicit KShortcut(const QString &description);
+    KDELIBS4SUPPORT_DEPRECATED explicit KShortcut(const QString &description);
 
     /**
      * Creates a new shortcut with the given Qt key sequences.

@@ -31,7 +31,7 @@ class KLocale;
 class KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemPrivate(KCalendarSystem *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemPrivate(KCalendarSystem *q);
 
     virtual ~KCalendarSystemPrivate();
 

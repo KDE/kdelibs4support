@@ -88,7 +88,7 @@ public:
      *
      * @param webAddress Home page of the person.
      */
-    explicit K4AboutPerson(const KLocalizedString &name,
+    KDELIBS4SUPPORT_DEPRECATED explicit K4AboutPerson(const KLocalizedString &name,
                            const KLocalizedString &task = KLocalizedString(),
                            const QByteArray &emailAddress = QByteArray(),
                            const QByteArray &webAddress = QByteArray());
@@ -106,7 +106,7 @@ public:
      *
      * @param ocsUsername Open Collaboration Services username of the person.
      */
-    explicit K4AboutPerson(const KLocalizedString &name,
+    KDELIBS4SUPPORT_DEPRECATED explicit K4AboutPerson(const KLocalizedString &name,
                            const KLocalizedString &task,
                            const QByteArray &emailAddress,
                            const QByteArray &webAddress,
@@ -165,7 +165,7 @@ private:
     /**
      * @internal Used by K4AboutData to construct translator data.
      */
-    explicit K4AboutPerson(const QString &name, const QString &email);
+    KDELIBS4SUPPORT_DEPRECATED explicit K4AboutPerson(const QString &name, const QString &email);
 
     class Private;
     Private *const d;
@@ -967,15 +967,15 @@ private:
     /**
      * @internal Used by K4AboutData to construct a predefined license.
      */
-    explicit K4AboutLicense(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData);
+    KDELIBS4SUPPORT_DEPRECATED explicit K4AboutLicense(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData);
     /**
      * @internal Used by K4AboutData to construct license by given text
      */
-    explicit K4AboutLicense(const QString &pathToFile, const K4AboutData *aboutData);
+    KDELIBS4SUPPORT_DEPRECATED explicit K4AboutLicense(const QString &pathToFile, const K4AboutData *aboutData);
     /**
      * @internal Used by K4AboutData to construct license by given text
      */
-    explicit K4AboutLicense(const KLocalizedString &licenseText, const K4AboutData *aboutData);
+    KDELIBS4SUPPORT_DEPRECATED explicit K4AboutLicense(const KLocalizedString &licenseText, const K4AboutData *aboutData);
 
     class Private;
     QSharedDataPointer<Private> d;

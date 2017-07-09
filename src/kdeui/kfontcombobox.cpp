@@ -52,7 +52,7 @@ class KFontFamilyDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    explicit KFontFamilyDelegate(QObject *parent);
+    KDELIBS4SUPPORT_DEPRECATED explicit KFontFamilyDelegate(QObject *parent);
 
     void paint(QPainter *painter,
                const QStyleOptionViewItem &option,

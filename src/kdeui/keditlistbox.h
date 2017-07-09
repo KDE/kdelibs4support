@@ -90,7 +90,7 @@ public:
     /**
      * Create an editable listbox.
      */
-    explicit KEditListBox(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KEditListBox(QWidget *parent = nullptr);
 
     /**
      * Create an editable listbox.
@@ -98,7 +98,7 @@ public:
      * The same as the other constructor, additionally it takes
      * @p title, which will be the title of the groupbox around the listbox.
      */
-    explicit KEditListBox(const QString &title, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KEditListBox(const QString &title, QWidget *parent = nullptr);
 
 // ### KDE5: remove name arguments and simplify (merge?!) constructors
 
@@ -116,7 +116,7 @@ public:
      * it will be checked if you press the Add-button. It is not
      * possible to enter items twice into the listbox.
      */
-    explicit KDELIBS4SUPPORT_DEPRECATED KEditListBox(QWidget *parent, const char *name,
+    KDELIBS4SUPPORT_DEPRECATED explicit KDELIBS4SUPPORT_DEPRECATED KEditListBox(QWidget *parent, const char *name,
             bool checkAtEntering = false, Buttons buttons = All);
     /**
      * Create an editable listbox.
@@ -126,7 +126,7 @@ public:
      * The same as the other constructor, additionally it takes
      * @p title, which will be the title of the frame around the listbox.
      */
-    explicit KDELIBS4SUPPORT_DEPRECATED KEditListBox(const QString &title, QWidget *parent,
+    KDELIBS4SUPPORT_DEPRECATED explicit KDELIBS4SUPPORT_DEPRECATED KEditListBox(const QString &title, QWidget *parent,
             const char *name, bool checkAtEntering = false,
             Buttons buttons = All);
 

@@ -461,7 +461,7 @@ public:
      * @param servicename the service name associated, like "http"
      * @param parent      the parent object (see QObject)
      */
-    explicit KResolver(const QString &nodename, const QString &servicename = QString(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KResolver(const QString &nodename, const QString &servicename = QString(),
                        QObject *parent = nullptr);
 
     /**

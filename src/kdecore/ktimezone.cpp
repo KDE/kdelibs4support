@@ -131,7 +131,7 @@ public:
     int              utcOffset;      // seconds to add to UTC
     bool             dst;            // true if daylight savings time
 
-    explicit KTimeZonePhasePrivate(int offset = 0, bool ds = false)
+    KDELIBS4SUPPORT_DEPRECATED explicit KTimeZonePhasePrivate(int offset = 0, bool ds = false)
         : QSharedData(),
           utcOffset(offset),
           dst(ds)

@@ -46,7 +46,7 @@ public:
     /**
      * Constructs a KMenu.
      */
-    explicit KMenu(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KMenu(QWidget *parent = nullptr);
 
     /**
      * Constructs a KMenu.
@@ -54,7 +54,7 @@ public:
      *              into another menu as a submenu.
      * \param parent the parent QWidget object
      */
-    explicit KMenu(const QString &title, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KMenu(const QString &title, QWidget *parent = nullptr);
 
     /**
      * Destructs the object

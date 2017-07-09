@@ -38,7 +38,7 @@ class KCalendarSystemJapanesePrivate;
 class KCalendarSystemJapanese: public KCalendarSystemGregorian
 {
 public:
-    explicit KCalendarSystemJapanese(const KSharedConfig::Ptr config, const KLocale *locale);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJapanese(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemJapanese();
 
     QString calendarType() const Q_DECL_OVERRIDE;

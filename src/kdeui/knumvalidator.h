@@ -46,7 +46,7 @@ public:
     /**
      * Constructor.  Also sets the base value.
      */
-    explicit KIntValidator(QWidget *parent, int base = 10);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIntValidator(QWidget *parent, int base = 10);
     /**
      * Constructor.  Also sets the minimum, maximum, and numeric base values.
      */
@@ -111,7 +111,7 @@ public:
     /** Constuct a locale-aware KDoubleValidator with default range
         (whatever QDoubleValidator uses for that) and parent @p
         parent */
-    explicit KDoubleValidator(QObject *parent);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDoubleValidator(QObject *parent);
     /** Constuct a locale-aware KDoubleValidator for range [@p bottom,@p
         top] and a precision of @p decimals decimals after the decimal
         point.  */

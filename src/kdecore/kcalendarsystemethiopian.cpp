@@ -30,7 +30,7 @@
 class KCalendarSystemEthiopianPrivate : public KCalendarSystemCopticPrivate
 {
 public:
-    explicit KCalendarSystemEthiopianPrivate(KCalendarSystemEthiopian *q) : KCalendarSystemCopticPrivate(q)
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemEthiopianPrivate(KCalendarSystemEthiopian *q) : KCalendarSystemCopticPrivate(q)
     {
     }
 

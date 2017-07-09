@@ -27,7 +27,7 @@
 class KCalendarSystemGregorianPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemGregorianPrivate(KCalendarSystemGregorian *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemGregorianPrivate(KCalendarSystemGregorian *q);
 
     virtual ~KCalendarSystemGregorianPrivate();
 

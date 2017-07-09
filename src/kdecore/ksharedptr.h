@@ -76,7 +76,7 @@ public:
      * Creates a new pointer.
      * @param p the pointer
      */
-    inline explicit KSharedPtr(T *p)
+    inline KDELIBS4SUPPORT_DEPRECATED explicit KSharedPtr(T *p)
         : d(p)
     {
         if (d) {

@@ -514,7 +514,7 @@ public:
      * @param date date in the time zone indicated by @p spec
      * @param spec time specification
      */
-    explicit KDateTime(const QDate &date, const Spec &spec = Spec(LocalZone));
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateTime(const QDate &date, const Spec &spec = Spec(LocalZone));
 
     /**
      * Constructs a date/time expressed as specified by @p spec.
@@ -573,7 +573,7 @@ public:
      *
      * @param dt date and time
      */
-    explicit KDateTime(const QDateTime &dt);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateTime(const QDateTime &dt);
 
     KDateTime(const KDateTime &other);
     ~KDateTime();

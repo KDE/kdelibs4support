@@ -393,7 +393,7 @@ private:
  *
  * KTimeZone instances are often grouped into KTimeZones collections.
  *
- * Copying KTimeZone instances is very efficient since the class data is explicitly
+ * Copying KTimeZone instances is very efficient since the class data is KDELIBS4SUPPORT_DEPRECATED explicitly
  * shared, meaning that only a pointer to the data is actually copied. To achieve
  * this, each class inherited from KTimeZone must have a corresponding backend
  * class derived from KTimeZoneBackend.
@@ -612,7 +612,7 @@ public:
      *
      * @param name name of the UTC time zone
      */
-    explicit KTimeZone(const QString &name);
+    KDELIBS4SUPPORT_DEPRECATED explicit KTimeZone(const QString &name);
 
     KTimeZone(const KTimeZone &tz);
     KTimeZone &operator=(const KTimeZone &tz);
@@ -1124,7 +1124,7 @@ public:
     /** Implements KTimeZone::KTimeZone(). */
     KTimeZoneBackend();
     /** Implements KTimeZone::KTimeZone(const QString&). */
-    explicit KTimeZoneBackend(const QString &name);
+    KDELIBS4SUPPORT_DEPRECATED explicit KTimeZoneBackend(const QString &name);
 
     KTimeZoneBackend(const KTimeZoneBackend &other);
     KTimeZoneBackend &operator=(const KTimeZoneBackend &other);
@@ -1279,7 +1279,7 @@ protected:
      * @param useZoneParse true if parse(const KTimeZone&) works, false if
      *                     parsing must be performed by other methods
      */
-    explicit KTimeZoneSource(bool useZoneParse);
+    KDELIBS4SUPPORT_DEPRECATED explicit KTimeZoneSource(bool useZoneParse);
 
 private:
     KTimeZoneSourcePrivate *const d;

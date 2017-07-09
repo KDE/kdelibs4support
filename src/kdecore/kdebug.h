@@ -134,7 +134,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE void kClearDebugConfig();
   \relates KGlobal
 
   Denotes the debug area to use in kDebug/kWarning etc when not
-  explicitly specified. The default is 0 (zero).
+  KDELIBS4SUPPORT_DEPRECATED explicitly specified. The default is 0 (zero).
 
   Define this macro to the debug area of your application/component
   before including any KDE headers. Usually, you want to add code like
@@ -303,7 +303,7 @@ class KDebug                    //krazy= ?
     QtMsgType level;
 public:
     class Block;
-    explicit inline KDebug(QtMsgType type, const char *f = nullptr, int l = -1, const char *info = nullptr)
+    KDELIBS4SUPPORT_DEPRECATED explicit inline KDebug(QtMsgType type, const char *f = nullptr, int l = -1, const char *info = nullptr)
         : file(f), funcinfo(info), line(l), level(type)
     {
 #ifdef KDE4_CMAKE_TOPLEVEL_DIR_LENGTH // set by FindKDE4Internal.cmake

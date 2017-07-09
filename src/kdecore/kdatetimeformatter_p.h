@@ -33,7 +33,7 @@ class KCalendarSystem;
 class KDateTimeFormatter
 {
 public:
-    explicit KDateTimeFormatter();
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateTimeFormatter();
 
     virtual ~KDateTimeFormatter();
 

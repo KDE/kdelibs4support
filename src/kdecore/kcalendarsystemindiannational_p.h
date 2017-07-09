@@ -41,7 +41,7 @@ class KCalendarSystemIndianNationalPrivate;
 class KCalendarSystemIndianNational: public KCalendarSystem
 {
 public:
-    explicit KCalendarSystemIndianNational(const KSharedConfig::Ptr config, const KLocale *locale);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIndianNational(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemIndianNational();
 
     QString calendarType() const Q_DECL_OVERRIDE;

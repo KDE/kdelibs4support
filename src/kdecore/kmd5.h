@@ -108,14 +108,14 @@ public:
      *             strlen on the first parameter, otherwise
      *             it trusts the given length (does not stop on NUL byte).
      */
-    explicit KMD5(const char *in, int len = -1);
+    KDELIBS4SUPPORT_DEPRECATED explicit KMD5(const char *in, int len = -1);
 
     /**
      * @overload
      *
      * Same as above except it accepts a QByteArray as its argument.
      */
-    explicit KMD5(const QByteArray &a);
+    KDELIBS4SUPPORT_DEPRECATED explicit KMD5(const QByteArray &a);
 
     /**
      * Updates the message to be digested. Be sure to add all data

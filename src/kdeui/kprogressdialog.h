@@ -60,7 +60,7 @@ public:
      * @param text Text to display in the dialog
      * @param flags The widget flags
      */
-    explicit KProgressDialog(QWidget *parent = nullptr, const QString &caption = QString(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KProgressDialog(QWidget *parent = nullptr, const QString &caption = QString(),
                              const QString &text = QString(), Qt::WindowFlags flags = nullptr);
 
     /**

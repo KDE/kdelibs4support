@@ -65,7 +65,7 @@ public:
      * @param parent Parent of the widget.
      * @param notifyClick @p true causes signals to be emitted.
      */
-    explicit KTextBrowser(QWidget *parent = nullptr, bool notifyClick = false);
+    KDELIBS4SUPPORT_DEPRECATED explicit KTextBrowser(QWidget *parent = nullptr, bool notifyClick = false);
 
     /**
      * Destroys the text browser.
@@ -92,7 +92,7 @@ protected:
      * of links being clicked. Do not call this.
      *
      * If you need to set an initial source url in the text browser, call
-     * the QTextBrowser method explicitly, like this:
+     * the QTextBrowser method KDELIBS4SUPPORT_DEPRECATED explicitly, like this:
      * <code>myTextBrowser->QTextBrowser::setSource(url)</code>
      */
     void setSource(const QUrl &name) Q_DECL_OVERRIDE;

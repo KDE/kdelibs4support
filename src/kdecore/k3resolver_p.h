@@ -116,7 +116,7 @@ public:
     // output data
     KResolverResults results;
 
-    explicit KResolverPrivate(KResolver *_parent,
+    KDELIBS4SUPPORT_DEPRECATED explicit KResolverPrivate(KResolver *_parent,
                               const QString &_node = QString(),
                               const QString &_service = QString())
         : parent(_parent), deleteWhenDone(false), waiting(false),

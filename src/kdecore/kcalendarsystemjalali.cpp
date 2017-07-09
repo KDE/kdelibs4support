@@ -37,7 +37,7 @@
 class KCalendarSystemJalaliPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemJalaliPrivate(KCalendarSystemJalali *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJalaliPrivate(KCalendarSystemJalali *q);
 
     virtual ~KCalendarSystemJalaliPrivate();
 

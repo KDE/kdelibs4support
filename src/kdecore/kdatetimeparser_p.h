@@ -48,7 +48,7 @@ struct DateTimeComponents {
 class KDateTimeParser
 {
 public:
-    explicit KDateTimeParser();
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateTimeParser();
 
     virtual ~KDateTimeParser();
 

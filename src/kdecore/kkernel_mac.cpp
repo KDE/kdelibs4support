@@ -64,7 +64,7 @@ QString convert_CFString_to_QString(CFStringRef str)
 
 /**
  Calling CoreFoundation APIs (which is unavoidable in Qt/Mac) has always had issues
- on Mac OS X, but as of 10.5 is explicitly disallowed with an exception.  As a
+ on Mac OS X, but as of 10.5 is KDELIBS4SUPPORT_DEPRECATED explicitly disallowed with an exception.  As a
  result, in the case where we would normally fork and then dlopen code, or continue
  to run other code, we must now fork-and-exec.
 

@@ -48,7 +48,7 @@ public:
      * @param urls   List of files where the metadata should be extracted from.
      * @param parent Parent object.
      */
-    explicit KFileMetaDataReader(const QList<QUrl> &urls, QObject *parent = 0);
+    KDELIBS4SUPPORT_DEPRECATED explicit KFileMetaDataReader(const QList<QUrl> &urls, QObject *parent = 0);
     virtual ~KFileMetaDataReader();
 
     /**

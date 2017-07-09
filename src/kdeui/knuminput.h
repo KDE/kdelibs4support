@@ -53,7 +53,7 @@ public:
      * window. If parent is another widget, this widget becomes a child
      * window inside parent. The new widget is deleted when its parent is deleted.
      */
-    explicit KNumInput(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KNumInput(QWidget *parent = nullptr);
 
     /**
      * @param below A pointer to another KNumInput.
@@ -192,7 +192,7 @@ public:
      * Constructs an input control for integer values
      * with base 10 and initial value 0.
      */
-    explicit KIntNumInput(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIntNumInput(QWidget *parent = nullptr);
     /**
      * Constructor
      * It constructs a QSpinBox that allows the input of integer numbers
@@ -204,7 +204,7 @@ public:
      * @param base   numeric base used for display
      * @param parent parent QWidget
      */
-    explicit KIntNumInput(int value, QWidget *parent = nullptr, int base = 10);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIntNumInput(int value, QWidget *parent = nullptr, int base = 10);
 
     /**
      * Constructor
@@ -473,7 +473,7 @@ public:
      * Constructs an input control for double values
      * with initial value 0.00.
      */
-    explicit KDoubleNumInput(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDoubleNumInput(QWidget *parent = nullptr);
 
     /**
      * Constructor
@@ -736,7 +736,7 @@ public:
      *  and a slider, with minimal value 0, maximal value 99, step 1, base 10
      *  and initial value 0.
      */
-    explicit KIntSpinBox(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KIntSpinBox(QWidget *parent = nullptr);
 
     /**
      *  Constructor.

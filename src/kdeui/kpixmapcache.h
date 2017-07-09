@@ -89,7 +89,7 @@ public:
      * Constucts the pixmap cache object.
      * @param name unique name of the cache
      */
-    explicit KPixmapCache(const QString &name);
+    KDELIBS4SUPPORT_DEPRECATED explicit KPixmapCache(const QString &name);
     virtual ~KPixmapCache();
 
     /**

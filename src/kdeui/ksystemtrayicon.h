@@ -74,26 +74,26 @@ public:
      * when the user clicks on the tray window with the left mouse
      * button.
      **/
-    explicit KSystemTrayIcon(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSystemTrayIcon(QWidget *parent = nullptr);
 
     /**
      * Same as above but allows one to define the icon by name that should
      * be used for the system tray icon.
      */
-    explicit KSystemTrayIcon(const QString &icon, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSystemTrayIcon(const QString &icon, QWidget *parent = nullptr);
 
     /**
      * Same as above but allows one to define the icon by name that should
      * be used for the system tray icon.
      */
-    explicit KSystemTrayIcon(const QIcon &icon, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSystemTrayIcon(const QIcon &icon, QWidget *parent = nullptr);
 
     /**
      * Same as above but allows one to define the movie by QMovie that should
      * be used for the system tray icon. Memory management for the movie will
      * be handled by KSystemTrayIcon.
      */
-    explicit KSystemTrayIcon(QMovie *movie, QWidget *parent);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSystemTrayIcon(QMovie *movie, QWidget *parent);
 
     /**
      * Destructor

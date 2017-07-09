@@ -49,7 +49,7 @@ class KFileMetaDataProvider : public QObject
     Q_OBJECT
 
 public:
-    explicit KFileMetaDataProvider(QObject *parent = 0);
+    KDELIBS4SUPPORT_DEPRECATED explicit KFileMetaDataProvider(QObject *parent = 0);
     virtual ~KFileMetaDataProvider();
 
     /**

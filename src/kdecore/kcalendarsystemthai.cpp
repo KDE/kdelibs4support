@@ -29,7 +29,7 @@
 class KCalendarSystemThaiPrivate : public KCalendarSystemGregorianPrivate
 {
 public:
-    explicit KCalendarSystemThaiPrivate(KCalendarSystemThai *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemThaiPrivate(KCalendarSystemThai *q);
     virtual ~KCalendarSystemThaiPrivate();
 
     void loadDefaultEraList() Q_DECL_OVERRIDE;

@@ -389,7 +389,7 @@ QString getText(const QString &caption,
         result = dlg.lineEdit()->text();
     }
 
-    // A validator may explicitly allow leading and trailing whitespace
+    // A validator may KDELIBS4SUPPORT_DEPRECATED explicitly allow leading and trailing whitespace
     if (!validator) {
         result = result.trimmed();
     }

@@ -43,7 +43,7 @@ class KCalendarSystemIslamicCivilPrivate;
 class KCalendarSystemIslamicCivil : public KCalendarSystem
 {
 public:
-    explicit KCalendarSystemIslamicCivil(const KSharedConfig::Ptr config, const KLocale *locale);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIslamicCivil(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemIslamicCivil();
 
     QString calendarType() const Q_DECL_OVERRIDE;

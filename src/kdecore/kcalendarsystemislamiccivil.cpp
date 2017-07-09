@@ -29,7 +29,7 @@
 class KCalendarSystemIslamicCivilPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemIslamicCivilPrivate(KCalendarSystemIslamicCivil *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIslamicCivilPrivate(KCalendarSystemIslamicCivil *q);
 
     virtual ~KCalendarSystemIslamicCivilPrivate();
 

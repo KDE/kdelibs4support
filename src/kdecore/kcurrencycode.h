@@ -70,7 +70,7 @@ public:
      * @param language the language to use for translations, default to the Locale language
      *
      */
-    explicit KCurrencyCode(const QString &isoCurrencyCode, const QString &language = QString());
+    KDELIBS4SUPPORT_DEPRECATED explicit KCurrencyCode(const QString &isoCurrencyCode, const QString &language = QString());
 
     /**
      * Constructs a KCurrencyCode for a given config file and Language.
@@ -83,7 +83,7 @@ public:
      * @param language the language to use for translations, default to the Locale language
      *
      */
-    explicit KCurrencyCode(const QFileInfo &currencyCodeFile, const QString &language = QString());
+    KDELIBS4SUPPORT_DEPRECATED explicit KCurrencyCode(const QFileInfo &currencyCodeFile, const QString &language = QString());
 
     /**
      * Copy Constructor

@@ -51,12 +51,12 @@ public:
     /**
      * Constructs a date selection widget.
      */
-    explicit KDateWidget(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateWidget(QWidget *parent = nullptr);
 
     /**
      * Constructs a date selection widget with the initial date set to @p date.
      */
-    explicit KDateWidget(const QDate &date, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDateWidget(const QDate &date, QWidget *parent = nullptr);
 
     /**
      * Destructs the date selection widget.

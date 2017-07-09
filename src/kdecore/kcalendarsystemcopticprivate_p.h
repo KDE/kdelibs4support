@@ -25,7 +25,7 @@
 class KCalendarSystemCopticPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemCopticPrivate(KCalendarSystemCoptic *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemCopticPrivate(KCalendarSystemCoptic *q);
 
     virtual ~KCalendarSystemCopticPrivate();
 

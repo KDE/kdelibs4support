@@ -33,7 +33,7 @@
 class KLocalizedDatePrivate : public QSharedData
 {
 public:
-    explicit KLocalizedDatePrivate(const QDate &date, const KCalendarSystem *calendar, bool manageCalendar);
+    KDELIBS4SUPPORT_DEPRECATED explicit KLocalizedDatePrivate(const QDate &date, const KCalendarSystem *calendar, bool manageCalendar);
     KLocalizedDatePrivate(const KLocalizedDatePrivate &rhs);
     KLocalizedDatePrivate &operator=(const KLocalizedDatePrivate &rhs);
     virtual ~KLocalizedDatePrivate();

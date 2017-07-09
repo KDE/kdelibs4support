@@ -32,7 +32,7 @@ public:
     /**
      * Constructs a hue/saturation selection widget.
      */
-    explicit KHueSaturationSelector(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KHueSaturationSelector(QWidget *parent = nullptr);
 
     /**
      * Destructor.

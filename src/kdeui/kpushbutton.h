@@ -54,12 +54,12 @@ public:
     /**
      * Default constructor.
      */
-    explicit KPushButton(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KPushButton(QWidget *parent = nullptr);
 
     /**
      * Constructor, that sets the button-text to @p text
      */
-    explicit KPushButton(const QString &text, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KPushButton(const QString &text, QWidget *parent = nullptr);
 
     /**
      * Constructor, that sets an icon and the button-text to @p text
@@ -71,7 +71,7 @@ public:
      * and the what's this help
      * @deprecated since 5.0, use QPushButton and KGuiItem::assign(QPushButton *button, const KGuiItem &item).
      */
-    explicit KPushButton(const KGuiItem &item, QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KPushButton(const KGuiItem &item, QWidget *parent = nullptr);
 
     /**
      * Destructs the button.

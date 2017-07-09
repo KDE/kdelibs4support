@@ -37,7 +37,7 @@ class KCalendarSystemCopticPrivate;
 class KCalendarSystemCoptic: public KCalendarSystem
 {
 public:
-    explicit KCalendarSystemCoptic(const KSharedConfig::Ptr config, const KLocale *locale);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemCoptic(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemCoptic();
 
     QString calendarType() const Q_DECL_OVERRIDE;

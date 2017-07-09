@@ -44,8 +44,8 @@ public:
      */
     typedef void (*void_function_ptr)();
 
-    explicit KLibrary(QObject *parent = nullptr);
-    explicit KLibrary(const QString &name, QObject *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KLibrary(QObject *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KLibrary(const QString &name, QObject *parent = nullptr);
     KLibrary(const QString &name, int verNum, QObject *parent = nullptr);
 
     virtual ~KLibrary();

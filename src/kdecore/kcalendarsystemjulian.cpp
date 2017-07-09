@@ -30,7 +30,7 @@
 class KCalendarSystemJulianPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemJulianPrivate(KCalendarSystemJulian *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJulianPrivate(KCalendarSystemJulian *q);
 
     virtual ~KCalendarSystemJulianPrivate();
 

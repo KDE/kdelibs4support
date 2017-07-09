@@ -167,7 +167,7 @@ public:
      * @param parent The parent of the dialog.
      * @param flags  The widget flags passed to the QDialog constructor
      */
-    explicit KDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
     /**
      * Destroys the dialog.

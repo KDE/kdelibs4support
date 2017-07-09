@@ -43,7 +43,7 @@ class KCalendarSystemPrivate;
 class KCalendarEra
 {
 public:
-    explicit KCalendarEra();
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarEra();
     virtual ~KCalendarEra();
 
     bool isValid() const;

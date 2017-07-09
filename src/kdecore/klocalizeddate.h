@@ -152,7 +152,7 @@ public:
      * @param date the QDate to set the KLocalizedDate to, defaults to invalid date
      * @param calendar the calendar system to use, defaults to the global
      */
-    explicit KLocalizedDate(const QDate &date = QDate(), const KCalendarSystem *calendar = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KLocalizedDate(const QDate &date = QDate(), const KCalendarSystem *calendar = nullptr);
 
     /**
      * Constructs a localized date with the given year, month and day.

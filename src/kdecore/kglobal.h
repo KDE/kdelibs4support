@@ -330,7 +330,7 @@ namespace KGlobal
 {
 
 struct KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE LocaleWrapper : public KLocale {
-    explicit LocaleWrapper(KLocale *locale)
+    KDELIBS4SUPPORT_DEPRECATED explicit LocaleWrapper(KLocale *locale)
         : KLocale(*locale)
     {
 

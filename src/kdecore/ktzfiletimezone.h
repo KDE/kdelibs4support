@@ -146,7 +146,7 @@ public:
      *
      * @param location the local directory containing the time zone definition files
      */
-    explicit KTzfileTimeZoneSource(const QString &location);
+    KDELIBS4SUPPORT_DEPRECATED explicit KTzfileTimeZoneSource(const QString &location);
     virtual ~KTzfileTimeZoneSource();
 
     /**

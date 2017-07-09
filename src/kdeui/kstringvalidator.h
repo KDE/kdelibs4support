@@ -76,7 +76,7 @@ public:
      * @param parent Passed to lower level constructor.
      *
      **/
-    explicit KStringListValidator(const QStringList &list = QStringList(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KStringListValidator(const QStringList &list = QStringList(),
                                   bool rejecting = true, bool fixupEnabled = false,
                                   QObject *parent = nullptr);
 

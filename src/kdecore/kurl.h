@@ -346,7 +346,7 @@ public:
      * @deprecated since 5.0, use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
      * and QUrl::fromUserInput() if it could be either.
      */
-    explicit KUrl(const char *urlOrPath);
+    KDELIBS4SUPPORT_DEPRECATED explicit KUrl(const char *urlOrPath);
     /**
      * Constructor taking a QByteArray @p urlOrPath, which is an _encoded_ representation
      * of the URL, exactly like the usual constructor. This is useful when
@@ -356,7 +356,7 @@ public:
      * @deprecated since 5.0, use QUrl(str) if it's a URL, QUrl::fromLocalFile(str) if it's a local path,
      * and QUrl::fromUserInput() if it could be either.
      */
-    explicit KUrl(const QByteArray &urlOrPath);
+    KDELIBS4SUPPORT_DEPRECATED explicit KUrl(const QByteArray &urlOrPath);
 
     /**
      * Copy constructor.
@@ -898,7 +898,7 @@ public:
 
     KUrl &operator=(const KUrl &_u);
 
-    // Define those, since the constructors are explicit
+    // Define those, since the constructors are KDELIBS4SUPPORT_DEPRECATED explicit
     KUrl &operator=(const char *_url)
     {
         *this = KUrl(_url);
@@ -1049,7 +1049,7 @@ public:
 
     /**
      * Creates a KUrl object from a QString representing an absolute local path.
-     * KUrl url( somePath ) is almost the same, but this method is more explicit,
+     * KUrl url( somePath ) is almost the same, but this method is more KDELIBS4SUPPORT_DEPRECATED explicit,
      * avoids the path-or-url detection in the KUrl constructor, and parses
      * "abc:def" as a filename, not as URL.
      *

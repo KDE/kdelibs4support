@@ -154,7 +154,7 @@ class HKeyCloser
     const HKEY hkey;
     Q_DISABLE_COPY(HKeyCloser)
 public:
-    explicit HKeyCloser(HKEY hk) : hkey(hk) {}
+    KDELIBS4SUPPORT_DEPRECATED explicit HKeyCloser(HKEY hk) : hkey(hk) {}
     ~HKeyCloser()
     {
         RegCloseKey(hkey);

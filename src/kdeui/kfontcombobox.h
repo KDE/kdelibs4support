@@ -61,7 +61,7 @@ public:
      *
      * @param parent the parent widget
      */
-    explicit KFontComboBox(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KFontComboBox(QWidget *parent = nullptr);
 
     /**
      * Toggle selectable fonts to be only those of fixed width or all.

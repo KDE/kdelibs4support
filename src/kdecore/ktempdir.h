@@ -68,7 +68,7 @@ public:
      * @deprecated Use QTemporaryDir() or QTemporaryDir(directoryPrefix).
      * If a specific mode was set, you'll need to use QFile::setPermissions on the temporary dir path.
      */
-    explicit KTempDir(const QString &directoryPrefix = QString(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KTempDir(const QString &directoryPrefix = QString(),
                       int mode = 0700);
 
     /**

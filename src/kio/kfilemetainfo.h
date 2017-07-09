@@ -96,7 +96,7 @@ public:
      *
      * When w is not Everything, a limit of 64kbytes is imposed on the file size.
      **/
-    explicit KFileMetaInfo(const QString &path, const QString &mimetype = QString(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KFileMetaInfo(const QString &path, const QString &mimetype = QString(),
                            WhatFlags w = Everything);
     /**
      * @brief Construct a KFileMetaInfo that contains metainformation about

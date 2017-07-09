@@ -42,7 +42,7 @@ public:
      * Constructor
      * @deprecated since 5.0, use QLockFile(file), drop the component name.
      */
-    explicit KLockFile(const QString &file, const QString &componentName = QString());
+    KDELIBS4SUPPORT_DEPRECATED explicit KLockFile(const QString &file, const QString &componentName = QString());
 
     /**
      * Destroys the object, releasing the lock if held

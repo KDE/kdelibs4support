@@ -102,7 +102,7 @@ public:
      *                       already has a main component.
      *                       @see KComponentData::mainComponent
      */
-    explicit KComponentData(const QByteArray &componentName, const QByteArray &catalogName = QByteArray(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KComponentData(const QByteArray &componentName, const QByteArray &catalogName = QByteArray(),
                             MainComponentRegistration registerAsMain = RegisterAsMainComponent);
 
     /**
@@ -118,8 +118,8 @@ public:
      *
      * @see K4AboutData
      */
-    explicit KComponentData(const K4AboutData &aboutData, MainComponentRegistration registerAsMain = RegisterAsMainComponent);
-    explicit KComponentData(const K4AboutData *aboutData, MainComponentRegistration registerAsMain = RegisterAsMainComponent);
+    KDELIBS4SUPPORT_DEPRECATED explicit KComponentData(const K4AboutData &aboutData, MainComponentRegistration registerAsMain = RegisterAsMainComponent);
+    KDELIBS4SUPPORT_DEPRECATED explicit KComponentData(const K4AboutData *aboutData, MainComponentRegistration registerAsMain = RegisterAsMainComponent);
 
     /**
      * Destructor.

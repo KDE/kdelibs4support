@@ -32,7 +32,7 @@ class KCalendarSystemJalaliPrivate;
 class KCalendarSystemJalali : public KCalendarSystem
 {
 public:
-    explicit KCalendarSystemJalali(const KSharedConfig::Ptr config, const KLocale *locale);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJalali(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemJalali();
 
     QString calendarType() const Q_DECL_OVERRIDE;

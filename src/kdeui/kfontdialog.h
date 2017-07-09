@@ -79,7 +79,7 @@ public:
      *        calling sizeIsRelative().
      *
      */
-    explicit KFontDialog(QWidget *parent = nullptr,
+    KDELIBS4SUPPORT_DEPRECATED explicit KFontDialog(QWidget *parent = nullptr,
                          const KFontChooser::DisplayFlags &flags =
                              KFontChooser::NoDisplayFlags,
                          const QStringList &fontlist = QStringList(),

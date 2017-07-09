@@ -45,7 +45,7 @@ public:
      * @param localOnly unused. You can only select paths below the startDir
      * @param parent the parent for the dialog, usually 0L
      */
-    explicit KDirSelectDialog(const QUrl &startDir = QUrl(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KDirSelectDialog(const QUrl &startDir = QUrl(),
                               bool localOnly = false,
                               QWidget *parent = nullptr);
 

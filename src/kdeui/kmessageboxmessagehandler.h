@@ -39,7 +39,7 @@ public:
      * @brief Create a new KMessageBoxMessageHandler
      * @param parent Parent widget to use for the KMessageBox.
      */
-    explicit KMessageBoxMessageHandler(QWidget *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KMessageBoxMessageHandler(QWidget *parent = nullptr);
 
     /**
      * Destroys the KMessageBoxMessageHandler.

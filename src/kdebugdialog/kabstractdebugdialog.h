@@ -31,7 +31,7 @@ class KAbstractDebugDialog : public KDialog
 {
     Q_OBJECT
 public:
-    explicit KAbstractDebugDialog(QWidget *parent);
+    KDELIBS4SUPPORT_DEPRECATED explicit KAbstractDebugDialog(QWidget *parent);
 
     virtual ~KAbstractDebugDialog();
 

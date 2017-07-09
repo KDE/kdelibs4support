@@ -29,7 +29,7 @@
 class KCalendarSystemIndianNationalPrivate : public KCalendarSystemPrivate
 {
 public:
-    explicit KCalendarSystemIndianNationalPrivate(KCalendarSystemIndianNational *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIndianNationalPrivate(KCalendarSystemIndianNational *q);
 
     virtual ~KCalendarSystemIndianNationalPrivate();
 
@@ -103,7 +103,7 @@ int KCalendarSystemIndianNationalPrivate::daysInYear(int year) const
 
 bool KCalendarSystemIndianNationalPrivate::isLeapYear(int year) const
 {
-    //Uses same rule as Gregorian, and is explicitly synchronized to Gregorian
+    //Uses same rule as Gregorian, and is KDELIBS4SUPPORT_DEPRECATED explicitly synchronized to Gregorian
     //so add 78 years to get Gregorian year and apply Gregorian calculation
     year = year + 78;
     if (!hasYearZero() && year < 1) {

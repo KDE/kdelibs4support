@@ -108,7 +108,7 @@ public:
      * @param service destination service to connect to
      * @param parent  the parent QObject object
      */
-    explicit KStreamSocket(const QString &node = QString(), const QString &service = QString(),
+    KDELIBS4SUPPORT_DEPRECATED explicit KStreamSocket(const QString &node = QString(), const QString &service = QString(),
                            QObject *parent = nullptr);
 
     /**

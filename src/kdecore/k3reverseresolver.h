@@ -89,7 +89,7 @@ public:
      * @param flags       the flags to use, see Flags
      * @param parent      the parent object (see QObject)
      */
-    explicit KReverseResolver(const KSocketAddress &addr, int flags = 0,
+    KDELIBS4SUPPORT_DEPRECATED explicit KReverseResolver(const KSocketAddress &addr, int flags = 0,
                               QObject *parent = nullptr);
 
     /**

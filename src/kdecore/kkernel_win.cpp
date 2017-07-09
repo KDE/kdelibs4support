@@ -147,7 +147,7 @@ BOOL WINAPI DllMain(HANDLE hinstDLL, DWORD fdwReason, LPVOID lpReserved)
            as heap memory only if the DLL is being unloaded dynamically (the
            lpReserved parameter is NULL). If the process is terminating (the
            lpvReserved parameter is non-NULL), all threads in the process except
-           the current thread either have exited already or have been explicitly
+           the current thread either have exited already or have been KDELIBS4SUPPORT_DEPRECATED explicitly
            terminated by a call to the ExitProcess function, which might leave
            some process resources such as heaps in an inconsistent state. In this
            case, it is not safe for the DLL to clean up the resources. Instead,

@@ -78,7 +78,7 @@ public:
     /**
      * Constructs a null KDayPeriod
      */
-    explicit KDayPeriod();
+    KDELIBS4SUPPORT_DEPRECATED explicit KDayPeriod();
 
     /**
      * Copy Constructor

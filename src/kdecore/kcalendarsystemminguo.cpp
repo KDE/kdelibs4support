@@ -29,7 +29,7 @@
 class KCalendarSystemMinguoPrivate : public KCalendarSystemGregorianPrivate
 {
 public:
-    explicit KCalendarSystemMinguoPrivate(KCalendarSystemMinguo *q);
+    KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemMinguoPrivate(KCalendarSystemMinguo *q);
     virtual ~KCalendarSystemMinguoPrivate();
 
     void loadDefaultEraList() Q_DECL_OVERRIDE;

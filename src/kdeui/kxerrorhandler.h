@@ -49,9 +49,9 @@ class KXErrorHandlerPrivate;
  * When checking for error by calling error() at the end, it is necessary
  * to sync with X, to catch all errors that were caused by requests issued
  * before the call to error(). This can be done by passing true to error()
- * to cause explicit XSync(), however, if the last X request needed a roundtrip
+ * to cause KDELIBS4SUPPORT_DEPRECATED explicit XSync(), however, if the last X request needed a roundtrip
  * (e.g. XGetWindowAttributes(), XGetGeometry(), etc.), it is not required
- * to do an explicit sync.
+ * to do an KDELIBS4SUPPORT_DEPRECATED explicit sync.
  *
  * @author Lubos Lunak <l.lunak@kde.org>
  * @short Handler for X errors
@@ -65,14 +65,14 @@ public:
      * Creates error handler that will set error flag after encountering
      * any X error.
      */
-    explicit KXErrorHandler(Display *dpy = display());
+    KDELIBS4SUPPORT_DEPRECATED explicit KXErrorHandler(Display *dpy = display());
     /**
      * This constructor takes pointer to a function whose prototype matches
      * the one that's used with the XSetErrorHandler() Xlib function.
      * NOTE: For the error flag to be set, the function must return a non-zero
      * value.
      */
-    explicit KXErrorHandler(int (*handler)(Display *, XErrorEvent *), Display *dpy = display());
+    KDELIBS4SUPPORT_DEPRECATED explicit KXErrorHandler(int (*handler)(Display *, XErrorEvent *), Display *dpy = display());
     /**
      * This constructor takes pointer to a function that will get request number,
      * error code number and resource id of the failed request, as provided
@@ -80,14 +80,14 @@ public:
      * @deprecated Use the variant with XErrorEvent.
      */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
-    explicit KXErrorHandler(bool (*handler)(int request, int error_code, unsigned long resource_id), Display *dpy = display()) KDELIBS4SUPPORT_DEPRECATED;
+    KDELIBS4SUPPORT_DEPRECATED explicit KXErrorHandler(bool (*handler)(int request, int error_code, unsigned long resource_id), Display *dpy = display()) KDELIBS4SUPPORT_DEPRECATED;
 #endif
     /**
      * This function returns true if the error flag is set (i.e. no custom handler
      * function was used and there was any error, or the custom handler indicated
      * an error by its return value).
      *
-     * @param sync if true, an explicit XSync() will be done. Not necessary
+     * @param sync if true, an KDELIBS4SUPPORT_DEPRECATED explicit XSync() will be done. Not necessary
      *             when the last X request required a roundtrip.
      */
     bool error(bool sync) const;

@@ -102,7 +102,7 @@ public:
      * The parameter is used to specify which socket this object is used as
      * a device for.
      */
-    explicit KSocketDevice(const KSocketBase * = nullptr, QObject *objparent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSocketDevice(const KSocketBase * = nullptr, QObject *objparent = nullptr);
 
     /**
      * Constructs a new object around an already-open socket.
@@ -110,7 +110,7 @@ public:
      * Note: you should write programs that create sockets through
      * the classes whenever possible.
      */
-    explicit KSocketDevice(int fd, OpenMode mode = ReadWrite);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSocketDevice(int fd, OpenMode mode = ReadWrite);
 
     /**
      * QObject constructor
@@ -317,7 +317,7 @@ protected:
      *
      * @param parent  the parent, if any
      */
-    explicit KSocketDevice(bool, const KSocketBase *parent = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSocketDevice(bool, const KSocketBase *parent = nullptr);
 
     /**
      * Creates a socket notifier of the given type.

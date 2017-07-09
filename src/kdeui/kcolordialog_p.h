@@ -34,7 +34,7 @@ class  KColorTable : public QWidget
 {
     Q_OBJECT
 public:
-    explicit KColorTable(QWidget *parent, int minWidth = 210, int cols = 16);
+    KDELIBS4SUPPORT_DEPRECATED explicit KColorTable(QWidget *parent, int minWidth = 210, int cols = 16);
     ~KColorTable();
 
     void addToCustomColors(const QColor &);
