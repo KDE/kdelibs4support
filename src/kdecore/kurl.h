@@ -434,8 +434,10 @@ public:
      * @return The current decoded path. This does not include the query. Can
      *         be QString() if no path is set.
      *
-     * @deprecated since 5.0, use QUrl::path(). If RemoveTrailingSlash was used, use
-     * url.adjusted(QUrl::StripTrailingSlash).path()
+     * @deprecated since 5.0, use OUrl::toLocalFile() for local file urls and
+     * QUrl::path() for all other cases. You may use QUrl::isLocalFile() to decide
+     * which method to choose. If RemoveTrailingSlash was used, use
+     * url.adjusted(QUrl::StripTrailingSlash).path().
      */
     QString path(AdjustPathOption trailing = LeaveTrailingSlash) const;
 
