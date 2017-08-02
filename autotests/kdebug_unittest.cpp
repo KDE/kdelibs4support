@@ -279,6 +279,8 @@ void KDebugTest::testHasNullOutput()
 
 void KDebugTest::testNoMainComponentData()
 {
+    // change to the bin dir
+    QDir::setCurrent(QCoreApplication::applicationDirPath());
     // This test runs kdebug_qcoreapptest and checks its output
     QProcess proc;
     QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();

@@ -45,6 +45,9 @@ void KGlobalSettingsTest::initTestCase()
     // settings.
     qputenv("KDE_FULL_SESSION", "1");
 
+    // change to the bin dir
+    QDir::setCurrent(QCoreApplication::applicationDirPath());
+
     QDBusConnectionInterface *bus = nullptr;
     if (!QDBusConnection::sessionBus().isConnected() || !(bus = QDBusConnection::sessionBus().interface())) {
         QFAIL("Session bus not found");
