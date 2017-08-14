@@ -64,6 +64,7 @@ static const char *const lockName = "klockfiletest.lock";
 void Test_KLockFile::initTestCase()
 {
     qApp->setApplicationName(QLatin1String("qttest"));
+    QDir::setCurrent(QCoreApplication::applicationDirPath());
     QFile::remove(QString::fromLatin1(lockName));
     lockFile = new KLockFile(QLatin1String(lockName));
 }
