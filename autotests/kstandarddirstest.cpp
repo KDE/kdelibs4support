@@ -281,6 +281,10 @@ void KStandarddirsTest::testFindDirs()
 
 void KStandarddirsTest::testFindResourceDir()
 {
+    if (!isKdeLibs4supportInstalled()) {
+        QSKIP("KDELibs4Support is not installed yet");
+    }
+
     const QString configDir = KGlobal::dirs()->findResourceDir("config", "foorc");
     QVERIFY(!configDir.isEmpty());
     QVERIFY2(configDir.endsWith(QLatin1String("/xdg/config/")), qPrintable(configDir));
