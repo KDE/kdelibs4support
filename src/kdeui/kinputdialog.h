@@ -67,7 +67,9 @@ namespace KInputDialog
  * @param completionList a list of items which should be used for input completion
  * @return String user entered if Ok was pressed, else a null string
  *
- * @deprecated since 5.0, use QInputDialog::getText() instead
+ * @deprecated since 5.0, use QInputDialog::getText() instead; the returned value
+ *             must be checked, because QInputDialog accepts also empty strings
+ *             and does not use a QValidator object.
  */
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED
 KDELIBS4SUPPORT_DEPRECATED_EXPORT QString getText(const QString &caption, const QString &label,
