@@ -41,16 +41,6 @@
 #include <kopenssl.h>
 #include <QtCore/QStringList>
 
-#if KSSL_HAVE_SSL
-#define sk_new d->kossl->sk_new
-#define sk_push d->kossl->sk_push
-#define sk_free d->kossl->sk_free
-#define sk_value d->kossl->sk_value
-#define sk_num d->kossl->sk_num
-#define sk_dup d->kossl->sk_dup
-#define sk_pop d->kossl->sk_pop
-#endif
-
 class KSSLCertChainPrivate
 {
 public:
@@ -79,13 +69,13 @@ KSSLCertChain::~KSSLCertChain()
         STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
         for (;;) {
-            X509 *x5 = sk_X509_pop(x);
+            X509 *x5 = reinterpret_cast<X509*>(d->kossl->OPENSSL_sk_pop(reinterpret_cast<STACK *>(x)));
             if (!x5) {
                 break;
             }
             d->kossl->X509_free(x5);
         }
-        sk_X509_free(x);
+        d->kossl->OPENSSL_sk_free(reinterpret_cast<STACK *>(x));
     }
 #endif
     delete d;
@@ -108,7 +98,7 @@ KSSLCertChain *KSSLCertChain::replicate()
 int KSSLCertChain::depth()
 {
 #if KSSL_HAVE_SSL
-    return sk_X509_num((STACK_OF(X509) *)_chain);
+    return d->kossl->OPENSSL_sk_num(static_cast<STACK *>(_chain));
 #endif
     return 0;
 }
@@ -127,8 +117,8 @@ QList<KSSLCertificate *> KSSLCertChain::getChain() const
 #if KSSL_HAVE_SSL
     STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
-    for (int i = 0; i < sk_X509_num(x); i++) {
-        X509 *x5 = sk_X509_value(x, i);
+    for (int i = 0; i < d->kossl->OPENSSL_sk_num(reinterpret_cast<STACK *>(x)); i++) {
+        X509 *x5 =  reinterpret_cast<X509*>(d->kossl->OPENSSL_sk_value(reinterpret_cast<STACK *>(x), i));
         if (!x5) {
             continue;
         }
@@ -148,22 +138,22 @@ void KSSLCertChain::setChain(const QList<KSSLCertificate *> &chain)
         STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
         for (;;) {
-            X509 *x5 = sk_X509_pop(x);
+            X509 *x5 = reinterpret_cast<X509*>(d->kossl->OPENSSL_sk_pop(reinterpret_cast<STACK*>(x)));
             if (!x5) {
                 break;
             }
             d->kossl->X509_free(x5);
         }
-        sk_X509_free(x);
+        d->kossl->OPENSSL_sk_free(reinterpret_cast<STACK*>(x));
         _chain = nullptr;
     }
 
     if (chain.isEmpty()) {
         return;
     }
-    _chain = (void *)sk_new(nullptr);
+    _chain = (void *)d->kossl->OPENSSL_sk_new(nullptr);
     foreach (KSSLCertificate *x, chain) {
-        sk_X509_push((STACK_OF(X509) *)_chain, d->kossl->X509_dup(x->getCert()));
+        d->kossl->OPENSSL_sk_push(static_cast<STACK*>(_chain), d->kossl->X509_dup(x->getCert()));
     }
 
 #endif
@@ -176,13 +166,13 @@ void KSSLCertChain::setChain(void *stack_of_x509)
         STACK_OF(X509) *x = (STACK_OF(X509) *)_chain;
 
         for (;;) {
-            X509 *x5 = sk_X509_pop(x);
+            X509 *x5 = reinterpret_cast<X509 *>(d->kossl->OPENSSL_sk_pop(reinterpret_cast<STACK *>(x)));
             if (!x5) {
                 break;
             }
             d->kossl->X509_free(x5);
         }
-        sk_X509_free(x);
+        d->kossl->OPENSSL_sk_free(reinterpret_cast<STACK *>(x));
         _chain = nullptr;
     }
 
@@ -190,15 +180,15 @@ void KSSLCertChain::setChain(void *stack_of_x509)
         return;
     }
 
-    _chain = (void *)sk_new(nullptr);
+    _chain = (void *)d->kossl->OPENSSL_sk_new(nullptr);
     STACK_OF(X509) *x = (STACK_OF(X509) *)stack_of_x509;
 
-    for (int i = 0; i < sk_X509_num(x); i++) {
-        X509 *x5 = sk_X509_value(x, i);
+    for (int i = 0; i < d->kossl->OPENSSL_sk_num(reinterpret_cast<STACK *>(x)); i++) {
+        X509 *x5 = reinterpret_cast<X509*>(d->kossl->OPENSSL_sk_value(reinterpret_cast<STACK *>(x), i));
         if (!x5) {
             continue;
         }
-        sk_X509_push((STACK_OF(X509) *)_chain, d->kossl->X509_dup(x5));
+        d->kossl->OPENSSL_sk_push(reinterpret_cast<STACK *>(_chain), d->kossl->X509_dup(x5));
     }
 
 #else
@@ -217,14 +207,3 @@ void KSSLCertChain::setCertChain(const QStringList &chain)
     }
     setChain(cl);
 }
-
-#if KSSL_HAVE_SSL
-#undef sk_new
-#undef sk_push
-#undef sk_free
-#undef sk_value
-#undef sk_num
-#undef sk_dup
-#undef sk_pop
-#endif
-

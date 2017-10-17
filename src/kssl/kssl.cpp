@@ -46,8 +46,6 @@
 #warning "kssl.cpp needs to be ported to QSslSocket"
 #endif
 
-#define sk_dup d->kossl->sk_dup
-
 class KSSLPrivate
 {
 public:
@@ -209,6 +207,4 @@ bool KSSL::doesSSLWork()
 {
     return m_bSSLWorks;
 }
-
-#undef sk_dup
 

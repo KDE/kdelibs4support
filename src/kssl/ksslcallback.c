@@ -39,7 +39,7 @@ extern "C" {
         // back will not be threadsafe ofcourse.
 
         if (KSSL_X509CallBack_ca) {
-            if (KOSSL::self()->X509_cmp(ctx->current_cert, KSSL_X509CallBack_ca) != 0) {
+            if (KOSSL::self()->X509_cmp(KOSSL::self()->X509_STORE_CTX_get_current_cert(ctx), KSSL_X509CallBack_ca) != 0) {
                 return 1;    // Ignore errors for this certificate
             }
 
@@ -47,7 +47,7 @@ extern "C" {
         }
 
         if (!ok) {
-            switch (ctx->error) {
+            switch (KOSSL::self()->X509_STORE_CTX_get_error(ctx)) {
             case X509_V_ERR_UNABLE_TO_GET_ISSUER_CERT:
             case X509_V_ERR_UNABLE_TO_GET_CRL:
             case X509_V_ERR_UNABLE_TO_DECRYPT_CERT_SIGNATURE:

@@ -69,18 +69,26 @@ extern "C" {
     static int (*K_X509_verify_cert)(X509_STORE_CTX *) = nullptr;
     static X509_STORE_CTX *(*K_X509_STORE_CTX_new)(void) = nullptr;
     static void (*K_X509_STORE_free)(X509_STORE *) = nullptr;
+    static void (*K_X509_STORE_set_verify_cb)(X509_STORE *, int (*)(int, X509_STORE_CTX *)) = nullptr;
     static X509_STORE *(*K_X509_STORE_new)(void) = nullptr;
     static void (*K_X509_free)(X509 *) = nullptr;
     static char *(*K_X509_NAME_oneline)(X509_NAME *, char *, int) = nullptr;
     static X509_NAME *(*K_X509_get_subject_name)(X509 *) = nullptr;
     static X509_NAME *(*K_X509_get_issuer_name)(X509 *) = nullptr;
+    static void (*K_X509_get0_signature)(const ASN1_BIT_STRING **psig, const X509_ALGOR **palg, const X509 *x) = nullptr;
     static X509_LOOKUP *(*K_X509_STORE_add_lookup)(X509_STORE *, X509_LOOKUP_METHOD *) = nullptr;
     static X509_LOOKUP_METHOD *(*K_X509_LOOKUP_file)(void) = nullptr;
     static void (*K_X509_LOOKUP_free)(X509_LOOKUP *) = nullptr;
     static int (*K_X509_LOOKUP_ctrl)(X509_LOOKUP *, int, const char *, long, char **) = nullptr;
     static void (*K_X509_STORE_CTX_init)(X509_STORE_CTX *, X509_STORE *, X509 *, STACK_OF(X509) *) = nullptr;
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
     static void (*K_CRYPTO_free)(void *) = nullptr;
+#else
+    static void (*K_CRYPTO_free)(void *, const char *, int) = nullptr;
+#endif
     static X509 *(*K_X509_dup)(X509 *) = nullptr;
+    static ASN1_TIME *(*K_X509_getm_notBefore)(const X509 *) = nullptr;
+    static ASN1_TIME *(*K_X509_getm_notAfter)(const X509 *) = nullptr;
     static BIO_METHOD *(*K_BIO_s_mem)(void) = nullptr;
     static BIO *(*K_BIO_new)(BIO_METHOD *) = nullptr;
     static BIO *(*K_BIO_new_fp)(FILE *, int) = nullptr;
@@ -112,13 +120,16 @@ extern "C" {
     static STACK_OF(X509) *(*K_SSL_get_peer_cert_chain)(SSL *) = nullptr;
     static void (*K_X509_STORE_CTX_set_chain)(X509_STORE_CTX *, STACK_OF(X509) *) = nullptr;
     static void (*K_X509_STORE_CTX_set_purpose)(X509_STORE_CTX *, int) = nullptr;
-    static void (*K_sk_free)(STACK *) = nullptr;
-    static int (*K_sk_num)(STACK *) = nullptr;
-    static char *(*K_sk_pop)(STACK *) = nullptr;
-    static char *(*K_sk_value)(STACK *, int) = nullptr;
-    static STACK *(*K_sk_new)(int (*)()) = nullptr;
-    static int (*K_sk_push)(STACK *, char *) = nullptr;
-    static STACK *(*K_sk_dup)(STACK *) = nullptr;
+    static X509 *(*K_X509_STORE_CTX_get_current_cert)(X509_STORE_CTX *) = nullptr;
+    static void (*K_X509_STORE_CTX_set_error)(X509_STORE_CTX *, int) = nullptr;
+    static int (*K_X509_STORE_CTX_get_error)(X509_STORE_CTX *) = nullptr;
+    static void (*K_OPENSSL_sk_free)(STACK *) = nullptr;
+    static int (*K_OPENSSL_sk_num)(STACK *) = nullptr;
+    static char *(*K_OPENSSL_sk_pop)(STACK *) = nullptr;
+    static char *(*K_OPENSSL_sk_value)(STACK *, int) = nullptr;
+    static STACK *(*K_OPENSSL_sk_new)(int (*)()) = nullptr;
+    static int (*K_OPENSSL_sk_push)(STACK *, char *) = nullptr;
+    static STACK *(*K_OPENSSL_sk_dup)(STACK *) = nullptr;
     static char *(*K_i2s_ASN1_INTEGER)(X509V3_EXT_METHOD *, ASN1_INTEGER *) = nullptr;
     static ASN1_INTEGER *(*K_X509_get_serialNumber)(X509 *) = nullptr;
     static EVP_PKEY *(*K_X509_get_pubkey)(X509 *) = nullptr;
@@ -158,6 +169,12 @@ extern "C" {
     static int (*K_X509_check_purpose)(X509 *, int, int) = nullptr;
     static X509_PURPOSE *(*K_X509_PURPOSE_get0)(int) = nullptr;
     static int (*K_EVP_PKEY_assign)(EVP_PKEY *, int, char *) = nullptr;
+    static int (*K_EVP_PKEY_base_id)(EVP_PKEY *) = nullptr;
+    static RSA *(*K_EVP_PKEY_get0_RSA)(EVP_PKEY *) = nullptr;
+    static void (*K_RSA_get0_key)(RSA *, const BIGNUM **, const BIGNUM **, const BIGNUM **) = nullptr;
+    static DSA *(*K_EVP_PKEY_get0_DSA)(EVP_PKEY *) = nullptr;
+    static void (*K_DSA_get0_pqg)(DSA *, const BIGNUM **, const BIGNUM **, const BIGNUM **) = nullptr;
+    static void (*K_DSA_get0_key)(DSA *, const BIGNUM **, const BIGNUM **) = nullptr;
     static int (*K_X509_REQ_set_pubkey)(X509_REQ *, EVP_PKEY *) = nullptr;
     static RSA *(*K_RSA_generate_key)(int, unsigned long, void (*)(int, int, void *), void *) = nullptr;
     static int (*K_i2d_X509_REQ_fp)(FILE *, X509_REQ *) = nullptr;
@@ -413,7 +430,11 @@ KOpenSSLProxy::KOpenSSLProxy()
         K_RAND_load_file = (int (*)(const char *, long)) d->cryptoLib->resolve("RAND_load_file");
         K_RAND_file_name = (const char *(*)(char *, size_t)) d->cryptoLib->resolve("RAND_file_name");
         K_RAND_write_file = (int (*)(const char *)) d->cryptoLib->resolve("RAND_write_file");
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
         K_CRYPTO_free = (void (*)(void *)) d->cryptoLib->resolve("CRYPTO_free");
+#else
+        K_CRYPTO_free = (void (*)(void *, const char *, int)) d->cryptoLib->resolve("CRYPTO_free");
+#endif
         K_d2i_X509 = (X509 * (*)(X509 **, unsigned char **, long)) d->cryptoLib->resolve("d2i_X509");
         K_i2d_X509 = (int (*)(X509 *, unsigned char **)) d->cryptoLib->resolve("i2d_X509");
         K_X509_cmp = (int (*)(X509 *, X509 *)) d->cryptoLib->resolve("X509_cmp");
@@ -422,15 +443,19 @@ KOpenSSLProxy::KOpenSSLProxy()
         K_X509_verify_cert = (int (*)(X509_STORE_CTX *)) d->cryptoLib->resolve("X509_verify_cert");
         K_X509_STORE_new = (X509_STORE * (*)(void)) d->cryptoLib->resolve("X509_STORE_new");
         K_X509_STORE_free = (void (*)(X509_STORE *)) d->cryptoLib->resolve("X509_STORE_free");
+        K_X509_STORE_set_verify_cb = (void (*)(X509_STORE *, int (*)(int, X509_STORE_CTX *))) d->cryptoLib->resolve("X509_STORE_set_verify_cb");
         K_X509_NAME_oneline = (char *(*)(X509_NAME *, char *, int)) d->cryptoLib->resolve("X509_NAME_oneline");
         K_X509_get_subject_name = (X509_NAME * (*)(X509 *)) d->cryptoLib->resolve("X509_get_subject_name");
         K_X509_get_issuer_name = (X509_NAME * (*)(X509 *)) d->cryptoLib->resolve("X509_get_issuer_name");
+        K_X509_get0_signature = (void (*)(const ASN1_BIT_STRING **, const X509_ALGOR **, const X509 *)) d->cryptoLib->resolve("X509_get0_signature");
         K_X509_STORE_add_lookup = (X509_LOOKUP * (*)(X509_STORE *, X509_LOOKUP_METHOD *)) d->cryptoLib->resolve("X509_STORE_add_lookup");
         K_X509_LOOKUP_file = (X509_LOOKUP_METHOD * (*)(void)) d->cryptoLib->resolve("X509_LOOKUP_file");
         K_X509_LOOKUP_free = (void (*)(X509_LOOKUP *)) d->cryptoLib->resolve("X509_LOOKUP_free");
         K_X509_LOOKUP_ctrl = (int (*)(X509_LOOKUP *, int, const char *, long, char **)) d->cryptoLib->resolve("X509_LOOKUP_ctrl");
         K_X509_STORE_CTX_init = (void (*)(X509_STORE_CTX *, X509_STORE *, X509 *, STACK_OF(X509) *)) d->cryptoLib->resolve("X509_STORE_CTX_init");
         K_X509_dup = (X509 * (*)(X509 *)) d->cryptoLib->resolve("X509_dup");
+        K_X509_getm_notBefore = (ASN1_TIME *(*)(const X509 *)) d->cryptoLib->resolve("X509_getm_notBefore");
+        K_X509_getm_notAfter = (ASN1_TIME *(*)(const X509 *)) d->cryptoLib->resolve("X509_getm_notAfter");
         K_BIO_s_mem = (BIO_METHOD * (*)(void)) d->cryptoLib->resolve("BIO_s_mem");
         K_BIO_new = (BIO * (*)(BIO_METHOD *)) d->cryptoLib->resolve("BIO_new");
         K_BIO_new_fp = (BIO * (*)(FILE *, int)) d->cryptoLib->resolve("BIO_new_fp");
@@ -457,13 +482,26 @@ KOpenSSLProxy::KOpenSSLProxy()
         K_X509_REQ_new = (X509_REQ * (*)()) d->cryptoLib->resolve("X509_REQ_new");
         K_X509_STORE_CTX_set_chain = (void (*)(X509_STORE_CTX *, STACK_OF(X509) *)) d->cryptoLib->resolve("X509_STORE_CTX_set_chain");
         K_X509_STORE_CTX_set_purpose = (void (*)(X509_STORE_CTX *, int)) d->cryptoLib->resolve("X509_STORE_CTX_set_purpose");
-        K_sk_free = (void (*)(STACK *)) d->cryptoLib->resolve("sk_free");
-        K_sk_num = (int (*)(STACK *)) d->cryptoLib->resolve("sk_num");
-        K_sk_pop = (char *(*)(STACK *)) d->cryptoLib->resolve("sk_pop");
-        K_sk_value = (char *(*)(STACK *, int)) d->cryptoLib->resolve("sk_value");
-        K_sk_new = (STACK * (*)(int (*)())) d->cryptoLib->resolve("sk_new");
-        K_sk_push = (int (*)(STACK *, char *)) d->cryptoLib->resolve("sk_push");
-        K_sk_dup = (STACK * (*)(STACK *)) d->cryptoLib->resolve("sk_dup");
+        K_X509_STORE_CTX_get_current_cert = (X509 * (*)(X509_STORE_CTX *)) d->cryptoLib->resolve("X509_STORE_CTX_get_current_cert");
+        K_X509_STORE_CTX_set_error = (void (*)(X509_STORE_CTX *, int)) d->cryptoLib->resolve("X509_STORE_CTX_set_error");
+        K_X509_STORE_CTX_get_error = (int (*)(X509_STORE_CTX *)) d->cryptoLib->resolve("X509_STORE_CTX_get_error");
+#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+        K_OPENSSL_sk_free = (void (*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_free");
+        K_OPENSSL_sk_num = (int (*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_num");
+        K_OPENSSL_sk_pop = (char *(*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_pop");
+        K_OPENSSL_sk_value = (char *(*)(STACK *, int)) d->cryptoLib->resolve("OPENSSL_sk_value");
+        K_OPENSSL_sk_new = (STACK * (*)(int (*)())) d->cryptoLib->resolve("OPENSSL_sk_new");
+        K_OPENSSL_sk_push = (int (*)(STACK *, char *)) d->cryptoLib->resolve("OPENSSL_sk_push");
+        K_OPENSSL_sk_dup = (STACK * (*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_dup");
+#else
+        K_OPENSSL_sk_free = (void (*)(STACK *)) d->cryptoLib->resolve("sk_free");
+        K_OPENSSL_sk_num = (int (*)(STACK *)) d->cryptoLib->resolve("sk_num");
+        K_OPENSSL_sk_pop = (char *(*)(STACK *)) d->cryptoLib->resolve("sk_pop");
+        K_OPENSSL_sk_value = (char *(*)(STACK *, int)) d->cryptoLib->resolve("sk_value");
+        K_OPENSSL_sk_new = (STACK * (*)(int (*)())) d->cryptoLib->resolve("sk_new");
+        K_OPENSSL_sk_push = (int (*)(STACK *, char *)) d->cryptoLib->resolve("sk_push");
+        K_OPENSSL_sk_dup = (STACK * (*)(STACK *)) d->cryptoLib->resolve("sk_dup");
+#endif
         K_i2s_ASN1_INTEGER = (char *(*)(X509V3_EXT_METHOD *, ASN1_INTEGER *)) d->cryptoLib->resolve("i2s_ASN1_INTEGER");
         K_X509_get_serialNumber = (ASN1_INTEGER * (*)(X509 *)) d->cryptoLib->resolve("X509_get_serialNumber");
         K_X509_get_pubkey = (EVP_PKEY * (*)(X509 *)) d->cryptoLib->resolve("X509_get_pubkey");
@@ -507,6 +545,12 @@ KOpenSSLProxy::KOpenSSLProxy()
         K_X509_check_purpose = (int (*)(X509 *, int, int)) d->cryptoLib->resolve("X509_check_purpose");
         K_X509_PURPOSE_get0 = (X509_PURPOSE * (*)(int)) d->cryptoLib->resolve("X509_PURPOSE_get0");
         K_EVP_PKEY_assign = (int (*)(EVP_PKEY *, int, char *)) d->cryptoLib->resolve("EVP_PKEY_assign");
+        K_EVP_PKEY_base_id = (int (*)(EVP_PKEY *)) d->cryptoLib->resolve("EVP_PKEY_base_id");
+        K_EVP_PKEY_get0_RSA = (RSA *(*)(EVP_PKEY *)) d->cryptoLib->resolve("EVP_PKEY_get0_RSA");
+        K_RSA_get0_key = (void (*)(RSA *, const BIGNUM **, const BIGNUM **, const BIGNUM **)) d->cryptoLib->resolve("ESA_get0_key");
+        K_EVP_PKEY_get0_DSA = (DSA *(*)(EVP_PKEY *)) d->cryptoLib->resolve("EVP_PKEY_get0_DSA");
+        K_DSA_get0_pqg = (void (*)(DSA *, const BIGNUM **, const BIGNUM **, const BIGNUM **)) d->cryptoLib->resolve("DSA_get0_pqg");
+        K_DSA_get0_key = (void (*)(DSA *, const BIGNUM **, const BIGNUM **)) d->cryptoLib->resolve("DSA_get0_key");
         K_X509_REQ_set_pubkey = (int (*)(X509_REQ *, EVP_PKEY *)) d->cryptoLib->resolve("X509_REQ_set_pubkey");
         K_RSA_generate_key = (RSA * (*)(int, unsigned long, void (*)(int, int, void *), void *)) d->cryptoLib->resolve("RSA_generate_key");
         K_i2d_X509_REQ_fp = (int (*)(FILE *, X509_REQ *)) d->cryptoLib->resolve("i2d_X509_REQ_fp");
@@ -933,6 +977,17 @@ void KOpenSSLProxy::X509_STORE_free(X509_STORE *v)
     }
 }
 
+void KOpenSSLProxy::X509_STORE_set_verify_cb(X509_STORE *store, int (*verify_cb)(int, X509_STORE_CTX *))
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    X509_STORE_set_verify_cb_func(store, verify_cb);
+#else
+    if (K_X509_STORE_set_verify_cb) {
+        (K_X509_STORE_set_verify_cb)(store, verify_cb);
+    }
+#endif
+}
+
 X509_STORE_CTX *KOpenSSLProxy::X509_STORE_CTX_new(void)
 {
     if (K_X509_STORE_CTX_new) {
@@ -987,6 +1042,22 @@ X509_NAME *KOpenSSLProxy::X509_get_issuer_name(X509 *a)
     return nullptr;
 }
 
+void KOpenSSLProxy::X509_get0_signature(const ASN1_BIT_STRING **psig, const X509_ALGOR **algor, const X509 *x)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    if (psig) {
+        *psig = x->signature;
+    }
+    if (algor) {
+        *algor = x->sig_alg;
+    }
+#else
+    if (K_X509_get0_signature) {
+        return (K_X509_get0_signature)(psig, algor, x);
+    }
+#endif
+}
+
 X509_LOOKUP *KOpenSSLProxy::X509_STORE_add_lookup(X509_STORE *v, X509_LOOKUP_METHOD *m)
 {
     if (K_X509_STORE_add_lookup) {
@@ -1025,12 +1096,21 @@ void KOpenSSLProxy::X509_STORE_CTX_init(X509_STORE_CTX *ctx, X509_STORE *store, 
     }
 }
 
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
 void KOpenSSLProxy::CRYPTO_free(void *x)
 {
     if (K_CRYPTO_free) {
         (K_CRYPTO_free)(x);
     }
 }
+#else
+void KOpenSSLProxy::CRYPTO_free(void *x, const char *file, int line)
+{
+    if (K_CRYPTO_free) {
+        K_CRYPTO_free(x, file, line);
+    }
+}
+#endif
 
 X509 *KOpenSSLProxy::X509_dup(X509 *x509)
 {
@@ -1038,6 +1118,32 @@ X509 *KOpenSSLProxy::X509_dup(X509 *x509)
         return (K_X509_dup)(x509);
     }
     return nullptr;
+}
+
+ASN1_TIME *KOpenSSLProxy::X509_getm_notBefore(const X509 *x)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return X509_get_notBefore(x);
+#else
+    if (K_X509_getm_notBefore) {
+        return (K_X509_getm_notBefore)(x);
+    } else {
+        return nullptr;
+    }
+#endif
+}
+
+ASN1_TIME *KOpenSSLProxy::X509_getm_notAfter(const X509 *x)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return X509_get_notAfter(x);
+#else
+    if (K_X509_getm_notAfter) {
+        return (K_X509_getm_notAfter)(x);
+    } else {
+        return nullptr;
+    }
+#endif
 }
 
 BIO *KOpenSSLProxy::BIO_new(BIO_METHOD *type)
@@ -1257,35 +1363,35 @@ STACK_OF(X509) *KOpenSSLProxy::SSL_get_peer_cert_chain(SSL *s)
     }
 }
 
-void KOpenSSLProxy::sk_free(STACK *s)
+void KOpenSSLProxy::OPENSSL_sk_free(STACK *s)
 {
-    if (K_sk_free) {
-        (K_sk_free)(s);
+    if (K_OPENSSL_sk_free) {
+        (K_OPENSSL_sk_free)(s);
     }
 }
 
-int KOpenSSLProxy::sk_num(STACK *s)
+int KOpenSSLProxy::OPENSSL_sk_num(STACK *s)
 {
-    if (K_sk_num) {
-        return (K_sk_num)(s);
+    if (K_OPENSSL_sk_num) {
+        return (K_OPENSSL_sk_num)(s);
     } else {
         return -1;
     }
 }
 
-char *KOpenSSLProxy::sk_pop(STACK *s)
+char *KOpenSSLProxy::OPENSSL_sk_pop(STACK *s)
 {
-    if (K_sk_pop) {
-        return (K_sk_pop)(s);
+    if (K_OPENSSL_sk_pop) {
+        return (K_OPENSSL_sk_pop)(s);
     } else {
         return nullptr;
     }
 }
 
-char *KOpenSSLProxy::sk_value(STACK *s, int n)
+char *KOpenSSLProxy::OPENSSL_sk_value(STACK *s, int n)
 {
-    if (K_sk_value) {
-        return (K_sk_value)(s, n);
+    if (K_OPENSSL_sk_value) {
+        return (K_OPENSSL_sk_value)(s, n);
     } else {
         return nullptr;
     }
@@ -1305,28 +1411,65 @@ void KOpenSSLProxy::X509_STORE_CTX_set_purpose(X509_STORE_CTX *v, int purpose)
     }
 }
 
-STACK *KOpenSSLProxy::sk_dup(STACK *s)
+X509 *KOpenSSLProxy::X509_STORE_CTX_get_current_cert(X509_STORE_CTX *v)
 {
-    if (K_sk_dup) {
-        return (K_sk_dup)(s);
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return v->current_cert;
+#else
+    if (K_X509_STORE_CTX_get_current_cert) {
+        return (K_X509_STORE_CTX_get_current_cert)(v);
+    } else {
+        return nullptr;
+    }
+#endif
+}
+
+void KOpenSSLProxy::X509_STORE_CTX_set_error(X509_STORE_CTX *v, int error)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    v->error = error;
+#else
+    if (K_X509_STORE_CTX_set_error) {
+        (K_X509_STORE_CTX_set_error)(v, error);
+    }
+#endif
+}
+
+int KOpenSSLProxy::X509_STORE_CTX_get_error(X509_STORE_CTX *v)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return v->error;
+#else
+    if (K_X509_STORE_CTX_get_error) {
+        return (K_X509_STORE_CTX_get_error)(v);
+    } else {
+        return 0;
+    }
+#endif
+}
+
+STACK *KOpenSSLProxy::OPENSSL_sk_dup(STACK *s)
+{
+    if (K_OPENSSL_sk_dup) {
+        return (K_OPENSSL_sk_dup)(s);
     } else {
         return nullptr;
     }
 }
 
-STACK *KOpenSSLProxy::sk_new(int (*cmp)())
+STACK *KOpenSSLProxy::OPENSSL_sk_new(int (*cmp)())
 {
-    if (K_sk_new) {
-        return (K_sk_new)(cmp);
+    if (K_OPENSSL_sk_new) {
+        return (K_OPENSSL_sk_new)(cmp);
     } else {
         return nullptr;
     }
 }
 
-int KOpenSSLProxy::sk_push(STACK *s, char *d)
+int KOpenSSLProxy::OPENSSL_sk_push(STACK *s, char *d)
 {
-    if (K_sk_push) {
-        return (K_sk_push)(s, d);
+    if (K_OPENSSL_sk_push) {
+        return (K_OPENSSL_sk_push)(s, d);
     } else {
         return -1;
     }
@@ -1747,6 +1890,99 @@ int KOpenSSLProxy::EVP_PKEY_assign(EVP_PKEY *pkey, int type, char *key)
     } else {
         return -1;
     }
+}
+
+int KOpenSSLProxy::EVP_PKEY_base_id(EVP_PKEY *pkey)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return pkey->type;
+#else
+    if (K_EVP_PKEY_base_id) {
+        return (K_EVP_PKEY_base_id)(pkey);
+    } else {
+        return 0;
+    }
+#endif
+}
+
+RSA *KOpenSSLProxy::EVP_PKEY_get0_RSA(EVP_PKEY *pkey)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return pkey->pkey.rsa;
+#else
+    if (K_EVP_PKEY_get0_RSA) {
+        return (K_EVP_PKEY_get0_RSA)(pkey);
+    } else {
+        return nullptr;
+    }
+#endif
+}
+
+void KOpenSSLProxy::RSA_get0_key(RSA *rsa, const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    if (n) {
+        *n = rsa->n;
+    }
+    if (e) {
+        *e = rsa->e;
+    }
+    if (d) {
+        *d = rsa->d;
+    }
+#else
+    if (K_RSA_get0_key) {
+        (K_RSA_get0_key)(rsa, n, e, d);
+    }
+#endif
+}
+
+DSA *KOpenSSLProxy::EVP_PKEY_get0_DSA(EVP_PKEY *pkey)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    return pkey->pkey.dsa;
+#else
+    if (K_EVP_PKEY_get0_DSA) {
+        return (K_EVP_PKEY_get0_DSA)(pkey);
+    } else {
+        return nullptr;
+    }
+#endif
+}
+
+void KOpenSSLProxy::DSA_get0_pqg(DSA *dsa, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    if (p) {
+        *p = dsa->p;
+    }
+    if (q) {
+        *q = dsa->q;
+    }
+    if (g) {
+        *g = dsa->g;
+    }
+#else
+    if (K_DSA_get0_pqg) {
+        (K_DSA_get0_pqg)(dsa, p, q, g);
+    }
+#endif
+}
+
+void KOpenSSLProxy::DSA_get0_key(DSA *dsa, const BIGNUM **pub_key, const BIGNUM **priv_key)
+{
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
+    if (pub_key) {
+        *pub_key = dsa->pub_key;
+    }
+    if (priv_key) {
+        *priv_key = dsa->priv_key;
+    }
+#else
+    if (K_DSA_get0_key) {
+        (K_DSA_get0_key)(dsa, pub_key, priv_key);
+    }
+#endif
 }
 
 int KOpenSSLProxy::X509_REQ_set_pubkey(X509_REQ *x, EVP_PKEY *pkey)

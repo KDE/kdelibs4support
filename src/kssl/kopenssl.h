@@ -278,6 +278,16 @@ public:
     X509 *X509_dup(X509 *x509);
 
     /*
+     *   X509_getm_notBefore - get validity start
+     */
+    ASN1_TIME *X509_getm_notBefore(const X509 *x);
+
+    /*
+     *   X509_getm_notAfter - get validity end
+     */
+    ASN1_TIME *X509_getm_notAfter(const X509 *x);
+
+    /*
      *   X509_STORE_CTX_new - create an X509 store context
      */
     X509_STORE_CTX *X509_STORE_CTX_new(void);
@@ -297,6 +307,21 @@ public:
      */
     void X509_STORE_CTX_set_purpose(X509_STORE_CTX *v, int purpose);
 
+    /**
+     *   X509_STORE_CTX_get_current_cert - get the current certificate
+     */
+    X509 *X509_STORE_CTX_get_current_cert(X509_STORE_CTX *v);
+
+    /**
+     *   X509_STORE_CTX_set_error - set certificate error
+     */
+    void X509_STORE_CTX_set_error(X509_STORE_CTX *v, int error);
+
+    /**
+     *   X509_STORE_CTX_get_error - get certificate error
+     */
+    int X509_STORE_CTX_get_error(X509_STORE_CTX *v);
+
     /*
      *   X509_verify_cert - verify the certificate
      */
@@ -311,6 +336,11 @@ public:
      *   X509_STORE_free - free up an X509 store
      */
     void X509_STORE_free(X509_STORE *v);
+
+    /*
+     *   X509_STORE_set_verify_cb - set verify callback
+     */
+    void X509_STORE_set_verify_cb(X509_STORE *v, int (*verify_cb)(int, X509_STORE_CTX *));
 
     /*
      *   X509_free - free up an X509
@@ -331,6 +361,11 @@ public:
      *   X509_get_issuer_name - return the X509_NAME for the issuer field
      */
     X509_NAME *X509_get_issuer_name(X509 *a);
+
+    /*
+     *   X509_get0_signature - return X509 signature and signature algorithm
+     */
+    void X509_get0_signature(const ASN1_BIT_STRING **psig, const X509_ALGOR **palg, const X509 *x);
 
     /*
      *   X509_STORE_add_lookup - add a lookup file/method to an X509 store
@@ -360,7 +395,11 @@ public:
     /*
      *   CRYPTO_free - free up an internally allocated object
      */
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
     void CRYPTO_free(void *x);
+#else
+    void CRYPTO_free(void *x, const char *file, int line);
+#endif
 
     /*
      *   BIO_new - create new BIO
@@ -461,58 +500,58 @@ public:
     /*
      *   Pop off the stack
      */
-    char *sk_pop(STACK *s);
+    char *OPENSSL_sk_pop(STACK *s);
 
     /*
      *   Free the stack
      */
-    void sk_free(STACK *s);
+    void OPENSSL_sk_free(STACK *s);
 
 #if OPENSSL_VERSION_NUMBER >= 0x10000000L
-    void sk_free(void *s)
+    void OPENSSL_sk_free(void *s)
     {
-        return sk_free(reinterpret_cast<STACK *>(s));
+        return OPENSSL_sk_free(reinterpret_cast<STACK *>(s));
     }
 #endif
 
     /*
      *  Number of elements in the stack
      */
-    int sk_num(STACK *s);
+    int OPENSSL_sk_num(STACK *s);
 
     /*
      *  Value of element n in the stack
      */
-    char *sk_value(STACK *s, int n);
+    char *OPENSSL_sk_value(STACK *s, int n);
 
 #if OPENSSL_VERSION_NUMBER >= 0x10000000L
-    char *sk_value(void *s, int n)
+    char *OPENSSL_sk_value(void *s, int n)
     {
-        return sk_value(reinterpret_cast<STACK *>(s), n);
+        return OPENSSL_sk_value(reinterpret_cast<STACK *>(s), n);
     }
 #endif
 
     /*
      *  Create a new stack
      */
-    STACK *sk_new(int (*cmp)());
+    STACK *OPENSSL_sk_new(int (*cmp)());
 
     /*
      *  Add an element to the stack
      */
-    int sk_push(STACK *s, char *d);
+    int OPENSSL_sk_push(STACK *s, char *d);
 
 #if OPENSSL_VERSION_NUMBER >= 0x10000000L
-    int sk_push(void *s, void *d)
+    int OPENSSL_sk_push(void *s, void *d)
     {
-        return sk_push(reinterpret_cast<STACK *>(s), reinterpret_cast<char *>(d));
+        return OPENSSL_sk_push(reinterpret_cast<STACK *>(s), reinterpret_cast<char *>(d));
     }
 #endif
 
     /*
      *  Duplicate the stack
      */
-    STACK *sk_dup(STACK *s);
+    STACK *OPENSSL_sk_dup(STACK *s);
 
     /*
      *  Convert an ASN1_INTEGER to its text form
@@ -742,6 +781,17 @@ public:
      * Assign a private key
      */
     int EVP_PKEY_assign(EVP_PKEY *pkey, int type, char *key);
+
+    /*
+     * Get key type
+     */
+    int EVP_PKEY_base_id(EVP_PKEY *pkey);
+
+    RSA *EVP_PKEY_get0_RSA(EVP_PKEY *pkey);
+    void RSA_get0_key(RSA *rsa, const BIGNUM **n, const BIGNUM **e, const BIGNUM **d);
+    DSA *EVP_PKEY_get0_DSA(EVP_PKEY *pkey);
+    void DSA_get0_pqg(DSA *dsa, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g);
+    void DSA_get0_key(DSA *dsa, const BIGNUM **pub_key, const BIGNUM **priv_key);
 
     /*
      * Generate a RSA key
