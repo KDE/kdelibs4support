@@ -139,9 +139,14 @@ public:
      * Useful in case  your application is started by the
      * initial "startkde" script.
      *
-     * @deprecated, use qunsetenv("SESSION_MANAGER") or
-     * call QSessionManager::setRestartHint(QSessionManager::RestartNever)
-     * in the slot connected to commitDataRequest.
+     * @deprecated, use qunsetenv("SESSION_MANAGER") (X11-specific) or
+     * @code
+        auto disableSessionManagement = [](QSessionManager &sm) {
+            sm.setRestartHint(QSessionManager::RestartNever);
+        };
+        QObject::connect(qApp, &QGuiApplication::commitDataRequest, disableSessionManagement);
+        QObject::connect(qApp, &QGuiApplication::saveStateRequest, disableSessionManagement);
+     * @endcode
      * TODO: contribute a QGuiApplication::disableSessionManagement() method
      */
     void disableSessionManagement();
