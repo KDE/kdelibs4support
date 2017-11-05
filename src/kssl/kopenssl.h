@@ -395,7 +395,7 @@ public:
     /*
      *   CRYPTO_free - free up an internally allocated object
      */
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     void CRYPTO_free(void *x);
 #else
     void CRYPTO_free(void *x, const char *file, int line);

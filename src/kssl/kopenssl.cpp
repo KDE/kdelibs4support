@@ -81,7 +81,7 @@ extern "C" {
     static void (*K_X509_LOOKUP_free)(X509_LOOKUP *) = nullptr;
     static int (*K_X509_LOOKUP_ctrl)(X509_LOOKUP *, int, const char *, long, char **) = nullptr;
     static void (*K_X509_STORE_CTX_init)(X509_STORE_CTX *, X509_STORE *, X509 *, STACK_OF(X509) *) = nullptr;
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     static void (*K_CRYPTO_free)(void *) = nullptr;
 #else
     static void (*K_CRYPTO_free)(void *, const char *, int) = nullptr;
@@ -430,7 +430,7 @@ KOpenSSLProxy::KOpenSSLProxy()
         K_RAND_load_file = (int (*)(const char *, long)) d->cryptoLib->resolve("RAND_load_file");
         K_RAND_file_name = (const char *(*)(char *, size_t)) d->cryptoLib->resolve("RAND_file_name");
         K_RAND_write_file = (int (*)(const char *)) d->cryptoLib->resolve("RAND_write_file");
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
         K_CRYPTO_free = (void (*)(void *)) d->cryptoLib->resolve("CRYPTO_free");
 #else
         K_CRYPTO_free = (void (*)(void *, const char *, int)) d->cryptoLib->resolve("CRYPTO_free");
@@ -485,7 +485,7 @@ KOpenSSLProxy::KOpenSSLProxy()
         K_X509_STORE_CTX_get_current_cert = (X509 * (*)(X509_STORE_CTX *)) d->cryptoLib->resolve("X509_STORE_CTX_get_current_cert");
         K_X509_STORE_CTX_set_error = (void (*)(X509_STORE_CTX *, int)) d->cryptoLib->resolve("X509_STORE_CTX_set_error");
         K_X509_STORE_CTX_get_error = (int (*)(X509_STORE_CTX *)) d->cryptoLib->resolve("X509_STORE_CTX_get_error");
-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
+#if OPENSSL_VERSION_NUMBER >= 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
         K_OPENSSL_sk_free = (void (*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_free");
         K_OPENSSL_sk_num = (int (*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_num");
         K_OPENSSL_sk_pop = (char *(*)(STACK *)) d->cryptoLib->resolve("OPENSSL_sk_pop");
@@ -979,7 +979,7 @@ void KOpenSSLProxy::X509_STORE_free(X509_STORE *v)
 
 void KOpenSSLProxy::X509_STORE_set_verify_cb(X509_STORE *store, int (*verify_cb)(int, X509_STORE_CTX *))
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     X509_STORE_set_verify_cb_func(store, verify_cb);
 #else
     if (K_X509_STORE_set_verify_cb) {
@@ -1044,7 +1044,7 @@ X509_NAME *KOpenSSLProxy::X509_get_issuer_name(X509 *a)
 
 void KOpenSSLProxy::X509_get0_signature(const ASN1_BIT_STRING **psig, const X509_ALGOR **algor, const X509 *x)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     if (psig) {
         *psig = x->signature;
     }
@@ -1096,7 +1096,7 @@ void KOpenSSLProxy::X509_STORE_CTX_init(X509_STORE_CTX *ctx, X509_STORE *store, 
     }
 }
 
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
 void KOpenSSLProxy::CRYPTO_free(void *x)
 {
     if (K_CRYPTO_free) {
@@ -1122,7 +1122,7 @@ X509 *KOpenSSLProxy::X509_dup(X509 *x509)
 
 ASN1_TIME *KOpenSSLProxy::X509_getm_notBefore(const X509 *x)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return X509_get_notBefore(x);
 #else
     if (K_X509_getm_notBefore) {
@@ -1135,7 +1135,7 @@ ASN1_TIME *KOpenSSLProxy::X509_getm_notBefore(const X509 *x)
 
 ASN1_TIME *KOpenSSLProxy::X509_getm_notAfter(const X509 *x)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return X509_get_notAfter(x);
 #else
     if (K_X509_getm_notAfter) {
@@ -1413,7 +1413,7 @@ void KOpenSSLProxy::X509_STORE_CTX_set_purpose(X509_STORE_CTX *v, int purpose)
 
 X509 *KOpenSSLProxy::X509_STORE_CTX_get_current_cert(X509_STORE_CTX *v)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return v->current_cert;
 #else
     if (K_X509_STORE_CTX_get_current_cert) {
@@ -1426,7 +1426,7 @@ X509 *KOpenSSLProxy::X509_STORE_CTX_get_current_cert(X509_STORE_CTX *v)
 
 void KOpenSSLProxy::X509_STORE_CTX_set_error(X509_STORE_CTX *v, int error)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     v->error = error;
 #else
     if (K_X509_STORE_CTX_set_error) {
@@ -1437,7 +1437,7 @@ void KOpenSSLProxy::X509_STORE_CTX_set_error(X509_STORE_CTX *v, int error)
 
 int KOpenSSLProxy::X509_STORE_CTX_get_error(X509_STORE_CTX *v)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return v->error;
 #else
     if (K_X509_STORE_CTX_get_error) {
@@ -1894,7 +1894,7 @@ int KOpenSSLProxy::EVP_PKEY_assign(EVP_PKEY *pkey, int type, char *key)
 
 int KOpenSSLProxy::EVP_PKEY_base_id(EVP_PKEY *pkey)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return pkey->type;
 #else
     if (K_EVP_PKEY_base_id) {
@@ -1907,7 +1907,7 @@ int KOpenSSLProxy::EVP_PKEY_base_id(EVP_PKEY *pkey)
 
 RSA *KOpenSSLProxy::EVP_PKEY_get0_RSA(EVP_PKEY *pkey)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return pkey->pkey.rsa;
 #else
     if (K_EVP_PKEY_get0_RSA) {
@@ -1920,7 +1920,7 @@ RSA *KOpenSSLProxy::EVP_PKEY_get0_RSA(EVP_PKEY *pkey)
 
 void KOpenSSLProxy::RSA_get0_key(RSA *rsa, const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     if (n) {
         *n = rsa->n;
     }
@@ -1939,7 +1939,7 @@ void KOpenSSLProxy::RSA_get0_key(RSA *rsa, const BIGNUM **n, const BIGNUM **e, c
 
 DSA *KOpenSSLProxy::EVP_PKEY_get0_DSA(EVP_PKEY *pkey)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     return pkey->pkey.dsa;
 #else
     if (K_EVP_PKEY_get0_DSA) {
@@ -1952,7 +1952,7 @@ DSA *KOpenSSLProxy::EVP_PKEY_get0_DSA(EVP_PKEY *pkey)
 
 void KOpenSSLProxy::DSA_get0_pqg(DSA *dsa, const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     if (p) {
         *p = dsa->p;
     }
@@ -1971,7 +1971,7 @@ void KOpenSSLProxy::DSA_get0_pqg(DSA *dsa, const BIGNUM **p, const BIGNUM **q, c
 
 void KOpenSSLProxy::DSA_get0_key(DSA *dsa, const BIGNUM **pub_key, const BIGNUM **priv_key)
 {
-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
     if (pub_key) {
         *pub_key = dsa->pub_key;
     }
