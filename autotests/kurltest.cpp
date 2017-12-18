@@ -772,19 +772,11 @@ void KUrlTest::testDirectory()
     u2.cleanPath();
     QCOMPARE(u2.url(), QString("file:///home/dfaure/"));
     u2.addPath("/..//foo");
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QCOMPARE(u2.url(), QString("file:///home/dfaure/..//foo"));
-#else
-    QCOMPARE(u2.url(), QString("file:///home/foo"));   // Qt >= 5.2: cleaned up already
-#endif
     u2 = KUrl(QByteArray("file:///home/dfaure/..//foo"));
     QCOMPARE(u2.url(), QString("file:///home/dfaure/..//foo"));
     u2.cleanPath(KUrl::KeepDirSeparators);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QCOMPARE(u2.url(), QString("file:///home//foo"));
-#else
-    QCOMPARE(u2.url(), QString("file:///home/foo"));
-#endif
     u2.cleanPath(KUrl::SimplifyDirSeparators);
     QCOMPARE(u2.url(), QString("file:///home/foo"));
 
@@ -1091,12 +1083,7 @@ void KUrlTest::testBaseURL() // those are tests for the KUrl(base,relative) cons
 
     baseURL = "http://www.foo.bar";
     KUrl rel_url(baseURL, "/top//test/../test1/file.html");
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QCOMPARE(rel_url.url(), QString("http://www.foo.bar/top//test1/file.html"));
-#else
-    // Qt 5.2 to 5.5 would normalize the path, this was reverted in 5.6 (see 2e1de7f3c4ca)
-    QCOMPARE(rel_url.url(), QString("http://www.foo.bar/top/test1/file.html"));
-#endif
 
     baseURL = "http://www.foo.bar/top//test2/file2.html";
     QCOMPARE(baseURL.url(), QString("http://www.foo.bar/top//test2/file2.html"));
@@ -1110,11 +1097,7 @@ void KUrlTest::testBaseURL() // those are tests for the KUrl(base,relative) cons
 
     baseURL = "file:/usr/local/src/kde2/kdelibs/kio/";
     KUrl url2(baseURL, "../../////kdebase/konqueror");
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QCOMPARE( url2.url(), QString("file:///usr/local/src/kde2/////kdebase/konqueror" ));
-#else
-    QCOMPARE(url2.url(), QString("file:///usr/local/src/kde2/kdebase/konqueror"));
-#endif
 
 
     // WABA: The following tests are to test the handling of relative URLs as

@@ -344,11 +344,6 @@ int KApplicationPrivate::xErrhandler(Display *dpy, void *err_)
 
 void KApplicationPrivate::iceIOErrorHandler(_IceConn *conn)
 {
-#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
-http://thread.gmane.org/gmane.comp.kde.devel.frameworks/1122
-    emit kapp->aboutToQuit();
-#endif
-
     if (oldIceIOErrorHandler != nullptr) {
         (*oldIceIOErrorHandler)(conn);
     }
@@ -380,9 +375,7 @@ void KApplicationPrivate::init(bool GUIenabled)
     parseCommandLine();
 
     QGuiApplication::setDesktopSettingsAware(false);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
     QGuiApplication::setFallbackSessionManagementEnabled(false);
-#endif
 
 #if HAVE_X11
     isX11 = (QGuiApplication::platformName() == QStringLiteral("xcb"));
