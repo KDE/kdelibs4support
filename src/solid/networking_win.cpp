@@ -92,6 +92,23 @@ void Solid::NetworkingPrivate::serviceStatusChanged(bool status)
     emit globalNetworkManager->statusChanged(netStatus);
 }
 
+void Solid::NetworkingPrivate::serviceOwnerChanged(const QString &name, const QString &oldOwner, const QString &newOwner)
+{
+    Q_UNUSED(name)
+    Q_UNUSED(oldOwner)
+    if (newOwner.isEmpty()) {
+        // kded quit on us
+        netStatus = Solid::Networking::Unknown;
+        emit globalNetworkManager->statusChanged(netStatus);
+
+    } else {
+        // kded was replaced or started
+        initialize();
+        emit globalNetworkManager->statusChanged(netStatus);
+        serviceStatusChanged(netStatus);
+    }
+}
+
 Solid::Networking::ManagementPolicy Solid::Networking::connectPolicy()
 {
     return globalNetworkManager->connectPolicy;

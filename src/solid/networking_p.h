@@ -60,14 +60,14 @@ public Q_SLOTS:
      * Called on DBus signal from the network status service
      */
     void serviceStatusChanged(uint status);
+#else
+    void serviceStatusChanged(bool status);
+#endif
     /**
      * Detects when kded restarts, and sets status to NoNetworks so that apps
      * may proceed
      */
     void serviceOwnerChanged(const QString &, const QString &, const QString &);
-#else
-    void serviceStatusChanged(bool status);
-#endif
 private:
     void initialize();
 #ifndef Q_OS_WIN
