@@ -1793,7 +1793,11 @@ void KUrlTest::testSmb()
 
     KUrl noImplicitSmb("//path1/path2");
     QVERIFY(noImplicitSmb.isLocalFile());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 9, 3) // see qtbase commit f62768d046
+    QCOMPARE(noImplicitSmb.path(), QString("//path1/path2"));
+#else
     QCOMPARE(noImplicitSmb.path(), QString("/path1/path2"));
+#endif
 }
 
 void KUrlTest::testOtherProtocols()
