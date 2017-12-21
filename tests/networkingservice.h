@@ -36,6 +36,7 @@ public:
 	TestService();
 	virtual ~TestService();
 	int status( const QString & network );
+	bool isValid();
 protected Q_SLOTS:
 	void changeComboActivated( int index );
     void serviceOwnerChanged( const QString& service,const QString& oldOwner, const QString& newOwner );

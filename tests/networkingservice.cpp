@@ -65,6 +65,10 @@ TestService::TestService() : KMainWindow( nullptr ),
     m_view( new QWidget( this ) )
 {
     QDBusConnection::sessionBus().registerService( "org.kde.Solid.Networking.TestService" );
+    if (!m_service->isValid())
+    {
+        qCritical() << "could not register module" << m_service->path() << "at" << m_service->service();
+    }
 
     ui.setupUi( m_view );
     setCentralWidget( m_view );
@@ -105,6 +109,11 @@ int TestService::status( const QString & network )
 {
     Q_UNUSED( network );
     return (int)m_status;
+}
+
+bool TestService::isValid()
+{
+     return m_service->isValid();
 }
 
 void TestService::changeComboActivated( int index )
@@ -221,6 +230,10 @@ int main( int argc, char** argv )
     KApplication app;
 
     TestService * test = new TestService;
+    if (!test->isValid())
+    {
+        return 1;
+    }
     test->show();
     return app.exec();
 }
