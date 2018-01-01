@@ -91,7 +91,7 @@ ecm_mark_nongui_executable(kf5-config)
 target_link_libraries(kf5-config KF5::CoreAddons KF5::I18n KF5::ConfigCore KF5::KDELibs4Support)
 target_include_directories(kf5-config PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/../..")
 
-install(TARGETS kf5-config EXPORT KF5KDELibs4SupportTargets ${KF5_INSTALL_TARGETS_DEFAULT_ARGS} ) # put this for now into the export set KDELibs4SupportTargets, so that it exists and is not empty
+install(TARGETS kf5-config ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 # create a Config.cmake and a ConfigVersion.cmake file and install them
