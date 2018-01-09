@@ -5,13 +5,13 @@ The system consists of 3 classes of components:
 anything (including a system networking script) that can talk DBus.  These are responsible for registering networks with, and updating their status at:
 
 2) KDED Module - networkstatus
-  Hub of the system.  Implements two DBus interfaces at org.kde.kded /modules/networkstatus,
+  Hub of the system.  Implements two DBus interfaces at org.kde.kded5 /modules/networkstatus,
   org.kde.Solid.Networking.Service (for use by service applications, above) and
   org.kde.Solid.Networking.Client (for client apps, below) networkstatus knows of the status of any networks registered with it, which it aggregates and reports the most connected status onwards, to:
 
 3) Network client applications {
   Regular KDE applications which need to use the network.  These either listen directly to
-org.kde.kded /modules/networkstatus' signals, or use the Solid::Networking namespaces' functions and notifier() object to react to
+org.kde.kded5 /modules/networkstatus' signals, or use the Solid::Networking namespaces' functions and notifier() object to react to
 network status changes.
 
 UI Components

@@ -23,9 +23,9 @@ the curious to simulate network changes and their effects on a client.
 To use:
 
 1) make install
-2) qdbus org.kde.kded /kded loadModule networkstatus,
-   qdbus org.kde.kded /modules/networkstatus status
-   qdbus org.kde.kded /modules/networkstatus networks
+2) qdbus org.kde.kded5 /kded loadModule networkstatus
+   qdbus org.kde.kded5 /modules/networkstatus status
+   qdbus org.kde.kded5 /modules/networkstatus networks
 3) in builddir/tests ./service
 4) likewise, ./client
 5) Change the service's status and observe the changes in the client.
