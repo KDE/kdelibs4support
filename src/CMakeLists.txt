@@ -29,7 +29,13 @@ set_package_properties(OpenSSL PROPERTIES DESCRIPTION "Support for secure networ
                       )
 if(OPENSSL_FOUND)
    set(KSSL_HAVE_SSL 1)
-   include_directories(${OPENSSL_INCLUDE_DIR})
+   # on Windows include directories specified by target KDEWin and used by KF5KDELibs4Support
+   # needs to be added first because they are used to override system include header.
+   # This does not work if openssl include dir pointing to the standard include path would
+   # be added first.
+   if(NOT WIN32 OR NOT "${OPENSSL_INCLUDE_DIR}" STREQUAL "${INCLUDE_INSTALL_DIR}")
+       include_directories(${OPENSSL_INCLUDE_DIR})
+   endif()
 endif()
 
 add_subdirectory( kioslave )
