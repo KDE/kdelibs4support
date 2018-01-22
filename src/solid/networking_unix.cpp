@@ -1,5 +1,4 @@
 /*
-    Copyright 2013      Patrick von Reth <vonreth@kde.org>
     Copyright 2006-2007 Will Stephenson <wstephenson@kde.org>
     Copyright 2006-2007 Kevin Ottens <ervin@kde.org>
 
@@ -25,44 +24,73 @@
 #include "networking.h"
 #include "networking_p.h"
 
+#include "org_kde_solid_networking_client.h"
+
 Solid::NetworkingPrivate::NetworkingPrivate()
     : netStatus(Solid::Networking::Unknown),
       connectPolicy(Solid::Networking::Managed),
       disconnectPolicy(Solid::Networking::Managed),
-      m_manager(new QNetworkConfigurationManager())
+      iface(nullptr)
 {
+    QDBusServiceWatcher *watcher = new QDBusServiceWatcher("org.kde.kded5", QDBusConnection::sessionBus(),
+            QDBusServiceWatcher::WatchForOwnerChange, this);
+    connect(watcher, SIGNAL(serviceOwnerChanged(QString,QString,QString)),
+            this, SLOT(serviceOwnerChanged(QString,QString,QString)));
+
     initialize();
 }
 
 Solid::NetworkingPrivate::~NetworkingPrivate()
 {
-    m_manager->deleteLater();
+    delete iface;
 }
 
 void Solid::NetworkingPrivate::initialize()
 {
+    delete iface;
+    iface  = new OrgKdeSolidNetworkingClientInterface("org.kde.kded5",
+            "/modules/networkstatus",
+            QDBusConnection::sessionBus(),
+            this);
 
-    netStatus = m_manager->isOnline() ? Solid::Networking::Connected : Solid::Networking::Unconnected;
+    //connect( iface, SIGNAL(statusChanged(uint)), globalNetworkManager, SIGNAL(statusChanged(Networking::Status)) );
+    connect(iface, SIGNAL(statusChanged(uint)), this, SLOT(serviceStatusChanged(uint)));
 
-    connect(m_manager, SIGNAL(onlineStateChanged(bool)), this, SLOT(serviceStatusChanged(bool)));
+    QDBusReply<uint> reply = iface->status();
+    if (reply.isValid()) {
+        netStatus = (Solid::Networking::Status)reply.value();
+    } else {
+        netStatus = Solid::Networking::Unknown;
+    }
 }
 
-void Solid::NetworkingPrivate::serviceStatusChanged(bool status)
+void Solid::NetworkingPrivate::serviceStatusChanged(uint status)
 {
-//    kDebug( 921 ) ;
-    netStatus = status ? Solid::Networking::Connected : Solid::Networking::Unconnected;
+//    qDebug() ;
+    netStatus = (Solid::Networking::Status)status;
     switch (netStatus) {
     case Solid::Networking::Unknown:
         break;
     case Solid::Networking::Unconnected:
-        emit Solid::Networking::notifier()->shouldDisconnect();
+    case Solid::Networking::Disconnecting:
+    case Solid::Networking::Connecting:
+        if (disconnectPolicy == Solid::Networking::Managed) {
+            emit Solid::Networking::notifier()->shouldDisconnect();
+        } else if (disconnectPolicy == Solid::Networking::OnNextStatusChange) {
+            setDisconnectPolicy(Solid::Networking::Manual);
+            emit Solid::Networking::notifier()->shouldDisconnect();
+        }
         break;
     case Solid::Networking::Connected:
-        emit Solid::Networking::notifier()->shouldConnect();
+        if (disconnectPolicy == Solid::Networking::Managed) {
+            emit Solid::Networking::notifier()->shouldConnect();
+        } else if (disconnectPolicy == Solid::Networking::OnNextStatusChange) {
+            setConnectPolicy(Solid::Networking::Manual);
+            emit Solid::Networking::notifier()->shouldConnect();
+        }
         break;
-    default:
-        break;
-//        kDebug( 921 ) <<  "Unrecognised status code!";
+//      default:
+//        qDebug() <<  "Unrecognised status code!";
     }
     emit Solid::Networking::notifier()->statusChanged(netStatus);
 }
@@ -80,6 +108,6 @@ void Solid::NetworkingPrivate::serviceOwnerChanged(const QString &name, const QS
         // kded was replaced or started
         initialize();
         emit Solid::Networking::notifier()->statusChanged(netStatus);
-        serviceStatusChanged(netStatus == Solid::Networking::Connected);
+        serviceStatusChanged(netStatus);
     }
 }

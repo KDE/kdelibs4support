@@ -47,7 +47,7 @@ if(WIN32)
    set(libkdelibs4support_SRCS solid/networking_win.cpp
                                kdeui/kapplication_win.cpp)
 else()
-   set(libkdelibs4support_SRCS solid/networking.cpp)
+   set(libkdelibs4support_SRCS solid/networking_unix.cpp)
 endif()
 
 
@@ -203,6 +203,7 @@ set(libkdelibs4support_SRCS
 
     kparts/factory.cpp
     solid/powermanagement.cpp
+    solid/networking.cpp
 )
 
 set_source_files_properties( solid/org.freedesktop.PowerManagement.xml
@@ -345,6 +346,8 @@ PRIVATE
 
 if(WIN32)
     target_link_libraries(KF5KDELibs4Support PUBLIC kdewin)
+    # required by moc to generate correct slot access code from solid/networking_q.h
+    set_target_properties(KF5KDELibs4Support PROPERTIES COMPILE_DEFINITIONS "Q_OS_WIN")
 endif()
 
 
