@@ -254,11 +254,15 @@ void KMimeTypeTest::testFindByPathUsingFileName_data()
     QTest::newRow("doesn't exist but has known extension") << "IDontExist.txt" << "text/plain";
     QTest::newRow("png image") << QFINDTESTDATA("image.png") << "image/png";
 
+#ifdef Q_OS_WIN
+    // Windows: use cmake
     const QString exePath = QStandardPaths::findExecutable("cmake");
     QVERIFY2(!exePath.isEmpty(), "cmake not found. Isn't it in your $PATH?");
-#ifdef Q_OS_WIN
     const QString executableType = QString::fromLatin1("application/x-ms-dos-executable");
 #else
+    // Linux: cmake can be found as x-sharedlib on CI for some reason, use ls like tst_qmimedatabase does
+    const QString exePath = QStandardPaths::findExecutable("ls");
+    QVERIFY2(!exePath.isEmpty(), "ls not found. Isn't it in your $PATH?");
     const QString executableType = QString::fromLatin1("application/x-executable");
 #endif
     QTest::newRow("executable") << exePath << executableType;
@@ -509,6 +513,7 @@ void KMimeTypeTest::testAllMimeTypes()
 
         const KMimeType::Ptr lookedupMime = KMimeType::mimeType(name);
         QVERIFY(lookedupMime);   // not null
+#if 0 // this just breaks too often to run on systems with uncontrolled files in /usr/share/mime/packages
         if (name != "application/vnd.ms-word" && name != "application/x-pkcs7-certificates"
                 && name != "application/x-x509-ca-cert"
                 && name != "application/x-vnd.kde.kexi" // due to /usr/share/mime/packages/kde.xml from KDE4
@@ -526,6 +531,7 @@ void KMimeTypeTest::testAllMimeTypes()
             // /usr/share/mime/packages/gcr-crypto-types.xml. Remove that file and run
             // `update-mime-database /usr/share/mime`.
         }
+#endif
     }
 }
 
