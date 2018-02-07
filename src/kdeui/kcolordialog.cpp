@@ -117,7 +117,7 @@ enum ColorCollectionIndices {
 
 //-----------------------------------------------------------------------------
 
-class KColorCells::KColorCellsPrivate
+class Q_DECL_HIDDEN KColorCells::KColorCellsPrivate
 {
 public:
     KColorCellsPrivate(KColorCells *q): q(q)
@@ -475,7 +475,7 @@ void KColorCells::mouseDoubleClickEvent(QMouseEvent * /*e*/)
 
 //-----------------------------------------------------------------------------
 
-class KColorPatch::KColorPatchPrivate
+class Q_DECL_HIDDEN KColorPatch::KColorPatchPrivate
 {
 public:
     KColorPatchPrivate(KColorPatch *q): q(q) {}
@@ -913,7 +913,7 @@ KColorTable::addToRecentColors(const QColor &color)
 
 class KCDPickerFilter;
 
-class KColorDialog::KColorDialogPrivate
+class Q_DECL_HIDDEN KColorDialog::KColorDialogPrivate
 {
 public:
     KColorDialogPrivate(KColorDialog *q): q(q) {}

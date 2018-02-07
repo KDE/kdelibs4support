@@ -52,7 +52,7 @@
 // at the point of getter calls (i.e. delayed translation).
 // -----------------------------------------------------------------------------
 
-class K4AboutPerson::Private
+class Q_DECL_HIDDEN K4AboutPerson::Private
 {
 public:
     KLocalizedString _name;
@@ -144,7 +144,7 @@ K4AboutPerson &K4AboutPerson::operator=(const K4AboutPerson &other)
     return *this;
 }
 
-class K4AboutLicense::Private : public QSharedData
+class Q_DECL_HIDDEN K4AboutLicense::Private : public QSharedData
 {
 public:
     Private(enum K4AboutData::LicenseKey licenseType, const K4AboutData *aboutData);
@@ -382,7 +382,7 @@ K4AboutLicense K4AboutLicense::byKeyword(const QString &rawKeyword)
     return K4AboutLicense(license, nullptr);
 }
 
-class K4AboutData::Private
+class Q_DECL_HIDDEN K4AboutData::Private
 {
 public:
     Private()

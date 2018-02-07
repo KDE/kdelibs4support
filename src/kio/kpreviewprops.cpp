@@ -26,7 +26,7 @@
 #include <kfilemetapreview_p.h>
 #include <klocalizedstring.h>
 
-class KPreviewPropsPlugin::KPreviewPropsPluginPrivate
+class Q_DECL_HIDDEN KPreviewPropsPlugin::KPreviewPropsPluginPrivate
 {
 public:
     KPreviewPropsPluginPrivate()  {}

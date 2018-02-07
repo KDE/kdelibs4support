@@ -29,7 +29,7 @@
 #include <ksystemtimezone.h>
 #include <ktimezone.h>
 
-class K4TimeZoneWidget::Private
+class Q_DECL_HIDDEN K4TimeZoneWidget::Private
 {
 public:
     Private() : itemsCheckable(false), singleSelection(true) {}

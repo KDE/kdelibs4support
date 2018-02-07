@@ -26,7 +26,7 @@
  to detect if the lock file is opened by another process.
 */
 
-class KLockFile::Private
+class Q_DECL_HIDDEN KLockFile::Private
 {
 public:
     Private(const QString &f, const QString &componentName)

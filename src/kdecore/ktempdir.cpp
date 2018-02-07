@@ -62,7 +62,7 @@ Q_CONSTRUCTOR_FUNCTION(kStoreUmask)
 #endif
 
 
-class KTempDir::Private
+class Q_DECL_HIDDEN KTempDir::Private
 {
 public:
     int error;

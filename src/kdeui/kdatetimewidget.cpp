@@ -25,7 +25,7 @@
 
 #include "kdatewidget.h"
 
-class KDateTimeWidget::KDateTimeWidgetPrivate
+class Q_DECL_HIDDEN KDateTimeWidget::KDateTimeWidgetPrivate
 {
 public:
     KDateWidget *dateWidget;

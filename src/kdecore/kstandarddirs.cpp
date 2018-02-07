@@ -83,7 +83,7 @@ static const Qt::CaseSensitivity cs = Qt::CaseInsensitive;
 static const Qt::CaseSensitivity cs = Qt::CaseSensitive;
 #endif
 
-class KStandardDirs::KStandardDirsPrivate
+class Q_DECL_HIDDEN KStandardDirs::KStandardDirsPrivate
 {
 public:
     KStandardDirsPrivate(KStandardDirs *qq)

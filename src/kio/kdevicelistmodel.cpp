@@ -29,7 +29,7 @@
 
 #include <klocalizedstring.h>
 
-class KDeviceListModel::Private
+class Q_DECL_HIDDEN KDeviceListModel::Private
 {
 public:
     Private(KDeviceListModel *self) : q(self), rootItem(new KDeviceListItem()) {}

@@ -41,7 +41,7 @@
 
 static const char KMENU_TITLE[] = "kmenu_title";
 
-class KMenu::KMenuPrivate
+class Q_DECL_HIDDEN KMenu::KMenuPrivate
     : public QObject
 {
 public:

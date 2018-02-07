@@ -50,7 +50,7 @@ static int kStoreUmask()
 
 Q_CONSTRUCTOR_FUNCTION(kStoreUmask)
 
-class KSaveFile::Private
+class Q_DECL_HIDDEN KSaveFile::Private
 {
 public:
     QString realFileName; //The name of the end-result file

@@ -33,7 +33,7 @@
 #include <klocalizedstring.h>
 #include <ktoggleaction.h>
 
-class KFileTreeView::Private
+class Q_DECL_HIDDEN KFileTreeView::Private
 {
 public:
     Private(KFileTreeView *parent)

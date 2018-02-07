@@ -25,7 +25,7 @@
 
 using namespace KDEPrivate;
 
-class KColorValueSelector::Private
+class Q_DECL_HIDDEN KColorValueSelector::Private
 {
 public:
     Private(KColorValueSelector *q): q(q), _hue(0), _sat(0), _colorValue(0), _mode(ChooserClassic) {}

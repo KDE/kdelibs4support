@@ -44,7 +44,7 @@
 #include "kfilemetadataprovider_p.h"
 #endif
 
-class KFileMetaDataWidget::Private
+class Q_DECL_HIDDEN KFileMetaDataWidget::Private
 {
 public:
     struct Row {

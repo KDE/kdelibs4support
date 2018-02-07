@@ -26,7 +26,7 @@
 
 #include <kdebug.h>
 
-class KDiskFreeSpace::Private
+class Q_DECL_HIDDEN KDiskFreeSpace::Private
 {
 public:
     Private(KDiskFreeSpace *parent)

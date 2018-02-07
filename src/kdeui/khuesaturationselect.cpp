@@ -25,7 +25,7 @@
 
 using namespace KDEPrivate;
 
-class KHueSaturationSelector::Private
+class Q_DECL_HIDDEN KHueSaturationSelector::Private
 {
 public:
     Private(KHueSaturationSelector *q): q(q) {}

@@ -219,7 +219,7 @@ qint64 KPCMemoryDevice::writeData(const char *data, qint64 len)
 
 } // namespace
 
-class KPixmapCache::Private
+class Q_DECL_HIDDEN KPixmapCache::Private
 {
 public:
     Private(KPixmapCache *q);

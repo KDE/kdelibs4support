@@ -30,7 +30,7 @@
 #include <kglobalsettings.h>
 #include <qdesktopservices.h>
 
-class KTextBrowser::Private
+class Q_DECL_HIDDEN KTextBrowser::Private
 {
 public:
     Private()

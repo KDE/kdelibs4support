@@ -72,7 +72,7 @@ static QRgb qt_colorref2qrgb(COLORREF col)
 //static QColor *_buttonBackground = 0;
 static KGlobalSettings::GraphicEffects _graphicEffects = KGlobalSettings::NoEffects;
 
-class KGlobalSettings::Private
+class Q_DECL_HIDDEN KGlobalSettings::Private
 {
 public:
     Private(KGlobalSettings *q)

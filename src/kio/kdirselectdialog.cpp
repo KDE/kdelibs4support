@@ -63,7 +63,7 @@
 #undef stat
 #endif
 
-class KDirSelectDialog::Private
+class Q_DECL_HIDDEN KDirSelectDialog::Private
 {
 public:
     Private(bool localOnly, KDirSelectDialog *parent)

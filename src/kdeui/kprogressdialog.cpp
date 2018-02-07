@@ -27,7 +27,7 @@
 #include <kguiitem.h>
 #include <kstandardguiitem.h>
 
-class KProgressDialog::KProgressDialogPrivate
+class Q_DECL_HIDDEN KProgressDialog::KProgressDialogPrivate
 {
 public:
     KProgressDialogPrivate(KProgressDialog *q)

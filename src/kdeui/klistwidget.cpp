@@ -25,7 +25,7 @@
 #include <QKeyEvent>
 #include <QApplication>
 
-class KListWidget::KListWidgetPrivate
+class Q_DECL_HIDDEN KListWidget::KListWidgetPrivate
 {
 public:
     KListWidgetPrivate(KListWidget *q)

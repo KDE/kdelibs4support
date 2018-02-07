@@ -21,7 +21,7 @@
 
 #include <kdebug.h>
 
-class KStringListValidator::Private
+class Q_DECL_HIDDEN KStringListValidator::Private
 {
 public:
     QStringList mStringList;

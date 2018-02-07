@@ -24,7 +24,7 @@
 
 using namespace std;
 
-class PredicateProperties::Private : public QSharedData
+class Q_DECL_HIDDEN PredicateProperties::Private : public QSharedData
 {
 public:
     static const QString nullString;

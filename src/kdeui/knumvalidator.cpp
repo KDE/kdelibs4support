@@ -33,7 +33,7 @@
 ///////////////////////////////////////////////////////////////
 //  Implementation of KIntValidator
 //
-class KIntValidator::KIntValidatorPrivate
+class Q_DECL_HIDDEN KIntValidator::KIntValidatorPrivate
 {
 public:
     KIntValidatorPrivate()
@@ -169,7 +169,7 @@ int KIntValidator::base() const
 //  Implementation of KDoubleValidator
 //
 
-class KDoubleValidator::KDoubleValidatorPrivate
+class Q_DECL_HIDDEN KDoubleValidator::KDoubleValidatorPrivate
 {
 public:
     KDoubleValidatorPrivate(bool accept = true) : acceptLocalizedNumbers(accept) {}

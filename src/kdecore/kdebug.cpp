@@ -918,7 +918,7 @@ int KDebug::registerArea(const QByteArray &areaName, bool enabled)
 
 #ifndef KDE_NO_DEBUG_OUTPUT
 
-class KDebug::Block::Private
+class Q_DECL_HIDDEN KDebug::Block::Private
 {
 public:
     QByteArray m_label;

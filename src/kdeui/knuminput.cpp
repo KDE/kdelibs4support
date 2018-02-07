@@ -234,7 +234,7 @@ void KNumInput::setSteps(int minor, int major)
 
 // ----------------------------------------------------------------------------
 
-class KIntSpinBox::KIntSpinBoxPrivate
+class Q_DECL_HIDDEN KIntSpinBox::KIntSpinBoxPrivate
 {
 public:
     KIntSpinBoxPrivate(KIntSpinBox *q, int val_base = 10): q(q), val_base(val_base)
@@ -322,7 +322,7 @@ void KIntSpinBox::setSuffix(const KLocalizedString &suffix)
 
 // ----------------------------------------------------------------------------
 
-class KIntNumInput::KIntNumInputPrivate
+class Q_DECL_HIDDEN KIntNumInput::KIntNumInputPrivate
 {
 public:
     KIntNumInput *q;
@@ -682,7 +682,7 @@ void KIntNumInput::setLabel(const QString &label, Qt::Alignment a)
 
 // ----------------------------------------------------------------------------
 
-class KDoubleNumInput::KDoubleNumInputPrivate
+class Q_DECL_HIDDEN KDoubleNumInput::KDoubleNumInputPrivate
 {
 public:
     KDoubleNumInputPrivate(double r)

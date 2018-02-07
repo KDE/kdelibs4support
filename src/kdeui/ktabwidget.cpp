@@ -40,7 +40,7 @@
 
 #include <kconfiggroup.h>
 
-class KTabWidget::Private
+class Q_DECL_HIDDEN KTabWidget::Private
 {
 public:
     enum {

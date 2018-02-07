@@ -26,7 +26,7 @@
 #include <QAbstractButton>
 #include <QSignalMapper>
 
-class KButtonGroup::Private
+class Q_DECL_HIDDEN KButtonGroup::Private
 {
 public:
     Private(KButtonGroup *q) :

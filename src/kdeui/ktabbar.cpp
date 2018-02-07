@@ -26,7 +26,7 @@
 #include <QCursor>
 #include <QMouseEvent>
 
-class KTabBar::Private
+class Q_DECL_HIDDEN KTabBar::Private
 {
 public:
     Private()

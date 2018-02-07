@@ -41,7 +41,7 @@
 #include <QListWidget>
 #include <QVBoxLayout>
 
-class KFileMetaDataConfigurationWidget::Private
+class Q_DECL_HIDDEN KFileMetaDataConfigurationWidget::Private
 {
 public:
     Private(KFileMetaDataConfigurationWidget *parent);

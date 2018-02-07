@@ -32,7 +32,7 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 
-class KFileMetaPropsPlugin::KFileMetaPropsPluginPrivate
+class Q_DECL_HIDDEN KFileMetaPropsPlugin::KFileMetaPropsPluginPrivate
 {
 public:
     KFileMetaPropsPluginPrivate();

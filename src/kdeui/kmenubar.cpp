@@ -64,7 +64,7 @@
 
 static int block_resize = 0;
 
-class KMenuBar::KMenuBarPrivate
+class Q_DECL_HIDDEN KMenuBar::KMenuBarPrivate
 {
 public:
     KMenuBarPrivate()

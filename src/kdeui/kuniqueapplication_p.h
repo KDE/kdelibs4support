@@ -23,7 +23,7 @@
 #include <QDBusAbstractAdaptor>
 #include <QDBusConnection>
 
-class KUniqueApplication::Private
+class Q_DECL_HIDDEN KUniqueApplication::Private
 {
 public:
     Private(KUniqueApplication *q)

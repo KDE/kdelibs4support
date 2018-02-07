@@ -70,7 +70,7 @@
 
 // Conclusion: we use O_EXCL by default, and the link() trick over NFS.
 
-class KLockFile::Private
+class Q_DECL_HIDDEN KLockFile::Private
 {
 public:
     Private(const QString &componentName)

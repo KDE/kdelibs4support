@@ -33,7 +33,7 @@
 
 #include "kauthobjectdecorator.h"
 
-class KPushButton::KPushButtonPrivate
+class Q_DECL_HIDDEN KPushButton::KPushButtonPrivate
 {
 public:
     KPushButtonPrivate(KPushButton *_parent) : parent(_parent), m_dragEnabled(false), decorator(nullptr)

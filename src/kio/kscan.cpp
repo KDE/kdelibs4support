@@ -25,7 +25,7 @@
 #include <klocalizedstring.h>
 #include <kservicetypetrader.h>
 
-class KScanDialog::KScanDialogPrivate
+class Q_DECL_HIDDEN KScanDialog::KScanDialogPrivate
 {
 public:
     KScanDialogPrivate()
@@ -73,7 +73,7 @@ bool KScanDialog::setup()
 
 ///////////////////////////////////////////////////////////////////
 
-class KOCRDialog::KOCRDialogPrivate
+class Q_DECL_HIDDEN KOCRDialog::KOCRDialogPrivate
 {
 public:
     KOCRDialogPrivate()

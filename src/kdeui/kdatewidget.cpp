@@ -40,7 +40,7 @@ public:
     }
 };
 
-class KDateWidget::KDateWidgetPrivate
+class Q_DECL_HIDDEN KDateWidget::KDateWidgetPrivate
 {
 public:
     KDateWidgetSpinBox *m_day;

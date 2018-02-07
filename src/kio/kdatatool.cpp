@@ -33,7 +33,7 @@
  * KDataToolInfo
  *
  *************************************************/
-class KDataToolInfo::KDataToolInfoPrivate
+class Q_DECL_HIDDEN KDataToolInfo::KDataToolInfoPrivate
 {
 public:
     KDataToolInfoPrivate()
@@ -212,7 +212,7 @@ bool KDataToolInfo::isValid() const
  * KDataToolAction
  *
  *************************************************/
-class KDataToolAction::KDataToolActionPrivate
+class Q_DECL_HIDDEN KDataToolAction::KDataToolActionPrivate
 {
 public:
     KDataToolActionPrivate() {}
@@ -281,7 +281,7 @@ QList<QAction *> KDataToolAction::dataToolActionList(const QList<KDataToolInfo> 
  * KDataTool
  *
  *************************************************/
-class KDataTool::KDataToolPrivate
+class Q_DECL_HIDDEN KDataTool::KDataToolPrivate
 {
 public:
     KDataToolPrivate() {}
