@@ -274,8 +274,12 @@ void KMimeTypeTest::testFindByPathUsingFileName()
     QFETCH(QString, expectedMimeType);
     KMimeType::Ptr mime = KMimeType::findByPath(fileName);
     QVERIFY(mime);
-    QCOMPARE(mime->name(), expectedMimeType);
-
+    if (expectedMimeType == QLatin1String("application/x-executable")) {
+        // see bf87e1cfbd in qtbase
+        QVERIFY(mime->name() == expectedMimeType || mime->name() == "application/x-sharedlib");
+    } else {
+        QCOMPARE(mime->name(), expectedMimeType);
+    }
 }
 
 void KMimeTypeTest::testAdditionalGlobs_data()
