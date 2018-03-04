@@ -329,7 +329,7 @@ void KStandarddirsTest::testFindExe()
     const QString fromKStdDirs = KStandardDirs::realFilePath(cmd);
     QCOMPARE(fromKStdDirs, cmd);
     const QString fromQFileInfo = QFileInfo(cmd).canonicalFilePath();
-    QVERIFY(fromQFileInfo.isEmpty()); // !! different result, since this doesn't exist as a file
+    QVERIFY2(fromQFileInfo.isEmpty(), qPrintable(cmd)); // !! different result, since this doesn't exist as a file
 
 #ifdef Q_OS_UNIX
     // findExe with relative path
