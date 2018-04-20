@@ -1,7 +1,7 @@
 /*  This file is part of kdebase/workspace/solid
     Copyright (C) 2005,2007 Will Stephenson <wstephenson@kde.org>
 
-    Copyright (c) 2010 Klar‰lvdalens Datakonsult AB,
+    Copyright (c) 2010 Klar√§lvdalens Datakonsult AB,
                        a KDAB Group company <info@kdab.com>
     Author: Kevin Ottens <kevin.ottens@kdab.com>
 
