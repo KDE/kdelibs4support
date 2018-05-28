@@ -116,12 +116,12 @@ protected:
      *
      * @returns the newly created part.
      */
-    Part *createPartObject(QWidget *parentWidget = nullptr, QObject *parent = nullptr, const char *classname = "KParts::Part", const QStringList &args = QStringList()) Q_DECL_OVERRIDE = 0;
+    Part *createPartObject(QWidget *parentWidget = nullptr, QObject *parent = nullptr, const char *classname = "KParts::Part", const QStringList &args = QStringList()) override = 0;
 
     /**
      * Reimplemented from KPluginFactory. Calls createPart()
      */
-    QObject *createObject(QObject *parent = nullptr, const char *classname = "QObject", const QStringList &args = QStringList()) Q_DECL_OVERRIDE;
+    QObject *createObject(QObject *parent = nullptr, const char *classname = "QObject", const QStringList &args = QStringList()) override;
 
 };
 

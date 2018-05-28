@@ -479,12 +479,12 @@ public:
     /**
      * @reimp
      */
-    void setSocketDevice(KSocketDevice *device) Q_DECL_OVERRIDE;
+    void setSocketDevice(KSocketDevice *device) override;
 
     /**
      * Reimplemented from QIODevice.
      */
-    bool open(OpenMode mode) Q_DECL_OVERRIDE;
+    bool open(OpenMode mode) override;
 
     /**
      * Binds this socket to the given address.
@@ -539,31 +539,31 @@ public:
     /**
      * Sockets are sequential
      */
-    bool isSequential() const Q_DECL_OVERRIDE;
+    bool isSequential() const override;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return 0.
      */
-    qint64 size() const Q_DECL_OVERRIDE;
+    qint64 size() const override;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return 0.
      */
-    qint64 pos() const Q_DECL_OVERRIDE;
+    qint64 pos() const override;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return false.
      */
-    bool seek(qint64) Q_DECL_OVERRIDE;
+    bool seek(qint64) override;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
      * This will always return true.
      */
-    bool atEnd() const Q_DECL_OVERRIDE;
+    bool atEnd() const override;
 
     /**
      * Reads data from the socket.
@@ -697,7 +697,7 @@ protected:
      * Reimplemented from QIODevice. See QIODevice::readData for
      * more information.
      */
-    qint64 readData(char *data, qint64 len) Q_DECL_OVERRIDE;
+    qint64 readData(char *data, qint64 len) override;
 
     /** @overload
      * Receives data and the source address.
@@ -732,7 +732,7 @@ protected:
      * Reimplemented from QIODevice. See QIODevice::writeData for
      * more information.
      */
-    qint64 writeData(const char *data, qint64 len) Q_DECL_OVERRIDE;
+    qint64 writeData(const char *data, qint64 len) override;
 
     /** @overload
      * Writes the given data to the destination address.

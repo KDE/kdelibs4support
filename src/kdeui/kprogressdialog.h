@@ -194,10 +194,10 @@ public:
      */
     int minimumDuration() const;
 
-    void reject() Q_DECL_OVERRIDE;
+    void reject() override;
 
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
 
 private:
     Q_PRIVATE_SLOT(d, void slotAutoShow())

@@ -75,7 +75,7 @@ public:
     /**
      * @reimplemented
      */
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
 
 public Q_SLOTS:
     /**
@@ -116,7 +116,7 @@ Q_SIGNALS:
 
 protected:
     using QTreeView::currentChanged;
-    void contextMenuEvent(QContextMenuEvent *) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *) override;
 
 private:
     class Private;

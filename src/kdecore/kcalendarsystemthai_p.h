@@ -41,21 +41,21 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemThai(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemThai();
 
-    QString calendarType() const Q_DECL_OVERRIDE;
-    KLocale::CalendarSystem calendarSystem() const Q_DECL_OVERRIDE;
+    QString calendarType() const override;
+    KLocale::CalendarSystem calendarSystem() const override;
 
-    QDate epoch() const Q_DECL_OVERRIDE;
-    QDate earliestValidDate() const Q_DECL_OVERRIDE;
-    QDate latestValidDate() const Q_DECL_OVERRIDE;
+    QDate epoch() const override;
+    QDate earliestValidDate() const override;
+    QDate latestValidDate() const override;
 
-    bool isLunar() const Q_DECL_OVERRIDE;
-    bool isLunisolar() const Q_DECL_OVERRIDE;
-    bool isSolar() const Q_DECL_OVERRIDE;
-    bool isProleptic() const Q_DECL_OVERRIDE;
+    bool isLunar() const override;
+    bool isLunisolar() const override;
+    bool isSolar() const override;
+    bool isProleptic() const override;
 
 protected:
-    bool julianDayToDate(qint64 jd, int &year, int &month, int &day) const Q_DECL_OVERRIDE;
-    bool dateToJulianDay(int year, int month, int day, qint64 &jd) const Q_DECL_OVERRIDE;
+    bool julianDayToDate(qint64 jd, int &year, int &month, int &day) const override;
+    bool dateToJulianDay(int year, int month, int day, qint64 &jd) const override;
     KCalendarSystemThai(KCalendarSystemThaiPrivate &dd, const KSharedConfig::Ptr config, const KLocale *locale);
 
 private:

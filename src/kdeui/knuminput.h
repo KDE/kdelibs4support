@@ -111,7 +111,7 @@ public:
      *
      * @return the preferred size necessary to show the control
      */
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
 
 protected:
     /**
@@ -324,7 +324,7 @@ public:
      */
     void setSpecialValueText(const QString &text);
 
-    void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop) Q_DECL_OVERRIDE;
+    void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop) override;
 
     /**
      * This method returns the minimum size necessary to display the
@@ -333,7 +333,7 @@ public:
      *
      * @return the minimum size necessary to show the control
      */
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    QSize minimumSizeHint() const override;
 
 public Q_SLOTS:
     /**
@@ -409,8 +409,8 @@ protected:
      */
     QSpinBox *spinBox() const;
 
-    void doLayout() Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    void doLayout() override;
+    void resizeEvent(QResizeEvent *) override;
 
 private:
     void initWidget(int value, int _base);
@@ -620,8 +620,8 @@ public:
      */
     void setSpecialValueText(const QString &text);
 
-    void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop) Q_DECL_OVERRIDE;
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    void setLabel(const QString &label, Qt::Alignment a = Qt::AlignLeft | Qt::AlignTop) override;
+    QSize minimumSizeHint() const override;
 
     /**
      * @return the value of the exponent use to map the slider to the
@@ -689,8 +689,8 @@ private Q_SLOTS:
     void slotEmitRelativeValueChanged(double);
 
 protected:
-    void doLayout() Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    void doLayout() override;
+    void resizeEvent(QResizeEvent *) override;
 
     friend class KDoubleLine;
 private:
@@ -792,13 +792,13 @@ protected:
      *  Overloaded the method in QSpinBox
      *  to make use of the base given in the constructor.
      */
-    QString textFromValue(int) const Q_DECL_OVERRIDE;
+    QString textFromValue(int) const override;
 
     /**
      *  Overloaded the method in QSpinBox
      *  to make use of the base given in the constructor.
      */
-    int valueFromText(const QString &text) const Q_DECL_OVERRIDE;
+    int valueFromText(const QString &text) const override;
 
 private:
     class KIntSpinBoxPrivate;

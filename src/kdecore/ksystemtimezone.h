@@ -331,14 +331,14 @@ public:
      *
      * @return new copy
      */
-    KTimeZoneBackend *clone() const Q_DECL_OVERRIDE;
+    KTimeZoneBackend *clone() const override;
 
     /**
      * Returns the class name of the data represented by this instance.
      *
      * @return "KSystemTimeZone"
      */
-    QByteArray type() const Q_DECL_OVERRIDE;
+    QByteArray type() const override;
 
     /**
      * Implements KSystemTimeZone::offsetAtZoneTime().
@@ -360,7 +360,7 @@ public:
      * @return offset in seconds. If @p zoneDateTime occurs twice, it is the offset at the
      *         first occurrence which is returned.
      */
-    int offsetAtZoneTime(const KTimeZone *caller, const QDateTime &zoneDateTime, int *secondOffset) const Q_DECL_OVERRIDE;
+    int offsetAtZoneTime(const KTimeZone *caller, const QDateTime &zoneDateTime, int *secondOffset) const override;
 
     /**
      * Implements KSystemTimeZone::offsetAtUtc().
@@ -378,7 +378,7 @@ public:
      *                    An error occurs if @p utcDateTime.timeSpec() is not Qt::UTC.
      * @return offset in seconds, or 0 if error
      */
-    int offsetAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const Q_DECL_OVERRIDE;
+    int offsetAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const override;
 
     /**
      * Implements KSystemTimeZone::offset().
@@ -393,7 +393,7 @@ public:
      *          since 00:00:00 UTC 1st January 1970 (as returned by time(2))
      * @return offset in seconds, or 0 if error
      */
-    int offset(const KTimeZone *caller, time_t t) const Q_DECL_OVERRIDE;
+    int offset(const KTimeZone *caller, time_t t) const override;
 
     /**
      * Implements KSystemTimeZone::isDstAtUtc().
@@ -408,7 +408,7 @@ public:
      *                    @p utcDateTime.timeSpec() is not Qt::UTC.
      * @return @c true if daylight savings time is in operation, @c false otherwise
      */
-    bool isDstAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const Q_DECL_OVERRIDE;
+    bool isDstAtUtc(const KTimeZone *caller, const QDateTime &utcDateTime) const override;
 
     /**
      * Implements KSystemTimeZone::isDst().
@@ -420,7 +420,7 @@ public:
      *          (as returned by time(2))
      * @return @c true if daylight savings time is in operation, @c false otherwise
      */
-    bool isDst(const KTimeZone *caller, time_t t) const Q_DECL_OVERRIDE;
+    bool isDst(const KTimeZone *caller, time_t t) const override;
 
 private:
     KSystemTimeZonePrivate *d;   // non-const
@@ -454,7 +454,7 @@ public:
      *         The caller is responsible for deleting the KTimeZoneData instance.
      *         Null is returned on error.
      */
-    KTimeZoneData *parse(const KTimeZone &zone) const Q_DECL_OVERRIDE;
+    KTimeZoneData *parse(const KTimeZone &zone) const override;
 
     /**
      * Use in conjunction with endParseBlock() to improve efficiency when calling parse()
@@ -507,15 +507,15 @@ public:
      *
      * @return copy of this instance. This is a KSystemTimeZoneData pointer.
      */
-    KTimeZoneData *clone() const Q_DECL_OVERRIDE;
+    KTimeZoneData *clone() const override;
 
     /**
      * Returns the complete list of time zone abbreviations.
      *
      * @return the list of abbreviations
      */
-    QList<QByteArray> abbreviations() const Q_DECL_OVERRIDE;
-    QByteArray abbreviation(const QDateTime &utcDateTime) const Q_DECL_OVERRIDE;
+    QList<QByteArray> abbreviations() const override;
+    QByteArray abbreviation(const QDateTime &utcDateTime) const override;
 
     /**
      * Returns the complete list of UTC offsets for the time zone. For system
@@ -524,7 +524,7 @@ public:
      *
      * @return empty list
      */
-    QList<int> utcOffsets() const Q_DECL_OVERRIDE;
+    QList<int> utcOffsets() const override;
 
 private:
     KSystemTimeZoneDataPrivate *const d;

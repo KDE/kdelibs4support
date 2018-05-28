@@ -693,7 +693,7 @@ public:
      *
      * Do not post events to this object.
      */
-    bool event(QEvent *) Q_DECL_OVERRIDE;
+    bool event(QEvent *) override;
 
 Q_SIGNALS:
     // signals

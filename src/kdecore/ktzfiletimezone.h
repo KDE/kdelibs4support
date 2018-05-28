@@ -99,14 +99,14 @@ public:
      *
      * @return new copy
      */
-    KTimeZoneBackend *clone() const Q_DECL_OVERRIDE;
+    KTimeZoneBackend *clone() const override;
 
     /**
      * Returns the class name of the data represented by this instance.
      *
      * @return "KTzfileTimeZone"
      */
-    QByteArray type() const Q_DECL_OVERRIDE;
+    QByteArray type() const override;
 
     /**
      * Implements KTzfileTimeZone::hasTransitions().
@@ -116,7 +116,7 @@ public:
      * @param caller calling KTzfileTimeZone object
      * @return @c true
      */
-    bool hasTransitions(const KTimeZone *caller) const Q_DECL_OVERRIDE;
+    bool hasTransitions(const KTimeZone *caller) const override;
 
 private:
     KTzfileTimeZonePrivate *d;   // non-const
@@ -164,7 +164,7 @@ public:
      *         The caller is responsible for deleting the KTimeZoneData instance.
      *         Null is returned on error.
      */
-    KTimeZoneData *parse(const KTimeZone &zone) const Q_DECL_OVERRIDE;
+    KTimeZoneData *parse(const KTimeZone &zone) const override;
 
 private:
     KTzfileTimeZoneSourcePrivate *const d;
@@ -198,14 +198,14 @@ public:
      *
      * @return copy of this instance. This is a KTzfileTimeZoneData pointer.
      */
-    KTimeZoneData *clone() const Q_DECL_OVERRIDE;
+    KTimeZoneData *clone() const override;
 
     /**
      * Return whether daylight saving transitions are available for the time zone.
      *
      * @return @c true
      */
-    bool hasTransitions() const Q_DECL_OVERRIDE;
+    bool hasTransitions() const override;
 
 private:
     // Enable this if you add KDELIBS4SUPPORT_EXPORT to this class

@@ -49,7 +49,7 @@ public:
     /**
      * @copydoc KMessageHandler::message
      */
-    void message(KMessage::MessageType messageType, const QString &text, const QString &caption) Q_DECL_OVERRIDE;
+    void message(KMessage::MessageType messageType, const QString &text, const QString &caption) override;
 
 private:
     KMessageBoxMessageHandlerPrivate *const d;

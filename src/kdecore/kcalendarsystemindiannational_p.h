@@ -44,27 +44,27 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIndianNational(const KSharedConfig::Ptr config, const KLocale *locale);
     virtual ~KCalendarSystemIndianNational();
 
-    QString calendarType() const Q_DECL_OVERRIDE;
-    KLocale::CalendarSystem calendarSystem() const Q_DECL_OVERRIDE;
+    QString calendarType() const override;
+    KLocale::CalendarSystem calendarSystem() const override;
 
-    QDate epoch() const Q_DECL_OVERRIDE;
-    QDate earliestValidDate() const Q_DECL_OVERRIDE;
-    QDate latestValidDate() const Q_DECL_OVERRIDE;
+    QDate epoch() const override;
+    QDate earliestValidDate() const override;
+    QDate latestValidDate() const override;
 
-    QString monthName(int month, int year, MonthNameFormat format = LongName) const Q_DECL_OVERRIDE;
-    QString monthName(const QDate &date, MonthNameFormat format = LongName) const Q_DECL_OVERRIDE;
+    QString monthName(int month, int year, MonthNameFormat format = LongName) const override;
+    QString monthName(const QDate &date, MonthNameFormat format = LongName) const override;
 
-    QString weekDayName(int weekDay, WeekDayNameFormat format = LongDayName) const Q_DECL_OVERRIDE;
-    QString weekDayName(const QDate &date, WeekDayNameFormat format = LongDayName) const Q_DECL_OVERRIDE;
+    QString weekDayName(int weekDay, WeekDayNameFormat format = LongDayName) const override;
+    QString weekDayName(const QDate &date, WeekDayNameFormat format = LongDayName) const override;
 
-    bool isLunar() const Q_DECL_OVERRIDE;
-    bool isLunisolar() const Q_DECL_OVERRIDE;
-    bool isSolar() const Q_DECL_OVERRIDE;
-    bool isProleptic() const Q_DECL_OVERRIDE;
+    bool isLunar() const override;
+    bool isLunisolar() const override;
+    bool isSolar() const override;
+    bool isProleptic() const override;
 
 protected:
-    bool julianDayToDate(qint64 jd, int &year, int &month, int &day) const Q_DECL_OVERRIDE;
-    bool dateToJulianDay(int year, int month, int day, qint64 &jd) const Q_DECL_OVERRIDE;
+    bool julianDayToDate(qint64 jd, int &year, int &month, int &day) const override;
+    bool dateToJulianDay(int year, int month, int day, qint64 &jd) const override;
     KCalendarSystemIndianNational(KCalendarSystemIndianNationalPrivate &dd, const KSharedConfig::Ptr config, const KLocale *locale);
 
 private:

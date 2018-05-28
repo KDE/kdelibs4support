@@ -1492,48 +1492,48 @@ public:
      * the implementation from QCommonStyle.
      */
 //@{
-    void drawControl(ControlElement   elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const Q_DECL_OVERRIDE;
-    void drawPrimitive(PrimitiveElement elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const Q_DECL_OVERRIDE;
-    int  pixelMetric(PixelMetric    metric, const QStyleOption *opt = nullptr, const QWidget *w = nullptr) const Q_DECL_OVERRIDE;
-    QRect subElementRect(SubElement    subRect, const QStyleOption *opt, const QWidget *w) const Q_DECL_OVERRIDE;
+    void drawControl(ControlElement   elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const override;
+    void drawPrimitive(PrimitiveElement elem, const QStyleOption *opt, QPainter *p, const QWidget *w) const override;
+    int  pixelMetric(PixelMetric    metric, const QStyleOption *opt = nullptr, const QWidget *w = nullptr) const override;
+    QRect subElementRect(SubElement    subRect, const QStyleOption *opt, const QWidget *w) const override;
     QSize sizeFromContents(ContentsType     type, const QStyleOption *opt,
-                           const QSize &contentsSize, const QWidget *w) const Q_DECL_OVERRIDE;
+                           const QSize &contentsSize, const QWidget *w) const override;
     int   styleHint(StyleHint        hint, const QStyleOption *opt, const QWidget *w,
-                    QStyleHintReturn *returnData) const Q_DECL_OVERRIDE;
+                    QStyleHintReturn *returnData) const override;
     QRect subControlRect(ComplexControl control, const QStyleOptionComplex *opt,
-                         SubControl subControl, const QWidget *w) const Q_DECL_OVERRIDE;
+                         SubControl subControl, const QWidget *w) const override;
     SubControl hitTestComplexControl(ComplexControl cc, const QStyleOptionComplex *opt,
-                                     const QPoint &pt, const QWidget *w) const Q_DECL_OVERRIDE;
+                                     const QPoint &pt, const QWidget *w) const override;
     void       drawComplexControl(ComplexControl cc, const QStyleOptionComplex *opt,
-                                  QPainter *p,      const QWidget *w) const Q_DECL_OVERRIDE;
+                                  QPainter *p,      const QWidget *w) const override;
 
-    void polish(QWidget *) Q_DECL_OVERRIDE;
-    void unpolish(QWidget *) Q_DECL_OVERRIDE;
-    void polish(QApplication *) Q_DECL_OVERRIDE;
-    void unpolish(QApplication *) Q_DECL_OVERRIDE;
-    void polish(QPalette &) Q_DECL_OVERRIDE;
+    void polish(QWidget *) override;
+    void unpolish(QWidget *) override;
+    void polish(QApplication *) override;
+    void unpolish(QApplication *) override;
+    void polish(QPalette &) override;
     QRect itemTextRect(const QFontMetrics &fm, const QRect &r,
                        int flags, bool enabled,
-                       const QString &text) const Q_DECL_OVERRIDE;
-    QRect itemPixmapRect(const QRect &r, int flags, const QPixmap &pixmap) const Q_DECL_OVERRIDE;
+                       const QString &text) const override;
+    QRect itemPixmapRect(const QRect &r, int flags, const QPixmap &pixmap) const override;
     void drawItemText(QPainter *painter, const QRect &rect,
                       int flags, const QPalette &pal, bool enabled,
-                      const QString &text, QPalette::ColorRole textRole = QPalette::NoRole) const Q_DECL_OVERRIDE;
+                      const QString &text, QPalette::ColorRole textRole = QPalette::NoRole) const override;
     void drawItemPixmap(QPainter *painter, const QRect &rect,
-                        int alignment, const QPixmap &pixmap) const Q_DECL_OVERRIDE;
-    QPalette standardPalette() const Q_DECL_OVERRIDE;
+                        int alignment, const QPixmap &pixmap) const override;
+    QPalette standardPalette() const override;
     QPixmap standardPixmap(StandardPixmap standardPixmap, const QStyleOption *opt,
-                           const QWidget *widget = nullptr) const Q_DECL_OVERRIDE; //### kde5 remove
+                           const QWidget *widget = nullptr) const override; //### kde5 remove
     QPixmap generatedIconPixmap(QIcon::Mode iconMode, const QPixmap &pixmap,
-                                const QStyleOption *opt) const Q_DECL_OVERRIDE;
-    bool eventFilter(QObject *, QEvent *) Q_DECL_OVERRIDE;
+                                const QStyleOption *opt) const override;
+    bool eventFilter(QObject *, QEvent *) override;
 
     int layoutSpacing(QSizePolicy::ControlType control1,
                       QSizePolicy::ControlType control2, Qt::Orientation orientation,
-                      const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
+                      const QStyleOption *option = nullptr, const QWidget *widget = nullptr) const override;
 
     QIcon standardIcon(StandardPixmap standardIcon, const QStyleOption *option = nullptr,
-                       const QWidget *widget = nullptr) const Q_DECL_OVERRIDE;
+                       const QWidget *widget = nullptr) const override;
 //@}
 private:
     K4StylePrivate *const d;
@@ -1564,7 +1564,7 @@ class K4StyleFactory: public QStylePlugin
         return l;
     }
 
-    QStyle *create(const QString &id) Q_DECL_OVERRIDE
+    QStyle *create(const QString &id) override
     {
         QStringList names = keys();
         //check whether included in the keys

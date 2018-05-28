@@ -141,14 +141,14 @@ public:
     /**
      * This implementation sets the options on the socket.
      */
-    bool setSocketOptions(int opts) Q_DECL_OVERRIDE;
+    bool setSocketOptions(int opts) override;
 
     /**
      * Closes the socket. Reimplemented from QIODevice.
      *
      * Use this function to close the socket this object is holding open.
      */
-    void close() Q_DECL_OVERRIDE;
+    void close() override;
 
     /**
      * This call is not supported on sockets. Reimplemented from QIODevice.
@@ -170,34 +170,34 @@ public:
     /**
      * Binds this socket to the given address.
      */
-    bool bind(const KResolverEntry &address) Q_DECL_OVERRIDE;
+    bool bind(const KResolverEntry &address) override;
 
     /**
      * Puts this socket into listening mode.
      */
-    bool listen(int backlog = 5) Q_DECL_OVERRIDE; // 5 is arbitrary
+    bool listen(int backlog = 5) override; // 5 is arbitrary
 
     /**
      * Connect to a remote host.
      */
     virtual bool connect(const KResolverEntry &address,
-                         OpenMode mode = ReadWrite) Q_DECL_OVERRIDE;
+                         OpenMode mode = ReadWrite) override;
 
     /**
      * Accepts a new incoming connection.
      * Note: this function returns a socket of type KSocketDevice.
      */
-    KSocketDevice *accept() Q_DECL_OVERRIDE;
+    KSocketDevice *accept() override;
 
     /**
      * Disconnects this socket.
      */
-    bool disconnect() Q_DECL_OVERRIDE;
+    bool disconnect() override;
 
     /**
      * Returns the number of bytes available for reading without blocking.
      */
-    qint64 bytesAvailable() const Q_DECL_OVERRIDE;
+    qint64 bytesAvailable() const override;
 
     /**
      * Waits up to @p msecs for more data to be available on this socket.
@@ -205,18 +205,18 @@ public:
      * This function is a wrapper against poll(). This function will wait
      * for any read events.
      */
-    qint64 waitForMore(int msecs, bool *timeout = nullptr) Q_DECL_OVERRIDE;
+    qint64 waitForMore(int msecs, bool *timeout = nullptr) override;
 
     /**
      * Returns this socket's local address.
      */
-    KSocketAddress localAddress() const Q_DECL_OVERRIDE;
+    KSocketAddress localAddress() const override;
 
     /**
      * Returns this socket's peer address. If this implementation does proxying
      * of some sort, this is the real external address, not the proxy's address.
      */
-    KSocketAddress peerAddress() const Q_DECL_OVERRIDE;
+    KSocketAddress peerAddress() const override;
 
     /**
      * Returns this socket's externally visible local address.
@@ -232,7 +232,7 @@ public:
      * @note This function may return an empty KSocketAddress. In that case, the
      *       externally visible address could/can not be determined.
      */
-    KSocketAddress externalAddress() const Q_DECL_OVERRIDE;
+    KSocketAddress externalAddress() const override;
 
     /**
      * Returns a socket notifier for input on this socket.
@@ -262,18 +262,18 @@ public:
     /**
      * Reads data and the source address from this socket.
      */
-    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from = nullptr) Q_DECL_OVERRIDE;
+    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from = nullptr) override;
 
     /**
      * Peeks the data in the socket and the source address.
      */
-    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from = nullptr) Q_DECL_OVERRIDE;
+    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from = nullptr) override;
 
     /**
      * Writes the given data to the given destination address.
      */
     virtual qint64 writeData(const char *data, qint64 len,
-                             const KSocketAddress *to = nullptr) Q_DECL_OVERRIDE;
+                             const KSocketAddress *to = nullptr) override;
 
     /**
      * Executes a poll in the socket, via select(2) or poll(2).
@@ -408,7 +408,7 @@ public:
         @param parent Parent socket for this implementation
         @todo Who owns the parent afterwards?
     */
-    KSocketDevice *create(KSocketBase *parent) const Q_DECL_OVERRIDE
+    KSocketDevice *create(KSocketBase *parent) const override
     {
         return new Impl(parent);
     }

@@ -132,7 +132,7 @@ public:
      * QString if it has not yet been set.
      * @returns The name of the target file.
      */
-    QString fileName() const Q_DECL_OVERRIDE;
+    QString fileName() const override;
 
     /**
      * @brief Returns the last error that occurred.
@@ -160,7 +160,7 @@ public:
      *
      * @return true if successful, or false if an error has occurred.
      */
-    bool open(OpenMode flags = QIODevice::ReadWrite) Q_DECL_OVERRIDE;
+    bool open(OpenMode flags = QIODevice::ReadWrite) override;
 
     /**
      * @brief Discard changes without affecting the target file.

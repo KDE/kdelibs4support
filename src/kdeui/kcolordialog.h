@@ -83,17 +83,17 @@ Q_SIGNALS:
 protected:
     // the three methods below are used to ensure equal column widths and row heights
     // for all cells and to update the widths/heights when the widget is resized
-    int sizeHintForColumn(int column) const Q_DECL_OVERRIDE;
-    int sizeHintForRow(int column) const Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    int sizeHintForColumn(int column) const override;
+    int sizeHintForRow(int column) const override;
+    void resizeEvent(QResizeEvent *event) override;
 
-    void mouseReleaseEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *) Q_DECL_OVERRIDE;
-    void dragMoveEvent(QDragMoveEvent *) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *) Q_DECL_OVERRIDE;
-    void mouseDoubleClickEvent(QMouseEvent *) Q_DECL_OVERRIDE;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void mousePressEvent(QMouseEvent *) override;
+    void mouseMoveEvent(QMouseEvent *) override;
+    void dragEnterEvent(QDragEnterEvent *) override;
+    void dragMoveEvent(QDragMoveEvent *) override;
+    void dropEvent(QDropEvent *) override;
+    void mouseDoubleClickEvent(QMouseEvent *) override;
 
     int positionToCell(const QPoint &pos, bool ignoreBorders = false) const;
 
@@ -143,10 +143,10 @@ Q_SIGNALS:
     void colorChanged(const QColor &);
 
 protected:
-    void paintEvent(QPaintEvent *pe) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *pe) override;
+    void mouseMoveEvent(QMouseEvent *) override;
+    void dragEnterEvent(QDragEnterEvent *) override;
+    void dropEvent(QDropEvent *) override;
 
 private:
     class KColorPatchPrivate;
@@ -332,10 +332,10 @@ private:
     void readSettings();
 
 protected:
-    void mouseMoveEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void keyPressEvent(QKeyEvent *) Q_DECL_OVERRIDE;
-    bool eventFilter(QObject *obj, QEvent *ev) Q_DECL_OVERRIDE;
+    void mouseMoveEvent(QMouseEvent *) override;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void keyPressEvent(QKeyEvent *) override;
+    bool eventFilter(QObject *obj, QEvent *ev) override;
 
 private:
     class KColorDialogPrivate;

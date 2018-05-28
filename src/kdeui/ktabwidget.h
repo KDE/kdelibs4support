@@ -380,19 +380,19 @@ Q_SIGNALS:
     void closeRequest(QWidget *);
 
 protected:
-    void mouseDoubleClickEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *) Q_DECL_OVERRIDE;
-    void dragEnterEvent(QDragEnterEvent *) Q_DECL_OVERRIDE;
-    void dragMoveEvent(QDragMoveEvent *) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *) Q_DECL_OVERRIDE;
+    void mouseDoubleClickEvent(QMouseEvent *) override;
+    void mousePressEvent(QMouseEvent *) override;
+    void mouseReleaseEvent(QMouseEvent *) override;
+    void dragEnterEvent(QDragEnterEvent *) override;
+    void dragMoveEvent(QDragMoveEvent *) override;
+    void dropEvent(QDropEvent *) override;
     int tabBarWidthForMaxChars(int);
 #ifndef QT_NO_WHEELEVENT
-    void wheelEvent(QWheelEvent *) Q_DECL_OVERRIDE;
+    void wheelEvent(QWheelEvent *) override;
 #endif
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
-    void tabInserted(int) Q_DECL_OVERRIDE;
-    void tabRemoved(int) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *) override;
+    void tabInserted(int) override;
+    void tabRemoved(int) override;
 
     /**
      * @deprecated  This method has no effect and should not be called

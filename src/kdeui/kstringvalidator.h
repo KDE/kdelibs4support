@@ -122,12 +122,12 @@ public:
     /**
      * Reimplemented from @see QValidator.
      */
-    State validate(QString &input, int &pos) const Q_DECL_OVERRIDE;
+    State validate(QString &input, int &pos) const override;
 
     /**
      * Reimplemented from @see QValidator.
      */
-    void fixup(QString &input) const Q_DECL_OVERRIDE;
+    void fixup(QString &input) const override;
 
 private:
     class Private;

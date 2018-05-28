@@ -329,7 +329,7 @@ private:
     RequestData *data;
 
 protected:
-    void run() Q_DECL_OVERRIDE;       // here the thread starts
+    void run() override;       // here the thread starts
 
     friend class KNetwork::Internal::KResolverManager;
     friend class KNetwork::KResolverWorkerBase;

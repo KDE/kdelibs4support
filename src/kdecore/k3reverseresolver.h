@@ -140,7 +140,7 @@ public:
     /**
      * Overrides event handling
      */
-    bool event(QEvent *) Q_DECL_OVERRIDE;
+    bool event(QEvent *) override;
 
 Q_SIGNALS:
     /**

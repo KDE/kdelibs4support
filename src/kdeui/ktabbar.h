@@ -205,21 +205,21 @@ Q_SIGNALS:
 #endif
 
 protected:
-    void mouseDoubleClickEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    void mouseDoubleClickEvent(QMouseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 #ifndef QT_NO_WHEELEVENT
-    void wheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
+    void wheelEvent(QWheelEvent *event) override;
 #endif
 
-    void dragEnterEvent(QDragEnterEvent *event) Q_DECL_OVERRIDE;
-    void dragMoveEvent(QDragMoveEvent *event) Q_DECL_OVERRIDE;
-    void dropEvent(QDropEvent *event) Q_DECL_OVERRIDE;
+    void dragEnterEvent(QDragEnterEvent *event) override;
+    void dragMoveEvent(QDragMoveEvent *event) override;
+    void dropEvent(QDropEvent *event) override;
 
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
-    void leaveEvent(QEvent *event) Q_DECL_OVERRIDE;
-    QSize tabSizeHint(int index) const Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event) override;
+    void leaveEvent(QEvent *event) override;
+    QSize tabSizeHint(int index) const override;
 
 protected Q_SLOTS:
     /** @deprecated */
@@ -233,7 +233,7 @@ protected Q_SLOTS:
     virtual void activateDragSwitchTab();
 
 protected:
-    void tabLayoutChange() Q_DECL_OVERRIDE;
+    void tabLayoutChange() override;
 
 private:
     QPoint closeButtonPos(int tabIndex) const;

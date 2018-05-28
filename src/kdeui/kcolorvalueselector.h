@@ -115,14 +115,14 @@ protected:
      * which is used for buffering.
      */
     virtual void drawPalette(QPixmap *pixmap);
-    void resizeEvent(QResizeEvent *) Q_DECL_OVERRIDE;
+    void resizeEvent(QResizeEvent *) override;
 
     /**
      * Reimplemented from KSelector. The drawing is
      * buffered in a pixmap here. As real drawing
      * routine, drawPalette() is used.
      */
-    void drawContents(QPainter *painter) Q_DECL_OVERRIDE;
+    void drawContents(QPainter *painter) override;
 
 private:
     class Private;

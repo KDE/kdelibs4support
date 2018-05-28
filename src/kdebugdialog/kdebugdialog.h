@@ -44,8 +44,8 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit KDebugDialog(const AreaMap& areaMap, QWidget *parent = nullptr);
     virtual ~KDebugDialog();
 
-    void doLoad() Q_DECL_OVERRIDE {}
-    void doSave() Q_DECL_OVERRIDE;
+    void doLoad() override {}
+    void doSave() override;
 
 protected Q_SLOTS:
     void slotDebugAreaChanged(QTreeWidgetItem*);

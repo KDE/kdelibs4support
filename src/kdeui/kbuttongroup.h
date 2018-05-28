@@ -101,7 +101,7 @@ protected:
     /**
      * Reimplemented from QGroupBox.
      */
-    void childEvent(QChildEvent *event) Q_DECL_OVERRIDE;
+    void childEvent(QChildEvent *event) override;
 
 private:
     Q_PRIVATE_SLOT(d, void slotClicked(int id))

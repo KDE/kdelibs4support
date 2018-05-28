@@ -78,13 +78,13 @@ public:
     /**
      * Be sure to catch new devices.
      */
-    void setSocketDevice(KSocketDevice *device) Q_DECL_OVERRIDE;
+    void setSocketDevice(KSocketDevice *device) override;
 
 protected:
     /**
      * Buffered sockets can only operate in non-blocking mode.
      */
-    bool setSocketOptions(int opts) Q_DECL_OVERRIDE;
+    bool setSocketOptions(int opts) override;
 
 public:
     /**
@@ -93,27 +93,27 @@ public:
      *
      * @sa closeNow
      */
-    void close() Q_DECL_OVERRIDE;
+    void close() override;
 
     /**
      * Make use of the buffers.
      */
-    qint64 bytesAvailable() const Q_DECL_OVERRIDE;
+    qint64 bytesAvailable() const override;
 
     /**
      * Make use of buffers.
      */
-    qint64 waitForMore(int msecs, bool *timeout = nullptr) Q_DECL_OVERRIDE;
+    qint64 waitForMore(int msecs, bool *timeout = nullptr) override;
 
     /**
      * Catch changes.
      */
-    void enableRead(bool enable) Q_DECL_OVERRIDE;
+    void enableRead(bool enable) override;
 
     /**
      * Catch changes.
      */
-    void enableWrite(bool enable) Q_DECL_OVERRIDE;
+    void enableWrite(bool enable) override;
 
     /**
      * Sets the use of input buffering.
@@ -128,7 +128,7 @@ public:
     /**
      * Returns the length of the output buffer.
      */
-    qint64 bytesToWrite() const Q_DECL_OVERRIDE;
+    qint64 bytesToWrite() const override;
 
     /**
      * Closes the socket and discards any output data that had been buffered
@@ -141,7 +141,7 @@ public:
     /**
      * Returns true if a line can be read with readLine()
      */
-    bool canReadLine() const Q_DECL_OVERRIDE;
+    bool canReadLine() const override;
 
     // KDE4: make virtual, add timeout to match the Qt4 signature
     //       and move to another class up the hierarchy
@@ -157,42 +157,42 @@ protected:
      *
      * The @p from parameter is always set to peerAddress()
      */
-    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from) Q_DECL_OVERRIDE;
+    qint64 readData(char *data, qint64 maxlen, KSocketAddress *from) override;
 
     /**
      * Peeks data from the socket.
      *
      * The @p from parameter is always set to peerAddress()
      */
-    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from) Q_DECL_OVERRIDE;
+    qint64 peekData(char *data, qint64 maxlen, KSocketAddress *from) override;
 
     /**
      * Writes data to the socket.
      *
      * The @p to parameter is discarded.
      */
-    qint64 writeData(const char *data, qint64 len, const KSocketAddress *to) Q_DECL_OVERRIDE;
+    qint64 writeData(const char *data, qint64 len, const KSocketAddress *to) override;
 
     /**
      * Improve the readLine performance
      */
-    qint64 readLineData(char *data, qint64 maxSize) Q_DECL_OVERRIDE;
+    qint64 readLineData(char *data, qint64 maxSize) override;
 
     /**
      * Catch connection to clear the buffers
      */
-    void stateChanging(SocketState newState) Q_DECL_OVERRIDE;
+    void stateChanging(SocketState newState) override;
 
 protected Q_SLOTS:
     /**
      * Slot called when there's read activity.
      */
-    void slotReadActivity() Q_DECL_OVERRIDE;
+    void slotReadActivity() override;
 
     /**
      * Slot called when there's write activity.
      */
-    void slotWriteActivity() Q_DECL_OVERRIDE;
+    void slotWriteActivity() override;
 
 #if 0
     // Already present in QIODevice

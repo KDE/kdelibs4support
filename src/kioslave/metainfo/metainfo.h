@@ -27,9 +27,9 @@ public:
     MetaInfoProtocol(const QByteArray &pool, const QByteArray &app);
     virtual ~MetaInfoProtocol();
 
-    void get(const QUrl &url) Q_DECL_OVERRIDE;
+    void get(const QUrl &url) override;
     virtual void put(const QUrl &url, int permissions,
-                     KIO::JobFlags flags) Q_DECL_OVERRIDE;
+                     KIO::JobFlags flags) override;
 
 };
 

@@ -49,8 +49,8 @@ protected Q_SLOTS:
     void disableAllClicked();
 
 protected:
-    void doSave() Q_DECL_OVERRIDE;
-    void doLoad() Q_DECL_OVERRIDE;
+    void doSave() override;
+    void doLoad() override;
 
 private:
     QTreeWidget* m_areaWidget;

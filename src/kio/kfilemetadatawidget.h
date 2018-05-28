@@ -66,7 +66,7 @@ public:
     bool isReadOnly() const;
 
     /** @see QWidget::sizeHint() */
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
 
 Q_SIGNALS:
     /**
@@ -83,7 +83,7 @@ Q_SIGNALS:
     void metaDataRequestFinished(const KFileItemList &items);
 
 protected:
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event) override;
 
 private:
     class Private;

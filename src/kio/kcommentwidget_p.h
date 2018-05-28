@@ -48,13 +48,13 @@ public:
     void setReadOnly(bool readOnly);
     bool isReadOnly() const;
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
 
 Q_SIGNALS:
     void commentChanged(const QString &comment);
 
 protected:
-    bool event(QEvent *event) Q_DECL_OVERRIDE;
+    bool event(QEvent *event) override;
 
 private Q_SLOTS:
     void slotLinkActivated(const QString &link);

@@ -101,12 +101,12 @@ public Q_SLOTS:
     void setCurrentUrl(const QUrl &url);
 
 protected:
-    void accept() Q_DECL_OVERRIDE;
+    void accept() override;
 
     /**
      * Reimplemented for saving the dialog geometry.
      */
-    void hideEvent(QHideEvent *event) Q_DECL_OVERRIDE;
+    void hideEvent(QHideEvent *event) override;
 
 private:
     class Private;

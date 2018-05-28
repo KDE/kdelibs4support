@@ -96,10 +96,10 @@ protected:
     void getMetaInfo();
 
 protected Q_SLOTS:
-    void slotResult(KJob *job) Q_DECL_OVERRIDE;
+    void slotResult(KJob *job) override;
 
 private Q_SLOTS:
-    void start() Q_DECL_OVERRIDE;
+    void start() override;
     void slotMetaInfo(KIO::Job *, const QByteArray &);
 
 private:

@@ -51,7 +51,7 @@ Q_SIGNALS:
     void changed(bool state);
 
 protected:
-    void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void showEvent(QShowEvent *event) override;
 
 private:
     bool addCertificateItem(const KSslCaCertificate &caCert);

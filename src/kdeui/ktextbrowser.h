@@ -95,17 +95,17 @@ protected:
      * the QTextBrowser method KDELIBS4SUPPORT_DEPRECATED explicitly, like this:
      * <code>myTextBrowser->QTextBrowser::setSource(url)</code>
      */
-    void setSource(const QUrl &name) Q_DECL_OVERRIDE;
+    void setSource(const QUrl &name) override;
 
     /**
      * Makes sure Key_Escape is ignored
      */
-    void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *event) override;
 
     /**
      * Reimplemented to support Qt2 behavior (Ctrl-Wheel = fast scroll)
      */
-    void wheelEvent(QWheelEvent *event) Q_DECL_OVERRIDE;
+    void wheelEvent(QWheelEvent *event) override;
 
     /**
     * Re-implemented for internal reasons.  API not affected.
@@ -113,7 +113,7 @@ protected:
     * See QLineEdit::createPopupMenu().
     */
 
-    void contextMenuEvent(QContextMenuEvent *event) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *event) override;
 
 Q_SIGNALS:
     /**
