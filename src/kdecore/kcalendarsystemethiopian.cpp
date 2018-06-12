@@ -38,9 +38,9 @@ public:
     {
     }
 
-    void loadDefaultEraList() Q_DECL_OVERRIDE;
-    QString monthName(int month, int year, KLocale::DateTimeComponentFormat format, bool possessive) const Q_DECL_OVERRIDE;
-    QString weekDayName(int weekDay, KLocale::DateTimeComponentFormat format) const Q_DECL_OVERRIDE;
+    void loadDefaultEraList() override;
+    QString monthName(int month, int year, KLocale::DateTimeComponentFormat format, bool possessive) const override;
+    QString weekDayName(int weekDay, KLocale::DateTimeComponentFormat format) const override;
 };
 
 void KCalendarSystemEthiopianPrivate::loadDefaultEraList()

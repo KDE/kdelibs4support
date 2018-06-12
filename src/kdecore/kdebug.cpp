@@ -112,19 +112,19 @@ public:
     {
         open(WriteOnly);
     }
-    bool isSequential() const Q_DECL_OVERRIDE
+    bool isSequential() const override
     {
         return true;
     }
-    qint64 readData(char *, qint64) Q_DECL_OVERRIDE
+    qint64 readData(char *, qint64) override
     {
         return 0; /* eof */
     }
-    qint64 readLineData(char *, qint64) Q_DECL_OVERRIDE
+    qint64 readLineData(char *, qint64) override
     {
         return 0; /* eof */
     }
-    qint64 writeData(const char *, qint64 len) Q_DECL_OVERRIDE
+    qint64 writeData(const char *, qint64 len) override
     {
         return len;
     }
@@ -147,7 +147,7 @@ class KSyslogDebugStream: public KNoDebugStream
 {
     // Q_OBJECT
 public:
-    qint64 writeData(const char *data, qint64 len) Q_DECL_OVERRIDE
+    qint64 writeData(const char *data, qint64 len) override
     {
         if (len) {
             // not using fromRawData because we need a terminating NUL
@@ -179,7 +179,7 @@ class KFileDebugStream: public KNoDebugStream
 {
     // Q_OBJECT
 public:
-    qint64 writeData(const char *data, qint64 len) Q_DECL_OVERRIDE
+    qint64 writeData(const char *data, qint64 len) override
     {
         if (len) {
             QFile aOutputFile(m_fileName);
@@ -208,7 +208,7 @@ class KMessageBoxDebugStream: public KNoDebugStream
 {
     // Q_OBJECT
 public:
-    qint64 writeData(const char *data, qint64 len) Q_DECL_OVERRIDE
+    qint64 writeData(const char *data, qint64 len) override
     {
         if (len) {
             // Since we are in kdecore here, we cannot use KMsgBox
@@ -229,7 +229,7 @@ class KLineEndStrippingDebugStream: public KNoDebugStream
 {
     // Q_OBJECT
 public:
-    qint64 writeData(const char *data, qint64 len) Q_DECL_OVERRIDE
+    qint64 writeData(const char *data, qint64 len) override
     {
         QByteArray buf = QByteArray::fromRawData(data, len);
         qt_message_output(QtDebugMsg,

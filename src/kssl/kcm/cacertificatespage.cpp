@@ -71,7 +71,7 @@ public:
         setEnabled(isEnabled);
     }
 
-    QVariant data(int column, int role) const Q_DECL_OVERRIDE
+    QVariant data(int column, int role) const override
     {
         switch (role) {
         case Qt::DisplayRole:

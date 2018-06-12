@@ -243,22 +243,22 @@ public:
     virtual ~KCalendarSystemHebrewPrivate();
 
     // Virtual methods each calendar system must re-implement
-    void loadDefaultEraList() Q_DECL_OVERRIDE;
-    int monthsInYear(int year) const Q_DECL_OVERRIDE;
-    int daysInMonth(int year, int month) const Q_DECL_OVERRIDE;
-    int daysInYear(int year) const Q_DECL_OVERRIDE;
-    bool isLeapYear(int year) const Q_DECL_OVERRIDE;
-    bool hasLeapMonths() const Q_DECL_OVERRIDE;
-    bool hasYearZero() const Q_DECL_OVERRIDE;
-    int maxMonthsInYear() const Q_DECL_OVERRIDE;
-    int earliestValidYear() const Q_DECL_OVERRIDE;
-    int latestValidYear() const Q_DECL_OVERRIDE;
-    QString monthName(int month, int year, KLocale::DateTimeComponentFormat format, bool possessive) const Q_DECL_OVERRIDE;
-    QString weekDayName(int weekDay, KLocale::DateTimeComponentFormat format) const Q_DECL_OVERRIDE;
+    void loadDefaultEraList() override;
+    int monthsInYear(int year) const override;
+    int daysInMonth(int year, int month) const override;
+    int daysInYear(int year) const override;
+    bool isLeapYear(int year) const override;
+    bool hasLeapMonths() const override;
+    bool hasYearZero() const override;
+    int maxMonthsInYear() const override;
+    int earliestValidYear() const override;
+    int latestValidYear() const override;
+    QString monthName(int month, int year, KLocale::DateTimeComponentFormat format, bool possessive) const override;
+    QString weekDayName(int weekDay, KLocale::DateTimeComponentFormat format) const override;
 
-    int integerFromString(const QString &string, int maxLength, int &readLength) const Q_DECL_OVERRIDE;
-    QString stringFromInteger(int number, int padWidth = 0, QChar padChar = QLatin1Char('0')) const Q_DECL_OVERRIDE;
-    QString stringFromInteger(int number, int padWidth, QChar padChar, KLocale::DigitSet digitSet) const Q_DECL_OVERRIDE;
+    int integerFromString(const QString &string, int maxLength, int &readLength) const override;
+    QString stringFromInteger(int number, int padWidth = 0, QChar padChar = QLatin1Char('0')) const override;
+    QString stringFromInteger(int number, int padWidth, QChar padChar, KLocale::DigitSet digitSet) const override;
 
     virtual int monthNumberToMonthIndex(int year, int month) const;
 };

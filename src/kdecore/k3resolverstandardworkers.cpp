@@ -405,12 +405,12 @@ public:
     ~GetAddrInfoThread()
     { }
 
-    bool preprocess() Q_DECL_OVERRIDE
+    bool preprocess() override
     {
         return true;
     }
 
-    bool run() Q_DECL_OVERRIDE;
+    bool run() override;
 
     void processResults(addrinfo *ai, int ret_code, KResolverResults &rr);
 };

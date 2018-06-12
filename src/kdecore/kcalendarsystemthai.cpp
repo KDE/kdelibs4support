@@ -32,12 +32,12 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemThaiPrivate(KCalendarSystemThai *q);
     virtual ~KCalendarSystemThaiPrivate();
 
-    void loadDefaultEraList() Q_DECL_OVERRIDE;
-    int daysInMonth(int year, int month) const Q_DECL_OVERRIDE;
-    int daysInYear(int year) const Q_DECL_OVERRIDE;
-    bool isLeapYear(int year) const Q_DECL_OVERRIDE;
-    bool hasYearZero() const Q_DECL_OVERRIDE;
-    int earliestValidYear() const Q_DECL_OVERRIDE;
+    void loadDefaultEraList() override;
+    int daysInMonth(int year, int month) const override;
+    int daysInYear(int year) const override;
+    bool isLeapYear(int year) const override;
+    bool hasYearZero() const override;
+    int earliestValidYear() const override;
 };
 
 //Override only a few of the Gregorian private methods

@@ -63,12 +63,12 @@ public:
     virtual ~ReverseThread()
     { }
 
-    bool preprocess() Q_DECL_OVERRIDE
+    bool preprocess() override
     {
         return true;
     }
-    bool run() Q_DECL_OVERRIDE;
-    bool postprocess() Q_DECL_OVERRIDE;
+    bool run() override;
+    bool postprocess() override;
 
     // input:
     KSocketAddress m_addr;
