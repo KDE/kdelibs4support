@@ -317,7 +317,7 @@ static QString relativeInstallPath(const char *type)
         break;
     case 'q':
         if (strcmp("qtplugins", type) == 0) {
-            return QFile::decodeName(PLUGIN_INSTALL_DIR "/plugins/");
+            return QFile::decodeName(PLUGIN_INSTALL_DIR "/");
         }
         break;
     case 's':
