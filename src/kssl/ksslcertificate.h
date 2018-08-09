@@ -52,10 +52,9 @@ class KSSLX509V3;
 #if KSSL_HAVE_SSL
 typedef struct x509_st X509;
 #else
+class X509;
 #if !defined(QT_NO_OPENSSL)
 #include <QtNetwork/QSslCertificate>
-#else
-class X509;
 #endif
 #endif
 
