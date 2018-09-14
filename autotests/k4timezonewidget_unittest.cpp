@@ -110,7 +110,7 @@ private:
     //TimeZoneTestData mTestData;
 };
 
-// Note: no QStandardPaths::enableTestMode(true) here.
+// Note: no QStandardPaths::setTestModeEnabled(true) here.
 // The kded module writes out a config file, but unit tests have
 // a different configuration directory so they don't see those config files.
 // Ideally unit tests should talk to their own kded instance,

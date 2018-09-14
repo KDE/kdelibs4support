@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
 
-    QStandardPaths::enableTestMode(true);
+    QStandardPaths::setTestModeEnabled(true);
     {
         KConfig config("kdebugrc");
         config.group(QString()).writeEntry("DisableAll", false); // in case of a global kdebugrc with DisableAll=true

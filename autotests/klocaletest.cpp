@@ -41,7 +41,7 @@ Q_CONSTRUCTOR_FUNCTION(setupLocale)
 void
 KLocaleTest::initTestCase()
 {
-    QStandardPaths::enableTestMode(true);
+    QStandardPaths::setTestModeEnabled(true);
 
     KLocale::global()->setCountry(QLatin1String("C"), nullptr);
     KLocale::global()->setThousandsSeparator(QLatin1String(","));
@@ -689,7 +689,7 @@ KLocaleTest::formatDate()
     QDate date;
 
     // Ensure that user configuration isn't messing with us;
-    // shouldn't happen though, due to QStandardPaths::enableTestMode(true)
+    // shouldn't happen though, due to QStandardPaths::setTestModeEnabled(true)
     QCOMPARE(locale.dateFormat(), QString("%A %d %B %Y"));
 
     date.setDate(2002, 5, 3);
@@ -782,7 +782,7 @@ KLocaleTest::formatDateTime()
     QDateTime qdt;
 
     // Ensure that user configuration isn't messing with us;
-    // shouldn't happen though, due to QStandardPaths::enableTestMode(true)
+    // shouldn't happen though, due to QStandardPaths::setTestModeEnabled(true)
     QCOMPARE(locale.dateFormat(), QString("%A %d %B %Y"));
 
     qdt = QDateTime(QDate(2002, 5, 3), QTime(10, 20, 30));
