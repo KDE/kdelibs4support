@@ -575,7 +575,7 @@ struct KDebugPrivate {
     QDebug printHeader(QDebug s)
     {
 #ifdef KDE_EXTENDED_DEBUG_OUTPUT
-        static int printTimeStamp = qgetenv("KDE_DEBUG_TIMESTAMP").toInt();
+        static int printTimeStamp = qEnvironmentVariableIntValue("KDE_DEBUG_TIMESTAMP");
         //s = s.nospace();
         if (printTimeStamp > 0) {
             if (printTimeStamp >= 2) {
