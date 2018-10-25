@@ -164,17 +164,6 @@ private:
     int m_priority;
 };
 
-// can remove this #if clause when depending on Qt 5.4
-#if QT_VERSION < QT_VERSION_CHECK(5, 4, 0)
-extern Q_CORE_EXPORT QString qMessageFormatString(QtMsgType type, const QMessageLogContext & context,
-                                                  const QString & str);
-
-QString qFormatLogMessage(QtMsgType type, const QMessageLogContext & context, const QString & str)
-{
-    return qMessageFormatString(type, context, str);
-}
-#endif
-
 class KFileDebugStream: public KNoDebugStream
 {
     // Q_OBJECT
