@@ -72,10 +72,10 @@ TestService::TestService() : KMainWindow( nullptr ),
 
     ui.setupUi( m_view );
     setCentralWidget( m_view );
-    connect( ui.changeCombo, SIGNAL( activated( int ) ), SLOT( changeComboActivated( int ) ) );
-    connect( ui.changeButton, SIGNAL( clicked() ), SLOT( changeButtonClicked() ) );
+    connect( ui.changeCombo, SIGNAL(activated(int)), SLOT(changeComboActivated(int)) );
+    connect( ui.changeButton, SIGNAL(clicked()), SLOT(changeButtonClicked()) );
 
-    connect( QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(const QString&, const QString&, const QString & ) ), SLOT(serviceOwnerChanged(const QString&, const QString&, const QString & ) ) );
+    connect( QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(QString,QString,QString)), SLOT(serviceOwnerChanged(QString,QString,QString)) );
 
     ui.statusLabel->setText( toString( m_status ) );
     QPalette palette;
@@ -159,7 +159,7 @@ int TestService::establish( const QString & network )
 	m_status = Solid::Networking::Connecting;
 	m_service->setNetworkStatus( "test_net", (int)m_status );
 	m_nextStatus = Solid::Networking::Connected;
-	QTimer::singleShot( 5000, this, SLOT( slotStatusChange() ) );
+	QTimer::singleShot( 5000, this, SLOT(slotStatusChange()) );
 	return (int)Solid::Networking::RequestAccepted;
 }
 
@@ -169,7 +169,7 @@ int TestService::shutdown( const QString & network )
 	m_status = Solid::Networking::Disconnecting;
 	m_service->setNetworkStatus( "test_net", (int)m_status );
 	m_nextStatus = Solid::Networking::Unconnected;
-	QTimer::singleShot( 5000, this, SLOT( slotStatusChange() ) );
+	QTimer::singleShot( 5000, this, SLOT(slotStatusChange()) );
 	return (int)Solid::Networking::RequestAccepted;
 }
 

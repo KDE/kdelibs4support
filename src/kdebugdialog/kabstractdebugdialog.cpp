@@ -43,10 +43,10 @@ void KAbstractDebugDialog::buildButtons()
 {
     setButtons(KDialog::Help | KDialog::Ok | KDialog::Apply | KDialog::Cancel);
 
-    connect(this, SIGNAL(helpClicked()), SLOT( slotShowHelp() ));
-    connect(this, SIGNAL(okClicked()), SLOT( accept() ));
-    connect(this, SIGNAL(applyClicked()), SLOT( slotApply() ));
-    connect(this, SIGNAL(cancelClicked()), SLOT( reject() ));
+    connect(this, SIGNAL(helpClicked()), SLOT(slotShowHelp()));
+    connect(this, SIGNAL(okClicked()), SLOT(accept()));
+    connect(this, SIGNAL(applyClicked()), SLOT(slotApply()));
+    connect(this, SIGNAL(cancelClicked()), SLOT(reject()));
 }
 
 void KAbstractDebugDialog::slotShowHelp()

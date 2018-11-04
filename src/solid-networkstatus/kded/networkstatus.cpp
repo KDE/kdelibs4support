@@ -257,12 +257,12 @@ void NetworkStatusModule::init()
         for ( int i = 0; i < backends.count(); i++ ) {
             d->backendAppearedWatcher->addWatchedService(backends.value(i)->serviceName());
         }
-        connect(d->backendAppearedWatcher, SIGNAL(serviceRegistered(const QString &)), SLOT(backendRegistered()));
+        connect(d->backendAppearedWatcher, SIGNAL(serviceRegistered(QString)), SLOT(backendRegistered()));
         return;
     } else {
         // watch for the selected backend re-registration only.
         d->backendAppearedWatcher->addWatchedService(d->backend->serviceName());
-        connect(d->backendAppearedWatcher, SIGNAL(serviceRegistered(const QString &)), SLOT(backendRegistered()));
+        connect(d->backendAppearedWatcher, SIGNAL(serviceRegistered(QString)), SLOT(backendRegistered()));
 
         // watch for the selected bakend unregistration.
         if (d->backendDisappearedWatcher == nullptr) {
@@ -270,7 +270,7 @@ void NetworkStatusModule::init()
             d->backendDisappearedWatcher->setConnection(QDBusConnection::systemBus());
             d->backendDisappearedWatcher->setWatchMode(QDBusServiceWatcher::WatchForUnregistration);
             d->backendDisappearedWatcher->addWatchedService(d->backend->serviceName());
-            connect(d->backendDisappearedWatcher, SIGNAL(serviceUnregistered(const QString &)), SLOT(backendUnregistered()));
+            connect(d->backendDisappearedWatcher, SIGNAL(serviceUnregistered(QString)), SLOT(backendUnregistered()));
         }
 
         connect( d->backend, SIGNAL(statusChanged(Solid::Networking::Status)),

@@ -96,7 +96,7 @@ KDebugDialog::KDebugDialog(const AreaMap& areaMap, QWidget* parent)
     showButtonSeparator(true);
     buildButtons();
 
-    connect( m_areaWidget, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)),
+    connect( m_areaWidget, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
             SLOT(slotDebugAreaChanged(QTreeWidgetItem*)) );
 
     // Get initial values

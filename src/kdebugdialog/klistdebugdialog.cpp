@@ -43,8 +43,8 @@ KListDebugDialog::KListDebugDialog(const AreaMap& areaMap, QWidget *parent)
     m_incrSearch = new KTreeWidgetSearchLineWidget();
     m_incrSearch->searchLine()->setClearButtonEnabled(true);
     lay->addWidget( m_incrSearch );
-    //  connect( m_incrSearch, SIGNAL( textChanged( const QString& ) ),
-    //           SLOT( filterCheckBoxes( const QString& ) ) );
+    //  connect( m_incrSearch, SIGNAL(textChanged(QString)),
+    //           SLOT(filterCheckBoxes(QString)) );
 
     //@TODO: Change back to QListWidget once Trolltech fixed the task: #214420
     //See http://trolltech.com/developer/task-tracker/index_html?id=214420&method=entry
@@ -70,8 +70,8 @@ KListDebugDialog::KListDebugDialog(const AreaMap& areaMap, QWidget *parent)
     selectButs->addWidget( all );
     selectButs->addWidget( none );
 
-    connect( all, SIGNAL( clicked() ), this, SLOT( selectAll() ) );
-    connect( none, SIGNAL( clicked() ), this, SLOT( deSelectAll() ) );
+    connect( all, SIGNAL(clicked()), this, SLOT(selectAll()) );
+    connect( none, SIGNAL(clicked()), this, SLOT(deSelectAll()) );
 
     m_disableAll = new QCheckBox(mainWidget);
     m_disableAll->setText(i18n("Disable all debug output"));
