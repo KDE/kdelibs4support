@@ -7,7 +7,7 @@
 #ifndef KFDTEST_H
 #define KFDTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <QUrl>
 
 class KFDTest : public QObject

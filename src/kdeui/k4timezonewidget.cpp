@@ -21,7 +21,7 @@
 #include "k4timezonewidget.h"
 
 #include <QDebug>
-#include <QtCore/QFile>
+#include <QFile>
 #include <QPixmap>
 
 #include <klocale.h>

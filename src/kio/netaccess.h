@@ -23,8 +23,8 @@
 #ifndef KIO_NETACCESS_h
 #define KIO_NETACCESS_h
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 #include <kdelibs4support_export.h>
 #include <kio/global.h>
 #include <kio/udsentry.h>

@@ -21,7 +21,7 @@
 #ifndef SOLID_NETWORKING_P_H
 #define SOLID_NETWORKING_P_H
 
-#include <QtCore/QMap>
+#include <QMap>
 #include <QtNetwork/QNetworkConfigurationManager>
 
 #include "networking.h"

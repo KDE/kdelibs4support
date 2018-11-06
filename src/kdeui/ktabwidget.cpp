@@ -29,7 +29,7 @@
 #include <QStyleOption>
 #include <QTextDocument>
 #include <QWheelEvent>
-#include <QtCore/QList>
+#include <QList>
 
 #include <ksharedconfig.h>
 #include <kiconloader.h>

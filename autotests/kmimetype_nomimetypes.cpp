@@ -18,9 +18,9 @@
 
 */
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QtGlobal>
-#include <QtCore/QUrl>
+#include <QCoreApplication>
+#include <QtGlobal>
+#include <QUrl>
 #include <kcomponentdata.h>
 #include <kmimetype.h>
 #include <kmessage.h>

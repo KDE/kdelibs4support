@@ -29,9 +29,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <QtCore/QFile>
-#include <QtCore/QList>
-#include <QtCore/QTimer>
+#include <QFile>
+#include <QList>
+#include <QTimer>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusError>

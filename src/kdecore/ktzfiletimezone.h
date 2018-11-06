@@ -29,7 +29,7 @@
 #include <kdelibs4support_export.h>
 #include <ktimezone.h>
 
-#include <QtCore/QString>
+#include <QString>
 
 class KTzfileTimeZoneSource;
 class KTzfileTimeZonePrivate;

@@ -22,7 +22,7 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QAbstractItemModel>
+#include <QAbstractItemModel>
 
 #include <solid/device.h>
 #include <solid/predicate.h>

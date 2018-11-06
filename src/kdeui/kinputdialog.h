@@ -20,7 +20,7 @@
 #ifndef KINPUTDIALOG_H
 #define KINPUTDIALOG_H
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QWidget>
 
 #include <kdelibs4support_export.h>

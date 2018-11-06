@@ -25,8 +25,8 @@
 #ifndef KCLIENTSOCKETBASE_H
 #define KCLIENTSOCKETBASE_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 
 #include <kdelibs4support_export.h>
 #include "k3socketbase.h"

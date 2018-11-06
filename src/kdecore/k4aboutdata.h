@@ -32,8 +32,8 @@
 
 #include <klocalizedstring.h>
 // Qt
-#include <QtCore/QString>
-#include <QtCore/QSharedDataPointer>
+#include <QString>
+#include <QSharedDataPointer>
 
 template <class T> class QList;
 class QVariant;

@@ -21,7 +21,7 @@
 #ifndef KMIMETYPETEST_H
 #define KMIMETYPETEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class KMimeTypeTest : public QObject
 {

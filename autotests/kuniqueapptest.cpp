@@ -26,7 +26,7 @@
 
 #include <QTimer>
 #include <QFile>
-#include <QtCore/QProcess>
+#include <QProcess>
 
 class TestApp : public KUniqueApplication
 {

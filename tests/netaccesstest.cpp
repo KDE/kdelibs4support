@@ -21,7 +21,7 @@
 #include <QDebug>
 #include <kio/netaccess.h>
 #include <kio/job.h>
-#include <QtCore/QFile>
+#include <QFile>
 #include <QTemporaryFile>
 
 int main(int argc, char **argv)

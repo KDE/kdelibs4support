@@ -19,8 +19,8 @@
 #ifndef ksavefiletest_h
 #define ksavefiletest_h
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
+#include <QObject>
+#include <QStringList>
 #include <qtemporarydir.h>
 
 class KSaveFileTest : public QObject

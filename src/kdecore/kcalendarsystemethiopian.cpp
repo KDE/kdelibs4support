@@ -23,8 +23,8 @@
 #include "klocale.h"
 #include "klocalizedstring.h"
 
-#include <QtCore/QDate>
-#include <QtCore/QCharRef>
+#include <QDate>
+#include <QCharRef>
 
 //Reuse the Coptic private implementation
 class KCalendarSystemEthiopianPrivate : public KCalendarSystemCopticPrivate

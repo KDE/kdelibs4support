@@ -64,11 +64,11 @@
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
 
-#include <QtCore/QFile>
-#include <QtCore/QHash>
-#include <QtCore/QObject>
-#include <QtCore/QChar>
-#include <QtCore/QCoreApplication>
+#include <QFile>
+#include <QHash>
+#include <QObject>
+#include <QChar>
+#include <QCoreApplication>
 #include <QUrl>
 #include <qstandardpaths.h>
 #include <qlogging.h>

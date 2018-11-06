@@ -20,7 +20,7 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QLibrary>
+#include <QLibrary>
 
 class KLibraryPrivate;
 

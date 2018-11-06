@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QWidget>
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QCheckBox>
 
 #include "kprogressdialog.h"

@@ -25,9 +25,9 @@
 #warning "This file is deprecated."
 #endif
 
-#include <QtCore/QAtomicPointer>
+#include <QAtomicPointer>
 #include <sys/types.h>
-#include <QtCore/QDebug>
+#include <QDebug>
 // To simplify Qt5 porting in KDE code not yet ported to frameworks.
 #include <QMimeData>
 #include <klocale.h>

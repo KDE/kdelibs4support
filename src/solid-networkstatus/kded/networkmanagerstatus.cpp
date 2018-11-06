@@ -26,7 +26,7 @@
 
 #include "networkmanagerstatus.h"
 
-#include <QtDBus/QDBusReply>
+#include <QDBusReply>
 
 #include <NetworkManager.h>
 

@@ -24,8 +24,8 @@
 #include "klocale.h"
 #include "klocalizedstring.h"
 
-#include <QtCore/QDate>
-#include <QtCore/QCharRef>
+#include <QDate>
+#include <QCharRef>
 
 // Shared d pointer implementations
 

@@ -23,10 +23,10 @@
 
 // TODO: a separate test program with #define QT_NO_DEBUG...
 
-#include <QtCore/QCoreApplication>
-#include <QtCore/QtGlobal>
-#include <QtCore/QFile>
-#include <QtCore/QDir>
+#include <QCoreApplication>
+#include <QtGlobal>
+#include <QFile>
+#include <QDir>
 #include <qstandardpaths.h>
 #include <kcomponentdata.h>
 #include <klocalizedstring.h>

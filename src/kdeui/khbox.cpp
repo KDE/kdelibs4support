@@ -18,7 +18,7 @@
 
 #include "khbox.h"
 
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QApplication>
 #include <QHBoxLayout>
 #include <QVBoxLayout>

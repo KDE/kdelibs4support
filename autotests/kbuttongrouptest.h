@@ -22,7 +22,7 @@
 #ifndef KBUTTONGROUPTEST_H
 #define KBUTTONGROUPTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class KButtonGroupTest : public QObject
 {

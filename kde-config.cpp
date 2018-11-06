@@ -33,8 +33,8 @@
 #include <k4aboutdata.h>
 #include <kdeversion.h>
 #include <QDir>
-#include <QtCore/QLibraryInfo>
-#include <QtCore/QCoreApplication>
+#include <QLibraryInfo>
+#include <QCoreApplication>
 #include <QProcess>
 #include <config-kstandarddirs.h>
 #include <kconfiggroup.h>

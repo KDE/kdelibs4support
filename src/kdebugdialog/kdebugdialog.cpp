@@ -27,7 +27,7 @@
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QPushButton>
-#include <QtDBus/QtDBus>
+#include <QtDBus>
 
 #include <kdebug.h>
 #include <kglobal.h>

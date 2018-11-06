@@ -30,8 +30,8 @@ QTEST_GUILESS_MAIN(KStandarddirsTest)
 #include <kconfig.h>
 #include <kglobal.h>
 #include <qtemporarydir.h>
-#include <QtCore/QDebug>
-#include <QtTest/QtTest>
+#include <QDebug>
+#include <QtTest>
 #include <kconfiggroup.h>
 #include <QFile>
 

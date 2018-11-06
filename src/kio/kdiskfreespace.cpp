@@ -22,7 +22,7 @@
 
 #include "kdiskfreespace.h"
 #include "kdiskfreespaceinfo.h"
-#include <QtCore/QTimer>
+#include <QTimer>
 
 #include <kdebug.h>
 

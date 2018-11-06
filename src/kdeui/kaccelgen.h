@@ -20,9 +20,9 @@
 #ifndef KACCELGEN_H
 #define KACCELGEN_H
 
-#include <QtCore/QMap>
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QMap>
+#include <QString>
+#include <QStringList>
 
 /**
  * Provides functions that, given a collection of QStrings, will

@@ -20,9 +20,9 @@
 
 #include "ksslutils.h"
 
-#include <QtCore/QString>
+#include <QString>
 #include <klocalizedstring.h>
-#include <QtCore/QDate>
+#include <QDate>
 
 #include "kopenssl.h"
 

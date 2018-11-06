@@ -27,7 +27,7 @@
 
 #include <QDialog>
 #include <QDialogButtonBox>
-#include <QtCore/QPointer>
+#include <QPointer>
 #include <QLabel>
 #include <QScrollArea>
 #include <QVBoxLayout>

@@ -6,8 +6,8 @@ This file has been placed in the Public Domain.
 #ifndef ktemporaryfiletest_h
 #define ktemporaryfiletest_h
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 
 class KTemporaryFileTest : public QObject
 {

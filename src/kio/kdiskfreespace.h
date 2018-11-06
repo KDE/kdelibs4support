@@ -22,8 +22,8 @@
 #ifndef KDISKFREESP_H
 #define KDISKFREESP_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 
 #include <kdelibs4support_export.h>
 

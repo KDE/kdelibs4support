@@ -1,7 +1,7 @@
 #include <QLayout>
 #include <QKeyEvent>
 #include <QMenu>
-#include <QtCore/QMimeData>
+#include <QMimeData>
 #include <QDrag>
 #include <qinputdialog.h>
 #include <QBoxLayout>

@@ -24,7 +24,7 @@
 
 #include "systemstatusinterface.h"
 
-#include <QtDBus/QDBusInterface>
+#include <QDBusInterface>
 
 class WicdStatus : public SystemStatusInterface
 {

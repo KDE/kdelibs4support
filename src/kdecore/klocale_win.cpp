@@ -20,8 +20,8 @@
 
 #include "klocale_win_p.h"
 
-#include <QtCore/QLocale>
-#include <QtCore/QTextCodec>
+#include <QLocale>
+#include <QTextCodec>
 
 KLocaleWindowsPrivate::KLocaleWindowsPrivate(KLocale *q_ptr, KSharedConfig::Ptr config)
     : KLocalePrivate(q_ptr)

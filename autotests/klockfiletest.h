@@ -20,7 +20,7 @@
 #define KLOCKFILETEST_H
 
 #include "klockfile.h"
-#include <QtCore/QObject>
+#include <QObject>
 
 class Test_KLockFile : public QObject
 {

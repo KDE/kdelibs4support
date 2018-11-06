@@ -31,7 +31,7 @@
 #include "klocale_unix_p.h"
 #endif
 
-#include <QtCore/QDateTime>
+#include <QDateTime>
 
 #include "kconfig.h"
 #include "kdatetime.h"

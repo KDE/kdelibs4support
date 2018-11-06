@@ -39,15 +39,15 @@
 #include <langinfo.h>
 #endif
 
-#include <QtCore/QTextCodec>
-#include <QtCore/QFile>
-#include <QtCore/QDebug>
+#include <QTextCodec>
+#include <QFile>
+#include <QDebug>
 #include <QPrinter>
-#include <QtCore/QRegExp>
-#include <QtCore/QLocale>
-#include <QtCore/QHash>
-#include <QtCore/QMutexLocker>
-#include <QtCore/QStringList>
+#include <QRegExp>
+#include <QLocale>
+#include <QHash>
+#include <QMutexLocker>
+#include <QStringList>
 #include <QCoreApplication>
 #include <QDir>
 #include <qstandardpaths.h>

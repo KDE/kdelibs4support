@@ -21,8 +21,8 @@
 #define PREDICATEPROPERTIES_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QSharedData>
-#include <QtCore/QVariant>
+#include <QSharedData>
+#include <QVariant>
 class QValidator;
 
 /**

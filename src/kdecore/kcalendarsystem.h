@@ -25,8 +25,8 @@
 #include <kdelibs4support_export.h>
 #include "klocale.h"  // needed for enums
 
-#include <QtCore/QStringList>
-#include <QtCore/QDate>
+#include <QStringList>
+#include <QDate>
 
 class KCalendarSystemPrivate;
 class KCalendarEra;

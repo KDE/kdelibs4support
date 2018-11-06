@@ -24,11 +24,11 @@
 #include <ksslconfig.h> // KSSL_HAVE_SSL
 
 #include <unistd.h>
-#include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtCore/QFile>
-#include <QtCore/QStandardPaths>
-#include <QtCore/QDate>
+#include <QString>
+#include <QStringList>
+#include <QFile>
+#include <QStandardPaths>
+#include <QDate>
 #include <QDebug>
 #include <QDataStream>
 #include <qplatformdefs.h>

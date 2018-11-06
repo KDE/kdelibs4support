@@ -19,8 +19,8 @@
 */
 #include "klibrary.h"
 
-#include <QtCore/QDir>
-#include <QtCore/QPointer>
+#include <QDir>
+#include <QPointer>
 #include <QDebug>
 
 #include <kpluginfactory.h>

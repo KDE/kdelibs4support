@@ -23,9 +23,9 @@
 
 #include <iostream>
 #include <QCoreApplication>
-#include <QtCore/QBuffer>
-#include <QtCore/QFile>
-#include <QtCore/QDateTime>
+#include <QBuffer>
+#include <QFile>
+#include <QDateTime>
 
 #include <kdebug.h>
 #include <klocalizedstring.h>

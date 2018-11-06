@@ -24,7 +24,7 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QValidator>
 
 /**

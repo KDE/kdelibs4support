@@ -35,8 +35,8 @@
 #include <sys/stat.h>
 #endif
 
-#include <QtCore/QList>
-#include <QtCore/QSet>
+#include <QList>
+#include <QSet>
 
 #include <k4aboutdata.h>
 #include <kconfig.h>
@@ -46,10 +46,10 @@
 #include "kstandarddirs.h"
 #include <kcomponentdata.h>
 #undef QT_NO_TRANSLATION
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
 #define QT_NO_TRANSLATION
-#include <QtCore/QDebug>
-#include <QtCore/QTextCodec>
+#include <QDebug>
+#include <QTextCodec>
 #include <unistd.h> // umask
 
 // ~KConfig needs qrand(). qrand() depends on a Q_GLOBAL_STATIC. With this Q_CONSTRUCTOR_FUNCTION we

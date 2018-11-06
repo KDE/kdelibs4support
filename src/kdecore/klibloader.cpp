@@ -18,13 +18,13 @@
 */
 #include "klibloader.h"
 
-#include <QtCore/QFile>
-#include <QtCore/QDir>
-#include <QtCore/QTimer>
-#include <QtCore/QLibrary>
+#include <QFile>
+#include <QDir>
+#include <QTimer>
+#include <QLibrary>
 #include <QStack>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QObjectCleanupHandler>
+#include <QCoreApplication>
+#include <QObjectCleanupHandler>
 
 #include "kcomponentdata.h"
 #include "kdebug.h"

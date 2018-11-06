@@ -28,8 +28,8 @@
 #warning "This file is deprecated."
 #endif
 
-#include <QtCore/QDebug>
-#include <QtCore/QElapsedTimer>
+#include <QDebug>
+#include <QElapsedTimer>
 
 /**
  * \addtogroup kdebug Debug message generators

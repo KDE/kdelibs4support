@@ -19,13 +19,13 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <QtTest/QtTest>
+#include <QtTest>
 
-#include <QtTest/QTestEvent>
+#include <QTestEvent>
 
-#include <QtCore/QList>
+#include <QList>
 #include <QRadioButton>
-#include <QtTest/QSignalSpy>
+#include <QSignalSpy>
 #include <QBoxLayout>
 
 #include "kbuttongrouptest.h"

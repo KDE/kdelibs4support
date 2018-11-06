@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <QtCore/QDir>
-#include <QtCore/QFile>
+#include <QDir>
+#include <QFile>
 #include <kfilemetainfo.h>
 #include <qmimedatabase.h>
 

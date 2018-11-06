@@ -47,7 +47,7 @@ class KSSLX509V3;
 #include <kdelibs4support_export.h>
 #include <ksslconfig.h>
 
-#include <QtCore/QList>
+#include <QList>
 
 #if KSSL_HAVE_SSL
 typedef struct x509_st X509;

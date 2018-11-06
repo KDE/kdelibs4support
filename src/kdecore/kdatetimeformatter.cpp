@@ -21,10 +21,10 @@
 #include "kdatetimeformatter_p.h"
 
 #include <QDebug>
-#include <QtCore/QDate>
-#include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtCore/QChar>
+#include <QDate>
+#include <QString>
+#include <QStringList>
+#include <QChar>
 
 #include "kdatetime.h"
 #include "ktimezone.h"

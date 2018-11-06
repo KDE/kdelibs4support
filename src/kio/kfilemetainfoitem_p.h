@@ -31,8 +31,8 @@
 #endif
 #endif
 
-#include <QtCore/QHash>
-#include <QtCore/QSharedData>
+#include <QHash>
+#include <QSharedData>
 
 class KFileWritePlugin;
 

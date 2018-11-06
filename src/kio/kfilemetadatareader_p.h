@@ -22,11 +22,11 @@
 
 #include <nepomuk/core/variant.h>
 
-#include <QtCore/QHash>
-#include <QtCore/QList>
-#include <QtCore/QObject>
-#include <QtCore/QProcess>
-#include <QtCore/QString>
+#include <QHash>
+#include <QList>
+#include <QObject>
+#include <QProcess>
+#include <QString>
 #include <QUrl>
 
 /**

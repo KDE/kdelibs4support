@@ -23,10 +23,10 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QList>
-#include <QtCore/QSet>
-#include <QtCore/QSize>
-#include <QtCore/QDateTime>
+#include <QList>
+#include <QSet>
+#include <QSize>
+#include <QDateTime>
 
 class QString;
 class QPixmap;

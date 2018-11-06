@@ -34,12 +34,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <QtCore/QDebug>
-#include <QtCore/QDir>
-#include <QtCore/QStringList>
-#include <QtCore/QRegExp>
-#include <QtCore/QMimeData>
-#include <QtCore/QTextCodec>
+#include <QDebug>
+#include <QDir>
+#include <QStringList>
+#include <QRegExp>
+#include <QMimeData>
+#include <QTextCodec>
 
 #ifdef DEBUG_KURL
 static int kurlDebugArea()

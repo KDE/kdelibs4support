@@ -25,8 +25,8 @@
 
 #include "kbackup.h"
 
-#include <QtCore/QFile>
-#include <QtCore/QString>
+#include <QFile>
+#include <QString>
 
 /**
  * \class KSaveFile ksavefile.h <KSaveFile>

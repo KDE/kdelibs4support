@@ -21,10 +21,10 @@
 #define KDEUI_KDIALOG_P_H
 
 #include "kdialog.h"
-#include <QtCore/QPointer>
-#include <QtCore/QSignalMapper>
-#include <QtCore/QSize>
-#include <QtCore/QHash>
+#include <QPointer>
+#include <QSignalMapper>
+#include <QSize>
+#include <QHash>
 
 class QBoxLayout;
 class KPushButton;

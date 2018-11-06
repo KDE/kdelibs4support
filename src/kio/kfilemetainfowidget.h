@@ -21,7 +21,7 @@
 #define __KFILEMETAINFOWIDGET_H__
 
 #include <QWidget>
-#include <QtCore/QVariant>
+#include <QVariant>
 #include <kfilemetainfo.h>
 #include <kdelibs4support_export.h>
 

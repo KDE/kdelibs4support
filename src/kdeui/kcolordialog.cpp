@@ -44,7 +44,7 @@
 #include <QFrame>
 #include <qdrawutil.h>
 #include <QActionEvent>
-#include <QtCore/QFile>
+#include <QFile>
 #include <QHeaderView>
 #include <QImage>
 #include <QHBoxLayout>
@@ -55,7 +55,7 @@
 #include <QPainter>
 #include <QPushButton>
 #include <QScrollBar>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QListWidget>
 #include <QApplication>
 #include <QSpinBox>

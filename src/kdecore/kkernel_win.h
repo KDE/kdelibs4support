@@ -19,7 +19,7 @@
 #ifndef KKERNEL_WIN_H
 #define KKERNEL_WIN_H
 
-#include <QtCore/QString>
+#include <QString>
 
 #ifdef Q_OS_WIN
 

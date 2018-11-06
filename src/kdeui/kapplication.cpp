@@ -23,19 +23,19 @@
 #include "kdeversion.h"
 #include <config-kdelibs4support.h>
 
-#include <QtCore/QDir>
-#include <QtCore/QFile>
+#include <QDir>
+#include <QFile>
 #include <QSessionManager>
 #include <QStyleFactory>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QWidget>
 #include <QIcon>
 #include <QPointer>
-#include <QtCore/QList>
+#include <QList>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
-#include <QtCore/QMetaType>
+#include <QMetaType>
 
 #include "kauthorized.h"
 #include "k4aboutdata.h"

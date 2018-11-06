@@ -27,8 +27,8 @@
 
 //////////////////
 // Needed includes
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 
 #include "k3socketaddress.h"
 

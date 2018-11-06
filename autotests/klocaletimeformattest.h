@@ -22,10 +22,10 @@
 #ifndef KLOCALETIMEFORMATTEST_H
 #define KLOCALETIMEFORMATTEST_H
 
-#include <QtCore/QObject>
-#include <QtCore/QString>
-#include <QtCore/QTime>
-#include <QtCore/QMap>
+#include <QObject>
+#include <QString>
+#include <QTime>
+#include <QMap>
 #include <klocale.h>
 
 struct TimeFormatTestValue {

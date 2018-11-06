@@ -24,7 +24,7 @@
 #include <kconfiggroup.h>
 #include <qstandardpaths.h>
 #include <QDebug>
-#include <QtCore/QDir>
+#include <QDir>
 #include <qtest.h>
 
 class TimeZoneTestData

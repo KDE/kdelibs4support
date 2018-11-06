@@ -22,7 +22,7 @@
 #ifndef KFILEWRITE_PLUGIN_P_H
 #define KFILEWRITE_PLUGIN_P_H
 
-#include <QtCore/QHash>
+#include <QHash>
 
 class KFileWritePlugin;
 

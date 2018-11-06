@@ -20,7 +20,7 @@
 #ifndef KTIMEZONESTEST_H
 #define KTIMEZONESTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class KTimeZonesTest : public QObject
 {

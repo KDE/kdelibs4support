@@ -17,7 +17,7 @@
 
 */
 
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
 #include <QtGlobal>
 #include <kcomponentdata.h>
 #include <ksharedconfig.h>

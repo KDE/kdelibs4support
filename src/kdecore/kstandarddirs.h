@@ -29,8 +29,8 @@
 #warning "This file is deprecated."
 #endif
 
-#include <QtCore/QStringList>
-#include <QtCore/QMap>
+#include <QStringList>
+#include <QMap>
 
 class KConfig;
 

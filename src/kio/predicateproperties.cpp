@@ -20,7 +20,7 @@
 
 #include "predicateproperties.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 using namespace std;
 

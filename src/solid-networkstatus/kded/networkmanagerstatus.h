@@ -26,7 +26,7 @@
 
 #include "systemstatusinterface.h"
 
-#include <QtDBus/QDBusInterface>
+#include <QDBusInterface>
 
 class NetworkManagerStatus : public SystemStatusInterface
 {

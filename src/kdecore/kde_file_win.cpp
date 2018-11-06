@@ -23,7 +23,7 @@
 
 #include "kde_file.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 #include <errno.h>
 
 #include <sys/utime.h>

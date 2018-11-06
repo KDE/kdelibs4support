@@ -21,7 +21,7 @@
 #include "kprintpreview.h"
 
 #include <QDialogButtonBox>
-#include <QtCore/QFile>
+#include <QFile>
 #include <QLabel>
 #include <QPrinter>
 #include <QShowEvent>

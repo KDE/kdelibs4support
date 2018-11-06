@@ -20,7 +20,7 @@
 
 #include "keditlistbox.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QLayout>

@@ -7,7 +7,7 @@
 #include <kinputdialog.h>
 #include <kdebug.h>
 
-#include <QtCore/QString>
+#include <QString>
 #include <QValidator>
 
 int main(int argc, char *argv[])

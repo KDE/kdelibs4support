@@ -33,13 +33,13 @@
 #include <limits.h>
 #endif
 
-#include <QtCore/QDir>
-#include <QtCore/QDebug>
-#include <QtCore/QFile>
-#include <QtCore/QHash>
-#include <QtCore/QTextCodec>
-#include <QtCore/QUrl>
-#include <QtCore/QDataStream>
+#include <QDir>
+#include <QDebug>
+#include <QFile>
+#include <QHash>
+#include <QTextCodec>
+#include <QUrl>
+#include <QDataStream>
 
 #include "k4aboutdata.h"
 #include <kcoreaddons_version.h>

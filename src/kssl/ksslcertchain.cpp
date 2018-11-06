@@ -39,7 +39,7 @@
 #endif
 
 #include <kopenssl.h>
-#include <QtCore/QStringList>
+#include <QStringList>
 
 class KSSLCertChainPrivate
 {

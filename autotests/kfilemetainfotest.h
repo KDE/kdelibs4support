@@ -21,8 +21,8 @@
 #define KFILEMETAINFOTEST_H
 
 #include <qtemporarydir.h>
-#include <QtCore/QEventLoop>
-#include <QtCore/QObject>
+#include <QEventLoop>
+#include <QObject>
 
 class KFileMetaInfoTest : public QObject
 {

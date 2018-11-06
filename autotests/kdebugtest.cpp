@@ -25,15 +25,15 @@
 
 #include <QCoreApplication>
 #include <QStringList>
-#include <QtCore/QDebug>
+#include <QDebug>
 #undef QT_NO_DEBUG
 
 #include "kdebug.h"
 #include <kcomponentdata.h>
 #include <iostream>
-#include <QtCore/QPoint>
-#include <QtCore/QRect>
-#include <QtCore/QVariant>
+#include <QPoint>
+#include <QRect>
+#include <QVariant>
 #include <map>
 #include <list>
 

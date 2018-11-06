@@ -20,7 +20,7 @@
 #define QTEST_KDE_H
 
 #include <kdelibs4support_export.h>
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <stdlib.h>
 #include <assert.h>
 #include <k4aboutdata.h>
@@ -30,8 +30,8 @@
 #include "kglobal.h"
 #include <kurl.h>
 #include <QApplication>
-#include <QtCore/QEventLoop>
-#include <QtTest/QSignalSpy>
+#include <QEventLoop>
+#include <QSignalSpy>
 
 namespace QTest
 {

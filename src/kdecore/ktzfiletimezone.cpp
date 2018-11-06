@@ -30,9 +30,9 @@
 #endif
 
 #include <QDebug>
-#include <QtCore/QFile>
-#include <QtCore/QDataStream>
-#include <QtCore/QVector>
+#include <QFile>
+#include <QDataStream>
+#include <QVector>
 
 // Use this replacement for QDateTime::setTime_t(uint) since our time
 // values are signed.

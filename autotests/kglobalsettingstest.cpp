@@ -18,14 +18,14 @@
 */
 
 #include <QSignalSpy>
-#include <QtTest/QtTest>
+#include <QtTest>
 #include "kglobalsettingstest.h"
 
 QTEST_MAIN(KGlobalSettingsTest)
 
 #include <kglobalsettings.h>
-#include <QtCore/QProcess>
-#include <QtCore/QEventLoop>
+#include <QProcess>
+#include <QEventLoop>
 #include <QDBusConnection>
 
 /**

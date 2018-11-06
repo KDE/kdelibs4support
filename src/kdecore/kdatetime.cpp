@@ -34,12 +34,12 @@
 #include <limits>
 
 #include <QDebug>
-#include <QtCore/QDateTime>
-#include <QtCore/QRegExp>
-#include <QtCore/QStringList>
-#include <QtCore/QSharedData>
-#include <QtCore/QSharedPointer>
-#include <QtCore/QDataStream>
+#include <QDateTime>
+#include <QRegExp>
+#include <QStringList>
+#include <QSharedData>
+#include <QSharedPointer>
+#include <QDataStream>
 
 #include <klocale.h>
 #include <klocalizedstring.h>

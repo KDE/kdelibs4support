@@ -20,9 +20,9 @@
 #ifndef WICDCUSTOMTYPES_H
 #define WICDCUSTOMTYPES_H
 
-#include <QtCore/QMetaType>
-#include <QtCore/QStringList>
-#include <QtDBus/QDBusArgument>
+#include <QMetaType>
+#include <QStringList>
+#include <QDBusArgument>
 
 struct WicdConnectionInfo {
     int status;

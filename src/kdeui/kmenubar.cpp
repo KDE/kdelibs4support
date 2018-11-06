@@ -25,8 +25,8 @@
 
 #include <stdio.h>
 
-#include <QtCore/QObject>
-#include <QtCore/QTimer>
+#include <QObject>
+#include <QTimer>
 #include <QActionEvent>
 #include <QDesktopWidget>
 #include <QPainter>

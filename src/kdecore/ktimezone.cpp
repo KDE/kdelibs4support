@@ -33,9 +33,9 @@
 #include <cstdlib>
 
 #include <QDebug>
-#include <QtCore/QSet>
-#include <QtCore/QSharedData>
-#include <QtCore/QCoreApplication>
+#include <QSet>
+#include <QSharedData>
+#include <QCoreApplication>
 
 int gmtoff(time_t t);   // defined in ksystemtimezone.cpp
 

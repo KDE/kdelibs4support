@@ -19,12 +19,12 @@
 #ifndef KKERNEL_MAC_H
 #define KKERNEL_MAC_H
 
-#include <QtCore/qglobal.h> // defines Q_OS_MACX
+#include <qglobal.h> // defines Q_OS_MACX
 
 #ifdef Q_OS_MACX
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QString>
+#include <QString>
 
 #include <CoreFoundation/CFString.h>
 

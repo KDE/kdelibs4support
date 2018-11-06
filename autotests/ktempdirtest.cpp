@@ -19,9 +19,9 @@
 #include "qtest_kde.h"
 #include <ktempdir.h>
 
-#include <QtCore/QDir>
-#include <QtCore/QObject>
-#include <QtCore/QDebug>
+#include <QDir>
+#include <QObject>
+#include <QDebug>
 
 class KTempDirTest : public QObject
 {

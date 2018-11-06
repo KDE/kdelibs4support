@@ -26,7 +26,7 @@
 
 #include <config-kdelibs4support.h>
 
-#include <QtCore/QThread>
+#include <QThread>
 
 /**
  * Reads the meta-data of a given file inside a thread.

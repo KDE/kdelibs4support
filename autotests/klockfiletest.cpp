@@ -20,11 +20,11 @@
 #include "moc_klockfiletest.cpp"
 
 #include <unistd.h>
-#include <QtTest/QTest>
-#include <QtCore/QFile>
-#include <QtCore/QProcess>
-#include <QtCore/QIODevice>
-#include <QtCore/QTextStream>
+#include <QTest>
+#include <QFile>
+#include <QProcess>
+#include <QIODevice>
+#include <QTextStream>
 #include <QtConcurrentRun>
 
 namespace QTest

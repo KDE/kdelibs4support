@@ -8,8 +8,8 @@
 #ifndef KIO_KIMAGEIO_H
 #define KIO_KIMAGEIO_H
 
-#include <QtCore/QStringList>
-#include <QtCore/QString>
+#include <QStringList>
+#include <QString>
 
 #include <kdelibs4support_export.h>
 

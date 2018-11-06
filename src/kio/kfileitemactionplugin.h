@@ -23,7 +23,7 @@
 #define KFILEITEMACTION_PLUGIN_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QObject>
+#include <QObject>
 
 class QAction;
 class QMenu;

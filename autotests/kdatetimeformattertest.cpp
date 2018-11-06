@@ -21,9 +21,9 @@
 
 #include <locale.h>
 
-#include <QtCore/QString>
+#include <QString>
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include "kdatetime.h"
 #include "kcalendarsystem.h"
 #include "kdatetimeformatter_p.h"

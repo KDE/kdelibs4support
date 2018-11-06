@@ -19,7 +19,7 @@
 
 #include "kscan.h"
 
-#include <QtCore/QFile>
+#include <QFile>
 #include <QPushButton>
 
 #include <klocalizedstring.h>

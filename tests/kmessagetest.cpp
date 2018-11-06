@@ -19,7 +19,7 @@
 #include "kmessagetest.h"
 
 #include <QApplication>
-#include <QtCore/QString>
+#include <QString>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QBoxLayout>

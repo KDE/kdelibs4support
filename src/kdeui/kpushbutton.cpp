@@ -24,9 +24,9 @@
 #include <QDrag>
 #include <QActionEvent>
 #include <QMenu>
-#include <QtCore/QPointer>
+#include <QPointer>
 #include <QStyle>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QApplication>
 
 #include <kguiitem.h>

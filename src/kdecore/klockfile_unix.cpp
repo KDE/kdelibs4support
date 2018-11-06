@@ -35,8 +35,8 @@
 #include <unistd.h>
 
 #include <qplatformdefs.h> // QT_STATBUF, QT_LSTAT, QT_OPEN
-#include <QtCore/QDate>
-#include <QtCore/QFile>
+#include <QDate>
+#include <QFile>
 #include <QCoreApplication>
 #include <QTextStream>
 #include <QTemporaryFile>

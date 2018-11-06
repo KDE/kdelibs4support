@@ -20,7 +20,7 @@
 #ifndef KDATETIMEFORMATTERTEST_H
 #define KDATETIMEFORMATTERTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include "kdatetimeformatter_p.h"
 

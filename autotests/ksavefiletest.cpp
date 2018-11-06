@@ -22,8 +22,8 @@
 
 #include "kbackup.h" // TODO split out into a separate test
 
-#include <QtCore/QDebug>
-#include <QtCore/QTextStream>
+#include <QDebug>
+#include <QTextStream>
 
 #include <qstandardpaths.h>
 #include <qtemporaryfile.h>

@@ -21,7 +21,7 @@
 
 #include "ktabbar.h"
 
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QApplication>
 #include <QCursor>
 #include <QMouseEvent>

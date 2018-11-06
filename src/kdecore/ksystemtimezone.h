@@ -30,11 +30,11 @@
 #include <kdelibs4support_export.h>
 #include "ktimezone.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QDateTime>
-#include <QtCore/QList>
-#include <QtCore/QString>
-#include <QtCore/QByteArray>
+#include <QObject>
+#include <QDateTime>
+#include <QList>
+#include <QString>
+#include <QByteArray>
 
 class KSystemTimeZoneSource;
 class KSystemTimeZonePrivate;

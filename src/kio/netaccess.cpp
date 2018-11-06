@@ -29,13 +29,13 @@
 
 #include <cstring>
 
-#include <QtCore/QCharRef>
+#include <QCharRef>
 #include <QApplication>
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QMetaClassInfo>
-#include <QtCore/QTextStream>
-#include <QtCore/QDataStream>
+#include <QFile>
+#include <QFileInfo>
+#include <QMetaClassInfo>
+#include <QTextStream>
+#include <QDataStream>
 #include <qtemporaryfile.h>
 
 #include <klocalizedstring.h>

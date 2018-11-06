@@ -28,8 +28,8 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QMetaType>
-#include <QtCore/QSharedDataPointer>
+#include <QMetaType>
+#include <QSharedDataPointer>
 
 class QDataStream;
 class KDateTimePrivate;

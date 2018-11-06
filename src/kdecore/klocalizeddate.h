@@ -20,8 +20,8 @@
 #ifndef KLOCALIZEDDATE_H
 #define KLOCALIZEDDATE_H
 
-#include <QtCore/QString>
-#include <QtCore/QDate>
+#include <QString>
+#include <QDate>
 
 #include <kdelibs4support_export.h>
 #include "klocale.h"

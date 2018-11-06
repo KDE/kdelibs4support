@@ -19,7 +19,7 @@
 
 #include "kfilemetadatareader_p.h"
 
-#include <QtCore/QProcess>
+#include <QProcess>
 
 #include <qstandardpaths.h>
 

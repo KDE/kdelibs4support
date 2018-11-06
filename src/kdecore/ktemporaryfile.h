@@ -23,7 +23,7 @@
 #include <kdelibs4support_export.h>
 #include "kglobal.h"
 
-#include <QtCore/QTemporaryFile>
+#include <QTemporaryFile>
 
 class KTemporaryFilePrivate;
 

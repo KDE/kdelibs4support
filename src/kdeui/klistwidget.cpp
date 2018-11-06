@@ -21,7 +21,7 @@
 #include <kglobalsettings.h>
 #include <kdebug.h>
 
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QKeyEvent>
 #include <QApplication>
 

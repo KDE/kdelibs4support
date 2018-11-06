@@ -38,8 +38,8 @@
 #include <paths.h>
 #endif
 
-#include <QtCore/QDir>
-#include <QtCore/QDebug>
+#include <QDir>
+#include <QDebug>
 #include <qtemporarydir.h>
 
 #include <QCoreApplication>

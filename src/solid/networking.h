@@ -22,7 +22,7 @@
 #ifndef SOLID_NETWORKING
 #define SOLID_NETWORKING
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include <kdelibs4support_export.h>
 

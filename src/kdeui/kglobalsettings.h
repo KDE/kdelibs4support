@@ -20,8 +20,8 @@
 
 #include <kdelibs4support_export.h>
 #include <ksharedconfig.h>
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 #include <QPalette>
 
 #define KDE_DEFAULT_SINGLECLICK true

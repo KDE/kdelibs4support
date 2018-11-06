@@ -22,7 +22,7 @@
 
 #include "kcolorchoosermode.h"
 
-#include <QtCore/QtGlobal>
+#include <QtGlobal>
 
 class QColor;
 

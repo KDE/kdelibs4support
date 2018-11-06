@@ -22,8 +22,8 @@
 #define KDATATOOL_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QObject>
+#include <QString>
 
 #include <QAction>
 

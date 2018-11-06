@@ -21,7 +21,7 @@
 #define KFILEWRITEPLUGIN_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QVariant>
+#include <QVariant>
 
 class QUrl;
 

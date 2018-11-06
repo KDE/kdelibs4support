@@ -20,8 +20,8 @@
 #include "kdatetimetest.h"
 
 #include <cstdlib>
-#include <QtTest/QtTest>
-#include <QtCore/QDir>
+#include <QtTest>
+#include <QDir>
 #include <klocale.h>
 #include <kcalendarsystem.h>
 #include <ksystemtimezone.h>

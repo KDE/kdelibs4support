@@ -22,7 +22,7 @@
 #include "powermanagement.h"
 #include "powermanagement_p.h"
 
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
 
 Q_GLOBAL_STATIC(Solid::PowerManagementPrivate, globalPowerManager)
 

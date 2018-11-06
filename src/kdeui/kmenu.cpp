@@ -20,10 +20,10 @@
 
 #include "kmenu.h"
 
-#include <QtCore/QMetaMethod>
-#include <QtCore/QObject>
-#include <QtCore/QPointer>
-#include <QtCore/QTimer>
+#include <QMetaMethod>
+#include <QObject>
+#include <QPointer>
+#include <QTimer>
 #include <QApplication>
 #include <QCursor>
 #include <QFontMetrics>

@@ -22,7 +22,7 @@
 #include <kdelibs4support_export.h>
 #include <kmessage.h>
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class QWidget;
 class KMessageBoxMessageHandlerPrivate;

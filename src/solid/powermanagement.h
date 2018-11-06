@@ -22,8 +22,8 @@
 #ifndef SOLID_POWERMANAGEMENT_H
 #define SOLID_POWERMANAGEMENT_H
 
-#include <QtCore/QObject>
-#include <QtCore/QSet>
+#include <QObject>
+#include <QSet>
 
 #include <kdelibs4support_export.h>
 

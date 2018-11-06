@@ -19,7 +19,7 @@
 #ifndef KLOCALETEST_H
 #define KLOCALETEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class KLocaleTest : public QObject
 {

@@ -70,8 +70,8 @@ void KApplication_init_windows()
 #include <signal.h>
 #include <unistd.h>
 
-#include <QtCore/QList>
-#include <QtCore/QtDebug>
+#include <QList>
+#include <QtDebug>
 
 static PPERF_OBJECT_TYPE FirstObject(PPERF_DATA_BLOCK PerfData)
 {

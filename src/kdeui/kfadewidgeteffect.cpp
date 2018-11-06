@@ -22,7 +22,7 @@
 #include "kfadewidgeteffect.h"
 #include "kfadewidgeteffect_p.h"
 
-#include <QtCore/QEvent>
+#include <QEvent>
 #include <QPaintEngine>
 #include <QPainter>
 #include <QStyle>

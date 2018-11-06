@@ -153,7 +153,7 @@
 #define KDE_signal  ::signal
 #endif
 
-#include <QtCore/QFile>
+#include <QFile>
 class QString;
 namespace KDE
 {

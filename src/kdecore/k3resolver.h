@@ -27,9 +27,9 @@
 
 //////////////////
 // Needed includes
-#include <QtCore/QList>
-#include <QtCore/QObject>
-#include <QtCore/QSharedDataPointer>
+#include <QList>
+#include <QObject>
+#include <QSharedDataPointer>
 #include "k3socketaddress.h"
 #include "kdemacros.h"
 

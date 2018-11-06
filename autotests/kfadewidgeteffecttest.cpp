@@ -23,7 +23,7 @@
 
 #include <qtest_kde.h>
 #include <kfadewidgeteffect.h>
-#include <QtCore/QPointer>
+#include <QPointer>
 
 class KFadeWidgetEffectTest : public QObject
 {

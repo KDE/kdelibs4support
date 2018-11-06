@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <k4timezonewidget.h>
 #include <ksystemtimezone.h>
 #include <kconfiggroup.h>

@@ -30,7 +30,7 @@
 #include <kurl.h>
 #include <kio/global.h>
 
-#include <QtCore/QFile>
+#include <QFile>
 
 #ifdef Q_OS_WIN
 #include <windows.h>

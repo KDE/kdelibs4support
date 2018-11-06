@@ -19,9 +19,9 @@
 
 #include "kdayperiod_p.h"
 
-#include <QtCore/QSharedData>
-#include <QtCore/QString>
-#include <QtCore/QTime>
+#include <QSharedData>
+#include <QString>
+#include <QTime>
 
 class KDayPeriodPrivate : public QSharedData
 {

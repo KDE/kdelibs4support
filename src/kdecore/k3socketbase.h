@@ -56,8 +56,8 @@
 #ifndef KSOCKETBASE_H
 #define KSOCKETBASE_H
 
-#include <QtCore/QIODevice>
-#include <QtCore/QString>
+#include <QIODevice>
+#include <QString>
 
 #include <kdelibs4support_export.h>
 #include "k3socketaddress.h"

@@ -23,7 +23,7 @@
 
 #include "kfadewidgeteffect.h"
 
-#include <QtCore/QTimeLine>
+#include <QTimeLine>
 #include <QPixmap>
 
 class KFadeWidgetEffectPrivate

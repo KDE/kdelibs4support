@@ -23,7 +23,7 @@
 #define KFILEMETAINFOITEM_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QSharedData>
+#include <QSharedData>
 
 class KFileWritePlugin;
 class QVariant;

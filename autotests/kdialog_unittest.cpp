@@ -20,11 +20,11 @@
 
 #include <QApplication>
 #include <QCheckBox>
-#include <QtTest/QSignalSpy>
+#include <QSignalSpy>
 #include <kdialog.h>
 #include <QPushButton>
 #include <QPointer>
-#include <QtTest/QtTest>
+#include <QtTest>
 
 Q_DECLARE_METATYPE(KDialog::ButtonCode)
 

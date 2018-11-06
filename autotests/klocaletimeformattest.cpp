@@ -27,8 +27,8 @@
 #include "kdayperiod_p.h"
 
 #include <QStandardPaths>
-#include <QtCore/QStringList>
-#include <QtTest/QTest>
+#include <QStringList>
+#include <QTest>
 
 static QString loadTimeFormat(const QString &country)
 {

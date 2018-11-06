@@ -26,7 +26,7 @@
 #include <ktreewidgetsearchline.h>
 #include <ktreewidgetsearchlinewidget.h>
 
-#include <QtDBus/QtDBus>
+#include <QtDBus>
 #include <QLayout>
 #include <QTreeWidget>
 #include <QPushButton>

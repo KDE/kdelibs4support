@@ -23,7 +23,7 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QList>
+#include <QList>
 
 class QPrintDialog;
 class QPrinter;

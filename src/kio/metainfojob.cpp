@@ -22,7 +22,7 @@
 #include <kfileitem.h>
 #include <kfilemetainfo.h>
 
-#include <QtCore/QTimer>
+#include <QTimer>
 
 #include "kio/jobuidelegate.h"
 

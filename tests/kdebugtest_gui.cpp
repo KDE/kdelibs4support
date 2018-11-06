@@ -1,7 +1,7 @@
 #include "kdebug.h"
 #include <QWidget>
 #include <QApplication>
-#include <QtCore/QVariant>
+#include <QVariant>
 #include <QPen>
 
 int main(int argc, char **argv)

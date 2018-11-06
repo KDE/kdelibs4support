@@ -21,7 +21,7 @@
 #ifndef KDEBUGDBUSIFACE_H
 #define KDEBUGDBUSIFACE_H
 
-#include <QtCore/qobject.h>
+#include <qobject.h>
 
 /**
  * @short D-Bus interface to KDebug.

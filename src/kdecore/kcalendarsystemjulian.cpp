@@ -24,8 +24,8 @@
 #include "klocalizedstring.h"
 #include "kconfiggroup.h"
 
-#include <QtCore/QDate>
-#include <QtCore/QCharRef>
+#include <QDate>
+#include <QCharRef>
 
 class KCalendarSystemJulianPrivate : public KCalendarSystemPrivate
 {

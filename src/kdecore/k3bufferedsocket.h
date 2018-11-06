@@ -28,9 +28,9 @@
 #include <kdelibs4support_export.h>
 #include "k3streamsocket.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QByteArray>
-#include <QtCore/QList>
+#include <QObject>
+#include <QByteArray>
+#include <QList>
 
 namespace KNetwork
 {

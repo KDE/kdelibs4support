@@ -24,7 +24,7 @@
 
 #include "kconfiggroup.h"
 
-#include <QtCore/QDateTime>
+#include <QDateTime>
 
 #include "klocalizedstring.h"
 #include "kdatetime.h"

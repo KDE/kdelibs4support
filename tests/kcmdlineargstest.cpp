@@ -1,11 +1,11 @@
 #include <kcmdlineargs.h>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QUrl>
+#include <QCoreApplication>
+#include <QUrl>
 
 #include <stdio.h>
 #include <assert.h>
-#include <QtCore/QDir>
-#include <QtCore/QDebug>
+#include <QDir>
+#include <QDebug>
 
 #if 1
 int

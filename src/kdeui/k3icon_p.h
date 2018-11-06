@@ -22,7 +22,7 @@
 #ifndef K3ICON_P_H
 #define K3ICON_P_H
 
-#include <QtCore/QString>
+#include <QString>
 
 #include <kdelibs4support_export.h>
 #include <kiconloader.h>

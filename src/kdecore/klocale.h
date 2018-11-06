@@ -27,8 +27,8 @@
 // Include for providing source code compatibility
 #include <klocalizedstring.h>
 
-#include <QtCore/QString>
-#include <QtCore/QList>
+#include <QString>
+#include <QList>
 
 class QStringList;
 class QTextCodec;

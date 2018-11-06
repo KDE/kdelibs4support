@@ -23,13 +23,13 @@
 #include <KConfigCore/kconfiggroup.h>
 #include <KI18n/klocalizedstring.h>
 
-#include <QtCore/QDate>
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include <QtCore/QSharedData>
-#include <QtCore/QStandardPaths>
-#include <QtCore/QString>
-#include <QtCore/QStringList>
+#include <QDate>
+#include <QDir>
+#include <QFileInfo>
+#include <QSharedData>
+#include <QStandardPaths>
+#include <QString>
+#include <QStringList>
 
 class KCurrencyCodePrivate : public QSharedData
 {

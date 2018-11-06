@@ -25,12 +25,12 @@
 #include <klocalizedstring.h>
 #include <kconfiggroup.h>
 
-#include <QtCore/QByteArray>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QDataStream>
-#include <QtCore/QHash>
-#include <QtCore/QString>
-#include <QtCore/QTimer>
+#include <QByteArray>
+#include <QCoreApplication>
+#include <QDataStream>
+#include <QHash>
+#include <QString>
+#include <QTimer>
 
 #define DISABLE_NEPOMUK_LEGACY
 #include "config-nepomuk.h"

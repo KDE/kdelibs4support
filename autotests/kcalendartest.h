@@ -21,7 +21,7 @@
 #ifndef KCALENDARTEST_H
 #define KCALENDARTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 #include "klocale.h"
 

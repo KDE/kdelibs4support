@@ -21,7 +21,7 @@
 #define KTEMPDIR_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QString>
+#include <QString>
 
 /**
  * \class KTempDir ktempdir.h <KTempDir>

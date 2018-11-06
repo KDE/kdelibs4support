@@ -2,7 +2,7 @@
 #define QT3_SUPPORT_WARNINGS
 
 #include <QWidget>
-#include <QtCore/QString>
+#include <QString>
 #include <QMessageBox>
 #include <QTextEdit>
 #include <QtCore>

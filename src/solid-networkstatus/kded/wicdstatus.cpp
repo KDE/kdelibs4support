@@ -22,7 +22,7 @@
 #include "wicdstatus.h"
 #include "wicdcustomtypes.h"
 
-#include <QtDBus/QDBusReply>
+#include <QDBusReply>
 #include <QDBusMetaType>
 
 #include <kdebug.h>

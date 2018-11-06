@@ -20,8 +20,8 @@
 #ifndef KCALENDARERA_H
 #define KCALENDARERA_H
 
-#include <QtCore/QString>
-#include <QtCore/QDate>
+#include <QString>
+#include <QDate>
 
 #include "klocale.h"
 

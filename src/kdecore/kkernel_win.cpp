@@ -22,15 +22,15 @@
 
 #include "kkernel_win.h"
 
-#include <QtCore/QTextCodec>
+#include <QTextCodec>
 
 #ifdef Q_OS_WIN
 
 #include <klocalizedstring.h>
 
-#include <QtCore/QDir>
-#include <QtCore/QString>
-#include <QtCore/QLibrary>
+#include <QDir>
+#include <QString>
+#include <QLibrary>
 
 #include <windows.h>
 #include <shellapi.h>

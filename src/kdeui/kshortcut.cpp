@@ -23,8 +23,8 @@
 
 #include <QActionEvent>
 #include <QKeySequence>
-#include <QtCore/QCharRef>
-#include <QtCore/QMutableStringListIterator>
+#include <QCharRef>
+#include <QMutableStringListIterator>
 
 #include "kdebug.h"
 #include "klocalizedstring.h"

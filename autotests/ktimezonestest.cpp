@@ -21,9 +21,9 @@
 #include "ktimezonestest_p.h"
 
 #include <stdio.h>
-#include <QtTest/QtTest>
-#include <QtCore/QDir>
-#include <QtCore/QDate>
+#include <QtTest>
+#include <QDir>
+#include <QDate>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <config-date.h> // for HAVE_TM_GMTOFF

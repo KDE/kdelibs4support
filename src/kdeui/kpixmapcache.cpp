@@ -20,20 +20,20 @@
 
 #include "kpixmapcache.h"
 
-#include <QtCore/QString>
+#include <QString>
 #include <QPixmap>
-#include <QtCore/QFile>
-#include <QtCore/QDataStream>
-#include <QtCore/QFileInfo>
-#include <QtCore/QDateTime>
+#include <QFile>
+#include <QDataStream>
+#include <QFileInfo>
+#include <QDateTime>
 #include <QPixmapCache>
-#include <QtCore/QtGlobal>
+#include <QtGlobal>
 #include <QPainter>
-#include <QtCore/QQueue>
-#include <QtCore/QTimer>
-#include <QtCore/QMutex>
-#include <QtCore/QMutexLocker>
-#include <QtCore/QList>
+#include <QQueue>
+#include <QTimer>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QList>
 #include <qdir.h>
 #include <qstandardpaths.h>
 #include <qlockfile.h>

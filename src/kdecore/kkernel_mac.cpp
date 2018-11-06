@@ -32,10 +32,10 @@
 #include <CoreFoundation/CFBundle.h>
 #include <CoreFoundation/CFString.h>
 #include <CoreFoundation/CFURL.h>
-#include <QtCore/QFile>
-#include <QtCore/QProcess>
-#include <QtCore/QStringList>
-#include <QtCore/qvarlengtharray.h>
+#include <QFile>
+#include <QProcess>
+#include <QStringList>
+#include <qvarlengtharray.h>
 
 #include <ksharedconfig.h>
 #include <kconfig.h>

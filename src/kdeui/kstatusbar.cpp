@@ -21,8 +21,8 @@
 
 #include "kstatusbar.h"
 
-#include <QtCore/QHash>
-#include <QtCore/QEvent>
+#include <QHash>
+#include <QEvent>
 #include <QLabel>
 
 #include <kdebug.h>

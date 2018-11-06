@@ -27,7 +27,7 @@
 #include "powermanagementinterface.h"
 #include "policyagentinterface.h"
 
-#include <QtDBus/QDBusServiceWatcher>
+#include <QDBusServiceWatcher>
 
 namespace Solid
 {

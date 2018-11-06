@@ -21,10 +21,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/stat.h>
-#include <QtCore/QDir>
+#include <QDir>
 #include <QApplication>
 #include <QLayout>
-#include <QtCore/QMutableStringListIterator>
+#include <QMutableStringListIterator>
 #include <QWidget>
 
 #include <kfiledialog.h>
@@ -41,10 +41,10 @@
 #include "kfstest.h"
 #include <kconfiggroup.h>
 
-#include <QtCore/QMutableStringListIterator>
+#include <QMutableStringListIterator>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
-#include <QtCore/QTimer>
+#include <QTimer>
 
 KFDTest::KFDTest(const QUrl &startDir, QObject *parent, const char *name)
     : QObject(parent),

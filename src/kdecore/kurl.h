@@ -27,9 +27,9 @@
 #warning "This file is deprecated."
 #endif
 
-#include <QtCore/QVariant>
-#include <QtCore/QUrl>
-#include <QtCore/QMap>
+#include <QVariant>
+#include <QUrl>
+#include <QMap>
 
 class QStringList;
 class QMimeData;

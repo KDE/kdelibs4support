@@ -20,9 +20,9 @@
 #ifndef KFILEMETADATAMODEL_H
 #define KFILEMETADATAMODEL_H
 
-#include <QtCore/QHash>
-#include <QtCore/QObject>
-#include <QtCore/QString>
+#include <QHash>
+#include <QObject>
+#include <QString>
 
 #include <config-kdelibs4support.h>
 #if ! KIO_NO_NEPOMUK

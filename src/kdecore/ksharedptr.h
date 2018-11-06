@@ -29,7 +29,7 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QSharedData>
+#include <QSharedData>
 
 /**
  * @deprecated

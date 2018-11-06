@@ -22,8 +22,8 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QSharedDataPointer>
-#include <QtCore/QString>
+#include <QSharedDataPointer>
+#include <QString>
 
 class QDate;
 class QStringList;

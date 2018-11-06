@@ -20,7 +20,7 @@
 #ifndef KURLMIMETEST_H
 #define KURLMIMETEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class KUrlMimeTest : public QObject
 {

@@ -21,7 +21,7 @@
 #include "kcomponentdata.h"
 #include "kcomponentdata_p.h"
 
-#include <QtCore/QCoreApplication>
+#include <QCoreApplication>
 
 #include "kaboutdata.h"
 #include "k4aboutdata.h"

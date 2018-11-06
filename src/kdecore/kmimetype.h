@@ -22,8 +22,8 @@
 
 #include "kdelibs4support_export.h"
 
-#include <QtCore/QStringList>
-#include <QtCore/QList>
+#include <QStringList>
+#include <QList>
 
 #include <ksycocatype.h>
 #include <kservicetype.h>

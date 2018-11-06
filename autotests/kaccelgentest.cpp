@@ -17,7 +17,7 @@
 
 #include "kaccelgen.h"
 
-#include <QtCore/QStringList>
+#include <QStringList>
 
 #include <iostream>
 

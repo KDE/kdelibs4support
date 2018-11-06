@@ -21,7 +21,7 @@
 #include "kfiletreeviewtest.h"
 
 #include <QApplication>
-#include <QtCore/QDir>
+#include <QDir>
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QPushButton>

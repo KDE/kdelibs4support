@@ -21,7 +21,7 @@
 #include "kcalendarsystem.h"
 #include "kcalendarsystemprivate_p.h"
 
-#include <QtCore/QDate>
+#include <QDate>
 
 KCalendarEra::KCalendarEra()
 {

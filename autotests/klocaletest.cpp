@@ -18,7 +18,7 @@
 */
 
 #include "klocaletest.h"
-#include <QtTest/QtTest>
+#include <QtTest>
 
 #include "klocale.h"
 #include "klocale_p.h"
@@ -27,8 +27,8 @@
 #include "kdayperiod_p.h"
 #include "kdatetime.h"
 #include "ksystemtimezone.h"
-#include <QtCore/QString>
-#include <QtCore/QDate>
+#include <QString>
+#include <QDate>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 

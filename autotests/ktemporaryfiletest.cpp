@@ -9,7 +9,7 @@ This file has been placed in the Public Domain.
 
 #include "qtest_kde.h"
 
-#include <QtCore/QDir>
+#include <QDir>
 #include <QCoreApplication>
 
 #include "ktemporaryfile.h"

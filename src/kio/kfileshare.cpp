@@ -19,8 +19,8 @@
 
 #include "kfileshare.h"
 #include "kfileshare_p.h"
-#include <QtCore/QDir>
-#include <QtCore/QFile>
+#include <QDir>
+#include <QFile>
 #include <QProcess>
 #include <QDebug>
 #include <klocalizedstring.h>

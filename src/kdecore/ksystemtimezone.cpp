@@ -36,17 +36,17 @@
 #include <cstdlib>
 
 #include <QDebug>
-#include <QtCore/QCoreApplication>
-#include <QtCore/QFile>
-#include <QtCore/QFileInfo>
-#include <QtCore/QDir>
-#include <QtCore/QRegExp>
-#include <QtCore/QStringList>
-#include <QtCore/QTextStream>
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusConnectionInterface>
-#include <QtDBus/QDBusReply>
+#include <QCoreApplication>
+#include <QFile>
+#include <QFileInfo>
+#include <QDir>
+#include <QRegExp>
+#include <QStringList>
+#include <QTextStream>
+#include <QDBusConnection>
+#include <QDBusInterface>
+#include <QDBusConnectionInterface>
+#include <QDBusReply>
 
 #include <kconfig.h>
 #include <klocalizedstring.h>

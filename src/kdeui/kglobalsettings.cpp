@@ -28,7 +28,7 @@
 #include <QColor>
 #include <QCursor>
 #include <QDesktopWidget>
-#include <QtCore/QDir>
+#include <QDir>
 #include <QFont>
 #include <QFontDatabase>
 #include <QFontInfo>

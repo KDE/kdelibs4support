@@ -19,10 +19,10 @@
 #include <klocale.h>
 #include <kglobal.h>
 
-#include <QtCore/QObject>
+#include <QObject>
 #include <QtConcurrent>
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <qtest_kde.h> // kWaitForSignal
 
 static QString testMethod()

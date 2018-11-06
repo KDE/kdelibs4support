@@ -22,11 +22,11 @@
 
 #include "kglobal.h"
 
-#include <QtCore/QObject>
-#include <QtCore/QStringList>
-#include <QtCore/QHash>
-#include <QtCore/QLibrary>
-#include <QtCore/QtPlugin>
+#include <QObject>
+#include <QStringList>
+#include <QHash>
+#include <QLibrary>
+#include <QtPlugin>
 
 #include "kpluginfactory.h"
 #include "kpluginloader.h"

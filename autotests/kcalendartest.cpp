@@ -22,9 +22,9 @@
 
 #include <locale.h>
 
-#include <QtCore/QString>
+#include <QString>
 
-#include <QtTest/QtTest>
+#include <QtTest>
 #include "kcalendarsystem.h"
 #include "klocalizeddate.h"
 #include "klocalizedstring.h"

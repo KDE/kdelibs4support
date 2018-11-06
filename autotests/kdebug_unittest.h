@@ -21,7 +21,7 @@
 #ifndef KDEBUG_UNITTEST_H
 #define KDEBUG_UNITTEST_H
 
-#include <QtCore/QObject>
+#include <QObject>
 
 class KDebugTest : public QObject
 {

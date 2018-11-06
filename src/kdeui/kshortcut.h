@@ -29,9 +29,9 @@
 
 #include <kdelibs4support_export.h>
 
-#include <QtCore/QList>
-#include <QtCore/QHash>
-#include <QtCore/QMetaType>
+#include <QList>
+#include <QHash>
+#include <QMetaType>
 #include <QKeySequence>
 
 class KShortcutPrivate;

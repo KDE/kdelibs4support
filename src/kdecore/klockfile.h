@@ -21,8 +21,8 @@
 #define KLOCKFILE_H
 
 #include <kdelibs4support_export.h>
-#include <QtCore/QString>
-#include <QtCore/QFlags>
+#include <QString>
+#include <QFlags>
 
 class QString;
 

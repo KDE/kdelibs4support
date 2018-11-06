@@ -37,9 +37,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <QtCore/QDebug>
-#include <QtCore/QIODevice>
-#include <QtCore/QTextCodec>
+#include <QDebug>
+#include <QIODevice>
+#include <QTextCodec>
 
 #define KMD5_S11 7
 #define KMD5_S12 12

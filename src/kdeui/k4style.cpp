@@ -45,10 +45,10 @@
 
 #include "k4style.h"
 
-#include <QtCore/qalgorithms.h>
-#include <QtCore/QCache>
-#include <QtCore/QEvent>
-#include <QtCore/QVariant>
+#include <qalgorithms.h>
+#include <QCache>
+#include <QEvent>
+#include <QVariant>
 #include <QAbstractItemView>
 #include <QApplication>
 #include <QDialogButtonBox>

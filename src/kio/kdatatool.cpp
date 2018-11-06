@@ -25,7 +25,7 @@
 #include <kservicetypetrader.h>
 
 #include <QPixmap>
-#include <QtCore/QFile>
+#include <QFile>
 #include <QDebug>
 
 /*************************************************

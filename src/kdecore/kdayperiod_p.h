@@ -20,7 +20,7 @@
 #ifndef KDAYPERIOD_H
 #define KDAYPERIOD_H
 
-#include <QtCore/QSharedDataPointer>
+#include <QSharedDataPointer>
 
 #include "klocale.h"
 #include <kdelibs4support_export.h>

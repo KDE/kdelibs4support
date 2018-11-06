@@ -25,7 +25,7 @@
 #ifndef KSERVERSOCKET_H
 #define KSERVERSOCKET_H
 
-#include <QtCore/QObject>
+#include <QObject>
 #include "k3socketbase.h"
 #include "k3streamsocket.h"
 

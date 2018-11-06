@@ -22,9 +22,9 @@
 #include <qstandardpaths.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <QtTest/QtTest>
+#include <QtTest>
 #include <kdebug.h>
-#include <QtCore/QProcess>
+#include <QProcess>
 
 // Set up the env before the first qDebug/qWarning (e.g. from kcrash)
 void setEnvironmentVariables()

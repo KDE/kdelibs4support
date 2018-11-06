@@ -63,14 +63,14 @@
 #define interface struct
 #endif
 #include <shlobj.h>
-#include <QtCore/QVarLengthArray>
+#include <QVarLengthArray>
 #endif
 
-#include <QtCore/QMutex>
-#include <QtCore/QRegExp>
-#include <QtCore/QDir>
-#include <QtCore/QFileInfo>
-#include <QtCore/QSettings>
+#include <QMutex>
+#include <QRegExp>
+#include <QDir>
+#include <QFileInfo>
+#include <QSettings>
 #include <QCoreApplication>
 
 #ifndef MAXPATHLEN
