@@ -200,8 +200,8 @@ KColorCells::KColorCells(QWidget *parent, int rows, int cols)
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    viewport()->setBackgroundRole(QPalette::Background);
-    setBackgroundRole(QPalette::Background);
+    viewport()->setBackgroundRole(QPalette::Window);
+    setBackgroundRole(QPalette::Window);
 
     setSelectionMode(QAbstractItemView::SingleSelection);
     setDragEnabled(false);
@@ -1014,7 +1014,7 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
     setMainWidget(page);
 
     QGridLayout *tl_layout = new QGridLayout(page);
-    tl_layout->setMargin(0);
+    tl_layout->setContentsMargins(0, 0, 0, 0);
     d->tl_layout = tl_layout;
     tl_layout->addItem(new QSpacerItem(spacingHint() * 2, 0), 0, 1);
 
@@ -1141,7 +1141,7 @@ KColorDialog::KColorDialog(QWidget *parent, bool modal)
     //the layout
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     //the frame
     QFrame *frame = new QFrame(page);

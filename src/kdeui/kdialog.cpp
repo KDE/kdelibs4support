@@ -372,7 +372,7 @@ void KDialog::setMainWidget(QWidget *widget)
     d->mMainWidget = widget;
     if (d->mMainWidget && d->mMainWidget->layout()) {
         // Avoid double-margin problem
-        d->mMainWidget->layout()->setMargin(0);
+        d->mMainWidget->layout()->setContentsMargins(0, 0, 0, 0);
     }
     d->setupLayout();
 }

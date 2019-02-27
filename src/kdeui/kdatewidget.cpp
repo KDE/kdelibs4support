@@ -66,7 +66,7 @@ KDateWidget::KDateWidget(const QDate &date, QWidget *parent)
 void KDateWidget::initWidget(const QDate &date)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
     const int spacingHint = style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     layout->setSpacing(spacingHint);
 

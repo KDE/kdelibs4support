@@ -44,7 +44,7 @@ KcmSsl::KcmSsl(QWidget *parent, const QVariantList &args)
     m_tabs = new QTabWidget(this);
     // tell the tab widget to resize itself to fill all space, basically...
     setLayout(new QVBoxLayout);
-    layout()->setMargin(0);
+    layout()->setContentsMargins(0, 0, 0, 0);
     layout()->setSpacing(0);
     layout()->addWidget(m_tabs);
 

@@ -20,7 +20,7 @@ Test::Test(QWidget *parent)
     resize(600, 300);
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
     topLayout->setSpacing(0);
 
     mWidget = new KTabWidget(this);

@@ -58,7 +58,7 @@ KDateTimeWidget::~KDateTimeWidget()
 void KDateTimeWidget::initWidget()
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     d->dateWidget = new KDateWidget(this);
     d->timeWidget = new QTimeEdit(this);

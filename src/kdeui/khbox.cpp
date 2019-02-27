@@ -29,7 +29,7 @@ KHBox::KHBox(QWidget *parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     setLayout(layout);
 }
@@ -40,7 +40,7 @@ KHBox::KHBox(bool /*vertical*/, QWidget *parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    layout->setContentsMargins(0, 0, 0, 0);
 
     setLayout(layout);
 }

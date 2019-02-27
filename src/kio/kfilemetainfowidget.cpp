@@ -112,7 +112,7 @@ void KFileMetaInfoWidgetPrivate::init(KFileMetaInfoItem item, KFileMetaInfoWidge
         }
 
     QHBoxLayout *lay = new QHBoxLayout(q);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     lay->addWidget(m_widget);
 
     QSizePolicy sp = q->sizePolicy();

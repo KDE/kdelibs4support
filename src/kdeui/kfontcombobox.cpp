@@ -263,7 +263,7 @@ void KFontComboBoxPrivate::updateIndexToFont()
     QString selectedFontFamily = QFontInfo(currentFont).family();
     QString trSelectedFontFamily = translateFontName(selectedFontFamily);
     const QStringList trFontFamilies = model->stringList();
-    if (!trFontFamilies.count()) {
+    if (trFontFamilies.isEmpty()) {
         return;
     }
 

@@ -52,7 +52,7 @@ void KPreviewPropsPlugin::createLayout()
     topframe->setFrameStyle(QFrame::NoFrame);
 
     QVBoxLayout *tmp = new QVBoxLayout(topframe);
-    tmp->setMargin(0);
+    tmp->setContentsMargins(0, 0, 0, 0);
 
     preview = new KFileMetaPreview(topframe);
 
