@@ -9,7 +9,6 @@ set(cmakeFilesDontInstall
                FindHUpnp.cmake
                FindPolkitQt.cmake
                FindPolkitQt-1.cmake
-               FindUDev.cmake
                )
 
 # Explicitly list all files which will be installed.
@@ -36,8 +35,6 @@ set(cmakeFiles
                FindExiv2.cmake
                FindFFmpeg.cmake
                FindFlac.cmake
-               FindFontconfig.cmake
-               FindGLIB2.cmake
                FindGMP.cmake
                FindGObject.cmake
                FindGStreamer.cmake
@@ -67,7 +64,6 @@ set(cmakeFiles
                FindOggVorbis.cmake
                FindPlasma.cmake
                FindPopplerQt4.cmake
-               FindPulseAudio.cmake
                FindPythonLibrary.cmake
                FindQImageBlitz.cmake
                FindQt5Transitional.cmake
