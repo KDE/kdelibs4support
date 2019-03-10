@@ -739,7 +739,7 @@ QList<KLocale::DigitSet> KLocalePrivate::allDigitSetsList() const
     digitSets.append(KLocale::TamilDigits);
     digitSets.append(KLocale::TeluguDigits);
     digitSets.append(KLocale::ThaiDigits);
-    qSort(digitSets);
+    std::sort(digitSets.begin(), digitSets.end());
     return digitSets;
 }
 

@@ -864,7 +864,7 @@ void KMimeTypeTest::testSortByComment()
 {
     QBENCHMARK {
         KMimeType::List sortedList = KMimeType::allMimeTypes();
-        qSort(sortedList.begin(), sortedList.end(), LessMimeType_ByComment());
+        std::sort(sortedList.begin(), sortedList.end(), LessMimeType_ByComment());
     }
 }
 

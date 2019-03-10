@@ -1215,7 +1215,7 @@ QList<int> KTimeZoneData::utcOffsets() const
         if (d->utcOffsets.isEmpty()) {
             d->utcOffsets += 0;
         } else {
-            qSort(d->utcOffsets);
+            std::sort(d->utcOffsets.begin(), d->utcOffsets.end());
         }
     }
     return d->utcOffsets;

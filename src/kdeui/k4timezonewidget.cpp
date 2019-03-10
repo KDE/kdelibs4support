@@ -87,7 +87,7 @@ K4TimeZoneWidget::K4TimeZoneWidget(QWidget *parent, KTimeZones *db)
         cities.append(key);
         zonesByCity.insert(key, zone);
     }
-    qSort(cities.begin(), cities.end(), localeLessThan);
+    std::sort(cities.begin(), cities.end(), localeLessThan);
 
     foreach (const QString &key, cities) {
         const KTimeZone zone = zonesByCity.value(key);
