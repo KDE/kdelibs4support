@@ -294,7 +294,7 @@ KUrl::List KUrl::List::fromMimeData(const QMimeData *mimeData,
 
 KUrl::List::operator QVariant() const
 {
-    return qVariantFromValue(*this);
+    return QVariant::fromValue(*this);
 }
 
 KUrl::List::operator QList<QUrl>() const
@@ -531,7 +531,7 @@ bool KUrl::operator==(const QString &_u) const
 
 KUrl::operator QVariant() const
 {
-    return qVariantFromValue(*this);
+    return QVariant::fromValue(*this);
 }
 
 #ifndef KDELIBS4SUPPORT_NO_DEPRECATED

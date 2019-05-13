@@ -271,5 +271,5 @@ QString KShortcut::toString(QKeySequence::SequenceFormat format) const
 
 KShortcut::operator QVariant() const
 {
-    return qVariantFromValue(*this);
+    return QVariant::fromValue(*this);
 }

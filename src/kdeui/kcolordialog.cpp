@@ -140,7 +140,7 @@ public:
     KColorCellsItemDelegate(KColorCells *parent): QStyledItemDelegate(parent) {}
     void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
     {
-        QStyleOptionViewItemV4 opt(option);
+        QStyleOptionViewItem opt(option);
         initStyleOption(&opt, index);
 
         //Get the current cell color

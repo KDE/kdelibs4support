@@ -1055,9 +1055,9 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
     case PE_FrameGroupBox: {
         if (const QStyleOptionFrame *fOpt =
                     qstyleoption_cast<const QStyleOptionFrame *>(option)) {
-            QStyleOptionFrameV2 fOpt2(*fOpt);
+            QStyleOptionFrame fOpt2(*fOpt);
 
-            if (fOpt2.features & QStyleOptionFrameV2::Flat) {
+            if (fOpt2.features & QStyleOptionFrame::Flat) {
                 drawKStylePrimitive(WT_GroupBox, GroupBox::FlatFrame, option, r, pal, flags, painter, widget);
             } else {
                 drawKStylePrimitive(WT_GroupBox, Generic::Frame, option, r, pal, flags, painter, widget);
@@ -1124,7 +1124,7 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
 
     case PE_PanelItemViewItem: {
 
-        const QStyleOptionViewItemV4 *opt = qstyleoption_cast<const QStyleOptionViewItemV4 *>(option);
+        const QStyleOptionViewItem *opt = qstyleoption_cast<const QStyleOptionViewItem *>(option);
         const QAbstractItemView *view = qobject_cast<const QAbstractItemView *>(widget);
         bool hover = (option->state & State_MouseOver) && (!view ||
                      view->selectionMode() != QAbstractItemView::NoSelection);
@@ -1136,7 +1136,7 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
         const qreal rounding = 2.5;
 
         if (!hover && !(option->state & State_Selected) && !hasCustomBackground &&
-                !(opt->features & QStyleOptionViewItemV2::Alternate)) {
+                !(opt->features & QStyleOptionViewItem::Alternate)) {
             return;
         }
 
@@ -1163,7 +1163,7 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
             }
         }
 
-        if (opt && (opt->features & QStyleOptionViewItemV2::Alternate)) {
+        if (opt && (opt->features & QStyleOptionViewItem::Alternate)) {
             painter->fillRect(option->rect, option->palette.brush(cg, QPalette::AlternateBase));
         }
 
@@ -1226,10 +1226,10 @@ void K4Style::drawPrimitive(PrimitiveElement elem, const QStyleOption *option, Q
         bool roundedLeft  = false;
         bool roundedRight = false;
         if (opt) {
-            roundedLeft  = (opt->viewItemPosition == QStyleOptionViewItemV4::Beginning);
-            roundedRight = (opt->viewItemPosition == QStyleOptionViewItemV4::End);
-            if (opt->viewItemPosition == QStyleOptionViewItemV4::OnlyOne ||
-                    opt->viewItemPosition == QStyleOptionViewItemV4::Invalid ||
+            roundedLeft  = (opt->viewItemPosition == QStyleOptionViewItem::Beginning);
+            roundedRight = (opt->viewItemPosition == QStyleOptionViewItem::End);
+            if (opt->viewItemPosition == QStyleOptionViewItem::OnlyOne ||
+                    opt->viewItemPosition == QStyleOptionViewItem::Invalid ||
                     (view && view->selectionBehavior() != QAbstractItemView::SelectRows)) {
                 roundedLeft  = true;
                 roundedRight = true;
@@ -1566,7 +1566,7 @@ void K4Style::drawControl(ControlElement element, const QStyleOption *option, QP
 
     case CE_ProgressBarContents: {
         const QStyleOptionProgressBar *pbOpt = qstyleoption_cast<const QStyleOptionProgressBar *>(option);
-        const QStyleOptionProgressBarV2 *pbOpt2 = qstyleoption_cast<const QStyleOptionProgressBarV2 *>(option);
+        const QStyleOptionProgressBar *pbOpt2 = qstyleoption_cast<const QStyleOptionProgressBar *>(option);
         if (!pbOpt) {
             return;
         }
@@ -1645,7 +1645,7 @@ void K4Style::drawControl(ControlElement element, const QStyleOption *option, QP
 
     case CE_ProgressBarLabel: {
         const QStyleOptionProgressBar *pbOpt = qstyleoption_cast<const QStyleOptionProgressBar *>(option);
-        const QStyleOptionProgressBarV2 *pbOpt2 = qstyleoption_cast<const QStyleOptionProgressBarV2 *>(option);
+        const QStyleOptionProgressBar *pbOpt2 = qstyleoption_cast<const QStyleOptionProgressBar *>(option);
         if (pbOpt) {
             TextOption lbOpt(pbOpt->text);
             bool horizontal = !pbOpt2 || pbOpt2->orientation == Qt::Horizontal;
@@ -2237,7 +2237,7 @@ void K4Style::drawControl(ControlElement element, const QStyleOption *option, QP
         //Now, what we do, depends on rotation, LTR vs. RTL, and text/icon combinations.
         //First, figure out if we have to deal with icons, and place them if need be.
         if (!tabOpt->icon.isNull()) {
-            QStyleOptionTabV3 tabV3(*tabOpt);
+            QStyleOptionTab tabV3(*tabOpt);
             QSize iconSize = tabV3.iconSize;
             if (!iconSize.isValid()) {
                 int iconExtent = pixelMetric(PM_SmallIconSize);
@@ -3007,7 +3007,7 @@ QRect K4Style::subElementRect(SubElement sr, const QStyleOption *option, const Q
         }
 
         QRect r = marginAdjustedTab(tabOpt, TabBar::TabContentsMargin);
-        QStyleOptionTabV3 tov3(*tabOpt);
+        QStyleOptionTab tov3(*tabOpt);
 
         switch (tov3.shape) {
         case QTabBar::RoundedNorth:
