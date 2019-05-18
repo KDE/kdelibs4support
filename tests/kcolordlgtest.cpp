@@ -23,7 +23,7 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication::setColorSpec(QApplication::CustomColor);
+   
     QApplication::setApplicationName("KColorDialogTest");
     QApplication a(argc, argv);
 
