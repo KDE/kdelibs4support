@@ -53,7 +53,7 @@ class QMovie;
  * Also, QSystemTrayIcon::showMessage(..) should not be
  * used for KDE application because the popup message has no KDE standard
  * look & feel and cannot be controlled by KDE configurations.
- * Use KNotification or KPassivePopup instead.
+ * Use KNotification instead.
  *
  * @author Matthias Ettrich <ettrich@kde.org>
  **/
