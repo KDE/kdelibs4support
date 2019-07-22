@@ -55,6 +55,7 @@
 #include <kurlcompletion.h>
 #include <kurlpixmapprovider.h>
 #include <kfilewidget.h>
+#include <kfileutils.h>
 
 #include "kfileplacesview.h"
 #include "kfileplacesmodel.h"
@@ -134,7 +135,7 @@ void KDirSelectDialog::Private::slotMkdir()
     QString where = m_parent->url().toDisplayString(QUrl::PreferLocalFile);
     QString name = i18nc("folder name", "New Folder");
     if (m_parent->url().isLocalFile() && QFileInfo(m_parent->url().toLocalFile() + '/' + name).exists()) {
-        name = KIO::suggestName(m_parent->url(), name);
+        name = KFileUtils::suggestName(m_parent->url(), name);
     }
 
     QString directory = KIO::encodeFileName(QInputDialog::getText(m_parent, i18nc("@title:window", "New Folder"),
