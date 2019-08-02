@@ -6,122 +6,122 @@ Init=
 [KArrowButton]
 IncludeFile=karrowbutton.h
 ToolTip=Draws a button which shows an arrow pointing into a certain direction.
-Group=Buttons (KDE - Deprecated)
+Group=Buttons (KF5 - Deprecated)
 ConstructorArgs=(parent,Qt::UpArrow)
 
 [KButtonGroup]
 IncludeFile=kbuttongroup.h
 ToolTip=Group of radio buttons with index selection.
 IsContainer=true
-Group=Container (KDE - Deprecated)
+Group=Container (KF5 - Deprecated)
 
 [KEditListBox]
-ToolTip=Fullfeatured edit box with buttons (KDE - Deprecated)
-Group=Views (KDE - Deprecated)
+ToolTip=Fullfeatured edit box with buttons (KF5 - Deprecated)
+Group=Views (KF5 - Deprecated)
 
 [KDialog]
 IsContainer=true
 ImplClass=KDialogPreview
-ToolTip=Class for simple Dialogs (KDE - Deprecated)
+ToolTip=Class for simple Dialogs (KF5 - Deprecated)
 IncludeFile=kdialog.h
-Group=Container (KDE - Deprecated)
+Group=Container (KF5 - Deprecated)
 
 [KDialogButtonBox]
-ToolTip=Button Box (KDE - Deprecated)
+ToolTip=Button Box (KF5 - Deprecated)
 WhatsThis=KDE's button box.
 IncludeFile=kdialogbuttonbox.h
-Group=Buttons (KDE - Deprecated)
+Group=Buttons (KF5 - Deprecated)
 DomXML=<ui><widget class="KDialogButtonBox"><property name="standardButtons"><set>QDialogButtonBox::Ok|QDialogButtonBox::Cancel</set></property></widget></ui>
 
 [KColorCells]
 IncludeFile=kcolordialog.h
-ToolTip=Color Table (KDE - Deprecated)
-Group=Input (KDE - Deprecated)
+ToolTip=Color Table (KF5 - Deprecated)
+Group=Input (KF5 - Deprecated)
 ConstructorArgs=(parent, 3, 5)
 
 [KColorPatch]
 IncludeFile=kcolordialog.h
 ToolTip=The KColorPatch widget is a (usually small) widget showing a selected color.
-Group=Display (KDE - Deprecated)
+Group=Display (KF5 - Deprecated)
 ConstructorArgs=(parent)
 
 [KColorValueSelector]
 IncludeFile=kcolorvalueselector.h
-ToolTip=Color Value Selector (KDE - Deprecated)
-Group=Input (KDE - Deprecated)
+ToolTip=Color Value Selector (KF5 - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [KIntNumInput]
-ToolTip=Integer Input Widget (KDE - Deprecated)
+ToolTip=Integer Input Widget (KF5 - Deprecated)
 WhatsThis=An input widget for integer numbers, consisting of a spinbox and a slider.
 IncludeFile=knuminput.h
-Group=Input (KDE - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [KDoubleNumInput]
-ToolTip=Floating Point Number Input Widget (KDE - Deprecated)
+ToolTip=Floating Point Number Input Widget (KF5 - Deprecated)
 WhatsThis=An input widget for floating point numbers, consisting of a spinbox and a slider.
 IncludeFile=knuminput.h
-Group=Input (KDE - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [KIntSpinBox]
 IncludeFile=knuminput.h
-ToolTip=Enhanced Spinbox for Integer Values (KDE - Deprecated)
-Group=Input (KDE - Deprecated)
+ToolTip=Enhanced Spinbox for Integer Values (KF5 - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [KPushButton]
-ToolTip=Improved QPushButton (KDE - Deprecated)
+ToolTip=Improved QPushButton (KF5 - Deprecated)
 WhatsThis=An improved QPushButton to follow KDE settings
-Group=Buttons (KDE - Deprecated)
+Group=Buttons (KF5 - Deprecated)
 
 [KRestrictedLine]
-ToolTip=Line Edit for restricted input (KDE - Deprecated)
-Group=Input (KDE - Deprecated)
+ToolTip=Line Edit for restricted input (KF5 - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [KTabBar]
 ToolTip=KDE Tab Bar
 WhatsThis=A QTabBar with extended features.
-Group=Display (KDE - Deprecated)
+Group=Display (KF5 - Deprecated)
 
 [KTabWidget]
 IncludeFile=ktabwidget.h
 ToolTip=KDE tab widget container.
 IsContainer=true
-Group=Container (KDE - Deprecated)
+Group=Container (KF5 - Deprecated)
 
 
 [KListWidget]
-ToolTip=Extended List Widget (KDE - Deprecated)
+ToolTip=Extended List Widget (KF5 - Deprecated)
 WhatsThis=An improved version of the QListWidget that follows KDE settings
-Group=Views (KDE - Deprecated)
+Group=Views (KF5 - Deprecated)
 
 [KTextBrowser]
-ToolTip=Improved QTextBrowser (KDE - Deprecated)
+ToolTip=Improved QTextBrowser (KF5 - Deprecated)
 WhatsThis=An improved version of the QTextBrowser with mail or system browser invocation support
-Group=Display (KDE - Deprecated)
+Group=Display (KF5 - Deprecated)
 
 [KFontComboBox]
 IncludeFile=kfontcombobox.h
-ToolTip=Font Combo Box (KDE - Deprecated)
+ToolTip=Font Combo Box (KF5 - Deprecated)
 WhatsThis=A combo box for font selection with language-specific previews
-Group=Input (KDE - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [K4TimeZoneWidget]
-ToolTip=This widget can be used to display or allow user selection of timezones. (KDE - Deprecated)
+ToolTip=This widget can be used to display or allow user selection of timezones. (KF5 - Deprecated)
 IncludeFile=k4timezonewidget.h
 ConstructorArgs=(parent, new KTimeZones())
-Group=Input (KDE - Deprecated)
+Group=Input (KF5 - Deprecated)
 
 [KFileMetaDataWidget]
 ToolTip=File Meta Data Display
 WhatsThis=Shows the meta data of one or more file items.
-Group=Display (KDE - Deprecated)
+Group=Display (KF5 - Deprecated)
 
 [KDateTimeWidget]
-ToolTip=This widget can be used to display or allow user selection of date and time. (KDE - Deprecated)
+ToolTip=This widget can be used to display or allow user selection of date and time. (KF5 - Deprecated)
 IncludeFile=kdatetimewidget.h
-Group=Date/Time (KDE - Deprecated)
+Group=Date/Time (KF5 - Deprecated)
 
 [KDateWidget]
-ToolTip=Date preview (KDE - Deprecated)
-Group=Date/Time (KDE - Deprecated)
+ToolTip=Date preview (KF5 - Deprecated)
+Group=Date/Time (KF5 - Deprecated)
 
 
