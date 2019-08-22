@@ -154,7 +154,7 @@ void KSystemTrayIcon::init(QWidget *parent)
         connect(action, SIGNAL(triggered(bool)), this, SLOT(minimizeRestoreAction()));
 
 #if HAVE_X11
-        KWindowInfo info = KWindowSystem::windowInfo(parent->winId(), NET::WMDesktop);
+        KWindowInfo info(parent->winId(), NET::WMDesktop);
         d->onAllDesktops = info.onAllDesktops();
 #else
         d->onAllDesktops = false;
@@ -262,7 +262,7 @@ void KSystemTrayIcon::activateOrHide(QSystemTrayIcon::ActivationReason reasonCal
         minimizeRestore(true);
     }
 #elif HAVE_X11
-    KWindowInfo info1 = KWindowSystem::windowInfo(pw->winId(), NET::XAWMState | NET::WMState);
+    KWindowInfo info1(pw->winId(), NET::XAWMState | NET::WMState);
     // mapped = visible (but possibly obscured)
     bool mapped = (info1.mappingState() == NET::Visible) && !info1.isMinimized();
 //    - not mapped -> show, raise, focus
@@ -279,8 +279,7 @@ void KSystemTrayIcon::activateOrHide(QSystemTrayIcon::ActivationReason reasonCal
             if (id == pw->winId()) {
                 break;
             }
-            KWindowInfo info2 = KWindowSystem::windowInfo(id,
-                                NET::WMGeometry | NET::XAWMState | NET::WMState | NET::WMWindowType);
+            KWindowInfo info2(id, NET::WMGeometry | NET::XAWMState | NET::WMState | NET::WMWindowType);
             if (info2.mappingState() != NET::Visible) {
                 continue;    // not visible on current desktop -> ignore
             }
@@ -312,7 +311,7 @@ void KSystemTrayIcon::minimizeRestore(bool restore)
         return;
     }
 #if HAVE_X11
-    KWindowInfo info = KWindowSystem::windowInfo(pw->winId(), NET::WMGeometry | NET::WMDesktop);
+    KWindowInfo info(pw->winId(), NET::WMGeometry | NET::WMDesktop);
     if (restore) {
         if (d->onAllDesktops) {
             KWindowSystem::setOnAllDesktops(pw->winId(), true);

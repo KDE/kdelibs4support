@@ -482,7 +482,8 @@ QString KFileDialog::getOpenFileNameWId(const QUrl &startDir,
     KFileDialogPrivate::Native::s_allowNative = false;
     KFileDialog dlg(startDir, filter, parent);
     if (parent == nullptr && parent_id != 0) {
-        KWindowSystem::setMainWindow(&dlg, parent_id);
+        dlg.setAttribute(Qt::WA_NativeWindow, true);
+        KWindowSystem::setMainWindow(dlg.windowHandle(), parent_id);
     }
 
     dlg.setOperationMode(KFileDialog::Opening);
@@ -782,7 +783,8 @@ QString KFileDialog::getSaveFileNameWId(const QUrl &dir, const QString &filter,
     QWidget *parent = QWidget::find(parent_id);
     KFileDialog dlg(dir, filter, parent);
     if (parent == nullptr && parent_id != 0) {
-        KWindowSystem::setMainWindow(&dlg, parent_id);
+        dlg.setAttribute(Qt::WA_NativeWindow, true);
+        KWindowSystem::setMainWindow(dlg.windowHandle(), parent_id);
     }
 
     dlg.setOperationMode(KFileDialog::Saving);

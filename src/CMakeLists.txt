@@ -312,6 +312,9 @@ set(platformLinkLibraries)
 if (APPLE)
     set(platformLinkLibraries "-framework CoreFoundation -framework Carbon -lresolv")
 endif()
+if (X11_FOUND)
+    set(platformLinkLibraries ${XCB_XCB_LIBRARY})
+endif()
 
 target_link_libraries(KF5KDELibs4Support
 PUBLIC

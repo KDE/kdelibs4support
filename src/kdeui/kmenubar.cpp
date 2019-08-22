@@ -198,7 +198,8 @@ void KMenuBar::setTopLevelMenuInternal(bool top_level)
 #endif
 
         if (parentWidget()) {
-            KWindowSystem::setMainWindow(this, parentWidget()->topLevelWidget()->winId());
+            setAttribute(Qt::WA_NativeWindow, true);
+            KWindowSystem::setMainWindow(windowHandle(), parentWidget()->topLevelWidget()->winId());
         }
         //QMenuBar::setFrameStyle( NoFrame );
         //QMenuBar::setLineWidth( 0 );
@@ -261,13 +262,15 @@ bool KMenuBar::eventFilter(QObject *obj, QEvent *ev)
             */
         }
         if (parentWidget() && obj == parentWidget() && ev->type() == QEvent::ParentChange) {
-            KWindowSystem::setMainWindow(this, parentWidget()->topLevelWidget()->winId());
+            setAttribute(Qt::WA_NativeWindow, true);
+            KWindowSystem::setMainWindow(windowHandle(), parentWidget()->topLevelWidget()->winId());
             setVisible(parentWidget()->isTopLevel() || parentWidget()->isVisible());
         }
         if (parentWidget() && !parentWidget()->isTopLevel() && obj == parentWidget()) {
             // if the parent is not toplevel, KMenuBar needs to match its visibility status
             if (ev->type() == QEvent::Show) {
-                KWindowSystem::setMainWindow(this, parentWidget()->topLevelWidget()->winId());
+                setAttribute(Qt::WA_NativeWindow, true);
+                KWindowSystem::setMainWindow(windowHandle(), parentWidget()->topLevelWidget()->winId());
                 show();
             }
             if (ev->type() == QEvent::Hide) {

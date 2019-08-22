@@ -212,14 +212,15 @@ KUniqueApplication::start(StartFlags flags)
         } else {
             id = KStartupInfo::currentStartupIdEnv();
         }
-        if (!id.none()) {
+        if (!id.isNull()) {
             // notice about pid change
-            Display *disp = XOpenDisplay(nullptr);
-            if (disp != nullptr) { // use extra X connection
+            int screen = 0;
+            xcb_connection_t *connection = xcb_connect(nullptr, &screen);
+            if (connection != nullptr) { // use extra X connection
                 KStartupInfoData data;
                 data.addPid(getpid());
-                KStartupInfo::sendChangeX(disp, id, data);
-                XCloseDisplay(disp);
+                KStartupInfo::sendChangeXcb(connection, screen, id, data);
+                xcb_disconnect(connection);
             }
         }
 #endif
@@ -279,7 +280,7 @@ KUniqueApplication::start(StartFlags flags)
         } else {
             id = KStartupInfo::currentStartupIdEnv();
         }
-        if (!id.none()) {
+        if (!id.isNull()) {
             new_asn_id = id.id();
         }
 #endif
@@ -363,11 +364,12 @@ int KUniqueApplication::newInstance()
             if (mainWindow) {
                 mainWindow->show();
 #if HAVE_X11
+                mainWindow->setAttribute(Qt::WA_NativeWindow, true);
                 // This is the line that handles window activation if necessary,
                 // and what's important, it does it properly. If you reimplement newInstance(),
                 // and don't call the inherited one, use this (but NOT when newInstance()
                 // is called for the first time, like here).
-                KStartupInfo::setNewStartupId(mainWindow, startupId());
+                KStartupInfo::setNewStartupId(mainWindow->windowHandle(), startupId());
 #endif
 #ifdef Q_OS_WIN
                 KWindowSystem::forceActiveWindow(mainWindow->winId());

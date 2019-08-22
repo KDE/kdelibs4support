@@ -523,7 +523,7 @@ void KDialog::setPlainCaption(const QString &caption)
         win->setWindowTitle(caption);
 #if HAVE_X11
         if (QGuiApplication::platformName() == QStringLiteral("xcb")) {
-            NETWinInfo info(QX11Info::connection(), win->winId(), QX11Info::appRootWindow(), nullptr);
+            NETWinInfo info(QX11Info::connection(), win->winId(), QX11Info::appRootWindow(), NET::Properties{}, NET::Properties2{});
             info.setName(caption.toUtf8().constData());
         }
 #endif
