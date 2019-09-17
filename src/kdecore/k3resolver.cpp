@@ -47,8 +47,7 @@
 
 #include <QStringList>
 #include <QSharedData>
-#include <QTime>
-#include <QTimer>
+#include <QElapsedTimer>
 
 // KDE
 #include <klocalizedstring.h>
@@ -453,7 +452,7 @@ bool KResolver::wait(int msec)
         emitFinished();
         return true;
     } else {
-        QTime t;
+        QElapsedTimer t;
         t.start();
 
         while (!msec || t.elapsed() < msec) {

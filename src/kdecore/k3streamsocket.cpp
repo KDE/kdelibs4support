@@ -29,6 +29,7 @@
 #include <QSocketNotifier>
 #include <QDateTime>
 #include <QTimer>
+#include <QElapsedTimer>
 #include <QPointer>
 
 #include "k3socketaddress.h"
@@ -41,7 +42,7 @@ class KNetwork::KStreamSocketPrivate
 {
 public:
     KResolverResults::ConstIterator local, peer;
-    QTime startTime;
+    QElapsedTimer startTime;
     QTimer timer;
 
     int timeout;
