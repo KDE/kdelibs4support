@@ -38,7 +38,7 @@ public:
     /* reimp */ bool isSupported() const;
     /* reimp */ QString serviceName() const;
 
-private slots:
+private Q_SLOTS:
     void nmStateChanged( uint nmState );
 
 private:
