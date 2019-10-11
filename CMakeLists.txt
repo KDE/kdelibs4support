@@ -79,6 +79,8 @@ remove_definitions(-DQT_USE_QSTRINGBUILDER)
 # TODO: use QT_USE_QSTRINGBUILDER instead of deprecated & undocumented QT_USE_FAST_OPERATOR_PLUS
 add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
 
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0)
+
 # This one won't be needed when CMake 2.8.13 is depended on.
 add_definitions(
     -DKDELIBS4SUPPORT_DEPRECATED= # if KDELIBS4SUPPORT_DEPRECATED is already defined the other deprecated macros won't be defined
