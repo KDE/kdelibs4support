@@ -65,6 +65,12 @@ class KLocalePrivate;
   * @author Stephan Kulow <coolo@kde.org>, Preston Brown <pbrown@kde.org>,
   * Hans Petter Bieker <bieker@kde.org>, Lukas Tinkl <lukas.tinkl@suse.cz>
   * @short class for supporting locale settings
+  *
+  * @deprecated since 5.0. For translation support use KLocalizedString (from the
+  * KI18n framework); for string formatting use QLocale() or KFormat (from the
+  * KCoreAddons framework) if QLocale doesn't provide the formatting you need.
+  * For more information about porting code that is still using KLocale see:
+  * https://community.kde.org/Frameworks/Porting_Notes#Localization
   */
 class KDELIBS4SUPPORT_EXPORT KLocale
 {
