@@ -172,7 +172,7 @@ public:
      *               prompted for passwords as needed.
      *
      * @return true if successful, false for failure
-     * @deprecated since 5.0, use KIO::storedPut + KJobWidgets::setWindow + job->exec() instead
+     * @deprecated since 5.0, use KIO::storedPut or KIO::file_copy + KJobWidgets::setWindow + job->exec() instead
      */
     static bool upload(const QString &src, const QUrl &target, QWidget *window);
 
