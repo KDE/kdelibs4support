@@ -53,6 +53,7 @@ namespace KdePrint
  * @param parent the parent for the dialog
  * @param customTabs a list of custom widgets to show as tabs, the name printed on the tab will
  *                   be taken from the widgets windowTitle().
+ * @deprecated since 5.0, use QPrintDialog::setOptionTabs (only supported on X11)
  */
 KDELIBS4SUPPORT_EXPORT QPrintDialog *createPrintDialog(QPrinter *printer, const QList<QWidget *> &customTabs,
                                                    QWidget *parent = nullptr);
