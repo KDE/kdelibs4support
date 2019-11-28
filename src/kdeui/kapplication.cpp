@@ -463,8 +463,6 @@ void KApplicationPrivate::init(bool GUIenabled)
 
     KMessage::setMessageHandler(new KMessageBoxMessageHandler(nullptr));
 
-    KGestureMap::self()->installEventFilterOnMe(q);
-
     q->connect(KToolInvocation::self(), SIGNAL(kapplication_hook(QStringList&,QByteArray&)),
                q, SLOT(_k_slot_KToolInvocation_hook(QStringList&,QByteArray&)));
 

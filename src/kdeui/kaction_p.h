@@ -21,7 +21,6 @@
 
 #include "kaction.h"
 #include "kglobalaccel.h"
-#include "kgesturemap_p.h"
 #include <kshortcut.h>
 #include <QCoreApplication>
 
