@@ -267,7 +267,7 @@ KCmdLineArgsStatic::KCmdLineArgsStatic()
     about = nullptr;
     parsed = false;
     ignoreUnknown = false;
-    mStdargs = nullptr;
+    mStdargs = {};
 
     // Text codec.
     codec = QTextCodec::codecForLocale();

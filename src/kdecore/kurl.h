@@ -709,7 +709,7 @@ public:
      * query items.
      * @deprecated since 5.0, use QUrlQuery(url).queryItems()
      */
-    QMap< QString, QString > queryItems(const QueryItemsOptions &options = nullptr) const;
+    QMap< QString, QString > queryItems(const QueryItemsOptions &options = {}) const;
 
     /**
      * Returns the value of a certain query item.
@@ -995,7 +995,7 @@ public:
      * equals(u, KUrl::CompareWithoutTrailingSlash|KUrl::AllowEmptyPath) needs manual handling
      * (it was mostly unused).
      */
-    bool equals(const KUrl &u, const EqualsOptions &options = nullptr) const;
+    bool equals(const KUrl &u, const EqualsOptions &options = {}) const;
 
     /**
      * Checks whether the given URL is parent of this URL.

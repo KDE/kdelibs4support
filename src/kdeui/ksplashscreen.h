@@ -48,7 +48,7 @@ public:
     /**
      *  Constructs a splash screen.
      */
-    KDELIBS4SUPPORT_DEPRECATED explicit KSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KSplashScreen(const QPixmap &pixmap, Qt::WindowFlags f = {});
 
     /**
      *  Destructor.

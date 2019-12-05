@@ -839,7 +839,7 @@ public:
      * @return The date and time as a string
      */
     QString formatDateTime(const KDateTime &dateTime, DateFormat format = ShortDate,
-                           DateTimeFormatOptions options = nullptr) const;
+                           DateTimeFormatOptions options = {}) const;
 
     /**
      * Use this to determine whether in dates a possessive form of month

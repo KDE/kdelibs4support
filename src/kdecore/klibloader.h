@@ -61,7 +61,7 @@ public:
      *
      * @deprecated since 4.0, use KPluginLoader::factory()
      */
-    KPluginFactory *factory(const QString &libname, QLibrary::LoadHints loadHint = nullptr);
+    KPluginFactory *factory(const QString &libname, QLibrary::LoadHints loadHint = {});
 
     /**
      * Loads and initializes a library.
@@ -70,7 +70,7 @@ public:
      * plugins; KPluginLoader::findPlugin() can be used if the library is
      * installed in the plugin directory.
      */
-    KLibrary *library(const QString &libname, QLibrary::LoadHints loadHint = nullptr);
+    KLibrary *library(const QString &libname, QLibrary::LoadHints loadHint = {});
 
     /**
      * Returns an error message that can be useful to debug the problem.

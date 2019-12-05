@@ -240,7 +240,7 @@ void KSocketDevice::close()
         ::close(m_sockfd);
 #endif
     }
-    setOpenMode(nullptr);       // closed
+    setOpenMode(NotOpen);       // closed
 
     m_sockfd = -1;
 }

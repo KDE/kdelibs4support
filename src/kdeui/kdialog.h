@@ -167,7 +167,7 @@ public:
      * @param parent The parent of the dialog.
      * @param flags  The widget flags passed to the QDialog constructor
      */
-    KDELIBS4SUPPORT_DEPRECATED explicit KDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KDialog(QWidget *parent = nullptr, Qt::WindowFlags flags = {});
 
     /**
      * Destroys the dialog.
@@ -863,7 +863,7 @@ protected Q_SLOTS:
     void updateGeometry();
 
 protected:
-    KDialog(KDialogPrivate &dd, QWidget *parent, Qt::WindowFlags flags = nullptr);
+    KDialog(KDialogPrivate &dd, QWidget *parent, Qt::WindowFlags flags = {});
     KDialogPrivate *const d_ptr;
 
 private:

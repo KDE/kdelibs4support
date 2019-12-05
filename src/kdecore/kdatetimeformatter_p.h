@@ -46,7 +46,7 @@ public:
 
     virtual QString formatTime(const QTime &fromTime,
                                const QString &toFormat,
-                               KLocale::TimeFormatOptions timeOptions = nullptr,
+                               KLocale::TimeFormatOptions timeOptions = KLocale::TimeDefault,
                                const KCalendarSystem *calendar  = KLocale::global()->calendar(),
                                const KLocale *locale = KLocale::global(),
                                KLocale::DigitSet digitSet = KLocale::global()->dateTimeDigitSet(),
@@ -54,7 +54,7 @@ public:
 
     virtual QString formatDateTime(const KDateTime &fromDateTime,
                                    const QString &toFormat,
-                                   KLocale::TimeFormatOptions timeOptions = nullptr,
+                                   KLocale::TimeFormatOptions timeOptions = KLocale::TimeDefault,
                                    const KCalendarSystem *calendar  = KLocale::global()->calendar(),
                                    const KLocale *locale = KLocale::global(),
                                    KLocale::DigitSet digitSet = KLocale::global()->dateTimeDigitSet(),
