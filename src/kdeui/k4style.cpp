@@ -59,6 +59,7 @@
 #include <QPainter>
 #include <QScrollBar>
 #include <QStyleOption>
+#include <QPainterPath>
 
 #include <kconfiggroup.h>
 #include <QDebug>
