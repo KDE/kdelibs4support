@@ -393,7 +393,7 @@ private:
  *
  * KTimeZone instances are often grouped into KTimeZones collections.
  *
- * Copying KTimeZone instances is very efficient since the class data is KDELIBS4SUPPORT_DEPRECATED explicitly
+ * Copying KTimeZone instances is very efficient since the class data is explicitly
  * shared, meaning that only a pointer to the data is actually copied. To achieve
  * this, each class inherited from KTimeZone must have a corresponding backend
  * class derived from KTimeZoneBackend.

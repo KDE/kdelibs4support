@@ -119,7 +119,7 @@ public:
      *    return a.exec();
      * }
      * \endcode
-     * Note that it's not necessary to call start() KDELIBS4SUPPORT_DEPRECATED explicitly. It will be
+     * Note that it's not necessary to call start() explicitly. It will be
      * called automatically before creating KUniqueApplication if it hasn't
      * been called yet, without any performance impact.
      *

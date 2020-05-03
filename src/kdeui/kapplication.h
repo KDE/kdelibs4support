@@ -101,7 +101,7 @@ public:
      * This is similar to the global QApplication pointer qApp. It
      * allows access to the single global KApplication object, since
      * more than one cannot be created in the same application. It
-     * saves you the trouble of having to pass the pointer KDELIBS4SUPPORT_DEPRECATED explicitly
+     * saves you the trouble of having to pass the pointer explicitly
      * to every function that may require it.
      * @return the current application object
      */

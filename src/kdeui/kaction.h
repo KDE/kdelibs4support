@@ -327,7 +327,7 @@ public:
      *
      * Set the primary shortcut only for this action.
      *
-     * This function is there to KDELIBS4SUPPORT_DEPRECATED explicitly override QAction::setShortcut(const QKeySequence&).
+     * This function is there to explicitly override QAction::setShortcut(const QKeySequence&).
      * QAction::setShortcut() will bypass everything in KAction and may lead to unexpected behavior.
      *
      * \param shortcut shortcut(s) to use for this action in its specified shortcutContext()
@@ -341,7 +341,7 @@ public:
      *
      * Set the shortcuts for this action.
      *
-     * This function is there to KDELIBS4SUPPORT_DEPRECATED explicitly override QAction::setShortcut(const QList\<QKeySequence\>&).
+     * This function is there to explicitly override QAction::setShortcut(const QList\<QKeySequence\>&).
      * QAction::setShortcuts() will bypass everything in KAction and may lead to unexpected behavior.
      *
      * \param shortcut shortcut(s) to use for this action in its specified shortcutContext()
@@ -390,7 +390,7 @@ public:
      * has become true.
      *
      * \note KActionCollection::insert(name, action) will set action's objectName to name so you often
-     * don't have to set an objectName KDELIBS4SUPPORT_DEPRECATED explicitly.
+     * don't have to set an objectName explicitly.
      *
      * When an action, identified by main component name and objectName(), is assigned
      * a global shortcut for the first time on a KDE installation the assignment will
@@ -451,7 +451,7 @@ public:
      * This will also wipe out knowlegde about the existence of this action's global shortcut
      * so it will not be considered anymore for shortcut conflict resolution. It will also not be
      * visible anymore in the shortcuts KControl module.
-     * This method should not be used unless these effects are KDELIBS4SUPPORT_DEPRECATED explicitly desired.
+     * This method should not be used unless these effects are explicitly desired.
      * @since 4.1
      */
     void forgetGlobalShortcut();

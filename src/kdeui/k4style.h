@@ -211,7 +211,7 @@ protected:
         /// and a default mode.
         ColorMode(QPalette::ColorRole _role);
 
-        /// Constructor with KDELIBS4SUPPORT_DEPRECATED explicit color mode and palette roles.
+        /// Constructor with explicit color mode and palette roles.
         ColorMode(Mode _mode, QPalette::ColorRole _role);
 
         /// Represent as an int to store as a property
@@ -255,7 +255,7 @@ protected:
         static EventualSubtype *defaultOption()
         {
             static EventualSubtype *theDefault = nullptr; //### function static, not very nice,
-            //but avoids need for KDELIBS4SUPPORT_DEPRECATED explicit instantiation.
+            //but avoids need for explicit instantiation.
 
             if (!theDefault) {
                 theDefault = new EventualSubtype;

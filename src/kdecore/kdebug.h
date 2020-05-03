@@ -134,7 +134,7 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT_NOISE void kClearDebugConfig();
   \relates KGlobal
 
   Denotes the debug area to use in kDebug/kWarning etc when not
-  KDELIBS4SUPPORT_DEPRECATED explicitly specified. The default is 0 (zero).
+  explicitly specified. The default is 0 (zero).
 
   Define this macro to the debug area of your application/component
   before including any KDE headers. Usually, you want to add code like

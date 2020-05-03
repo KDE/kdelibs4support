@@ -94,7 +94,7 @@ protected:
 protected:
 
     /**
-     * @internal Initializes the country if not already KDELIBS4SUPPORT_DEPRECATED explicitly set when calling the constructor
+     * @internal Initializes the country if not already explicitly set when calling the constructor
      * Will default to any value set in the config, otherwise will attempt to use the host system
      * country, or finally fall back to the default C.
      */

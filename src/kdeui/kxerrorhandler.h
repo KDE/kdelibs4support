@@ -49,9 +49,9 @@ class KXErrorHandlerPrivate;
  * When checking for error by calling error() at the end, it is necessary
  * to sync with X, to catch all errors that were caused by requests issued
  * before the call to error(). This can be done by passing true to error()
- * to cause KDELIBS4SUPPORT_DEPRECATED explicit XSync(), however, if the last X request needed a roundtrip
+ * to cause explicit XSync(), however, if the last X request needed a roundtrip
  * (e.g. XGetWindowAttributes(), XGetGeometry(), etc.), it is not required
- * to do an KDELIBS4SUPPORT_DEPRECATED explicit sync.
+ * to do an explicit sync.
  *
  * @author Lubos Lunak <l.lunak@kde.org>
  * @short Handler for X errors
@@ -87,7 +87,7 @@ public:
      * function was used and there was any error, or the custom handler indicated
      * an error by its return value).
      *
-     * @param sync if true, an KDELIBS4SUPPORT_DEPRECATED explicit XSync() will be done. Not necessary
+     * @param sync if true, an explicit XSync() will be done. Not necessary
      *             when the last X request required a roundtrip.
      */
     bool error(bool sync) const;

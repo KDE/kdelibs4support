@@ -916,7 +916,7 @@ public:
 
     /**
      * Copy constructor. Creates a copy of the other object,
-     * sharing the data KDELIBS4SUPPORT_DEPRECATED explicitly.
+     * sharing the data explicitly.
      *
      * @param other   the other object
      */
@@ -934,7 +934,7 @@ public:
 
     /**
      * Copy operator. Copies the contents of the other object into
-     * this one. Data is KDELIBS4SUPPORT_DEPRECATED explicitly shared.
+     * this one. Data is explicitly shared.
      *
      * @param other       the other
      */

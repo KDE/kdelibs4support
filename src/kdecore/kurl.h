@@ -900,7 +900,7 @@ public:
 
     KUrl &operator=(const KUrl &_u);
 
-    // Define those, since the constructors are KDELIBS4SUPPORT_DEPRECATED explicit
+    // Define those, since the constructors are explicit
     KUrl &operator=(const char *_url)
     {
         *this = KUrl(_url);
@@ -1051,7 +1051,7 @@ public:
 
     /**
      * Creates a KUrl object from a QString representing an absolute local path.
-     * KUrl url( somePath ) is almost the same, but this method is more KDELIBS4SUPPORT_DEPRECATED explicit,
+     * KUrl url( somePath ) is almost the same, but this method is more explicit,
      * avoids the path-or-url detection in the KUrl constructor, and parses
      * "abc:def" as a filename, not as URL.
      *

@@ -618,7 +618,7 @@ Q_SIGNALS:
      * Emitted when the application has changed its GUI style in response to a KControl request.
      *
      * Normally, widgets will update their styles automatically (as they would
-     * respond to an KDELIBS4SUPPORT_DEPRECATED explicit setGUIStyle() call), but you should connect to
+     * respond to an explicit setGUIStyle() call), but you should connect to
      * this to program special behavior.
      *
      * Note: If you derive from a QWidget-based class, a faster method is to
@@ -632,7 +632,7 @@ Q_SIGNALS:
      *
      * Normally widgets will update their fonts automatically, but you should
      * connect to this to monitor global font changes, especially if you are
-     * using KDELIBS4SUPPORT_DEPRECATED explicit fonts.
+     * using explicit fonts.
      *
      * Note: If you derive from a QWidget-based class, a faster method is to
      *       reimplement QWidget::changeEvent() and catch QEvent::FontChange.

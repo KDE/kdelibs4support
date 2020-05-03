@@ -92,7 +92,7 @@ protected:
      * of links being clicked. Do not call this.
      *
      * If you need to set an initial source url in the text browser, call
-     * the QTextBrowser method KDELIBS4SUPPORT_DEPRECATED explicitly, like this:
+     * the QTextBrowser method explicitly, like this:
      * <code>myTextBrowser->QTextBrowser::setSource(url)</code>
      */
     void setSource(const QUrl &name) override;
