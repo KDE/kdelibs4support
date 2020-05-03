@@ -61,7 +61,7 @@ public:
      * @param flags The widget flags
      */
     KDELIBS4SUPPORT_DEPRECATED explicit KProgressDialog(QWidget *parent = nullptr, const QString &caption = QString(),
-                             const QString &text = QString(), Qt::WindowFlags flags = nullptr);
+                             const QString &text = QString(), Qt::WindowFlags flags = {});
 
     /**
      * Destructor
