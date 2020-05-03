@@ -61,7 +61,7 @@ public:
      * @param parent The parent widgets.
      * @param flags The Qt window flags @see QWidget.
      */
-    KDELIBS4SUPPORT_DEPRECATED KDELIBS4SUPPORT_DEPRECATED explicit KTabWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
+    KDELIBS4SUPPORT_DEPRECATED explicit KTabWidget(QWidget *parent = nullptr, Qt::WindowFlags flags = nullptr);
 
     /**
      * Destroys the tab widget.
