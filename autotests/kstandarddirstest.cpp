@@ -85,6 +85,13 @@ void KStandarddirsTest::initTestCase()
 
 void KStandarddirsTest::testSaveLocationCanonicalization()
 {
+    const QString home = QDir::homePath() + '/';  // homePath() has no trailing /
+    QVERIFY(QFile::exists(home));
+    QVERIFY(QFileInfo(home).isDir());
+    QCOMPARE_PATHS(home, QFileInfo(home).absolutePath() + '/');
+    QVERIFY(!QFileInfo(home).filePath().isEmpty());  // pre-req for canonicalFilePath()
+    QCOMPARE_PATHS(home, QFileInfo(home).canonicalFilePath() + '/');
+    
     const QString saveLocConfig = KGlobal::dirs()->saveLocation("config");
     // Check that it exists and is normalized to an absolute path
     //   .. absolutePath() drops trailing /
