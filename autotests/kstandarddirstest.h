@@ -26,6 +26,7 @@ class KStandarddirsTest : public QObject
     Q_OBJECT
 private Q_SLOTS:
     void initTestCase();
+    void testSaveLocationCanonicalization();
     void testSaveLocation();
     void testLocateLocal();
     void testResourceDirs();

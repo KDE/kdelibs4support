@@ -83,10 +83,38 @@ void KStandarddirsTest::initTestCase()
     QCOMPARE(KGlobal::dirs()->localxdgconfdir(), QString(m_configHome + '/'));
 }
 
+void KStandarddirsTest::testSaveLocationCanonicalization()
+{
+    const QString saveLocConfig = KGlobal::dirs()->saveLocation("config");
+    // Check that it exists and is normalized to an absolute path
+    //   .. absolutePath() drops trailing /
+    //   .. canonicalFilePath() needs a non-empty filePath, also drops trailing /
+    QVERIFY(QFile::exists(saveLocConfig));
+    QVERIFY(QFileInfo(saveLocConfig).isDir());
+    QCOMPARE_PATHS(saveLocConfig, QFileInfo(saveLocConfig).absolutePath() + '/');
+    QVERIFY(!QFileInfo(saveLocConfig).filePath().isEmpty());  // pre-req for canonicalFilePath()
+    QCOMPARE_PATHS(saveLocConfig, QFileInfo(saveLocConfig).canonicalFilePath() + '/');
+    
+    const QString xdgConfDir = KGlobal::dirs()->localxdgconfdir();
+    // Same checks as for saveLocConfig
+    QVERIFY(QFile::exists(xdgConfDir));
+    QVERIFY(QFileInfo(xdgConfDir).isDir());
+    QCOMPARE_PATHS(xdgConfDir, QFileInfo(xdgConfDir).absolutePath() + '/');
+    QVERIFY(!QFileInfo(xdgConfDir).filePath().isEmpty());  // pre-req for canonicalFilePath()
+    QCOMPARE_PATHS(xdgConfDir, QFileInfo(xdgConfDir).canonicalFilePath() + '/');
+
+    // This fails also in testSaveLocation() because one is canonicalized,
+    //   and one is not.
+    QCOMPARE_PATHS(saveLocConfig, xdgConfDir);
+}
+
 void KStandarddirsTest::testSaveLocation()
 {
     const QString saveLocConfig = KGlobal::dirs()->saveLocation("config");
-    QCOMPARE_PATHS(saveLocConfig, KGlobal::dirs()->localxdgconfdir());
+    
+    const QString xdgConfDir = KGlobal::dirs()->localxdgconfdir();
+    QCOMPARE_PATHS(saveLocConfig, xdgConfDir);
+    
     const QString saveLocXdgConfig = KGlobal::dirs()->saveLocation("xdgconf");
     QCOMPARE_PATHS(saveLocConfig, saveLocXdgConfig); // same result
 
