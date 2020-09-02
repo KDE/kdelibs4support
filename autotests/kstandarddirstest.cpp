@@ -109,6 +109,7 @@ void KStandarddirsTest::testSaveLocationCanonicalization()
     QCOMPARE_PATHS(xdgConfDir, QFileInfo(xdgConfDir).absolutePath() + '/');
     QVERIFY(!QFileInfo(xdgConfDir).filePath().isEmpty());  // pre-req for canonicalFilePath()
     QCOMPARE_PATHS(xdgConfDir, QFileInfo(xdgConfDir).canonicalFilePath() + '/');
+    QCOMPARE_PATHS(xdgConfDir, QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + '/');
 
     // This fails also in testSaveLocation() because one is canonicalized,
     //   and one is not.
