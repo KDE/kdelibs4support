@@ -46,6 +46,8 @@ QTEST_GUILESS_MAIN(KStandarddirsTest)
 #define EXT ""
 #endif
 
+static bool home_is_symlink = false;
+
 void KStandarddirsTest::initTestCase()
 {
     QString kconfig_compilerLocation = QStringLiteral(KCONFIG_COMPILER_LOCATION);
@@ -81,6 +83,14 @@ void KStandarddirsTest::initTestCase()
 
     // Must initialize KStandardDirs only after all the setenv() calls.
     QCOMPARE(KGlobal::dirs()->localxdgconfdir(), QString(m_configHome + '/'));
+    
+    // On FreeBSD it is common to have a symlink /home -> /usr/home,
+    // which messes with all the comparisons where **some** code paths
+    // return a canonicalized path and some do not.
+    if (QDir::homePath().compare(QFileInfo(QDir::homePath() + '/').canonicalFilePath(), PATH_SENSITIVITY) != 0) {
+        qDebug() << "HOME contains a symlink:" << QDir::homePath() << "vs" << QFileInfo(QDir::homePath() + '/').canonicalFilePath();
+        home_is_symlink = true;
+    }
 }
 
 void KStandarddirsTest::testSaveLocationCanonicalization()
@@ -90,6 +100,8 @@ void KStandarddirsTest::testSaveLocationCanonicalization()
     QVERIFY(QFileInfo(home).isDir());
     QCOMPARE_PATHS(home, QFileInfo(home).absolutePath() + '/');
     QVERIFY(!QFileInfo(home).filePath().isEmpty());  // pre-req for canonicalFilePath()
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(home, QFileInfo(home).canonicalFilePath() + '/');
     
     const QString saveLocConfig = KGlobal::dirs()->saveLocation("config");
@@ -108,11 +120,15 @@ void KStandarddirsTest::testSaveLocationCanonicalization()
     QVERIFY(QFileInfo(xdgConfDir).isDir());
     QCOMPARE_PATHS(xdgConfDir, QFileInfo(xdgConfDir).absolutePath() + '/');
     QVERIFY(!QFileInfo(xdgConfDir).filePath().isEmpty());  // pre-req for canonicalFilePath()
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(xdgConfDir, QFileInfo(xdgConfDir).canonicalFilePath() + '/');
     QCOMPARE_PATHS(xdgConfDir, QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + '/');
 
     // This fails also in testSaveLocation() because one is canonicalized,
     //   and one is not.
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(saveLocConfig, xdgConfDir);
 }
 
@@ -121,12 +137,16 @@ void KStandarddirsTest::testSaveLocation()
     const QString saveLocConfig = KGlobal::dirs()->saveLocation("config");
     
     const QString xdgConfDir = KGlobal::dirs()->localxdgconfdir();
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(saveLocConfig, xdgConfDir);
     
     const QString saveLocXdgConfig = KGlobal::dirs()->saveLocation("xdgconf");
     QCOMPARE_PATHS(saveLocConfig, saveLocXdgConfig); // same result
 
     const QString saveLocAppData = KGlobal::dirs()->saveLocation("appdata");
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(saveLocAppData, m_dataHome + "/kstandarddirstest/");
 
     const QString saveTmp = KGlobal::dirs()->saveLocation("tmp");
@@ -137,6 +157,8 @@ void KStandarddirsTest::testLocateLocal()
 {
     const QString configLocal = KStandardDirs::locateLocal("config", "ksomethingrc");
     // KStandardDirs resolves symlinks, so we must compare with canonicalPath()
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(configLocal, m_configHome + "/ksomethingrc");
 }
 
@@ -164,11 +186,15 @@ void KStandarddirsTest::testAppData()
 void KStandarddirsTest::testChangeSaveLocation()
 {
     KStandardDirs cData;
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(cData.saveLocation("config"), m_configHome + "/");
     // Can we change the save location?
     const QString newSaveLoc = m_configHome + "/newconfigdir/";
     //cData.addResourceDir("config", newSaveLoc); // can't be done, absolute paths have less priority than relative paths
     cData.addResourceType("config", nullptr, "newconfigdir");
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE_PATHS(KStandardDirs::realPath(cData.saveLocation("config")), newSaveLoc);
 }
 
@@ -308,6 +334,8 @@ void KStandarddirsTest::testFindDirs()
     }
 
     const QString t = KStandardDirs::locateLocal("data", "locale/");
+    if (home_is_symlink)
+        QEXPECT_FAIL("", "HOME contains symlinks", Continue);
     QCOMPARE(t, QString(m_dataHome + "/locale/"));
     const QStringList dirs = KGlobal::dirs()->findDirs("data", "locale");
     QVERIFY(!dirs.isEmpty());
