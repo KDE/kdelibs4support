@@ -62,10 +62,15 @@ void KStandarddirsTest::initTestCase()
         }
     }
 
-    m_configHome = QDir::homePath() + QLatin1String("/.kde-unit-test/xdg/config");
+    // canonicalPath() to resolve symlinks (e.g. on FreeBSD where /home is a symlink to /usr/home),
+    // this matches what KGlobal::dirs()->realPath() would do, but we can't use it before setting
+    // the env vars, it would mess up the unit test
+    const QString homePath = QDir::home().canonicalPath();
+    m_configHome = homePath + QLatin1String("/.kde-unit-test/xdg/config");
+
     qputenv("XDG_CONFIG_HOME", QFile::encodeName(m_configHome));
 
-    m_dataHome = QDir::homePath() + QLatin1String("/.kde-unit-test/xdg/local");
+    m_dataHome = homePath + QLatin1String("/.kde-unit-test/xdg/local");
     qputenv("XDG_DATA_HOME", QFile::encodeName(m_dataHome));
 
     const QString configDirs = QDir::currentPath() + "/xdg";
