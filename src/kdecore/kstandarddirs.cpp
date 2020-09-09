@@ -1592,11 +1592,11 @@ QString KStandardDirs::saveLocation(const char *type,
                 // Check for existence of typed directory + suffix
                 const BasePrefix basePrefix = basePrefixForResource(type);
                 if (basePrefix == XdgConf) {
-                    path = realPath(localxdgconfdir() + path);
+                    path = realPath(d->xdgconf_prefixes.first() + path);
                 } else if (basePrefix == XdgData) {
-                    path = realPath(localxdgdatadir() + path);
+                    path = realPath(d->xdgdata_prefixes.first() + path);
                 } else {
-                    path = realPath(localkdedir() + path);
+                    path = realPath(d->m_prefixes.first() + path);
                 }
             }
         } else {
@@ -2126,19 +2126,19 @@ bool KStandardDirs::addCustomized(KConfig *config)
 QString KStandardDirs::localkdedir() const
 {
     // Return the prefix to use for saving
-    return d->m_prefixes.first();
+    return realPath(d->m_prefixes.first());
 }
 
 QString KStandardDirs::localxdgdatadir() const
 {
     // Return the prefix to use for saving
-    return d->xdgdata_prefixes.first();
+    return realPath(d->xdgdata_prefixes.first());
 }
 
 QString KStandardDirs::localxdgconfdir() const
 {
     // Return the prefix to use for saving
-    return d->xdgconf_prefixes.first();
+    return realPath(d->xdgconf_prefixes.first());
 }
 #endif // KDELIBS4SUPPORT_NO_DEPRECATED
 
