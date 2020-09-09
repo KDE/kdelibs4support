@@ -460,7 +460,9 @@ void KStandarddirsTest::testSetXdgDataDirs()
     // When setting XDG_DATA_DIRS this should still be true
     const QString localApps = m_dataHome + "/applications/";
     QVERIFY(KStandardDirs::makeDir(localApps));
-    const QString customDataDir = QDir::homePath() + QLatin1String("/.kde-unit-test/xdg/global");
+
+    // canonicalPath: see the comment in initTestCase
+    const QString customDataDir = QDir::home().canonicalPath() + QLatin1String("/.kde-unit-test/xdg/global");
     qputenv("XDG_DATA_DIRS", QFile::encodeName(customDataDir));
     QVERIFY(QDir(customDataDir).mkpath("applications"));
     KStandardDirs newStdDirs;
