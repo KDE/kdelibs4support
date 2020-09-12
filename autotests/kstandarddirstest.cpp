@@ -530,6 +530,12 @@ void KStandarddirsTest::testRestrictedResources()
 
 void KStandarddirsTest::testSymlinkResolution()
 {
+    // On FreeBSD it is common to have a symlink /home -> /usr/home,
+    // which messes with all the comparisons where **some** code paths
+    // return a canonicalized path and some do not.
+    if (QDir::homePath().compare(QFileInfo(QDir::homePath() + '/').canonicalFilePath(), PATH_SENSITIVITY) != 0) {
+        QSKIP("HOME contains a symlink, not supported");
+    }
 #ifndef Q_OS_WIN
     // This makes the save location for the david resource, "<XDG_DATA_HOME>/symlink/test/"
     // where symlink points to "real", and the subdir test will be created later
