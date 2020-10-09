@@ -23,7 +23,7 @@
 
 <refnamediv>
 <refname><command>kf5-config</command></refname>
-<refpurpose>Prints &Qt; and Frameworks installation paths</refpurpose>
+<refpurpose>Prints &Qt; and &frameworks; installation paths</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
@@ -50,14 +50,14 @@
 
 <refsect1>
 <title>Description</title>
-<para>kf5-config is a command line program used to retrieve information
-about Frameworks installation or user paths.</para>
+<para><command>kf5-config</command> is a command line program used to retrieve information
+about &frameworks; installation or user paths.</para>
 
-<para>Use this program to determine where the various aspects of the Frameworks
+<para>Use this program to determine where the various aspects of the &frameworks;
 installation reside on your system.
 </para> 
 
-<note><para>kf5-config is mostly a deprecated replacement for kde4-config, while the 
+<note><para><command>kf5-config</command> is mostly a deprecated replacement for kde4-config, while the
 recommended tool to use instead is qtpaths (which is shipped with &Qt;).
 </para></note>
 </refsect1>
@@ -69,63 +69,63 @@ recommended tool to use instead is qtpaths (which is shipped with &Qt;).
 <varlistentry>
 <term><option>--expandvars</option></term>
 <listitem>
-<para>expand ${prefix} and ${exec_prefix} in output</para>
+<para>Expand ${prefix} and ${exec_prefix} in output.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--prefix</option></term>
 <listitem>
-<para>Compiled in prefix for Frameworks libraries</para>
+<para>Compiled in prefix for &frameworks; libraries.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--exec-prefix</option></term>
 <listitem>
-<para>Compiled in exec_prefix for Frameworks libraries</para>
+<para>Compiled in exec_prefix for &frameworks; libraries.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--libsuffix</option></term>
 <listitem>
-<para>Compiled in library path suffix</para>
+<para>Compiled in library path suffix.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--localprefix</option></term>
 <listitem>
-<para>Prefix in $<envar>HOME</envar> used to write files</para>
+<para>Prefix in $<envar>HOME</envar> used to write files.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--version</option></term>
 <listitem>
-<para>Version of &Qt; and compiled in version string for Frameworks libraries and kf5-config</para>
+<para>Version of &Qt; and compiled in version string for &frameworks; libraries and <command>kf5-config</command>.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--kde-version</option></term>
 <listitem>
-<para>Compiled in version string for Frameworks libraries</para>
+<para>Compiled in version string for &frameworks; libraries.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--types</option></term>
 <listitem>
-<para>Print a list of all available &kde; resource types</para>
+<para>Print a list of all available &kde; resource types.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--path <replaceable>type</replaceable></option></term>
 <listitem>
-<para>Search path for the specified <replaceable>type</replaceable></para>
+<para>Search path for the specified <replaceable>type</replaceable>.</para>
 </listitem>
 </varlistentry>
 
@@ -139,35 +139,35 @@ recommended tool to use instead is qtpaths (which is shipped with &Qt;).
 <varlistentry>
 <term><option>--install <replaceable>type</replaceable></option></term>
 <listitem>
-<para>Prefix to install resource files to</para>
+<para>Prefix to install resource files to.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--qt-prefix</option></term>
 <listitem>
-<para>Installation prefix for &Qt;</para>
+<para>Installation prefix for &Qt;.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--qt-binaries</option></term>
 <listitem>
-<para>Location of installed &Qt; binaries</para>
+<para>Location of installed &Qt; binaries.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--qt-libraries</option></term>
 <listitem>
-<para>Location of installed &Qt; libraries</para>
+<para>Location of installed &Qt; libraries.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--qt-plugins</option></term>
 <listitem>
-<para>Location of installed &Qt; plugins</para>
+<para>Location of installed &Qt; plugins.</para>
 </listitem>
 </varlistentry>
 
@@ -177,7 +177,7 @@ recommended tool to use instead is qtpaths (which is shipped with &Qt;).
 <refsect1>
 <title>Examples</title>
 
-<para>Print the top-level Frameworks installation directory:</para>
+<para>Print the top-level &frameworks; installation directory:</para>
 <para>
 <prompt>&percnt;</prompt><userinput> <command>kf5-config --prefix</command>
 </userinput>

@@ -40,10 +40,10 @@ certificates</guilabel> are further categorized by the organization that issued
 them.</para>
 
 <screenshot id="screenshot-module">
-<screeninfo>The SSL Versions and Certificates Module</screeninfo>
+<screeninfo>The SSL Versions and Certificates module</screeninfo>
 <mediaobject>
 <imageobject><imagedata fileref="module.png" format="PNG"/></imageobject>
-<textobject><phrase>The SSL Versions and Certificates module.</phrase></textobject>
+<textobject><phrase>The SSL Versions and Certificates module</phrase></textobject>
 </mediaobject>
 </screenshot>
 
@@ -51,7 +51,7 @@ them.</para>
 <title>Viewing the Details of a Certificate</title>
 
 <para>Select a certificate under a listed organization, and click on the
-<guibutton>Display</guibutton> underneath the list to view the details of the
+<guibutton>Display...</guibutton> underneath the list to view the details of the
 certificate.</para>
 
 <screenshot id="screenshot-details">
@@ -86,7 +86,7 @@ holding the &Ctrl; key and then clicking on the <guibutton>Enable</guibutton> or
 <title>Adding a Certificate</title>
 
 <!--link file selector dialog to buildingblocks when its done-->
-<para>First, click on the <guibutton>Add</guibutton> button below the certificate
+<para>First, click on the <guibutton>Add...</guibutton> button below the certificate
 list.  It will open the file selector dialog allowing you to locate where the
 certificate files are stored.  After locating the certificate file, select it
 and click on the <guibutton>Open</guibutton> button to add it.</para>
