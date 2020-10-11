@@ -125,7 +125,7 @@ message.</para>
 <para>When you close the dialog by pressing <guibutton>OK</guibutton>,
 your entries apply immediately and are saved in
 <filename>$<envar>XDG_CONFIG_HOME</envar>/kdebugrc</filename> 
-(~/.config/kdebugrc by default). When you press
+(<filename>~/.config/kdebugrc</filename> by default). When you press
 <guibutton>Cancel</guibutton>, your entries are discarded and the old
 ones are restored.</para>
 

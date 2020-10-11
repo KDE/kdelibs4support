@@ -58,7 +58,7 @@ installation reside on your system.
 </para> 
 
 <note><para><command>kf5-config</command> is mostly a deprecated replacement for kde4-config, while the
-recommended tool to use instead is qtpaths (which is shipped with &Qt;).
+recommended tool to use instead is <command>qtpaths</command> (which is shipped with &Qt;).
 </para></note>
 </refsect1>
 
