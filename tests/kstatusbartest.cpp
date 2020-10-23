@@ -15,7 +15,6 @@
 #include <QApplication>
 #include <kglobal.h>
 #include <kmainwindow.h>
-#include <kmenubar.h>
 #include "kstatusbartest.h"
 
 testWindow::testWindow(QWidget *)

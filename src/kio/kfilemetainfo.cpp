@@ -21,7 +21,6 @@
 */
 
 #include "kfilemetainfo.h"
-#include "kfilemetainfoitem.h"
 #include "kfilemetainfoitem_p.h"
 #include "kfilewriteplugin.h"
 #include "kfilewriteplugin_p.h"
@@ -38,7 +37,6 @@
 
 #include <QFileInfo>
 #include <QDateTime>
-#include <QStringList>
 
 class KFileMetaInfoGroupPrivate : public QSharedData
 {

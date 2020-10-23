@@ -58,11 +58,9 @@
 #endif
 
 #include <QMutex>
-#include <QSocketNotifier>
 
 #include "k3resolver.h"
 #include "k3socketaddress.h"
-#include "k3socketbase.h"
 using namespace KNetwork;
 
 class KNetwork::KSocketDevicePrivate

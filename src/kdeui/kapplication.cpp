@@ -29,7 +29,6 @@
 #include <QStyleFactory>
 #include <QTimer>
 #include <QWidget>
-#include <QIcon>
 #include <QPointer>
 #include <QList>
 #include <QDBusConnection>
@@ -106,7 +105,6 @@
 
 #include <qstandardpaths.h>
 #include <QActionEvent>
-#include <kcomponentdata.h>
 
 KApplication *KApplication::KApp = nullptr;
 

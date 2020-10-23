@@ -28,7 +28,6 @@
 #include <QFileInfo>
 #include <QSharedData>
 #include <QStandardPaths>
-#include <QString>
 #include <QStringList>
 
 class KCurrencyCodePrivate : public QSharedData

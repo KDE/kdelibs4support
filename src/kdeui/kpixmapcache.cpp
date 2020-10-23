@@ -25,7 +25,6 @@
 #include <QFile>
 #include <QDataStream>
 #include <QFileInfo>
-#include <QDateTime>
 #include <QPixmapCache>
 #include <QtGlobal>
 #include <QPainter>
@@ -33,7 +32,6 @@
 #include <QTimer>
 #include <QMutex>
 #include <QMutexLocker>
-#include <QList>
 #include <qdir.h>
 #include <qstandardpaths.h>
 #include <qlockfile.h>

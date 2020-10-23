@@ -26,7 +26,6 @@
 #include <QtTest>
 #include "kdatetime.h"
 #include "kcalendarsystem.h"
-#include "kdatetimeformatter_p.h"
 #include "klocale.h"
 #include "kconfiggroup.h"
 

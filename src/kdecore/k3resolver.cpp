@@ -53,7 +53,6 @@
 #include <klocalizedstring.h>
 
 // Us
-#include "k3socketaddress.h"
 
 #ifdef NEED_MUTEX
 #ifdef __GNUC__

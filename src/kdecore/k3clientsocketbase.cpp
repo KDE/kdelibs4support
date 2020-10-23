@@ -31,8 +31,6 @@
 #include <QMutex>
 
 #include "k3socketaddress.h"
-#include "k3resolver.h"
-#include "k3socketbase.h"
 #include "k3socketdevice.h"
 
 using namespace KNetwork;

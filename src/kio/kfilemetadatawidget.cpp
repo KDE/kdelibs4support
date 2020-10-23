@@ -22,12 +22,10 @@
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <kfileitem.h>
 #include <klocalizedstring.h>
 
 #include <QGridLayout>
 #include <QLabel>
-#include <QList>
 #include <QSet>
 #include <QString>
 #include <QTimer>

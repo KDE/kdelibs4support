@@ -40,7 +40,6 @@
 
 #include <k4aboutdata.h>
 #include <kconfig.h>
-#include <klocale.h>
 #include <klocalizedstring.h>
 #include <kcharsets.h>
 #include "kstandarddirs.h"
@@ -48,7 +47,6 @@
 #undef QT_NO_TRANSLATION
 #include <QCoreApplication>
 #define QT_NO_TRANSLATION
-#include <QDebug>
 #include <QTextCodec>
 #include <unistd.h> // umask
 

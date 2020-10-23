@@ -29,10 +29,8 @@
 #include <klocalizedstring.h>
 
 #include <QDir>
-#include <QString>
 #include <QLibrary>
 
-#include <windows.h>
 #include <shellapi.h>
 #include <process.h>
 

@@ -40,7 +40,6 @@
 // Us
 #include "k3resolver_p.h"
 #include "k3resolverworkerbase.h"
-#include "k3socketaddress.h"
 
 #if !HAVE_GETNAMEINFO
 // FIXME KDE4:

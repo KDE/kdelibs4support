@@ -34,7 +34,6 @@
 
 #ifdef Q_OS_WIN
 #include <windows.h>
-#include <sys/stat.h>
 #endif
 
 #ifndef S_ISSOCK

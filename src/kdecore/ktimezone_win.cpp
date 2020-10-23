@@ -25,7 +25,6 @@
 
 #include "kdebug.h"
 
-#include <windows.h>
 
 #include <memory>
 #include <string>

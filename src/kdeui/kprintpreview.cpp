@@ -23,7 +23,6 @@
 #include <QDialogButtonBox>
 #include <QFile>
 #include <QLabel>
-#include <QPrinter>
 #include <QShowEvent>
 #include <QVBoxLayout>
 #include <QTemporaryDir>

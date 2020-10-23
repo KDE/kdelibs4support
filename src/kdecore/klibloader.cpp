@@ -21,7 +21,6 @@
 #include <QFile>
 #include <QDir>
 #include <QTimer>
-#include <QLibrary>
 #include <QStack>
 #include <QCoreApplication>
 #include <QObjectCleanupHandler>

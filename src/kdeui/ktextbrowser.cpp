@@ -23,7 +23,6 @@
 #include <QAction>
 #include <QMenu>
 #include <QKeyEvent>
-#include <QTextBrowser>
 #include <QWhatsThis>
 
 #include <kicontheme.h>

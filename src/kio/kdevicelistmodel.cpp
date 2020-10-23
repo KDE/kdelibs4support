@@ -21,7 +21,6 @@
 #include "kdevicelistitem_p.h"
 
 #include <solid/devicenotifier.h>
-#include <solid/device.h>
 #include <solid/deviceinterface.h>
 
 #include <QTimer>

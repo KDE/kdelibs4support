@@ -19,7 +19,6 @@
  **/
 
 #include <sys/types.h>
-#include <sys/socket.h>
 #include <sys/un.h>
 #include <netinet/in.h>
 #include <stdlib.h>
@@ -33,9 +32,7 @@
 // This is so that, if addrinfo is defined, it doesn't clobber our definition
 // It might be defined in the few cases in which we are replacing the system's
 // broken getaddrinfo
-#include <netdb.h>
 
-#include <config-network.h>
 #include "klocalizedstring.h"
 
 #ifndef IN6_IS_ADDR_V4MAPPED

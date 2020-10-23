@@ -29,7 +29,6 @@
 
 #include <kdebug.h>
 
-#include "network.h"
 #include "clientadaptor.h"
 #include "serviceadaptor.h"
 

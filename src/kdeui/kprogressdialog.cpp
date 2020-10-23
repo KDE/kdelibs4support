@@ -21,7 +21,6 @@
 
 #include <QLabel>
 #include <QLayout>
-#include <QProgressBar>
 #include <QTimer>
 
 #include <kguiitem.h>

@@ -19,8 +19,6 @@
 
 #include "metainfojob.h"
 
-#include <kfileitem.h>
-#include <kfilemetainfo.h>
 
 #include <QTimer>
 

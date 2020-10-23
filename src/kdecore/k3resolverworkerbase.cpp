@@ -30,7 +30,6 @@
 
 #include <QByteArray>
 
-#include "k3resolver.h"
 #include "k3resolver_p.h"
 
 using namespace KNetwork;

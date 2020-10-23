@@ -23,7 +23,6 @@
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <klocale.h>
 #include "kdayperiod_p.h"
 
 #include <QStandardPaths>

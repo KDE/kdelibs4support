@@ -30,7 +30,6 @@
 #include <mach-o/dyld.h>
 
 #include <CoreFoundation/CFBundle.h>
-#include <CoreFoundation/CFString.h>
 #include <CoreFoundation/CFURL.h>
 #include <QFile>
 #include <QProcess>
