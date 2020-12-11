@@ -25,7 +25,7 @@ testWindow::testWindow(QWidget *)
     fileMenu = new QMenu;
     menuBar->addAction("&File");
     QAction *action = fileMenu->addAction("&Exit");
-    action->setShortcut(Qt::ALT + Qt::Key_Q);
+    action->setShortcut(Qt::ALT | Qt::Key_Q);
 
     connect(action, SIGNAL(triggered()), qApp, SLOT(quit()));
 
