@@ -31,7 +31,7 @@ QTEST_GUILESS_MAIN(KStandarddirsTest)
 #include <kglobal.h>
 #include <qtemporarydir.h>
 #include <QDebug>
-#include <QtTest>
+#include <QTest>
 #include <kconfiggroup.h>
 #include <QFile>
 

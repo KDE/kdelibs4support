@@ -24,7 +24,7 @@
 
 #include <QString>
 
-#include <QtTest>
+#include <QTest>
 #include "kcalendarsystem.h"
 #include "klocalizeddate.h"
 #include "klocalizedstring.h"

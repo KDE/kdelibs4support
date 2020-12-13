@@ -21,11 +21,13 @@
 #include "ktimezonestest_p.h"
 
 #include <stdio.h>
-#include <QtTest>
+#include <QTest>
 #include <QDir>
 #include <QDate>
 #include <QDBusConnection>
 #include <QDBusMessage>
+#include <QTimer>
+#include <QSignalSpy>
 #include <config-date.h> // for HAVE_TM_GMTOFF
 #include "ksystemtimezone.h"
 #include "ktzfiletimezone.h"

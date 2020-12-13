@@ -18,7 +18,7 @@
 */
 
 #include <QSignalSpy>
-#include <QtTest>
+#include <QTest>
 #include "kglobalsettingstest.h"
 
 QTEST_MAIN(KGlobalSettingsTest)

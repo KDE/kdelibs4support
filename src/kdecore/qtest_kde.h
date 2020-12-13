@@ -20,7 +20,7 @@
 #define QTEST_KDE_H
 
 #include <kdelibs4support_export.h>
-#include <QtTest>
+#include <QTest>
 #include <stdlib.h>
 #include <assert.h>
 #include <k4aboutdata.h>

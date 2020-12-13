@@ -22,7 +22,7 @@
 #include <QObject>
 #include <QtConcurrent>
 
-#include <QtTest>
+#include <QTest>
 #include <qtest_kde.h> // kWaitForSignal
 
 static QString testMethod()

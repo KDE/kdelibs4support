@@ -24,7 +24,7 @@
 #include "ksharedptrtest.h"
 #include "ksharedptr.h"
 
-#include <QtTest>
+#include <QTest>
 
 QTEST_MAIN(KSharedPtrTest)
 

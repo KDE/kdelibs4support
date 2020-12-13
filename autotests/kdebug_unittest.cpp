@@ -22,7 +22,7 @@
 #include <qstandardpaths.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <QtTest>
+#include <QTest>
 #include <kdebug.h>
 #include <QProcess>
 

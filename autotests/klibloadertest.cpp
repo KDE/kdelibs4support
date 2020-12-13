@@ -20,7 +20,7 @@
 
 #include "klibloadertest.h"
 
-#include <QtTest>
+#include <QTest>
 
 QTEST_MAIN(KLibLoaderTest)
 

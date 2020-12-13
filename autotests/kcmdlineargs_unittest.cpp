@@ -20,7 +20,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QtTest>
+#include <QTest>
 
 #include <kcmdlineargs.h>
 

@@ -18,6 +18,8 @@
 
 #include "qtest_kde.h"
 
+#include <QTimer>
+
 // A signal spy which exits the event loop when the signal is called,
 // and remembers that the signal was emitted.
 class KDESignalSpy : public QObject

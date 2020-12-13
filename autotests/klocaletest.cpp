@@ -18,7 +18,7 @@
 */
 
 #include "klocaletest.h"
-#include <QtTest>
+#include <QTest>
 
 #include "klocale.h"
 #include "klocale_p.h"

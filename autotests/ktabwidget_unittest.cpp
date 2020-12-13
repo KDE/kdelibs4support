@@ -18,7 +18,7 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <QtTest>
+#include <QTest>
 #include <qtestevent.h>
 #include <ktabwidget.h>
 #include <klineedit.h>

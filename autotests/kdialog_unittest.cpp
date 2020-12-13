@@ -24,7 +24,7 @@
 #include <kdialog.h>
 #include <QPushButton>
 #include <QPointer>
-#include <QtTest>
+#include <QTest>
 
 Q_DECLARE_METATYPE(KDialog::ButtonCode)
 

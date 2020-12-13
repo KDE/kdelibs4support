@@ -20,7 +20,7 @@
 #include "kdatetimetest.h"
 
 #include <cstdlib>
-#include <QtTest>
+#include <QTest>
 #include <QDir>
 #include <klocale.h>
 #include <kcalendarsystem.h>
@@ -32,6 +32,8 @@
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
 #include <QDBusReply>
+#include <QTimer>
+#include <QSignalSpy>
 
 //TODO: test new methods
 

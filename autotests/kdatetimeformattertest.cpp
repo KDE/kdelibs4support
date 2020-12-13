@@ -23,7 +23,7 @@
 
 #include <QString>
 
-#include <QtTest>
+#include <QTest>
 #include "kdatetime.h"
 #include "kcalendarsystem.h"
 #include "klocale.h"
