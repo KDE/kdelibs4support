@@ -82,7 +82,7 @@ void KMimeTypeTest::initTestCase()
     }
 
     // Create fake text/plain part with a higher initial preference than the patch part.
-    const QString fakePart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextpart.desktop";
+    QString fakePart = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextpart.desktop";
     const bool mustCreate = !QFile::exists(fakePart);
     if (mustCreate) {
         mustUpdateKSycoca = true;
@@ -97,7 +97,7 @@ void KMimeTypeTest::initTestCase()
     }
 
     // Create fake text/plain ktexteditor plugin.
-    const QString fakePlugin = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextplugin.desktop";
+    QString fakePlugin = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kservices5/") + "faketextplugin.desktop";
     const bool mustCreatePlugin = !QFile::exists(fakePlugin);
     if (mustCreatePlugin) {
         mustUpdateKSycoca = true;
@@ -125,6 +125,7 @@ void KMimeTypeTest::initTestCase()
         group.writeEntry("InitialPreference", "50");
         group.writeEntry("Categories", "Qt;KDE;");
     }
+    m_nonKdeApp = QFileInfo(m_nonKdeApp).canonicalFilePath();
 
     // Create fake text/plain app
     m_textPlainApp = QStandardPaths::writableLocation(QStandardPaths::ApplicationsLocation) + QLatin1Char('/') + "fake_textplain_application.desktop";
@@ -140,6 +141,7 @@ void KMimeTypeTest::initTestCase()
         group.writeEntry("InitialPreference", "40");
         group.writeEntry("Categories", "Qt;KDE;");
     }
+    m_textPlainApp = QFileInfo(m_textPlainApp).canonicalFilePath();
 
     if (mustUpdateKSycoca) {
         // Update ksycoca in ~/.kde-unit-test after creating the above
