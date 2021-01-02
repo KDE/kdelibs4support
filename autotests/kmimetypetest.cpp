@@ -46,6 +46,7 @@ static int initializeLang()
 {
     qputenv("LC_ALL", "en_US");
     qputenv("LANG", "en_US");
+    qputenv("XDG_CURRENT_DESKTOP", "KDE");
     kservice_require_kded = false;
     return 0;
 }
