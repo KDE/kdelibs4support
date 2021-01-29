@@ -73,6 +73,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KDELIBS4SUPPORT
 # QUrl
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 
+remove_definitions(-DQT_NO_FOREACH)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 remove_definitions(-DQT_USE_QSTRINGBUILDER)
