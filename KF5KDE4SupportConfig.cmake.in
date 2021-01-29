@@ -1,7 +1,7 @@
 @PACKAGE_INIT@
 
 include(CMakeFindDependencyMacro)
-find_dependency(KF5KDELibs4Support "@KF5_VERSION@")
+find_dependency(KF5KDELibs4Support "@KF_VERSION@")
 
 if(NOT TARGET KF5::KDE4Support)
     add_library(KF5::KDE4Support @KDELibs4Support_LIB_TYPE@ IMPORTED)

@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(KF5_VERSION "5.79.0") # handled by release scripts
-set(KF5_DEP_VERSION "5.79.0") # handled by release scripts
-project(KDELibs4Support VERSION ${KF5_VERSION})
+set(KF_VERSION "5.79.0") # handled by release scripts
+set(KF_DEP_VERSION "5.79.0") # handled by release scripts
+project(KDELibs4Support VERSION ${KF_VERSION})
 
 include(FeatureSummary)
 find_package(ECM 5.79.0  NO_MODULE)
@@ -22,28 +22,28 @@ include(CMakeFindFrameworks)
 set(REQUIRED_QT_VERSION 5.14.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg PrintSupport Designer)
 
-find_package(KF5Completion ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5ConfigWidgets ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Crash ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5DesignerPlugin ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5GlobalAccel ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5DocTools ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Emoticons ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5GuiAddons ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5KIO ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Notifications ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Parts ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5Service ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5TextWidgets ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5UnitConversion ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5WidgetsAddons ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5WindowSystem ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5XmlGui ${KF5_DEP_VERSION} REQUIRED)
-find_package(KF5DBusAddons ${KF5_DEP_VERSION} REQUIRED)
-find_package(KDED ${KF5_DEP_VERSION} REQUIRED)
+find_package(KF5Completion ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Config ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5ConfigWidgets ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Crash ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5DesignerPlugin ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5GlobalAccel ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5DocTools ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Emoticons ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5GuiAddons ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5I18n ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5IconThemes ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5KIO ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Notifications ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Parts ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5Service ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5TextWidgets ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5UnitConversion ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5WidgetsAddons ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5WindowSystem ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5XmlGui ${KF_DEP_VERSION} REQUIRED)
+find_package(KF5DBusAddons ${KF_DEP_VERSION} REQUIRED)
+find_package(KDED ${KF_DEP_VERSION} REQUIRED)
 
 if(WIN32)
     find_package(KDEWin REQUIRED)
@@ -143,7 +143,7 @@ configure_package_config_file(
 )
 write_basic_package_version_file(
     "${CMAKE_CURRENT_BINARY_DIR}/KF5KDE4SupportConfigVersion.cmake"
-    VERSION ${KF5_VERSION}
+    VERSION ${KF_VERSION}
     COMPATIBILITY AnyNewerVersion
 )
 install(
