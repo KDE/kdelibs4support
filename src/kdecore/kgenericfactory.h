@@ -52,7 +52,7 @@ public:
 
     virtual ~KGenericFactoryBase()
     {
-        s_self = 0;
+        s_self = nullptr;
     }
 
 #if 0 // not available anymore. Port away from KGenericFactory!
@@ -83,7 +83,7 @@ private:
 
 /* @internal */
 template <class T>
-KGenericFactoryBase<T> *KGenericFactoryBase<T>::s_self = 0;
+KGenericFactoryBase<T> *KGenericFactoryBase<T>::s_self = nullptr;
 
 /* @internal */
 template <class T>
@@ -166,7 +166,7 @@ protected:
                                   const char *className, const QStringList &args)
     {
         return KDEPrivate::ConcreteFactory<Product, ParentType>
-               ::create(0, parent, className, args);
+               ::create(nullptr, parent, className, args);
     }
 };
 
@@ -257,7 +257,7 @@ protected:
                                   const char *className, const QStringList &args)
     {
         return KDEPrivate::MultiFactory< KTypeList< Product, ProductListTail > >
-               ::create(0, parent, className, args);
+               ::create(nullptr, parent, className, args);
     }
 };
 
@@ -350,7 +350,7 @@ protected:
     {
         return KDEPrivate::MultiFactory< KTypeList< Product, ProductListTail >,
                KTypeList< ParentType, ParentTypeListTail > >
-               ::create(0, 0, parent,
+               ::create(nullptr, nullptr, parent,
                         className, args);
     }
 };

@@ -32,7 +32,7 @@ class NetworkManagerStatus : public SystemStatusInterface
 {
     Q_OBJECT
 public:
-    NetworkManagerStatus( QObject *parent = 0 );
+    NetworkManagerStatus( QObject *parent = nullptr );
 
     /* reimp */ Solid::Networking::Status status() const;
     /* reimp */ bool isSupported() const;
