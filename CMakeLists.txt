@@ -70,15 +70,23 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX KDELIBS4SUPPORT
                                  PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5KDELibs4SupportConfigVersion.cmake"
                                  SOVERSION 5)
 
-# QUrl
-add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
-
+# Remove default warning version from KDEFrameworkCompilerSettings, too much noise
+# instead avoid any deprecation warnings (to what Qt respects its own flag)
+# Setting QT_DISABLE_DEPRECATED_BEFORE & KF_DISABLE_DEPRECATED_BEFORE_AND_AT as below
+# defaults those DEPRECATED_WARNINGS_SINCE to the same version -> no warnings
+remove_definitions(
+    -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
+    -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
+)
 remove_definitions(-DQT_NO_FOREACH)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 remove_definitions(-DQT_USE_QSTRINGBUILDER)
 # TODO: use QT_USE_QSTRINGBUILDER instead of deprecated & undocumented QT_USE_FAST_OPERATOR_PLUS
 add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
+
+# QUrl
+add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 
 add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0)
 
