@@ -90,7 +90,7 @@ void KListDebugDialog::selectAll()
 {
     for (int i = 0; i < m_areaWidget->topLevelItemCount(); ++i) {
         QTreeWidgetItem* item = m_areaWidget->topLevelItem(i);
-        if (!m_areaWidget->isItemHidden(item)) {
+        if (!item->isHidden()) {
             item->setCheckState(0, Qt::Checked);
         }
     }
@@ -100,7 +100,7 @@ void KListDebugDialog::deSelectAll()
 {
     for (int i = 0; i < m_areaWidget->topLevelItemCount(); ++i) {
         QTreeWidgetItem* item = m_areaWidget->topLevelItem(i);
-        if (!m_areaWidget->isItemHidden(item)) {
+        if (!item->isHidden()) {
             item->setCheckState(0, Qt::Unchecked);
         }
     }
