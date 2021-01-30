@@ -306,7 +306,7 @@ set(kdelibs4support_INCLUDES
 )
 target_include_directories(KF5KDELibs4Support PUBLIC "$<BUILD_INTERFACE:${kdelibs4support_INCLUDES}>")
 
-target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support>" "$<INSTALL_INTERFACE:${KF5_INCLUDE_INSTALL_DIR}/KDELibs4Support/KDE>")
+target_include_directories(KF5KDELibs4Support INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support>" "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support/KDE>")
 
 set(platformLinkLibraries)
 if (APPLE)
