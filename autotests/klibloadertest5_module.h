@@ -25,7 +25,7 @@ class KLibLoaderTestObject : public QObject
     Q_OBJECT
 public:
     KLibLoaderTestObject(QObject *parent, const QList<QVariant> &);
-    ~KLibLoaderTestObject();
+    ~KLibLoaderTestObject() override;
 };
 
 #endif //KLIBLOADERTEST5_MODULE_H

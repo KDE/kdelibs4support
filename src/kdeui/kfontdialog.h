@@ -85,7 +85,7 @@ public:
                          const QStringList &fontlist = QStringList(),
                          Qt::CheckState *sizeIsRelativeState = nullptr);
 
-    ~KFontDialog();
+    ~KFontDialog() override;
     /**
      * Sets the currently selected font in the dialog.
      *

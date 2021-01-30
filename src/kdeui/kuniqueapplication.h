@@ -138,7 +138,7 @@ public:
     /**
      * Destructor
      */
-    virtual ~KUniqueApplication();
+    ~KUniqueApplication() override;
 
     /**
      * Creates a new "instance" of the application.

@@ -61,7 +61,7 @@ public:
     /**
      * Destructs the date selection widget.
      */
-    virtual ~KDateWidget();
+    ~KDateWidget() override;
 
     // KDE5 remove const &
     /**

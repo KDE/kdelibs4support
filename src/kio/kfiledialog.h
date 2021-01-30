@@ -130,7 +130,7 @@ public:
     /**
      * Destructs the file dialog.
      */
-    ~KFileDialog();
+    ~KFileDialog() override;
 
     /**
      * @returns The selected fully qualified filename.

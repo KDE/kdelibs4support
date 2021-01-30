@@ -39,7 +39,7 @@ class KCalendarSystemThai: public KCalendarSystemGregorian
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemThai(const KSharedConfig::Ptr config, const KLocale *locale);
-    virtual ~KCalendarSystemThai();
+    ~KCalendarSystemThai() override;
 
     QString calendarType() const override;
     KLocale::CalendarSystem calendarSystem() const override;

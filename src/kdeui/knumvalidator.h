@@ -54,7 +54,7 @@ public:
     /**
      * Destructs the validator.
      */
-    virtual ~KIntValidator();
+    ~KIntValidator() override;
     /**
      * Validates the text, and return the result.  Does not modify the parameters.
      */
@@ -119,7 +119,7 @@ public:
                      QObject *parent);
     /** Destructs the validator.
      */
-    virtual ~KDoubleValidator();
+    ~KDoubleValidator() override;
 
     /** Overloaded for internal reasons. The API is not affected. */
     QValidator::State validate(QString &input, int &pos) const override;

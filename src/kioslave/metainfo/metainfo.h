@@ -25,10 +25,10 @@ class MetaInfoProtocol : public KIO::SlaveBase
 {
 public:
     MetaInfoProtocol(const QByteArray &pool, const QByteArray &app);
-    virtual ~MetaInfoProtocol();
+    ~MetaInfoProtocol() override;
 
     void get(const QUrl &url) override;
-    virtual void put(const QUrl &url, int permissions,
+    void put(const QUrl &url, int permissions,
                      KIO::JobFlags flags) override;
 
 };

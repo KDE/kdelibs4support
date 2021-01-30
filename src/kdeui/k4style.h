@@ -88,7 +88,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT K4Style: public QCommonStyle
 
 public:
     K4Style();
-    ~K4Style();
+    ~K4Style() override;
 
     /**
      * Returns the default widget style.

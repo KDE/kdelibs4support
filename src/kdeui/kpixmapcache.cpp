@@ -134,7 +134,7 @@ class KPCMemoryDevice : public QIODevice
 {
 public:
     KPCMemoryDevice(char *start, quint32 *size, quint32 available);
-    virtual ~KPCMemoryDevice();
+    ~KPCMemoryDevice() override;
 
     qint64 size() const override
     {

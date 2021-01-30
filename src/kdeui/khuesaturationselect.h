@@ -37,7 +37,7 @@ public:
     /**
      * Destructor.
      */
-    ~KHueSaturationSelector();
+    ~KHueSaturationSelector() override;
 
     /**
      * Sets the chooser mode. The allowed modes are defined

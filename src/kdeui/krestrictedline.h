@@ -63,7 +63,7 @@ public:
     /**
      * Destructs the restricted line editor.
      */
-    ~KRestrictedLine();
+    ~KRestrictedLine() override;
 
     /**
      * All characters in the string valid are treated as

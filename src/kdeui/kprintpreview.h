@@ -59,7 +59,7 @@ public:
      * @param parent  pointer to the parent widget for the dialog
      */
     KDELIBS4SUPPORT_DEPRECATED explicit KPrintPreview(QPrinter *printer, QWidget *parent = nullptr);
-    virtual ~KPrintPreview();
+    ~KPrintPreview() override;
 
     /**
      * Returns true if the print preview system is available

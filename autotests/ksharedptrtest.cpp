@@ -123,7 +123,7 @@ public:
     {
         /*qDebug( "Derived created %p", (void*)this );*/
     }
-    virtual ~Derived()
+    ~Derived() override
     {
         /*qDebug( "Derived deleted %p", (void*)this );*/
     }

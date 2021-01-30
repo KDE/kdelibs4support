@@ -29,7 +29,7 @@ class KCalendarSystemGregorianPrivate : public KCalendarSystemPrivate
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemGregorianPrivate(KCalendarSystemGregorian *q);
 
-    virtual ~KCalendarSystemGregorianPrivate();
+    ~KCalendarSystemGregorianPrivate() override;
 
     // Virtual methods each calendar system must re-implement
     void loadDefaultEraList() override;

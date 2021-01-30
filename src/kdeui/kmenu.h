@@ -59,7 +59,7 @@ public:
     /**
      * Destructs the object
      */
-    ~KMenu();
+    ~KMenu() override;
 
     /**
      * Inserts a title item with no icon.

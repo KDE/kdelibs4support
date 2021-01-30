@@ -42,7 +42,7 @@ public:
      */
     KDELIBS4SUPPORT_DEPRECATED explicit KColorValueSelector(Qt::Orientation o, QWidget *parent = nullptr);
 
-    ~KColorValueSelector();
+    ~KColorValueSelector() override;
 
     /**
      * Updates the widget's contents.

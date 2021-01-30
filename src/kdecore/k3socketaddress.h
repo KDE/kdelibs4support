@@ -751,7 +751,7 @@ public:
     /**
      * Destroys this object.
      */
-    virtual ~KInetSocketAddress();
+    ~KInetSocketAddress() override;
 
     /**
      * Copy operator.
@@ -930,7 +930,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KUnixSocketAddress();
+    ~KUnixSocketAddress() override;
 
     /**
      * Copy operator. Copies the contents of the other object into

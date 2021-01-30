@@ -68,7 +68,7 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit MetaInfoJob(const KFileItemList &items, KFileMetaInfo::WhatFlags w = KFileMetaInfo::Everything,
                          int iocost = 3, int cpucost = 6, const QStringList &requiredfields = QStringList(),
                          const QStringList &requestedfields = QStringList());
-    virtual ~MetaInfoJob();
+    ~MetaInfoJob() override;
 
     /**
      * Removes an item from metainfo extraction.

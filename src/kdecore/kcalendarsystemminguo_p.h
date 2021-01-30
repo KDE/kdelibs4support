@@ -39,7 +39,7 @@ class KCalendarSystemMinguo: public KCalendarSystemGregorian
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemMinguo(const KSharedConfig::Ptr config, const KLocale *locale);
-    virtual ~KCalendarSystemMinguo();
+    ~KCalendarSystemMinguo() override;
 
     QString calendarType() const override;
     KLocale::CalendarSystem calendarSystem() const override;

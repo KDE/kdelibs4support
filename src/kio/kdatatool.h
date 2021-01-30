@@ -199,7 +199,7 @@ public:
     /**
      * Destructor
      */
-    ~KDataToolAction();
+    ~KDataToolAction() override;
 
     /**
      * Creates a list of actions from a list of information about data-tools.
@@ -256,7 +256,7 @@ public:
     /**
      * Destructor
      */
-    ~KDataTool();
+    ~KDataTool() override;
 
     /**
      * @internal. Do not use under any circumstance (including bad weather).

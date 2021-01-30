@@ -95,7 +95,7 @@ class KDELIBS4SUPPORT_EXPORT KSystemTimeZones : public QObject
 {
     Q_OBJECT
 public:
-    ~KSystemTimeZones();
+    ~KSystemTimeZones() override;
 
     /**
      * Returns the unique KTimeZones instance containing the system time zones
@@ -297,7 +297,7 @@ public:
                     const QString &countryCode = QString(), float latitude = UNKNOWN, float longitude = UNKNOWN,
                     const QString &comment = QString());
 
-    ~KSystemTimeZone();
+    ~KSystemTimeZone() override;
 
 private:
     // d-pointer is in KSystemTimeZoneBackend.
@@ -324,7 +324,7 @@ public:
     KSystemTimeZoneBackend(KSystemTimeZoneSource *source, const QString &name,
                            const QString &countryCode, float latitude, float longitude, const QString &comment);
 
-    ~KSystemTimeZoneBackend();
+    ~KSystemTimeZoneBackend() override;
 
     /**
      * Creates a copy of this instance.
@@ -443,7 +443,7 @@ public:
      * Constructs a system time zone source.
      */
     KSystemTimeZoneSource();
-    virtual ~KSystemTimeZoneSource();
+    ~KSystemTimeZoneSource() override;
 
     /**
      * Extract detailed information for one time zone, via the system time zone
@@ -494,7 +494,7 @@ public:
     KSystemTimeZoneData();
     /** Copy constructor; no special ownership assumed. */
     KSystemTimeZoneData(const KSystemTimeZoneData &);
-    virtual ~KSystemTimeZoneData();
+    ~KSystemTimeZoneData() override;
 
     /** Assignment; no special ownership assumed. Everything is value based. */
     KSystemTimeZoneData &operator=(const KSystemTimeZoneData &);

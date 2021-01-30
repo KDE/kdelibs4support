@@ -44,7 +44,7 @@ public:
     /**
      * Destructor - this object autodeletes itself when it's done
      */
-    ~KDiskFreeSpace();
+    ~KDiskFreeSpace() override;
 
     /**
      * Call this to fire a search on the disk usage information

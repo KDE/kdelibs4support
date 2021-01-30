@@ -33,7 +33,7 @@ class KAbstractDebugDialog : public KDialog
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KAbstractDebugDialog(QWidget *parent);
 
-    virtual ~KAbstractDebugDialog();
+    ~KAbstractDebugDialog() override;
 
     void buildButtons();
 

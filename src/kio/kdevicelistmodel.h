@@ -44,7 +44,7 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit KDeviceListModel(const QString &predicate, QObject *parent = nullptr);
     KDELIBS4SUPPORT_DEPRECATED explicit KDeviceListModel(const Solid::Predicate &predicate,
                               QObject *parent = nullptr);
-    ~KDeviceListModel();
+    ~KDeviceListModel() override;
 
     /**
      * @brief Get a visible data based on Qt role for the given index.

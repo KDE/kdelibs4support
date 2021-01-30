@@ -116,7 +116,7 @@ public:
      * destructor will call finalize(). If you do not want the target file
      * to be affected you need to call abort() before destroying the object.
      **/
-    virtual ~KSaveFile();
+    ~KSaveFile() override;
 
     /**
      * @brief Set the target filename for the save file.

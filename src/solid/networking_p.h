@@ -41,7 +41,7 @@ class NetworkingPrivate : public Networking::Notifier
     Q_CLASSINFO("D-Bus Interface", "org.kde.Solid.Networking.Client")
 public:
     NetworkingPrivate();
-    ~NetworkingPrivate();
+    ~NetworkingPrivate() override;
     void shouldConnect()
     {
         Networking::Notifier::shouldConnect();

@@ -471,7 +471,7 @@ public:
      * resources. If the resolution is still in progress, it will be
      * canceled and the signal will \b not be emitted.
      */
-    virtual ~KResolver();
+    ~KResolver() override;
 
     /**
      * Retrieve the current status of this object.

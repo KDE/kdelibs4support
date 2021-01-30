@@ -34,7 +34,7 @@ class TestService : public KMainWindow {
 Q_OBJECT
 public:
 	TestService();
-	virtual ~TestService();
+	~TestService() override;
 	int status( const QString & network );
 	bool isValid();
 protected Q_SLOTS:

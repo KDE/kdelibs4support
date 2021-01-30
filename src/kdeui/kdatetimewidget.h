@@ -56,7 +56,7 @@ public:
     /**
      * Destructs the date and time selection widget.
      */
-    virtual ~KDateTimeWidget();
+    ~KDateTimeWidget() override;
 
     /**
      * Returns the currently selected date and time.

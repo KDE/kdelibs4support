@@ -43,7 +43,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KMenuBar : public QMenuBar
 public:
 
     KDELIBS4SUPPORT_DEPRECATED explicit KMenuBar(QWidget *parent = nullptr);
-    ~KMenuBar();
+    ~KMenuBar() override;
 
     /**
      * This controls whether or not this menubar will be a top-level

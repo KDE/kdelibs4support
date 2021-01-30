@@ -402,7 +402,7 @@ public:
         m_node(node), m_serv(serv), m_af(af), m_flags(flags), results(*res)
     { }
 
-    ~GetAddrInfoThread()
+    ~GetAddrInfoThread() override
     { }
 
     bool preprocess() override

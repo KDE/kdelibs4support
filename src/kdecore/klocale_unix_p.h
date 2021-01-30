@@ -34,7 +34,7 @@ public:
 
     KLocaleUnixPrivate &operator=(const KLocaleUnixPrivate &rhs);
 
-    virtual ~KLocaleUnixPrivate();
+    ~KLocaleUnixPrivate() override;
 };
 
 #endif // KLOCALE_UNIX_P_H

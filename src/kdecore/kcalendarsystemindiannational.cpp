@@ -31,7 +31,7 @@ class KCalendarSystemIndianNationalPrivate : public KCalendarSystemPrivate
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIndianNationalPrivate(KCalendarSystemIndianNational *q);
 
-    virtual ~KCalendarSystemIndianNationalPrivate();
+    ~KCalendarSystemIndianNationalPrivate() override;
 
     // Virtual methods each calendar system must re-implement
     void loadDefaultEraList() override;

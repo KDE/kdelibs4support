@@ -50,7 +50,7 @@ public:
         s_createComponentDataCalled = false;
     }
 
-    virtual ~KGenericFactoryBase()
+    ~KGenericFactoryBase() override
     {
         s_self = nullptr;
     }

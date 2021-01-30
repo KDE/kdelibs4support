@@ -67,7 +67,7 @@ public:
     /**
      * Destructor
      */
-    ~KNumInput();
+    ~KNumInput() override;
 
     /**
      * Sets the text and alignment of the main description label.
@@ -233,7 +233,7 @@ public:
      *
      *
      */
-    virtual ~KIntNumInput();
+    ~KIntNumInput() override;
 
     /**
      * @return the current value.
@@ -491,7 +491,7 @@ public:
     /**
      * destructor
      */
-    virtual ~KDoubleNumInput();
+    ~KDoubleNumInput() override;
 
     /**
      * Constructor
@@ -756,7 +756,7 @@ public:
     /**
      *  Destructor.
      */
-    virtual ~KIntSpinBox();
+    ~KIntSpinBox() override;
 
     /**
      * Sets the base in which the numbers in the spin box are represented.

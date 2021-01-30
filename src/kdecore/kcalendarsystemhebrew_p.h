@@ -42,7 +42,7 @@ class KCalendarSystemHebrew : public KCalendarSystem
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemHebrew(const KSharedConfig::Ptr config, const KLocale *locale);
-    virtual ~KCalendarSystemHebrew();
+    ~KCalendarSystemHebrew() override;
 
     QString calendarType() const override;
     KLocale::CalendarSystem calendarSystem() const override;

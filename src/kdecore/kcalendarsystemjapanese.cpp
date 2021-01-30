@@ -30,7 +30,7 @@ class KCalendarSystemJapanesePrivate : public KCalendarSystemGregorianPrivate
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJapanesePrivate(KCalendarSystemJapanese *q);
-    virtual ~KCalendarSystemJapanesePrivate();
+    ~KCalendarSystemJapanesePrivate() override;
 
     void loadDefaultEraList() override;
     int earliestValidYear() const override;

@@ -42,7 +42,7 @@ class KDebugDialog : public KAbstractDebugDialog, public Ui_KDebugDialog
 
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KDebugDialog(const AreaMap& areaMap, QWidget *parent = nullptr);
-    virtual ~KDebugDialog();
+    ~KDebugDialog() override;
 
     void doLoad() override {}
     void doSave() override;

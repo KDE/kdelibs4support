@@ -42,7 +42,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileItemActionPlugin : public QObject
 public:
     KFileItemActionPlugin(QObject *parent);
 
-    virtual ~KFileItemActionPlugin();
+    ~KFileItemActionPlugin() override;
 
     virtual QList<QAction *> actions(const KFileItemListProperties &fileItemInfos,
                                      QWidget *parentWidget) const = 0;

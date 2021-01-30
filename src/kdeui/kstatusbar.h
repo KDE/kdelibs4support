@@ -71,7 +71,7 @@ public:
      *
      *  Deletes all internal objects.
      */
-    ~KStatusBar();
+    ~KStatusBar() override;
 
     /**
      *  Inserts a temporary text label into the status bar.

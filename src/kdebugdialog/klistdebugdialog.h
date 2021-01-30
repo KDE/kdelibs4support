@@ -39,7 +39,7 @@ class KListDebugDialog : public KAbstractDebugDialog
 
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KListDebugDialog(const AreaMap& areaMap, QWidget *parent = nullptr);
-    virtual ~KListDebugDialog() {}
+    ~KListDebugDialog() override {}
 
     void activateArea( const QByteArray& area, bool activate );
 

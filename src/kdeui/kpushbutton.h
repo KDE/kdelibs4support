@@ -76,7 +76,7 @@ public:
     /**
      * Destructs the button.
      */
-    ~KPushButton();
+    ~KPushButton() override;
 
     /**
      * Enables/disables drag-support. Default is disabled.

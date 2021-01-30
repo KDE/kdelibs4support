@@ -48,7 +48,7 @@ public:
     /**
      * Default Destructor
      */
-    virtual ~TestClient();
+    ~TestClient() override;
 
 private Q_SLOTS:
     void networkStatusChanged(Solid::Networking::Status status);

@@ -165,7 +165,7 @@ public:
      * Note, however, that accepted sockets do not get closed when this
      * object closes.
      */
-    ~KServerSocket();
+    ~KServerSocket() override;
 
 protected:
     /**

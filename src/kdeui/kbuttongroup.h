@@ -56,7 +56,7 @@ public:
     /**
      * Destroys the widget.
      */
-    ~KButtonGroup();
+    ~KButtonGroup() override;
 
     /**
      * Return the index of the selected QAbstractButton, among the QAbstractButton's

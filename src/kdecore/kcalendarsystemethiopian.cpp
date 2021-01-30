@@ -34,7 +34,7 @@ public:
     {
     }
 
-    virtual ~KCalendarSystemEthiopianPrivate()
+    ~KCalendarSystemEthiopianPrivate() override
     {
     }
 

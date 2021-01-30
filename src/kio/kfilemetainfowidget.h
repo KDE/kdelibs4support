@@ -48,7 +48,7 @@ public:
     KFileMetaInfoWidget(KFileMetaInfoItem item, Mode mode, QValidator *val = nullptr,
                         QWidget *parent = nullptr);
 
-    virtual ~KFileMetaInfoWidget();
+    ~KFileMetaInfoWidget() override;
 
     bool apply();
 

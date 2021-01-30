@@ -34,9 +34,9 @@ class NetworkManagerStatus : public SystemStatusInterface
 public:
     NetworkManagerStatus( QObject *parent = nullptr );
 
-    /* reimp */ Solid::Networking::Status status() const;
-    /* reimp */ bool isSupported() const;
-    /* reimp */ QString serviceName() const;
+    /* reimp */ Solid::Networking::Status status() const override;
+    /* reimp */ bool isSupported() const override;
+    /* reimp */ QString serviceName() const override;
 
 private Q_SLOTS:
     void nmStateChanged( uint nmState );

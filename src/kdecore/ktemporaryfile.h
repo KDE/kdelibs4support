@@ -66,7 +66,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KTemporaryFile();
+    ~KTemporaryFile() override;
 
     /**
      * @brief Sets a prefix to use when creating the file.

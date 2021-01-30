@@ -42,7 +42,7 @@ class KCalendarSystemJulian: public KCalendarSystem
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJulian(const KSharedConfig::Ptr config, const KLocale *locale);
-    virtual ~KCalendarSystemJulian();
+    ~KCalendarSystemJulian() override;
 
     QString calendarType() const override;
     KLocale::CalendarSystem calendarSystem() const override;

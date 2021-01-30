@@ -41,7 +41,7 @@ class KCalendarSystemGregorian: public KCalendarSystem
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemGregorian(const KSharedConfig::Ptr config, const KLocale *locale);
-    virtual ~KCalendarSystemGregorian();
+    ~KCalendarSystemGregorian() override;
 
     QString calendarType() const override;
     KLocale::CalendarSystem calendarSystem() const override;

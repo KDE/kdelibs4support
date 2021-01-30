@@ -39,7 +39,7 @@ class KCalendarSystemEthiopian: public KCalendarSystemCoptic
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemEthiopian(const KSharedConfig::Ptr config, const KLocale *locale);
-    virtual ~KCalendarSystemEthiopian();
+    ~KCalendarSystemEthiopian() override;
 
     QString calendarType() const override;
     KLocale::CalendarSystem calendarSystem() const override;

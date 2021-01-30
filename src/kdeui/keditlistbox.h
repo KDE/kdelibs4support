@@ -146,7 +146,7 @@ public:
                  QWidget *parent = nullptr, const char *name = nullptr,
                  bool checkAtEntering = false, Buttons buttons = All);
 
-    virtual ~KEditListBox();
+    ~KEditListBox() override;
 
     /**
      * Return a pointer to the embedded QListView.

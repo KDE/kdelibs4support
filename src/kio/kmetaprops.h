@@ -33,7 +33,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaPropsPlugin : public KPropertie
     Q_OBJECT
 public:
     KFileMetaPropsPlugin(KPropertiesDialog *_props);
-    virtual ~KFileMetaPropsPlugin();
+    ~KFileMetaPropsPlugin() override;
 
     void applyChanges() override;
 

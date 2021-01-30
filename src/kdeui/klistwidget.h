@@ -45,7 +45,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KListWidget : public QListWidget
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KListWidget(QWidget *parent = nullptr);
 
-    ~KListWidget();
+    ~KListWidget() override;
 
 Q_SIGNALS:
 

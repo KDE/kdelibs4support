@@ -39,7 +39,7 @@ class KCalendarSystemJalaliPrivate : public KCalendarSystemPrivate
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemJalaliPrivate(KCalendarSystemJalali *q);
 
-    virtual ~KCalendarSystemJalaliPrivate();
+    ~KCalendarSystemJalaliPrivate() override;
 
     // Virtual methods each calendar system must re-implement
     void loadDefaultEraList() override;

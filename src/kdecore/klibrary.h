@@ -48,7 +48,7 @@ public:
     KDELIBS4SUPPORT_DEPRECATED explicit KLibrary(const QString &name, QObject *parent = nullptr);
     KLibrary(const QString &name, int verNum, QObject *parent = nullptr);
 
-    virtual ~KLibrary();
+    ~KLibrary() override;
 
     /**
      * @deprecated since 4.0, use KPluginLoader::factory

@@ -44,7 +44,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT Factory : public KPluginFactory
     Q_OBJECT
 public:
     Factory(QObject *parent = nullptr);
-    virtual ~Factory();
+    ~Factory() override;
 
     /**
      * Creates a part.

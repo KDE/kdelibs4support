@@ -43,7 +43,7 @@ public:
     };
 
     PowerManagementPrivate();
-    ~PowerManagementPrivate();
+    ~PowerManagementPrivate() override;
 
 public Q_SLOTS:
     void slotCanSuspendChanged(bool newState);

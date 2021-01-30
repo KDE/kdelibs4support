@@ -95,7 +95,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KClientSocketBase();
+    ~KClientSocketBase() override;
 
     /**
      * Returns the current state for this socket.
@@ -252,7 +252,7 @@ public:
      * @overload
      * Reimplemented from KSocketBase.
      */
-    virtual bool connect(const KResolverEntry &address,
+    bool connect(const KResolverEntry &address,
                          OpenMode mode = ReadWrite) override;
 
     /**

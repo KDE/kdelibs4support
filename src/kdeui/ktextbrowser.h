@@ -70,7 +70,7 @@ public:
     /**
      * Destroys the text browser.
      */
-    ~KTextBrowser();
+    ~KTextBrowser() override;
 
     /**
      * Decide whether a click on a link should be handled internally

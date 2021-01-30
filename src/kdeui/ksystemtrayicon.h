@@ -98,7 +98,7 @@ public:
     /**
      * Destructor
      */
-    ~KSystemTrayIcon();
+    ~KSystemTrayIcon() override;
 
     /**
      * Set the movie to use. To manipulate the movie (start, stop, pause), call

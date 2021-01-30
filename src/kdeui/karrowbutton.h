@@ -58,7 +58,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KArrowButton();
+    ~KArrowButton() override;
 
     /**
      * Reimplemented from QPushButton.

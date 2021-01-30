@@ -30,7 +30,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KdeUiProxyStyle : public QStyle
     Q_OBJECT
 public:
     KdeUiProxyStyle(QWidget *referenceWidget);
-    ~KdeUiProxyStyle();
+    ~KdeUiProxyStyle() override;
     virtual QStyle *style() const;
     void drawComplexControl(ComplexControl control, const QStyleOptionComplex *option, QPainter *painter,
                             const QWidget *widget) const override;

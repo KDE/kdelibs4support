@@ -65,7 +65,7 @@ public:
                     const QString &countryCode = QString(), float latitude = UNKNOWN, float longitude = UNKNOWN,
                     const QString &comment = QString());
 
-    ~KTzfileTimeZone();
+    ~KTzfileTimeZone() override;
 
 private:
     // d-pointer is in KTzfileTimeZoneBackend.
@@ -92,7 +92,7 @@ public:
     KTzfileTimeZoneBackend(KTzfileTimeZoneSource *source, const QString &name,
                            const QString &countryCode, float latitude, float longitude, const QString &comment);
 
-    ~KTzfileTimeZoneBackend();
+    ~KTzfileTimeZoneBackend() override;
 
     /**
      * Creates a copy of this instance.
@@ -147,7 +147,7 @@ public:
      * @param location the local directory containing the time zone definition files
      */
     KDELIBS4SUPPORT_DEPRECATED explicit KTzfileTimeZoneSource(const QString &location);
-    virtual ~KTzfileTimeZoneSource();
+    ~KTzfileTimeZoneSource() override;
 
     /**
      * Returns the local directory containing the time zone definition files.
@@ -186,7 +186,7 @@ class KTzfileTimeZoneData : public KTimeZoneData
 public:
     KTzfileTimeZoneData();
     KTzfileTimeZoneData(const KTzfileTimeZoneData &);
-    virtual ~KTzfileTimeZoneData();
+    ~KTzfileTimeZoneData() override;
 
     KTzfileTimeZoneData &operator=(const KTzfileTimeZoneData &);
 

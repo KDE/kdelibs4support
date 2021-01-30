@@ -35,7 +35,7 @@ class KCommentWidget : public QWidget
 
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCommentWidget(QWidget *parent = nullptr);
-    virtual ~KCommentWidget();
+    ~KCommentWidget() override;
 
     void setText(const QString &comment);
     QString text() const;

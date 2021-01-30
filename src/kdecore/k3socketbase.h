@@ -469,7 +469,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KActiveSocketBase();
+    ~KActiveSocketBase() override;
 
     /**
      * Unshadow errorString from QIODevice
@@ -781,7 +781,7 @@ public:
     /**
      * Destructor
      */
-    virtual ~KPassiveSocketBase();
+    ~KPassiveSocketBase() override;
 
     /**
      * Binds this socket to the given address.

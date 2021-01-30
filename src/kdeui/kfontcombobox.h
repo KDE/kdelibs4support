@@ -86,7 +86,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KFontComboBox();
+    ~KFontComboBox() override;
 
     /**
      * The font currently selected from the list.

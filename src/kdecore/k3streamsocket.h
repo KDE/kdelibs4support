@@ -114,7 +114,7 @@ public:
     /**
      * Destructor. This closes the socket.
      */
-    virtual ~KStreamSocket();
+    ~KStreamSocket() override;
 
     /**
      * Retrieves the timeout value (in milliseconds).
@@ -162,7 +162,7 @@ public:
      * @param node    the nodename
      * @param service the service
      */
-    virtual bool bind(const QString &node = QString(),
+    bool bind(const QString &node = QString(),
                       const QString &service = QString()) override;
 
     /**
@@ -197,14 +197,14 @@ public:
      * @param service the service on the remote node to connect to
      * @param mode        mode to operate this socket in
      */
-    virtual bool connect(const QString &node = QString(),
+    bool connect(const QString &node = QString(),
                          const QString &service = QString(),
                          OpenMode mode = ReadWrite) override;
 
     /**
      * Unshadowing from KClientSocketBase.
      */
-    virtual bool connect(const KResolverEntry &entry,
+    bool connect(const KResolverEntry &entry,
                          OpenMode mode = ReadWrite) override;
 
 Q_SIGNALS:

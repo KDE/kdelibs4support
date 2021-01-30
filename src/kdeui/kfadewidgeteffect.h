@@ -63,7 +63,7 @@ public:
      *
      * \warning KFadeWidgetEffect deletes itself after the animation is finished.
      */
-    ~KFadeWidgetEffect();
+    ~KFadeWidgetEffect() override;
 
     /**
      * Starts the animation.

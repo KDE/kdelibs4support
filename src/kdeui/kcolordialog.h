@@ -54,7 +54,7 @@ public:
      * @param columns The number of columns in the table
      */
     KColorCells(QWidget *parent, int rows, int columns);
-    ~KColorCells();
+    ~KColorCells() override;
 
     /** Sets the color in the given index in the table */
     void setColor(int index, const QColor &col);
@@ -121,7 +121,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KColorPatch : public QFrame
 
 public:
     KColorPatch(QWidget *parent);
-    virtual ~KColorPatch();
+    ~KColorPatch() override;
 
     /**
      * Get the currently displayed color
@@ -223,7 +223,7 @@ public:
     /**
      * Destroys the color selection dialog.
      */
-    ~KColorDialog();
+    ~KColorDialog() override;
 
     /**
      * Returns the currently selected color.

@@ -30,7 +30,7 @@ class KCalendarSystemThaiPrivate : public KCalendarSystemGregorianPrivate
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemThaiPrivate(KCalendarSystemThai *q);
-    virtual ~KCalendarSystemThaiPrivate();
+    ~KCalendarSystemThaiPrivate() override;
 
     void loadDefaultEraList() override;
     int daysInMonth(int year, int month) const override;

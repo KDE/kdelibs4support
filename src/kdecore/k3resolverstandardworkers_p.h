@@ -76,7 +76,7 @@ protected:
     QList<KNetwork::KResolverResults *> resultList;
 
 public:
-    virtual ~KStandardWorker();
+    ~KStandardWorker() override;
     bool sanityCheck();
 
     bool preprocess() override;
@@ -102,7 +102,7 @@ public:
     KGetAddrinfoWorker()
     { }
 
-    virtual ~KGetAddrinfoWorker();
+    ~KGetAddrinfoWorker() override;
     bool preprocess() override;
     bool run() override;
     bool postprocess() override

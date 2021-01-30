@@ -37,7 +37,7 @@ public:
     /**
      * @brief Destructor
      **/
-    virtual ~KFileWritePlugin();
+    ~KFileWritePlugin() override;
     /**
      * @brief determine if this plugin can write a value into a particular
      * resource.

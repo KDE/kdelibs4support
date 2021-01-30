@@ -44,7 +44,7 @@ public:
     /**
      * Destroys the KMessageBoxMessageHandler.
      */
-    virtual ~KMessageBoxMessageHandler();
+    ~KMessageBoxMessageHandler() override;
 
     /**
      * @copydoc KMessageHandler::message

@@ -50,7 +50,7 @@ public:
     /**
      * Destructor.
      */
-    ~KHBox();
+    ~KHBox() override;
 
     /**
      * Sets the @p margin of the hbox.

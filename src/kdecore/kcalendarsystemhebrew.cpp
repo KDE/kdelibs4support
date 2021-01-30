@@ -240,7 +240,7 @@ class KCalendarSystemHebrewPrivate : public KCalendarSystemPrivate
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemHebrewPrivate(KCalendarSystemHebrew *q);
 
-    virtual ~KCalendarSystemHebrewPrivate();
+    ~KCalendarSystemHebrewPrivate() override;
 
     // Virtual methods each calendar system must re-implement
     void loadDefaultEraList() override;

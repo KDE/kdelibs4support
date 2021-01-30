@@ -48,7 +48,7 @@ public:
     /**
      * Destructor.
      */
-    ~KVBox();
+    ~KVBox() override;
 
 private:
     class Private;

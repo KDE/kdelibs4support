@@ -73,7 +73,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KBufferedSocket();
+    ~KBufferedSocket() override;
 
     /**
      * Be sure to catch new devices.

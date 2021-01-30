@@ -30,7 +30,7 @@ class KCalendarSystemMinguoPrivate : public KCalendarSystemGregorianPrivate
 {
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemMinguoPrivate(KCalendarSystemMinguo *q);
-    virtual ~KCalendarSystemMinguoPrivate();
+    ~KCalendarSystemMinguoPrivate() override;
 
     void loadDefaultEraList() override;
     int daysInMonth(int year, int month) const override;

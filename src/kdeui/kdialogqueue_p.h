@@ -47,7 +47,7 @@ class KDialogQueue : public QObject
 public:
     static void queueDialog(QDialog *);
 
-    ~KDialogQueue();
+    ~KDialogQueue() override;
 
 protected:
     KDialogQueue();

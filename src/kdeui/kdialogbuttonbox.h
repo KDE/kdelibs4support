@@ -59,7 +59,7 @@ public:
     /**
       * Free private data field
       */
-    ~KDialogButtonBox();
+    ~KDialogButtonBox() override;
 
     /**
       * Creates a push button with the given text, adds it to the button box for the specified role, and returns the corresponding push button.

@@ -109,7 +109,7 @@ public:
     static KDELIBS4SUPPORT_DEPRECATED QString findLibrary(const QString &libname, const KComponentData &cData = KGlobal::mainComponent());
 
 private:
-    ~KLibLoader();
+    ~KLibLoader() override;
 
     KLibLoader();
 };

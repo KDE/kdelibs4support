@@ -83,7 +83,7 @@ public:
     /**
      * Destroys the string validator.
      */
-    ~KStringListValidator();
+    ~KStringListValidator() override;
 
     /**
      * Sets whether the string validator is in rejecting mode or not.

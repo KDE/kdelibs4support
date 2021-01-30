@@ -48,7 +48,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KFileMetaDataWidget : public QWidget
 
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KFileMetaDataWidget(QWidget *parent = nullptr);
-    virtual ~KFileMetaDataWidget();
+    ~KFileMetaDataWidget() override;
 
     /**
      * Sets the items for which the meta data should be shown.

@@ -120,7 +120,7 @@ public:
     /**
      * Destructor. This closes the socket if it's open.
      */
-    virtual ~KSocketDevice();
+    ~KSocketDevice() override;
 
     /**
      * Returns the file descriptor for this socket.
@@ -180,7 +180,7 @@ public:
     /**
      * Connect to a remote host.
      */
-    virtual bool connect(const KResolverEntry &address,
+    bool connect(const KResolverEntry &address,
                          OpenMode mode = ReadWrite) override;
 
     /**
@@ -272,7 +272,7 @@ public:
     /**
      * Writes the given data to the given destination address.
      */
-    virtual qint64 writeData(const char *data, qint64 len,
+    qint64 writeData(const char *data, qint64 len,
                              const KSocketAddress *to = nullptr) override;
 
     /**
@@ -402,7 +402,7 @@ class KSocketDeviceFactory: public KSocketDeviceFactoryBase
 {
 public:
     KSocketDeviceFactory() {}
-    virtual ~KSocketDeviceFactory() {}
+    ~KSocketDeviceFactory() override {}
 
     /** Create the socket implementation.
         @param parent Parent socket for this implementation

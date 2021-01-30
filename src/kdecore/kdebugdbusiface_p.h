@@ -32,7 +32,7 @@ class KDebugDBusIface: public QObject
     Q_CLASSINFO("D-Bus Interface", "org.kde.KDebug")
 public:
     KDebugDBusIface();
-    ~KDebugDBusIface();
+    ~KDebugDBusIface() override;
 
 public Q_SLOTS:
     /**

@@ -55,7 +55,7 @@ public:
     /**
      * Destructor
      */
-    ~PasswordDialog();
+    ~PasswordDialog() override;
 
     /**
      * A convienence static method for obtaining authorization

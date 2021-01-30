@@ -46,7 +46,7 @@ class Q_DECL_HIDDEN KMenu::KMenuPrivate
 {
 public:
     KMenuPrivate(KMenu *_parent);
-    ~KMenuPrivate();
+    ~KMenuPrivate() override;
 
     void resetKeyboardVars(bool noMatches = false);
     void actionHovered(QAction *action);

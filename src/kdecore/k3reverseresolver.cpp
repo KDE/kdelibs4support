@@ -59,7 +59,7 @@ public:
         : m_addr(addr), m_flags(flags), m_parent(nullptr)
     { }
 
-    virtual ~ReverseThread()
+    ~ReverseThread() override
     { }
 
     bool preprocess() override

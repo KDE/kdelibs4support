@@ -55,7 +55,7 @@ public:
      *
      *  Deletes all internal objects.
      */
-    ~KSplashScreen();
+    ~KSplashScreen() override;
 
 private:
     class Private;

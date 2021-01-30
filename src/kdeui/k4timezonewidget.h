@@ -75,7 +75,7 @@ public:
     /**
      * Destroys the time zone selection widget.
      */
-    virtual ~K4TimeZoneWidget();
+    ~K4TimeZoneWidget() override;
 
     /**
      * Makes all items show a checkbox, so that the user can select multiple

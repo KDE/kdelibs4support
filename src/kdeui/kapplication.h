@@ -93,7 +93,7 @@ public:
      */
     KDELIBS4SUPPORT_DEPRECATED explicit KApplication(bool GUIenabled = true);
 
-    virtual ~KApplication();
+    ~KApplication() override;
 
     /**
      * Returns the current application object.

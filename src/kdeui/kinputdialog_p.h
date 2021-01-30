@@ -58,7 +58,7 @@ public:
                        const QStringList &list, const QStringList &select, bool editable,
                        QWidget *parent);
 
-    ~KInputDialogHelper();
+    ~KInputDialogHelper() override;
 
     KLineEdit *lineEdit() const;
     QSpinBox *intSpinBox() const;

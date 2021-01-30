@@ -42,7 +42,7 @@ public:
         }
         s_self = this;
     }
-    virtual ~GenericFactoryBase()
+    ~GenericFactoryBase() override
     {
         delete s_aboutData;
         delete s_componentData;
@@ -53,7 +53,7 @@ public:
 
     static const KComponentData &componentData();
     static K4AboutData *aboutData();
-    virtual KComponentData partComponentData()
+    KComponentData partComponentData() override
     {
         return componentData();
     }

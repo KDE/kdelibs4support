@@ -31,7 +31,7 @@ class KCalendarSystemIslamicCivilPrivate : public KCalendarSystemPrivate
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemIslamicCivilPrivate(KCalendarSystemIslamicCivil *q);
 
-    virtual ~KCalendarSystemIslamicCivilPrivate();
+    ~KCalendarSystemIslamicCivilPrivate() override;
 
     // Virtual methods each calendar system must re-implement
     void loadDefaultEraList() override;

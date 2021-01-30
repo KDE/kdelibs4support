@@ -46,7 +46,7 @@ public:
     /**
      * Destroys the tab bar.
      */
-    virtual ~KTabBar();
+    ~KTabBar() override;
 
     /**
      * Sets the tab reordering enabled or disabled. If enabled,

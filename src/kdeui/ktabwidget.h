@@ -66,7 +66,7 @@ public:
     /**
      * Destroys the tab widget.
      */
-    virtual ~KTabWidget();
+    ~KTabWidget() override;
 
     /**
      * Set the tab of the given widget to \a color.

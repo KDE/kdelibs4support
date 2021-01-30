@@ -27,7 +27,7 @@ class KCalendarSystemCopticPrivate : public KCalendarSystemPrivate
 public:
     KDELIBS4SUPPORT_DEPRECATED explicit KCalendarSystemCopticPrivate(KCalendarSystemCoptic *q);
 
-    virtual ~KCalendarSystemCopticPrivate();
+    ~KCalendarSystemCopticPrivate() override;
 
     // Virtual methods each calendar system must re-implement
     void loadDefaultEraList() override;

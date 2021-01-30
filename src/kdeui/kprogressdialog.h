@@ -66,7 +66,7 @@ public:
     /**
      * Destructor
      */
-    ~KProgressDialog();
+    ~KProgressDialog() override;
 
     /**
      * Returns the QProgressBar used in this dialog.

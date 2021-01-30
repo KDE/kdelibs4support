@@ -76,7 +76,7 @@ public:
     /**
      * Destructs the scan dialog.
      */
-    ~KScanDialog();
+    ~KScanDialog() override;
 
     /**
      * Reimplement this if you need to set up some things, before showing the
@@ -180,7 +180,7 @@ public:
      * @return the KOCRDialog, or 0 if the function failed
      */
     static KOCRDialog *getOCRDialog(QWidget *parent = nullptr);
-    ~KOCRDialog();
+    ~KOCRDialog() override;
 
 protected:
     /**

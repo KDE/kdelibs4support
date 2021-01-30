@@ -53,7 +53,7 @@ class KDELIBS4SUPPORT_DEPRECATED_EXPORT KGlobalSettings : public QObject
     Q_OBJECT
 
 public:
-    ~KGlobalSettings();
+    ~KGlobalSettings() override;
 
     /**
      * Returns a threshold in pixels for drag & drop operations.

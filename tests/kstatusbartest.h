@@ -13,7 +13,7 @@ class testWindow  : public KXmlGuiWindow
 
 public:
     testWindow(QWidget *parent = nullptr);
-    ~testWindow();
+    ~testWindow() override;
 
 public Q_SLOTS:
     void slotPress(int i);

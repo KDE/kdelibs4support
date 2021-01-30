@@ -95,7 +95,7 @@ public:
     /**
      * Destructor.
      */
-    virtual ~KReverseResolver();
+    ~KReverseResolver() override;
 
     /**
      * This function returns 'true' if the processing is still running.

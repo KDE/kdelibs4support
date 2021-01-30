@@ -35,7 +35,7 @@ Q_OBJECT
 Q_CLASSINFO( "D-Bus Interface", "org.kde.Solid.Networking" )
 public:
     NetworkStatusModule(QObject* parent, const QList<QVariant>&);
-    ~NetworkStatusModule();
+    ~NetworkStatusModule() override;
     // Client interface
 public Q_SLOTS:
     Q_SCRIPTABLE int status();
