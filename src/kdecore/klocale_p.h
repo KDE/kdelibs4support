@@ -521,7 +521,7 @@ public:
      * The worker of the same-name KLocale API function.
      */
     virtual QString formatDateTime(const KDateTime &dateTime, KLocale::DateFormat format = KLocale::ShortDate,
-                                   KLocale::DateTimeFormatOptions options = nullptr);
+                                   KLocale::DateTimeFormatOptions options = {});
 
     /**
      * @internal Returns converted duration as a string

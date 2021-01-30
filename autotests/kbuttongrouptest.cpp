@@ -92,22 +92,22 @@ void KButtonGroupTest::testId()
 
 void KButtonGroupTest::testClicks()
 {
-    QTest::mouseClick(buttons[3], Qt::LeftButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[3], Qt::LeftButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(kbuttongroup->selected(), 3);
 
-    QTest::mouseClick(buttons[5], Qt::LeftButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[5], Qt::LeftButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(kbuttongroup->selected(), 5);
 
-    QTest::mouseClick(buttons[7], Qt::LeftButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[7], Qt::LeftButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(kbuttongroup->selected(), 7);
 
-    QTest::mouseClick(buttons[1], Qt::LeftButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[1], Qt::LeftButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(kbuttongroup->selected(), 1);
 
     // QRadioButton's react only to LMB click events
-    QTest::mouseClick(buttons[5], Qt::RightButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[5], Qt::RightButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(kbuttongroup->selected(), 1);
-    QTest::mouseClick(buttons[5], Qt::MidButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[5], Qt::MidButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(kbuttongroup->selected(), 1);
 }
 
@@ -139,7 +139,7 @@ void KButtonGroupTest::testSignals()
     QSignalSpy spyReleased(kbuttongroup, SIGNAL(released(int)));
     QSignalSpy spyChanged(kbuttongroup, SIGNAL(changed(int)));
 
-    QTest::mouseClick(buttons[2], Qt::LeftButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[2], Qt::LeftButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(spyClicked.count(), 1);
     QCOMPARE(spyPressed.count(), 1);
     QCOMPARE(spyReleased.count(), 1);
@@ -152,7 +152,7 @@ void KButtonGroupTest::testSignals()
     QCOMPARE(args3.first().toInt(), 2);
     QCOMPARE(kbuttongroup->selected(), 2);
 
-    QTest::mouseClick(buttons[6], Qt::LeftButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[6], Qt::LeftButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(spyClicked.count(), 2);
     QCOMPARE(spyPressed.count(), 2);
     QCOMPARE(spyReleased.count(), 2);
@@ -166,7 +166,7 @@ void KButtonGroupTest::testSignals()
     QCOMPARE(kbuttongroup->selected(), 6);
 
     // click with RMB on a radio -> no signal
-    QTest::mouseClick(buttons[0], Qt::RightButton, nullptr, QPoint(), 10);
+    QTest::mouseClick(buttons[0], Qt::RightButton, Qt::KeyboardModifiers(), QPoint(), 10);
     QCOMPARE(spyClicked.count(), 2);
     QCOMPARE(spyPressed.count(), 2);
     QCOMPARE(spyReleased.count(), 2);

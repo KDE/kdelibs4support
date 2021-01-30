@@ -97,7 +97,7 @@ static QDBusConnectionInterface *tryToInitDBusConnection()
 
 bool KUniqueApplication::start()
 {
-    return start(nullptr);
+    return start(StartFlags());
 }
 
 bool

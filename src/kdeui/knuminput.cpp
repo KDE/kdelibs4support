@@ -59,7 +59,7 @@ public:
         column2Width(0),
         label(nullptr),
         slider(nullptr),
-        labelAlignment(nullptr)
+        labelAlignment()
     {
         if (below) {
             nextNumInput = below->d->nextNumInput;
@@ -136,7 +136,7 @@ void KNumInput::setLabel(const QString &label, Qt::Alignment a)
     if (label.isEmpty()) {
         delete d->label;
         d->label = nullptr;
-        d->labelAlignment = nullptr;
+        d->labelAlignment = Qt::Alignment();
     } else {
         if (!d->label) {
             d->label = new QLabel(this);

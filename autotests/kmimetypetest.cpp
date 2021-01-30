@@ -212,7 +212,7 @@ void KMimeTypeTest::testIcons()
     if (!KUser().isSuperUser()) { // Can't test this one if running as root
         QString emptyString; // gcc-3.3 workaround
         QTemporaryDir tmp(emptyString);
-        QFile(tmp.path()).setPermissions(nullptr);
+        QFile(tmp.path()).setPermissions(QFileDevice::Permissions());
         tmp.setAutoRemove(true);
         //KUrl url( tmp.path() );
         //QCOMPARE(KIO::iconNameForUrl(url), "inode-directory"); // was folder_locked, but we don't have that anymore - TODO

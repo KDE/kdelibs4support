@@ -56,7 +56,7 @@ QString KDateTimeFormatter::formatDate(const QDate &fromDate,
         return QString();
     }
 
-    return formatDateTime(KDateTime(fromDate), toFormat, nullptr, calendar, locale, digitSet, formatStandard);
+    return formatDateTime(KDateTime(fromDate), toFormat, KLocale::TimeFormatOption(), calendar, locale, digitSet, formatStandard);
 }
 
 QString KDateTimeFormatter::formatTime(const QTime &fromTime,

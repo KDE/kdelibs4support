@@ -364,5 +364,5 @@ void KDateTimeFormatterTest::testFormatUnicode()
 
 void KDateTimeFormatterTest::compareFormatUnicode(KDateTimeFormatter formatter, const KDateTime &testDateTime, const QString &testFormat)
 {
-    QCOMPARE(formatter.formatDateTime(testDateTime, testFormat, nullptr, KLocale::global()->calendar(), KLocale::global(), KLocale::global()->dateTimeDigitSet(), KLocale::UnicodeFormat), testDateTime.dateTime().toString(testFormat));
+    QCOMPARE(formatter.formatDateTime(testDateTime, testFormat, KLocale::TimeFormatOptions(), KLocale::global()->calendar(), KLocale::global(), KLocale::global()->dateTimeDigitSet(), KLocale::UnicodeFormat), testDateTime.dateTime().toString(testFormat));
 }

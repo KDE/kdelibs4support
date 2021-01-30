@@ -4150,7 +4150,7 @@ bool K4Style::eventFilter(QObject *obj, QEvent *ev)
                     foOpts.palette = lbl->palette();
                     foOpts.rect    = foRect;
                     drawKStylePrimitive(WT_Generic, Generic::FocusIndicator, &foOpts,
-                                        foRect, lbl->palette(), nullptr, &p, lbl);
+                                        foRect, lbl->palette(), State(), &p, lbl);
                 }
                 break;
 

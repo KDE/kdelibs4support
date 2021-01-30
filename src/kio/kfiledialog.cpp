@@ -700,7 +700,7 @@ QString KFileDialog::getSaveFileName(const QUrl &dir, const QString &filter,
 {
     //TODO KDE5: replace this method by the method below (with default parameter values in declaration)
     // Set no confirm-overwrite mode for backwards compatibility
-    return KFileDialogPrivate::getSaveFileName(dir, filter, parent, caption, Options(nullptr), nullptr);
+    return KFileDialogPrivate::getSaveFileName(dir, filter, parent, caption, Options(), nullptr);
 }
 
 QString KFileDialog::getSaveFileName(const QUrl &dir, const QString &filter,
@@ -728,7 +728,7 @@ QString KFileDialogPrivate::getSaveFileName(const QUrl &dir, const QString &filt
             startDir = dir;
         }
 
-        QFileDialog::Options opts = (options & KFileDialog::ConfirmOverwrite) ? QFileDialog::Options(nullptr) : QFileDialog::DontConfirmOverwrite;
+        QFileDialog::Options opts = (options & KFileDialog::ConfirmOverwrite) ? QFileDialog::Options() : QFileDialog::DontConfirmOverwrite;
         const QString result = QFileDialog::getSaveFileName(
                                    parent,
                                    caption.isEmpty() ? i18n("Save As") : caption,
@@ -769,7 +769,7 @@ QString KFileDialog::getSaveFileNameWId(const QUrl &dir, const QString &filter,
 {
     //TODO KDE5: replace this method by the method below (with default parameter values in declaration)
     // Set no confirm-overwrite mode for backwards compatibility
-    return getSaveFileNameWId(dir, filter, parent_id, caption, Options(nullptr));
+    return getSaveFileNameWId(dir, filter, parent_id, caption, Options());
 }
 
 QString KFileDialog::getSaveFileNameWId(const QUrl &dir, const QString &filter,
@@ -808,7 +808,7 @@ QUrl KFileDialog::getSaveUrl(const QUrl &dir, const QString &filter,
 {
     //TODO KDE5: replace this method by the method below (with default parameter values in declaration)
     // Set no confirm-overwrite mode for backwards compatibility
-    return KFileDialogPrivate::getSaveUrl(dir, filter, parent, caption, Options(nullptr), nullptr);
+    return KFileDialogPrivate::getSaveUrl(dir, filter, parent, caption, Options(), nullptr);
 }
 
 QUrl KFileDialog::getSaveUrl(const QUrl &dir, const QString &filter,
@@ -1038,7 +1038,7 @@ int KFileDialog::exec()
     case KFileWidget::Saving:
         if (d->native->mode & KFile::File) {
             QUrl url(KFileDialogPrivate::getSaveUrl(
-                         d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), Options(0), &d->native->selectedFilter));
+                         d->native->startDir(), d->native->filter, parentWidget(), windowTitle(), Options(), &d->native->selectedFilter));
             if (url.isEmpty() || !url.isValid())  {
                 res = QDialog::Rejected;
                 break;

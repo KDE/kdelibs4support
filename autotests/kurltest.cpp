@@ -2028,11 +2028,11 @@ void KUrlTest::testQueryItem()
                   "Subject=subscribe+me&"
                   "body=subscribe+mutz%40kde.org&"
                   "Cc=majordomo%40lists.kde.org");
-    QCOMPARE(QStringList(queryUrl.queryItems(nullptr).keys()).join(", "),
+    QCOMPARE(QStringList(queryUrl.queryItems(KUrl::QueryItemsOptions()).keys()).join(", "),
              QString("Cc, Subject, body"));
     QCOMPARE(QStringList(queryUrl.queryItems(KUrl::CaseInsensitiveKeys).keys()).join(", "),
              QString("body, cc, subject"));
-    QCOMPARE(QStringList(queryUrl.queryItems(nullptr).values()).join(", "),
+    QCOMPARE(QStringList(queryUrl.queryItems(KUrl::QueryItemsOptions()).values()).join(", "),
              QString("majordomo@lists.kde.org, subscribe me, subscribe mutz@kde.org"));
     QCOMPARE(QStringList(queryUrl.queryItems(KUrl::CaseInsensitiveKeys).values()).join(", "),
              QString("subscribe mutz@kde.org, majordomo@lists.kde.org, subscribe me"));

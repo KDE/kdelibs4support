@@ -92,7 +92,7 @@ void KEditListBoxPrivate::init(bool check, KEditListBox::Buttons newButtons,
 
     setEditor(lineEdit, representationWidget);
 
-    buttons = nullptr;
+    buttons = KEditListBox::Buttons();
     q->setButtons(newButtons);
 
     q->connect(listView->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
