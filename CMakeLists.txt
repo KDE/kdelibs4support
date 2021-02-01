@@ -78,12 +78,16 @@ remove_definitions(
     -DQT_DEPRECATED_WARNINGS_SINCE=0x060000
     -DKF_DEPRECATED_WARNINGS_SINCE=0x060000
 )
+# remove definitions set by KDEFrameworkCompilerSettings which we fail to meet
+remove_definitions(-DQT_NO_KEYWORDS)
 remove_definitions(-DQT_NO_FOREACH)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 remove_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 remove_definitions(-DQT_USE_QSTRINGBUILDER)
 # TODO: use QT_USE_QSTRINGBUILDER instead of deprecated & undocumented QT_USE_FAST_OPERATOR_PLUS
 add_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
+# ideally we would support QT_NO_KEYWORDS, but at least we can do this
+add_definitions(-DQT_NO_SIGNALS_SLOTS_KEYWORDS)
 
 # QUrl
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
