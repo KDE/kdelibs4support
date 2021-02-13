@@ -45,6 +45,9 @@ class KComponentDataPrivate;
  * component data of the currently active component (mainly used for KParts) can be accessed using
  * KGlobal::activeComponent().
  *
+ * @note This class has been deprecated, you should port code away from it;
+ * see https://community.kde.org/Frameworks/Porting_Notes#KComponentData for porting notes.
+ *
  * @author Torben Weis
  * @author Matthias Kretz <kretz@kde.org>
  */
