@@ -19,7 +19,7 @@ include(KDECMakeSettings)
 include(GenerateExportHeader)
 include(CMakeFindFrameworks)
 
-set(REQUIRED_QT_VERSION 5.14.0)
+set(REQUIRED_QT_VERSION 5.15.0)
 find_package(Qt5 ${REQUIRED_QT_VERSION} CONFIG REQUIRED Network Widgets DBus Test Svg PrintSupport Designer)
 
 find_package(KF5Completion ${KF_DEP_VERSION} REQUIRED)
