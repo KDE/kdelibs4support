@@ -169,10 +169,8 @@ install(
 
 
 
-if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/po")
-    ki18n_install(po)
-    kdoctools_install(po)
-endif()
+ki18n_install(po)
+kdoctools_install(po)
 add_subdirectory(cmake)
 add_subdirectory(data)
 add_subdirectory(docs)
