@@ -44,10 +44,10 @@ else()
 endif()
 
 include_directories(${QNTRACK_INCLUDE_DIR})
-qt5_add_dbus_adaptor(kded_networkstatus_PART_SRCS ../org.kde.Solid.Networking.Service.xml networkstatus.h NetworkStatusModule)
+qt_add_dbus_adaptor(kded_networkstatus_PART_SRCS ../org.kde.Solid.Networking.Service.xml networkstatus.h NetworkStatusModule)
 
 # we need one of the interfaces installed by kdelibs:
-qt5_add_dbus_adaptor(kded_networkstatus_PART_SRCS
+qt_add_dbus_adaptor(kded_networkstatus_PART_SRCS
         ../../solid/org.kde.Solid.Networking.Client.xml
         networkstatus.h NetworkStatusModule)
 

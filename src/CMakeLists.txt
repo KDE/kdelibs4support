@@ -211,10 +211,10 @@ set_source_files_properties( solid/org.freedesktop.PowerManagement.xml
                              solid/org.kde.Solid.PowerManagement.PolicyAgent.xml
                              PROPERTIES NO_NAMESPACE TRUE)
 
-qt5_add_dbus_interface(libkdelibs4support_SRCS solid/org.kde.Solid.Networking.Client.xml
+qt_add_dbus_interface(libkdelibs4support_SRCS solid/org.kde.Solid.Networking.Client.xml
                        org_kde_solid_networking_client)
 
-qt5_add_dbus_interfaces(libkdelibs4support_SRCS solid/org.freedesktop.PowerManagement.xml
+qt_add_dbus_interfaces(libkdelibs4support_SRCS solid/org.freedesktop.PowerManagement.xml
                         solid/org.freedesktop.PowerManagement.Inhibit.xml
                         solid/org.kde.Solid.PowerManagement.PolicyAgent.xml)
 
