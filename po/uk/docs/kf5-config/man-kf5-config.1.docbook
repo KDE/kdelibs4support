@@ -1,0 +1,353 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Ukrainian "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Інструкція користувача kf5-config</title>
+<author
+><firstname
+>Stephan</firstname
+> <surname
+>Kulow</surname
+> <affiliation
+><address
+><email
+>coolo@kde.org</email
+></address
+></affiliation>
+</author>
+<date
+>31 липня 2015 року</date>
+<releaseinfo
+>Frameworks 5.13</releaseinfo>
+<productname
+>KDE Frameworks</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kf5-config</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kf5-config</command
+></refname>
+<refpurpose
+>Вивести шляхи встановлення &Qt; та Frameworks.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kf5-config</command
+> <arg
+>--expandvars</arg
+> <arg
+>--prefix</arg
+> <arg
+>--exec-prefix</arg
+> <arg
+>--libsuffix</arg
+> <arg
+>--localprefix</arg
+> <arg
+>--version</arg
+> <arg
+>--kde-version</arg
+> <arg
+>--types</arg
+> <arg
+>--path <replaceable
+>тип</replaceable
+></arg
+> <arg
+>--userpath <replaceable
+>тип</replaceable
+></arg
+> <arg
+>--install <replaceable
+>тип</replaceable
+></arg
+> <arg
+>--qt-prefix</arg
+> <arg
+>--qt-binaries</arg
+> <arg
+>--qt-libraries</arg
+> <arg
+>--qt-plugins</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Опис</title>
+<para
+><command
+>kf5-config</command
+> — це програма, яка працює у командному рядку і використовується для отримання інформації щодо шляхів встановлення &kde; і шляхів користувача Frameworks.</para>
+
+<para
+>Користуйтесь цією програмою для визначення місць, де у вашій системі знаходяться різні частини встановленого Frameworks. </para
+> 
+
+<note
+><para
+><command
+>kf5-config</command
+> — здебільшого застарілий замінник kde4-config, хоча і є рекомендованим інструментом-замінником <command
+>qtpaths</command
+> (ця програма є частиною &Qt;). </para
+></note>
+</refsect1>
+
+<refsect1>
+<title
+>Параметри</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--expandvars</option
+></term>
+<listitem>
+<para
+>Розгортає ${prefix} і ${exec_prefix} у виводі.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--prefix</option
+></term>
+<listitem>
+<para
+>Вбудований префікс для бібліотек Frameworks.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--exec-prefix</option
+></term>
+<listitem>
+<para
+>Префікс exec_prefix для бібліотек Frameworks.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--libsuffix</option
+></term>
+<listitem>
+<para
+>Суфікс у шляху до бібліотек, заданий під час компіляції.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--localprefix</option
+></term>
+<listitem>
+<para
+>Префікс у $<envar
+>HOME</envar
+>, який використовується для запису файлів.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>Версія &Qt; і вбудований рядок версії для бібліотек Frameworks і <command
+>kf5-config</command
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--kde-version</option
+></term>
+<listitem>
+<para
+>Вставлений під час компіляції у бібліотеки рядок з версією Frameworks.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--types</option
+></term>
+<listitem>
+<para
+>Виводить список всіх доступних типів ресурсів &kde;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--path <replaceable
+>тип</replaceable
+></option
+></term>
+<listitem>
+<para
+>Шукає шлях для вказаного <replaceable
+>типу</replaceable
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--userpath <replaceable
+>тип</replaceable
+></option
+></term>
+<listitem>
+<para
+>Шляхи користувача для типів: desktop|document</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--install <replaceable
+>тип</replaceable
+></option
+></term>
+<listitem>
+<para
+>Шлях для встановлення файлів ресурсів вказаного типу.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-prefix</option
+></term>
+<listitem>
+<para
+>Шлях до теки, де встановлено &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-binaries</option
+></term>
+<listitem>
+<para
+>Адреса встановлених програм &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-libraries</option
+></term>
+<listitem>
+<para
+>Адреса встановлених бібліотек &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-plugins</option
+></term>
+<listitem>
+<para
+>Адреса встановлених додатків &Qt;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Приклади</title>
+
+<para
+>Вивести каталог найвищого рівня встановлених Frameworks:</para>
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --prefix</command
+> </userinput
+> </para>
+
+<para
+>Вивести список всіх типів ресурсів:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --types</command
+> </userinput
+> </para>
+
+<para
+>Вивести шлях до встановлених зображень тла стільниці:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --path wallpaper</command
+> </userinput
+> </para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Прочитайте також</title>
+<para
+>kf5options(7)</para>
+</refsect1>
+
+<refsect1>
+<title
+>Вади</title>
+<para
+>Відомих вад немає.</para>
+</refsect1>
+
+</refentry>
