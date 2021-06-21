@@ -1,1 +1,1 @@
-#include <dnssd/servicemodel.h>
+#include <kdnssd/servicemodel.h>
