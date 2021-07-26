@@ -18,12 +18,3 @@ target_link_libraries(kio_metainfo
 
 set_target_properties(kio_metainfo PROPERTIES OUTPUT_NAME "metainfo")
 install(TARGETS kio_metainfo  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kio)
-
-
-########### install files ###############
-
-install( FILES metainfo.protocol  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
-
-
-
-

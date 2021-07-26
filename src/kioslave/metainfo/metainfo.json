@@ -1,0 +1,13 @@
+{
+    "KDE-KIO-Protocols": {
+        "metainfo": {
+            "Icon": "help-about",
+            "input": "stream",
+            "output": "stream",
+            "protocol": "metainfo",
+            "reading": true,
+            "source": false,
+            "writing": true
+        }
+    }
+}

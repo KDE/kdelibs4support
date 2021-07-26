@@ -30,6 +30,13 @@
 // mimeType     - the mime type of the file, so we need not extra determine it
 // what         - what to load
 
+// Pseudo plugin class to embed meta data
+class KIOPluginForMetaData : public QObject
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.kio.slave.metainfo" FILE "metainfo.json")
+};
+
 using namespace KIO;
 
 extern "C" Q_DECL_EXPORT int kdemain(int argc, char **argv)
@@ -93,3 +100,5 @@ void MetaInfoProtocol::put(const QUrl &url, int, KIO::JobFlags)
     }
     finished();
 }
+
+#include "metainfo.moc"
