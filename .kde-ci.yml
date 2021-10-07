@@ -27,6 +27,7 @@ Dependencies:
     'frameworks/kparts' : '@same'
     'frameworks/kdesignerplugin' : '@same'
     'frameworks/kglobalaccel' : '@same'
+    'frameworks/kitemmodels' : '@same'
     'third-party/taglib' : '@same'
     'kdesupport/polkit-qt-1' : '@same'
 
