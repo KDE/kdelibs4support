@@ -1,0 +1,204 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY kdebugdialog5 "<application
+>KDebugDialog</application
+>">
+  <!ENTITY kappname "&kdebugdialog;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE"
+> <!-- change language only here -->
+  
+  
+]>
+
+<article id="kdebugdialog5" lang="&language;">
+<title
+>KDebugDialog</title>
+<articleinfo>
+<authorgroup>
+<author
+>&David.Faure; &David.Faure.mail;</author>
+&traducteurGerardDelafond; &traducteurRobertJacolin; 
+</authorgroup>
+
+<date
+>02-04-2016</date>
+<releaseinfo
+>Environnements de développement 5.21</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KDebugdialog</keyword>
+<keyword
+>Debug</keyword>
+</keywordset>
+</articleinfo>
+
+
+<para
+>&kdebugdialog; est une boîte de dialogue pour gérer les messages de diagnostic pendant le fonctionnement des applications. Elle dispose d'un mode simplifié et d'un mode complet.</para>
+<para
+>Afin de pouvoir effectuer des changements, <guilabel
+>Désactiver toutes les sorties de déboguage</guilabel
+> doit être décoché.</para>
+
+<note>
+<para
+>Uniquement les applications utilisant la bibliothèque « kdelibs4support » de &frameworks;.</para>
+<para
+>« kDebug() » a été déclaré déconseillé à partir de &kf5-full;, en faveur de la connexion intégré et par catégorie à Qt. Veuillez consulter la page <ulink url="https://doc.qt.io/qt-5/qloggingcategory.html"
+> « QLoggingCategory » </ulink
+>. Veuillez utiliser le programme <ulink url="https://invent.kde.org/utilities/kdebugsettings"
+>KDebugSettings</ulink
+> pour activer ou désactiver « qCDebug ». </para>
+</note>
+
+<variablelist>
+<varlistentry>
+<term
+>Mode simplifié</term>
+<listitem>
+<para
+>Si vous lancez simplement <command
+>kdebugdialog5</command
+>, vous verrez une liste de <quote
+>zone</quote
+> qui peuvent être désactivées ou activées. Un appel à <function
+>kDebug(zone)</function
+> dans le code affichera des informations dans la sortie de débogage uniquement si la zone est activée.</para>
+
+<note
+><para
+>Notez que kWarning, kError et kFatal apparaissent toujours, <emphasis
+>ils ne sont pas contrôlés par ce réglage</emphasis
+>. </para
+></note>
+
+<para
+>Saisissez une chaîne dans la boîte <guilabel
+>Rechercher</guilabel
+> en haut de la liste. Ceci vous permet de filtrer les zones affichées dans la liste. Utilisez les boutons en-dessous de la liste pour sélectionner ou désélectionner tous les éléments de la liste (les autres zones ne sont pas affectées), ou modifier la sortie de déboguage pour un seul élément en utilisant la case à cocher qui se trouve devant lui. </para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Mode complet</term>
+<listitem>
+<para
+>Si vous lancez <command
+>kdebugdialog5</command
+><option
+>--fullmode</option
+>, vous pouvez définir séparément pour chaque niveau de gravité ce qui doit être fait des messages de diagnostic de ce niveau, et cela pour chaque zone de déboguage.</para>
+
+<para
+>En mode complet, choisissez d'abord la zone de déboguage qui vous intéresse dans la liste sur la gauche de la boîte de dialogue en utilisant la zone de recherche en haut de la liste.</para>
+
+<para
+>Vous pouvez voir la sortie pour différents types de messages de manière indépendante :</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Information</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Avertissement</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Erreur</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Erreur fatale</guilabel
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Pour chacun de ces types, vous pouvez régler :</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Diriger vers :</guilabel
+></term>
+<listitem>
+<para
+>Dans cette boîte, vous pouvez choisir l'endroit où les messages doivent être dirigés. Les choix sont : « Fichier », « Boîte de dialogue », « Shell » (signifie sortie standard d'erreur) et « Journal système (syslog) ». Ne dirigez pas de messages d'erreur fatale vers le journal système à moins que vous ne soyez l'administrateur système vous-même. La valeur par défaut est « Shell ».</para
+> 
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nom de fichier :</guilabel
+></term>
+<listitem
+><para
+>Fichier : ceci n'a un sens que si vous avez choisi « Fichier »comme sortie et fourni le nom de ce fichier (qui est interprété par rapport au dossier courant). La valeur par défaut est <filename
+>kdebug.dbg</filename
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Par ailleurs, vous pouvez cocher la case <guilabel
+>Arrêter lors de problèmes critiques</guilabel
+>. Dans ce cas, si un message de diagnostic avec le niveau de gravité <computeroutput
+>KDEBUG_FATAL</computeroutput
+> est émis, l'application s'arrête avec un signal SIGABRT après avoir envoyé le message.</para>
+
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Quand vous fermez la boîte de dialogue en appuyant sur le bouton <guibutton
+>Ok</guibutton
+>, vos données sont appliquées immédiatement et enregistrées dans <filename
+>$<envar
+>XDG_CONFIG_HOME</envar
+>~/kdebugrc</filename
+> (<filename
+>~/.config/kdebugrc</filename
+> par défaut). Quand vous appuyez sur le bouton <guibutton
+>Annuler</guibutton
+>, vos données sont annulées et les anciennes sont restaurées.</para>
+
+<para
+>Remerciements à Kalle Dalheimer pour la version originale de &kdebugdialog;</para>
+
+<para
+>Traduction française par &GerardDelafond; et &RobertJacolin;.</para
+> 
+
+&underFDL;
+
+</article>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-general-insert-case: lower
+sgml-shorttag: t
+End:
+-->
+
