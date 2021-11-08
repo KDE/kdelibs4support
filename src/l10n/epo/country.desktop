@@ -1,0 +1,54 @@
+[KCM Locale]
+Name=Esperanto
+Name[en_GB]=Esperanto
+Name[x-test]=xxEsperantoxx
+Name[zh_CN]=世界语
+Name[zh_TW]=世界語
+
+Region=
+Languages=eo
+Transcript=true
+NounDeclension=false
+LanguageSensitiveDigits=true
+
+DecimalPlaces=2
+DecimalSymbol=.
+DigitGroupFormat=3
+ThousandsSeparator=,
+PositiveSign=
+NegativeSign=-
+DigitSet=0
+
+CurrencyCode=
+CurrencyCodesInUse=
+#CurrencySymbol=$ Don't default as will use default for CurrencyCode
+MonetaryDecimalPlaces=2
+MonetaryDecimalSymbol=.
+MonetaryDigitGroupFormat=3
+MonetaryThousandsSeparator=,
+PositivePrefixCurrencySymbol=true
+NegativePrefixCurrencySymbol=true
+PositiveMonetarySignPosition=1
+NegativeMonetarySignPosition=1
+MonetaryDigitSet=0
+
+CalendarSystem=gregorian
+
+TimeFormat=%H:%M:%S
+DateFormat=%A %d %B %Y
+DateFormatShort=%Y-%m-%d
+DateMonthNamePossessive=false
+WeekStartDay=1
+WorkingWeekStartDay=1
+WorkingWeekEndDay=5
+WeekDayOfPray=7
+WeekNumberSystem=0
+DateTimeDigitSet=0
+
+BinaryUnitDialect=0
+PageSize=0
+MeasureSystem=0
+
+[KCM Locale][KCalendarSystem gregorian]
+UseCommonEra=false
+ShortYearWindowStartYear=2000
