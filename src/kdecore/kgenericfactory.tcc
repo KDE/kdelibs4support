@@ -37,7 +37,7 @@
 #ifndef KGENERICFACTORY_TCC
 #define KGENERICFACTORY_TCC
 
-#include <QtCore/QMetaObject>
+#include <QMetaObject>
 #include <ktypelist.h>
 #include "kdebug.h"
 

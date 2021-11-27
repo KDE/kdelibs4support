@@ -22,7 +22,7 @@
 
 #include "ui_displaycert.h"
 #include <QDialog>
-#include <QtNetwork/QSslCertificate>
+#include <QSslCertificate>
 
 class DisplayCertDialog : public QDialog
 {

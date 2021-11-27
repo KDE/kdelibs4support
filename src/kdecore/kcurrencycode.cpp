@@ -19,9 +19,9 @@
 
 #include "kcurrencycode.h"
 
-#include <KConfigCore/kconfig.h>
-#include <KConfigCore/kconfiggroup.h>
-#include <KI18n/klocalizedstring.h>
+#include <kconfig.h>
+#include <kconfiggroup.h>
+#include <klocalizedstring.h>
 
 #include <QDate>
 #include <QDir>
