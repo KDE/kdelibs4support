@@ -337,6 +337,7 @@ PUBLIC
    KF5::UnitConversion
    KF5::TextWidgets
    KF5::Parts
+   KF5::Auth
 PRIVATE
    KF5::UnitConversion
    KF5::GlobalAccel
