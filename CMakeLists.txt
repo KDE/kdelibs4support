@@ -136,7 +136,7 @@ install(EXPORT KF5KDELibs4SupportTargets
         NAMESPACE KF5::)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/kdelibs4support_version.h
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}
+        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KDELibs4Support
         COMPONENT Devel)
 
 
