@@ -27,7 +27,7 @@
 #define KACTION_H
 
 #include <kdelibs4support_export.h>
-#include <kauthaction.h>
+#include <kauth/action.h>
 
 #include <QWidgetAction>
 

@@ -24,7 +24,7 @@
 
 #include <kstandardguiitem.h>
 
-#include <kauthaction.h>
+#include <kauth/action.h>
 
 #include <kdelibs4support_export.h>
 

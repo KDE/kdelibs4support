@@ -1,1 +1,1 @@
-#include <kauthhelpersupport.h>
+#include <kauth/helpersupport.h>

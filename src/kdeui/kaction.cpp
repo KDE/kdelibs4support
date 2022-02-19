@@ -27,7 +27,7 @@
 #include "kaction.h"
 #include "kaction_p.h"
 #include "klocalizedstring.h"
-#include "kauthobjectdecorator.h"
+#include <kauth/objectdecorator.h>
 
 #include <QApplication>
 #include <QHBoxLayout>

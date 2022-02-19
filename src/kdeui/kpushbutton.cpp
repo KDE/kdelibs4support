@@ -31,7 +31,7 @@
 
 #include <kguiitem.h>
 
-#include "kauthobjectdecorator.h"
+#include <kauth/objectdecorator.h>
 
 class Q_DECL_HIDDEN KPushButton::KPushButtonPrivate
 {
