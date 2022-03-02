@@ -35,7 +35,6 @@
 #include <QDir>
 #include <QLibraryInfo>
 #include <QCoreApplication>
-#include <QProcess>
 #include <config-kstandarddirs.h>
 #include <kconfiggroup.h>
 #include <kkernel_win.h>
