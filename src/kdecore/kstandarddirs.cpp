@@ -304,7 +304,7 @@ static QString relativeInstallPath(const char *type)
             return QFile::decodeName(LIB_INSTALL_DIR "/");
         }
         if (strcmp("libexec", type) == 0) {
-            return QFile::decodeName(LIB_INSTALL_DIR "/libexec/");
+            return QFile::decodeName(LIBEXEC_INSTALL_DIR "/");
         }
         if (strcmp("locale", type) == 0) {
             return QFile::decodeName(LOCALE_INSTALL_DIR "/");
