@@ -408,10 +408,10 @@ void KMimeTypeTest::testFindByNameAndContent()
     QVERIFY(mime);
     QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
 
-    // textfile.doc -> text/plain. We added this to the mimetype database so that it can be handled.
+    // textfile.doc -> application/msword. Text files called *.doc are very rare these days, and no longer defined in kde5.xml
     mime = KMimeType::findByNameAndContent("textfile.doc", textData);
     QVERIFY(mime);
-    QCOMPARE(mime->name(), QString::fromLatin1("text/plain"));
+    QCOMPARE(mime->name(), QString::fromLatin1("application/msword"));
 
     // mswordfile.doc -> application/msword. Found by contents, because of the above case.
     // Note that it's application/msword, not application/vnd.ms-word, since it's the former that is registered to IANA.
@@ -799,7 +799,7 @@ void KMimeTypeTest::testPatterns_data()
     }
     QTest::newRow("oasis text mimetype") << "application/vnd.oasis.opendocument.text" << "*.odt" << ".odt";
     QTest::newRow("oasis presentation mimetype") << "application/vnd.oasis.opendocument.presentation" << "*.odp" << ".odp";
-    QTest::newRow("mimetype with multiple patterns, *.doc added by kde") << "text/plain" << "*.asc;*.txt;*.doc;*,v" << ".txt";
+    QTest::newRow("mimetype with multiple patterns") << "text/plain" << "*.asc;*.txt;*,v" << ".txt";
     QTest::newRow("mimetype with uncommon pattern") << "application/x-kcachegrind" << "callgrind.out*;cachegrind.out*" << QString();
     QTest::newRow("mimetype with no patterns") << "application/x-ole-storage" << QString() << QString();
 }
