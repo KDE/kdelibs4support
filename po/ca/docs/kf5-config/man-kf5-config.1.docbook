@@ -1,0 +1,353 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Catalan  "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>Manual d'usuari del kf5-config</title>
+<author
+><firstname
+>Stephan</firstname
+> <surname
+>Kulow</surname
+> <affiliation
+><address
+><email
+>coolo@kde.org</email
+></address
+></affiliation>
+</author>
+<date
+>31 de juliol de 2015</date>
+<releaseinfo
+>Frameworks 5.13</releaseinfo>
+<productname
+>Frameworks del KDE</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kf5-config</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kf5-config</command
+></refname>
+<refpurpose
+>Imprimeix a la pantalla els camins de la instal·lació de les &Qt; i dels &frameworks;</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kf5-config</command
+> <arg
+>--expandvars</arg
+> <arg
+>--prefix</arg
+> <arg
+>--exec-prefix</arg
+> <arg
+>--libsuffix</arg
+> <arg
+>--localprefix</arg
+> <arg
+>--version</arg
+> <arg
+>--kde-version</arg
+> <arg
+>--types</arg
+> <arg
+>--path <replaceable
+>tipus</replaceable
+></arg
+> <arg
+>--userpath <replaceable
+>tipus</replaceable
+></arg
+> <arg
+>--install <replaceable
+>tipus</replaceable
+></arg
+> <arg
+>--qt-prefix</arg
+> <arg
+>--qt-binaries</arg
+> <arg
+>--qt-libraries</arg
+> <arg
+>--qt-plugins</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Descripció</title>
+<para
+>El <command
+>kf5-config</command
+> és un programa de línia d'ordres emprat per a rebre informació quant a la instal·lació del &frameworks; o els camins emprats.</para>
+
+<para
+>Aquest programa s'usa per a determinar els diversos aspectes d'on resideix instal·lat el &frameworks; al vostre sistema. </para
+> 
+
+<note
+><para
+>El <command
+>kf5-config</command
+> sobretot és el substitut per al kde4-config, mentre que l'eina que es recomana utilitzar en el seu lloc és <command
+>qtpaths</command
+> (la qual es lliura amb les &Qt;). </para
+></note>
+</refsect1>
+
+<refsect1>
+<title
+>Opcions</title>
+<variablelist>
+
+<varlistentry>
+<term
+><option
+>--expandvars</option
+></term>
+<listitem>
+<para
+>Expandeix ${prefix} i ${exec_prefix} en la sortida.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--prefix</option
+></term>
+<listitem>
+<para
+>Les biblioteques &frameworks; han estat compilades sobre el prefix.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--exec-prefix</option
+></term>
+<listitem>
+<para
+>Les biblioteques &frameworks; han estat compilades sobre l'exec_prefix.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--libsuffix</option
+></term>
+<listitem>
+<para
+>El camí de les biblioteques es troba al sufix.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--localprefix</option
+></term>
+<listitem>
+<para
+>Prefix a $<envar
+>HOME</envar
+> utilitzat per a escriure fitxers.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--version</option
+></term>
+<listitem>
+<para
+>Versió de les &Qt; i versió contra la qual s'han compilat les biblioteques del &frameworks; i el <command
+>kf5-config</command
+>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--kde-version</option
+></term>
+<listitem>
+<para
+>Les biblioteques &frameworks; han estat compilades en la versió.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--types</option
+></term>
+<listitem>
+<para
+>Imprimeix a la pantalla una llista de tots els tipus de recursos &kde; disponibles.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--path <replaceable
+>tipus</replaceable
+></option
+></term>
+<listitem>
+<para
+>Cerca el camí per al <replaceable
+>tipus</replaceable
+> especificat.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--userpath <replaceable
+>tipus</replaceable
+></option
+></term>
+<listitem>
+<para
+>Camins d'usuari per als tipus: desktop|document</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--install <replaceable
+>tipus</replaceable
+></option
+></term>
+<listitem>
+<para
+>Prefix a on instal·lar els fitxers de recursos.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-prefix</option
+></term>
+<listitem>
+<para
+>Prefix d'instal·lació per a les &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-binaries</option
+></term>
+<listitem>
+<para
+>Ubicació on s'han instal·lat els binaris de les &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-libraries</option
+></term>
+<listitem>
+<para
+>Ubicació on s'han instal·lat les biblioteques de les &Qt;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--qt-plugins</option
+></term>
+<listitem>
+<para
+>Ubicació on s'han instal·lat els connectors de les &Qt;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+</refsect1>
+
+<refsect1>
+<title
+>Exemples</title>
+
+<para
+>Imprimeix a la pantalla el directori arrel de la instal·lació del &frameworks;:</para>
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --prefix</command
+> </userinput
+> </para>
+
+<para
+>Imprimeix a la pantalla una llista de tots els tipus de recursos:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --types</command
+> </userinput
+> </para>
+
+<para
+>Imprimeix a la pantalla el camí del fons de pantalla que teniu instal·lat:</para>
+
+<para
+><prompt
+>&percnt;</prompt
+><userinput
+> <command
+>kf5-config --path wallpaper</command
+> </userinput
+> </para>
+
+</refsect1>
+
+<refsect1>
+<title
+>Vegeu també</title>
+<para
+>kf5options(7)</para>
+</refsect1>
+
+<refsect1>
+<title
+>Errors</title>
+<para
+>No se'n coneixen.</para>
+</refsect1>
+
+</refentry>
