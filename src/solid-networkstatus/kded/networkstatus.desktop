@@ -141,7 +141,6 @@ Comment[zh_CN]=跟踪网络接口的状态并且为正在使用网络的应用�
 Comment[zh_TW]=追蹤網路介面的狀態，提供通知給使用網路的應用程式
 Type=Service
 X-KDE-ServiceTypes=KDEDModule
-X-KDE-ModuleType=Library
 X-KDE-Library=kf5/kded/networkstatus
 X-KDE-Kded-autoload=true
 X-KDE-Kded-load-on-demand=true
