@@ -169,10 +169,10 @@ void KDirSelectDialog::Private::slotMkdir()
 
     if (exists) { // url was already existent
         QString which = folderurl.toDisplayString(QUrl::PreferLocalFile);
-        KMessageBox::sorry(m_parent, i18n("A file or folder named %1 already exists.", which));
+        KMessageBox::error(m_parent, i18n("A file or folder named %1 already exists.", which));
         selectDirectory = false;
     } else if (!writeOk) {
-        KMessageBox::sorry(m_parent, i18n("You do not have permission to create that folder."));
+        KMessageBox::error(m_parent, i18n("You do not have permission to create that folder."));
     } else if (selectDirectory) {
         m_parent->setCurrentUrl(folderurl);
     }

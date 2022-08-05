@@ -749,7 +749,7 @@ KColorTable::KColorTablePrivate::slotShowNamedColorReadError(void)
                                    "file locations were examined:\n%2",
                                    pathCount, pathMsg);
 
-        KMessageBox::sorry(q, finalMsg);
+        KMessageBox::error(q, finalMsg);
     }
 }
 
