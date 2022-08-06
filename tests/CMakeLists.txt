@@ -63,7 +63,7 @@ target_link_libraries(networkingservice KF5::KDELibs4Support)
 
 ###### kxerrorhandlertest #####
 
-if (X11_FOUND)
+if (HAVE_X11)
   find_package(Qt5X11Extras ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
   kdelibs4support_examples( kxerrorhandlertest )
 

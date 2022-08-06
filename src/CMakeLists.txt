@@ -226,7 +226,7 @@ if (NOT KIO_NO_NEPOMUK)
     )
 endif ()
 
-if (X11_FOUND)
+if (HAVE_X11)
    set(libkdelibs4support_SRCS ${libkdelibs4support_SRCS} kdeui/kxerrorhandler.cpp )
    list(APPEND libkdelibs4support_OPTIONAL_LIBS Qt5::X11Extras ${X11_LIBRARIES})
 endif ()
@@ -312,7 +312,7 @@ set(platformLinkLibraries)
 if (APPLE)
     set(platformLinkLibraries "-framework CoreFoundation -framework Carbon -lresolv")
 endif()
-if (X11_FOUND)
+if (HAVE_X11)
     set(platformLinkLibraries ${XCB_XCB_LIBRARY})
 endif()
 
@@ -545,7 +545,7 @@ install( FILES ${CMAKE_CURRENT_BINARY_DIR}/all_languages DESTINATION ${KDE_INSTA
 install( FILES kdeui/40.colors kdeui/Oxygen.colors kdeui/Web.colors kdeui/Royal.colors kdeui/Rainbow.colors
          DESTINATION ${KDE_INSTALL_CONFDIR}/colors)
 
-if (NOT X11_FOUND)
+if (NOT HAVE_X11)
     # install our copy of the rgb.txt named colors list on systems without X11
     install(FILES kdeui/rgb.txt DESTINATION ${KDE_INSTALL_DATADIR_KF5}/kdeui)
 endif ()
