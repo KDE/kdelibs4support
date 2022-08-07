@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY kdebugdialog5 "<application
+>KDebugDialog</application
+>">
+  <!ENTITY kappname "&kdebugdialog;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Catalan-Valencian "INCLUDE"
+> <!-- change language only here -->
+  
+  
+]>
+
+<article id="kdebugdialog5" lang="&language;">
+<title
+>KDebugDialog</title>
+<articleinfo>
+<authorgroup>
+<author
+>&David.Faure; &David.Faure.mail;</author>
+&traductor.Antoni.Bella; 
+</authorgroup>
+
+<date
+>2 d'abril de 2016</date>
+<releaseinfo
+>Frameworks 5.21</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KDebugdialog</keyword>
+<keyword
+>Depuració</keyword>
+</keywordset>
+</articleinfo>
+
+
+<para
+>&kdebugdialog; és un diàleg per a gestionar els missatges de diagnosi en temps d'execució. Compta amb un ús senzill i un mode complet.</para>
+<para
+>Per tal que tots els canvis tinguen efecte <guilabel
+>Desactiva tota l'eixida de depuració</guilabel
+> haurà d'estar sense marcar.</para>
+
+<note>
+<para
+>Només per a les aplicacions que utilitzen la biblioteca kdelibs4support de &frameworks;.</para>
+<para
+>kDebug() ja no s'utilitza en el &kf5-full;, en favor del registre per categories integrat a les &Qt;, vegeu <ulink url="https://doc.qt.io/qt-5/qloggingcategory.html"
+>QLoggingCategory</ulink
+>. Utilitzeu el programa <ulink url="https://invent.kde.org/utilities/kdebugsettings"
+>KDebugSettings</ulink
+> per a habilitar/inhabilitar el qCDebug. </para>
+</note>
+
+<variablelist>
+<varlistentry>
+<term
+>Mode senzill</term>
+<listitem>
+<para
+>Si inicieu <command
+>kdebugdialog5</command
+>, veureu una llista d'<quote
+>àrees</quote
+> que es poden inhabilitar o habilitar. Una crida <function
+>kDebug(àrea)</function
+> en el codi només mostrarà alguna cosa en l'eixida de depuració si esta àrea està habilitada.</para>
+
+<note
+><para
+>Cal tindre en compte que kWarning, kError i kFatal sempre apareixeran, pel qual val a dir que <emphasis
+>NO</emphasis
+> estan controlats per esta configuració. </para
+></note>
+
+<para
+>Introduïu una cadena coincident en el quadro de <guilabel
+>Busca</guilabel
+> a la part superior de la llista, açò us permetrà filtrar les àrees que es mostren a la vista de llista. Utilitzeu els botons davall de la llista per a seleccionar o desseleccionar tots els elements de la vista (les altres àrees no tenen efecte) o canviar l'eixida de depuració per a un sol element amb la casella de selecció davant seu. </para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Mode complet</term>
+<listitem>
+<para
+>Si inicieu amb <command
+>kdebugdialog5</command
+> <option
+>--fullmode</option
+>, aleshores podreu definir per separat cada nivell de gravetat del que s'hauria de fer amb els missatges de diagnosi en este nivell, i el mateix per a cada àrea de depuració.</para>
+
+<para
+>En el mode complet, primer haureu de seleccionar l'àrea de depuració en la qual esteu interessat des de la llista a l'esquerra del diàleg utilitzant el quadro de busca a la part superior de la llista.</para>
+
+<para
+>Independentment podeu establir l'eixida per a diversos tipus de missatges:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Informació</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Avís</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Error</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Error fatal</guilabel
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Per a cadascun d'estos tipus podeu establir el següent:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Eixida a:</guilabel
+></term>
+<listitem>
+<para
+>En este quadro combinat, podeu escollir a on s'hauran de dirigir els missatges de l'eixida. Les possibilitats són: <quote
+>Fitxer</quote
+>, <quote
+>Quadro de missatge</quote
+>, <quote
+>Intèrpret d'ordres</quote
+> (significa stderr) i <quote
+>Syslog</quote
+>. Per favor, no dirigiu els missatges amb errors fatals cap a syslog a menys que sigueu l'administrador del sistema. L'eixida predeterminada és <quote
+>Intèrpret d'ordres</quote
+>.</para
+> 
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Nom del fitxer:</guilabel
+></term>
+<listitem
+><para
+>Només està habilitat quan heu escollit <quote
+>Fitxer</quote
+> com a eixida i servix per a proporcionar el nom d'este fitxer (el qual s'interpreta com a relatiu cap a la carpeta actual). El nom predeterminat és <filename
+>kdebug.dbg</filename
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>A part d'açò, també podeu marcar la casella de selecció <guilabel
+>Interromp si hi ha errors fatals</guilabel
+>. En este cas, si es genera un missatge de diagnosi amb un nivell de gravetat <computeroutput
+>KDEBUG_FATAL</computeroutput
+>, l'aplicació avortarà amb un senyal SIGABRT després de generar el missatge.</para>
+
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Quan tanqueu el diàleg prement <guibutton
+>D'acord</guibutton
+>, les vostres entrades seran aplicades immediatament i guardades en <filename
+>$<envar
+>XDG_CONFIG_HOME</envar
+>kdebugrc</filename
+> (el predeterminat és <filename
+>~/.config/kdebugrc</filename
+>). Si premeu <guibutton
+>Cancel·la</guibutton
+>, les vostres entrades seran descartades i es restauraran les antigues.</para>
+
+<para
+>Crèdits a Kalle Dalheimer per la versió original de &kdebugdialog;</para>
+
+<para
+>Traductor de la documentació: &credits.Antoni.Bella;</para
+> 
+
+&underFDL;
+
+</article>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-general-insert-case: lower
+sgml-shorttag: t
+End:
+-->
+
