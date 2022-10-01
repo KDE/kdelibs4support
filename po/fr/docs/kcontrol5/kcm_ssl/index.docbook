@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % French "INCLUDE">
+]>
+<article id="kcm_ssl" lang="&language;">
+<title
+>Certificats et versions SSL</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Subhashish</firstname
+> <surname
+>Pradhan</surname
+></author>
+<author
+>&TC.Hollingsworth; &TC.Hollingsworth.mail;</author>
+&traducteurFrederickAngelique;&relecteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>09-04-2015</date>
+<releaseinfo
+>Environnements de développement 5.9</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Configuration du système</keyword>
+<keyword
+>SSL</keyword>
+<keyword
+>certificats</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="intro">
+<title
+>Introduction</title>
+<para
+>&kde; fournit une liste de tous les certificats X.509 utilisés par le système. Ils sont accessibles dans le module <guilabel
+>Préférences SSL</guilabel
+> dans la configuration du système.</para>
+
+<para
+>Ce module fournit une liste de toutes les versions SSL et certificats par catégorie. Vous pouvez voir les détails de chaque certificat et en ajouter, supprimer, désactiver, ou activer.</para>
+
+<para
+>Les certificats sont classés dans <guilabel
+>Certificats du système</guilabel
+> et <guilabel
+>Certificats ajoutés par l'utilisateur</guilabel
+>. Les <guilabel
+>Certificats du système</guilabel
+> sont ensuite classés par l'organisation qui les a délivrés.</para>
+
+<screenshot id="screenshot-module">
+<screeninfo
+>Le module des certificats et versions « SSL ».</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="module.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Le module des certificats et versions « SSL ».</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="details">
+<title
+>Affichage les détails d'un certificat</title>
+
+<para
+>Sélectionnez un certificat sous une organisation listée et appuyez sur le bouton <guibutton
+>Afficher...</guibutton
+> sous la liste pour afficher les détails d'un certificat.</para>
+
+<screenshot id="screenshot-details">
+<screeninfo
+>Affichage des détails d'un certificat</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="details.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La fenêtre des détails d'un certificat.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+<sect2 id="enable-disable">
+<title
+>Activer ou désactiver un certificat</title>
+
+<para
+>Choisissez d'abord un certificat classé sous une organisation. Puis, appuyez sur le bouton <guibutton
+>Activer</guibutton
+> pour activer le certificat, ou appuyez sur le bouton <guibutton
+>Désactiver</guibutton
+> pour désactiver un certificat activé.</para>
+
+<para
+>Une méthode alternative pour activer ou désactiver un certificat consiste à cocher ou décocher la case devant un certificat.</para>
+
+<tip>
+<para
+>Vous pouvez activer ou désactiver plusieurs certificats en les choisissant tout en appuyant sur la touche &Ctrl; sans relâcher puis cliquez sur le bouton <guibutton
+>Activer</guibutton
+> ou <guibutton
+>Désactiver</guibutton
+> en-dessous de la liste.</para>
+</tip>
+
+</sect2>
+
+<sect2 id="add">
+<title
+>Ajouter un certificat</title>
+
+<!--link file selector dialog to buildingblocks when its done-->
+<para
+>Tout d'abord, appuyez sur le bouton <guibutton
+>Ajouter...</guibutton
+> sous la liste des certificats. Cela ouvrira la boîte de dialogue de sélection, vous permettant d'indiquer l'emplacement où sont enregistrés les certificats. Une fois les certificats localisés, choisissez un et appuyez sur le bouton <guibutton
+>Ouvrir</guibutton
+> pour l'ajouter.</para>
+
+<note>
+<para
+>Les certificats doivent être dans l'un des formats suivants : <acronym
+>DER</acronym
+>, <acronym
+>PEM</acronym
+>, ou un certificat &Netscape; encodé X.509.</para>
+</note>
+
+</sect2>
+
+<sect2 id="remove">
+<title
+>Supprimer un certificat</title>
+
+<para
+>Choisissez le certificat que vous voulez supprimer dans la liste, et appuyez sur le bouton <guibutton
+>Supprimer</guibutton
+> pour supprimer le certificat.</para>
+
+<important>
+<para
+>Les certificats systèmes ne peuvent être enlevés.</para>
+</important>
+
+</sect2>
+
+<sect2 id="ack">
+<title
+>Remerciements</title>
+
+<para
+>Merci spécialement à Subhashish Pradhan, participant au Google Code en 2011 pour la rédaction de cet article.</para>
+
+</sect2>
+
+</sect1>
+
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:;
+-->
