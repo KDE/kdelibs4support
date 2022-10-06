@@ -13113,7 +13113,7 @@ msgstr "Alfa:"
 #: kdeui/kcolordialog.cpp:1206
 #, kde-format
 msgid "&Add to Custom Colors"
-msgstr "&Afig als colors a mida"
+msgstr "Afi&g als colors a mida"
 
 #: kdeui/kcolordialog.cpp:1234
 #, kde-format
@@ -13175,7 +13175,7 @@ msgstr "Obtín ajuda..."
 #: kdeui/keditlistbox.cpp:324
 #, kde-format
 msgid "&Add"
-msgstr "&Afig"
+msgstr "Afi&g"
 
 #: kdeui/keditlistbox.cpp:336
 #, kde-format
@@ -13236,7 +13236,7 @@ msgstr "Minimitza"
 #: kdeui/ksystemtrayicon.cpp:205
 #, kde-format
 msgid "&Minimize"
-msgstr "&Minimitza"
+msgstr "Mi&nimitza"
 
 #: kdeui/ksystemtrayicon.cpp:207
 #, kde-format
