@@ -78,7 +78,7 @@
 ></note>
 
 <para
->Introduïu una cadena coincident en el quadro de <guilabel
+>Introduïu una cadena coincident a dins del quadro de <guilabel
 >Busca</guilabel
 > a la part superior de la llista, açò us permetrà filtrar les àrees que es mostren en la vista de llista. Utilitzeu els botons davall de la llista per a seleccionar o desseleccionar tots els elements de la vista (les altres àrees no tenen efecte) o canviar l'eixida de depuració per a un sol element amb la casella de selecció davant seu. </para>
 
@@ -140,7 +140,7 @@
 ></term>
 <listitem>
 <para
->En este quadro combinat, podeu escollir a on s'hauran de dirigir els missatges de l'eixida. Les possibilitats són: <quote
+>En este quadro combinat, podeu escollir cap a on s'hauran de dirigir els missatges de l'eixida. Les possibilitats són: <quote
 >Fitxer</quote
 >, <quote
 >Quadro de missatge</quote

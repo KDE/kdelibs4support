@@ -97,7 +97,7 @@
 > és un programa de línia d'ordres emprat per a rebre informació quant a la instal·lació de &frameworks; o els camins emprats.</para>
 
 <para
->Este programa s'utilitza per a determinar els diversos aspectes d'on residix instal·lat &frameworks; al vostre sistema. </para
+>Este programa s'utilitza per a determinar els diversos aspectes d'on residix instal·lat &frameworks; en el vostre sistema. </para
 > 
 
 <note
@@ -155,7 +155,7 @@
 ></term>
 <listitem>
 <para
->El camí de les biblioteques es troba al sufix.</para>
+>El camí de les biblioteques es troba en el sufix.</para>
 </listitem>
 </varlistentry>
 

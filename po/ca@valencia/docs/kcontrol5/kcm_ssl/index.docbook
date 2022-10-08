@@ -75,7 +75,7 @@
 >Visualitzar els detalls d'un certificat</title>
 
 <para
->Seleccioneu un certificat davall una organització a la llista, i feu clic a <guibutton
+>Seleccioneu un certificat davall una organització en la llista, i feu clic en el botó <guibutton
 >Visualitza...</guibutton
 > davall de la llista per a veure els detalls del certificat.</para>
 
@@ -99,7 +99,7 @@
 >Activar o desactivar un certificat</title>
 
 <para
->Primer, seleccioneu un certificat davall una organització a la llista. Després, feu clic en el botó <guibutton
+>Primer, seleccioneu un certificat davall una organització en la llista. Després, feu clic en el botó <guibutton
 >Activa</guibutton
 > per a activar el certificat o a <guibutton
 >Desactiva</guibutton
