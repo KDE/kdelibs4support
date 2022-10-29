@@ -43,7 +43,7 @@
 <para
 >&kde; proporciona una llista de tots els certificats X.509 utilitzats pel sistema. Als quals es pot accedir mitjançant el mòdul <guilabel
 >Preferències SSL</guilabel
-> a &systemsettings;.</para>
+> en &systemsettings;.</para>
 
 <para
 >Este mòdul proporciona un llistat per categories de totes les versions i certificats SSL. Podeu visualitzar els detalls de cadascun dels certificats i realitzar les accions afegir, eliminar, desactivar o activar.</para>
