@@ -30,7 +30,7 @@ Dependencies:
     'frameworks/kitemmodels' : '@same'
     'frameworks/kauth' : '@same'
     'third-party/taglib' : '@same'
-    'kdesupport/polkit-qt-1' : '@same'
+    'libraries/polkit-qt-1' : '@same'
 
 Options:
   test-before-installing: True
