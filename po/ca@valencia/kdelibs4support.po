@@ -2420,7 +2420,7 @@ msgstr "Mantenidor"
 #: kdebugdialog/main.cpp:108
 #, kde-format
 msgid "Show the fully-fledged dialog instead of the default list dialog"
-msgstr "Mostra el diàleg complet en comptes del diàleg de llista per defecte"
+msgstr "Mostra el diàleg complet en comptes del diàleg predeterminat de llista"
 
 #: kdebugdialog/main.cpp:109
 #, kde-format
