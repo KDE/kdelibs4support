@@ -14304,7 +14304,7 @@ msgid ""
 "certificates."
 msgstr ""
 "El certificat està autosignat i no es troba en la llista de certificats "
-"fiables. Si voleu acceptar este certificat, importeu-lo a la llista de "
+"fiables. Si voleu acceptar este certificat, importeu-lo cap a la llista de "
 "certificats fiables."
 
 #: kssl/ksslcertificate.cpp:1102
@@ -14335,7 +14335,7 @@ msgid ""
 msgstr ""
 "El certificat no es pot verificar atés que és l'únic certificat en la cadena "
 "de confiança i no està autosignat. Si signeu el certificat amb ell mateix, "
-"assegureu-vos d'importar-lo a la llista de certificats fiables."
+"assegureu-vos d'importar-lo cap a la llista de certificats fiables."
 
 #: kssl/ksslcertificate.cpp:1108
 #, kde-format
