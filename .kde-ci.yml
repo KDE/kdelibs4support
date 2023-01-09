@@ -29,8 +29,8 @@ Dependencies:
     'frameworks/kglobalaccel' : '@same'
     'frameworks/kitemmodels' : '@same'
     'frameworks/kauth' : '@same'
-    'third-party/taglib' : '@same'
-    'libraries/polkit-qt-1' : '@same'
+    'third-party/taglib' : '@latest'
+    'libraries/polkit-qt-1' : '@stable'
 
 Options:
   test-before-installing: True
