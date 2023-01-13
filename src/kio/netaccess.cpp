@@ -45,7 +45,6 @@
 #include "kio/mkdirjob.h"
 #include "kio/copyjob.h"
 #include "kio/deletejob.h"
-#include "kio/scheduler.h"
 
 namespace KIO
 {
@@ -311,7 +310,6 @@ bool NetAccess::filecopyInternal(const QUrl &src, const QUrl &target, int permis
 {
     d->bJobOK = true; // success unless further error occurs
 
-    KIO::Scheduler::checkSlaveOnHold(true);
     KIO::Job *job = move
                     ? KIO::file_move(src, target, permissions, flags)
                     : KIO::file_copy(src, target, permissions, flags);
