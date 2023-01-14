@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-01-14 00:53+0000\n"
 "PO-Revision-Date: 2005-01-28 17:54+0000\n"
 "Last-Translator: Kevin Donnelly <kevin@dotmon.com>\n"
 "Language-Team: Cymraeg\n"
@@ -14748,12 +14748,12 @@ msgstr "Cipio Delwedd"
 msgid "OCR Image"
 msgstr "Delwedd OCR"
 
-#: kio/netaccess.cpp:103
+#: kio/netaccess.cpp:102
 #, kde-format
 msgid "File '%1' is not readable"
 msgstr "Nid yw'r ffeil '%1' yn ddarllenadwy"
 
-#: kio/netaccess.cpp:437
+#: kio/netaccess.cpp:435
 #, fuzzy, kde-format
 msgid "ERROR: Unknown protocol '%1'"
 msgstr "Protocol anhysbys '%1'. \n"

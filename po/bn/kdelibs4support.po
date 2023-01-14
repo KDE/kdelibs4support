@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-01-14 00:53+0000\n"
 "PO-Revision-Date: 2009-01-05 01:16-0800\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: en_US <kde-translation@bengalinux.org>\n"
@@ -14403,12 +14403,12 @@ msgstr "চিত্র অর্জন করো"
 msgid "OCR Image"
 msgstr "চিত্র ও-সি-আর (OCR) করো"
 
-#: kio/netaccess.cpp:103
+#: kio/netaccess.cpp:102
 #, kde-format
 msgid "File '%1' is not readable"
 msgstr "ফাইল '%1' পড়া যাচ্ছে না"
 
-#: kio/netaccess.cpp:437
+#: kio/netaccess.cpp:435
 #, fuzzy, kde-format
 msgid "ERROR: Unknown protocol '%1'"
 msgstr "অজ্ঞাত প্রোটোকল '%1'।"
