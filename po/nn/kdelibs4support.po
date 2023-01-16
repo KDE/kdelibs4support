@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-01-14 00:53+0000\n"
 "PO-Revision-Date: 2022-08-19 23:58+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -2726,14 +2726,14 @@ msgstr ""
 "store programma som fanst på nynorsk.</p><p>Viss du finn skrive­feil, feil­"
 "omsetjingar eller omsetjingar som kan forbetrast, set me pris på om sender "
 "eit tips til <a href=\"mailto:l10n-no@lister.huftis.org\">diskusjons­lista</"
-"a> vår (<a href=\"http://lister.huftis.org/listinfo.cgi/l10n-no-huftis.org"
-"\">informasjon og arkiv</a>), eller direkte til <a href=\"mailto:karl@huftis."
-"org\">Karl Ove Hufthammer</a> dersom du ikkje ønskjer at meldinga di skal "
-"verta offentleg­gjord på lista.</p><p>Bruk dei same adressene viss du ønskjer "
-"å delta aktivt i nynorsk­omsetjinga av programma. Me har alltid bruk for nye "
-"omsetjarar og korrektur­lesarar!</p><p>Du finn meir informasjon om "
-"internasjonalisering av KDE-programma på <a href=\"https://l10n.kde.org/"
-"\">https://l10n.kde.org/</a>.</p>"
+"a> vår (<a href=\"http://lister.huftis.org/listinfo.cgi/l10n-no-huftis."
+"org\">informasjon og arkiv</a>), eller direkte til <a href=\"mailto:"
+"karl@huftis.org\">Karl Ove Hufthammer</a> dersom du ikkje ønskjer at "
+"meldinga di skal verta offentleg­gjord på lista.</p><p>Bruk dei same "
+"adressene viss du ønskjer å delta aktivt i nynorsk­omsetjinga av programma. "
+"Me har alltid bruk for nye omsetjarar og korrektur­lesarar!</p><p>Du finn "
+"meir informasjon om internasjonalisering av KDE-programma på <a "
+"href=\"https://l10n.kde.org/\">https://l10n.kde.org/</a>.</p>"
 
 #: kdecore/kcalendarsystem.cpp:108
 #, kde-format
@@ -14019,12 +14019,12 @@ msgstr "Skann bilete"
 msgid "OCR Image"
 msgstr "OCR på bilete"
 
-#: kio/netaccess.cpp:103
+#: kio/netaccess.cpp:102
 #, fuzzy, kde-format
 msgid "File '%1' is not readable"
 msgstr "Fila «%1» kan ikkje lesast"
 
-#: kio/netaccess.cpp:437
+#: kio/netaccess.cpp:435
 #, fuzzy, kde-format
 msgid "ERROR: Unknown protocol '%1'"
 msgstr "FEIL: Ukjend protokoll «%1»."
