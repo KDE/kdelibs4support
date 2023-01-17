@@ -2299,7 +2299,7 @@ msgstr "Groc4"
 #: kdebugdialog/kdebugdialog.cpp:43 kdebugdialog/klistdebugdialog.cpp:37
 #, kde-format
 msgid "Debug Settings"
-msgstr "Configuració de la depuració"
+msgstr "Configureu la depuració"
 
 #: kdebugdialog/kdebugdialog.cpp:58
 #, kde-format
@@ -13516,7 +13516,7 @@ msgstr "Totes les imatges"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Shown Data"
-msgstr "Configuració de les dades mostrades"
+msgstr "Configureu les dades mostrades"
 
 #: kio/kmetaprops.cpp:60
 #, kde-format
