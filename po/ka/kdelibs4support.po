@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2022-09-12 20:03+0200\n"
+"PO-Revision-Date: 2023-01-24 09:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1346,7 +1346,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "aquamarine"
-msgstr ""
+msgstr "აკვამარინული"
 
 #, kde-format
 msgctxt "color"
@@ -1531,7 +1531,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "chocolate"
-msgstr ""
+msgstr "შოკოლადი"
 
 #, kde-format
 msgctxt "color"
@@ -1661,7 +1661,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "gold"
-msgstr ""
+msgstr "ოქროსფერი"
 
 #, kde-format
 msgctxt "color"
@@ -1906,7 +1906,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "orchid"
-msgstr ""
+msgstr "ორქიდეა"
 
 #, kde-format
 msgctxt "color"
@@ -2036,7 +2036,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "salmon"
-msgstr ""
+msgstr "ორაგული"
 
 #, kde-format
 msgctxt "color"
@@ -2241,7 +2241,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "wheat"
-msgstr ""
+msgstr "ხორბალი"
 
 #, kde-format
 msgctxt "color"
@@ -2777,7 +2777,7 @@ msgstr "იულიუსისეული"
 #, kde-format
 msgctxt "@item Calendar system"
 msgid "Taiwanese"
-msgstr ""
+msgstr "ტაივანური"
 
 #: kdecore/kcalendarsystem.cpp:128
 #, kde-format
@@ -3559,7 +3559,7 @@ msgstr ""
 #, kde-format
 msgctxt "Ethiopian month 7 - KLocale::ShortName"
 msgid "Mag"
-msgstr ""
+msgstr "ვარს. სიდ"
 
 #: kdecore/kcalendarsystemethiopian.cpp:146
 #, kde-format
@@ -3841,7 +3841,7 @@ msgstr ""
 #, kde-format
 msgctxt "Ethiopian weekday 1 - KLocale::LongName"
 msgid "Segno"
-msgstr ""
+msgstr "სენიო"
 
 #: kdecore/kcalendarsystemethiopian.cpp:278
 #, kde-format
@@ -4702,7 +4702,7 @@ msgstr ""
 #, kde-format
 msgctxt "Hebrew month 11 - KLocale::ShortName"
 msgid "Av"
-msgstr ""
+msgstr "Av"
 
 #: kdecore/kcalendarsystemhebrew.cpp:717
 #, kde-format
@@ -4870,7 +4870,7 @@ msgstr ""
 #, kde-format
 msgctxt "Hebrew month 11 - KLocale::LongName"
 msgid "Av"
-msgstr ""
+msgstr "Av"
 
 #: kdecore/kcalendarsystemhebrew.cpp:787
 #, kde-format
@@ -6074,7 +6074,7 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali month 2 - KLocale::ShortName"
 msgid "Ord"
-msgstr ""
+msgstr "ორდ"
 
 #: kdecore/kcalendarsystemjalali.cpp:238
 #, kde-format
@@ -6104,7 +6104,7 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali month 7 - KLocale::ShortName"
 msgid "Meh"
-msgstr ""
+msgstr "ისე რა"
 
 #: kdecore/kcalendarsystemjalali.cpp:248
 #, kde-format
@@ -7262,7 +7262,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:436
 #, kde-format
 msgid "KDE Application"
-msgstr ""
+msgstr "KDE-ის აპლიკაცია"
 
 #: kdecore/kcmdlineargs.cpp:497
 #, kde-format
@@ -7408,6 +7408,8 @@ msgid ""
 "\n"
 "Arguments:\n"
 msgstr ""
+"\n"
+"არგუმენტები:\n"
 
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
@@ -7861,7 +7863,7 @@ msgstr ""
 #: kdecore/ksavefile.cpp:139
 #, kde-format
 msgid "Unable to open temporary file."
-msgstr ""
+msgstr "დროებითი ფაილის გახსნის შეცდომა."
 
 #: kdecore/ksavefile.cpp:249
 #, kde-format
@@ -10687,7 +10689,7 @@ msgstr "აზია/ღაზა"
 #: kdecore/TIMEZONES:787
 #, kde-format
 msgid "Gaza Strip"
-msgstr ""
+msgstr "ღაზის სექტორი"
 
 #: kdecore/TIMEZONES:788
 #, kde-format
@@ -12269,7 +12271,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1254
 #, kde-format
 msgid "Hongkong"
-msgstr ""
+msgstr "ჰონგკონგი"
 
 #: kdecore/TIMEZONES:1255
 #, kde-format
@@ -12380,12 +12382,12 @@ msgstr ""
 #: kdecore/TIMEZONES:1284
 #, kde-format
 msgid "NZ"
-msgstr ""
+msgstr "NZ"
 
 #: kdecore/TIMEZONES:1287
 #, kde-format
 msgid "NZ-CHAT"
-msgstr ""
+msgstr "NZ-CHAT"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1289 kdecore/TIMEZONES:1307
@@ -12503,7 +12505,7 @@ msgstr "წყნარი ოკეანე/გალაპაგოსი"
 #: kdecore/TIMEZONES:1327
 #, kde-format
 msgid "Galapagos Islands"
-msgstr ""
+msgstr "გალაპაგოსის კუნძულები"
 
 #: kdecore/TIMEZONES:1328
 #, kde-format
@@ -12849,7 +12851,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1439
 #, kde-format
 msgid "W-SU"
-msgstr ""
+msgstr "W-SU"
 
 #. i18n: Generic sans serif font presented in font choosers. When selected,
 #. the system will choose a real font, mandated by distro settings.
@@ -13046,7 +13048,7 @@ msgstr "ბეჭდვა"
 #: kdeui/kdialog.cpp:271
 #, kde-format
 msgid "&Try"
-msgstr ""
+msgstr "&ცდა"
 
 #: kdeui/kdialog.cpp:484
 #, kde-format
@@ -13067,7 +13069,7 @@ msgstr "&დეტალები"
 #: kdeui/kdialog.cpp:1054
 #, kde-format
 msgid "Get help..."
-msgstr ""
+msgstr "დახმარების მიღება..."
 
 #: kdeui/keditlistbox.cpp:324
 #, kde-format
@@ -13097,7 +13099,7 @@ msgstr "ჩამოწევა"
 #, kde-format
 msgctxt "short"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr ""
+msgstr "ბაყაყი წყალში ყიყინებს"
 
 #. i18n: Integer which indicates the script you used in the sample text
 #. for font previews in your language. For the possible values, see
@@ -13376,7 +13378,7 @@ msgstr ""
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
 msgid "Peter Penz"
-msgstr ""
+msgstr "პიტერ პენცი"
 
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
@@ -13418,7 +13420,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label::textbox"
 msgid "Select which data should be shown:"
-msgstr ""
+msgstr "აირჩიეთ საჩვენებელი მონაცემები:"
 
 #: kio/kmetaprops.cpp:123
 #, kde-format
@@ -13565,7 +13567,7 @@ msgstr "კოდეკი"
 #, kde-format
 msgctxt "@label"
 msgid "Color Depth"
-msgstr ""
+msgstr "ფერის სიღრმე"
 
 #: kio/knfotranslator.cpp:62
 #, kde-format
@@ -13703,7 +13705,7 @@ msgstr "თეთრის ბალანსი"
 #, kde-format
 msgctxt "@label video director"
 msgid "Director"
-msgstr ""
+msgstr "რეჟისორი"
 
 #: kio/knfotranslator.cpp:85
 #, kde-format
@@ -13721,7 +13723,7 @@ msgstr "ალბომი"
 #, kde-format
 msgctxt "@label"
 msgid "Performer"
-msgstr ""
+msgstr "შემსრულებელი"
 
 #: kio/knfotranslator.cpp:88
 #, kde-format
@@ -13863,7 +13865,7 @@ msgstr ""
 #: kio/kscan.cpp:49
 #, kde-format
 msgid "Acquire Image"
-msgstr ""
+msgstr "გამოსახულების მიღება"
 
 #: kio/kscan.cpp:97
 #, kde-format
@@ -13873,12 +13875,12 @@ msgstr ""
 #: kio/netaccess.cpp:102
 #, kde-format
 msgid "File '%1' is not readable"
-msgstr ""
+msgstr "ფაილი \"%1\" წაკითხვადი არაა"
 
 #: kio/netaccess.cpp:435
 #, kde-format
 msgid "ERROR: Unknown protocol '%1'"
-msgstr ""
+msgstr "შეცდომა: უცნობი პროტოკოლი '%1'"
 
 #: kio/passworddialog.cpp:56
 #, kde-format
