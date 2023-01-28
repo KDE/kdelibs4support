@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2023-01-24 09:35+0100\n"
+"PO-Revision-Date: 2023-01-27 10:01+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -236,7 +236,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "DarkRed"
-msgstr ""
+msgstr "მუქიწითელი"
 
 #, kde-format
 msgctxt "color"
@@ -246,27 +246,27 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen"
-msgstr ""
+msgstr "მუქიზღვისმწვანე"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen1"
-msgstr ""
+msgstr "მუქიზღვისმწვანე1"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen2"
-msgstr ""
+msgstr "მუქიზღვისმწვანე2"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen3"
-msgstr ""
+msgstr "მუქიზღვისმწვანე3"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen4"
-msgstr ""
+msgstr "მუქიზღვისმწვანე4"
 
 #, kde-format
 msgctxt "color"
@@ -6320,7 +6320,7 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali weekday 7 - KLocale::NarrowName "
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: kdecore/kcalendarsystemjalali.cpp:352
 #, kde-format
@@ -7190,7 +7190,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:302
 #, kde-format
 msgid "disable XIM"
-msgstr ""
+msgstr "xim-ის გამორთვა"
 
 #: kdecore/kcmdlineargs.cpp:304
 #, kde-format
@@ -7332,7 +7332,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1096
 #, kde-format
 msgid "[options] "
-msgstr ""
+msgstr "[პარამეტრები] "
 
 #: kdecore/kcmdlineargs.cpp:1101
 #, kde-format
@@ -7526,7 +7526,7 @@ msgstr "არაბული"
 #, kde-format
 msgctxt "name of digit set with digit string, e.g. 'Arabic (0123456789)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #. i18n: comments below, they are used by the
 #. translators.
@@ -7837,13 +7837,13 @@ msgstr "P"
 #, kde-format
 msgctxt "concatenation of dates and time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: kdecore/klocale_kde.cpp:2267
 #, kde-format
 msgctxt "concatenation of date/time and time zone"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: kdecore/ksavefile.cpp:99
 #, kde-format
@@ -8389,7 +8389,7 @@ msgstr ""
 #: kdecore/TIMEZONES:113
 #, kde-format
 msgid "(SA, LP, NQ, RN)"
-msgstr ""
+msgstr "(SA, LP, NQ, RN)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:115
@@ -8406,7 +8406,7 @@ msgstr ""
 #: kdecore/TIMEZONES:118
 #, kde-format
 msgid "San Juan (SJ)"
-msgstr ""
+msgstr "სან ხუანი (SJ)"
 
 #: kdecore/TIMEZONES:119
 #, kde-format
@@ -8417,7 +8417,7 @@ msgstr ""
 #: kdecore/TIMEZONES:121
 #, kde-format
 msgid "San Luis (SL)"
-msgstr ""
+msgstr "სან ლუისი (SL)"
 
 #: kdecore/TIMEZONES:122
 #, kde-format
@@ -13261,7 +13261,7 @@ msgstr "ნაგავში გადატანა"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete"
-msgstr ""
+msgstr "წაშლა"
 
 #: kio/kdirselectdialog.cpp:368
 #, kde-format
