@@ -7,20 +7,20 @@
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
 # Arnar Leósson <leosson@frisurf.no>, 2003, 2005.
 # Arnar Leosson <leosson@frisurf.no>, 2005.
-# Sveinn í Felli <sveinki@nett.is>, 2007, 2008, 2009, 2010, 2016, 2022.
+# Sveinn í Felli <sveinki@nett.is>, 2007, 2008, 2009, 2010, 2016, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2022-07-07 18:56+0000\n"
+"PO-Revision-Date: 2023-02-02 15:55+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -8350,7 +8350,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1122
 #, kde-format
 msgid "Usage: %1 %2\n"
-msgstr ""
+msgstr "Notkun: %1 %2\n"
 
 #: kdecore/kcmdlineargs.cpp:1125
 #, kde-format
@@ -8358,11 +8358,13 @@ msgid ""
 "\n"
 "Generic options:\n"
 msgstr ""
+"\n"
+"Almennir valkostir:\n"
 
 #: kdecore/kcmdlineargs.cpp:1127
 #, kde-format
 msgid "Show help about options"
-msgstr ""
+msgstr "Birta hjálp um valkosti"
 
 #: kdecore/kcmdlineargs.cpp:1133
 #, kde-format
@@ -8378,22 +8380,22 @@ msgstr "flestar staðsetningar"
 #: kdecore/kcmdlineargs.cpp:1141
 #, kde-format
 msgid "Show author information"
-msgstr ""
+msgstr "Birta upplýsingar um höfund"
 
 #: kdecore/kcmdlineargs.cpp:1142
 #, kde-format
 msgid "Show version information"
-msgstr ""
+msgstr "Birta upplýsingar um útgáfu"
 
 #: kdecore/kcmdlineargs.cpp:1143
 #, kde-format
 msgid "Show license information"
-msgstr ""
+msgstr "Birta upplýsingar um notkunarleyfi"
 
 #: kdecore/kcmdlineargs.cpp:1144
 #, kde-format
 msgid "End of options"
-msgstr ""
+msgstr "Lok valkosta"
 
 #: kdecore/kcmdlineargs.cpp:1164
 #, kde-format
@@ -8401,6 +8403,8 @@ msgid ""
 "\n"
 "%1 options:\n"
 msgstr ""
+"\n"
+"%1 valkostir:\n"
 
 #: kdecore/kcmdlineargs.cpp:1166
 #, kde-format
@@ -8408,6 +8412,8 @@ msgid ""
 "\n"
 "Options:\n"
 msgstr ""
+"\n"
+"Valkostir:\n"
 
 #: kdecore/kcmdlineargs.cpp:1219
 #, kde-format
@@ -8415,6 +8421,8 @@ msgid ""
 "\n"
 "Arguments:\n"
 msgstr ""
+"\n"
+"Viðföng:\n"
 
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
@@ -8745,40 +8753,40 @@ msgstr "%1 sekúndur"
 msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 millisekúnda"
+msgstr[1] "%1 millisekúndur"
 
 #: kdecore/klocale_kde.cpp:1491
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 dagur"
+msgstr[1] "%1 dagar"
 
 #: kdecore/klocale_kde.cpp:1493
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 klukkustund"
+msgstr[1] "%1 klukkustundir"
 
 #: kdecore/klocale_kde.cpp:1495
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 mínúta"
+msgstr[1] "%1 mínútur"
 
 #: kdecore/klocale_kde.cpp:1497
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 sekúnda"
+msgstr[1] "%1 sekúndur"
 
 #: kdecore/klocale_kde.cpp:1521
 #, kde-format
@@ -8865,32 +8873,32 @@ msgstr "%1 %2"
 #: kdecore/ksavefile.cpp:99
 #, kde-format
 msgid "No target filename has been given."
-msgstr ""
+msgstr "Ekkert heiti var gefið upp fyrir úttaksskrá."
 
 #: kdecore/ksavefile.cpp:106
 #, kde-format
 msgid "Already opened."
-msgstr ""
+msgstr "Þegar opin."
 
 #: kdecore/ksavefile.cpp:135
 #, kde-format
 msgid "Insufficient permissions in target directory."
-msgstr ""
+msgstr "Ónógar aðgangsheimildir í úttaksmöppu."
 
 #: kdecore/ksavefile.cpp:139
 #, kde-format
 msgid "Unable to open temporary file."
-msgstr ""
+msgstr "Get ekki opnað bráðabirgðaskrá."
 
 #: kdecore/ksavefile.cpp:249
 #, kde-format
 msgid "Synchronization to disk failed"
-msgstr ""
+msgstr "Samræming við disk mistókst"
 
 #: kdecore/ksavefile.cpp:280
 #, kde-format
 msgid "Error during rename."
-msgstr ""
+msgstr "Villa við endurnefningu."
 
 #: kdecore/ksocketfactory.cpp:92 kdecore/ksocketfactory.cpp:106
 #, kde-format
@@ -10305,7 +10313,7 @@ msgstr "Alaskatími - Alaska panhandle"
 #: kdecore/TIMEZONES:371
 #, kde-format
 msgid "Alaska - Juneau area"
-msgstr ""
+msgstr "Alaska - Juneau-svæðið"
 
 #: kdecore/TIMEZONES:372
 #, kde-format
@@ -10369,10 +10377,9 @@ msgstr "Ameríka/Los_Angeles"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:392
-#, fuzzy, kde-format
-#| msgid "US/Pacific"
+#, kde-format
 msgid "Pacific"
-msgstr "BNA/Kyrrahafs"
+msgstr "Kyrrahafstími"
 
 #: kdecore/TIMEZONES:393
 #, kde-format
@@ -10656,10 +10663,9 @@ msgstr "Alaskatími - vestur Alaska"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:472
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska (west)"
-msgstr "Alaskatími"
+msgstr "Alaska (vestur)"
 
 #: kdecore/TIMEZONES:473
 #, kde-format
@@ -10844,16 +10850,15 @@ msgid "America/Puerto_Rico"
 msgstr "Ameríka/Puerto_Rico"
 
 #: kdecore/TIMEZONES:523
-#, fuzzy, kde-format
-#| msgid "America/Buenos_Aires"
+#, kde-format
 msgid "America/Punta_Arenas"
-msgstr "Ameríka/Buenos_Aires"
+msgstr "Ameríka/Punta_Arenas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:525
 #, kde-format
 msgid "Region of Magallanes"
-msgstr ""
+msgstr "Magallanes-hérað"
 
 #: kdecore/TIMEZONES:526
 #, kde-format
@@ -11012,10 +11017,9 @@ msgstr "S- & SA-Brasilía (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:575
-#, fuzzy, kde-format
-#| msgid "S & SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+#, kde-format
 msgid "Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
-msgstr "S- & SA-Brasilía (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+msgstr "Brasilía (suðaustur: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 
 #: kdecore/TIMEZONES:576
 #, kde-format
@@ -11064,10 +11068,9 @@ msgstr "Alaskatími - Suðaustur-Alaska pönnuskaftið (panhandle)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:591
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska - Sitka area"
-msgstr "Alaskatími"
+msgstr "Alaska - Sitka-svæðið"
 
 #: kdecore/TIMEZONES:592
 #, kde-format
@@ -11280,7 +11283,7 @@ msgstr "Alaskatími - Alaska panhandle neck"
 #: kdecore/TIMEZONES:651
 #, kde-format
 msgid "Alaska - Yakutat"
-msgstr ""
+msgstr "Alaska - Yakutat"
 
 #: kdecore/TIMEZONES:652
 #, kde-format
@@ -11315,7 +11318,7 @@ msgstr "Casey stöðin, Bailey skaga"
 #: kdecore/TIMEZONES:661
 #, kde-format
 msgid "Casey"
-msgstr ""
+msgstr "Casey"
 
 #: kdecore/TIMEZONES:662
 #, kde-format
@@ -11332,7 +11335,7 @@ msgstr "Davis stöðin, Vestfold hæðum"
 #: kdecore/TIMEZONES:666
 #, kde-format
 msgid "Davis"
-msgstr ""
+msgstr "Davis"
 
 #: kdecore/TIMEZONES:667
 #, kde-format
@@ -11385,7 +11388,7 @@ msgstr "Mawson stöðin, Holme flóa"
 #: kdecore/TIMEZONES:681
 #, kde-format
 msgid "Mawson"
-msgstr ""
+msgstr "Mawson"
 
 #: kdecore/TIMEZONES:682
 #, kde-format
@@ -11402,7 +11405,7 @@ msgstr "McMurdo stöðin, Ross eyju"
 #: kdecore/TIMEZONES:686
 #, kde-format
 msgid "New Zealand time - McMurdo, South Pole"
-msgstr ""
+msgstr "Nýjasjálandstími - McMurdo, Suðurpóll"
 
 #: kdecore/TIMEZONES:687
 #, kde-format
@@ -11419,7 +11422,7 @@ msgstr "Palmer stöðin, Anvers eyju"
 #: kdecore/TIMEZONES:691
 #, kde-format
 msgid "Palmer"
-msgstr ""
+msgstr "Palmer"
 
 #: kdecore/TIMEZONES:692
 #, kde-format
@@ -11436,7 +11439,7 @@ msgstr "Rothera stöðin, Adelaide eyju"
 #: kdecore/TIMEZONES:696
 #, kde-format
 msgid "Rothera"
-msgstr ""
+msgstr "Rothera"
 
 #: kdecore/TIMEZONES:697
 #, kde-format
@@ -11464,7 +11467,7 @@ msgstr "Syowa stöðin, Austur-Ongul eyju"
 #: kdecore/TIMEZONES:704
 #, kde-format
 msgid "Syowa"
-msgstr ""
+msgstr "Syowa"
 
 #: kdecore/TIMEZONES:705
 #, fuzzy, kde-format
@@ -11476,7 +11479,7 @@ msgstr "Suðurskautið/McMurdo"
 #: kdecore/TIMEZONES:707
 #, kde-format
 msgid "Troll"
-msgstr ""
+msgstr "Troll"
 
 #: kdecore/TIMEZONES:708
 #, kde-format
@@ -11499,7 +11502,7 @@ msgstr "Vostok stöðin, Vostokvatn"
 #: kdecore/TIMEZONES:714
 #, kde-format
 msgid "Vostok"
-msgstr ""
+msgstr "Vostok"
 
 #: kdecore/TIMEZONES:715
 #, kde-format
@@ -11919,10 +11922,9 @@ msgstr "Moskva+08 - Kamchatka"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:826
-#, fuzzy, kde-format
-#| msgid "Moscow+09 - Kamchatka"
+#, kde-format
 msgid "MSK+09 - Kamchatka"
-msgstr "Moskva+09 - Kamchatka"
+msgstr "Moskva+09 - Kamtsjatka"
 
 #: kdecore/TIMEZONES:827
 #, kde-format
@@ -11957,10 +11959,9 @@ msgid "Asia/Katmandu"
 msgstr "Asía/Katmandu"
 
 #: kdecore/TIMEZONES:835
-#, fuzzy, kde-format
-#| msgid "Asia/Shanghai"
+#, kde-format
 msgid "Asia/Khandyga"
-msgstr "Asía/Shanghai"
+msgstr "Asía/Khandyga"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:837
@@ -12020,10 +12021,9 @@ msgstr "Sabah & Sarawak"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:853
-#, fuzzy, kde-format
-#| msgid "Sabah & Sarawak"
+#, kde-format
 msgid "Sabah, Sarawak"
-msgstr "Sabah & Sarawak"
+msgstr "Sabah, Sarawak"
 
 #: kdecore/TIMEZONES:854
 #, kde-format
@@ -12141,8 +12141,7 @@ msgstr "Moskva+03 - Novosibirsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:883
-#, fuzzy, kde-format
-#| msgid "Moscow+03 - Novosibirsk"
+#, kde-format
 msgid "MSK+04 - Novosibirsk"
 msgstr "Moskva+03 - Novosibirsk"
 
@@ -12264,8 +12263,7 @@ msgstr "Moskva+07 - Sakhalíneyja"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:915
-#, fuzzy, kde-format
-#| msgid "Moscow+07 - Sakhalin Island"
+#, kde-format
 msgid "MSK+08 - Sakhalin Island"
 msgstr "Moskva+07 - Sakhalíneyja"
 
@@ -12466,8 +12464,7 @@ msgstr "Moskva+07 - Amur áin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:974
-#, fuzzy, kde-format
-#| msgid "Moscow+07 - Amur River"
+#, kde-format
 msgid "MSK+07 - Amur River"
 msgstr "Moskva+07 - Amur áin"
 
@@ -12484,8 +12481,7 @@ msgstr "Moskva+06 - Lena áin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:979
-#, fuzzy, kde-format
-#| msgid "Moscow+06 - Lena River"
+#, kde-format
 msgid "MSK+06 - Lena River"
 msgstr "Moskva+06 - Lena áin"
 
@@ -12508,8 +12504,7 @@ msgstr "Moskva+02 - Uralfjöll"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:985
-#, fuzzy, kde-format
-#| msgid "Moscow+02 - Urals"
+#, kde-format
 msgid "MSK+02 - Urals"
 msgstr "Moskva+02 - Uralfjöll"
 
@@ -12713,10 +12708,9 @@ msgstr "Tasmanía - flestir staðir"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1039
-#, fuzzy, kde-format
-#| msgid "Australia/Tasmania"
+#, kde-format
 msgid "Tasmania"
-msgstr "Ástralía/Tasmanía"
+msgstr "Tasmanía"
 
 #: kdecore/TIMEZONES:1040
 #, kde-format
@@ -12742,10 +12736,9 @@ msgstr "Queensland - Holiday eyjar"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1047
-#, fuzzy, kde-format
-#| msgid "Queensland - Holiday Islands"
+#, kde-format
 msgid "Queensland (Whitsunday Islands)"
-msgstr "Queensland - Holiday eyjar"
+msgstr "Queensland (Whitsunday-eyjar)"
 
 #: kdecore/TIMEZONES:1048
 #, kde-format
@@ -12808,10 +12801,9 @@ msgstr "Ástralía/Sydney"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1075
-#, fuzzy, kde-format
-#| msgid "New South Wales - most locations"
+#, kde-format
 msgid "New South Wales (most areas)"
-msgstr "Nýja Suður-Wales - flestir staðir"
+msgstr "Nýja Suður-Wales (flest svæði)"
 
 #: kdecore/TIMEZONES:1076
 #, kde-format
@@ -13067,8 +13059,7 @@ msgstr "Moskva-01 - Kaliningrad"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1167
-#, fuzzy, kde-format
-#| msgid "Moscow-01 - Kaliningrad"
+#, kde-format
 msgid "MSK-01 - Kaliningrad"
 msgstr "Moskva-01 - Kaliningrad"
 
@@ -13084,10 +13075,9 @@ msgid "Ukraine (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1173
-#, fuzzy, kde-format
-#| msgid "Europe/Kiev"
+#, kde-format
 msgid "Europe/Kirov"
-msgstr "Evrópa/Kiev"
+msgstr "Evrópa/Kirov"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1175
@@ -13128,10 +13118,9 @@ msgstr "Evrópa/Madrid"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1188
-#, fuzzy, kde-format
-#| msgid "mainland"
+#, kde-format
 msgid "Spain (mainland)"
-msgstr "meginlands"
+msgstr "Spánn (meginlands)"
 
 #: kdecore/TIMEZONES:1189
 #, kde-format
@@ -13235,10 +13224,9 @@ msgid "Europe/Sarajevo"
 msgstr "Evrópa/Sarajevo"
 
 #: kdecore/TIMEZONES:1213
-#, fuzzy, kde-format
-#| msgid "Europe/Sarajevo"
+#, kde-format
 msgid "Europe/Saratov"
-msgstr "Evrópa/Sarajevo"
+msgstr "Evrópa/Saratov"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1215
@@ -13259,10 +13247,9 @@ msgstr "Mið-Krímskagi"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1220
-#, fuzzy, kde-format
-#| msgid "Prime: "
+#, kde-format
 msgid "Crimea"
-msgstr "Prímtala: "
+msgstr "Krímskagi"
 
 #: kdecore/TIMEZONES:1221
 #, kde-format
@@ -13295,10 +13282,9 @@ msgid "Europe/Tiraspol"
 msgstr "Evrópa/Tiraspol"
 
 #: kdecore/TIMEZONES:1227
-#, fuzzy, kde-format
-#| msgid "Europe/Minsk"
+#, kde-format
 msgid "Europe/Ulyanovsk"
-msgstr "Evrópa/Minsk"
+msgstr "Evrópa/Ulyanovsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1229
@@ -13394,11 +13380,9 @@ msgid "Europe/Zurich"
 msgstr "Evrópa/Zurich"
 
 #: kdecore/TIMEZONES:1252
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, ShortFormat"
-#| msgid "BC"
+#, kde-format
 msgid "GB"
-msgstr "f.Kr."
+msgstr "GB"
 
 #: kdecore/TIMEZONES:1253
 #, kde-format
@@ -13466,11 +13450,9 @@ msgid "Indian/Mayotte"
 msgstr "Indíur/Mayotte"
 
 #: kdecore/TIMEZONES:1266
-#, fuzzy, kde-format
-#| msgctxt "@item Calendar system"
-#| msgid "Indian National"
+#, kde-format
 msgid "Indian/Reunion"
-msgstr "Indverskt"
+msgstr "Indlandshaf/Reunion"
 
 #: kdecore/TIMEZONES:1267
 #, kde-format
@@ -13488,11 +13470,9 @@ msgid "Jamaica"
 msgstr "Jamaica"
 
 #: kdecore/TIMEZONES:1270
-#, fuzzy, kde-format
-#| msgctxt "@item Calendar system"
-#| msgid "Japanese"
+#, kde-format
 msgid "Japan"
-msgstr "Japanskt"
+msgstr "Japan"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1271 kdecore/TIMEZONES:1273 kdecore/TIMEZONES:1347
@@ -13542,11 +13522,9 @@ msgid "Navajo"
 msgstr "Navajo"
 
 #: kdecore/TIMEZONES:1293
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
-#| msgid "ROC"
+#, kde-format
 msgid "PRC"
-msgstr "ROC"
+msgstr "PRC"
 
 #: kdecore/TIMEZONES:1296
 #, kde-format
@@ -13565,10 +13543,9 @@ msgid "New Zealand (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1302
-#, fuzzy, kde-format
-#| msgid "Pacific/Honolulu"
+#, kde-format
 msgid "Pacific/Bougainville"
-msgstr "Eyjaálfa/Honolulu"
+msgstr "Eyjaálfa/Bougainville"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1304
@@ -13594,10 +13571,9 @@ msgstr "Chuuk (Truk) og Yap"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1312
-#, fuzzy, kde-format
-#| msgid "Chuuk (Truk) and Yap"
+#, kde-format
 msgid "Chuuk/Truk, Yap"
-msgstr "Chuuk (Truk) og Yap"
+msgstr "Chuuk/Truk, Yap"
 
 #: kdecore/TIMEZONES:1313
 #, kde-format
@@ -13606,10 +13582,9 @@ msgstr "Eyjaálfa/Páskaey"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1317
-#, fuzzy, kde-format
-#| msgid "Chile/EasterIsland"
+#, kde-format
 msgid "Easter Island"
-msgstr "Chile/Páskaeyja"
+msgstr "Páskaeyja"
 
 #: kdecore/TIMEZONES:1318
 #, kde-format
@@ -13916,18 +13891,14 @@ msgid "Portugal"
 msgstr "Portúgal"
 
 #: kdecore/TIMEZONES:1401
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
-#| msgid "ROC"
+#, kde-format
 msgid "ROC"
 msgstr "ROC"
 
 #: kdecore/TIMEZONES:1402
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
-#| msgid "ROC"
+#, kde-format
 msgid "ROK"
-msgstr "ROC"
+msgstr "ROK"
 
 #: kdecore/TIMEZONES:1403
 #, kde-format
@@ -14041,11 +14012,9 @@ msgid "Region"
 msgstr "Hérað"
 
 #: kdeui/k4timezonewidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "Coptic weekday 2 - LongDayName"
-#| msgid "Pshoment"
+#, kde-format
 msgid "Comment"
-msgstr "Pshoment"
+msgstr "Athugasemd"
 
 #: kdeui/kapplication.cpp:741
 #, kde-format
