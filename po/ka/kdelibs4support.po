@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2023-01-27 10:01+0100\n"
+"PO-Revision-Date: 2023-02-03 16:26+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4014,7 +4014,7 @@ msgstr "N"
 #, kde-format
 msgctxt "Gregorian month 12 - KLocale::NarrowName"
 msgid "D"
-msgstr ""
+msgstr "რე"
 
 #: kdecore/kcalendarsystemgregorian.cpp:169
 #, kde-format
@@ -6632,7 +6632,7 @@ msgstr "N"
 #, kde-format
 msgctxt "Julian month 12 - KLocale::NarrowName"
 msgid "D"
-msgstr ""
+msgstr "რე"
 
 #: kdecore/kcalendarsystemjulian.cpp:203
 #, kde-format
@@ -7735,8 +7735,8 @@ msgstr "%1 წამი"
 msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 მილიწამი"
+msgstr[1] "%1 მილიწამი"
 
 #: kdecore/klocale_kde.cpp:1491
 #, kde-format
@@ -12892,7 +12892,7 @@ msgstr "რეგიონი"
 #: kdeui/k4timezonewidget.cpp:62
 #, kde-format
 msgid "Comment"
-msgstr "კომე_ნტარი"
+msgstr "კომენტარი"
 
 #: kdeui/kapplication.cpp:741
 #, kde-format
@@ -13310,7 +13310,7 @@ msgstr[1] "%1 ჩანაწერი"
 #, kde-format
 msgctxt "@label"
 msgid "Comment"
-msgstr "კომე_ნტარი"
+msgstr "კომენტარი"
 
 #: kio/kfilemetadataprovider.cpp:447
 #, kde-format
