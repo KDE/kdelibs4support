@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2023-02-07 11:01\n"
+"PO-Revision-Date: 2023-02-15 11:04\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -13920,7 +13920,7 @@ msgstr "没有 %1 的元信息"
 #: kssl/kcm/cacertificates.ui:24
 #, kde-format
 msgid "Organization / Common Name"
-msgstr "组织 / 共用名称"
+msgstr "机构 / 通用名称"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
 #: kssl/kcm/cacertificates.ui:29
@@ -13977,7 +13977,7 @@ msgstr "选择证书"
 #: kssl/kcm/displaycert.ui:23
 #, kde-format
 msgid "<b>Subject Information</b>"
-msgstr "<b>主题信息</b>"
+msgstr "<b>主体信息</b>"
 
 #. i18n: ectx: property (text), widget (QLabel, issuerHeading)
 #: kssl/kcm/displaycert.ui:39
