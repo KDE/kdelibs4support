@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2023-02-16 09:04+0100\n"
+"PO-Revision-Date: 2023-02-24 11:09+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -2406,7 +2406,7 @@ msgstr "Dialogové okno určené k nastavení voleb ladicího výstupu"
 #: kdebugdialog/main.cpp:102
 #, kde-format
 msgid "Copyright 1999-2009, David Faure <faure@kde.org>"
-msgstr "Copyright 1999-2009, David Faure <faure@kde.org>"
+msgstr "Autorská práva 1999-2009, David Faure <faure@kde.org>"
 
 #: kdebugdialog/main.cpp:103
 #, kde-format
@@ -14069,7 +14069,7 @@ msgstr "Ovládací modul SSL"
 #: kssl/kcm/kcmssl.cpp:39
 #, kde-format
 msgid "Copyright 2010 Andreas Hartmetz"
-msgstr "Copyright 2010 Andreas Hartmetz"
+msgstr "Autorská práva 2010 Andreas Hartmetz"
 
 #: kssl/kcm/kcmssl.cpp:40
 #, kde-format
