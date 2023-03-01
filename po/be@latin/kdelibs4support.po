@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2008-08-30 01:10+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -2325,6 +2325,64 @@ msgstr ""
 msgid "None"
 msgstr "Niama"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Infarmacyja"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, fuzzy, kde-format
+#| msgid "Device name"
+msgid "Filename:"
+msgstr "Nazva pryłady"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Pamyłka"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Papiaredžańnie"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, fuzzy, kde-format
+#| msgid "Error"
+msgid "Fatal Error"
+msgstr "Pamyłka"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2333,11 +2391,6 @@ msgstr ""
 #: kdebugdialog/klistdebugdialog.cpp:69
 #, kde-format
 msgid "&Deselect All"
-msgstr ""
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
 msgstr ""
 
 #: kdebugdialog/main.cpp:100
@@ -14572,6 +14625,52 @@ msgstr "Akno aŭtaryzavańnia"
 msgid "No metainfo for %1"
 msgstr "Niama metaźviestak pra „%1”."
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, fuzzy, kde-format
+#| msgid "Organization:"
+msgid "Organization / Common Name"
+msgstr "Ustanova:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, fuzzy, kde-format
+#| msgid "Organizational unit:"
+msgid "Organizational Unit"
+msgstr "Addzieł u ŭstanovie:"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, fuzzy, kde-format
+#| msgid "disable XIM"
+msgid "Disable"
+msgstr "vyklučy XIM"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, fuzzy, kde-format
+#| msgid "Emblems"
+msgid "Enable"
+msgstr "Znaki"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Vydali"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Dadaj..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, fuzzy, kde-format
 #| msgid "Send certificate"
@@ -14589,6 +14688,55 @@ msgstr "Vyšli sertyfikat"
 #| msgid "Certificate"
 msgid "Pick Certificates"
 msgstr "Sertyfikat"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, fuzzy, kde-format
+#| msgid "Security Information"
+msgid "<b>Subject Information</b>"
+msgstr "Infarmacyja pra biaśpiečnaść spałučeńnia"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, fuzzy, kde-format
+#| msgid "<b>Possible solutions</b>:"
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Mahčymyja raźviazki</b>:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, fuzzy, kde-format
+#| msgid "<b>%1</b>"
+msgid "<b>Other</b>"
+msgstr "<b>%1</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, fuzzy, kde-format
+#| msgid "Validity period:"
+msgid "Validity period"
+msgstr "Termin dziejnaści:"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, fuzzy, kde-format
+#| msgid "Serial Number:"
+msgid "Serial number"
+msgstr "Seryjny numar:"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, fuzzy, kde-format
+#| msgid "MD5 Digest:"
+msgid "MD5 digest"
+msgstr "Suma MD5:"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, fuzzy, kde-format
+#| msgid "MD5 Digest:"
+msgid "SHA1 digest"
+msgstr "Suma MD5:"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, fuzzy, kde-format
@@ -14989,86 +15137,6 @@ msgstr "Hety sertyfikat niapravilny."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Infarmacyja"
-
-#, fuzzy
-#~| msgid "Device name"
-#~ msgid "Filename:"
-#~ msgstr "Nazva pryłady"
-
-#~ msgid "Error"
-#~ msgstr "Pamyłka"
-
-#~ msgid "Warning"
-#~ msgstr "Papiaredžańnie"
-
-#, fuzzy
-#~| msgid "Error"
-#~ msgid "Fatal Error"
-#~ msgstr "Pamyłka"
-
-#, fuzzy
-#~| msgid "Organization:"
-#~ msgid "Organization / Common Name"
-#~ msgstr "Ustanova:"
-
-#, fuzzy
-#~| msgid "Organizational unit:"
-#~ msgid "Organizational Unit"
-#~ msgstr "Addzieł u ŭstanovie:"
-
-#, fuzzy
-#~| msgid "disable XIM"
-#~ msgid "Disable"
-#~ msgstr "vyklučy XIM"
-
-#, fuzzy
-#~| msgid "Emblems"
-#~ msgid "Enable"
-#~ msgstr "Znaki"
-
-#~ msgid "Remove"
-#~ msgstr "Vydali"
-
-#~ msgid "Add..."
-#~ msgstr "Dadaj..."
-
-#, fuzzy
-#~| msgid "Security Information"
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "Infarmacyja pra biaśpiečnaść spałučeńnia"
-
-#, fuzzy
-#~| msgid "<b>Possible solutions</b>:"
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Mahčymyja raźviazki</b>:"
-
-#, fuzzy
-#~| msgid "<b>%1</b>"
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>%1</b>"
-
-#, fuzzy
-#~| msgid "Validity period:"
-#~ msgid "Validity period"
-#~ msgstr "Termin dziejnaści:"
-
-#, fuzzy
-#~| msgid "Serial Number:"
-#~ msgid "Serial number"
-#~ msgstr "Seryjny numar:"
-
-#, fuzzy
-#~| msgid "MD5 Digest:"
-#~ msgid "MD5 digest"
-#~ msgstr "Suma MD5:"
-
-#, fuzzy
-#~| msgid "MD5 Digest:"
-#~ msgid "SHA1 digest"
-#~ msgstr "Suma MD5:"
 
 #, fuzzy
 #~ msgctxt "color"

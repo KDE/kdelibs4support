@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2022-03-02 18:38+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2323,6 +2323,62 @@ msgstr "시스템 로그"
 msgid "None"
 msgstr "없음"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "정보"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "다음으로 출력:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "파일 이름:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "오류"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "치명적 오류 발생 시 중단"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "모드 디버그 출력 끄기"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "경고"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "치명적 오류"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2332,11 +2388,6 @@ msgstr "모두 선택(&S)"
 #, kde-format
 msgid "&Deselect All"
 msgstr "모두 선택 해제(&D)"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "모드 디버그 출력 끄기"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14073,6 +14124,48 @@ msgstr "인증 대화 상자"
 msgid "No metainfo for %1"
 msgstr "%1의 메타 정보가 없음"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "조직/일반 이름"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "조직 단위"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "표시..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "사용 안 함"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "사용함"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "삭제"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "추가..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14087,6 +14180,48 @@ msgstr "사용자 추가 인증서"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "인증서 선택"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>대상 정보</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>발급자 정보</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>기타</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "유효 기간"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "시리얼 번호"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "MD5 다이제스트"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "SHA1 다이제스트"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14473,66 +14608,3 @@ msgstr "인증서가 잘못되었습니다."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "정보"
-
-#~ msgid "Output to:"
-#~ msgstr "다음으로 출력:"
-
-#~ msgid "Filename:"
-#~ msgstr "파일 이름:"
-
-#~ msgid "Error"
-#~ msgstr "오류"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "치명적 오류 발생 시 중단"
-
-#~ msgid "Warning"
-#~ msgstr "경고"
-
-#~ msgid "Fatal Error"
-#~ msgstr "치명적 오류"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "조직/일반 이름"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "조직 단위"
-
-#~ msgid "Display..."
-#~ msgstr "표시..."
-
-#~ msgid "Disable"
-#~ msgstr "사용 안 함"
-
-#~ msgid "Enable"
-#~ msgstr "사용함"
-
-#~ msgid "Remove"
-#~ msgstr "삭제"
-
-#~ msgid "Add..."
-#~ msgstr "추가..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>대상 정보</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>발급자 정보</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>기타</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "유효 기간"
-
-#~ msgid "Serial number"
-#~ msgstr "시리얼 번호"
-
-#~ msgid "MD5 digest"
-#~ msgstr "MD5 다이제스트"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1 다이제스트"

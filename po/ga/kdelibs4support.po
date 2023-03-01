@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2004-12-14 09:11-0600\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -2330,6 +2330,62 @@ msgstr "Syslog"
 msgid "None"
 msgstr "Neamhní"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Eolas"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Aschur go:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Ainm comhaid:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Earráid"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Tobscoir tar éis earráide marfaí"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Díchumasaigh aschur dífhabhtaithe go léir"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Rabhadh"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Earráid Mharfach"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2339,11 +2395,6 @@ msgstr "&Roghnaigh Uile"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Díroghnaigh Uile"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Díchumasaigh aschur dífhabhtaithe go léir"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14100,6 +14151,48 @@ msgstr "Dialóg Údaraithe"
 msgid "No metainfo for %1"
 msgstr "Gan mheiteafhaisnéis le haghaidh %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Eagras / Gnáthainm"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Rannóg"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Taispeáin..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Díchumasaigh"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Cumasaigh"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Bain"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Cuir Leis..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14114,6 +14207,50 @@ msgstr "Teastais glactha ag an úsáideoir"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Roghnaigh Teastais"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, fuzzy, kde-format
+#| msgid "Information"
+msgid "<b>Subject Information</b>"
+msgstr "Eolas"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, fuzzy, kde-format
+#| msgid "Information"
+msgid "<b>Issuer Information</b>"
+msgstr "Eolas"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Eile</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Sraithuimhir"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "Achoimre MD5"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "Achoimre SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14461,65 +14598,6 @@ msgstr "Tá an teastas neamhbhailí."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Eolas"
-
-#~ msgid "Output to:"
-#~ msgstr "Aschur go:"
-
-#~ msgid "Filename:"
-#~ msgstr "Ainm comhaid:"
-
-#~ msgid "Error"
-#~ msgstr "Earráid"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Tobscoir tar éis earráide marfaí"
-
-#~ msgid "Warning"
-#~ msgstr "Rabhadh"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Earráid Mharfach"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Eagras / Gnáthainm"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Rannóg"
-
-#~ msgid "Display..."
-#~ msgstr "Taispeáin..."
-
-#~ msgid "Disable"
-#~ msgstr "Díchumasaigh"
-
-#~ msgid "Enable"
-#~ msgstr "Cumasaigh"
-
-#~ msgid "Remove"
-#~ msgstr "Bain"
-
-#~ msgid "Add..."
-#~ msgstr "Cuir Leis..."
-
-#, fuzzy
-#~| msgid "Information"
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "Eolas"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Eile</b>"
-
-#~ msgid "Serial number"
-#~ msgstr "Sraithuimhir"
-
-#~ msgid "MD5 digest"
-#~ msgstr "Achoimre MD5"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "Achoimre SHA1"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

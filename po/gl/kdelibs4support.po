@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2019-11-28 00:38+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -2331,6 +2331,62 @@ msgstr "Syslog"
 msgid "None"
 msgstr "Ningún"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Información"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Saída a:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Nome do ficheiro:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Erro"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Interromper cando se produzan erros fatais"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Desactivar toda a saída de depuración"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Aviso"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Erro fatal"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2340,11 +2396,6 @@ msgstr "Escoller &todo"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Anular toda a selección"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Desactivar toda a saída de depuración"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14007,6 +14058,48 @@ msgstr "Diálogo de autorización"
 msgid "No metainfo for %1"
 msgstr "Non hai metainformación para %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Organización / Nome normal"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Unidade da organización"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Mostrar…"
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Desactivar"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Activar"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Retirar"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Engadir…"
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14021,6 +14114,48 @@ msgstr "Certificados engadidos polo usuario"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Coller certificados"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Información sobre o asunto</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Información sobre o expedidor</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Outro</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Período de validez"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Número de serie"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "Resumo MD5"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "Resumo SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14432,69 +14567,6 @@ msgstr "O certificado é incorrecto."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Información"
-
-#~ msgid "Output to:"
-#~ msgstr "Saída a:"
-
-#~ msgid "Filename:"
-#~ msgstr "Nome do ficheiro:"
-
-#~ msgid "Error"
-#~ msgstr "Erro"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Interromper cando se produzan erros fatais"
-
-#~ msgid "Warning"
-#~ msgstr "Aviso"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Erro fatal"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Organización / Nome normal"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Unidade da organización"
-
-#~ msgid "Display..."
-#~ msgstr "Mostrar…"
-
-#~ msgid "Disable"
-#~ msgstr "Desactivar"
-
-#~ msgid "Enable"
-#~ msgstr "Activar"
-
-#~ msgid "Remove"
-#~ msgstr "Retirar"
-
-#~ msgid "Add..."
-#~ msgstr "Engadir…"
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Información sobre o asunto</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Información sobre o expedidor</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Outro</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Período de validez"
-
-#~ msgid "Serial number"
-#~ msgstr "Número de serie"
-
-#~ msgid "MD5 digest"
-#~ msgstr "Resumo MD5"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "Resumo SHA1"
 
 #~ msgid "Test Service for Network Status kded module"
 #~ msgstr "Probar o servizo do módulo e estado da rede de kded"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2002-12-13 17:20SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -2328,6 +2328,62 @@ msgstr "Syslog"
 msgid "None"
 msgstr "Akukho nanye"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Ulwazi"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Imveliso kwi:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, fuzzy, kde-format
+msgid "Filename:"
+msgstr "Igama lefayile:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, fuzzy, kde-format
+msgid "Error"
+msgstr "Imposiso Eyingozi"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Rhoxisa kwi mposiso eziyingozi "
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Isilumkiso"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Imposiso Eyingozi"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2337,11 +2393,6 @@ msgstr "&Khetha Zonke"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Sukukhetha Zonke"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr ""
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14250,6 +14301,50 @@ msgstr "Incoko yababini Yogunyaziso"
 msgid "No metainfo for %1"
 msgstr "Akukho metainfo ye %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, fuzzy, kde-format
+#| msgid "Organization:"
+msgid "Organization / Common Name"
+msgstr "Iqela:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, fuzzy, kde-format
+#| msgid "Organizational unit:"
+msgid "Organizational Unit"
+msgstr "Umnqongo weqela:"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, fuzzy, kde-format
+msgid "Disable"
+msgstr "khubaza i XIM."
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, fuzzy, kde-format
+msgid "Enable"
+msgstr "iyahamba"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Susa"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, fuzzy, kde-format
+msgid "Add..."
+msgstr "&Yongeza..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, fuzzy, kde-format
 msgid "System certificates"
@@ -14265,6 +14360,54 @@ msgstr "Thumela isiqinisekiso..."
 #| msgid "Certificate"
 msgid "Pick Certificates"
 msgstr "Isiqinisekiso"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, fuzzy, kde-format
+#| msgid "Security Information"
+msgid "<b>Subject Information</b>"
+msgstr "Iinkcukacha Zokhuseleko"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, fuzzy, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr " <b>[Ithambeka Elinqamleza!]</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, fuzzy, kde-format
+#| msgid "<b>%1</b>"
+msgid "<b>Other</b>"
+msgstr "<b>%1</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, fuzzy, kde-format
+#| msgid "Valid from:"
+msgid "Validity period"
+msgstr "Isebenza ku:"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, fuzzy, kde-format
+#| msgid "Serial number:"
+msgid "Serial number"
+msgstr "Inani lothotho:"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, fuzzy, kde-format
+#| msgid "MD5 digest:"
+msgid "MD5 digest"
+msgstr "MD5 digest:"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, fuzzy, kde-format
+#| msgid "MD5 digest:"
+msgid "SHA1 digest"
+msgstr "MD5 digest:"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, fuzzy, kde-format
@@ -14647,88 +14790,6 @@ msgstr "Isiqinisekiso asisebenzi."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Ulwazi"
-
-#~ msgid "Output to:"
-#~ msgstr "Imveliso kwi:"
-
-#, fuzzy
-#~ msgid "Filename:"
-#~ msgstr "Igama lefayile:"
-
-#, fuzzy
-#~ msgid "Error"
-#~ msgstr "Imposiso Eyingozi"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Rhoxisa kwi mposiso eziyingozi "
-
-#~ msgid "Warning"
-#~ msgstr "Isilumkiso"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Imposiso Eyingozi"
-
-#, fuzzy
-#~| msgid "Organization:"
-#~ msgid "Organization / Common Name"
-#~ msgstr "Iqela:"
-
-#, fuzzy
-#~| msgid "Organizational unit:"
-#~ msgid "Organizational Unit"
-#~ msgstr "Umnqongo weqela:"
-
-#, fuzzy
-#~ msgid "Disable"
-#~ msgstr "khubaza i XIM."
-
-#, fuzzy
-#~ msgid "Enable"
-#~ msgstr "iyahamba"
-
-#~ msgid "Remove"
-#~ msgstr "Susa"
-
-#, fuzzy
-#~ msgid "Add..."
-#~ msgstr "&Yongeza..."
-
-#, fuzzy
-#~| msgid "Security Information"
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "Iinkcukacha Zokhuseleko"
-
-#, fuzzy
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr " <b>[Ithambeka Elinqamleza!]</b>"
-
-#, fuzzy
-#~| msgid "<b>%1</b>"
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>%1</b>"
-
-#, fuzzy
-#~| msgid "Valid from:"
-#~ msgid "Validity period"
-#~ msgstr "Isebenza ku:"
-
-#, fuzzy
-#~| msgid "Serial number:"
-#~ msgid "Serial number"
-#~ msgstr "Inani lothotho:"
-
-#, fuzzy
-#~| msgid "MD5 digest:"
-#~ msgid "MD5 digest"
-#~ msgstr "MD5 digest:"
-
-#, fuzzy
-#~| msgid "MD5 digest:"
-#~ msgid "SHA1 digest"
-#~ msgstr "MD5 digest:"
 
 #, fuzzy
 #~ msgctxt "color"

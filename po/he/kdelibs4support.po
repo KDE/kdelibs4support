@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2017-05-16 06:49-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -2337,6 +2337,62 @@ msgstr "רישום המערכת"
 msgid "None"
 msgstr "ללא"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "מידע"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "פלט אל:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "שם הקובץ:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "שגיאה"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "צא במקרים של שגיאות גורליות"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "בטל את כל פלט ניפוי הבאגים"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "אזהרה"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "שגיאה גורלית"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2346,11 +2402,6 @@ msgstr "בחר ה&כל"
 #, kde-format
 msgid "&Deselect All"
 msgstr "א&ל תבחר כלום"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "בטל את כל פלט ניפוי הבאגים"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -13934,6 +13985,48 @@ msgstr "דו־שיח אימות"
 msgid "No metainfo for %1"
 msgstr "אין מידע קובץ עבור %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "ארגון או שם כללי"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "יחידה ארגונית"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "תצוגה..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "מבוטל"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "מופעל"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "הסר"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "הוספה..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -13948,6 +14041,48 @@ msgstr "תעודות שהתווספו על ידי המשתמש"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "בחר תעודות"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>מידע אודות הנושא</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>מידע אודות המנפיק</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>אחר</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "תאריך תוקף"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "מספר סידורי"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "לקט MD5"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "לקט SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14296,66 +14431,3 @@ msgstr "התעודה אינה בתוקף."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "מידע"
-
-#~ msgid "Output to:"
-#~ msgstr "פלט אל:"
-
-#~ msgid "Filename:"
-#~ msgstr "שם הקובץ:"
-
-#~ msgid "Error"
-#~ msgstr "שגיאה"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "צא במקרים של שגיאות גורליות"
-
-#~ msgid "Warning"
-#~ msgstr "אזהרה"
-
-#~ msgid "Fatal Error"
-#~ msgstr "שגיאה גורלית"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "ארגון או שם כללי"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "יחידה ארגונית"
-
-#~ msgid "Display..."
-#~ msgstr "תצוגה..."
-
-#~ msgid "Disable"
-#~ msgstr "מבוטל"
-
-#~ msgid "Enable"
-#~ msgstr "מופעל"
-
-#~ msgid "Remove"
-#~ msgstr "הסר"
-
-#~ msgid "Add..."
-#~ msgstr "הוספה..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>מידע אודות הנושא</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>מידע אודות המנפיק</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>אחר</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "תאריך תוקף"
-
-#~ msgid "Serial number"
-#~ msgstr "מספר סידורי"
-
-#~ msgid "MD5 digest"
-#~ msgstr "לקט MD5"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "לקט SHA1"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2013-12-13 10:19+0000\n"
 "Last-Translator: memsud <dedovic.memsud94@hotmail.com>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -2338,6 +2338,62 @@ msgstr "sistemski dnevnik"
 msgid "None"
 msgstr "nigdje"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Informacija"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Izlaz na:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Ime datoteke:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Greška"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Prekini na fatalne greške"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Bez ispravljačkog izlaza"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Upozorenje"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Kobna greška"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2347,11 +2403,6 @@ msgstr "&Izaberi sve"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Poništi izbor"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Bez ispravljačkog izlaza"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14096,6 +14147,48 @@ msgstr "Dijalog za autentifikaciju"
 msgid "No metainfo for %1"
 msgstr "Nema metapodataka za %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Organizacija / Uobičajeno ime"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Organizaciona jedinica"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Prikaz..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Isključi"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Uključi"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Ukloni"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Dodaj..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14110,6 +14203,48 @@ msgstr "Korisnički dodati certifikati"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Izbor certifikata"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Informacija o temi</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Informacija o izdavaču</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Ostalo</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Period važnosti"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Serijski broj"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "MD5 sažetak"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "SHA1 sažetak"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14524,69 +14659,6 @@ msgstr "Sertifikat nije valjan."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Informacija"
-
-#~ msgid "Output to:"
-#~ msgstr "Izlaz na:"
-
-#~ msgid "Filename:"
-#~ msgstr "Ime datoteke:"
-
-#~ msgid "Error"
-#~ msgstr "Greška"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Prekini na fatalne greške"
-
-#~ msgid "Warning"
-#~ msgstr "Upozorenje"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Kobna greška"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Organizacija / Uobičajeno ime"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Organizaciona jedinica"
-
-#~ msgid "Display..."
-#~ msgstr "Prikaz..."
-
-#~ msgid "Disable"
-#~ msgstr "Isključi"
-
-#~ msgid "Enable"
-#~ msgstr "Uključi"
-
-#~ msgid "Remove"
-#~ msgstr "Ukloni"
-
-#~ msgid "Add..."
-#~ msgstr "Dodaj..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Informacija o temi</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Informacija o izdavaču</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Ostalo</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Period važnosti"
-
-#~ msgid "Serial number"
-#~ msgstr "Serijski broj"
-
-#~ msgid "MD5 digest"
-#~ msgstr "MD5 sažetak"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1 sažetak"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

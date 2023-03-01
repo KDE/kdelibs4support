@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2009-06-15 09:15+0200\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -2334,6 +2334,62 @@ msgstr "Системски дневник"
 msgid "None"
 msgstr "Нема"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Информација"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Излез во:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Име на датотека:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Грешка"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Прекини при фатални грешки"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr ""
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Внимание"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Фатална грешка"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2343,11 +2399,6 @@ msgstr "&Избери ги сите"
 #, kde-format
 msgid "&Deselect All"
 msgstr "О&дизбери ги сите"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr ""
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14530,6 +14581,52 @@ msgstr "Дијалог за авторизација"
 msgid "No metainfo for %1"
 msgstr "Нема метаподатоци за %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, fuzzy, kde-format
+#| msgid "Organization:"
+msgid "Organization / Common Name"
+msgstr "Организација:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, fuzzy, kde-format
+#| msgid "Organizational unit:"
+msgid "Organizational Unit"
+msgstr "Единица од организацијата:"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, fuzzy, kde-format
+#| msgid "disable XIM"
+msgid "Disable"
+msgstr "оневозможи XIM"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, fuzzy, kde-format
+#| msgid "Emblems"
+msgid "Enable"
+msgstr "Амблеми"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Отстрани"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Додај..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, fuzzy, kde-format
 #| msgid "Send certificate"
@@ -14547,6 +14644,55 @@ msgstr "Испрати сертификат"
 #| msgid "Certificate"
 msgid "Pick Certificates"
 msgstr "Сертификат"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, fuzzy, kde-format
+#| msgid "Security Information"
+msgid "<b>Subject Information</b>"
+msgstr "Информации за безбедноста"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, fuzzy, kde-format
+#| msgid " <b>[Cross Domain]</b>"
+msgid "<b>Issuer Information</b>"
+msgstr " <b>[меѓу домени]</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, fuzzy, kde-format
+#| msgid "<b>%1</b>"
+msgid "<b>Other</b>"
+msgstr "<b>%1</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, fuzzy, kde-format
+#| msgid "Validity period:"
+msgid "Validity period"
+msgstr "Период на валидност:"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, fuzzy, kde-format
+#| msgid "Serial number:"
+msgid "Serial number"
+msgstr "Сериски број:"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, fuzzy, kde-format
+#| msgid "MD5 digest:"
+msgid "MD5 digest"
+msgstr "MD5-преглед:"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, fuzzy, kde-format
+#| msgid "SHA1 digest:"
+msgid "SHA1 digest"
+msgstr "SHA1-преглед:"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14956,88 +15102,6 @@ msgstr "Сертификатот не е валиден."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Информација"
-
-#~ msgid "Output to:"
-#~ msgstr "Излез во:"
-
-#~ msgid "Filename:"
-#~ msgstr "Име на датотека:"
-
-#~ msgid "Error"
-#~ msgstr "Грешка"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Прекини при фатални грешки"
-
-#~ msgid "Warning"
-#~ msgstr "Внимание"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Фатална грешка"
-
-#, fuzzy
-#~| msgid "Organization:"
-#~ msgid "Organization / Common Name"
-#~ msgstr "Организација:"
-
-#, fuzzy
-#~| msgid "Organizational unit:"
-#~ msgid "Organizational Unit"
-#~ msgstr "Единица од организацијата:"
-
-#, fuzzy
-#~| msgid "disable XIM"
-#~ msgid "Disable"
-#~ msgstr "оневозможи XIM"
-
-#, fuzzy
-#~| msgid "Emblems"
-#~ msgid "Enable"
-#~ msgstr "Амблеми"
-
-#~ msgid "Remove"
-#~ msgstr "Отстрани"
-
-#~ msgid "Add..."
-#~ msgstr "Додај..."
-
-#, fuzzy
-#~| msgid "Security Information"
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "Информации за безбедноста"
-
-#, fuzzy
-#~| msgid " <b>[Cross Domain]</b>"
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr " <b>[меѓу домени]</b>"
-
-#, fuzzy
-#~| msgid "<b>%1</b>"
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>%1</b>"
-
-#, fuzzy
-#~| msgid "Validity period:"
-#~ msgid "Validity period"
-#~ msgstr "Период на валидност:"
-
-#, fuzzy
-#~| msgid "Serial number:"
-#~ msgid "Serial number"
-#~ msgstr "Сериски број:"
-
-#, fuzzy
-#~| msgid "MD5 digest:"
-#~ msgid "MD5 digest"
-#~ msgstr "MD5-преглед:"
-
-#, fuzzy
-#~| msgid "SHA1 digest:"
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1-преглед:"
 
 #, fuzzy
 #~ msgctxt "color"

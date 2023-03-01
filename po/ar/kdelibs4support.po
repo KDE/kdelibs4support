@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2022-01-22 17:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2336,6 +2336,62 @@ msgstr "Syslog"
 msgid "None"
 msgstr "لا شيء"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "معلومات"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "خَرْج إلى:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "اسم الملف:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "خطأ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "أجهض عند الأخطاء الفادحة"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "عطّل كلّ مخرجات تعقّب العلل"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "إنذار"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "خطأ فادح"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2345,11 +2401,6 @@ msgstr "ا&نتق الكلّ"
 #, kde-format
 msgid "&Deselect All"
 msgstr "ع&دم انتقاء الكلّ"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "عطّل كلّ مخرجات تعقّب العلل"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14078,6 +14129,48 @@ msgstr "شاشة حوار التفويض"
 msgid "No metainfo for %1"
 msgstr "لا يوجد معلومات ل %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, fuzzy, kde-format
+msgid "Organization / Common Name"
+msgstr "المنظمة:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "الوحدة التّنظيميّة:"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "العرض"
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "عطّل"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "مكّن"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "أزِل"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "أضف..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, fuzzy, kde-format
 msgid "System certificates"
@@ -14092,6 +14185,48 @@ msgstr "ارسل الشهادة"
 #, fuzzy, kde-format
 msgid "Pick Certificates"
 msgstr "الشهادة"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, fuzzy, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "معلومات الأمن"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, fuzzy, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>[نطاق عابر]</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>غيرها</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "فترة الصلاحية:"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "الرّقم التّسلسليّ"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "ملخص MD5"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "ملخص SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14477,72 +14612,6 @@ msgstr "الترخيص باطل."
 #, kde-format
 msgid "GMT"
 msgstr "غرينتش"
-
-#~ msgid "Information"
-#~ msgstr "معلومات"
-
-#~ msgid "Output to:"
-#~ msgstr "خَرْج إلى:"
-
-#~ msgid "Filename:"
-#~ msgstr "اسم الملف:"
-
-#~ msgid "Error"
-#~ msgstr "خطأ"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "أجهض عند الأخطاء الفادحة"
-
-#~ msgid "Warning"
-#~ msgstr "إنذار"
-
-#~ msgid "Fatal Error"
-#~ msgstr "خطأ فادح"
-
-#, fuzzy
-#~ msgid "Organization / Common Name"
-#~ msgstr "المنظمة:"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "الوحدة التّنظيميّة:"
-
-#~ msgid "Display..."
-#~ msgstr "العرض"
-
-#~ msgid "Disable"
-#~ msgstr "عطّل"
-
-#~ msgid "Enable"
-#~ msgstr "مكّن"
-
-#~ msgid "Remove"
-#~ msgstr "أزِل"
-
-#~ msgid "Add..."
-#~ msgstr "أضف..."
-
-#, fuzzy
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "معلومات الأمن"
-
-#, fuzzy
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>[نطاق عابر]</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>غيرها</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "فترة الصلاحية:"
-
-#~ msgid "Serial number"
-#~ msgstr "الرّقم التّسلسليّ"
-
-#~ msgid "MD5 digest"
-#~ msgstr "ملخص MD5"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "ملخص SHA1"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

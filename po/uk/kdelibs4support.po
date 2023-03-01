@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2021-07-11 15:57+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2328,6 +2328,62 @@ msgstr "Системний журнал"
 msgid "None"
 msgstr "Немає"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Інформація"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Виводити до:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Назва файла:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Помилка"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Завершувати роботу після критичних помилок"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Вимкнути всі повідомлення налагоджування"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Попередження"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Критична помилка"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2337,11 +2393,6 @@ msgstr "&Вибрати все"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Зняти весь вибір"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Вимкнути всі повідомлення налагоджування"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -13943,6 +13994,48 @@ msgstr "Діалогове вікно уповноваження"
 msgid "No metainfo for %1"
 msgstr "Метаінформація для %1 відсутня"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Установа/Загальна назва"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Підрозділ установи"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Показати…"
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Вимкнути"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Увімкнути"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Вилучити"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Додати..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -13957,6 +14050,48 @@ msgstr "Сертифікати, додані користувачами"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Вибрати сертифікати"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Відомості щодо призначення</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Відомості щодо видавця</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Інше</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Період чинності"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Серійний номер"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "Сума MD5"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "Сума SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14364,66 +14499,3 @@ msgstr "Сертифікат не дійсний."
 #, kde-format
 msgid "GMT"
 msgstr "За Гринвічем"
-
-#~ msgid "Information"
-#~ msgstr "Інформація"
-
-#~ msgid "Output to:"
-#~ msgstr "Виводити до:"
-
-#~ msgid "Filename:"
-#~ msgstr "Назва файла:"
-
-#~ msgid "Error"
-#~ msgstr "Помилка"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Завершувати роботу після критичних помилок"
-
-#~ msgid "Warning"
-#~ msgstr "Попередження"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Критична помилка"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Установа/Загальна назва"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Підрозділ установи"
-
-#~ msgid "Display..."
-#~ msgstr "Показати…"
-
-#~ msgid "Disable"
-#~ msgstr "Вимкнути"
-
-#~ msgid "Enable"
-#~ msgstr "Увімкнути"
-
-#~ msgid "Remove"
-#~ msgstr "Вилучити"
-
-#~ msgid "Add..."
-#~ msgstr "Додати..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Відомості щодо призначення</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Відомості щодо видавця</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Інше</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Період чинності"
-
-#~ msgid "Serial number"
-#~ msgstr "Серійний номер"
-
-#~ msgid "MD5 digest"
-#~ msgstr "Сума MD5"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "Сума SHA1"

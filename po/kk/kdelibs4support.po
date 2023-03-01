@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2011-06-20 03:41+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -2332,6 +2332,62 @@ msgstr "Жүйелік журналы"
 msgid "None"
 msgstr "Жоқ"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Мәлімет"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Келесіге шығару:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Файл атауы:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Қате"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Түзелмейтін қатеде доғару"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Барлық жөндеу шығысын бұғаттау"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Ескерту"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Түзелмейтін қате"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2341,11 +2397,6 @@ msgstr "Барлығын &таңдау"
 #, kde-format
 msgid "&Deselect All"
 msgstr "Барлық таңдаудан &айну"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Барлық жөндеу шығысын бұғаттау"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14041,6 +14092,48 @@ msgstr "Авторизация диалогы"
 msgid "No metainfo for %1"
 msgstr "%1 метадеректері жоқ"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Ұйым/Жалпы атауы"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Ұйым бөлімі"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Көрсету..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Бұғаттау"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Рұқсат ету"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Кетіру"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Қосу..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14055,6 +14148,48 @@ msgstr "Пайдаланушы қосқан куәліктер"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Куәліктерін таңдау"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Тақырып мәліметі</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Шығарушы туралы мәлімет</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Басқа</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Жарамдылық басы:"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Тізбекті нөмірі"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "MD5 дайджесті"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "SHA1 дайджесті"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14454,69 +14589,6 @@ msgstr "Куәлік жарамсыз."
 #, kde-format
 msgid "GMT"
 msgstr "Гринвич уақыты"
-
-#~ msgid "Information"
-#~ msgstr "Мәлімет"
-
-#~ msgid "Output to:"
-#~ msgstr "Келесіге шығару:"
-
-#~ msgid "Filename:"
-#~ msgstr "Файл атауы:"
-
-#~ msgid "Error"
-#~ msgstr "Қате"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Түзелмейтін қатеде доғару"
-
-#~ msgid "Warning"
-#~ msgstr "Ескерту"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Түзелмейтін қате"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Ұйым/Жалпы атауы"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Ұйым бөлімі"
-
-#~ msgid "Display..."
-#~ msgstr "Көрсету..."
-
-#~ msgid "Disable"
-#~ msgstr "Бұғаттау"
-
-#~ msgid "Enable"
-#~ msgstr "Рұқсат ету"
-
-#~ msgid "Remove"
-#~ msgstr "Кетіру"
-
-#~ msgid "Add..."
-#~ msgstr "Қосу..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Тақырып мәліметі</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Шығарушы туралы мәлімет</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Басқа</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Жарамдылық басы:"
-
-#~ msgid "Serial number"
-#~ msgstr "Тізбекті нөмірі"
-
-#~ msgid "MD5 digest"
-#~ msgstr "MD5 дайджесті"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1 дайджесті"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

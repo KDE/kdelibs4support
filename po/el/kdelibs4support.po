@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2016-09-30 10:25+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -2335,6 +2335,62 @@ msgstr "Αναφορά συστήματος (syslog)"
 msgid "None"
 msgstr "Τίποτα"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Πληροφορίες"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Έξοδος σε:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Όνομα αρχείου:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Σφάλμα"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Διακοπή στα κρίσιμα σφάλματα"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Απενεργοποίηση όλων των αποτελεσμάτων της αποσφαλμάτωσης"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Προειδοποίηση"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Κρίσιμο σφάλμα"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2344,11 +2400,6 @@ msgstr "Επιλο&γή όλων"
 #, kde-format
 msgid "&Deselect All"
 msgstr "Α&ποεπιλογή όλων"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Απενεργοποίηση όλων των αποτελεσμάτων της αποσφαλμάτωσης"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14065,6 +14116,48 @@ msgstr "Διάλογος εξουσιοδότησης"
 msgid "No metainfo for %1"
 msgstr "Δεν υπάρχουν μετα-πληροφορίες για το %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Οργανισμός / κοινό όνομα"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Οργανωτική μονάδα"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Εμφάνιση..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Απενεργοποίηση"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Ενεργοποίηση"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Προσθήκη..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14079,6 +14172,48 @@ msgstr "Πιστοποιητικά που έχουν προστεθεί από �
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Επιλογή πιστοποιητικών"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Πληροφορίες για το θέμα</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Πληροφορίες για τον εκδότη</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Άλλο</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Περίοδος εγκυρότητας"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Σειριακός αριθμός"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "Σύνοψη MD5"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "Σύνοψη SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14496,69 +14631,6 @@ msgstr "Το πιστοποιητικό δεν είναι έγκυρο."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Πληροφορίες"
-
-#~ msgid "Output to:"
-#~ msgstr "Έξοδος σε:"
-
-#~ msgid "Filename:"
-#~ msgstr "Όνομα αρχείου:"
-
-#~ msgid "Error"
-#~ msgstr "Σφάλμα"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Διακοπή στα κρίσιμα σφάλματα"
-
-#~ msgid "Warning"
-#~ msgstr "Προειδοποίηση"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Κρίσιμο σφάλμα"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Οργανισμός / κοινό όνομα"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Οργανωτική μονάδα"
-
-#~ msgid "Display..."
-#~ msgstr "Εμφάνιση..."
-
-#~ msgid "Disable"
-#~ msgstr "Απενεργοποίηση"
-
-#~ msgid "Enable"
-#~ msgstr "Ενεργοποίηση"
-
-#~ msgid "Remove"
-#~ msgstr "Αφαίρεση"
-
-#~ msgid "Add..."
-#~ msgstr "Προσθήκη..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Πληροφορίες για το θέμα</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Πληροφορίες για τον εκδότη</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Άλλο</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Περίοδος εγκυρότητας"
-
-#~ msgid "Serial number"
-#~ msgstr "Σειριακός αριθμός"
-
-#~ msgid "MD5 digest"
-#~ msgstr "Σύνοψη MD5"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "Σύνοψη SHA1"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

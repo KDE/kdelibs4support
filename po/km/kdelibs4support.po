@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2010-11-26 10:09+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -2325,6 +2325,62 @@ msgstr "កំណត់​ហេតុ​ប្រព័ន្ធ"
 msgid "None"
 msgstr "គ្មាន"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "ព័ត៌មាន​"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "បញ្ចេញ​លទ្ធផល​ទៅ ៖"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "ឈ្មោះ​ឯកសារ ៖"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "កំហុស​"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "បោះបង់​កំហុស​ធ្ងន់ធ្ងរ"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "បិទ​លទ្ធផល​បំបាត់កំហុស​ទាំងអស់"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "ការ​ព្រមាន​"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "កំហុស​ធ្ងន់​ធ្ងរ"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2334,11 +2390,6 @@ msgstr "ជ្រើស​ទាំង​អស់"
 #, kde-format
 msgid "&Deselect All"
 msgstr "មិន​ជ្រើស​ទាំងអស់"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "បិទ​លទ្ធផល​បំបាត់កំហុស​ទាំងអស់"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14026,6 +14077,48 @@ msgstr "ប្រអប់​អនុញ្ញាត​"
 msgid "No metainfo for %1"
 msgstr "គ្មាន​ព័ត៌មាន​មេ​តា​សម្រាប់ %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "ការ​រៀបចំ/​ឈ្មោះ​ធម្មតា"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "ផ្នែក​នៃ​ការ​រៀបចំ"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "បង្ហាញ..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "បិទ"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "បើក"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "យកចេញ"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "បន្ថែម​..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14040,6 +14133,48 @@ msgstr "​វិញ្ញាបនបត្រ​ដែល​បន្ថែម
 #, kde-format
 msgid "Pick Certificates"
 msgstr "យក​វិញ្ញាបនបត្រ"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>ព័ត៌មាន​ប្រធានបទ</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>ព័ត៌មាន​​អ្នក​ចេញ​ផ្សាយ</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>ផ្សេងៗ</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "ថិរវេលា​​មាន​សុពលភាព"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "លេខ​សៀរៀល"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "MD5 digest"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "SHA1 digest"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14437,69 +14572,6 @@ msgstr "វិញ្ញាបនបត្រ​មិន​ត្រឹមត្
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "ព័ត៌មាន​"
-
-#~ msgid "Output to:"
-#~ msgstr "បញ្ចេញ​លទ្ធផល​ទៅ ៖"
-
-#~ msgid "Filename:"
-#~ msgstr "ឈ្មោះ​ឯកសារ ៖"
-
-#~ msgid "Error"
-#~ msgstr "កំហុស​"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "បោះបង់​កំហុស​ធ្ងន់ធ្ងរ"
-
-#~ msgid "Warning"
-#~ msgstr "ការ​ព្រមាន​"
-
-#~ msgid "Fatal Error"
-#~ msgstr "កំហុស​ធ្ងន់​ធ្ងរ"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "ការ​រៀបចំ/​ឈ្មោះ​ធម្មតា"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "ផ្នែក​នៃ​ការ​រៀបចំ"
-
-#~ msgid "Display..."
-#~ msgstr "បង្ហាញ..."
-
-#~ msgid "Disable"
-#~ msgstr "បិទ"
-
-#~ msgid "Enable"
-#~ msgstr "បើក"
-
-#~ msgid "Remove"
-#~ msgstr "យកចេញ"
-
-#~ msgid "Add..."
-#~ msgstr "បន្ថែម​..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>ព័ត៌មាន​ប្រធានបទ</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>ព័ត៌មាន​​អ្នក​ចេញ​ផ្សាយ</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>ផ្សេងៗ</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "ថិរវេលា​​មាន​សុពលភាព"
-
-#~ msgid "Serial number"
-#~ msgstr "លេខ​សៀរៀល"
-
-#~ msgid "MD5 digest"
-#~ msgstr "MD5 digest"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1 digest"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

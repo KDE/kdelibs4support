@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2009-01-05 01:16-0800\n"
 "Last-Translator: Deepayan Sarkar <deepayan.sarkar@gmail.com>\n"
 "Language-Team: en_US <kde-translation@bengalinux.org>\n"
@@ -2326,6 +2326,62 @@ msgstr "সিস-লগ"
 msgid "None"
 msgstr "খালি"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "তথ্য"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "আউটপুট যাবে:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, fuzzy, kde-format
+msgid "Filename:"
+msgstr "ফাইলের নাম:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, fuzzy, kde-format
+msgid "Error"
+msgstr "মারাত্মক সমস্যা"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "মারাত্মক সমস্যা হলে বের হয়ে যাবে"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "ডিবাগ আউটপুট নিষ্ক্রিয় করো"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "সতর্কবার্তা"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "মারাত্মক সমস্যা"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2335,11 +2391,6 @@ msgstr "সকল নির্বাচ&ন করো"
 #, kde-format
 msgid "&Deselect All"
 msgstr "সকল &অনির্বাচিত করো"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "ডিবাগ আউটপুট নিষ্ক্রিয় করো"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14372,6 +14423,51 @@ msgstr ""
 msgid "No metainfo for %1"
 msgstr "%1-এর জন্য কোনো মেটা-তথ্য জানা নেই"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, fuzzy, kde-format
+#| msgid "Organization:"
+msgid "Organization / Common Name"
+msgstr "সংস্থা:"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, fuzzy, kde-format
+msgid "Organizational Unit"
+msgstr "সংস্থা:"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, fuzzy, kde-format
+#| msgid "disable XIM"
+msgid "Disable"
+msgstr "XIM (এক্স ইনপুট মেথড) নিষ্ক্রিয় করো"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, fuzzy, kde-format
+#| msgid "disable XIM"
+msgid "Enable"
+msgstr "XIM (এক্স ইনপুট মেথড) নিষ্ক্রিয় করো"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "সরিয়ে ফেলো"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "যোগ করো..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, fuzzy, kde-format
 msgid "System certificates"
@@ -14387,6 +14483,50 @@ msgstr "সার্টিফিকেট পাঠাও..."
 #| msgid "Certificate"
 msgid "Pick Certificates"
 msgstr "সার্টিফিকেট"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, fuzzy, kde-format
+#| msgid "Security Information"
+msgid "<b>Subject Information</b>"
+msgstr "নিরাপত্তা তথ্য"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, fuzzy, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr " <b>[Cross Domain!]</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, fuzzy, kde-format
+#| msgid "<b>%1</b>"
+msgid "<b>Other</b>"
+msgstr "<b>%1</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr ""
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, fuzzy, kde-format
@@ -14741,63 +14881,6 @@ msgstr "সার্টিফিকেট-টি অবৈধ"
 #, kde-format
 msgid "GMT"
 msgstr ""
-
-#~ msgid "Information"
-#~ msgstr "তথ্য"
-
-#~ msgid "Output to:"
-#~ msgstr "আউটপুট যাবে:"
-
-#, fuzzy
-#~ msgid "Filename:"
-#~ msgstr "ফাইলের নাম:"
-
-#, fuzzy
-#~ msgid "Error"
-#~ msgstr "মারাত্মক সমস্যা"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "মারাত্মক সমস্যা হলে বের হয়ে যাবে"
-
-#~ msgid "Warning"
-#~ msgstr "সতর্কবার্তা"
-
-#~ msgid "Fatal Error"
-#~ msgstr "মারাত্মক সমস্যা"
-
-#, fuzzy
-#~| msgid "Organization:"
-#~ msgid "Organization / Common Name"
-#~ msgstr "সংস্থা:"
-
-#, fuzzy
-#~ msgid "Organizational Unit"
-#~ msgstr "সংস্থা:"
-
-#, fuzzy
-#~| msgid "disable XIM"
-#~ msgid "Disable"
-#~ msgstr "XIM (এক্স ইনপুট মেথড) নিষ্ক্রিয় করো"
-
-#~ msgid "Remove"
-#~ msgstr "সরিয়ে ফেলো"
-
-#~ msgid "Add..."
-#~ msgstr "যোগ করো..."
-
-#, fuzzy
-#~| msgid "Security Information"
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "নিরাপত্তা তথ্য"
-
-#, fuzzy
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr " <b>[Cross Domain!]</b>"
-
-#, fuzzy
-#~| msgid "<b>%1</b>"
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>%1</b>"
 
 #, fuzzy
 #~ msgctxt "color"

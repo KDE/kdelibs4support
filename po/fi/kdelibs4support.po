@@ -25,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2021-07-22 19:28+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2350,6 +2350,62 @@ msgstr "Järjestelmän lokiin"
 msgid "None"
 msgstr "Ei mikään"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Tietoja"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Tuloste kohteeseen:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Tiedostonimi:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Virhe"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Keskeytä vakavista virheistä"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Poista käytöstä kaikki virheenpaikannustulosteet"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Varoitus"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Vakava virhe"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2359,11 +2415,6 @@ msgstr "&Valitse kaikki"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Poista valinnat"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Poista käytöstä kaikki virheenpaikannustulosteet"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -13954,6 +14005,48 @@ msgstr "Tunnistusikkuna"
 msgid "No metainfo for %1"
 msgstr "Ei metatietoja tiedostolle %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Organisaatio / Yleisnimi"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Organisaatioyksikkö"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Näytä…"
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Poista käytöstä"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Ota käyttöön"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Poista"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Lisää…"
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -13968,6 +14061,49 @@ msgstr "Käyttäjän lisäämät varmenteet"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Valitse varmenteita"
+
+# ”Subject” voi kyllä tarkoittaa ’henkilöäkin’, mutta tässä on pakko arvailla.
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Aiheen tiedot</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Myöntäjän tiedot</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Muuta</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Kelpoisuusaika"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Sarjanumero"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "MD5-kooste"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "SHA1-kooste"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14372,70 +14508,6 @@ msgstr "Varmenne on virheellinen."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Tietoja"
-
-#~ msgid "Output to:"
-#~ msgstr "Tuloste kohteeseen:"
-
-#~ msgid "Filename:"
-#~ msgstr "Tiedostonimi:"
-
-#~ msgid "Error"
-#~ msgstr "Virhe"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Keskeytä vakavista virheistä"
-
-#~ msgid "Warning"
-#~ msgstr "Varoitus"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Vakava virhe"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Organisaatio / Yleisnimi"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Organisaatioyksikkö"
-
-#~ msgid "Display..."
-#~ msgstr "Näytä…"
-
-#~ msgid "Disable"
-#~ msgstr "Poista käytöstä"
-
-#~ msgid "Enable"
-#~ msgstr "Ota käyttöön"
-
-#~ msgid "Remove"
-#~ msgstr "Poista"
-
-#~ msgid "Add..."
-#~ msgstr "Lisää…"
-
-# ”Subject” voi kyllä tarkoittaa ’henkilöäkin’, mutta tässä on pakko arvailla.
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Aiheen tiedot</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Myöntäjän tiedot</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Muuta</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Kelpoisuusaika"
-
-#~ msgid "Serial number"
-#~ msgstr "Sarjanumero"
-
-#~ msgid "MD5 digest"
-#~ msgstr "MD5-kooste"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1-kooste"
 
 #~ msgid "Test Service for Network Status kded module"
 #~ msgstr "Testipalvelu verkon tilan kded-moduulille"

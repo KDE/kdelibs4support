@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"POT-Creation-Date: 2023-03-01 22:21+0000\n"
 "PO-Revision-Date: 2023-02-14 08:07+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -2332,6 +2332,62 @@ msgstr "Kerfisannáll"
 msgid "None"
 msgstr "Ekkert"
 
+#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
+#: kdebugdialog/kdebugdialog.ui:48
+#, kde-format
+msgid "Information"
+msgstr "Upplýsingar"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
+#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
+#, kde-format
+msgid "Output to:"
+msgstr "Senda í:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
+#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
+#, kde-format
+msgid "Filename:"
+msgstr "Skráaheiti:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
+#: kdebugdialog/kdebugdialog.ui:83
+#, kde-format
+msgid "Error"
+msgstr "Villa"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
+#: kdebugdialog/kdebugdialog.ui:118
+#, kde-format
+msgid "Abort on fatal errors"
+msgstr "Hætta keyrslu við banvæna villu"
+
+#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Afvirkja allt aflúsunarúttak"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
+#: kdebugdialog/kdebugdialog.ui:145
+#, kde-format
+msgid "Warning"
+msgstr "Aðvörun"
+
+#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
+#: kdebugdialog/kdebugdialog.ui:180
+#, kde-format
+msgid "Fatal Error"
+msgstr "Banvæn villa"
+
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2341,11 +2397,6 @@ msgstr "Velja &allt"
 #, kde-format
 msgid "&Deselect All"
 msgstr "Velja e&kkert"
-
-#: kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Afvirkja allt aflúsunarúttak"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14719,6 +14770,48 @@ msgstr "Auðkenningargluggi"
 msgid "No metainfo for %1"
 msgstr "Engin lýsigögn fyrir %1"
 
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:24
+#, kde-format
+msgid "Organization / Common Name"
+msgstr "Nafn fyrirtækis/stofnunar"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
+#: kssl/kcm/cacertificates.ui:29
+#, kde-format
+msgid "Organizational Unit"
+msgstr "Deild (OU)"
+
+#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
+#: kssl/kcm/cacertificates.ui:42
+#, kde-format
+msgid "Display..."
+msgstr "Birting..."
+
+#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
+#: kssl/kcm/cacertificates.ui:68
+#, kde-format
+msgid "Disable"
+msgstr "Gera óvirkt"
+
+#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
+#: kssl/kcm/cacertificates.ui:78
+#, kde-format
+msgid "Enable"
+msgstr "Virkja"
+
+#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
+#: kssl/kcm/cacertificates.ui:104
+#, kde-format
+msgid "Remove"
+msgstr "Fjarlægja"
+
+#. i18n: ectx: property (text), widget (QPushButton, add)
+#: kssl/kcm/cacertificates.ui:111
+#, kde-format
+msgid "Add..."
+msgstr "Bæta við..."
+
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14733,6 +14826,48 @@ msgstr "Skilríki sem notandi hefur bætt við"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Veldu skilríki"
+
+#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
+#: kssl/kcm/displaycert.ui:23
+#, kde-format
+msgid "<b>Subject Information</b>"
+msgstr "<b>Upplýsingar um viðfangsefni</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
+#: kssl/kcm/displaycert.ui:39
+#, kde-format
+msgid "<b>Issuer Information</b>"
+msgstr "<b>Upplýsingar um útgefanda</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: kssl/kcm/displaycert.ui:55
+#, kde-format
+msgid "<b>Other</b>"
+msgstr "<b>Annað</b>"
+
+#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
+#: kssl/kcm/displaycert.ui:64
+#, kde-format
+msgid "Validity period"
+msgstr "Gildistími"
+
+#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
+#: kssl/kcm/displaycert.ui:78
+#, kde-format
+msgid "Serial number"
+msgstr "Raðnúmer"
+
+#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
+#: kssl/kcm/displaycert.ui:92
+#, kde-format
+msgid "MD5 digest"
+msgstr "MD5 gátsumma"
+
+#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
+#: kssl/kcm/displaycert.ui:106
+#, kde-format
+msgid "SHA1 digest"
+msgstr "SHA1 gátsumma"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -15150,69 +15285,6 @@ msgstr "Skilríkið er ekki gilt."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
-
-#~ msgid "Information"
-#~ msgstr "Upplýsingar"
-
-#~ msgid "Output to:"
-#~ msgstr "Senda í:"
-
-#~ msgid "Filename:"
-#~ msgstr "Skráaheiti:"
-
-#~ msgid "Error"
-#~ msgstr "Villa"
-
-#~ msgid "Abort on fatal errors"
-#~ msgstr "Hætta keyrslu við banvæna villu"
-
-#~ msgid "Warning"
-#~ msgstr "Aðvörun"
-
-#~ msgid "Fatal Error"
-#~ msgstr "Banvæn villa"
-
-#~ msgid "Organization / Common Name"
-#~ msgstr "Nafn fyrirtækis/stofnunar"
-
-#~ msgid "Organizational Unit"
-#~ msgstr "Deild (OU)"
-
-#~ msgid "Display..."
-#~ msgstr "Birting..."
-
-#~ msgid "Disable"
-#~ msgstr "Gera óvirkt"
-
-#~ msgid "Enable"
-#~ msgstr "Virkja"
-
-#~ msgid "Remove"
-#~ msgstr "Fjarlægja"
-
-#~ msgid "Add..."
-#~ msgstr "Bæta við..."
-
-#~ msgid "<b>Subject Information</b>"
-#~ msgstr "<b>Upplýsingar um viðfangsefni</b>"
-
-#~ msgid "<b>Issuer Information</b>"
-#~ msgstr "<b>Upplýsingar um útgefanda</b>"
-
-#~ msgid "<b>Other</b>"
-#~ msgstr "<b>Annað</b>"
-
-#~ msgid "Validity period"
-#~ msgstr "Gildistími"
-
-#~ msgid "Serial number"
-#~ msgstr "Raðnúmer"
-
-#~ msgid "MD5 digest"
-#~ msgstr "MD5 gátsumma"
-
-#~ msgid "SHA1 digest"
-#~ msgstr "SHA1 gátsumma"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"
