@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2009-07-15 01:21+0200\n"
 "Last-Translator: Umesh Rudrapatna <umeshrs@gmail.com>\n"
 "Language-Team: Kannada <kde-l10n-kn@kde.org>\n"
@@ -2326,62 +2326,6 @@ msgstr "Syslog"
 msgid "None"
 msgstr "ಖಾಲಿ"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "ಮಾಹಿತಿ"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "ಇಲ್ಲಿಗೆ ಒದಗಿಸು:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "ಕಡತದ ಹೆಸರು:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "ದೋಷ"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "ಮಾರಕ ದೋಷಗಳಲ್ಲಿ ಸ್ಥಗಿತಗೊಳಿಸು"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "ದೋಷನಿವಾರಣಾ ಉತ್ಪತ್ತಿಯನ್ನು ಅಶಕ್ತಗೊಳಿಸಿ"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "ಎಚ್ಚರಿಕೆ"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "ಮಾರಕ ದೋಷ"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2391,6 +2335,11 @@ msgstr "ಎಲ್ಲವನ್ನೂ ಆರಿಸು(&S)"
 #, kde-format
 msgid "&Deselect All"
 msgstr "ಎಲ್ಲಾ ಆಯ್ಕೆಗಳನ್ನೂ ರದ್ದುಗೊಳಿಸು(&D)"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "ದೋಷನಿವಾರಣಾ ಉತ್ಪತ್ತಿಯನ್ನು ಅಶಕ್ತಗೊಳಿಸಿ"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14367,49 +14316,6 @@ msgstr ""
 msgid "No metainfo for %1"
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, fuzzy, kde-format
-#| msgid "disable XIM"
-msgid "Disable"
-msgstr "XIM ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "ತೆಗೆದುಹಾಕು"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "ಸೇರಿಸು..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14423,49 +14329,6 @@ msgstr ""
 #: kssl/kcm/cacertificatespage.cpp:302
 #, kde-format
 msgid "Pick Certificates"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, fuzzy, kde-format
-#| msgid "Information"
-msgid "<b>Issuer Information</b>"
-msgstr "ಮಾಹಿತಿ"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
 msgstr ""
 
 #: kssl/kcm/displaycertdialog.cpp:73
@@ -14814,6 +14677,43 @@ msgstr ""
 #, kde-format
 msgid "GMT"
 msgstr ""
+
+#~ msgid "Information"
+#~ msgstr "ಮಾಹಿತಿ"
+
+#~ msgid "Output to:"
+#~ msgstr "ಇಲ್ಲಿಗೆ ಒದಗಿಸು:"
+
+#~ msgid "Filename:"
+#~ msgstr "ಕಡತದ ಹೆಸರು:"
+
+#~ msgid "Error"
+#~ msgstr "ದೋಷ"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "ಮಾರಕ ದೋಷಗಳಲ್ಲಿ ಸ್ಥಗಿತಗೊಳಿಸು"
+
+#~ msgid "Warning"
+#~ msgstr "ಎಚ್ಚರಿಕೆ"
+
+#~ msgid "Fatal Error"
+#~ msgstr "ಮಾರಕ ದೋಷ"
+
+#, fuzzy
+#~| msgid "disable XIM"
+#~ msgid "Disable"
+#~ msgstr "XIM ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು"
+
+#~ msgid "Remove"
+#~ msgstr "ತೆಗೆದುಹಾಕು"
+
+#~ msgid "Add..."
+#~ msgstr "ಸೇರಿಸು..."
+
+#, fuzzy
+#~| msgid "Information"
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr "ಮಾಹಿತಿ"
 
 #, fuzzy
 #~ msgctxt "color"

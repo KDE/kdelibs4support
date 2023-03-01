@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2019-11-18 09:25+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2321,62 +2321,6 @@ msgstr "Syslog"
 msgid "None"
 msgstr "Žiadne"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "Informácia"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "Výstup do:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "Názov súboru:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "Chyba"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "Prerušiť pri kritickej chybe"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Zakázať celý ladiaci výstup"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "Upozornenie"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "Fatálna chyba"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2386,6 +2330,11 @@ msgstr "Vybrať &všetko"
 #, kde-format
 msgid "&Deselect All"
 msgstr "Zrušiť výbe&r"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Zakázať celý ladiaci výstup"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14061,48 +14010,6 @@ msgstr "Autorizačný dialóg"
 msgid "No metainfo for %1"
 msgstr "Žiadne metainformácie pre %1"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr "Organizácia / bežný názov"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "Organizačná jednotka"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr "Zobraziť..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "Zakázať"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "Povoliť"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "Odstrániť"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "Pridať..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14117,48 +14024,6 @@ msgstr "Užívateľské certifikáty"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Vyberte certifikát"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr "<b>Informácie o predmete</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, kde-format
-msgid "<b>Issuer Information</b>"
-msgstr "<b>Informácie o vydavateľovi</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>Iné</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr "Doba platnosti"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "Sériové číslo"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr "MD5 digest"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
-msgstr "SHA1 digest"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14562,6 +14427,69 @@ msgstr "Certifikát nie je platný."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "Informácia"
+
+#~ msgid "Output to:"
+#~ msgstr "Výstup do:"
+
+#~ msgid "Filename:"
+#~ msgstr "Názov súboru:"
+
+#~ msgid "Error"
+#~ msgstr "Chyba"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "Prerušiť pri kritickej chybe"
+
+#~ msgid "Warning"
+#~ msgstr "Upozornenie"
+
+#~ msgid "Fatal Error"
+#~ msgstr "Fatálna chyba"
+
+#~ msgid "Organization / Common Name"
+#~ msgstr "Organizácia / bežný názov"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "Organizačná jednotka"
+
+#~ msgid "Display..."
+#~ msgstr "Zobraziť..."
+
+#~ msgid "Disable"
+#~ msgstr "Zakázať"
+
+#~ msgid "Enable"
+#~ msgstr "Povoliť"
+
+#~ msgid "Remove"
+#~ msgstr "Odstrániť"
+
+#~ msgid "Add..."
+#~ msgstr "Pridať..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "<b>Informácie o predmete</b>"
+
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr "<b>Informácie o vydavateľovi</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>Iné</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "Doba platnosti"
+
+#~ msgid "Serial number"
+#~ msgstr "Sériové číslo"
+
+#~ msgid "MD5 digest"
+#~ msgstr "MD5 digest"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "SHA1 digest"
 
 #~ msgid "Test Service for Network Status kded module"
 #~ msgstr "Testovacia služba pre kded modul stavu siete"

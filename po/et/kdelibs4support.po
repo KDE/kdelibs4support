@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2016-09-09 03:21+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
@@ -2325,62 +2325,6 @@ msgstr "Syslog"
 msgid "None"
 msgstr "Puudub"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "Info"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "Väljund:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "Failinimi:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "Viga"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "Saatuslike vigade puhul katkestatakse"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Kogu silumisväljundi keelamine"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "Hoiatus"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "Saatuslik viga"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2390,6 +2334,11 @@ msgstr "&Vali kõik"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Tühista kõik valikud"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Kogu silumisväljundi keelamine"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14055,48 +14004,6 @@ msgstr "Autentimisdialoog"
 msgid "No metainfo for %1"
 msgstr "%1 metainfo puudub"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr "Organisatsioon/üldnimi"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "Organisatsiooni allüksus"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr "Näita..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "Keela"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "Luba"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "Eemalda"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "Lisa..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14111,48 +14018,6 @@ msgstr "Kasutaja lisatud sertifikaadid"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Sertifikaatide valimine"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr "<b>Teemateave</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, kde-format
-msgid "<b>Issuer Information</b>"
-msgstr " <b>Väljaandja teave</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>Muu</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr "Kehtivusaeg"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "Seerianumber"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr "MD5 kokkuvõte"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
-msgstr "SHA1 kokkuvõte"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14560,6 +14425,69 @@ msgstr "Sertifikaat ei ole kehtiv."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "Info"
+
+#~ msgid "Output to:"
+#~ msgstr "Väljund:"
+
+#~ msgid "Filename:"
+#~ msgstr "Failinimi:"
+
+#~ msgid "Error"
+#~ msgstr "Viga"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "Saatuslike vigade puhul katkestatakse"
+
+#~ msgid "Warning"
+#~ msgstr "Hoiatus"
+
+#~ msgid "Fatal Error"
+#~ msgstr "Saatuslik viga"
+
+#~ msgid "Organization / Common Name"
+#~ msgstr "Organisatsioon/üldnimi"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "Organisatsiooni allüksus"
+
+#~ msgid "Display..."
+#~ msgstr "Näita..."
+
+#~ msgid "Disable"
+#~ msgstr "Keela"
+
+#~ msgid "Enable"
+#~ msgstr "Luba"
+
+#~ msgid "Remove"
+#~ msgstr "Eemalda"
+
+#~ msgid "Add..."
+#~ msgstr "Lisa..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "<b>Teemateave</b>"
+
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr " <b>Väljaandja teave</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>Muu</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "Kehtivusaeg"
+
+#~ msgid "Serial number"
+#~ msgstr "Seerianumber"
+
+#~ msgid "MD5 digest"
+#~ msgstr "MD5 kokkuvõte"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "SHA1 kokkuvõte"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

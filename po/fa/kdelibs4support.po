@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2008-07-11 18:00+0330\n"
 "Last-Translator: Saied Taghavi <s.taghavi@gmail.com>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -2325,62 +2325,6 @@ msgstr "Syslog"
 msgid "None"
 msgstr "هیچ‌کدام"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "اطلاعات"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "خروجی به:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "نام پرونده:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "خطا"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "ساقط شدن هنگام خطاهای مهلک"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "غیرفعال سازی همه خروجی‌های اشکال زدایی"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "اخطار"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "خطای مهلک"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2390,6 +2334,11 @@ msgstr "&برگزیدن همه‌"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&از گزینش خارج کردن همه‌"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "غیرفعال سازی همه خروجی‌های اشکال زدایی"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14511,50 +14460,6 @@ msgstr "محاوره اجازه"
 msgid "No metainfo for %1"
 msgstr "جای‌نوشتررررررررااطلاعاتی برای %1 وجود ندارد"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, fuzzy, kde-format
-#| msgid "Organization:"
-msgid "Organization / Common Name"
-msgstr "سازمان:"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "واحد سازمانی"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, fuzzy, kde-format
-msgid "Display..."
-msgstr "نمایش"
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "غیرفعال"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, fuzzy, kde-format
-#| msgid "Emblems"
-msgid "Enable"
-msgstr "فعال‌سازی"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "حذف"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "افزودن..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, fuzzy, kde-format
 #| msgid "Send certificate"
@@ -14572,55 +14477,6 @@ msgstr "ارسال گواهی‌نامه"
 #| msgid "Certificate"
 msgid "Pick Certificates"
 msgstr "گواهی‌نامه"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, fuzzy, kde-format
-#| msgid "Security Information"
-msgid "<b>Subject Information</b>"
-msgstr "اطلاعات امنیتی"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, fuzzy, kde-format
-#| msgid " <b>[Cross Domain]</b>"
-msgid "<b>Issuer Information</b>"
-msgstr " <b>[دامنه متقابل]</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, fuzzy, kde-format
-#| msgid "<b>%1</b>"
-msgid "<b>Other</b>"
-msgstr "غیره"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, fuzzy, kde-format
-#| msgid "Validity period:"
-msgid "Validity period"
-msgstr "دورهٔ اعتبار:"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, fuzzy, kde-format
-#| msgid "Serial Number:"
-msgid "Serial number"
-msgstr "شمارهٔ متوالی:"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, fuzzy, kde-format
-#| msgid "MD5 Digest:"
-msgid "MD5 digest"
-msgstr "چکیده MD5:"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, fuzzy, kde-format
-#| msgid "MD5 Digest:"
-msgid "SHA1 digest"
-msgstr "چکیدهٔ MD5:"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, fuzzy, kde-format
@@ -14982,6 +14838,88 @@ msgstr "گواهی‌نامه نامعتبر است."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "اطلاعات"
+
+#~ msgid "Output to:"
+#~ msgstr "خروجی به:"
+
+#~ msgid "Filename:"
+#~ msgstr "نام پرونده:"
+
+#~ msgid "Error"
+#~ msgstr "خطا"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "ساقط شدن هنگام خطاهای مهلک"
+
+#~ msgid "Warning"
+#~ msgstr "اخطار"
+
+#~ msgid "Fatal Error"
+#~ msgstr "خطای مهلک"
+
+#, fuzzy
+#~| msgid "Organization:"
+#~ msgid "Organization / Common Name"
+#~ msgstr "سازمان:"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "واحد سازمانی"
+
+#, fuzzy
+#~ msgid "Display..."
+#~ msgstr "نمایش"
+
+#~ msgid "Disable"
+#~ msgstr "غیرفعال"
+
+#, fuzzy
+#~| msgid "Emblems"
+#~ msgid "Enable"
+#~ msgstr "فعال‌سازی"
+
+#~ msgid "Remove"
+#~ msgstr "حذف"
+
+#~ msgid "Add..."
+#~ msgstr "افزودن..."
+
+#, fuzzy
+#~| msgid "Security Information"
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "اطلاعات امنیتی"
+
+#, fuzzy
+#~| msgid " <b>[Cross Domain]</b>"
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr " <b>[دامنه متقابل]</b>"
+
+#, fuzzy
+#~| msgid "<b>%1</b>"
+#~ msgid "<b>Other</b>"
+#~ msgstr "غیره"
+
+#, fuzzy
+#~| msgid "Validity period:"
+#~ msgid "Validity period"
+#~ msgstr "دورهٔ اعتبار:"
+
+#, fuzzy
+#~| msgid "Serial Number:"
+#~ msgid "Serial number"
+#~ msgstr "شمارهٔ متوالی:"
+
+#, fuzzy
+#~| msgid "MD5 Digest:"
+#~ msgid "MD5 digest"
+#~ msgstr "چکیده MD5:"
+
+#, fuzzy
+#~| msgid "MD5 Digest:"
+#~ msgid "SHA1 digest"
+#~ msgstr "چکیدهٔ MD5:"
 
 #, fuzzy
 #~ msgctxt "color"

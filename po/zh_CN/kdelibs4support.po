@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
-"PO-Revision-Date: 2023-01-02 07:11\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2322,62 +2322,6 @@ msgstr "系统日志"
 msgid "None"
 msgstr "无"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "信息"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "输出到："
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "文件名："
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "错误"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "发生严重错误时中止"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "禁用全部调试输出"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "警告"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "严重错误"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2387,6 +2331,11 @@ msgstr "全部选择(&S)"
 #, kde-format
 msgid "&Deselect All"
 msgstr "全部不选(&D)"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "禁用全部调试输出"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -5401,7 +5350,7 @@ msgstr "Raviãra"
 #, kde-format
 msgctxt "Calendar Era: Hijri Islamic Era, years > 0, LongFormat"
 msgid "Anno Hegirae"
-msgstr "回历"
+msgstr "伊斯兰历"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:67
 #, kde-format
@@ -5420,487 +5369,487 @@ msgstr "%Ey %EC"
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::NarrowName"
 msgid "M"
-msgstr "M"
+msgstr "一"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:168
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::NarrowName"
 msgid "S"
-msgstr "S"
+msgstr "二"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:170
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::NarrowName"
 msgid "A"
-msgstr "A"
+msgstr "三"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:172
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::NarrowName"
 msgid "T"
-msgstr "T"
+msgstr "四"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:174
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::NarrowName"
 msgid "A"
-msgstr "A"
+msgstr "五"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:176
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::NarrowName"
 msgid "T"
-msgstr "T"
+msgstr "六"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:178
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::NarrowName"
 msgid "R"
-msgstr "R"
+msgstr "七"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:180
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::NarrowName"
 msgid "S"
-msgstr "S"
+msgstr "八"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:182
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::NarrowName"
 msgid "R"
-msgstr "R"
+msgstr "九"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:184
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::NarrowName"
 msgid "S"
-msgstr "S"
+msgstr "十"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:186
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::NarrowName"
 msgid "Q"
-msgstr "Q"
+msgstr "十一"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:188
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::NarrowName"
 msgid "H"
-msgstr "H"
+msgstr "十二"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:197
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::ShortName Possessive"
 msgid "of Muh"
-msgstr "Muh"
+msgstr "一月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:199
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::ShortName Possessive"
 msgid "of Saf"
-msgstr "Saf"
+msgstr "二月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:201
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::ShortName Possessive"
 msgid "of R.A"
-msgstr "R.A"
+msgstr "三月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:203
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::ShortName Possessive"
 msgid "of R.T"
-msgstr "R.T"
+msgstr "四月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:205
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::ShortName Possessive"
 msgid "of J.A"
-msgstr "J.A"
+msgstr "五月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:207
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::ShortName Possessive"
 msgid "of J.T"
-msgstr "J.T"
+msgstr "六月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:209
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::ShortName Possessive"
 msgid "of Raj"
-msgstr "Raj"
+msgstr "七月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:211
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::ShortName Possessive"
 msgid "of Sha"
-msgstr "Sha"
+msgstr "八月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:213
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::ShortName Possessive"
 msgid "of Ram"
-msgstr "Ram"
+msgstr "九月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:215
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::ShortName Possessive"
 msgid "of Shw"
-msgstr "Shw"
+msgstr "十月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:217
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::ShortName Possessive"
 msgid "of Qid"
-msgstr "Qid"
+msgstr "十一月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:219
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::ShortName Possessive"
 msgid "of Hij"
-msgstr "Hij"
+msgstr "十二月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:228
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::ShortName"
 msgid "Muh"
-msgstr "Muh"
+msgstr "一月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:230
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::ShortName"
 msgid "Saf"
-msgstr "Saf"
+msgstr "二月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:232
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::ShortName"
 msgid "R.A"
-msgstr "R.A"
+msgstr "三月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:234
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::ShortName"
 msgid "R.T"
-msgstr "R.T"
+msgstr "四月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:236
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::ShortName"
 msgid "J.A"
-msgstr "J.A"
+msgstr "五月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:238
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::ShortName"
 msgid "J.T"
-msgstr "J.T"
+msgstr "六月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:240
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::ShortName"
 msgid "Raj"
-msgstr "Raj"
+msgstr "七月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:242
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::ShortName"
 msgid "Sha"
-msgstr "Sha"
+msgstr "八月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:244
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::ShortName"
 msgid "Ram"
-msgstr "Ram"
+msgstr "九月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:246
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::ShortName"
 msgid "Shw"
-msgstr "Shw"
+msgstr "十月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:248
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::ShortName"
 msgid "Qid"
-msgstr "Qid"
+msgstr "十一月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:250
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::ShortName"
 msgid "Hij"
-msgstr "Hij"
+msgstr "十二月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:259
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::LongName Possessive"
 msgid "of Muharram"
-msgstr "Muharram"
+msgstr "穆哈兰姆月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:261
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::LongName Possessive"
 msgid "of Safar"
-msgstr "Safar"
+msgstr "色法尔月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:263
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::LongName Possessive"
 msgid "of Rabi` al-Awal"
-msgstr "Rabi` al-Awal"
+msgstr "赖比尔·敖外鲁月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:265
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::LongName Possessive"
 msgid "of Rabi` al-Thaani"
-msgstr "Rabi` al-Thaani"
+msgstr "赖比尔·阿色尼月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:267
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::LongName Possessive"
 msgid "of Jumaada al-Awal"
-msgstr "Jumaada al-Awal"
+msgstr "主马达·敖外鲁月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:269
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::LongName Possessive"
 msgid "of Jumaada al-Thaani"
-msgstr "Jumaada al-Thaani"
+msgstr "主马达·阿色尼月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:271
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::LongName Possessive"
 msgid "of Rajab"
-msgstr "Rajab"
+msgstr "赖哲卜月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:273
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::LongName Possessive"
 msgid "of Sha`ban"
-msgstr "Sha`ban"
+msgstr "舍尔邦月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:275
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::LongName Possessive"
 msgid "of Ramadan"
-msgstr "Ramadan"
+msgstr "赖买丹月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:277
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::LongName Possessive"
 msgid "of Shawwal"
-msgstr "Shawwal"
+msgstr "闪瓦鲁月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:279
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::LongName Possessive"
 msgid "of Thu al-Qi`dah"
-msgstr "Thu al-Qi`dah"
+msgstr "都尔喀尔德月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:281
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::LongName Possessive"
 msgid "of Thu al-Hijjah"
-msgstr "Thu al-Hijjah"
+msgstr "都尔黑哲月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:290
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::LongName"
 msgid "Muharram"
-msgstr "Muharram"
+msgstr "穆哈兰姆月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:292
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::LongName"
 msgid "Safar"
-msgstr "Safar"
+msgstr "色法尔月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:294
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::LongName"
 msgid "Rabi` al-Awal"
-msgstr "Rabi` al-Awal"
+msgstr "赖比尔·敖外鲁月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:296
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::LongName"
 msgid "Rabi` al-Thaani"
-msgstr "Rabi` al-Thaani"
+msgstr "赖比尔·阿色尼月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:298
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::LongName"
 msgid "Jumaada al-Awal"
-msgstr "Jumaada al-Awal"
+msgstr "主马达·敖外鲁月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:300
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::LongName"
 msgid "Jumaada al-Thaani"
-msgstr "Jumaada al-Thaani"
+msgstr "主马达·阿色尼月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:302
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::LongName"
 msgid "Rajab"
-msgstr "Rajab"
+msgstr "赖哲卜月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:304
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::LongName"
 msgid "Sha`ban"
-msgstr "Sha`ban"
+msgstr "舍尔邦月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:306
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::LongName"
 msgid "Ramadan"
-msgstr "Ramadan"
+msgstr "赖买丹月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:308
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::LongName"
 msgid "Shawwal"
-msgstr "Shawwal"
+msgstr "闪瓦鲁月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:310
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::LongName"
 msgid "Thu al-Qi`dah"
-msgstr "Thu al-Qi`dah"
+msgstr "都尔喀尔德月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:312
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::LongName"
 msgid "Thu al-Hijjah"
-msgstr "Thu al-Hijjah"
+msgstr "都尔黑哲月"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:325
 #, kde-format
 msgctxt "Hijri weekday 1 - KLocale::NarrowName "
 msgid "I"
-msgstr "I"
+msgstr "日"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:327
 #, kde-format
 msgctxt "Hijri weekday 2 - KLocale::NarrowName "
 msgid "T"
-msgstr "T"
+msgstr "一"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:329
 #, kde-format
 msgctxt "Hijri weekday 3 - KLocale::NarrowName "
 msgid "A"
-msgstr "A"
+msgstr "二"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:331
 #, kde-format
 msgctxt "Hijri weekday 4 - KLocale::NarrowName "
 msgid "K"
-msgstr "K"
+msgstr "三"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:333
 #, kde-format
 msgctxt "Hijri weekday 5 - KLocale::NarrowName "
 msgid "J"
-msgstr "J"
+msgstr "四"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:335
 #, kde-format
 msgctxt "Hijri weekday 6 - KLocale::NarrowName "
 msgid "S"
-msgstr "S"
+msgstr "五"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:337
 #, kde-format
 msgctxt "Hijri weekday 7 - KLocale::NarrowName "
 msgid "A"
-msgstr "A"
+msgstr "六"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:346
 #, kde-format
 msgctxt "Hijri weekday 1 - KLocale::ShortName"
 msgid "Ith"
-msgstr "Ith"
+msgstr "一"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:348
 #, kde-format
 msgctxt "Hijri weekday 2 - KLocale::ShortName"
 msgid "Thl"
-msgstr "Thl"
+msgstr "二"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:350
 #, kde-format
 msgctxt "Hijri weekday 3 - KLocale::ShortName"
 msgid "Arb"
-msgstr "Arb"
+msgstr "三"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:352
 #, kde-format
 msgctxt "Hijri weekday 4 - KLocale::ShortName"
 msgid "Kha"
-msgstr "Kha"
+msgstr "四"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:354
 #, kde-format
 msgctxt "Hijri weekday 5 - KLocale::ShortName"
 msgid "Jum"
-msgstr "Jum"
+msgstr "五"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:356
 #, kde-format
 msgctxt "Hijri weekday 6 - KLocale::ShortName"
 msgid "Sab"
-msgstr "Sab"
+msgstr "六"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:358
 #, kde-format
 msgctxt "Hijri weekday 7 - KLocale::ShortName"
 msgid "Ahd"
-msgstr "Ahd"
+msgstr "日"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:365
 #, kde-format
 msgctxt "Hijri weekday 1 - KLocale::LongName"
 msgid "Yaum al-Ithnain"
-msgstr "Yaum al-Ithnain"
+msgstr "星期一"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:367
 #, kde-format
 msgctxt "Hijri weekday 2 - KLocale::LongName"
 msgid "Yau al-Thulatha"
-msgstr "Yau al-Thulatha"
+msgstr "星期二"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:369
 #, kde-format
 msgctxt "Hijri weekday 3 - KLocale::LongName"
 msgid "Yaum al-Arbi'a"
-msgstr "Yaum al-Arbi'a"
+msgstr "星期三"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:371
 #, kde-format
 msgctxt "Hijri weekday 4 - KLocale::LongName"
 msgid "Yaum al-Khamees"
-msgstr "Yaum al-Khamees"
+msgstr "星期四"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:373
 #, kde-format
 msgctxt "Hijri weekday 5 - KLocale::LongName"
 msgid "Yaum al-Jumma"
-msgstr "Yaum al-Jumma"
+msgstr "星期五"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:375
 #, kde-format
 msgctxt "Hijri weekday 6 - KLocale::LongName"
 msgid "Yaum al-Sabt"
-msgstr "Yaum al-Sabt"
+msgstr "星期六"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:377
 #, kde-format
 msgctxt "Hijri weekday 7 - KLocale::LongName"
 msgid "Yaum al-Ahad"
-msgstr "Yaum al-Ahad"
+msgstr "星期日"
 
 #: kdecore/kcalendarsystemjalali.cpp:74
 #, kde-format
@@ -13916,48 +13865,6 @@ msgstr "授权对话框"
 msgid "No metainfo for %1"
 msgstr "没有 %1 的元信息"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr "组织 / 共用名称"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "组织单位"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr "显示..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "禁用"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "启用"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "移除"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "添加..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -13972,48 +13879,6 @@ msgstr "用户添加的证书"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "选择证书"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr "<b>主题信息</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, kde-format
-msgid "<b>Issuer Information</b>"
-msgstr "<b>发行者信息</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>其他</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr "有效期"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "序列号"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr "MD5 摘要"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
-msgstr "SHA1 摘要"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14380,3 +14245,66 @@ msgstr "证书无效。"
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "信息"
+
+#~ msgid "Output to:"
+#~ msgstr "输出到："
+
+#~ msgid "Filename:"
+#~ msgstr "文件名："
+
+#~ msgid "Error"
+#~ msgstr "错误"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "发生严重错误时中止"
+
+#~ msgid "Warning"
+#~ msgstr "警告"
+
+#~ msgid "Fatal Error"
+#~ msgstr "严重错误"
+
+#~ msgid "Organization / Common Name"
+#~ msgstr "机构 / 通用名称"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "组织单位"
+
+#~ msgid "Display..."
+#~ msgstr "显示..."
+
+#~ msgid "Disable"
+#~ msgstr "禁用"
+
+#~ msgid "Enable"
+#~ msgstr "启用"
+
+#~ msgid "Remove"
+#~ msgstr "移除"
+
+#~ msgid "Add..."
+#~ msgstr "添加..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "<b>主体信息</b>"
+
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr "<b>发行者信息</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>其他</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "有效期"
+
+#~ msgid "Serial number"
+#~ msgstr "序列号"
+
+#~ msgid "MD5 digest"
+#~ msgstr "MD5 摘要"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "SHA1 摘要"

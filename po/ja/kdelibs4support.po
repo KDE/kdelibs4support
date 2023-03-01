@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2011-08-27 14:05-0700\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2334,62 +2334,6 @@ msgstr "Syslog"
 msgid "None"
 msgstr "なし"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "情報"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "出力先:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "ファイル名:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "エラー"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "致命的なエラーで中止"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "すべてのデバッグ出力を無効にする"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "警告"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "致命的なエラー"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2399,6 +2343,11 @@ msgstr "すべて選択(&S)"
 #, kde-format
 msgid "&Deselect All"
 msgstr "すべて選択解除(&D)"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "すべてのデバッグ出力を無効にする"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14134,49 +14083,6 @@ msgstr "認証ダイアログ"
 msgid "No metainfo for %1"
 msgstr "%1 のメタ情報がありません"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, fuzzy, kde-format
-#| msgid "Organization:"
-msgid "Organization / Common Name"
-msgstr "組織:"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "組織単位"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr "表示..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "無効にする"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "有効にする"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "削除"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "追加..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14191,49 +14097,6 @@ msgstr "ユーザが追加した証明書"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "証明書を選択"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr "主体者情報"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, fuzzy, kde-format
-#| msgid " <b>[Cross Domain]</b>"
-msgid "<b>Issuer Information</b>"
-msgstr " <b>[クロスドメインです]</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>その他</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr "有効期間"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "シリアル番号"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr "MD5 ダイジェスト"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
-msgstr "SHA1 ダイジェスト"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14633,3 +14496,70 @@ msgstr "証明書は有効ではありません。"
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "情報"
+
+#~ msgid "Output to:"
+#~ msgstr "出力先:"
+
+#~ msgid "Filename:"
+#~ msgstr "ファイル名:"
+
+#~ msgid "Error"
+#~ msgstr "エラー"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "致命的なエラーで中止"
+
+#~ msgid "Warning"
+#~ msgstr "警告"
+
+#~ msgid "Fatal Error"
+#~ msgstr "致命的なエラー"
+
+#, fuzzy
+#~| msgid "Organization:"
+#~ msgid "Organization / Common Name"
+#~ msgstr "組織:"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "組織単位"
+
+#~ msgid "Display..."
+#~ msgstr "表示..."
+
+#~ msgid "Disable"
+#~ msgstr "無効にする"
+
+#~ msgid "Enable"
+#~ msgstr "有効にする"
+
+#~ msgid "Remove"
+#~ msgstr "削除"
+
+#~ msgid "Add..."
+#~ msgstr "追加..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "主体者情報"
+
+#, fuzzy
+#~| msgid " <b>[Cross Domain]</b>"
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr " <b>[クロスドメインです]</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>その他</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "有効期間"
+
+#~ msgid "Serial number"
+#~ msgstr "シリアル番号"
+
+#~ msgid "MD5 digest"
+#~ msgstr "MD5 ダイジェスト"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "SHA1 ダイジェスト"

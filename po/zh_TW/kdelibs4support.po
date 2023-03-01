@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2016-06-29 15:40+0800\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -2324,62 +2324,6 @@ msgstr "系統紀錄"
 msgid "None"
 msgstr "無"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "資訊"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "輸出到:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "檔案名稱:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "錯誤"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "在嚴重錯誤時放棄"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "關閉所有除錯輸出"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "警告"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "嚴重錯誤"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2389,6 +2333,11 @@ msgstr "全部選取(&S)"
 #, kde-format
 msgid "&Deselect All"
 msgstr "取消全部選取(&D)"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "關閉所有除錯輸出"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14033,48 +13982,6 @@ msgstr "授權對話方塊"
 msgid "No metainfo for %1"
 msgstr "沒有 %1 的 meta 資訊"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr "組織 / 通用名稱"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "組織單位"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr "顯示..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "關閉"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "開啟"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "移除"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "新增..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14089,48 +13996,6 @@ msgstr "使用者新增憑證"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "選取憑證"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr "<b>主題資訊</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, kde-format
-msgid "<b>Issuer Information</b>"
-msgstr " <b>發起者資訊</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>其他</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr "有效期間"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "序號"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr "MD5 digest"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
-msgstr "SHA1 digest"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14503,3 +14368,66 @@ msgstr "憑證是非法的。"
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "資訊"
+
+#~ msgid "Output to:"
+#~ msgstr "輸出到:"
+
+#~ msgid "Filename:"
+#~ msgstr "檔案名稱:"
+
+#~ msgid "Error"
+#~ msgstr "錯誤"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "在嚴重錯誤時放棄"
+
+#~ msgid "Warning"
+#~ msgstr "警告"
+
+#~ msgid "Fatal Error"
+#~ msgstr "嚴重錯誤"
+
+#~ msgid "Organization / Common Name"
+#~ msgstr "組織 / 通用名稱"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "組織單位"
+
+#~ msgid "Display..."
+#~ msgstr "顯示..."
+
+#~ msgid "Disable"
+#~ msgstr "關閉"
+
+#~ msgid "Enable"
+#~ msgstr "開啟"
+
+#~ msgid "Remove"
+#~ msgstr "移除"
+
+#~ msgid "Add..."
+#~ msgstr "新增..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "<b>主題資訊</b>"
+
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr " <b>發起者資訊</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>其他</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "有效期間"
+
+#~ msgid "Serial number"
+#~ msgstr "序號"
+
+#~ msgid "MD5 digest"
+#~ msgstr "MD5 digest"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "SHA1 digest"

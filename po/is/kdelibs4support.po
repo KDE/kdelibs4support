@@ -7,20 +7,20 @@
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
 # Arnar Leósson <leosson@frisurf.no>, 2003, 2005.
 # Arnar Leosson <leosson@frisurf.no>, 2005.
-# Sveinn í Felli <sveinki@nett.is>, 2007, 2008, 2009, 2010, 2016, 2022.
+# Sveinn í Felli <sveinki@nett.is>, 2007, 2008, 2009, 2010, 2016, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
-"PO-Revision-Date: 2022-07-07 18:56+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-02-14 08:07+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -2017,12 +2017,10 @@ msgctxt "color"
 msgid "purple4"
 msgstr "fjólublár4"
 
-#, fuzzy, kde-format
-#| msgctxt "Ethiopian month 3 - ShortName"
-#| msgid "Hed"
+#, kde-format
 msgctxt "color"
 msgid "red"
-msgstr "Hed"
+msgstr "rautt"
 
 #, kde-format
 msgctxt "color"
@@ -2144,12 +2142,10 @@ msgctxt "color"
 msgid "snow4"
 msgstr "snjór4"
 
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 10 - ShortName"
-#| msgid "Pan"
+#, kde-format
 msgctxt "color"
 msgid "tan"
-msgstr "Pan"
+msgstr "ljósbrúnt"
 
 #, kde-format
 msgctxt "color"
@@ -2336,62 +2332,6 @@ msgstr "Kerfisannáll"
 msgid "None"
 msgstr "Ekkert"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "Upplýsingar"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "Senda í:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "Skráaheiti:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "Villa"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "Hætta keyrslu við banvæna villu"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Afvirkja allt aflúsunarúttak"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "Aðvörun"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "Banvæn villa"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2401,6 +2341,11 @@ msgstr "Velja &allt"
 #, kde-format
 msgid "&Deselect All"
 msgstr "Velja e&kkert"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Afvirkja allt aflúsunarúttak"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -2413,10 +2358,9 @@ msgid "A dialog box for setting preferences for debug output"
 msgstr "Gluggi til að stilla afúlsunarúttak"
 
 #: kdebugdialog/main.cpp:102
-#, fuzzy, kde-format
-#| msgid "Copyright 1999-2009, David Faure <email>faure@kde.org</email>"
+#, kde-format
 msgid "Copyright 1999-2009, David Faure <faure@kde.org>"
-msgstr "Höfundarréttur 1999-2009, David Faure <email>faure@kde.org</email>"
+msgstr "Höfundarréttur 1999-2009, David Faure <faure@kde.org>"
 
 #: kdebugdialog/main.cpp:103
 #, kde-format
@@ -2619,11 +2563,14 @@ msgid ""
 "Please check the documentation or the source for any\n"
 "licensing terms.\n"
 msgstr ""
+"Ekki er búið að skilgreina notkunarleyfi fyrir þetta forrit.\n"
+"Vinsamlegast athugaðu frumkóðann eða leiðbeiningarnar með því\n"
+"til að finna höfundarréttarupplýsingar.\n"
 
 #: kdecore/k4aboutdata.cpp:273
 #, kde-format
 msgid "This program is distributed under the terms of the %1."
-msgstr ""
+msgstr "Þessu forriti er dreift skv. skilmálum %1."
 
 #: kdecore/k4aboutdata.cpp:297
 #, kde-format
@@ -4280,618 +4227,505 @@ msgstr "%Ey %EC"
 #, kde-format
 msgctxt "Gregorian month 1 - KLocale::NarrowName"
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: kdecore/kcalendarsystemgregorian.cpp:140
 #, kde-format
 msgctxt "Gregorian month 2 - KLocale::NarrowName"
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: kdecore/kcalendarsystemgregorian.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Gregorian month 3 - KLocale::NarrowName"
 msgid "M"
-msgstr "AM"
+msgstr "M"
 
 #: kdecore/kcalendarsystemgregorian.cpp:144
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Gregorian month 4 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr "A"
 
 #: kdecore/kcalendarsystemgregorian.cpp:146
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Gregorian month 5 - KLocale::NarrowName"
 msgid "M"
-msgstr "AM"
+msgstr "M"
 
 #: kdecore/kcalendarsystemgregorian.cpp:148
 #, kde-format
 msgctxt "Gregorian month 6 - KLocale::NarrowName"
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: kdecore/kcalendarsystemgregorian.cpp:150
 #, kde-format
 msgctxt "Gregorian month 7 - KLocale::NarrowName"
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: kdecore/kcalendarsystemgregorian.cpp:152
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Gregorian month 8 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr "A"
 
 #: kdecore/kcalendarsystemgregorian.cpp:154
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
-#| msgid "SE"
+#, kde-format
 msgctxt "Gregorian month 9 - KLocale::NarrowName"
 msgid "S"
-msgstr "SE"
+msgstr "S"
 
 #: kdecore/kcalendarsystemgregorian.cpp:156
 #, kde-format
 msgctxt "Gregorian month 10 - KLocale::NarrowName"
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: kdecore/kcalendarsystemgregorian.cpp:158
 #, kde-format
 msgctxt "Gregorian month 11 - KLocale::NarrowName"
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: kdecore/kcalendarsystemgregorian.cpp:160
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Gregorian Christian Era, years > 0, ShortFormat"
-#| msgid "AD"
+#, kde-format
 msgctxt "Gregorian month 12 - KLocale::NarrowName"
 msgid "D"
-msgstr "e.Kr."
+msgstr "D"
 
 #: kdecore/kcalendarsystemgregorian.cpp:169
-#, fuzzy, kde-format
-#| msgctxt "of January"
-#| msgid "of Jan"
+#, kde-format
 msgctxt "Gregorian month 1 - KLocale::ShortName Possessive"
 msgid "of Jan"
 msgstr "í jan"
 
 #: kdecore/kcalendarsystemgregorian.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "of February"
-#| msgid "of Feb"
+#, kde-format
 msgctxt "Gregorian month 2 - KLocale::ShortName Possessive"
 msgid "of Feb"
 msgstr "í feb"
 
 #: kdecore/kcalendarsystemgregorian.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "of March"
-#| msgid "of Mar"
+#, kde-format
 msgctxt "Gregorian month 3 - KLocale::ShortName Possessive"
 msgid "of Mar"
 msgstr "í mar"
 
 #: kdecore/kcalendarsystemgregorian.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "of April"
-#| msgid "of Apr"
+#, kde-format
 msgctxt "Gregorian month 4 - KLocale::ShortName Possessive"
 msgid "of Apr"
 msgstr "í apr"
 
 #: kdecore/kcalendarsystemgregorian.cpp:177
-#, fuzzy, kde-format
-#| msgctxt "of May short"
-#| msgid "of May"
+#, kde-format
 msgctxt "Gregorian month 5 - KLocale::ShortName Possessive"
 msgid "of May"
 msgstr "í maí"
 
 #: kdecore/kcalendarsystemgregorian.cpp:179
-#, fuzzy, kde-format
-#| msgctxt "of June"
-#| msgid "of Jun"
+#, kde-format
 msgctxt "Gregorian month 6 - KLocale::ShortName Possessive"
 msgid "of Jun"
 msgstr "í jún"
 
 #: kdecore/kcalendarsystemgregorian.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "of July"
-#| msgid "of Jul"
+#, kde-format
 msgctxt "Gregorian month 7 - KLocale::ShortName Possessive"
 msgid "of Jul"
 msgstr "í júl"
 
 #: kdecore/kcalendarsystemgregorian.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "of August"
-#| msgid "of Aug"
+#, kde-format
 msgctxt "Gregorian month 8 - KLocale::ShortName Possessive"
 msgid "of Aug"
 msgstr "í ágú"
 
 #: kdecore/kcalendarsystemgregorian.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "of September"
-#| msgid "of Sep"
+#, kde-format
 msgctxt "Gregorian month 9 - KLocale::ShortName Possessive"
 msgid "of Sep"
 msgstr "í sep"
 
 #: kdecore/kcalendarsystemgregorian.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "of October"
-#| msgid "of Oct"
+#, kde-format
 msgctxt "Gregorian month 10 - KLocale::ShortName Possessive"
 msgid "of Oct"
 msgstr "í okt"
 
 #: kdecore/kcalendarsystemgregorian.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "of November"
-#| msgid "of Nov"
+#, kde-format
 msgctxt "Gregorian month 11 - KLocale::ShortName Possessive"
 msgid "of Nov"
 msgstr "í nóv"
 
 #: kdecore/kcalendarsystemgregorian.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "of December"
-#| msgid "of Dec"
+#, kde-format
 msgctxt "Gregorian month 12 - KLocale::ShortName Possessive"
 msgid "of Dec"
 msgstr "í des"
 
 #: kdecore/kcalendarsystemgregorian.cpp:200
-#, fuzzy, kde-format
-#| msgctxt "January"
-#| msgid "Jan"
+#, kde-format
 msgctxt "Gregorian month 1 - KLocale::ShortName"
 msgid "Jan"
 msgstr "jan"
 
 #: kdecore/kcalendarsystemgregorian.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "February"
-#| msgid "Feb"
+#, kde-format
 msgctxt "Gregorian month 2 - KLocale::ShortName"
 msgid "Feb"
 msgstr "feb"
 
 #: kdecore/kcalendarsystemgregorian.cpp:204
-#, fuzzy, kde-format
-#| msgctxt "March"
-#| msgid "Mar"
+#, kde-format
 msgctxt "Gregorian month 3 - KLocale::ShortName"
 msgid "Mar"
 msgstr "mar"
 
 #: kdecore/kcalendarsystemgregorian.cpp:206
-#, fuzzy, kde-format
-#| msgctxt "April"
-#| msgid "Apr"
+#, kde-format
 msgctxt "Gregorian month 4 - KLocale::ShortName"
 msgid "Apr"
 msgstr "apr"
 
 #: kdecore/kcalendarsystemgregorian.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "May short"
-#| msgid "May"
+#, kde-format
 msgctxt "Gregorian month 5 - KLocale::ShortName"
 msgid "May"
 msgstr "maí"
 
 #: kdecore/kcalendarsystemgregorian.cpp:210
-#, fuzzy, kde-format
-#| msgctxt "June"
-#| msgid "Jun"
+#, kde-format
 msgctxt "Gregorian month 6 - KLocale::ShortName"
 msgid "Jun"
 msgstr "jún"
 
 #: kdecore/kcalendarsystemgregorian.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "July"
-#| msgid "Jul"
+#, kde-format
 msgctxt "Gregorian month 7 - KLocale::ShortName"
 msgid "Jul"
 msgstr "júl"
 
 #: kdecore/kcalendarsystemgregorian.cpp:214
-#, fuzzy, kde-format
-#| msgctxt "August"
-#| msgid "Aug"
+#, kde-format
 msgctxt "Gregorian month 8 - KLocale::ShortName"
 msgid "Aug"
 msgstr "ágú"
 
 #: kdecore/kcalendarsystemgregorian.cpp:216
-#, fuzzy, kde-format
-#| msgctxt "September"
-#| msgid "Sep"
+#, kde-format
 msgctxt "Gregorian month 9 - KLocale::ShortName"
 msgid "Sep"
 msgstr "sep"
 
 #: kdecore/kcalendarsystemgregorian.cpp:218
-#, fuzzy, kde-format
-#| msgctxt "October"
-#| msgid "Oct"
+#, kde-format
 msgctxt "Gregorian month 10 - KLocale::ShortName"
 msgid "Oct"
 msgstr "okt"
 
 #: kdecore/kcalendarsystemgregorian.cpp:220
-#, fuzzy, kde-format
-#| msgctxt "November"
-#| msgid "Nov"
+#, kde-format
 msgctxt "Gregorian month 11 - KLocale::ShortName"
 msgid "Nov"
 msgstr "nóv"
 
 #: kdecore/kcalendarsystemgregorian.cpp:222
-#, fuzzy, kde-format
-#| msgctxt "December"
-#| msgid "Dec"
+#, kde-format
 msgctxt "Gregorian month 12 - KLocale::ShortName"
 msgid "Dec"
 msgstr "des"
 
 #: kdecore/kcalendarsystemgregorian.cpp:231
-#, fuzzy, kde-format
-#| msgid "of January"
+#, kde-format
 msgctxt "Gregorian month 1 - KLocale::LongName Possessive"
 msgid "of January"
 msgstr "í janúar"
 
 #: kdecore/kcalendarsystemgregorian.cpp:233
-#, fuzzy, kde-format
-#| msgid "of February"
+#, kde-format
 msgctxt "Gregorian month 2 - KLocale::LongName Possessive"
 msgid "of February"
 msgstr "í febrúar"
 
 #: kdecore/kcalendarsystemgregorian.cpp:235
-#, fuzzy, kde-format
-#| msgid "of March"
+#, kde-format
 msgctxt "Gregorian month 3 - KLocale::LongName Possessive"
 msgid "of March"
 msgstr "í mars"
 
 #: kdecore/kcalendarsystemgregorian.cpp:237
-#, fuzzy, kde-format
-#| msgid "of April"
+#, kde-format
 msgctxt "Gregorian month 4 - KLocale::LongName Possessive"
 msgid "of April"
 msgstr "í apríl"
 
 #: kdecore/kcalendarsystemgregorian.cpp:239
-#, fuzzy, kde-format
-#| msgctxt "of May short"
-#| msgid "of May"
+#, kde-format
 msgctxt "Gregorian month 5 - KLocale::LongName Possessive"
 msgid "of May"
 msgstr "í maí"
 
 #: kdecore/kcalendarsystemgregorian.cpp:241
-#, fuzzy, kde-format
-#| msgid "of June"
+#, kde-format
 msgctxt "Gregorian month 6 - KLocale::LongName Possessive"
 msgid "of June"
 msgstr "í júní"
 
 #: kdecore/kcalendarsystemgregorian.cpp:243
-#, fuzzy, kde-format
-#| msgid "of July"
+#, kde-format
 msgctxt "Gregorian month 7 - KLocale::LongName Possessive"
 msgid "of July"
 msgstr "í júlí"
 
 #: kdecore/kcalendarsystemgregorian.cpp:245
-#, fuzzy, kde-format
-#| msgid "of August"
+#, kde-format
 msgctxt "Gregorian month 8 - KLocale::LongName Possessive"
 msgid "of August"
 msgstr "í ágúst"
 
 #: kdecore/kcalendarsystemgregorian.cpp:247
-#, fuzzy, kde-format
-#| msgid "of September"
+#, kde-format
 msgctxt "Gregorian month 9 - KLocale::LongName Possessive"
 msgid "of September"
 msgstr "í september"
 
 #: kdecore/kcalendarsystemgregorian.cpp:249
-#, fuzzy, kde-format
-#| msgid "of October"
+#, kde-format
 msgctxt "Gregorian month 10 - KLocale::LongName Possessive"
 msgid "of October"
 msgstr "í október"
 
 #: kdecore/kcalendarsystemgregorian.cpp:251
-#, fuzzy, kde-format
-#| msgid "of November"
+#, kde-format
 msgctxt "Gregorian month 11 - KLocale::LongName Possessive"
 msgid "of November"
 msgstr "í nóvember"
 
 #: kdecore/kcalendarsystemgregorian.cpp:253
-#, fuzzy, kde-format
-#| msgid "of December"
+#, kde-format
 msgctxt "Gregorian month 12 - KLocale::LongName Possessive"
 msgid "of December"
 msgstr "í desember"
 
 #: kdecore/kcalendarsystemgregorian.cpp:262
-#, fuzzy, kde-format
-#| msgid "January"
+#, kde-format
 msgctxt "Gregorian month 1 - KLocale::LongName"
 msgid "January"
 msgstr "janúar"
 
 #: kdecore/kcalendarsystemgregorian.cpp:264
-#, fuzzy, kde-format
-#| msgid "February"
+#, kde-format
 msgctxt "Gregorian month 2 - KLocale::LongName"
 msgid "February"
 msgstr "febrúar"
 
 #: kdecore/kcalendarsystemgregorian.cpp:266
-#, fuzzy, kde-format
-#| msgctxt "March long"
-#| msgid "March"
+#, kde-format
 msgctxt "Gregorian month 3 - KLocale::LongName"
 msgid "March"
 msgstr "mars"
 
 #: kdecore/kcalendarsystemgregorian.cpp:268
-#, fuzzy, kde-format
-#| msgid "April"
+#, kde-format
 msgctxt "Gregorian month 4 - KLocale::LongName"
 msgid "April"
 msgstr "apríl"
 
 #: kdecore/kcalendarsystemgregorian.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "May short"
-#| msgid "May"
+#, kde-format
 msgctxt "Gregorian month 5 - KLocale::LongName"
 msgid "May"
 msgstr "maí"
 
 #: kdecore/kcalendarsystemgregorian.cpp:272
-#, fuzzy, kde-format
-#| msgid "June"
+#, kde-format
 msgctxt "Gregorian month 6 - KLocale::LongName"
 msgid "June"
 msgstr "júní"
 
 #: kdecore/kcalendarsystemgregorian.cpp:274
-#, fuzzy, kde-format
-#| msgid "July"
+#, kde-format
 msgctxt "Gregorian month 7 - KLocale::LongName"
 msgid "July"
 msgstr "júlí"
 
 #: kdecore/kcalendarsystemgregorian.cpp:276
-#, fuzzy, kde-format
-#| msgctxt "August long"
-#| msgid "August"
+#, kde-format
 msgctxt "Gregorian month 8 - KLocale::LongName"
 msgid "August"
 msgstr "ágúst"
 
 #: kdecore/kcalendarsystemgregorian.cpp:278
-#, fuzzy, kde-format
-#| msgid "September"
+#, kde-format
 msgctxt "Gregorian month 9 - KLocale::LongName"
 msgid "September"
 msgstr "september"
 
 #: kdecore/kcalendarsystemgregorian.cpp:280
-#, fuzzy, kde-format
-#| msgid "October"
+#, kde-format
 msgctxt "Gregorian month 10 - KLocale::LongName"
 msgid "October"
 msgstr "október"
 
 #: kdecore/kcalendarsystemgregorian.cpp:282
-#, fuzzy, kde-format
-#| msgid "November"
+#, kde-format
 msgctxt "Gregorian month 11 - KLocale::LongName"
 msgid "November"
 msgstr "nóvember"
 
 #: kdecore/kcalendarsystemgregorian.cpp:284
-#, fuzzy, kde-format
-#| msgid "December"
+#, kde-format
 msgctxt "Gregorian month 12 - KLocale::LongName"
 msgid "December"
 msgstr "desember"
 
 #: kdecore/kcalendarsystemgregorian.cpp:297
 #: kdecore/kcalendarsystemhebrew.cpp:807
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Gregorian weekday 1 - KLocale::NarrowName "
 msgid "M"
-msgstr "AM"
+msgstr "M"
 
 #: kdecore/kcalendarsystemgregorian.cpp:299
 #: kdecore/kcalendarsystemhebrew.cpp:809
 #, kde-format
 msgctxt "Gregorian weekday 2 - KLocale::NarrowName "
 msgid "T"
-msgstr ""
+msgstr "Þ"
 
 #: kdecore/kcalendarsystemgregorian.cpp:301
 #: kdecore/kcalendarsystemhebrew.cpp:811
 #, kde-format
 msgctxt "Gregorian weekday 3 - KLocale::NarrowName "
 msgid "W"
-msgstr ""
+msgstr "M"
 
 #: kdecore/kcalendarsystemgregorian.cpp:303
 #: kdecore/kcalendarsystemhebrew.cpp:813
 #, kde-format
 msgctxt "Gregorian weekday 4 - KLocale::NarrowName "
 msgid "T"
-msgstr ""
+msgstr "F"
 
 #: kdecore/kcalendarsystemgregorian.cpp:305
 #: kdecore/kcalendarsystemhebrew.cpp:815
 #, kde-format
 msgctxt "Gregorian weekday 5 - KLocale::NarrowName "
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: kdecore/kcalendarsystemgregorian.cpp:307
 #: kdecore/kcalendarsystemhebrew.cpp:817
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
-#| msgid "SE"
+#, kde-format
 msgctxt "Gregorian weekday 6 - KLocale::NarrowName "
 msgid "S"
-msgstr "SE"
+msgstr "L"
 
 #: kdecore/kcalendarsystemgregorian.cpp:309
 #: kdecore/kcalendarsystemhebrew.cpp:819
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
-#| msgid "SE"
+#, kde-format
 msgctxt "Gregorian weekday 7 - KLocale::NarrowName "
 msgid "S"
-msgstr "SE"
+msgstr "S"
 
 #: kdecore/kcalendarsystemgregorian.cpp:318
 #: kdecore/kcalendarsystemhebrew.cpp:828
-#, fuzzy, kde-format
-#| msgctxt "Monday"
-#| msgid "Mon"
+#, kde-format
 msgctxt "Gregorian weekday 1 - KLocale::ShortName"
 msgid "Mon"
 msgstr "mán"
 
 #: kdecore/kcalendarsystemgregorian.cpp:320
 #: kdecore/kcalendarsystemhebrew.cpp:830
-#, fuzzy, kde-format
-#| msgctxt "Tuesday"
-#| msgid "Tue"
+#, kde-format
 msgctxt "Gregorian weekday 2 - KLocale::ShortName"
 msgid "Tue"
 msgstr "þri"
 
 #: kdecore/kcalendarsystemgregorian.cpp:322
 #: kdecore/kcalendarsystemhebrew.cpp:832
-#, fuzzy, kde-format
-#| msgctxt "Wednesday"
-#| msgid "Wed"
+#, kde-format
 msgctxt "Gregorian weekday 3 - KLocale::ShortName"
 msgid "Wed"
 msgstr "mið"
 
 #: kdecore/kcalendarsystemgregorian.cpp:324
 #: kdecore/kcalendarsystemhebrew.cpp:834
-#, fuzzy, kde-format
-#| msgctxt "Thursday"
-#| msgid "Thu"
+#, kde-format
 msgctxt "Gregorian weekday 4 - KLocale::ShortName"
 msgid "Thu"
 msgstr "fim"
 
 #: kdecore/kcalendarsystemgregorian.cpp:326
 #: kdecore/kcalendarsystemhebrew.cpp:836
-#, fuzzy, kde-format
-#| msgctxt "Friday"
-#| msgid "Fri"
+#, kde-format
 msgctxt "Gregorian weekday 5 - KLocale::ShortName"
 msgid "Fri"
 msgstr "fös"
 
 #: kdecore/kcalendarsystemgregorian.cpp:328
 #: kdecore/kcalendarsystemhebrew.cpp:838
-#, fuzzy, kde-format
-#| msgctxt "Saturday"
-#| msgid "Sat"
+#, kde-format
 msgctxt "Gregorian weekday 6 - KLocale::ShortName"
 msgid "Sat"
 msgstr "lau"
 
 #: kdecore/kcalendarsystemgregorian.cpp:330
 #: kdecore/kcalendarsystemhebrew.cpp:840
-#, fuzzy, kde-format
-#| msgctxt "Sunday"
-#| msgid "Sun"
+#, kde-format
 msgctxt "Gregorian weekday 7 - KLocale::ShortName"
 msgid "Sun"
 msgstr "sun"
 
 #: kdecore/kcalendarsystemgregorian.cpp:337
 #: kdecore/kcalendarsystemhebrew.cpp:847
-#, fuzzy, kde-format
-#| msgid "Monday"
+#, kde-format
 msgctxt "Gregorian weekday 1 - KLocale::LongName"
 msgid "Monday"
 msgstr "Mánudagur"
 
 #: kdecore/kcalendarsystemgregorian.cpp:339
 #: kdecore/kcalendarsystemhebrew.cpp:849
-#, fuzzy, kde-format
-#| msgid "Tuesday"
+#, kde-format
 msgctxt "Gregorian weekday 2 - KLocale::LongName"
 msgid "Tuesday"
 msgstr "Þriðjudagur"
 
 #: kdecore/kcalendarsystemgregorian.cpp:341
 #: kdecore/kcalendarsystemhebrew.cpp:851
-#, fuzzy, kde-format
-#| msgid "Wednesday"
+#, kde-format
 msgctxt "Gregorian weekday 3 - KLocale::LongName"
 msgid "Wednesday"
 msgstr "Miðvikudagur"
 
 #: kdecore/kcalendarsystemgregorian.cpp:343
 #: kdecore/kcalendarsystemhebrew.cpp:853
-#, fuzzy, kde-format
-#| msgid "Thursday"
+#, kde-format
 msgctxt "Gregorian weekday 4 - KLocale::LongName"
 msgid "Thursday"
 msgstr "Fimmtudagur"
 
 #: kdecore/kcalendarsystemgregorian.cpp:345
 #: kdecore/kcalendarsystemhebrew.cpp:855
-#, fuzzy, kde-format
-#| msgid "Friday"
+#, kde-format
 msgctxt "Gregorian weekday 5 - KLocale::LongName"
 msgid "Friday"
 msgstr "Föstudagur"
 
 #: kdecore/kcalendarsystemgregorian.cpp:347
 #: kdecore/kcalendarsystemhebrew.cpp:857
-#, fuzzy, kde-format
-#| msgid "Saturday"
+#, kde-format
 msgctxt "Gregorian weekday 6 - KLocale::LongName"
 msgid "Saturday"
 msgstr "Laugardagur"
 
 #: kdecore/kcalendarsystemgregorian.cpp:349
 #: kdecore/kcalendarsystemhebrew.cpp:859
-#, fuzzy, kde-format
-#| msgid "Sunday"
+#, kde-format
 msgctxt "Gregorian weekday 7 - KLocale::LongName"
 msgid "Sunday"
 msgstr "Sunnudagur"
@@ -7432,597 +7266,484 @@ msgstr "%Ey %EC"
 #, kde-format
 msgctxt "Julian month 1 - KLocale::NarrowName"
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: kdecore/kcalendarsystemjulian.cpp:174
 #, kde-format
 msgctxt "Julian month 2 - KLocale::NarrowName"
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: kdecore/kcalendarsystemjulian.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Julian month 3 - KLocale::NarrowName"
 msgid "M"
-msgstr "AM"
+msgstr "M"
 
 #: kdecore/kcalendarsystemjulian.cpp:178
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Julian month 4 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr "A"
 
 #: kdecore/kcalendarsystemjulian.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Julian month 5 - KLocale::NarrowName"
 msgid "M"
-msgstr "AM"
+msgstr "M"
 
 #: kdecore/kcalendarsystemjulian.cpp:182
 #, kde-format
 msgctxt "Julian month 6 - KLocale::NarrowName"
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: kdecore/kcalendarsystemjulian.cpp:184
 #, kde-format
 msgctxt "Julian month 7 - KLocale::NarrowName"
 msgid "J"
-msgstr ""
+msgstr "J"
 
 #: kdecore/kcalendarsystemjulian.cpp:186
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Julian month 8 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr "A"
 
 #: kdecore/kcalendarsystemjulian.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
-#| msgid "SE"
+#, kde-format
 msgctxt "Julian month 9 - KLocale::NarrowName"
 msgid "S"
-msgstr "SE"
+msgstr "S"
 
 #: kdecore/kcalendarsystemjulian.cpp:190
 #, kde-format
 msgctxt "Julian month 10 - KLocale::NarrowName"
 msgid "O"
-msgstr ""
+msgstr "O"
 
 #: kdecore/kcalendarsystemjulian.cpp:192
 #, kde-format
 msgctxt "Julian month 11 - KLocale::NarrowName"
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: kdecore/kcalendarsystemjulian.cpp:194
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Gregorian Christian Era, years > 0, ShortFormat"
-#| msgid "AD"
+#, kde-format
 msgctxt "Julian month 12 - KLocale::NarrowName"
 msgid "D"
-msgstr "e.Kr."
+msgstr "D"
 
 #: kdecore/kcalendarsystemjulian.cpp:203
-#, fuzzy, kde-format
-#| msgctxt "of January"
-#| msgid "of Jan"
+#, kde-format
 msgctxt "Julian month 1 - KLocale::ShortName Possessive"
 msgid "of Jan"
 msgstr "í jan"
 
 #: kdecore/kcalendarsystemjulian.cpp:205
-#, fuzzy, kde-format
-#| msgctxt "of February"
-#| msgid "of Feb"
+#, kde-format
 msgctxt "Julian month 2 - KLocale::ShortName Possessive"
 msgid "of Feb"
 msgstr "í feb"
 
 #: kdecore/kcalendarsystemjulian.cpp:207
-#, fuzzy, kde-format
-#| msgctxt "of March"
-#| msgid "of Mar"
+#, kde-format
 msgctxt "Julian month 3 - KLocale::ShortName Possessive"
 msgid "of Mar"
 msgstr "í mar"
 
 #: kdecore/kcalendarsystemjulian.cpp:209
-#, fuzzy, kde-format
-#| msgctxt "of April"
-#| msgid "of Apr"
+#, kde-format
 msgctxt "Julian month 4 - KLocale::ShortName Possessive"
 msgid "of Apr"
 msgstr "í apr"
 
 #: kdecore/kcalendarsystemjulian.cpp:211
-#, fuzzy, kde-format
-#| msgctxt "of May short"
-#| msgid "of May"
+#, kde-format
 msgctxt "Julian month 5 - KLocale::ShortName Possessive"
 msgid "of May"
 msgstr "í maí"
 
 #: kdecore/kcalendarsystemjulian.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "of June"
-#| msgid "of Jun"
+#, kde-format
 msgctxt "Julian month 6 - KLocale::ShortName Possessive"
 msgid "of Jun"
 msgstr "í jún"
 
 #: kdecore/kcalendarsystemjulian.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "of July"
-#| msgid "of Jul"
+#, kde-format
 msgctxt "Julian month 7 - KLocale::ShortName Possessive"
 msgid "of Jul"
 msgstr "í júl"
 
 #: kdecore/kcalendarsystemjulian.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "of August"
-#| msgid "of Aug"
+#, kde-format
 msgctxt "Julian month 8 - KLocale::ShortName Possessive"
 msgid "of Aug"
 msgstr "í ágú"
 
 #: kdecore/kcalendarsystemjulian.cpp:219
-#, fuzzy, kde-format
-#| msgctxt "of September"
-#| msgid "of Sep"
+#, kde-format
 msgctxt "Julian month 9 - KLocale::ShortName Possessive"
 msgid "of Sep"
 msgstr "í sep"
 
 #: kdecore/kcalendarsystemjulian.cpp:221
-#, fuzzy, kde-format
-#| msgctxt "of October"
-#| msgid "of Oct"
+#, kde-format
 msgctxt "Julian month 10 - KLocale::ShortName Possessive"
 msgid "of Oct"
 msgstr "í okt"
 
 #: kdecore/kcalendarsystemjulian.cpp:223
-#, fuzzy, kde-format
-#| msgctxt "of November"
-#| msgid "of Nov"
+#, kde-format
 msgctxt "Julian month 11 - KLocale::ShortName Possessive"
 msgid "of Nov"
 msgstr "í nóv"
 
 #: kdecore/kcalendarsystemjulian.cpp:225
-#, fuzzy, kde-format
-#| msgctxt "of December"
-#| msgid "of Dec"
+#, kde-format
 msgctxt "Julian month 12 - KLocale::ShortName Possessive"
 msgid "of Dec"
 msgstr "í des"
 
 #: kdecore/kcalendarsystemjulian.cpp:234
-#, fuzzy, kde-format
-#| msgctxt "January"
-#| msgid "Jan"
+#, kde-format
 msgctxt "Julian month 1 - KLocale::ShortName"
 msgid "Jan"
 msgstr "jan"
 
 #: kdecore/kcalendarsystemjulian.cpp:236
-#, fuzzy, kde-format
-#| msgctxt "February"
-#| msgid "Feb"
+#, kde-format
 msgctxt "Julian month 2 - KLocale::ShortName"
 msgid "Feb"
 msgstr "feb"
 
 #: kdecore/kcalendarsystemjulian.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "March"
-#| msgid "Mar"
+#, kde-format
 msgctxt "Julian month 3 - KLocale::ShortName"
 msgid "Mar"
 msgstr "mar"
 
 #: kdecore/kcalendarsystemjulian.cpp:240
-#, fuzzy, kde-format
-#| msgctxt "April"
-#| msgid "Apr"
+#, kde-format
 msgctxt "Julian month 4 - KLocale::ShortName"
 msgid "Apr"
 msgstr "apr"
 
 #: kdecore/kcalendarsystemjulian.cpp:242
-#, fuzzy, kde-format
-#| msgctxt "May short"
-#| msgid "May"
+#, kde-format
 msgctxt "Julian month 5 - KLocale::ShortName"
 msgid "May"
 msgstr "maí"
 
 #: kdecore/kcalendarsystemjulian.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "June"
-#| msgid "Jun"
+#, kde-format
 msgctxt "Julian month 6 - KLocale::ShortName"
 msgid "Jun"
 msgstr "jún"
 
 #: kdecore/kcalendarsystemjulian.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "July"
-#| msgid "Jul"
+#, kde-format
 msgctxt "Julian month 7 - KLocale::ShortName"
 msgid "Jul"
 msgstr "júl"
 
 #: kdecore/kcalendarsystemjulian.cpp:248
-#, fuzzy, kde-format
-#| msgctxt "August"
-#| msgid "Aug"
+#, kde-format
 msgctxt "Julian month 8 - KLocale::ShortName"
 msgid "Aug"
 msgstr "ágú"
 
 #: kdecore/kcalendarsystemjulian.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "September"
-#| msgid "Sep"
+#, kde-format
 msgctxt "Julian month 9 - KLocale::ShortName"
 msgid "Sep"
 msgstr "sep"
 
 #: kdecore/kcalendarsystemjulian.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "October"
-#| msgid "Oct"
+#, kde-format
 msgctxt "Julian month 10 - KLocale::ShortName"
 msgid "Oct"
 msgstr "okt"
 
 #: kdecore/kcalendarsystemjulian.cpp:254
-#, fuzzy, kde-format
-#| msgctxt "November"
-#| msgid "Nov"
+#, kde-format
 msgctxt "Julian month 11 - KLocale::ShortName"
 msgid "Nov"
 msgstr "nóv"
 
 #: kdecore/kcalendarsystemjulian.cpp:256
-#, fuzzy, kde-format
-#| msgctxt "December"
-#| msgid "Dec"
+#, kde-format
 msgctxt "Julian month 12 - KLocale::ShortName"
 msgid "Dec"
 msgstr "des"
 
 #: kdecore/kcalendarsystemjulian.cpp:265
-#, fuzzy, kde-format
-#| msgid "of January"
+#, kde-format
 msgctxt "Julian month 1 - KLocale::LongName Possessive"
 msgid "of January"
 msgstr "í janúar"
 
 #: kdecore/kcalendarsystemjulian.cpp:267
-#, fuzzy, kde-format
-#| msgid "of February"
+#, kde-format
 msgctxt "Julian month 2 - KLocale::LongName Possessive"
 msgid "of February"
 msgstr "í febrúar"
 
 #: kdecore/kcalendarsystemjulian.cpp:269
-#, fuzzy, kde-format
-#| msgid "of March"
+#, kde-format
 msgctxt "Julian month 3 - KLocale::LongName Possessive"
 msgid "of March"
 msgstr "í mars"
 
 #: kdecore/kcalendarsystemjulian.cpp:271
-#, fuzzy, kde-format
-#| msgid "of April"
+#, kde-format
 msgctxt "Julian month 4 - KLocale::LongName Possessive"
 msgid "of April"
 msgstr "í apríl"
 
 #: kdecore/kcalendarsystemjulian.cpp:273
-#, fuzzy, kde-format
-#| msgctxt "of May short"
-#| msgid "of May"
+#, kde-format
 msgctxt "Julian month 5 - KLocale::LongName Possessive"
 msgid "of May"
 msgstr "í maí"
 
 #: kdecore/kcalendarsystemjulian.cpp:275
-#, fuzzy, kde-format
-#| msgid "of June"
+#, kde-format
 msgctxt "Julian month 6 - KLocale::LongName Possessive"
 msgid "of June"
 msgstr "í júní"
 
 #: kdecore/kcalendarsystemjulian.cpp:277
-#, fuzzy, kde-format
-#| msgid "of July"
+#, kde-format
 msgctxt "Julian month 7 - KLocale::LongName Possessive"
 msgid "of July"
 msgstr "í júlí"
 
 #: kdecore/kcalendarsystemjulian.cpp:279
-#, fuzzy, kde-format
-#| msgid "of August"
+#, kde-format
 msgctxt "Julian month 8 - KLocale::LongName Possessive"
 msgid "of August"
 msgstr "í ágúst"
 
 #: kdecore/kcalendarsystemjulian.cpp:281
-#, fuzzy, kde-format
-#| msgid "of September"
+#, kde-format
 msgctxt "Julian month 9 - KLocale::LongName Possessive"
 msgid "of September"
 msgstr "í september"
 
 #: kdecore/kcalendarsystemjulian.cpp:283
-#, fuzzy, kde-format
-#| msgid "of October"
+#, kde-format
 msgctxt "Julian month 10 - KLocale::LongName Possessive"
 msgid "of October"
 msgstr "í október"
 
 #: kdecore/kcalendarsystemjulian.cpp:285
-#, fuzzy, kde-format
-#| msgid "of November"
+#, kde-format
 msgctxt "Julian month 11 - KLocale::LongName Possessive"
 msgid "of November"
 msgstr "í nóvember"
 
 #: kdecore/kcalendarsystemjulian.cpp:287
-#, fuzzy, kde-format
-#| msgid "of December"
+#, kde-format
 msgctxt "Julian month 12 - KLocale::LongName Possessive"
 msgid "of December"
 msgstr "í desember"
 
 #: kdecore/kcalendarsystemjulian.cpp:296
-#, fuzzy, kde-format
-#| msgid "January"
+#, kde-format
 msgctxt "Julian month 1 - KLocale::LongName"
 msgid "January"
 msgstr "janúar"
 
 #: kdecore/kcalendarsystemjulian.cpp:298
-#, fuzzy, kde-format
-#| msgid "February"
+#, kde-format
 msgctxt "Julian month 2 - KLocale::LongName"
 msgid "February"
 msgstr "febrúar"
 
 #: kdecore/kcalendarsystemjulian.cpp:300
-#, fuzzy, kde-format
-#| msgctxt "March long"
-#| msgid "March"
+#, kde-format
 msgctxt "Julian month 3 - KLocale::LongName"
 msgid "March"
 msgstr "mars"
 
 #: kdecore/kcalendarsystemjulian.cpp:302
-#, fuzzy, kde-format
-#| msgid "April"
+#, kde-format
 msgctxt "Julian month 4 - KLocale::LongName"
 msgid "April"
 msgstr "apríl"
 
 #: kdecore/kcalendarsystemjulian.cpp:304
-#, fuzzy, kde-format
-#| msgctxt "May short"
-#| msgid "May"
+#, kde-format
 msgctxt "Julian month 5 - KLocale::LongName"
 msgid "May"
 msgstr "maí"
 
 #: kdecore/kcalendarsystemjulian.cpp:306
-#, fuzzy, kde-format
-#| msgid "June"
+#, kde-format
 msgctxt "Julian month 6 - KLocale::LongName"
 msgid "June"
 msgstr "júní"
 
 #: kdecore/kcalendarsystemjulian.cpp:308
-#, fuzzy, kde-format
-#| msgid "July"
+#, kde-format
 msgctxt "Julian month 7 - KLocale::LongName"
 msgid "July"
 msgstr "júlí"
 
 #: kdecore/kcalendarsystemjulian.cpp:310
-#, fuzzy, kde-format
-#| msgctxt "August long"
-#| msgid "August"
+#, kde-format
 msgctxt "Julian month 8 - KLocale::LongName"
 msgid "August"
 msgstr "ágúst"
 
 #: kdecore/kcalendarsystemjulian.cpp:312
-#, fuzzy, kde-format
-#| msgid "September"
+#, kde-format
 msgctxt "Julian month 9 - KLocale::LongName"
 msgid "September"
 msgstr "september"
 
 #: kdecore/kcalendarsystemjulian.cpp:314
-#, fuzzy, kde-format
-#| msgid "October"
+#, kde-format
 msgctxt "Julian month 10 - KLocale::LongName"
 msgid "October"
 msgstr "október"
 
 #: kdecore/kcalendarsystemjulian.cpp:316
-#, fuzzy, kde-format
-#| msgid "November"
+#, kde-format
 msgctxt "Julian month 11 - KLocale::LongName"
 msgid "November"
 msgstr "nóvember"
 
 #: kdecore/kcalendarsystemjulian.cpp:318
-#, fuzzy, kde-format
-#| msgid "December"
+#, kde-format
 msgctxt "Julian month 12 - KLocale::LongName"
 msgid "December"
 msgstr "desember"
 
 #: kdecore/kcalendarsystemjulian.cpp:331
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Julian weekday 1 - KLocale::NarrowName "
 msgid "M"
-msgstr "AM"
+msgstr "M"
 
 #: kdecore/kcalendarsystemjulian.cpp:333
 #, kde-format
 msgctxt "Julian weekday 2 - KLocale::NarrowName "
 msgid "T"
-msgstr ""
+msgstr "Þ"
 
 #: kdecore/kcalendarsystemjulian.cpp:335
 #, kde-format
 msgctxt "Julian weekday 3 - KLocale::NarrowName "
 msgid "W"
-msgstr ""
+msgstr "M"
 
 #: kdecore/kcalendarsystemjulian.cpp:337
 #, kde-format
 msgctxt "Julian weekday 4 - KLocale::NarrowName "
 msgid "T"
-msgstr ""
+msgstr "F"
 
 #: kdecore/kcalendarsystemjulian.cpp:339
 #, kde-format
 msgctxt "Julian weekday 5 - KLocale::NarrowName "
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: kdecore/kcalendarsystemjulian.cpp:341
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
-#| msgid "SE"
+#, kde-format
 msgctxt "Julian weekday 6 - KLocale::NarrowName "
 msgid "S"
-msgstr "SE"
+msgstr "L"
 
 #: kdecore/kcalendarsystemjulian.cpp:343
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
-#| msgid "SE"
+#, kde-format
 msgctxt "Julian weekday 7 - KLocale::NarrowName "
 msgid "S"
-msgstr "SE"
+msgstr "S"
 
 #: kdecore/kcalendarsystemjulian.cpp:352
-#, fuzzy, kde-format
-#| msgctxt "Monday"
-#| msgid "Mon"
+#, kde-format
 msgctxt "Julian weekday 1 - KLocale::ShortName"
 msgid "Mon"
 msgstr "mán"
 
 #: kdecore/kcalendarsystemjulian.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "Tuesday"
-#| msgid "Tue"
+#, kde-format
 msgctxt "Julian weekday 2 - KLocale::ShortName"
 msgid "Tue"
 msgstr "þri"
 
 #: kdecore/kcalendarsystemjulian.cpp:356
-#, fuzzy, kde-format
-#| msgctxt "Wednesday"
-#| msgid "Wed"
+#, kde-format
 msgctxt "Julian weekday 3 - KLocale::ShortName"
 msgid "Wed"
 msgstr "mið"
 
 #: kdecore/kcalendarsystemjulian.cpp:358
-#, fuzzy, kde-format
-#| msgctxt "Thursday"
-#| msgid "Thu"
+#, kde-format
 msgctxt "Julian weekday 4 - KLocale::ShortName"
 msgid "Thu"
 msgstr "fim"
 
 #: kdecore/kcalendarsystemjulian.cpp:360
-#, fuzzy, kde-format
-#| msgctxt "Friday"
-#| msgid "Fri"
+#, kde-format
 msgctxt "Julian weekday 5 - KLocale::ShortName"
 msgid "Fri"
 msgstr "fös"
 
 #: kdecore/kcalendarsystemjulian.cpp:362
-#, fuzzy, kde-format
-#| msgctxt "Saturday"
-#| msgid "Sat"
+#, kde-format
 msgctxt "Julian weekday 6 - KLocale::ShortName"
 msgid "Sat"
 msgstr "lau"
 
 #: kdecore/kcalendarsystemjulian.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "Sunday"
-#| msgid "Sun"
+#, kde-format
 msgctxt "Julian weekday 7 - KLocale::ShortName"
 msgid "Sun"
 msgstr "sun"
 
 #: kdecore/kcalendarsystemjulian.cpp:371
-#, fuzzy, kde-format
-#| msgid "Monday"
+#, kde-format
 msgctxt "Julian weekday 1 - KLocale::LongName"
 msgid "Monday"
 msgstr "Mánudagur"
 
 #: kdecore/kcalendarsystemjulian.cpp:373
-#, fuzzy, kde-format
-#| msgid "Tuesday"
+#, kde-format
 msgctxt "Julian weekday 2 - KLocale::LongName"
 msgid "Tuesday"
 msgstr "Þriðjudagur"
 
 #: kdecore/kcalendarsystemjulian.cpp:375
-#, fuzzy, kde-format
-#| msgid "Wednesday"
+#, kde-format
 msgctxt "Julian weekday 3 - KLocale::LongName"
 msgid "Wednesday"
 msgstr "Miðvikudagur"
 
 #: kdecore/kcalendarsystemjulian.cpp:377
-#, fuzzy, kde-format
-#| msgid "Thursday"
+#, kde-format
 msgctxt "Julian weekday 4 - KLocale::LongName"
 msgid "Thursday"
 msgstr "Fimmtudagur"
 
 #: kdecore/kcalendarsystemjulian.cpp:379
-#, fuzzy, kde-format
-#| msgid "Friday"
+#, kde-format
 msgctxt "Julian weekday 5 - KLocale::LongName"
 msgid "Friday"
 msgstr "Föstudagur"
 
 #: kdecore/kcalendarsystemjulian.cpp:381
-#, fuzzy, kde-format
-#| msgid "Saturday"
+#, kde-format
 msgctxt "Julian weekday 6 - KLocale::LongName"
 msgid "Saturday"
 msgstr "Laugardagur"
 
 #: kdecore/kcalendarsystemjulian.cpp:383
-#, fuzzy, kde-format
-#| msgid "Sunday"
+#, kde-format
 msgctxt "Julian weekday 7 - KLocale::LongName"
 msgid "Sunday"
 msgstr "Sunnudagur"
@@ -8273,7 +7994,7 @@ msgstr "KDE"
 #, fuzzy, kde-format
 #| msgid "ERROR: Unknown protocol '%1'"
 msgid "Unknown option '%1'."
-msgstr "Villa: Óþekktur samskiptamáti '%1'"
+msgstr "Óþekkt viðfang: '%1'."
 
 #: kdecore/kcmdlineargs.cpp:841
 #, kde-format
@@ -8282,14 +8003,7 @@ msgid "'%1' missing."
 msgstr "'%1' vantar."
 
 #: kdecore/kcmdlineargs.cpp:895
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:shell message on appcmd --version; do not translate 'Development "
-#| "Platform'%3 application name, other %n version strings"
-#| msgid ""
-#| "Qt: %1\n"
-#| "KDE Development Platform: %2\n"
-#| "%3: %4\n"
+#, kde-format
 msgctxt ""
 "@info:shell message on appcmd --version; do not translate 'Development "
 "Platform'%3 application name, other %n version strings"
@@ -8299,7 +8013,7 @@ msgid ""
 "%3: %4\n"
 msgstr ""
 "Qt: %1\n"
-"KDE þróunarumhverfi: %2\n"
+"KDE þróunarkerfi: %2\n"
 "%3: %4\n"
 
 #: kdecore/kcmdlineargs.cpp:921
@@ -8315,42 +8029,42 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:924
 #, kde-format
 msgid "This application was written by somebody who wants to remain anonymous."
-msgstr ""
+msgstr "Þetta forrit var skrifað af einhverjum sem óskar nafnleyndar."
 
 #: kdecore/kcmdlineargs.cpp:929
 #, kde-format
 msgid "Please use http://bugs.kde.org to report bugs.\n"
-msgstr ""
+msgstr "Notaðu  http://bugs.kde.org til að senda inn villuskýrslur.\n"
 
 #: kdecore/kcmdlineargs.cpp:931
 #, kde-format
 msgid "Please report bugs to %1.\n"
-msgstr ""
+msgstr "Sendu villuskýrslur til %1.\n"
 
 #: kdecore/kcmdlineargs.cpp:961
 #, kde-format
 msgid "Unexpected argument '%1'."
-msgstr ""
+msgstr "Óvænt viðfang '%1'."
 
 #: kdecore/kcmdlineargs.cpp:1074
 #, kde-format
 msgid "Use --help to get a list of available command line options."
-msgstr ""
+msgstr "Notaðu --help til að sjá möguleg viðföng af skipanalínu."
 
 #: kdecore/kcmdlineargs.cpp:1096
 #, kde-format
 msgid "[options] "
-msgstr ""
+msgstr "[valkostir] "
 
 #: kdecore/kcmdlineargs.cpp:1101
 #, kde-format
 msgid "[%1-options]"
-msgstr ""
+msgstr "[%1-valkostir]"
 
 #: kdecore/kcmdlineargs.cpp:1122
 #, kde-format
 msgid "Usage: %1 %2\n"
-msgstr ""
+msgstr "Notkun: %1 %2\n"
 
 #: kdecore/kcmdlineargs.cpp:1125
 #, kde-format
@@ -8358,11 +8072,13 @@ msgid ""
 "\n"
 "Generic options:\n"
 msgstr ""
+"\n"
+"Almennir valkostir:\n"
 
 #: kdecore/kcmdlineargs.cpp:1127
 #, kde-format
 msgid "Show help about options"
-msgstr ""
+msgstr "Birta hjálp um valkosti"
 
 #: kdecore/kcmdlineargs.cpp:1133
 #, kde-format
@@ -8370,30 +8086,29 @@ msgid "Show %1 specific options"
 msgstr ""
 
 #: kdecore/kcmdlineargs.cpp:1140
-#, fuzzy, kde-format
-#| msgid "most locations"
+#, kde-format
 msgid "Show all options"
-msgstr "flestar staðsetningar"
+msgstr "Birta alla valkosti"
 
 #: kdecore/kcmdlineargs.cpp:1141
 #, kde-format
 msgid "Show author information"
-msgstr ""
+msgstr "Birta upplýsingar um höfund"
 
 #: kdecore/kcmdlineargs.cpp:1142
 #, kde-format
 msgid "Show version information"
-msgstr ""
+msgstr "Birta upplýsingar um útgáfu"
 
 #: kdecore/kcmdlineargs.cpp:1143
 #, kde-format
 msgid "Show license information"
-msgstr ""
+msgstr "Birta upplýsingar um notkunarleyfi"
 
 #: kdecore/kcmdlineargs.cpp:1144
 #, kde-format
 msgid "End of options"
-msgstr ""
+msgstr "Lok valkosta"
 
 #: kdecore/kcmdlineargs.cpp:1164
 #, kde-format
@@ -8401,6 +8116,8 @@ msgid ""
 "\n"
 "%1 options:\n"
 msgstr ""
+"\n"
+"%1 valkostir:\n"
 
 #: kdecore/kcmdlineargs.cpp:1166
 #, kde-format
@@ -8408,6 +8125,8 @@ msgid ""
 "\n"
 "Options:\n"
 msgstr ""
+"\n"
+"Valkostir:\n"
 
 #: kdecore/kcmdlineargs.cpp:1219
 #, kde-format
@@ -8415,6 +8134,8 @@ msgid ""
 "\n"
 "Arguments:\n"
 msgstr ""
+"\n"
+"Viðföng:\n"
 
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
@@ -8429,11 +8150,9 @@ msgstr "KDE-bráðabirgðaskrá"
 
 #: kdecore/kdatetime.cpp:1567 kdecore/kdatetime.cpp:1577
 #: kdecore/kdatetime.cpp:2985
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 8 - ShortName"
-#| msgid "Pam"
+#, kde-format
 msgid "am"
-msgstr "Pam"
+msgstr "f.h."
 
 #: kdecore/kdatetime.cpp:1567 kdecore/kdatetime.cpp:1577
 #: kdecore/kdatetime.cpp:2990
@@ -8519,9 +8238,7 @@ msgid "Telugu"
 msgstr "Telúgú"
 
 #: kdecore/klocale_kde.cpp:821
-#, fuzzy, kde-format
-#| msgctxt "@item Calendar system"
-#| msgid "Thai"
+#, kde-format
 msgctxt "digit set"
 msgid "Thai"
 msgstr "Tælenskt"
@@ -8745,40 +8462,40 @@ msgstr "%1 sekúndur"
 msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 millisekúnda"
+msgstr[1] "%1 millisekúndur"
 
 #: kdecore/klocale_kde.cpp:1491
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 day"
 msgid_plural "%1 days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 dagur"
+msgstr[1] "%1 dagar"
 
 #: kdecore/klocale_kde.cpp:1493
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 hour"
 msgid_plural "%1 hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 klukkustund"
+msgstr[1] "%1 klukkustundir"
 
 #: kdecore/klocale_kde.cpp:1495
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 minute"
 msgid_plural "%1 minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 mínúta"
+msgstr[1] "%1 mínútur"
 
 #: kdecore/klocale_kde.cpp:1497
 #, kde-format
 msgctxt "@item:intext"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 sekúnda"
+msgstr[1] "%1 sekúndur"
 
 #: kdecore/klocale_kde.cpp:1521
 #, kde-format
@@ -8814,19 +8531,16 @@ msgid "Ante Meridiem"
 msgstr "fyrir hádegi"
 
 #: kdecore/klocale_kde.cpp:2154
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
-#| msgid "AM"
+#, kde-format
 msgctxt "Before Noon KLocale::ShortName"
 msgid "AM"
-msgstr "AM"
+msgstr "FH"
 
 #: kdecore/klocale_kde.cpp:2155
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Before Noon KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr "F"
 
 #: kdecore/klocale_kde.cpp:2158
 #, kde-format
@@ -8835,20 +8549,16 @@ msgid "Post Meridiem"
 msgstr "eftir hádegi"
 
 #: kdecore/klocale_kde.cpp:2159
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Jalali Islamic Era, years > 0, ShortFormat"
-#| msgid "AP"
+#, kde-format
 msgctxt "After Noon KLocale::ShortName"
 msgid "PM"
-msgstr "AP"
+msgstr "EH"
 
 #: kdecore/klocale_kde.cpp:2160
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Jalali Islamic Era, years > 0, ShortFormat"
-#| msgid "AP"
+#, kde-format
 msgctxt "After Noon KLocale::NarrowName"
 msgid "P"
-msgstr "AP"
+msgstr "E"
 
 #: kdecore/klocale_kde.cpp:2227 kio/kfilemetadataprovider.cpp:209
 #, kde-format
@@ -8865,32 +8575,32 @@ msgstr "%1 %2"
 #: kdecore/ksavefile.cpp:99
 #, kde-format
 msgid "No target filename has been given."
-msgstr ""
+msgstr "Ekkert heiti var gefið upp fyrir úttaksskrá."
 
 #: kdecore/ksavefile.cpp:106
 #, kde-format
 msgid "Already opened."
-msgstr ""
+msgstr "Þegar opin."
 
 #: kdecore/ksavefile.cpp:135
 #, kde-format
 msgid "Insufficient permissions in target directory."
-msgstr ""
+msgstr "Ónógar aðgangsheimildir í úttaksmöppu."
 
 #: kdecore/ksavefile.cpp:139
 #, kde-format
 msgid "Unable to open temporary file."
-msgstr ""
+msgstr "Get ekki opnað bráðabirgðaskrá."
 
 #: kdecore/ksavefile.cpp:249
 #, kde-format
 msgid "Synchronization to disk failed"
-msgstr ""
+msgstr "Samræming við disk mistókst"
 
 #: kdecore/ksavefile.cpp:280
 #, kde-format
 msgid "Error during rename."
-msgstr ""
+msgstr "Villa við endurnefningu."
 
 #: kdecore/ksocketfactory.cpp:92 kdecore/ksocketfactory.cpp:106
 #, kde-format
@@ -9354,10 +9064,9 @@ msgstr "flestar staðsetningar (CB, CC, CN, ER, FM, MN, SE, SF)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:98
-#, fuzzy, kde-format
-#| msgid "most locations (CB, CC, CN, ER, FM, MN, SE, SF)"
+#, kde-format
 msgid "Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)"
-msgstr "flestar staðsetningar (CB, CC, CN, ER, FM, MN, SE, SF)"
+msgstr "Argentína (flest svæði: CB, CC, CN, ER, FM, MN, SE, SF)"
 
 #: kdecore/TIMEZONES:99
 #, kde-format
@@ -10305,7 +10014,7 @@ msgstr "Alaskatími - Alaska panhandle"
 #: kdecore/TIMEZONES:371
 #, kde-format
 msgid "Alaska - Juneau area"
-msgstr ""
+msgstr "Alaska - Juneau-svæðið"
 
 #: kdecore/TIMEZONES:372
 #, kde-format
@@ -10369,10 +10078,9 @@ msgstr "Ameríka/Los_Angeles"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:392
-#, fuzzy, kde-format
-#| msgid "US/Pacific"
+#, kde-format
 msgid "Pacific"
-msgstr "BNA/Kyrrahafs"
+msgstr "Kyrrahafstími"
 
 #: kdecore/TIMEZONES:393
 #, kde-format
@@ -10656,10 +10364,9 @@ msgstr "Alaskatími - vestur Alaska"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:472
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska (west)"
-msgstr "Alaskatími"
+msgstr "Alaska (vestur)"
 
 #: kdecore/TIMEZONES:473
 #, kde-format
@@ -10844,16 +10551,15 @@ msgid "America/Puerto_Rico"
 msgstr "Ameríka/Puerto_Rico"
 
 #: kdecore/TIMEZONES:523
-#, fuzzy, kde-format
-#| msgid "America/Buenos_Aires"
+#, kde-format
 msgid "America/Punta_Arenas"
-msgstr "Ameríka/Buenos_Aires"
+msgstr "Ameríka/Punta_Arenas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:525
 #, kde-format
 msgid "Region of Magallanes"
-msgstr ""
+msgstr "Magallanes-hérað"
 
 #: kdecore/TIMEZONES:526
 #, kde-format
@@ -11012,10 +10718,9 @@ msgstr "S- & SA-Brasilía (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:575
-#, fuzzy, kde-format
-#| msgid "S & SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+#, kde-format
 msgid "Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
-msgstr "S- & SA-Brasilía (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+msgstr "Brasilía (suðaustur: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 
 #: kdecore/TIMEZONES:576
 #, kde-format
@@ -11064,10 +10769,9 @@ msgstr "Alaskatími - Suðaustur-Alaska pönnuskaftið (panhandle)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:591
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska - Sitka area"
-msgstr "Alaskatími"
+msgstr "Alaska - Sitka-svæðið"
 
 #: kdecore/TIMEZONES:592
 #, kde-format
@@ -11280,7 +10984,7 @@ msgstr "Alaskatími - Alaska panhandle neck"
 #: kdecore/TIMEZONES:651
 #, kde-format
 msgid "Alaska - Yakutat"
-msgstr ""
+msgstr "Alaska - Yakutat"
 
 #: kdecore/TIMEZONES:652
 #, kde-format
@@ -11315,7 +11019,7 @@ msgstr "Casey stöðin, Bailey skaga"
 #: kdecore/TIMEZONES:661
 #, kde-format
 msgid "Casey"
-msgstr ""
+msgstr "Casey"
 
 #: kdecore/TIMEZONES:662
 #, kde-format
@@ -11332,7 +11036,7 @@ msgstr "Davis stöðin, Vestfold hæðum"
 #: kdecore/TIMEZONES:666
 #, kde-format
 msgid "Davis"
-msgstr ""
+msgstr "Davis"
 
 #: kdecore/TIMEZONES:667
 #, kde-format
@@ -11385,7 +11089,7 @@ msgstr "Mawson stöðin, Holme flóa"
 #: kdecore/TIMEZONES:681
 #, kde-format
 msgid "Mawson"
-msgstr ""
+msgstr "Mawson"
 
 #: kdecore/TIMEZONES:682
 #, kde-format
@@ -11402,7 +11106,7 @@ msgstr "McMurdo stöðin, Ross eyju"
 #: kdecore/TIMEZONES:686
 #, kde-format
 msgid "New Zealand time - McMurdo, South Pole"
-msgstr ""
+msgstr "Nýjasjálandstími - McMurdo, Suðurpóll"
 
 #: kdecore/TIMEZONES:687
 #, kde-format
@@ -11419,7 +11123,7 @@ msgstr "Palmer stöðin, Anvers eyju"
 #: kdecore/TIMEZONES:691
 #, kde-format
 msgid "Palmer"
-msgstr ""
+msgstr "Palmer"
 
 #: kdecore/TIMEZONES:692
 #, kde-format
@@ -11436,7 +11140,7 @@ msgstr "Rothera stöðin, Adelaide eyju"
 #: kdecore/TIMEZONES:696
 #, kde-format
 msgid "Rothera"
-msgstr ""
+msgstr "Rothera"
 
 #: kdecore/TIMEZONES:697
 #, kde-format
@@ -11464,7 +11168,7 @@ msgstr "Syowa stöðin, Austur-Ongul eyju"
 #: kdecore/TIMEZONES:704
 #, kde-format
 msgid "Syowa"
-msgstr ""
+msgstr "Syowa"
 
 #: kdecore/TIMEZONES:705
 #, fuzzy, kde-format
@@ -11476,7 +11180,7 @@ msgstr "Suðurskautið/McMurdo"
 #: kdecore/TIMEZONES:707
 #, kde-format
 msgid "Troll"
-msgstr ""
+msgstr "Troll"
 
 #: kdecore/TIMEZONES:708
 #, kde-format
@@ -11499,7 +11203,7 @@ msgstr "Vostok stöðin, Vostokvatn"
 #: kdecore/TIMEZONES:714
 #, kde-format
 msgid "Vostok"
-msgstr ""
+msgstr "Vostok"
 
 #: kdecore/TIMEZONES:715
 #, kde-format
@@ -11919,10 +11623,9 @@ msgstr "Moskva+08 - Kamchatka"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:826
-#, fuzzy, kde-format
-#| msgid "Moscow+09 - Kamchatka"
+#, kde-format
 msgid "MSK+09 - Kamchatka"
-msgstr "Moskva+09 - Kamchatka"
+msgstr "Moskva+09 - Kamtsjatka"
 
 #: kdecore/TIMEZONES:827
 #, kde-format
@@ -11957,10 +11660,9 @@ msgid "Asia/Katmandu"
 msgstr "Asía/Katmandu"
 
 #: kdecore/TIMEZONES:835
-#, fuzzy, kde-format
-#| msgid "Asia/Shanghai"
+#, kde-format
 msgid "Asia/Khandyga"
-msgstr "Asía/Shanghai"
+msgstr "Asía/Khandyga"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:837
@@ -12020,10 +11722,9 @@ msgstr "Sabah & Sarawak"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:853
-#, fuzzy, kde-format
-#| msgid "Sabah & Sarawak"
+#, kde-format
 msgid "Sabah, Sarawak"
-msgstr "Sabah & Sarawak"
+msgstr "Sabah, Sarawak"
 
 #: kdecore/TIMEZONES:854
 #, kde-format
@@ -12141,8 +11842,7 @@ msgstr "Moskva+03 - Novosibirsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:883
-#, fuzzy, kde-format
-#| msgid "Moscow+03 - Novosibirsk"
+#, kde-format
 msgid "MSK+04 - Novosibirsk"
 msgstr "Moskva+03 - Novosibirsk"
 
@@ -12264,8 +11964,7 @@ msgstr "Moskva+07 - Sakhalíneyja"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:915
-#, fuzzy, kde-format
-#| msgid "Moscow+07 - Sakhalin Island"
+#, kde-format
 msgid "MSK+08 - Sakhalin Island"
 msgstr "Moskva+07 - Sakhalíneyja"
 
@@ -12466,8 +12165,7 @@ msgstr "Moskva+07 - Amur áin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:974
-#, fuzzy, kde-format
-#| msgid "Moscow+07 - Amur River"
+#, kde-format
 msgid "MSK+07 - Amur River"
 msgstr "Moskva+07 - Amur áin"
 
@@ -12484,8 +12182,7 @@ msgstr "Moskva+06 - Lena áin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:979
-#, fuzzy, kde-format
-#| msgid "Moscow+06 - Lena River"
+#, kde-format
 msgid "MSK+06 - Lena River"
 msgstr "Moskva+06 - Lena áin"
 
@@ -12508,8 +12205,7 @@ msgstr "Moskva+02 - Uralfjöll"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:985
-#, fuzzy, kde-format
-#| msgid "Moscow+02 - Urals"
+#, kde-format
 msgid "MSK+02 - Urals"
 msgstr "Moskva+02 - Uralfjöll"
 
@@ -12713,10 +12409,9 @@ msgstr "Tasmanía - flestir staðir"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1039
-#, fuzzy, kde-format
-#| msgid "Australia/Tasmania"
+#, kde-format
 msgid "Tasmania"
-msgstr "Ástralía/Tasmanía"
+msgstr "Tasmanía"
 
 #: kdecore/TIMEZONES:1040
 #, kde-format
@@ -12742,10 +12437,9 @@ msgstr "Queensland - Holiday eyjar"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1047
-#, fuzzy, kde-format
-#| msgid "Queensland - Holiday Islands"
+#, kde-format
 msgid "Queensland (Whitsunday Islands)"
-msgstr "Queensland - Holiday eyjar"
+msgstr "Queensland (Whitsunday-eyjar)"
 
 #: kdecore/TIMEZONES:1048
 #, kde-format
@@ -12808,10 +12502,9 @@ msgstr "Ástralía/Sydney"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1075
-#, fuzzy, kde-format
-#| msgid "New South Wales - most locations"
+#, kde-format
 msgid "New South Wales (most areas)"
-msgstr "Nýja Suður-Wales - flestir staðir"
+msgstr "Nýja Suður-Wales (flest svæði)"
 
 #: kdecore/TIMEZONES:1076
 #, kde-format
@@ -13067,8 +12760,7 @@ msgstr "Moskva-01 - Kaliningrad"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1167
-#, fuzzy, kde-format
-#| msgid "Moscow-01 - Kaliningrad"
+#, kde-format
 msgid "MSK-01 - Kaliningrad"
 msgstr "Moskva-01 - Kaliningrad"
 
@@ -13084,10 +12776,9 @@ msgid "Ukraine (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1173
-#, fuzzy, kde-format
-#| msgid "Europe/Kiev"
+#, kde-format
 msgid "Europe/Kirov"
-msgstr "Evrópa/Kiev"
+msgstr "Evrópa/Kirov"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1175
@@ -13128,10 +12819,9 @@ msgstr "Evrópa/Madrid"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1188
-#, fuzzy, kde-format
-#| msgid "mainland"
+#, kde-format
 msgid "Spain (mainland)"
-msgstr "meginlands"
+msgstr "Spánn (meginlands)"
 
 #: kdecore/TIMEZONES:1189
 #, kde-format
@@ -13235,10 +12925,9 @@ msgid "Europe/Sarajevo"
 msgstr "Evrópa/Sarajevo"
 
 #: kdecore/TIMEZONES:1213
-#, fuzzy, kde-format
-#| msgid "Europe/Sarajevo"
+#, kde-format
 msgid "Europe/Saratov"
-msgstr "Evrópa/Sarajevo"
+msgstr "Evrópa/Saratov"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1215
@@ -13259,10 +12948,9 @@ msgstr "Mið-Krímskagi"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1220
-#, fuzzy, kde-format
-#| msgid "Prime: "
+#, kde-format
 msgid "Crimea"
-msgstr "Prímtala: "
+msgstr "Krímskagi"
 
 #: kdecore/TIMEZONES:1221
 #, kde-format
@@ -13295,10 +12983,9 @@ msgid "Europe/Tiraspol"
 msgstr "Evrópa/Tiraspol"
 
 #: kdecore/TIMEZONES:1227
-#, fuzzy, kde-format
-#| msgid "Europe/Minsk"
+#, kde-format
 msgid "Europe/Ulyanovsk"
-msgstr "Evrópa/Minsk"
+msgstr "Evrópa/Ulyanovsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1229
@@ -13394,11 +13081,9 @@ msgid "Europe/Zurich"
 msgstr "Evrópa/Zurich"
 
 #: kdecore/TIMEZONES:1252
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, ShortFormat"
-#| msgid "BC"
+#, kde-format
 msgid "GB"
-msgstr "f.Kr."
+msgstr "GB"
 
 #: kdecore/TIMEZONES:1253
 #, kde-format
@@ -13466,11 +13151,9 @@ msgid "Indian/Mayotte"
 msgstr "Indíur/Mayotte"
 
 #: kdecore/TIMEZONES:1266
-#, fuzzy, kde-format
-#| msgctxt "@item Calendar system"
-#| msgid "Indian National"
+#, kde-format
 msgid "Indian/Reunion"
-msgstr "Indverskt"
+msgstr "Indlandshaf/Reunion"
 
 #: kdecore/TIMEZONES:1267
 #, kde-format
@@ -13488,11 +13171,9 @@ msgid "Jamaica"
 msgstr "Jamaica"
 
 #: kdecore/TIMEZONES:1270
-#, fuzzy, kde-format
-#| msgctxt "@item Calendar system"
-#| msgid "Japanese"
+#, kde-format
 msgid "Japan"
-msgstr "Japanskt"
+msgstr "Japan"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1271 kdecore/TIMEZONES:1273 kdecore/TIMEZONES:1347
@@ -13542,11 +13223,9 @@ msgid "Navajo"
 msgstr "Navajo"
 
 #: kdecore/TIMEZONES:1293
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
-#| msgid "ROC"
+#, kde-format
 msgid "PRC"
-msgstr "ROC"
+msgstr "PRC"
 
 #: kdecore/TIMEZONES:1296
 #, kde-format
@@ -13565,10 +13244,9 @@ msgid "New Zealand (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1302
-#, fuzzy, kde-format
-#| msgid "Pacific/Honolulu"
+#, kde-format
 msgid "Pacific/Bougainville"
-msgstr "Eyjaálfa/Honolulu"
+msgstr "Eyjaálfa/Bougainville"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1304
@@ -13594,10 +13272,9 @@ msgstr "Chuuk (Truk) og Yap"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1312
-#, fuzzy, kde-format
-#| msgid "Chuuk (Truk) and Yap"
+#, kde-format
 msgid "Chuuk/Truk, Yap"
-msgstr "Chuuk (Truk) og Yap"
+msgstr "Chuuk/Truk, Yap"
 
 #: kdecore/TIMEZONES:1313
 #, kde-format
@@ -13606,10 +13283,9 @@ msgstr "Eyjaálfa/Páskaey"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1317
-#, fuzzy, kde-format
-#| msgid "Chile/EasterIsland"
+#, kde-format
 msgid "Easter Island"
-msgstr "Chile/Páskaeyja"
+msgstr "Páskaeyja"
 
 #: kdecore/TIMEZONES:1318
 #, kde-format
@@ -13916,18 +13592,14 @@ msgid "Portugal"
 msgstr "Portúgal"
 
 #: kdecore/TIMEZONES:1401
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
-#| msgid "ROC"
+#, kde-format
 msgid "ROC"
 msgstr "ROC"
 
 #: kdecore/TIMEZONES:1402
-#, fuzzy, kde-format
-#| msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
-#| msgid "ROC"
+#, kde-format
 msgid "ROK"
-msgstr "ROC"
+msgstr "ROK"
 
 #: kdecore/TIMEZONES:1403
 #, kde-format
@@ -14041,11 +13713,9 @@ msgid "Region"
 msgstr "Hérað"
 
 #: kdeui/k4timezonewidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "Coptic weekday 2 - LongDayName"
-#| msgid "Pshoment"
+#, kde-format
 msgid "Comment"
-msgstr "Pshoment"
+msgstr "Athugasemd"
 
 #: kdeui/kapplication.cpp:741
 #, kde-format
@@ -14113,7 +13783,11 @@ msgid_plural ""
 "examined:\n"
 "%2"
 msgstr[0] ""
+"Ekki tókst að lesa X11 RGB litastrengi. Það var leitað á þessari slóð:\n"
+"%2"
 msgstr[1] ""
+"Ekki tókst að lesa X11 RGB litastrengi. Það var leitað á þessum stöðum:\n"
+"%2"
 
 #: kdeui/kcolordialog.cpp:997
 #, kde-format
@@ -14132,10 +13806,9 @@ msgid "°"
 msgstr "°"
 
 #: kdeui/kcolordialog.cpp:1088
-#, fuzzy, kde-format
-#| msgid "Saturday"
+#, kde-format
 msgid "Saturation:"
-msgstr "Laugardagur"
+msgstr "Mettun:"
 
 #: kdeui/kcolordialog.cpp:1098
 #, kde-format
@@ -14457,16 +14130,14 @@ msgstr "Vista sem"
 msgctxt "@item:intable"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 atriði"
+msgstr[1] "%1 atriði"
 
 #: kio/kfilemetadataprovider.cpp:446 kio/knfotranslator.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "Coptic weekday 2 - LongDayName"
-#| msgid "Pshoment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment"
-msgstr "Pshoment"
+msgstr "Athugasemd"
 
 #: kio/kfilemetadataprovider.cpp:447
 #, kde-format
@@ -14687,7 +14358,7 @@ msgstr "Titill"
 #, kde-format
 msgctxt "@label file URL"
 msgid "File Location"
-msgstr ""
+msgstr "Staðsetning skráar"
 
 #: kio/knfotranslator.cpp:56
 #, kde-format
@@ -14741,7 +14412,7 @@ msgstr "Skráarheiti"
 #, kde-format
 msgctxt "@label"
 msgid "Hash"
-msgstr ""
+msgstr "Tætigildi (hash)"
 
 #: kio/knfotranslator.cpp:65
 #, kde-format
@@ -14882,8 +14553,7 @@ msgid "Performer"
 msgstr "Flytjandi"
 
 #: kio/knfotranslator.cpp:88
-#, fuzzy, kde-format
-#| msgid "&Release '%1'"
+#, kde-format
 msgctxt "@label"
 msgid "Release Date"
 msgstr "Útgáfudagur"
@@ -15049,51 +14719,6 @@ msgstr "Auðkenningargluggi"
 msgid "No metainfo for %1"
 msgstr "Engin lýsigögn fyrir %1"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, fuzzy, kde-format
-#| msgid "Organization:"
-msgid "Organization / Common Name"
-msgstr "Fyrirtæki/stofnun:"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, fuzzy, kde-format
-#| msgid "Organizational unit:"
-msgid "Organizational Unit"
-msgstr "Deild:"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, fuzzy, kde-format
-msgid "Display..."
-msgstr "Birting..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, fuzzy, kde-format
-msgid "Disable"
-msgstr "Slökkva"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, fuzzy, kde-format
-#| msgid "Emblems"
-msgid "Enable"
-msgstr "Táknmyndir"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "Fjarlægja"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "Bæta við..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -15109,55 +14734,6 @@ msgstr "Skilríki sem notandi hefur bætt við"
 msgid "Pick Certificates"
 msgstr "Veldu skilríki"
 
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, fuzzy, kde-format
-#| msgid "Security Information"
-msgid "<b>Subject Information</b>"
-msgstr "Upplýsingar um dulritun"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, fuzzy, kde-format
-#| msgid " <b>[Cross Domain]</b>"
-msgid "<b>Issuer Information</b>"
-msgstr " <b>[Milli léna]</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, fuzzy, kde-format
-#| msgid "<b>%1</b>"
-msgid "<b>Other</b>"
-msgstr "<b>%1</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, fuzzy, kde-format
-#| msgid "Validity period:"
-msgid "Validity period"
-msgstr "Gildistími:"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, fuzzy, kde-format
-#| msgid "Serial number:"
-msgid "Serial number"
-msgstr "Raðnúmer:"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, fuzzy, kde-format
-#| msgid "MD5 digest:"
-msgid "MD5 digest"
-msgstr "MD5 gátsumma:"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, fuzzy, kde-format
-#| msgid "SHA1 digest:"
-msgid "SHA1 digest"
-msgstr "SHA1 gátsumma:"
-
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
 msgctxt "%1 is the effective date of the certificate, %2 is the expiry date"
@@ -15165,27 +14741,24 @@ msgid "%1 to %2"
 msgstr "%1 í %2"
 
 #: kssl/kcm/kcmssl.cpp:37
-#, fuzzy, kde-format
-#| msgid "Reload configuration file"
+#, kde-format
 msgid "SSL Configuration Module"
-msgstr "Endurlesa stillingaskrá"
+msgstr "SSL stillingaeining"
 
 #: kssl/kcm/kcmssl.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copyright 2010 Andreas Hartmetz"
 msgstr "Höfundarréttur 2010 Andreas Hartmetz"
 
 #: kssl/kcm/kcmssl.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgid "Andreas Hartmetz"
 msgstr "Andreas Hartmetz"
 
 #: kssl/kcm/kcmssl.cpp:52
-#, fuzzy, kde-format
-#| msgctxt "@label number of lines"
-#| msgid "Lines"
+#, kde-format
 msgid "SSL Signers"
-msgstr "Línur"
+msgstr "SSL undirritarar"
 
 #: kssl/ksslcertificate.cpp:202
 #, kde-format
@@ -15577,6 +15150,69 @@ msgstr "Skilríkið er ekki gilt."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "Upplýsingar"
+
+#~ msgid "Output to:"
+#~ msgstr "Senda í:"
+
+#~ msgid "Filename:"
+#~ msgstr "Skráaheiti:"
+
+#~ msgid "Error"
+#~ msgstr "Villa"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "Hætta keyrslu við banvæna villu"
+
+#~ msgid "Warning"
+#~ msgstr "Aðvörun"
+
+#~ msgid "Fatal Error"
+#~ msgstr "Banvæn villa"
+
+#~ msgid "Organization / Common Name"
+#~ msgstr "Nafn fyrirtækis/stofnunar"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "Deild (OU)"
+
+#~ msgid "Display..."
+#~ msgstr "Birting..."
+
+#~ msgid "Disable"
+#~ msgstr "Gera óvirkt"
+
+#~ msgid "Enable"
+#~ msgstr "Virkja"
+
+#~ msgid "Remove"
+#~ msgstr "Fjarlægja"
+
+#~ msgid "Add..."
+#~ msgstr "Bæta við..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "<b>Upplýsingar um viðfangsefni</b>"
+
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr "<b>Upplýsingar um útgefanda</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>Annað</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "Gildistími"
+
+#~ msgid "Serial number"
+#~ msgstr "Raðnúmer"
+
+#~ msgid "MD5 digest"
+#~ msgstr "MD5 gátsumma"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "SHA1 gátsumma"
 
 #, fuzzy
 #~| msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"

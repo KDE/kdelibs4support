@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
 "PO-Revision-Date: 2020-09-03 15:43+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -2320,62 +2320,6 @@ msgstr "Қайди рӯйдодҳои низомӣ"
 msgid "None"
 msgstr "Ҳеҷ чиз"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "Иттилоот"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr "Барориш ба:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "Номи файл:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "Хато"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr "Дар хатоҳои ҷиддӣ қатъ карда шавад"
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr "Ғайрифаъол кардани барориши ҳамаи ислоҳоти хатоҳо"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "Огоҳӣ"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "Хатои ҷиддӣ"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2385,6 +2329,11 @@ msgstr "&Ҳамаро интихоб кардан"
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Ҳамаро интихоб накардан"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr "Ғайрифаъол кардани барориши ҳамаи ислоҳоти хатоҳо"
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -14096,48 +14045,6 @@ msgstr "Равзанаи гуфтугӯи санҷиши ҳаққоният"
 msgid "No metainfo for %1"
 msgstr "Ягон иттилооти хусусӣ барои %1 нест"
 
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr "Ташкилот / Номи умумӣ"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "Воҳиди ташкилотӣ"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr "Намоиш..."
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "Ғайрифаъол кардан"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "Фаъол кардан"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "Тоза кардан"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
-msgstr "Илова кардан..."
-
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
@@ -14152,48 +14059,6 @@ msgstr "Гувоҳиномаҳои иловашудаи корбарӣ"
 #, kde-format
 msgid "Pick Certificates"
 msgstr "Интихоби гувоҳиномаҳо"
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr "<b>Иттилооти гиранда</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, kde-format
-msgid "<b>Issuer Information</b>"
-msgstr "<b>Иттилооти диҳанда</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>Дигар</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr "Муҳлати эътиборнокӣ"
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "Рақами силсилавӣ"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr "Ҷамъбасти санҷишии MD5"
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
-msgstr "Ҷамъбасти санҷишии SHA1"
 
 #: kssl/kcm/displaycertdialog.cpp:73
 #, kde-format
@@ -14607,6 +14472,69 @@ msgstr "Гувоҳинома беэътибор аст."
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "Иттилоот"
+
+#~ msgid "Output to:"
+#~ msgstr "Барориш ба:"
+
+#~ msgid "Filename:"
+#~ msgstr "Номи файл:"
+
+#~ msgid "Error"
+#~ msgstr "Хато"
+
+#~ msgid "Abort on fatal errors"
+#~ msgstr "Дар хатоҳои ҷиддӣ қатъ карда шавад"
+
+#~ msgid "Warning"
+#~ msgstr "Огоҳӣ"
+
+#~ msgid "Fatal Error"
+#~ msgstr "Хатои ҷиддӣ"
+
+#~ msgid "Organization / Common Name"
+#~ msgstr "Ташкилот / Номи умумӣ"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "Воҳиди ташкилотӣ"
+
+#~ msgid "Display..."
+#~ msgstr "Намоиш..."
+
+#~ msgid "Disable"
+#~ msgstr "Ғайрифаъол кардан"
+
+#~ msgid "Enable"
+#~ msgstr "Фаъол кардан"
+
+#~ msgid "Remove"
+#~ msgstr "Тоза кардан"
+
+#~ msgid "Add..."
+#~ msgstr "Илова кардан..."
+
+#~ msgid "<b>Subject Information</b>"
+#~ msgstr "<b>Иттилооти гиранда</b>"
+
+#~ msgid "<b>Issuer Information</b>"
+#~ msgstr "<b>Иттилооти диҳанда</b>"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>Дигар</b>"
+
+#~ msgid "Validity period"
+#~ msgstr "Муҳлати эътиборнокӣ"
+
+#~ msgid "Serial number"
+#~ msgstr "Рақами силсилавӣ"
+
+#~ msgid "MD5 digest"
+#~ msgstr "Ҷамъбасти санҷишии MD5"
+
+#~ msgid "SHA1 digest"
+#~ msgstr "Ҷамъбасти санҷишии SHA1"
 
 #, fuzzy
 #~ msgctxt "color"

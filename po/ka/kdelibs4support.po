@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-07-27 00:14+0000\n"
-"PO-Revision-Date: 2022-09-12 20:03+0200\n"
+"POT-Creation-Date: 2023-03-01 21:29+0000\n"
+"PO-Revision-Date: 2023-02-03 16:26+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -236,7 +236,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "DarkRed"
-msgstr ""
+msgstr "მუქიწითელი"
 
 #, kde-format
 msgctxt "color"
@@ -246,27 +246,27 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen"
-msgstr ""
+msgstr "მუქიზღვისმწვანე"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen1"
-msgstr ""
+msgstr "მუქიზღვისმწვანე1"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen2"
-msgstr ""
+msgstr "მუქიზღვისმწვანე2"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen3"
-msgstr ""
+msgstr "მუქიზღვისმწვანე3"
 
 #, kde-format
 msgctxt "color"
 msgid "DarkSeaGreen4"
-msgstr ""
+msgstr "მუქიზღვისმწვანე4"
 
 #, kde-format
 msgctxt "color"
@@ -1346,7 +1346,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "aquamarine"
-msgstr ""
+msgstr "აკვამარინული"
 
 #, kde-format
 msgctxt "color"
@@ -1531,7 +1531,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "chocolate"
-msgstr ""
+msgstr "შოკოლადი"
 
 #, kde-format
 msgctxt "color"
@@ -1661,7 +1661,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "gold"
-msgstr ""
+msgstr "ოქროსფერი"
 
 #, kde-format
 msgctxt "color"
@@ -1906,7 +1906,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "orchid"
-msgstr ""
+msgstr "ორქიდეა"
 
 #, kde-format
 msgctxt "color"
@@ -2036,7 +2036,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "salmon"
-msgstr ""
+msgstr "ორაგული"
 
 #, kde-format
 msgctxt "color"
@@ -2241,7 +2241,7 @@ msgstr ""
 #, kde-format
 msgctxt "color"
 msgid "wheat"
-msgstr ""
+msgstr "ხორბალი"
 
 #, kde-format
 msgctxt "color"
@@ -2323,62 +2323,6 @@ msgstr "სისტემური ჟურნალი"
 msgid "None"
 msgstr "არაფერი"
 
-#. i18n: ectx: property (title), widget (QGroupBox, pInfoGroup)
-#: kdebugdialog/kdebugdialog.ui:48
-#, kde-format
-msgid "Information"
-msgstr "ინფორმაცია"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: kdebugdialog/kdebugdialog.ui:54 kdebugdialog/kdebugdialog.ui:89
-#: kdebugdialog/kdebugdialog.ui:151 kdebugdialog/kdebugdialog.ui:186
-#, kde-format
-msgid "Output to:"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: kdebugdialog/kdebugdialog.ui:67 kdebugdialog/kdebugdialog.ui:102
-#: kdebugdialog/kdebugdialog.ui:164 kdebugdialog/kdebugdialog.ui:199
-#, kde-format
-msgid "Filename:"
-msgstr "ფაილის სახელი:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pErrorGroup)
-#: kdebugdialog/kdebugdialog.ui:83
-#, kde-format
-msgid "Error"
-msgstr "შეცდომა"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pAbortFatal)
-#: kdebugdialog/kdebugdialog.ui:118
-#, kde-format
-msgid "Abort on fatal errors"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
-#, kde-format
-msgid "Disable all debug output"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, pWarnGroup)
-#: kdebugdialog/kdebugdialog.ui:145
-#, kde-format
-msgid "Warning"
-msgstr "შეტყობინება"
-
-#. i18n: ectx: property (title), widget (QGroupBox, pFatalGroup)
-#: kdebugdialog/kdebugdialog.ui:180
-#, kde-format
-msgid "Fatal Error"
-msgstr "ფატალური შეცდომა"
-
 #: kdebugdialog/klistdebugdialog.cpp:68
 #, kde-format
 msgid "&Select All"
@@ -2388,6 +2332,11 @@ msgstr "&ყველას არჩევა"
 #, kde-format
 msgid "&Deselect All"
 msgstr "მონიშვნის &მოხსნა"
+
+#: kdebugdialog/klistdebugdialog.cpp:77
+#, kde-format
+msgid "Disable all debug output"
+msgstr ""
 
 #: kdebugdialog/main.cpp:100
 #, kde-format
@@ -2777,7 +2726,7 @@ msgstr "იულიუსისეული"
 #, kde-format
 msgctxt "@item Calendar system"
 msgid "Taiwanese"
-msgstr ""
+msgstr "ტაივანური"
 
 #: kdecore/kcalendarsystem.cpp:128
 #, kde-format
@@ -3559,7 +3508,7 @@ msgstr ""
 #, kde-format
 msgctxt "Ethiopian month 7 - KLocale::ShortName"
 msgid "Mag"
-msgstr ""
+msgstr "ვარს. სიდ"
 
 #: kdecore/kcalendarsystemethiopian.cpp:146
 #, kde-format
@@ -3841,7 +3790,7 @@ msgstr ""
 #, kde-format
 msgctxt "Ethiopian weekday 1 - KLocale::LongName"
 msgid "Segno"
-msgstr ""
+msgstr "სენიო"
 
 #: kdecore/kcalendarsystemethiopian.cpp:278
 #, kde-format
@@ -4014,7 +3963,7 @@ msgstr "N"
 #, kde-format
 msgctxt "Gregorian month 12 - KLocale::NarrowName"
 msgid "D"
-msgstr ""
+msgstr "რე"
 
 #: kdecore/kcalendarsystemgregorian.cpp:169
 #, kde-format
@@ -4702,7 +4651,7 @@ msgstr ""
 #, kde-format
 msgctxt "Hebrew month 11 - KLocale::ShortName"
 msgid "Av"
-msgstr ""
+msgstr "Av"
 
 #: kdecore/kcalendarsystemhebrew.cpp:717
 #, kde-format
@@ -4870,7 +4819,7 @@ msgstr ""
 #, kde-format
 msgctxt "Hebrew month 11 - KLocale::LongName"
 msgid "Av"
-msgstr ""
+msgstr "Av"
 
 #: kdecore/kcalendarsystemhebrew.cpp:787
 #, kde-format
@@ -6074,7 +6023,7 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali month 2 - KLocale::ShortName"
 msgid "Ord"
-msgstr ""
+msgstr "ორდ"
 
 #: kdecore/kcalendarsystemjalali.cpp:238
 #, kde-format
@@ -6104,7 +6053,7 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali month 7 - KLocale::ShortName"
 msgid "Meh"
-msgstr ""
+msgstr "ისე რა"
 
 #: kdecore/kcalendarsystemjalali.cpp:248
 #, kde-format
@@ -6320,7 +6269,7 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali weekday 7 - KLocale::NarrowName "
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: kdecore/kcalendarsystemjalali.cpp:352
 #, kde-format
@@ -6632,7 +6581,7 @@ msgstr "N"
 #, kde-format
 msgctxt "Julian month 12 - KLocale::NarrowName"
 msgid "D"
-msgstr ""
+msgstr "რე"
 
 #: kdecore/kcalendarsystemjulian.cpp:203
 #, kde-format
@@ -7190,7 +7139,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:302
 #, kde-format
 msgid "disable XIM"
-msgstr ""
+msgstr "xim-ის გამორთვა"
 
 #: kdecore/kcmdlineargs.cpp:304
 #, kde-format
@@ -7262,7 +7211,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:436
 #, kde-format
 msgid "KDE Application"
-msgstr ""
+msgstr "KDE-ის აპლიკაცია"
 
 #: kdecore/kcmdlineargs.cpp:497
 #, kde-format
@@ -7332,7 +7281,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1096
 #, kde-format
 msgid "[options] "
-msgstr ""
+msgstr "[პარამეტრები] "
 
 #: kdecore/kcmdlineargs.cpp:1101
 #, kde-format
@@ -7408,6 +7357,8 @@ msgid ""
 "\n"
 "Arguments:\n"
 msgstr ""
+"\n"
+"არგუმენტები:\n"
 
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
@@ -7524,7 +7475,7 @@ msgstr "არაბული"
 #, kde-format
 msgctxt "name of digit set with digit string, e.g. 'Arabic (0123456789)'"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #. i18n: comments below, they are used by the
 #. translators.
@@ -7733,8 +7684,8 @@ msgstr "%1 წამი"
 msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 მილიწამი"
+msgstr[1] "%1 მილიწამი"
 
 #: kdecore/klocale_kde.cpp:1491
 #, kde-format
@@ -7835,13 +7786,13 @@ msgstr "P"
 #, kde-format
 msgctxt "concatenation of dates and time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: kdecore/klocale_kde.cpp:2267
 #, kde-format
 msgctxt "concatenation of date/time and time zone"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: kdecore/ksavefile.cpp:99
 #, kde-format
@@ -7861,7 +7812,7 @@ msgstr ""
 #: kdecore/ksavefile.cpp:139
 #, kde-format
 msgid "Unable to open temporary file."
-msgstr ""
+msgstr "დროებითი ფაილის გახსნის შეცდომა."
 
 #: kdecore/ksavefile.cpp:249
 #, kde-format
@@ -8387,7 +8338,7 @@ msgstr ""
 #: kdecore/TIMEZONES:113
 #, kde-format
 msgid "(SA, LP, NQ, RN)"
-msgstr ""
+msgstr "(SA, LP, NQ, RN)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:115
@@ -8404,7 +8355,7 @@ msgstr ""
 #: kdecore/TIMEZONES:118
 #, kde-format
 msgid "San Juan (SJ)"
-msgstr ""
+msgstr "სან ხუანი (SJ)"
 
 #: kdecore/TIMEZONES:119
 #, kde-format
@@ -8415,7 +8366,7 @@ msgstr ""
 #: kdecore/TIMEZONES:121
 #, kde-format
 msgid "San Luis (SL)"
-msgstr ""
+msgstr "სან ლუისი (SL)"
 
 #: kdecore/TIMEZONES:122
 #, kde-format
@@ -10687,7 +10638,7 @@ msgstr "აზია/ღაზა"
 #: kdecore/TIMEZONES:787
 #, kde-format
 msgid "Gaza Strip"
-msgstr ""
+msgstr "ღაზის სექტორი"
 
 #: kdecore/TIMEZONES:788
 #, kde-format
@@ -12269,7 +12220,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1254
 #, kde-format
 msgid "Hongkong"
-msgstr ""
+msgstr "ჰონგკონგი"
 
 #: kdecore/TIMEZONES:1255
 #, kde-format
@@ -12380,12 +12331,12 @@ msgstr ""
 #: kdecore/TIMEZONES:1284
 #, kde-format
 msgid "NZ"
-msgstr ""
+msgstr "NZ"
 
 #: kdecore/TIMEZONES:1287
 #, kde-format
 msgid "NZ-CHAT"
-msgstr ""
+msgstr "NZ-CHAT"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1289 kdecore/TIMEZONES:1307
@@ -12503,7 +12454,7 @@ msgstr "წყნარი ოკეანე/გალაპაგოსი"
 #: kdecore/TIMEZONES:1327
 #, kde-format
 msgid "Galapagos Islands"
-msgstr ""
+msgstr "გალაპაგოსის კუნძულები"
 
 #: kdecore/TIMEZONES:1328
 #, kde-format
@@ -12849,7 +12800,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1439
 #, kde-format
 msgid "W-SU"
-msgstr ""
+msgstr "W-SU"
 
 #. i18n: Generic sans serif font presented in font choosers. When selected,
 #. the system will choose a real font, mandated by distro settings.
@@ -12890,7 +12841,7 @@ msgstr "რეგიონი"
 #: kdeui/k4timezonewidget.cpp:62
 #, kde-format
 msgid "Comment"
-msgstr "კომე_ნტარი"
+msgstr "კომენტარი"
 
 #: kdeui/kapplication.cpp:741
 #, kde-format
@@ -13046,7 +12997,7 @@ msgstr "ბეჭდვა"
 #: kdeui/kdialog.cpp:271
 #, kde-format
 msgid "&Try"
-msgstr ""
+msgstr "&ცდა"
 
 #: kdeui/kdialog.cpp:484
 #, kde-format
@@ -13067,7 +13018,7 @@ msgstr "&დეტალები"
 #: kdeui/kdialog.cpp:1054
 #, kde-format
 msgid "Get help..."
-msgstr ""
+msgstr "დახმარების მიღება..."
 
 #: kdeui/keditlistbox.cpp:324
 #, kde-format
@@ -13097,7 +13048,7 @@ msgstr "ჩამოწევა"
 #, kde-format
 msgctxt "short"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr ""
+msgstr "ბაყაყი წყალში ყიყინებს"
 
 #. i18n: Integer which indicates the script you used in the sample text
 #. for font previews in your language. For the possible values, see
@@ -13259,7 +13210,7 @@ msgstr "ნაგავში გადატანა"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete"
-msgstr ""
+msgstr "წაშლა"
 
 #: kio/kdirselectdialog.cpp:368
 #, kde-format
@@ -13308,7 +13259,7 @@ msgstr[1] "%1 ჩანაწერი"
 #, kde-format
 msgctxt "@label"
 msgid "Comment"
-msgstr "კომე_ნტარი"
+msgstr "კომენტარი"
 
 #: kio/kfilemetadataprovider.cpp:447
 #, kde-format
@@ -13376,7 +13327,7 @@ msgstr ""
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
 msgid "Peter Penz"
-msgstr ""
+msgstr "პიტერ პენცი"
 
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
@@ -13418,7 +13369,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label::textbox"
 msgid "Select which data should be shown:"
-msgstr ""
+msgstr "აირჩიეთ საჩვენებელი მონაცემები:"
 
 #: kio/kmetaprops.cpp:123
 #, kde-format
@@ -13565,7 +13516,7 @@ msgstr "კოდეკი"
 #, kde-format
 msgctxt "@label"
 msgid "Color Depth"
-msgstr ""
+msgstr "ფერის სიღრმე"
 
 #: kio/knfotranslator.cpp:62
 #, kde-format
@@ -13703,7 +13654,7 @@ msgstr "თეთრის ბალანსი"
 #, kde-format
 msgctxt "@label video director"
 msgid "Director"
-msgstr ""
+msgstr "რეჟისორი"
 
 #: kio/knfotranslator.cpp:85
 #, kde-format
@@ -13721,7 +13672,7 @@ msgstr "ალბომი"
 #, kde-format
 msgctxt "@label"
 msgid "Performer"
-msgstr ""
+msgstr "შემსრულებელი"
 
 #: kio/knfotranslator.cpp:88
 #, kde-format
@@ -13863,7 +13814,7 @@ msgstr ""
 #: kio/kscan.cpp:49
 #, kde-format
 msgid "Acquire Image"
-msgstr ""
+msgstr "გამოსახულების მიღება"
 
 #: kio/kscan.cpp:97
 #, kde-format
@@ -13873,12 +13824,12 @@ msgstr ""
 #: kio/netaccess.cpp:103
 #, kde-format
 msgid "File '%1' is not readable"
-msgstr ""
+msgstr "ფაილი \"%1\" წაკითხვადი არაა"
 
 #: kio/netaccess.cpp:437
 #, kde-format
 msgid "ERROR: Unknown protocol '%1'"
-msgstr ""
+msgstr "შეცდომა: უცნობი პროტოკოლი '%1'"
 
 #: kio/passworddialog.cpp:56
 #, kde-format
@@ -13888,48 +13839,6 @@ msgstr ""
 #: kioslave/metainfo/metainfo.cpp:98
 #, kde-format
 msgid "No metainfo for %1"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:24
-#, kde-format
-msgid "Organization / Common Name"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
-#: kssl/kcm/cacertificates.ui:29
-#, kde-format
-msgid "Organizational Unit"
-msgstr "ორგანიზაციული ერთეული"
-
-#. i18n: ectx: property (text), widget (QPushButton, displaySelection)
-#: kssl/kcm/cacertificates.ui:42
-#, kde-format
-msgid "Display..."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, disableSelection)
-#: kssl/kcm/cacertificates.ui:68
-#, kde-format
-msgid "Disable"
-msgstr "გამორთვა"
-
-#. i18n: ectx: property (text), widget (QPushButton, enableSelection)
-#: kssl/kcm/cacertificates.ui:78
-#, kde-format
-msgid "Enable"
-msgstr "ჩართვა"
-
-#. i18n: ectx: property (text), widget (QPushButton, removeSelection)
-#: kssl/kcm/cacertificates.ui:104
-#, kde-format
-msgid "Remove"
-msgstr "ზონის ამოღება"
-
-#. i18n: ectx: property (text), widget (QPushButton, add)
-#: kssl/kcm/cacertificates.ui:111
-#, kde-format
-msgid "Add..."
 msgstr ""
 
 #: kssl/kcm/cacertificatespage.cpp:140
@@ -13945,48 +13854,6 @@ msgstr ""
 #: kssl/kcm/cacertificatespage.cpp:302
 #, kde-format
 msgid "Pick Certificates"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, subjectHeading)
-#: kssl/kcm/displaycert.ui:23
-#, kde-format
-msgid "<b>Subject Information</b>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, issuerHeading)
-#: kssl/kcm/displaycert.ui:39
-#, kde-format
-msgid "<b>Issuer Information</b>"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: kssl/kcm/displaycert.ui:55
-#, kde-format
-msgid "<b>Other</b>"
-msgstr "<b>სხვა</b>"
-
-#. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
-#: kssl/kcm/displaycert.ui:64
-#, kde-format
-msgid "Validity period"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
-#: kssl/kcm/displaycert.ui:78
-#, kde-format
-msgid "Serial number"
-msgstr "სერიული ნომერი"
-
-#. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
-#: kssl/kcm/displaycert.ui:92
-#, kde-format
-msgid "MD5 digest"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
-#: kssl/kcm/displaycert.ui:106
-#, kde-format
-msgid "SHA1 digest"
 msgstr ""
 
 #: kssl/kcm/displaycertdialog.cpp:73
@@ -14335,3 +14202,36 @@ msgstr ""
 #, kde-format
 msgid "GMT"
 msgstr "GMT"
+
+#~ msgid "Information"
+#~ msgstr "ინფორმაცია"
+
+#~ msgid "Filename:"
+#~ msgstr "ფაილის სახელი:"
+
+#~ msgid "Error"
+#~ msgstr "შეცდომა"
+
+#~ msgid "Warning"
+#~ msgstr "შეტყობინება"
+
+#~ msgid "Fatal Error"
+#~ msgstr "ფატალური შეცდომა"
+
+#~ msgid "Organizational Unit"
+#~ msgstr "ორგანიზაციული ერთეული"
+
+#~ msgid "Disable"
+#~ msgstr "გამორთვა"
+
+#~ msgid "Enable"
+#~ msgstr "ჩართვა"
+
+#~ msgid "Remove"
+#~ msgstr "ზონის ამოღება"
+
+#~ msgid "<b>Other</b>"
+#~ msgstr "<b>სხვა</b>"
+
+#~ msgid "Serial number"
+#~ msgstr "სერიული ნომერი"
