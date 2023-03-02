@@ -79,7 +79,7 @@
 ><imagedata fileref="module.png" format="PNG"/></imageobject>
 <textobject
 ><phrase
->O módulo de versões e certificados SSL.</phrase
+>O módulo de versões e certificados SSL</phrase
 ></textobject>
 </mediaobject>
 </screenshot>
@@ -90,7 +90,7 @@
 
 <para
 >Selecione um certificado de uma organização apresentada e clique em <guibutton
->Exibir</guibutton
+>Exibir...</guibutton
 >, abaixo da lista, para ver os detalhes do certificado.</para>
 
 <screenshot id="screenshot-details">
@@ -140,7 +140,7 @@
 <!--link file selector dialog to buildingblocks when its done-->
 <para
 >Primeiro, clique no botão <guibutton
->Adicionar</guibutton
+>Adicionar...</guibutton
 > abaixo da lista de certificados. Será aberta a janela de seleção de arquivos, que lhe permite localizar onde estão armazenados os arquivos de certificados. Depois de localizar o arquivo do certificado, selecione-o e clique no botão <guibutton
 >Abrir</guibutton
 > para adicioná-lo.</para>
