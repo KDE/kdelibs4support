@@ -2732,13 +2732,13 @@ msgid ""
 "internationalization visit <a href=\"http://l10n.kde.org\">http://l10n.kde."
 "org</a></p>"
 msgstr ""
-"<p>يقوم طاقم عربآيز بترجمة واجهة كدي إلى اللغة العربية، و هذا بفضل جهود طاقم "
-"مترجمين متطوعين من كافة الدول العربية وغيرها. </p><p>للمزيد من المعلومات حول "
-"ترجمة كدي إلى العربية ، زر  <a href=\"http://www.arabeyes.org\"> الموقع "
-"الرسمي لعربآيز</a> الرجاء التبليغ عن أخطاء الترجمة على العنوان التالي: "
-"contact@arabeyes.org</p><p>تترجم كدي إلى لغات متعددة بفضل طواقم الترجمة من "
-"العالم بأسره.</p><p>لمزيد من المعلومات زر <a  href=\"http://l10n.kde.org "
-"\">http://l10n.kde.org</a></p>"
+"<p>يقوم طاقم عربآيز بترجمة واجهة كِيدِي إلى اللغة العربية، و هذا بفضل جهود "
+"طاقم مترجمين متطوعين من كافة الدول العربية وغيرها. </p><p>للمزيد من "
+"المعلومات حول ترجمة كِيدِي إلى العربية ، زر  <a href=\"http://www.arabeyes.org"
+"\"> الموقع الرسمي لعربآيز</a> الرجاء التبليغ عن أخطاء الترجمة على العنوان "
+"التالي: contact@arabeyes.org</p><p>تترجم كِيدِي إلى لغات متعددة بفضل طواقم "
+"الترجمة من العالم بأسره.</p><p>لمزيد من المعلومات زر <a  href=\"http://l10n."
+"kde.org \">http://l10n.kde.org</a></p>"
 
 #: kdecore/kcalendarsystem.cpp:108
 #, kde-format
@@ -2871,7 +2871,7 @@ msgstr "ر"
 #, kde-format
 msgctxt "Coptic month 4 - KLocale::NarrowName"
 msgid "K"
-msgstr "كلڤن"
+msgstr "كلفن"
 
 #: kdecore/kcalendarsystemcoptic.cpp:161
 #, fuzzy, kde-format
@@ -2925,7 +2925,7 @@ msgstr "M"
 #, kde-format
 msgctxt "Coptic month 13 - KLocale::NarrowName"
 msgid "K"
-msgstr "كلڤن"
+msgstr "كلفن"
 
 #: kdecore/kcalendarsystemcoptic.cpp:186
 #, fuzzy, kde-format
@@ -4533,7 +4533,7 @@ msgstr "ر"
 #, kde-format
 msgctxt "Hebrew month 3 - KLocale::NarrowName"
 msgid "K"
-msgstr "كلڤن"
+msgstr "كلفن"
 
 #: kdecore/kcalendarsystemhebrew.cpp:631
 #, fuzzy, kde-format
@@ -5003,7 +5003,7 @@ msgstr "آش"
 #, kde-format
 msgctxt "Indian National month 8 - KLocale::NarrowName"
 msgid "K"
-msgstr "كلڤن"
+msgstr "كلفن"
 
 #: kdecore/kcalendarsystemindiannational.cpp:174
 #, fuzzy, kde-format
@@ -5111,7 +5111,7 @@ msgstr "تش"
 #, kde-format
 msgctxt "Indian National month 2 - KLocale::ShortName"
 msgid "Vai"
-msgstr "ڤاي"
+msgstr "فاي"
 
 #: kdecore/kcalendarsystemindiannational.cpp:224
 #, fuzzy, kde-format
@@ -5844,7 +5844,7 @@ msgstr "أ"
 #, kde-format
 msgctxt "Hijri weekday 4 - KLocale::NarrowName "
 msgid "K"
-msgstr "كلڤن"
+msgstr "كلفن"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:333
 #, fuzzy, kde-format
@@ -5983,7 +5983,7 @@ msgstr "أو"
 #, kde-format
 msgctxt "Jalali month 3 - KLocale::NarrowName"
 msgid "K"
-msgstr "كلڤن"
+msgstr "كلفن"
 
 #: kdecore/kcalendarsystemjalali.cpp:178
 #, fuzzy, kde-format
@@ -7354,7 +7354,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:436
 #, kde-format
 msgid "KDE Application"
-msgstr "تطبيق كدي"
+msgstr "تطبيق كِيدِي"
 
 #: kdecore/kcmdlineargs.cpp:497
 #, kde-format
@@ -7364,7 +7364,7 @@ msgstr "Qt"
 #: kdecore/kcmdlineargs.cpp:500
 #, kde-format
 msgid "KDE"
-msgstr "كدي"
+msgstr "كِيدِي"
 
 #: kdecore/kcmdlineargs.cpp:821 kdecore/kcmdlineargs.cpp:835
 #, kde-format
@@ -7395,7 +7395,7 @@ msgid ""
 "%3: %4\n"
 msgstr ""
 "كيوت: %1\n"
-"منصة تطوير كدي: %2\n"
+"منصة تطوير كِيدِي: %2\n"
 "%3: %4\n"
 
 #: kdecore/kcmdlineargs.cpp:921
@@ -8041,7 +8041,7 @@ msgstr "خطأ في النظام"
 #: kdecore/qtest_kde.h:82 kdecore/qtest_kde.h:133
 #, kde-format
 msgid "KDE Test Program"
-msgstr "برنامج اختبار كدي"
+msgstr "برنامج اختبار كِيدِي"
 
 #: kdecore/TIMEZONES:1
 #, kde-format
