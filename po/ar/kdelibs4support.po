@@ -6391,7 +6391,7 @@ msgstr "چهارشنبه"
 #, fuzzy, kde-format
 msgctxt "Jalali weekday 4 - KLocale::ShortName"
 msgid "5sh"
-msgstr "پنجشنبه"
+msgstr "بنجشنبه"
 
 #: kdecore/kcalendarsystemjalali.cpp:360
 #, fuzzy, kde-format
@@ -6433,7 +6433,7 @@ msgstr "چهارشنبه"
 #, fuzzy, kde-format
 msgctxt "Jalali weekday 4 - KLocale::LongName"
 msgid "Panj shanbe"
-msgstr "پنجشنبه"
+msgstr "بنجشنبه"
 
 #: kdecore/kcalendarsystemjalali.cpp:379
 #, fuzzy, kde-format
