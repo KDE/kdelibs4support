@@ -2019,12 +2019,10 @@ msgctxt "color"
 msgid "purple4"
 msgstr "purpura4"
 
-#, fuzzy, kde-format
-#| msgctxt "Ethiopian month 3 - ShortName"
-#| msgid "Hed"
+#, kde-format
 msgctxt "color"
 msgid "red"
-msgstr "Hed"
+msgstr ""
 
 #, kde-format
 msgctxt "color"
@@ -2146,12 +2144,10 @@ msgctxt "color"
 msgid "snow4"
 msgstr ""
 
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 10 - ShortName"
-#| msgid "Pan"
+#, kde-format
 msgctxt "color"
 msgid "tan"
-msgstr "Pan"
+msgstr ""
 
 #, kde-format
 msgctxt "color"
@@ -2415,10 +2411,9 @@ msgid "A dialog box for setting preferences for debug output"
 msgstr "Dialogkesto por agordi sencimigan eligon"
 
 #: kdebugdialog/main.cpp:102
-#, fuzzy, kde-format
-#| msgid "Copyright 1999-2009, David Faure <email>faure@kde.org</email>"
+#, kde-format
 msgid "Copyright 1999-2009, David Faure <faure@kde.org>"
-msgstr "Kopirajto 1999-2009, David FAURE <email>faure@kde.org</email>"
+msgstr ""
 
 #: kdebugdialog/main.cpp:103
 #, kde-format
@@ -2749,10 +2744,10 @@ msgid "Coptic"
 msgstr "Kopta"
 
 #: kdecore/kcalendarsystem.cpp:112
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item Calendar system"
 msgid "Ethiopian"
-msgstr "Etiopa"
+msgstr ""
 
 #: kdecore/kcalendarsystem.cpp:114
 #, kde-format
@@ -2797,11 +2792,10 @@ msgid "Taiwanese"
 msgstr ""
 
 #: kdecore/kcalendarsystem.cpp:128
-#, fuzzy, kde-format
-#| msgid "R. Thaani"
+#, kde-format
 msgctxt "@item Calendar system"
 msgid "Thai"
-msgstr "R. Thaani"
+msgstr ""
 
 #: kdecore/kcalendarsystem.cpp:131
 #, kde-format
@@ -3117,10 +3111,10 @@ msgid "of Meshir"
 msgstr "el Meshir"
 
 #: kdecore/kcalendarsystemcoptic.cpp:264
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Coptic month 7 - KLocale::LongName Possessive"
 msgid "of Paremhotep"
-msgstr "Paremhotep"
+msgstr ""
 
 #: kdecore/kcalendarsystemcoptic.cpp:266
 #, kde-format
@@ -3153,10 +3147,10 @@ msgid "of Mesore"
 msgstr "el Mesore"
 
 #: kdecore/kcalendarsystemcoptic.cpp:276
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Coptic month 12 - KLocale::LongName Possessive"
 msgid "of Kouji nabot"
-msgstr "Kouji nabot"
+msgstr ""
 
 #: kdecore/kcalendarsystemcoptic.cpp:285
 #, kde-format
@@ -3796,11 +3790,10 @@ msgid "H"
 msgstr ""
 
 #: kdecore/kcalendarsystemethiopian.cpp:244
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Ethiopian weekday 5 - KLocale::NarrowName "
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemethiopian.cpp:246
 #, kde-format
@@ -3982,11 +3975,10 @@ msgid "M"
 msgstr ""
 
 #: kdecore/kcalendarsystemgregorian.cpp:144
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Gregorian month 4 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemgregorian.cpp:146
 #, kde-format
@@ -4007,11 +3999,10 @@ msgid "J"
 msgstr ""
 
 #: kdecore/kcalendarsystemgregorian.cpp:152
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Gregorian month 8 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemgregorian.cpp:154
 #, kde-format
@@ -4522,11 +4513,10 @@ msgid "S"
 msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:635
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hebrew month 6 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:637
 #, kde-format
@@ -4553,11 +4543,10 @@ msgid "T"
 msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:645
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hebrew month 11 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:647
 #, kde-format
@@ -4566,91 +4555,76 @@ msgid "E"
 msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:649
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hebrew month 13 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:651
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hebrew month 14 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:660
-#, fuzzy, kde-format
-#| msgctxt "of Tir short"
-#| msgid "of Tir"
+#, kde-format
 msgctxt "Hebrew month 1 - KLocale::ShortName Possessive"
 msgid "of Tis"
-msgstr "de Tir"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:662
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 6 - ShortNamePossessive"
-#| msgid "of Mes"
+#, kde-format
 msgctxt "Hebrew month 2 - KLocale::ShortName Possessive"
 msgid "of Hes"
-msgstr "el Mes"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:664
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 4 - ShortNamePossessive"
-#| msgid "of Kia"
+#, kde-format
 msgctxt "Hebrew month 3 - KLocale::ShortName Possessive"
 msgid "of Kis"
-msgstr "el Kia"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:666
-#, fuzzy, kde-format
-#| msgid "of Tevet"
+#, kde-format
 msgctxt "Hebrew month 4 - KLocale::ShortName Possessive"
 msgid "of Tev"
-msgstr "de Tevet"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:668
-#, fuzzy, kde-format
-#| msgid "of Shvat"
+#, kde-format
 msgctxt "Hebrew month 5 - KLocale::ShortName Possessive"
 msgid "of Shv"
-msgstr "de Shvat"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:670
-#, fuzzy, kde-format
-#| msgid "of Adar"
+#, kde-format
 msgctxt "Hebrew month 6 - KLocale::ShortName Possessive"
 msgid "of Ada"
-msgstr "de Adar"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:672
-#, fuzzy, kde-format
-#| msgid "of Nisan"
+#, kde-format
 msgctxt "Hebrew month 7 - KLocale::ShortName Possessive"
 msgid "of Nis"
-msgstr "de Nisan"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:674
-#, fuzzy, kde-format
-#| msgid "of Iyar"
+#, kde-format
 msgctxt "Hebrew month 8 - KLocale::ShortName Possessive"
 msgid "of Iya"
-msgstr "de Iyar"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:676
-#, fuzzy, kde-format
-#| msgid "of Sivan"
+#, kde-format
 msgctxt "Hebrew month 9 - KLocale::ShortName Possessive"
 msgid "of Siv"
-msgstr "de Sivan"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:678
-#, fuzzy, kde-format
-#| msgid "of Tamuz"
+#, kde-format
 msgctxt "Hebrew month 10 - KLocale::ShortName Possessive"
 msgid "of Tam"
-msgstr "de Tamuz"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:680
 #, kde-format
@@ -4659,97 +4633,82 @@ msgid "of Av"
 msgstr "de Av"
 
 #: kdecore/kcalendarsystemhebrew.cpp:682
-#, fuzzy, kde-format
-#| msgid "of Elul"
+#, kde-format
 msgctxt "Hebrew month 12 - KLocale::ShortName Possessive"
 msgid "of Elu"
-msgstr "de Elul"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:684
-#, fuzzy, kde-format
-#| msgid "of Adar"
+#, kde-format
 msgctxt "Hebrew month 13 - KLocale::ShortName Possessive"
 msgid "of Ad1"
-msgstr "de Adar"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:686
-#, fuzzy, kde-format
-#| msgid "of Adar"
+#, kde-format
 msgctxt "Hebrew month 14 - KLocale::ShortName Possessive"
 msgid "of Ad2"
-msgstr "de Adar"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:695
-#, fuzzy, kde-format
-#| msgctxt "Tir short"
-#| msgid "Tir"
+#, kde-format
 msgctxt "Hebrew month 1 - KLocale::ShortName"
 msgid "Tis"
-msgstr "Tir"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:697
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 6 - ShortName"
-#| msgid "Mes"
+#, kde-format
 msgctxt "Hebrew month 2 - KLocale::ShortName"
 msgid "Hes"
-msgstr "Mes"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:699
-#, fuzzy, kde-format
-#| msgid "Kislev"
+#, kde-format
 msgctxt "Hebrew month 3 - KLocale::ShortName"
 msgid "Kis"
-msgstr "Kislev"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:701
-#, fuzzy, kde-format
-#| msgid "Tevet"
+#, kde-format
 msgctxt "Hebrew month 4 - KLocale::ShortName"
 msgid "Tev"
-msgstr "Tevet"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:703
-#, fuzzy, kde-format
-#| msgid "Shvat"
+#, kde-format
 msgctxt "Hebrew month 5 - KLocale::ShortName"
 msgid "Shv"
-msgstr "Shvat"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:705
-#, fuzzy, kde-format
-#| msgid "Adar"
+#, kde-format
 msgctxt "Hebrew month 6 - KLocale::ShortName"
 msgid "Ada"
-msgstr "Adar"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:707
-#, fuzzy, kde-format
-#| msgid "Nisan"
+#, kde-format
 msgctxt "Hebrew month 7 - KLocale::ShortName"
 msgid "Nis"
-msgstr "Nisan"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:709
-#, fuzzy, kde-format
-#| msgid "Iyar"
+#, kde-format
 msgctxt "Hebrew month 8 - KLocale::ShortName"
 msgid "Iya"
-msgstr "Iyar"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:711
-#, fuzzy, kde-format
-#| msgid "Sivan"
+#, kde-format
 msgctxt "Hebrew month 9 - KLocale::ShortName"
 msgid "Siv"
-msgstr "Sivan"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:713
-#, fuzzy, kde-format
-#| msgid "Tamuz"
+#, kde-format
 msgctxt "Hebrew month 10 - KLocale::ShortName"
 msgid "Tam"
-msgstr "Tamuz"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:715
 #, kde-format
@@ -4758,25 +4717,22 @@ msgid "Av"
 msgstr "Av"
 
 #: kdecore/kcalendarsystemhebrew.cpp:717
-#, fuzzy, kde-format
-#| msgid "Elul"
+#, kde-format
 msgctxt "Hebrew month 12 - KLocale::ShortName"
 msgid "Elu"
-msgstr "Elul"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:719
-#, fuzzy, kde-format
-#| msgid "Ahd"
+#, kde-format
 msgctxt "Hebrew month 13 - KLocale::ShortName"
 msgid "Ad1"
-msgstr "Ahd"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:721
-#, fuzzy, kde-format
-#| msgid "Ahd"
+#, kde-format
 msgctxt "Hebrew month 14 - KLocale::ShortName"
 msgid "Ad2"
-msgstr "Ahd"
+msgstr ""
 
 #: kdecore/kcalendarsystemhebrew.cpp:730
 #, kde-format
@@ -4947,11 +4903,10 @@ msgid "Adar II"
 msgstr "Adar II"
 
 #: kdecore/kcalendarsystemindiannational.cpp:66
-#, fuzzy, kde-format
-#| msgid "Safar"
+#, kde-format
 msgctxt "Calendar Era: Indian National Saka Era, years > 0, LongFormat"
 msgid "Saka Era"
-msgstr "Safar"
+msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:67
 #, kde-format
@@ -4986,12 +4941,10 @@ msgid "J"
 msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "Indian National month 4 - ShortName"
-#| msgid "Āsh"
+#, kde-format
 msgctxt "Indian National month 4 - KLocale::NarrowName"
 msgid "Ā"
-msgstr "Āsh"
+msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:166
 #, kde-format
@@ -5006,12 +4959,10 @@ msgid "B"
 msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "Indian National month 4 - ShortName"
-#| msgid "Āsh"
+#, kde-format
 msgctxt "Indian National month 7 - KLocale::NarrowName"
 msgid "Ā"
-msgstr "Āsh"
+msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:172
 #, kde-format
@@ -5020,11 +4971,10 @@ msgid "K"
 msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:174
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Indian National month 9 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemindiannational.cpp:176
 #, kde-format
@@ -5490,11 +5440,10 @@ msgid "S"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:170
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hijri month 3 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:172
 #, kde-format
@@ -5503,11 +5452,10 @@ msgid "T"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:174
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hijri month 5 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:176
 #, kde-format
@@ -5552,54 +5500,46 @@ msgid "H"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "of Mehr short"
-#| msgid "of Meh"
+#, kde-format
 msgctxt "Hijri month 1 - KLocale::ShortName Possessive"
 msgid "of Muh"
-msgstr "de Meh"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:199
-#, fuzzy, kde-format
-#| msgid "of Safar"
+#, kde-format
 msgctxt "Hijri month 2 - KLocale::ShortName Possessive"
 msgid "of Saf"
-msgstr "de Safar"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:201
-#, fuzzy, kde-format
-#| msgid "of R. Awal"
+#, kde-format
 msgctxt "Hijri month 3 - KLocale::ShortName Possessive"
 msgid "of R.A"
-msgstr "de R. Awal"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:203
-#, fuzzy, kde-format
-#| msgid "of R. Thaani"
+#, kde-format
 msgctxt "Hijri month 4 - KLocale::ShortName Possessive"
 msgid "of R.T"
-msgstr "de R. Thaani"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:205
-#, fuzzy, kde-format
-#| msgid "of J. Awal"
+#, kde-format
 msgctxt "Hijri month 5 - KLocale::ShortName Possessive"
 msgid "of J.A"
-msgstr "de J. Awal"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:207
-#, fuzzy, kde-format
-#| msgid "of J. Thaani"
+#, kde-format
 msgctxt "Hijri month 6 - KLocale::ShortName Possessive"
 msgid "of J.T"
-msgstr "de J. Thaani"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:209
-#, fuzzy, kde-format
-#| msgid "of Rajab"
+#, kde-format
 msgctxt "Hijri month 7 - KLocale::ShortName Possessive"
 msgid "of Raj"
-msgstr "de Rajab"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:211
 #, kde-format
@@ -5608,56 +5548,46 @@ msgid "of Sha"
 msgstr "de Sha"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:213
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 8 - ShortNamePossessive"
-#| msgid "of Pam"
+#, kde-format
 msgctxt "Hijri month 9 - KLocale::ShortName Possessive"
 msgid "of Ram"
-msgstr "el Pam"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:215
-#, fuzzy, kde-format
-#| msgctxt "of Shahrivar short"
-#| msgid "of Sha"
+#, kde-format
 msgctxt "Hijri month 10 - KLocale::ShortName Possessive"
 msgid "of Shw"
-msgstr "de Sha"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:217
-#, fuzzy, kde-format
-#| msgid "of Qi`dah"
+#, kde-format
 msgctxt "Hijri month 11 - KLocale::ShortName Possessive"
 msgid "of Qid"
-msgstr "de Qi`dah"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:219
-#, fuzzy, kde-format
-#| msgid "of Hijjah"
+#, kde-format
 msgctxt "Hijri month 12 - KLocale::ShortName Possessive"
 msgid "of Hij"
-msgstr "de Hijjah"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:228
-#, fuzzy, kde-format
-#| msgctxt "Mehr short"
-#| msgid "Meh"
+#, kde-format
 msgctxt "Hijri month 1 - KLocale::ShortName"
 msgid "Muh"
-msgstr "Meh"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:230
-#, fuzzy, kde-format
-#| msgid "Safar"
+#, kde-format
 msgctxt "Hijri month 2 - KLocale::ShortName"
 msgid "Saf"
-msgstr "Safar"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:232
-#, fuzzy, kde-format
-#| msgid "R. Awal"
+#, kde-format
 msgctxt "Hijri month 3 - KLocale::ShortName"
 msgid "R.A"
-msgstr "R. Awal"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:234
 #, kde-format
@@ -5666,11 +5596,10 @@ msgid "R.T"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:236
-#, fuzzy, kde-format
-#| msgid "J. Awal"
+#, kde-format
 msgctxt "Hijri month 5 - KLocale::ShortName"
 msgid "J.A"
-msgstr "J. Awal"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:238
 #, kde-format
@@ -5679,11 +5608,10 @@ msgid "J.T"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:240
-#, fuzzy, kde-format
-#| msgid "Rajab"
+#, kde-format
 msgctxt "Hijri month 7 - KLocale::ShortName"
 msgid "Raj"
-msgstr "Rajab"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:242
 #, kde-format
@@ -5692,35 +5620,28 @@ msgid "Sha"
 msgstr "Sha"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 8 - ShortName"
-#| msgid "Pam"
+#, kde-format
 msgctxt "Hijri month 9 - KLocale::ShortName"
 msgid "Ram"
-msgstr "Pam"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:246
-#, fuzzy, kde-format
-#| msgctxt "Shahrivar short"
-#| msgid "Sha"
+#, kde-format
 msgctxt "Hijri month 10 - KLocale::ShortName"
 msgid "Shw"
-msgstr "Sha"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:248
-#, fuzzy, kde-format
-#| msgid "Qi`dah"
+#, kde-format
 msgctxt "Hijri month 11 - KLocale::ShortName"
 msgid "Qid"
-msgstr "Qi`dah"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:250
-#, fuzzy, kde-format
-#| msgctxt "@item Calendar system"
-#| msgid "Hijri"
+#, kde-format
 msgctxt "Hijri month 12 - KLocale::ShortName"
 msgid "Hij"
-msgstr "Hijri"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:259
 #, kde-format
@@ -5879,11 +5800,10 @@ msgid "T"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:329
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hijri weekday 3 - KLocale::NarrowName "
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:331
 #, kde-format
@@ -5904,11 +5824,10 @@ msgid "S"
 msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:337
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Hijri weekday 7 - KLocale::NarrowName "
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:346
 #, kde-format
@@ -6056,18 +5975,16 @@ msgid "M"
 msgstr ""
 
 #: kdecore/kcalendarsystemjalali.cpp:186
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Jalali month 8 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemjalali.cpp:188
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Jalali month 9 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemjalali.cpp:190
 #, kde-format
@@ -6448,11 +6365,10 @@ msgid "Jom"
 msgstr "Jom"
 
 #: kdecore/kcalendarsystemjalali.cpp:362
-#, fuzzy, kde-format
-#| msgid "Shanbe"
+#, kde-format
 msgctxt "Jalali weekday 6 - KLocale::ShortName"
 msgid "Shn"
-msgstr "Shanbe"
+msgstr ""
 
 #: kdecore/kcalendarsystemjalali.cpp:364
 #, kde-format
@@ -6547,12 +6463,10 @@ msgid "%EC %Ey"
 msgstr ""
 
 #: kdecore/kcalendarsystemjapanese.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "Shahrivar short"
-#| msgid "Sha"
+#, kde-format
 msgctxt "Calendar Era: Japanese Nengō, Shōwa Era, LongFormat"
 msgid "Shōwa"
-msgstr "Sha"
+msgstr ""
 
 #: kdecore/kcalendarsystemjapanese.cpp:78
 #, kde-format
@@ -6593,12 +6507,10 @@ msgid "%EC %Ey"
 msgstr ""
 
 #: kdecore/kcalendarsystemjapanese.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "Ethiopian month 9 - ShortName"
-#| msgid "Gen"
+#, kde-format
 msgctxt "Japanese year 1 of era"
 msgid "Gannen"
-msgstr "Gen"
+msgstr ""
 
 #: kdecore/kcalendarsystemjulian.cpp:73
 #, kde-format
@@ -6681,11 +6593,10 @@ msgid "M"
 msgstr ""
 
 #: kdecore/kcalendarsystemjulian.cpp:178
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Julian month 4 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemjulian.cpp:180
 #, kde-format
@@ -6706,11 +6617,10 @@ msgid "J"
 msgstr ""
 
 #: kdecore/kcalendarsystemjulian.cpp:186
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Julian month 8 - KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/kcalendarsystemjulian.cpp:188
 #, kde-format
@@ -7395,10 +7305,9 @@ msgid "KDE"
 msgstr "KDE"
 
 #: kdecore/kcmdlineargs.cpp:821 kdecore/kcmdlineargs.cpp:835
-#, fuzzy, kde-format
-#| msgid "ERROR: Unknown protocol '%1'"
+#, kde-format
 msgid "Unknown option '%1'."
-msgstr "ERARO: Nekonata protokolo '%1'"
+msgstr ""
 
 #: kdecore/kcmdlineargs.cpp:841
 #, kde-format
@@ -7547,11 +7456,9 @@ msgstr "Provizordosiero de KDE"
 
 #: kdecore/kdatetime.cpp:1567 kdecore/kdatetime.cpp:1577
 #: kdecore/kdatetime.cpp:2985
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 8 - ShortName"
-#| msgid "Pam"
+#, kde-format
 msgid "am"
-msgstr "Pam"
+msgstr ""
 
 #: kdecore/kdatetime.cpp:1567 kdecore/kdatetime.cpp:1577
 #: kdecore/kdatetime.cpp:2990
@@ -7583,10 +7490,10 @@ msgid "Devanagari"
 msgstr "Devanagara"
 
 #: kdecore/klocale_kde.cpp:794
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "digit set"
 msgid "Eastern Arabic-Indic"
-msgstr "Orienta araba-ciferoj"
+msgstr ""
 
 #: kdecore/klocale_kde.cpp:797
 #, kde-format
@@ -7637,11 +7544,10 @@ msgid "Telugu"
 msgstr "Teluga"
 
 #: kdecore/klocale_kde.cpp:821
-#, fuzzy, kde-format
-#| msgid "R. Thaani"
+#, kde-format
 msgctxt "digit set"
 msgid "Thai"
-msgstr "R. Thaani"
+msgstr ""
 
 #: kdecore/klocale_kde.cpp:824
 #, kde-format
@@ -7931,18 +7837,16 @@ msgid "Ante Meridiem"
 msgstr "Antaŭ meztago"
 
 #: kdecore/klocale_kde.cpp:2154
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Before Noon KLocale::ShortName"
 msgid "AM"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/klocale_kde.cpp:2155
-#, fuzzy, kde-format
-#| msgid "Av"
+#, kde-format
 msgctxt "Before Noon KLocale::NarrowName"
 msgid "A"
-msgstr "Av"
+msgstr ""
 
 #: kdecore/klocale_kde.cpp:2158
 #, kde-format
@@ -8070,10 +7974,9 @@ msgid "Africa/Algiers"
 msgstr "Afriko/Alĝero"
 
 #: kdecore/TIMEZONES:5
-#, fuzzy, kde-format
-#| msgid "Africa/Asmera"
+#, kde-format
 msgid "Africa/Asmara"
-msgstr "Afriko/Asmera"
+msgstr ""
 
 #: kdecore/TIMEZONES:6
 #, kde-format
@@ -8193,10 +8096,9 @@ msgid "Africa/Johannesburg"
 msgstr "Afriko/Johannesburg"
 
 #: kdecore/TIMEZONES:31
-#, fuzzy, kde-format
-#| msgid "Africa/Ceuta"
+#, kde-format
 msgid "Africa/Juba"
-msgstr "Afriko/Ceuta"
+msgstr ""
 
 #: kdecore/TIMEZONES:32
 #, kde-format
@@ -8333,10 +8235,9 @@ msgid "Africa/Porto-Novo"
 msgstr "Afriko/Porto-Novo"
 
 #: kdecore/TIMEZONES:62
-#, fuzzy, kde-format
-#| msgid "Africa/Ceuta"
+#, kde-format
 msgid "Africa/Pretoria"
-msgstr "Afriko/Ceuta"
+msgstr ""
 
 #: kdecore/TIMEZONES:63
 #, kde-format
@@ -8436,10 +8337,9 @@ msgstr "Catamarca (CT), Chubut (CH)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:88
-#, fuzzy, kde-format
-#| msgid "Catamarca (CT), Chubut (CH)"
+#, kde-format
 msgid "Catamarca (CT); Chubut (CH)"
-msgstr "Catamarca (CT), Chubut (CH)"
+msgstr "Catamarca (CT); Chubut (CH)"
 
 #: kdecore/TIMEZONES:89
 #, kde-format
@@ -8514,10 +8414,9 @@ msgid "Santa Cruz (SC)"
 msgstr "Santa Cruz (SC)"
 
 #: kdecore/TIMEZONES:111
-#, fuzzy, kde-format
-#| msgid "America/Argentina/San_Juan"
+#, kde-format
 msgid "America/Argentina/Salta"
-msgstr "Ameriko/Argentino/San_Juan"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:113
@@ -8527,10 +8426,9 @@ msgstr "(SA, LP, NQ, RN)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:115
-#, fuzzy, kde-format
-#| msgid "(SA, LP, NQ, RN)"
+#, kde-format
 msgid "Salta (SA, LP, NQ, RN)"
-msgstr "(SA, LP, NQ, RN)"
+msgstr ""
 
 #: kdecore/TIMEZONES:116
 #, kde-format
@@ -8544,10 +8442,9 @@ msgid "San Juan (SJ)"
 msgstr "San Juan (SJ)"
 
 #: kdecore/TIMEZONES:119
-#, fuzzy, kde-format
-#| msgid "America/Argentina/San_Juan"
+#, kde-format
 msgid "America/Argentina/San_Luis"
-msgstr "Ameriko/Argentino/San_Juan"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:121
@@ -8588,10 +8485,9 @@ msgid "America/Asuncion"
 msgstr "Ameriko/Asuncion"
 
 #: kdecore/TIMEZONES:130
-#, fuzzy, kde-format
-#| msgid "America/Antigua"
+#, kde-format
 msgid "America/Atikokan"
-msgstr "Ameriko/Antigvo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:132 kdecore/TIMEZONES:206
@@ -8606,10 +8502,9 @@ msgid "EST - ON (Atikokan); NU (Coral H)"
 msgstr ""
 
 #: kdecore/TIMEZONES:135
-#, fuzzy, kde-format
-#| msgid "America/Antigua"
+#, kde-format
 msgid "America/Atka"
-msgstr "Ameriko/Antigvo"
+msgstr ""
 
 #: kdecore/TIMEZONES:138
 #, kde-format
@@ -8623,10 +8518,9 @@ msgid "Bahia"
 msgstr "Bahia"
 
 #: kdecore/TIMEZONES:141
-#, fuzzy, kde-format
-#| msgid "America/Bahia"
+#, kde-format
 msgid "America/Bahia_Banderas"
-msgstr "Ameriko/Bahia"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:143
@@ -8668,10 +8562,9 @@ msgid "America/Belize"
 msgstr "Ameriko/Belizo"
 
 #: kdecore/TIMEZONES:153
-#, fuzzy, kde-format
-#| msgid "America/Cancun"
+#, kde-format
 msgid "America/Blanc-Sablon"
-msgstr "Ameriko/Cancun"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:155
@@ -8724,10 +8617,9 @@ msgid "America/Buenos_Aires"
 msgstr "Ameriko/Buenos-Ajreso"
 
 #: kdecore/TIMEZONES:170
-#, fuzzy, kde-format
-#| msgid "America/Cayman"
+#, kde-format
 msgid "America/Calgary"
-msgstr "Ameriko/Kejmanoj"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:172 kdecore/TIMEZONES:248 kdecore/TIMEZONES:1114
@@ -8841,10 +8733,9 @@ msgid "Mountain Time - Chihuahua (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:204
-#, fuzzy, kde-format
-#| msgid "America/Curacao"
+#, kde-format
 msgid "America/Coral_Harbour"
-msgstr "Ameriko/Curacao"
+msgstr ""
 
 #: kdecore/TIMEZONES:207
 #, kde-format
@@ -8857,10 +8748,9 @@ msgid "America/Costa_Rica"
 msgstr "Ameriko/Kostariko"
 
 #: kdecore/TIMEZONES:211
-#, fuzzy, kde-format
-#| msgid "Africa/Freetown"
+#, kde-format
 msgid "America/Creston"
-msgstr "Afriko/Fritaŭno"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:213
@@ -9015,24 +8905,21 @@ msgid "America/El_Salvador"
 msgstr "Ameriko/El-Salvadoro"
 
 #: kdecore/TIMEZONES:257
-#, fuzzy, kde-format
-#| msgid "America/Grenada"
+#, kde-format
 msgid "America/Ensenada"
-msgstr "Ameriko/Grenada"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:259 kdecore/TIMEZONES:390 kdecore/TIMEZONES:620
 #: kdecore/TIMEZONES:1277 kdecore/TIMEZONES:1437
-#, fuzzy, kde-format
-#| msgid "Pacific/Niue"
+#, kde-format
 msgid "Pacific Time"
-msgstr "Pacifiko/Niuo"
+msgstr ""
 
 #: kdecore/TIMEZONES:260
-#, fuzzy, kde-format
-#| msgid "America/Porto_Velho"
+#, kde-format
 msgid "America/Fort_Nelson"
-msgstr "Ameriko/Porto Velho"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:262
@@ -9041,10 +8928,9 @@ msgid "MST - BC (Ft Nelson)"
 msgstr ""
 
 #: kdecore/TIMEZONES:263
-#, fuzzy, kde-format
-#| msgid "America/Fortaleza"
+#, kde-format
 msgid "America/Fort_Wayne"
-msgstr "Ameriko/Fortaleza"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:265 kdecore/TIMEZONES:308 kdecore/TIMEZONES:352
@@ -9071,10 +8957,9 @@ msgid "Brazil (northeast: MA, PI, CE, RN, PB)"
 msgstr ""
 
 #: kdecore/TIMEZONES:271
-#, fuzzy, kde-format
-#| msgid "Africa/Freetown"
+#, kde-format
 msgid "America/Fredericton"
-msgstr "Afriko/Fritaŭno"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:273 kdecore/TIMEZONES:299 kdecore/TIMEZONES:1102
@@ -9095,10 +8980,9 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:278
-#, fuzzy, kde-format
-#| msgid "Atlantic/Cape_Verde"
+#, kde-format
 msgid "Atlantic - NS (Cape Breton)"
-msgstr "Atlantiko/Kabo Verdo"
+msgstr ""
 
 #: kdecore/TIMEZONES:279
 #, kde-format
@@ -9202,10 +9086,9 @@ msgid "Mountain Standard Time - Sonora"
 msgstr ""
 
 #: kdecore/TIMEZONES:306
-#, fuzzy, kde-format
-#| msgid "America/Indianapolis"
+#, kde-format
 msgid "America/Indiana/Indianapolis"
-msgstr "Ameriko/Indianapolis"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:310
@@ -9254,10 +9137,9 @@ msgid "Eastern - IN (Crawford)"
 msgstr ""
 
 #: kdecore/TIMEZONES:323
-#, fuzzy, kde-format
-#| msgid "America/Indiana/Marengo"
+#, kde-format
 msgid "America/Indiana/Petersburg"
-msgstr "Ameriko/Indiana/Marengo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:325
@@ -9278,10 +9160,9 @@ msgid "Eastern - IN (Pike)"
 msgstr ""
 
 #: kdecore/TIMEZONES:330
-#, fuzzy, kde-format
-#| msgid "America/Indiana/Vevay"
+#, kde-format
 msgid "America/Indiana/Tell_City"
-msgstr "Ameriko/Indiana/Vevay"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:332
@@ -9313,10 +9194,9 @@ msgid "Eastern - IN (Switzerland)"
 msgstr ""
 
 #: kdecore/TIMEZONES:340
-#, fuzzy, kde-format
-#| msgid "America/Indiana/Vevay"
+#, kde-format
 msgid "America/Indiana/Vincennes"
-msgstr "Ameriko/Indiana/Vevay"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:342
@@ -9331,10 +9211,9 @@ msgid "Eastern - IN (Da, Du, K, Mn)"
 msgstr ""
 
 #: kdecore/TIMEZONES:345
-#, fuzzy, kde-format
-#| msgid "America/Indiana/Knox"
+#, kde-format
 msgid "America/Indiana/Winamac"
-msgstr "Ameriko/Indiana/Knox"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:347
@@ -9415,24 +9294,21 @@ msgid "Alaska - Juneau area"
 msgstr ""
 
 #: kdecore/TIMEZONES:372
-#, fuzzy, kde-format
-#| msgid "America/Louisville"
+#, kde-format
 msgid "America/Kentucky/Louisville"
-msgstr "Ameriko/Louisville"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:374 kdecore/TIMEZONES:395
-#, fuzzy, kde-format
-#| msgid "America/Louisville"
+#, kde-format
 msgid "Eastern Time - Kentucky - Louisville area"
-msgstr "Ameriko/Louisville"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:376
-#, fuzzy, kde-format
-#| msgid "America/Louisville"
+#, kde-format
 msgid "Eastern - KY (Louisville area)"
-msgstr "Ameriko/Louisville"
+msgstr ""
 
 #: kdecore/TIMEZONES:377
 #, kde-format
@@ -9452,16 +9328,14 @@ msgid "Eastern - KY (Wayne)"
 msgstr ""
 
 #: kdecore/TIMEZONES:382
-#, fuzzy, kde-format
-#| msgid "America/Indiana/Knox"
+#, kde-format
 msgid "America/Knox_IN"
-msgstr "Ameriko/Indiana/Knox"
+msgstr ""
 
 #: kdecore/TIMEZONES:385
-#, fuzzy, kde-format
-#| msgid "America/Grenada"
+#, kde-format
 msgid "America/Kralendijk"
-msgstr "Ameriko/Grenada"
+msgstr ""
 
 #: kdecore/TIMEZONES:386
 #, kde-format
@@ -9480,10 +9354,9 @@ msgstr "Ameriko/Los Angeles"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:392
-#, fuzzy, kde-format
-#| msgid "Pacific/Yap"
+#, kde-format
 msgid "Pacific"
-msgstr "Pacifiko/Yap"
+msgstr ""
 
 #: kdecore/TIMEZONES:393
 #, kde-format
@@ -9491,10 +9364,9 @@ msgid "America/Louisville"
 msgstr "Ameriko/Louisville"
 
 #: kdecore/TIMEZONES:396
-#, fuzzy, kde-format
-#| msgid "America/Port-au-Prince"
+#, kde-format
 msgid "America/Lower_Princes"
-msgstr "Ameriko/Portoprinco"
+msgstr ""
 
 #: kdecore/TIMEZONES:397
 #, kde-format
@@ -9530,10 +9402,9 @@ msgid "Amazonas (east)"
 msgstr ""
 
 #: kdecore/TIMEZONES:406
-#, fuzzy, kde-format
-#| msgid "America/Maceio"
+#, kde-format
 msgid "America/Marigot"
-msgstr "Ameriko/Maceio"
+msgstr ""
 
 #: kdecore/TIMEZONES:407
 #, kde-format
@@ -9541,10 +9412,9 @@ msgid "America/Martinique"
 msgstr "Ameriko/Martiniko"
 
 #: kdecore/TIMEZONES:408
-#, fuzzy, kde-format
-#| msgid "America/Manaus"
+#, kde-format
 msgid "America/Matamoros"
-msgstr "Ameriko/Manaus"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:410
@@ -9610,10 +9480,9 @@ msgid "Central Time - Campeche, Yucatan"
 msgstr ""
 
 #: kdecore/TIMEZONES:429
-#, fuzzy, kde-format
-#| msgid "America/Mazatlan"
+#, kde-format
 msgid "America/Metlakatla"
-msgstr "Ameriko/Mazatlan"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:431
@@ -9644,10 +9513,9 @@ msgid "America/Miquelon"
 msgstr "Ameriko/Miquelon"
 
 #: kdecore/TIMEZONES:440
-#, fuzzy, kde-format
-#| msgid "America/Edmonton"
+#, kde-format
 msgid "America/Moncton"
-msgstr "Ameriko/Edmonton"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:442
@@ -9771,16 +9639,14 @@ msgstr "Ameriko/Noronha"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:475 kdecore/TIMEZONES:1093
-#, fuzzy, kde-format
-#| msgid "Atlantic/Canary"
+#, kde-format
 msgid "Atlantic islands"
-msgstr "Atlantiko/Kanarioj"
+msgstr ""
 
 #: kdecore/TIMEZONES:476
-#, fuzzy, kde-format
-#| msgid "America/North_Dakota/Center"
+#, kde-format
 msgid "America/North_Dakota/Beulah"
-msgstr "Ameriko/North Dakota/Center"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:478
@@ -9812,10 +9678,9 @@ msgid "Central - ND (Oliver)"
 msgstr ""
 
 #: kdecore/TIMEZONES:486
-#, fuzzy, kde-format
-#| msgid "America/North_Dakota/Center"
+#, kde-format
 msgid "America/North_Dakota/New_Salem"
-msgstr "Ameriko/North Dakota/Center"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:488
@@ -9830,10 +9695,9 @@ msgid "Central - ND (Morton rural)"
 msgstr ""
 
 #: kdecore/TIMEZONES:491
-#, fuzzy, kde-format
-#| msgid "America/Jujuy"
+#, kde-format
 msgid "America/Nuuk"
-msgstr "Ameriko/Jujuy"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:493
@@ -9842,10 +9706,9 @@ msgid "Greenland (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:494
-#, fuzzy, kde-format
-#| msgid "America/Managua"
+#, kde-format
 msgid "America/Ojinaga"
-msgstr "Ameriko/Managua"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:496
@@ -9860,10 +9723,9 @@ msgid "Mountain Time US - Chihuahua (US border)"
 msgstr ""
 
 #: kdecore/TIMEZONES:499
-#, fuzzy, kde-format
-#| msgid "America/Maceio"
+#, kde-format
 msgid "America/Ontario"
-msgstr "Ameriko/Maceio"
+msgstr ""
 
 #: kdecore/TIMEZONES:502
 #, kde-format
@@ -9920,10 +9782,9 @@ msgid "America/Port_of_Spain"
 msgstr "Ameriko/Portospeno"
 
 #: kdecore/TIMEZONES:516
-#, fuzzy, kde-format
-#| msgid "America/Porto_Velho"
+#, kde-format
 msgid "America/Porto_Acre"
-msgstr "Ameriko/Porto Velho"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:518 kdecore/TIMEZONES:553 kdecore/TIMEZONES:1090
@@ -9948,10 +9809,9 @@ msgid "America/Puerto_Rico"
 msgstr "Ameriko/Puerto-Riko"
 
 #: kdecore/TIMEZONES:523
-#, fuzzy, kde-format
-#| msgid "America/Buenos_Aires"
+#, kde-format
 msgid "America/Punta_Arenas"
-msgstr "Ameriko/Buenos-Ajreso"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:525
@@ -10023,10 +9883,9 @@ msgid "CST - SK (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:544
-#, fuzzy, kde-format
-#| msgid "America/Belem"
+#, kde-format
 msgid "America/Resolute"
-msgstr "Ameriko/Belem"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:546
@@ -10057,10 +9916,9 @@ msgid "America/Rosario"
 msgstr "Ameriko/Rosario"
 
 #: kdecore/TIMEZONES:557
-#, fuzzy, kde-format
-#| msgid "America/Santiago"
+#, kde-format
 msgid "America/Santa_Isabel"
-msgstr "Ameriko/Santiago"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:559
@@ -10069,18 +9927,15 @@ msgid "Mexican Pacific Time - Baja California away from US border"
 msgstr ""
 
 #: kdecore/TIMEZONES:560
-#, fuzzy, kde-format
-#| msgid "America/Santiago"
+#, kde-format
 msgid "America/Santarem"
-msgstr "Ameriko/Santiago"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:562
-#, fuzzy, kde-format
-#| msgctxt "Coptic month 7 - ShortNamePossessive"
-#| msgid "of Par"
+#, kde-format
 msgid "W Para"
-msgstr "el Par"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:564
@@ -10122,10 +9977,9 @@ msgid "Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 msgstr ""
 
 #: kdecore/TIMEZONES:576
-#, fuzzy, kde-format
-#| msgid "America/Dawson"
+#, kde-format
 msgid "America/Saskatoon"
-msgstr "Ameriko/Dawson"
+msgstr ""
 
 #: kdecore/TIMEZONES:579
 #, kde-format
@@ -10140,10 +9994,9 @@ msgstr "Scoresbysund / Ittoqqortoormiit"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:583
-#, fuzzy, kde-format
-#| msgid "Scoresbysund / Ittoqqortoormiit"
+#, kde-format
 msgid "Scoresbysund/Ittoqqortoormiit"
-msgstr "Scoresbysund / Ittoqqortoormiit"
+msgstr "Scoresbysund/Ittoqqortoormiit"
 
 #: kdecore/TIMEZONES:584
 #, kde-format
@@ -10157,10 +10010,9 @@ msgid "Mountain Time - Navajo"
 msgstr ""
 
 #: kdecore/TIMEZONES:587
-#, fuzzy, kde-format
-#| msgid "America/Antigua"
+#, kde-format
 msgid "America/Sitka"
-msgstr "Ameriko/Antigvo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:589
@@ -10175,10 +10027,9 @@ msgid "Alaska - Sitka area"
 msgstr ""
 
 #: kdecore/TIMEZONES:592
-#, fuzzy, kde-format
-#| msgid "America/Belem"
+#, kde-format
 msgid "America/St_Barthelemy"
-msgstr "Ameriko/Belem"
+msgstr ""
 
 #: kdecore/TIMEZONES:593
 #, kde-format
@@ -10252,10 +10103,9 @@ msgstr "Thule / Pituffik"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:612
-#, fuzzy, kde-format
-#| msgid "Thule / Pituffik"
+#, kde-format
 msgid "Thule/Pituffik"
-msgstr "Thule / Pituffik"
+msgstr "Thule/Pituffik"
 
 #: kdecore/TIMEZONES:613
 #, kde-format
@@ -10331,10 +10181,9 @@ msgid "Pacific - BC (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:636
-#, fuzzy, kde-format
-#| msgid "America/Regina"
+#, kde-format
 msgid "America/Virgin"
-msgstr "Ameriko/Regina"
+msgstr ""
 
 #: kdecore/TIMEZONES:637
 #, kde-format
@@ -10451,16 +10300,14 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:671
-#, fuzzy, kde-format
-#| msgid "Antarctica/DumontDUrville"
+#, kde-format
 msgid "Dumont-d'Urville"
-msgstr "Antarkto/DumontDUrville"
+msgstr ""
 
 #: kdecore/TIMEZONES:672
-#, fuzzy, kde-format
-#| msgid "Antarctica/McMurdo"
+#, kde-format
 msgid "Antarctica/Macquarie"
-msgstr "Antarkto/McMurdo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:674
@@ -10571,10 +10418,9 @@ msgid "Syowa"
 msgstr ""
 
 #: kdecore/TIMEZONES:705
-#, fuzzy, kde-format
-#| msgid "Antarctica/McMurdo"
+#, kde-format
 msgid "Antarctica/Troll"
-msgstr "Antarkto/McMurdo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:707
@@ -10694,16 +10540,14 @@ msgid "Asia/Ashgabat"
 msgstr "Azio/Ashgabat"
 
 #: kdecore/TIMEZONES:741
-#, fuzzy, kde-format
-#| msgid "Asia/Ashgabat"
+#, kde-format
 msgid "Asia/Ashkhabad"
-msgstr "Azio/Ashgabat"
+msgstr ""
 
 #: kdecore/TIMEZONES:742
-#, fuzzy, kde-format
-#| msgid "Asia/Aqtau"
+#, kde-format
 msgid "Asia/Atyrau"
-msgstr "Azio/Aqtau"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:744
@@ -10732,10 +10576,9 @@ msgid "Asia/Bangkok"
 msgstr "Azio/Bankoko"
 
 #: kdecore/TIMEZONES:749
-#, fuzzy, kde-format
-#| msgid "Asia/Baku"
+#, kde-format
 msgid "Asia/Barnaul"
-msgstr "Azio/Bakuo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:751
@@ -10744,10 +10587,9 @@ msgid "MSK+04 - Altai"
 msgstr ""
 
 #: kdecore/TIMEZONES:752
-#, fuzzy, kde-format
-#| msgid "Asia/Beirut"
+#, kde-format
 msgid "Asia/Beijing"
-msgstr "Azio/Bejruto"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:754 kdecore/TIMEZONES:924 kdecore/TIMEZONES:1295
@@ -10782,10 +10624,9 @@ msgid "Asia/Calcutta"
 msgstr "Azio/Calcutta"
 
 #: kdecore/TIMEZONES:761
-#, fuzzy, kde-format
-#| msgid "Asia/Choibalsan"
+#, kde-format
 msgid "Asia/Chita"
-msgstr "Azio/Choibalsan"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:763
@@ -10822,10 +10663,9 @@ msgid "China mountains"
 msgstr ""
 
 #: kdecore/TIMEZONES:772
-#, fuzzy, kde-format
-#| msgid "Asia/Chongqing"
+#, kde-format
 msgid "Asia/Chungking"
-msgstr "Azio/Chongqing"
+msgstr ""
 
 #: kdecore/TIMEZONES:775
 #, kde-format
@@ -10833,10 +10673,9 @@ msgid "Asia/Colombo"
 msgstr "Azio/Kolombo"
 
 #: kdecore/TIMEZONES:776
-#, fuzzy, kde-format
-#| msgid "Asia/Dhaka"
+#, kde-format
 msgid "Asia/Dacca"
-msgstr "Azio/Dako"
+msgstr ""
 
 #: kdecore/TIMEZONES:777
 #, kde-format
@@ -10859,16 +10698,14 @@ msgid "Asia/Dubai"
 msgstr "Azio/Dubajo"
 
 #: kdecore/TIMEZONES:781
-#, fuzzy, kde-format
-#| msgid "Do shanbe"
+#, kde-format
 msgid "Asia/Dushanbe"
-msgstr "Do shanbe"
+msgstr ""
 
 #: kdecore/TIMEZONES:782
-#, fuzzy, kde-format
-#| msgid "Asia/Damascus"
+#, kde-format
 msgid "Asia/Famagusta"
-msgstr "Azio/Damasko"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:784
@@ -10905,10 +10742,9 @@ msgid "China north"
 msgstr ""
 
 #: kdecore/TIMEZONES:793
-#, fuzzy, kde-format
-#| msgid "Asia/Harbin"
+#, kde-format
 msgid "Asia/Hebron"
-msgstr "Azio/Harbin"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:795
@@ -10917,10 +10753,9 @@ msgid "West Bank"
 msgstr ""
 
 #: kdecore/TIMEZONES:796
-#, fuzzy, kde-format
-#| msgid "Asia/Chongqing"
+#, kde-format
 msgid "Asia/Ho_Chi_Minh"
-msgstr "Azio/Chongqing"
+msgstr ""
 
 #: kdecore/TIMEZONES:797
 #, kde-format
@@ -11051,10 +10886,9 @@ msgid "China west Xinjiang"
 msgstr ""
 
 #: kdecore/TIMEZONES:833
-#, fuzzy, kde-format
-#| msgid "Asia/Katmandu"
+#, kde-format
 msgid "Asia/Kathmandu"
-msgstr "Azio/Katmanduo"
+msgstr ""
 
 #: kdecore/TIMEZONES:834
 #, kde-format
@@ -11062,10 +10896,9 @@ msgid "Asia/Katmandu"
 msgstr "Azio/Katmanduo"
 
 #: kdecore/TIMEZONES:835
-#, fuzzy, kde-format
-#| msgid "Asia/Shanghai"
+#, kde-format
 msgid "Asia/Khandyga"
-msgstr "Azio/Shanghai"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:837
@@ -11074,10 +10907,9 @@ msgid "MSK+06 - Tomponsky, Ust-Maysky"
 msgstr ""
 
 #: kdecore/TIMEZONES:838
-#, fuzzy, kde-format
-#| msgid "Asia/Jakarta"
+#, kde-format
 msgid "Asia/Kolkata"
-msgstr "Azio/Ĝakarto"
+msgstr ""
 
 #: kdecore/TIMEZONES:839
 #, kde-format
@@ -11136,10 +10968,9 @@ msgid "Asia/Kuwait"
 msgstr "Azio/Kuvajto"
 
 #: kdecore/TIMEZONES:855
-#, fuzzy, kde-format
-#| msgid "Asia/Macau"
+#, kde-format
 msgid "Asia/Macao"
-msgstr "Azio/Makao"
+msgstr ""
 
 #: kdecore/TIMEZONES:856
 #, kde-format
@@ -11210,17 +11041,15 @@ msgid "Cyprus (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:874
-#, fuzzy, kde-format
-#| msgid "Asia/Irkutsk"
+#, kde-format
 msgid "Asia/Novokuznetsk"
-msgstr "Azio/Irkutsk"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:876
-#, fuzzy, kde-format
-#| msgid "Asia/Novosibirsk"
+#, kde-format
 msgid "Moscow+03 - Novokuznetsk"
-msgstr "Azio/Novosibirsk"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:878
@@ -11235,17 +11064,15 @@ msgstr "Azio/Novosibirsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:881
-#, fuzzy, kde-format
-#| msgid "Asia/Novosibirsk"
+#, kde-format
 msgid "Moscow+03 - Novosibirsk"
-msgstr "Azio/Novosibirsk"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:883
-#, fuzzy, kde-format
-#| msgid "Asia/Novosibirsk"
+#, kde-format
 msgid "MSK+04 - Novosibirsk"
-msgstr "Azio/Novosibirsk"
+msgstr ""
 
 #: kdecore/TIMEZONES:884
 #, kde-format
@@ -11308,10 +11135,9 @@ msgid "Asia/Qatar"
 msgstr "Azio/Kataro"
 
 #: kdecore/TIMEZONES:900
-#, fuzzy, kde-format
-#| msgid "Asia/Pontianak"
+#, kde-format
 msgid "Asia/Qostanay"
-msgstr "Azio/Pontianak"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:902
@@ -11413,10 +11239,9 @@ msgid "Asia/Singapore"
 msgstr "Azio/Singapuro"
 
 #: kdecore/TIMEZONES:930
-#, fuzzy, kde-format
-#| msgid "Asia/Krasnoyarsk"
+#, kde-format
 msgid "Asia/Srednekolymsk"
-msgstr "Azio/Krasnoyarsk"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:932
@@ -11457,16 +11282,14 @@ msgid "Asia/Tehran"
 msgstr "Azio/Teherano"
 
 #: kdecore/TIMEZONES:941
-#, fuzzy, kde-format
-#| msgid "Asia/Taipei"
+#, kde-format
 msgid "Asia/Tel_Aviv"
-msgstr "Azio/Tajpeo"
+msgstr ""
 
 #: kdecore/TIMEZONES:942
-#, fuzzy, kde-format
-#| msgid "Asia/Thimphu"
+#, kde-format
 msgid "Asia/Thimbu"
-msgstr "Azio/Timbuo"
+msgstr ""
 
 #: kdecore/TIMEZONES:943
 #, kde-format
@@ -11479,10 +11302,9 @@ msgid "Asia/Tokyo"
 msgstr "Azio/Tokio"
 
 #: kdecore/TIMEZONES:945
-#, fuzzy, kde-format
-#| msgid "Asia/Omsk"
+#, kde-format
 msgid "Asia/Tomsk"
-msgstr "Azio/Omsk"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:947
@@ -11507,10 +11329,9 @@ msgid "Mongolia (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:956
-#, fuzzy, kde-format
-#| msgid "Asia/Ulaanbaatar"
+#, kde-format
 msgid "Asia/Ulan_Bator"
-msgstr "Azio/Ulan-Batoro"
+msgstr ""
 
 #: kdecore/TIMEZONES:959
 #, kde-format
@@ -11536,10 +11357,9 @@ msgid "Xinjiang Time"
 msgstr ""
 
 #: kdecore/TIMEZONES:966
-#, fuzzy, kde-format
-#| msgid "Asia/Tehran"
+#, kde-format
 msgid "Asia/Ust-Nera"
-msgstr "Azio/Teherano"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:968
@@ -11587,10 +11407,9 @@ msgid "MSK+06 - Lena River"
 msgstr ""
 
 #: kdecore/TIMEZONES:980
-#, fuzzy, kde-format
-#| msgid "Asia/Rangoon"
+#, kde-format
 msgid "Asia/Yangon"
-msgstr "Azio/Ranguno"
+msgstr ""
 
 #: kdecore/TIMEZONES:981
 #, kde-format
@@ -11652,10 +11471,9 @@ msgid "Atlantic/Faeroe"
 msgstr "Atlantiko/Ferooj"
 
 #: kdecore/TIMEZONES:996
-#, fuzzy, kde-format
-#| msgid "Atlantic/Faeroe"
+#, kde-format
 msgid "Atlantic/Faroe"
-msgstr "Atlantiko/Ferooj"
+msgstr ""
 
 #: kdecore/TIMEZONES:997
 #, kde-format
@@ -11694,10 +11512,9 @@ msgid "Atlantic/Stanley"
 msgstr "Atlantiko/Stanley"
 
 #: kdecore/TIMEZONES:1005
-#, fuzzy, kde-format
-#| msgid "Australia/Brisbane"
+#, kde-format
 msgid "Australia/ACT"
-msgstr "Aŭstralio/Brisbano"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1007 kdecore/TIMEZONES:1023 kdecore/TIMEZONES:1056
@@ -11713,10 +11530,9 @@ msgstr "Aŭstralio/Adelajdo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1010 kdecore/TIMEZONES:1070
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "South Australia"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1011
 #, kde-format
@@ -11753,16 +11569,14 @@ msgid "New South Wales (Yancowinna)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1021
-#, fuzzy, kde-format
-#| msgid "Australia/Brisbane"
+#, kde-format
 msgid "Australia/Canberra"
-msgstr "Aŭstralio/Brisbano"
+msgstr ""
 
 #: kdecore/TIMEZONES:1024
-#, fuzzy, kde-format
-#| msgid "Australia/Brisbane"
+#, kde-format
 msgid "Australia/Currie"
-msgstr "Aŭstralio/Brisbano"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1026
@@ -11782,24 +11596,21 @@ msgid "Northern Territory"
 msgstr ""
 
 #: kdecore/TIMEZONES:1030
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "Australia/Eucla"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1032
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "Western Australia - Eucla area"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1034
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "Western Australia (Eucla)"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1035
 #, kde-format
@@ -11814,16 +11625,14 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1039
-#, fuzzy, kde-format
-#| msgid "Australia/Brisbane"
+#, kde-format
 msgid "Tasmania"
-msgstr "Aŭstralio/Brisbano"
+msgstr ""
 
 #: kdecore/TIMEZONES:1040
-#, fuzzy, kde-format
-#| msgid "Australia/Hobart"
+#, kde-format
 msgid "Australia/LHI"
-msgstr "Aŭstralio/Hobarto"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1042 kdecore/TIMEZONES:1050
@@ -11865,16 +11674,14 @@ msgid "Victoria"
 msgstr ""
 
 #: kdecore/TIMEZONES:1054
-#, fuzzy, kde-format
-#| msgid "Australia/Sydney"
+#, kde-format
 msgid "Australia/NSW"
-msgstr "Aŭstralio/Sidnejo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1057
-#, fuzzy, kde-format
-#| msgid "Australia/Perth"
+#, kde-format
 msgid "Australia/North"
-msgstr "Aŭstralio/Perto"
+msgstr ""
 
 #: kdecore/TIMEZONES:1060
 #, kde-format
@@ -11889,22 +11696,19 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1064
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "Western Australia (most areas)"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1065
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "Australia/Queensland"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1068
-#, fuzzy, kde-format
-#| msgid "Australia/Perth"
+#, kde-format
 msgid "Australia/South"
-msgstr "Aŭstralio/Perto"
+msgstr ""
 
 #: kdecore/TIMEZONES:1071
 #, kde-format
@@ -11918,28 +11722,24 @@ msgid "New South Wales (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1076
-#, fuzzy, kde-format
-#| msgid "Australia/Brisbane"
+#, kde-format
 msgid "Australia/Tasmania"
-msgstr "Aŭstralio/Brisbano"
+msgstr ""
 
 #: kdecore/TIMEZONES:1079
-#, fuzzy, kde-format
-#| msgid "Australia/Adelaide"
+#, kde-format
 msgid "Australia/Victoria"
-msgstr "Aŭstralio/Adelajdo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1082
-#, fuzzy, kde-format
-#| msgid "Australia/Perth"
+#, kde-format
 msgid "Australia/West"
-msgstr "Aŭstralio/Perto"
+msgstr ""
 
 #: kdecore/TIMEZONES:1085
-#, fuzzy, kde-format
-#| msgid "Australia/Darwin"
+#, kde-format
 msgid "Australia/Yancowinna"
-msgstr "Aŭstralio/Darvino"
+msgstr ""
 
 #: kdecore/TIMEZONES:1088
 #, kde-format
@@ -11947,10 +11747,9 @@ msgid "Brazil/Acre"
 msgstr ""
 
 #: kdecore/TIMEZONES:1091
-#, fuzzy, kde-format
-#| msgid "America/Noronha"
+#, kde-format
 msgid "Brazil/DeNoronha"
-msgstr "Ameriko/Noronha"
+msgstr ""
 
 #: kdecore/TIMEZONES:1094
 #, kde-format
@@ -12049,10 +11848,9 @@ msgid "Europe/Andorra"
 msgstr "Eŭropo/Andoro"
 
 #: kdecore/TIMEZONES:1138
-#, fuzzy, kde-format
-#| msgid "Europe/Athens"
+#, kde-format
 msgid "Europe/Astrakhan"
-msgstr "Eŭropo/Ateno"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1140
@@ -12107,10 +11905,9 @@ msgid "Europe/Budapest"
 msgstr "Eŭropo/Budapeŝto"
 
 #: kdecore/TIMEZONES:1151
-#, fuzzy, kde-format
-#| msgid "Europe/Brussels"
+#, kde-format
 msgid "Europe/Busingen"
-msgstr "Eŭropo/Bruselo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1153
@@ -12139,10 +11936,9 @@ msgid "Europe/Gibraltar"
 msgstr "Eŭropo/Ĝibraltaro"
 
 #: kdecore/TIMEZONES:1158
-#, fuzzy, kde-format
-#| msgid "Europe/Athens"
+#, kde-format
 msgid "Europe/Guernsey"
-msgstr "Eŭropo/Ateno"
+msgstr ""
 
 #: kdecore/TIMEZONES:1159
 #, kde-format
@@ -12150,10 +11946,9 @@ msgid "Europe/Helsinki"
 msgstr "Eŭropo/Helsinko"
 
 #: kdecore/TIMEZONES:1160
-#, fuzzy, kde-format
-#| msgid "Europe/Oslo"
+#, kde-format
 msgid "Europe/Isle_of_Man"
-msgstr "Eŭropo/Oslo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1161
 #, kde-format
@@ -12161,10 +11956,9 @@ msgid "Europe/Istanbul"
 msgstr "Eŭropo/Istanbul"
 
 #: kdecore/TIMEZONES:1162
-#, fuzzy, kde-format
-#| msgid "Europe/Paris"
+#, kde-format
 msgid "Europe/Jersey"
-msgstr "Eŭropo/Parizo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1163
 #, kde-format
@@ -12195,10 +11989,9 @@ msgid "Ukraine (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1173
-#, fuzzy, kde-format
-#| msgid "Europe/Kiev"
+#, kde-format
 msgid "Europe/Kirov"
-msgstr "Eŭropo/Kievo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1175
@@ -12291,10 +12084,9 @@ msgid "Europe/Paris"
 msgstr "Eŭropo/Parizo"
 
 #: kdecore/TIMEZONES:1200
-#, fuzzy, kde-format
-#| msgid "Europe/Andorra"
+#, kde-format
 msgid "Europe/Podgorica"
-msgstr "Eŭropo/Andoro"
+msgstr ""
 
 #: kdecore/TIMEZONES:1201
 #, kde-format
@@ -12345,10 +12137,9 @@ msgid "Europe/Sarajevo"
 msgstr "Eŭropo/Sarajevo"
 
 #: kdecore/TIMEZONES:1213
-#, fuzzy, kde-format
-#| msgid "Europe/Sarajevo"
+#, kde-format
 msgid "Europe/Saratov"
-msgstr "Eŭropo/Sarajevo"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1215
@@ -12369,10 +12160,9 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1220
-#, fuzzy, kde-format
-#| msgid "Prime: "
+#, kde-format
 msgid "Crimea"
-msgstr "Primo: "
+msgstr ""
 
 #: kdecore/TIMEZONES:1221
 #, kde-format
@@ -12400,16 +12190,14 @@ msgid "Europe/Tirane"
 msgstr "Eŭropo/Tirano"
 
 #: kdecore/TIMEZONES:1226
-#, fuzzy, kde-format
-#| msgid "Europe/Tirane"
+#, kde-format
 msgid "Europe/Tiraspol"
-msgstr "Eŭropo/Tirano"
+msgstr ""
 
 #: kdecore/TIMEZONES:1227
-#, fuzzy, kde-format
-#| msgid "Europe/Minsk"
+#, kde-format
 msgid "Europe/Ulyanovsk"
-msgstr "Eŭropo/Minsko"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1229
@@ -12455,10 +12243,9 @@ msgid "Europe/Vilnius"
 msgstr "Eŭropo/Vilno"
 
 #: kdecore/TIMEZONES:1239
-#, fuzzy, kde-format
-#| msgid "Europe/Belgrade"
+#, kde-format
 msgid "Europe/Volgograd"
-msgstr "Eŭropo/Beogrado"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1241
@@ -12515,10 +12302,9 @@ msgid "GB-Eire"
 msgstr ""
 
 #: kdecore/TIMEZONES:1254
-#, fuzzy, kde-format
-#| msgid "Asia/Hong_Kong"
+#, kde-format
 msgid "Hongkong"
-msgstr "Azio/Honkongo"
+msgstr ""
 
 #: kdecore/TIMEZONES:1255
 #, kde-format
@@ -12669,10 +12455,9 @@ msgid "New Zealand (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1302
-#, fuzzy, kde-format
-#| msgid "Pacific/Honolulu"
+#, kde-format
 msgid "Pacific/Bougainville"
-msgstr "Pacifiko/Honolulu"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1304
@@ -12686,10 +12471,9 @@ msgid "Pacific/Chatham"
 msgstr "Pacifiko/Chatham"
 
 #: kdecore/TIMEZONES:1308
-#, fuzzy, kde-format
-#| msgid "Pacific/Truk"
+#, kde-format
 msgid "Pacific/Chuuk"
-msgstr "Pacifiko/Truk"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1310
@@ -12710,9 +12494,9 @@ msgstr "Pacifiko/Easter"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1317
-#, fuzzy, kde-format
+#, kde-format
 msgid "Easter Island"
-msgstr "Orienta araba-ciferoj"
+msgstr ""
 
 #: kdecore/TIMEZONES:1318
 #, kde-format
@@ -12895,10 +12679,9 @@ msgid "Pacific/Pitcairn"
 msgstr "Pacifiko/Pitkarna Insulo"
 
 #: kdecore/TIMEZONES:1366
-#, fuzzy, kde-format
-#| msgid "Pacific/Ponape"
+#, kde-format
 msgid "Pacific/Pohnpei"
-msgstr "Pacifiko/Ponape"
+msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1368
@@ -12908,10 +12691,9 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1370
-#, fuzzy, kde-format
-#| msgid "Pacific/Ponape"
+#, kde-format
 msgid "Pohnpei/Ponape"
-msgstr "Pacifiko/Ponape"
+msgstr ""
 
 #: kdecore/TIMEZONES:1371
 #, kde-format
@@ -12946,10 +12728,9 @@ msgid "Pacific/Saipan"
 msgstr "Pacifiko/Saipan"
 
 #: kdecore/TIMEZONES:1379
-#, fuzzy, kde-format
-#| msgid "Pacific/Saipan"
+#, kde-format
 msgid "Pacific/Samoa"
-msgstr "Pacifiko/Saipan"
+msgstr ""
 
 #: kdecore/TIMEZONES:1380
 #, kde-format
@@ -13031,10 +12812,9 @@ msgid "ROK"
 msgstr ""
 
 #: kdecore/TIMEZONES:1403
-#, fuzzy, kde-format
-#| msgid "Asia/Singapore"
+#, kde-format
 msgid "Singapore"
-msgstr "Azio/Singapuro"
+msgstr ""
 
 #: kdecore/TIMEZONES:1404
 #, kde-format
@@ -13092,10 +12872,9 @@ msgid "US/Mountain"
 msgstr ""
 
 #: kdecore/TIMEZONES:1435
-#, fuzzy, kde-format
-#| msgid "Pacific/Yap"
+#, kde-format
 msgid "US/Pacific"
-msgstr "Pacifiko/Yap"
+msgstr ""
 
 #: kdecore/TIMEZONES:1438
 #, kde-format
@@ -13144,11 +12923,9 @@ msgid "Region"
 msgstr "Regiono"
 
 #: kdeui/k4timezonewidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "Coptic weekday 2 - LongDayName"
-#| msgid "Pshoment"
+#, kde-format
 msgid "Comment"
-msgstr "Pshoment"
+msgstr ""
 
 #: kdeui/kapplication.cpp:741
 #, kde-format
@@ -13235,10 +13012,9 @@ msgid "°"
 msgstr "°"
 
 #: kdeui/kcolordialog.cpp:1088
-#, fuzzy, kde-format
-#| msgid "Saturday"
+#, kde-format
 msgid "Saturation:"
-msgstr "Sabato"
+msgstr ""
 
 #: kdeui/kcolordialog.cpp:1098
 #, kde-format
@@ -13430,11 +13206,10 @@ msgid "Internally added if launched from Finder"
 msgstr "Aldoniĝis interne se lanĉiĝis de la trovilo"
 
 #: kio/kcommentwidget.cpp:68
-#, fuzzy, kde-format
-#| msgid "Add Entry..."
+#, kde-format
 msgctxt "@label"
 msgid "Add Comment..."
-msgstr "Aldoni eron..."
+msgstr ""
 
 #: kio/kcommentwidget.cpp:74
 #, kde-format
@@ -13443,18 +13218,16 @@ msgid "Change..."
 msgstr "Ŝanĝi..."
 
 #: kio/kcommentwidget.cpp:128
-#, fuzzy, kde-format
-#| msgid "Comment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Change Comment"
-msgstr "Komento"
+msgstr ""
 
 #: kio/kcommentwidget.cpp:129
-#, fuzzy, kde-format
-#| msgid "Comment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Comment"
-msgstr "Komento"
+msgstr ""
 
 #: kio/kdevicelistmodel.cpp:115
 #, kde-format
@@ -13536,10 +13309,9 @@ msgid "Properties"
 msgstr "Ecoj"
 
 #: kio/kfiledialog.cpp:132
-#, fuzzy, kde-format
-#| msgid "*|All Files"
+#, kde-format
 msgid "*|All files"
-msgstr "*|Ĉiuj dosieroj"
+msgstr ""
 
 #: kio/kfiledialog.cpp:332
 #, kde-format
@@ -13568,19 +13340,16 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: kio/kfilemetadataprovider.cpp:446 kio/knfotranslator.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "Coptic weekday 2 - LongDayName"
-#| msgid "Pshoment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment"
-msgstr "Pshoment"
+msgstr ""
 
 #: kio/kfilemetadataprovider.cpp:447
-#, fuzzy, kde-format
-#| msgid "Modified:"
+#, kde-format
 msgctxt "@label"
 msgid "Modified"
-msgstr "Ŝanĝita:"
+msgstr "Ŝanĝita"
 
 #: kio/kfilemetadataprovider.cpp:448
 #, kde-format
@@ -13595,12 +13364,10 @@ msgid "Permissions"
 msgstr "Permesoj"
 
 #: kio/kfilemetadataprovider.cpp:450
-#, fuzzy, kde-format
-#| msgctxt "@title job"
-#| msgid "Stating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating"
-msgstr "Pridemandanta"
+msgstr ""
 
 #: kio/kfilemetadataprovider.cpp:451
 #, kde-format
@@ -13609,18 +13376,16 @@ msgid "Size"
 msgstr "Grandeco"
 
 #: kio/kfilemetadataprovider.cpp:452
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@label"
 msgid "Tags"
-msgstr "Rubujo"
+msgstr ""
 
 #: kio/kfilemetadataprovider.cpp:453
-#, fuzzy, kde-format
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Total Size"
-msgstr "Grandeco:"
+msgstr ""
 
 #: kio/kfilemetadataprovider.cpp:454
 #, kde-format
@@ -13685,19 +13450,16 @@ msgid "Configure Shown Data"
 msgstr "Agordi montritajn datumojn"
 
 #: kio/kmetaprops.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox"
-#| msgid "Configure which data should be shown."
+#, kde-format
 msgctxt "@label::textbox"
 msgid "Select which data should be shown:"
-msgstr "Agordi kiujn datumojn montreblas."
+msgstr ""
 
 #: kio/kmetaprops.cpp:123
-#, fuzzy, kde-format
-#| msgid "Calculating..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "Kalkulante..."
+msgstr ""
 
 #: kio/kmetaprops.cpp:133
 #, kde-format
@@ -13706,11 +13468,10 @@ msgid "Information"
 msgstr "Informo"
 
 #: kio/knfotranslator.cpp:40
-#, fuzzy, kde-format
-#| msgid "Created:"
+#, kde-format
 msgctxt "@label creation date"
 msgid "Created"
-msgstr "Kreita:"
+msgstr "Kreita"
 
 #: kio/knfotranslator.cpp:41
 #, kde-format
@@ -13731,11 +13492,10 @@ msgid "Description"
 msgstr "Priskribo"
 
 #: kio/knfotranslator.cpp:44
-#, fuzzy, kde-format
-#| msgid "&General"
+#, kde-format
 msgctxt "@label Software used to generate content"
 msgid "Generator"
-msgstr "&Ĝenerale"
+msgstr ""
 
 #: kio/knfotranslator.cpp:45
 #, kde-format
@@ -13753,11 +13513,10 @@ msgid "Has Logical Part"
 msgstr ""
 
 #: kio/knfotranslator.cpp:47
-#, fuzzy, kde-format
-#| msgid "Parent Folder"
+#, kde-format
 msgctxt "@label parent directory"
 msgid "Part of"
-msgstr "Patra dosierujo"
+msgstr ""
 
 #: kio/knfotranslator.cpp:48
 #, kde-format
@@ -13766,32 +13525,28 @@ msgid "Keyword"
 msgstr ""
 
 #: kio/knfotranslator.cpp:49
-#, fuzzy, kde-format
-#| msgid "Modified:"
+#, kde-format
 msgctxt "@label modified date of file"
 msgid "Modified"
-msgstr "Ŝanĝita:"
+msgstr "Ŝanĝita"
 
 #: kio/knfotranslator.cpp:50
-#, fuzzy, kde-format
-#| msgid "Mime Type"
+#, kde-format
 msgctxt "@label"
 msgid "MIME Type"
-msgstr "MIME-tipo"
+msgstr ""
 
 #: kio/knfotranslator.cpp:51
-#, fuzzy, kde-format
-#| msgid "Contents:"
+#, kde-format
 msgctxt "@label"
 msgid "Content"
-msgstr "Enhavo:"
+msgstr ""
 
 #: kio/knfotranslator.cpp:52
-#, fuzzy, kde-format
-#| msgid "created on %1"
+#, kde-format
 msgctxt "@label"
 msgid "Related To"
-msgstr "kreita je %1"
+msgstr ""
 
 #: kio/knfotranslator.cpp:53
 #, kde-format
@@ -13800,11 +13555,10 @@ msgid "Subject"
 msgstr "Temo"
 
 #: kio/knfotranslator.cpp:54
-#, fuzzy, kde-format
-#| msgid "File"
+#, kde-format
 msgctxt "@label music title"
 msgid "Title"
-msgstr "Dosiero"
+msgstr ""
 
 #: kio/knfotranslator.cpp:55
 #, kde-format
@@ -13813,11 +13567,10 @@ msgid "File Location"
 msgstr ""
 
 #: kio/knfotranslator.cpp:56
-#, fuzzy, kde-format
-#| msgid "Created:"
+#, kde-format
 msgctxt "@label"
 msgid "Creator"
-msgstr "Kreita:"
+msgstr ""
 
 #: kio/knfotranslator.cpp:57
 #, kde-format
@@ -13832,18 +13585,16 @@ msgid "Channels"
 msgstr ""
 
 #: kio/knfotranslator.cpp:59
-#, fuzzy, kde-format
-#| msgid "Categories"
+#, kde-format
 msgctxt "@label number of characters"
 msgid "Characters"
-msgstr "Kategorioj"
+msgstr ""
 
 #: kio/knfotranslator.cpp:60
-#, fuzzy, kde-format
-#| msgid "C&onnect"
+#, kde-format
 msgctxt "@label"
 msgid "Codec"
-msgstr "K&onekti"
+msgstr ""
 
 #: kio/knfotranslator.cpp:61
 #, kde-format
@@ -13852,18 +13603,16 @@ msgid "Color Depth"
 msgstr ""
 
 #: kio/knfotranslator.cpp:62
-#, fuzzy, kde-format
-#| msgid "Destination"
+#, kde-format
 msgctxt "@label"
 msgid "Duration"
-msgstr "Celo"
+msgstr ""
 
 #: kio/knfotranslator.cpp:63
-#, fuzzy, kde-format
-#| msgid "Device name"
+#, kde-format
 msgctxt "@label"
 msgid "Filename"
-msgstr "Aparatnomo"
+msgstr ""
 
 #: kio/knfotranslator.cpp:64
 #, kde-format
@@ -13884,11 +13633,10 @@ msgid "Interlace Mode"
 msgstr ""
 
 #: kio/knfotranslator.cpp:67
-#, fuzzy, kde-format
-#| msgid "Link"
+#, kde-format
 msgctxt "@label number of lines"
 msgid "Lines"
-msgstr "Ligilo"
+msgstr ""
 
 #: kio/knfotranslator.cpp:68
 #, kde-format
@@ -13903,11 +13651,10 @@ msgid "Sample Rate"
 msgstr ""
 
 #: kio/knfotranslator.cpp:70
-#, fuzzy, kde-format
-#| msgid "Write"
+#, kde-format
 msgctxt "@label"
 msgid "Width"
-msgstr "Skribi"
+msgstr ""
 
 #: kio/knfotranslator.cpp:71
 #, kde-format
@@ -13928,18 +13675,16 @@ msgid "Exposure Bias Value"
 msgstr ""
 
 #: kio/knfotranslator.cpp:74
-#, fuzzy, kde-format
-#| msgid "Exposure:"
+#, kde-format
 msgctxt "@label EXIF"
 msgid "Exposure Time"
-msgstr "Ekspono:"
+msgstr ""
 
 #: kio/knfotranslator.cpp:75
-#, fuzzy, kde-format
-#| msgid "Class"
+#, kde-format
 msgctxt "@label EXIF"
 msgid "Flash"
-msgstr "Klaso"
+msgstr ""
 
 #: kio/knfotranslator.cpp:76
 #, kde-format
@@ -13960,11 +13705,10 @@ msgid "ISO Speed Ratings"
 msgstr ""
 
 #: kio/knfotranslator.cpp:79
-#, fuzzy, kde-format
-#| msgid "Mask"
+#, kde-format
 msgctxt "@label EXIF"
 msgid "Make"
-msgstr "Masko"
+msgstr ""
 
 #: kio/knfotranslator.cpp:80
 #, kde-format
@@ -13979,11 +13723,10 @@ msgid "Model"
 msgstr ""
 
 #: kio/knfotranslator.cpp:82
-#, fuzzy, kde-format
-#| msgid "Organization:"
+#, kde-format
 msgctxt "@label EXIF"
 msgid "Orientation"
-msgstr "Organizaĵo:"
+msgstr ""
 
 #: kio/knfotranslator.cpp:83
 #, kde-format
@@ -13992,18 +13735,16 @@ msgid "White Balance"
 msgstr ""
 
 #: kio/knfotranslator.cpp:84
-#, fuzzy, kde-format
-#| msgid "Directory"
+#, kde-format
 msgctxt "@label video director"
 msgid "Director"
-msgstr "Dosierujo"
+msgstr ""
 
 #: kio/knfotranslator.cpp:85
-#, fuzzy, kde-format
-#| msgid "&General"
+#, kde-format
 msgctxt "@label music genre"
 msgid "Genre"
-msgstr "&Ĝenerale"
+msgstr ""
 
 #: kio/knfotranslator.cpp:86
 #, kde-format
@@ -14018,11 +13759,10 @@ msgid "Performer"
 msgstr ""
 
 #: kio/knfotranslator.cpp:88
-#, fuzzy, kde-format
-#| msgid "&Remove '%1'"
+#, kde-format
 msgctxt "@label"
 msgid "Release Date"
-msgstr "&Forigi '%1'"
+msgstr ""
 
 #: kio/knfotranslator.cpp:89
 #, kde-format
@@ -14031,33 +13771,28 @@ msgid "Track"
 msgstr ""
 
 #: kio/knfotranslator.cpp:90
-#, fuzzy, kde-format
-#| msgid "URL Resource Invalid"
+#, kde-format
 msgctxt "@label resource created time"
 msgid "Resource Created"
-msgstr "URLo Nevalida"
+msgstr ""
 
 #: kio/knfotranslator.cpp:91
-#, fuzzy, kde-format
-#| msgid "Source"
+#, kde-format
 msgctxt "@label"
 msgid "Sub Resource"
-msgstr "Fonto"
+msgstr ""
 
 #: kio/knfotranslator.cpp:92
-#, fuzzy, kde-format
-#| msgid "Modified:"
+#, kde-format
 msgctxt "@label resource last modified"
 msgid "Resource Modified"
-msgstr "Ŝanĝita:"
+msgstr ""
 
 #: kio/knfotranslator.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title job"
-#| msgid "Stating"
+#, kde-format
 msgctxt "@label"
 msgid "Numeric Rating"
-msgstr "Pridemandanta"
+msgstr ""
 
 #: kio/knfotranslator.cpp:94
 #, kde-format
@@ -14078,11 +13813,10 @@ msgid "Last Usage"
 msgstr ""
 
 #: kio/knfotranslator.cpp:97
-#, fuzzy, kde-format
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Usage Count"
-msgstr "Komento"
+msgstr ""
 
 #: kio/knfotranslator.cpp:98
 #, kde-format
@@ -14097,11 +13831,10 @@ msgid "Unix File Mode"
 msgstr ""
 
 #: kio/knfotranslator.cpp:100
-#, fuzzy, kde-format
-#| msgid "Open file dialog"
+#, kde-format
 msgctxt "@label"
 msgid "Unix File Owner"
-msgstr "Malfermi dosierodialogon"
+msgstr ""
 
 #: kio/knfotranslator.cpp:101
 #, kde-format
@@ -14140,11 +13873,10 @@ msgid "Total Translations"
 msgstr ""
 
 #: kio/knfotranslator.cpp:107
-#, fuzzy, kde-format
-#| msgid "Trusted:"
+#, kde-format
 msgctxt "@label Number of translated strings"
 msgid "Translated"
-msgstr "Fidinda:"
+msgstr ""
 
 #: kio/knfotranslator.cpp:108
 #, kde-format
@@ -14195,17 +13927,15 @@ msgstr "Neniu metainformo por %1"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
 #: kssl/kcm/cacertificates.ui:24
-#, fuzzy, kde-format
-#| msgid "Organization:"
+#, kde-format
 msgid "Organization / Common Name"
-msgstr "Organizaĵo:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
 #: kssl/kcm/cacertificates.ui:29
-#, fuzzy, kde-format
-#| msgid "Organizational Unit:"
+#, kde-format
 msgid "Organizational Unit"
-msgstr "Suborganizaĵo:"
+msgstr "Suborganizaĵo"
 
 #. i18n: ectx: property (text), widget (QPushButton, displaySelection)
 #: kssl/kcm/cacertificates.ui:42
@@ -14215,17 +13945,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, disableSelection)
 #: kssl/kcm/cacertificates.ui:68
-#, fuzzy, kde-format
-#| msgid "disable XIM"
+#, kde-format
 msgid "Disable"
-msgstr "malŝalti XIM"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, enableSelection)
 #: kssl/kcm/cacertificates.ui:78
-#, fuzzy, kde-format
-#| msgid "Emblems"
+#, kde-format
 msgid "Enable"
-msgstr "Emblemoj"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, removeSelection)
 #: kssl/kcm/cacertificates.ui:104
@@ -14240,85 +13968,72 @@ msgid "Add..."
 msgstr "Aldoni..."
 
 #: kssl/kcm/cacertificatespage.cpp:140
-#, fuzzy, kde-format
-#| msgid "Send certificate"
+#, kde-format
 msgid "System certificates"
-msgstr "Sendi atestilon"
+msgstr ""
 
 #: kssl/kcm/cacertificatespage.cpp:147
-#, fuzzy, kde-format
-#| msgid "Send certificate"
+#, kde-format
 msgid "User-added certificates"
-msgstr "Sendi atestilon"
+msgstr ""
 
 #: kssl/kcm/cacertificatespage.cpp:302
-#, fuzzy, kde-format
-#| msgid "Certificate"
+#, kde-format
 msgid "Pick Certificates"
-msgstr "Atestilo"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, subjectHeading)
 #: kssl/kcm/displaycert.ui:23
-#, fuzzy, kde-format
-#| msgid "Security Information"
+#, kde-format
 msgid "<b>Subject Information</b>"
-msgstr "Sekurecinformo"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, issuerHeading)
 #: kssl/kcm/displaycert.ui:39
-#, fuzzy, kde-format
-#| msgid " <b>[Cross Domain]</b>"
+#, kde-format
 msgid "<b>Issuer Information</b>"
-msgstr "[plurretregiona]"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: kssl/kcm/displaycert.ui:55
-#, fuzzy, kde-format
-#| msgid "<b>%1</b>"
+#, kde-format
 msgid "<b>Other</b>"
-msgstr "<b>%1</b>"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, validityPeriodLabel)
 #: kssl/kcm/displaycert.ui:64
-#, fuzzy, kde-format
-#| msgid "Validity period:"
+#, kde-format
 msgid "Validity period"
-msgstr "Valida de:"
+msgstr "Valida de"
 
 #. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
 #: kssl/kcm/displaycert.ui:78
-#, fuzzy, kde-format
-#| msgid "Serial Number:"
+#, kde-format
 msgid "Serial number"
-msgstr "Seria numero:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, md5DigestLabel)
 #: kssl/kcm/displaycert.ui:92
-#, fuzzy, kde-format
-#| msgid "MD5 Digest:"
+#, kde-format
 msgid "MD5 digest"
-msgstr "MD5-ĉifro:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, sha1DigestLabel)
 #: kssl/kcm/displaycert.ui:106
-#, fuzzy, kde-format
-#| msgid "MD5 Digest:"
+#, kde-format
 msgid "SHA1 digest"
-msgstr "MD5-ĉifro:"
+msgstr ""
 
 #: kssl/kcm/displaycertdialog.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "folders, files"
-#| msgid "%1, %2"
+#, kde-format
 msgctxt "%1 is the effective date of the certificate, %2 is the expiry date"
 msgid "%1 to %2"
-msgstr "%1, %2"
+msgstr ""
 
 #: kssl/kcm/kcmssl.cpp:37
-#, fuzzy, kde-format
-#| msgid "Reload configuration file"
+#, kde-format
 msgid "SSL Configuration Module"
-msgstr "Reŝargi agordodosieron"
+msgstr ""
 
 #: kssl/kcm/kcmssl.cpp:39
 #, kde-format
@@ -14331,10 +14046,9 @@ msgid "Andreas Hartmetz"
 msgstr ""
 
 #: kssl/kcm/kcmssl.cpp:52
-#, fuzzy, kde-format
-#| msgid "Link"
+#, kde-format
 msgid "SSL Signers"
-msgstr "Ligilo"
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:202
 #, kde-format
@@ -14405,16 +14119,11 @@ msgid ""
 msgstr ""
 
 #: kssl/ksslcertificate.cpp:1069
-#, fuzzy, kde-format
-#| msgid ""
-#| "Certificate signing authority root files could not be found so the "
-#| "certificate is not verified."
+#, kde-format
 msgid ""
 "Retrieval of the CRL (Certificate Revocation List) failed. This means the "
 "CA's (Certificate Authority) CRL can not be found."
 msgstr ""
-"La radikaj dosieroj de la atestanta aŭtoritato ne troviĝis. Do la atestilo "
-"ne estas validigebla."
 
 #: kssl/ksslcertificate.cpp:1071
 #, kde-format
@@ -14440,46 +14149,33 @@ msgid ""
 msgstr ""
 
 #: kssl/ksslcertificate.cpp:1077
-#, fuzzy, kde-format
-#| msgid ""
-#| "Certificate signing authority root files could not be found so the "
-#| "certificate is not verified."
+#, kde-format
 msgid ""
 "The certificate's signature is invalid. This means that the certificate can "
 "not be verified."
 msgstr ""
-"La radikaj dosieroj de la atestanta aŭtoritato ne troviĝis. Do la atestilo "
-"ne estas validigebla."
 
 #: kssl/ksslcertificate.cpp:1079
-#, fuzzy, kde-format
-#| msgid ""
-#| "Certificate signing authority root files could not be found so the "
-#| "certificate is not verified."
+#, kde-format
 msgid ""
 "The CRL's (Certificate Revocation List) signature is invalid. This means "
 "that the CRL can not be verified."
 msgstr ""
-"La radikaj dosieroj de la atestanta aŭtoritato ne troviĝis. Do la atestilo "
-"ne estas validigebla."
 
 #: kssl/ksslcertificate.cpp:1081
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid "The certificate is not valid, yet."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1083
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid "The certificate is not valid, any more."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1085 kssl/ksslcertificate.cpp:1087
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid "The CRL (Certificate Revocation List) is not valid, yet."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1089
 #, kde-format
@@ -14492,20 +14188,18 @@ msgid "The time format of the certificate's 'notAfter' field is invalid."
 msgstr ""
 
 #: kssl/ksslcertificate.cpp:1093
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid ""
 "The time format of the CRL's (Certificate Revocation List) 'lastUpdate' "
 "field is invalid."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1095
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid ""
 "The time format of the CRL's (Certificate Revocation List) 'nextUpdate' "
 "field is invalid."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1097
 #, kde-format
@@ -14548,16 +14242,14 @@ msgid "The certificate chain is longer than the maximum depth specified."
 msgstr ""
 
 #: kssl/ksslcertificate.cpp:1111
-#, fuzzy, kde-format
-#| msgid "Certificate has been revoked."
+#, kde-format
 msgid "The certificate has been revoked."
-msgstr "Atestilo estas revokita."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1113
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid "The certificate's CA (Certificate Authority) is invalid."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1115
 #, kde-format
@@ -14588,20 +14280,18 @@ msgid ""
 msgstr ""
 
 #: kssl/ksslcertificate.cpp:1125
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid ""
 "The certificate's CA (Certificate Authority) does not match the CA name of "
 "the certificate."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1127
-#, fuzzy, kde-format
-#| msgid "The certificate is invalid."
+#, kde-format
 msgid ""
 "The CA (Certificate Authority) certificate's key ID does not match the key "
 "ID in the 'Issuer' section of the certificate you are trying to use."
-msgstr "La atestilo ne estas valida."
+msgstr ""
 
 #: kssl/ksslcertificate.cpp:1129
 #, kde-format
@@ -14682,98 +14372,3 @@ msgstr "La atestilo ne estas valida."
 #, kde-format
 msgid "GMT"
 msgstr "UT"
-
-#, fuzzy
-#~| msgctxt "Coptic month 1 - ShortName"
-#~| msgid "Tho"
-#~ msgctxt "color"
-#~ msgid "hot"
-#~ msgstr "Tho"
-
-#, fuzzy
-#~| msgctxt "Coptic weekday 6 - ShortDayName"
-#~| msgid "Psa"
-#~ msgctxt "color"
-#~ msgid "sea"
-#~ msgstr "Psa"
-
-#, fuzzy
-#~| msgctxt "Coptic weekday 7 - ShortDayName"
-#~| msgid "Tky"
-#~ msgctxt "color"
-#~ msgid "sky"
-#~ msgstr "Tky"
-
-#, fuzzy
-#~ msgctxt "@item Calendar system"
-#~ msgid "Gregorian (Proleptic)"
-#~ msgstr "Georga"
-
-#~ msgctxt "Ethiopian month 1 - ShortNamePossessive"
-#~ msgid "of Mes"
-#~ msgstr "el Mes"
-
-#~ msgctxt "Ethiopian month 5 - LongNamePossessive"
-#~ msgid "of Ter"
-#~ msgstr "el Tir"
-
-#~ msgctxt "Ethiopian month 1 - ShortName"
-#~ msgid "Mes"
-#~ msgstr "Mes"
-
-#~ msgctxt "Ethiopian month 5 - LongName"
-#~ msgid "Ter"
-#~ msgstr "Ter"
-
-#~ msgctxt "Ethiopian weekday 4 - ShortDayName"
-#~ msgid "Ham"
-#~ msgstr "Ham"
-
-#~ msgctxt "Ethiopian weekday 5 - ShortDayName"
-#~ msgid "Arb"
-#~ msgstr "Arb"
-
-#~ msgctxt "Ethiopian weekday 3 - LongDayName"
-#~ msgid "Rob"
-#~ msgstr "Rob"
-
-#~ msgctxt "Ethiopian weekday 5 - LongDayName"
-#~ msgid "Arb"
-#~ msgstr "Arb"
-
-#~ msgctxt "of May long"
-#~ msgid "of May"
-#~ msgstr "de Majo"
-
-#~ msgctxt "May long"
-#~ msgid "May"
-#~ msgstr "Majo"
-
-#~ msgid "R. Thaani"
-#~ msgstr "R. Thaani"
-
-#~ msgid "J. Thaani"
-#~ msgstr "J. Thaani"
-
-#~ msgid "Hijjah"
-#~ msgstr "Hijjah"
-
-#~ msgctxt "of Tir long"
-#~ msgid "of Tir"
-#~ msgstr "de Tir"
-
-#~ msgctxt "of Dei long"
-#~ msgid "of Dei"
-#~ msgstr "de Dei"
-
-#~ msgctxt "Tir long"
-#~ msgid "Tir"
-#~ msgstr "Tir"
-
-#~ msgctxt "Dei long"
-#~ msgid "Dei"
-#~ msgstr "Dei"
-
-#~ msgctxt "Shanbe short"
-#~ msgid "shn"
-#~ msgstr "shn"
