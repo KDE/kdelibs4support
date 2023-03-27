@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2023-03-07 20:21+0300\n"
+"PO-Revision-Date: 2023-03-26 18:43+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -10529,13 +10529,13 @@ msgstr "MSK+09 - Bering Denizi"
 #: kdecore/TIMEZONES:730
 #, kde-format
 msgid "Asia/Aqtau"
-msgstr "Asya/Aktau"
+msgstr "Asya/Aktav"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:732
 #, kde-format
 msgid "Atyrau (Atirau, Gur'yev), Mangghystau (Mankistau)"
-msgstr "Atyrau (Atirau, Gur'yev), Mangghystau (Mankistau)"
+msgstr "Atırav, Manğıstav"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:734
@@ -10552,7 +10552,7 @@ msgstr "Asya/Aktöbe"
 #: kdecore/TIMEZONES:737
 #, kde-format
 msgid "Aqtobe (Aktobe)"
-msgstr "Aqtobe (Aktobe)"
+msgstr "Aktöbe"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:739
@@ -10573,13 +10573,13 @@ msgstr "Asya/Aşkabat"
 #: kdecore/TIMEZONES:742
 #, kde-format
 msgid "Asia/Atyrau"
-msgstr "Asya/Atırau"
+msgstr "Asya/Atırav"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:744
 #, kde-format
 msgid "Atyrau/Atirau/Gur'yev"
-msgstr "Atırau/Guryev"
+msgstr "Atırav/Guryev"
 
 #: kdecore/TIMEZONES:745
 #, kde-format
