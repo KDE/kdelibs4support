@@ -13186,12 +13186,12 @@ msgstr "Selectiona le Font"
 #: kdeui/kprintpreview.cpp:118
 #, kde-format
 msgid "Could not load print preview part"
-msgstr "Il non pote cargar le parte del vista preliminari de impression"
+msgstr "Il non pote cargar le parte del vista preliminar de impression"
 
 #: kdeui/kprintpreview.cpp:135
 #, kde-format
 msgid "Print Preview"
-msgstr "Vista preliminari de impression"
+msgstr "Vista preliminar de impression"
 
 #: kdeui/ksystemtrayicon.cpp:153
 #, kde-format
