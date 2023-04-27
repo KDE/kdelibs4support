@@ -5,7 +5,7 @@
 # Georg Schuster <gschuster@utanet.at>, 2005.
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2005, 2006, 2007, 2008, 2009, 2010.
 # Burkhard Lück <lueck@hube-lueck.de>, 2006, 2007, 2009, 2014, 2015, 2017, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016, 2018.
+# Frederik Schwarzer <schwarzer@kde.org>, 2007, 2008, 2009, 2010, 2011, 2014, 2015, 2016, 2018, 2023.
 # Rolf Eike Beer <kde@opensource.sf-tec.de>, 2009.
 # Panagiotis Papadopoulos <pano_90@gmx.net>, 2010.
 # Torbjörn Klatt <torbjoern.k@googlemail.com>, 2011.
@@ -14,14 +14,15 @@ msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2021-04-14 06:28+0200\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2023-04-26 21:04+0200\n"
+"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -8056,10 +8057,9 @@ msgstr "Ceuta & Melilla"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:20
-#, fuzzy, kde-format
-#| msgid "Ceuta & Melilla"
+#, kde-format
 msgid "Ceuta, Melilla"
-msgstr "Ceuta & Melilla"
+msgstr "Ceuta, Melilla"
 
 #: kdecore/TIMEZONES:21
 #, kde-format
@@ -8144,10 +8144,9 @@ msgstr "Westl. Demokratische Republik Kongo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:39
-#, fuzzy, kde-format
-#| msgid "west Dem. Rep. of Congo"
+#, kde-format
 msgid "Dem. Rep. of Congo (west)"
-msgstr "Westl. Demokratische Republik Kongo"
+msgstr "Demokratische Republik Kongo (West)"
 
 #: kdecore/TIMEZONES:40
 #, kde-format
@@ -8182,10 +8181,9 @@ msgstr "Östl. Demokratische Republik Kongo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:48
-#, fuzzy, kde-format
-#| msgid "east Dem. Rep. of Congo"
+#, kde-format
 msgid "Dem. Rep. of Congo (east)"
-msgstr "Östl. Demokratische Republik Kongo"
+msgstr "Demokratische Republik Kongo (Ost)"
 
 #: kdecore/TIMEZONES:49
 #, kde-format
@@ -8306,10 +8304,9 @@ msgstr "Alaska-Zeitzone"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:75
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska (most areas)"
-msgstr "Alaska-Zeitzone"
+msgstr "Alaska (weitestgehend)"
 
 #: kdecore/TIMEZONES:76
 #, kde-format
@@ -8356,8 +8353,7 @@ msgstr "Catamarca (CT), Chubut (CH)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:88
-#, fuzzy, kde-format
-#| msgid "Catamarca (CT), Chubut (CH)"
+#, kde-format
 msgid "Catamarca (CT); Chubut (CH)"
 msgstr "Catamarca (CT), Chubut (CH)"
 
