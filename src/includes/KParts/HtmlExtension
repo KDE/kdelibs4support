@@ -1,4 +1,0 @@
-// kde4 compat
-#include <kparts/htmlextension.h>
-#include <kparts/selectorinterface.h>
-#include <kparts/htmlsettingsinterface.h>

@@ -1,5 +1,0 @@
-// kde4 compat
-#include <kparts/event.h>
-#include <kparts/guiactivateevent.h>
-#include <kparts/partactivateevent.h>
-#include <kparts/partselectevent.h>
