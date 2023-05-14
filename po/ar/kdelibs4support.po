@@ -13900,7 +13900,7 @@ msgstr "الطول البؤريّ"
 #, kde-format
 msgctxt "@label EXIF"
 msgid "Focal Length 35 mm"
-msgstr "الطول البؤريّ ٣٥مم"
+msgstr "الطول البؤريّ 35مم"
 
 #: kio/knfotranslator.cpp:78
 #, kde-format
