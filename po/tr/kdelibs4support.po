@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-14 00:53+0000\n"
-"PO-Revision-Date: 2023-05-01 12:41+0300\n"
+"PO-Revision-Date: 2023-05-24 01:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2486,12 +2486,12 @@ msgstr "istenen protokol ailesi desteklenmiyor"
 #: kdecore/k3resolver.cpp:541
 #, kde-format
 msgid "requested service not supported for this socket type"
-msgstr "bu soket türü için istenen servis desteklenmiyor"
+msgstr "bu yuva türü için istenen hizmet desteklenmiyor"
 
 #: kdecore/k3resolver.cpp:542
 #, kde-format
 msgid "requested socket type not supported"
-msgstr "istenen soket türü desteklenmiyor"
+msgstr "istenen yuva türü desteklenmiyor"
 
 #: kdecore/k3resolver.cpp:543
 #, kde-format
@@ -2537,25 +2537,25 @@ msgstr "bu adres kullanımda"
 #, kde-format
 msgctxt "Socket error code AlreadyBound"
 msgid "socket is already bound"
-msgstr "soket zaten bağlı"
+msgstr "yuva zaten bağlı"
 
 #: kdecore/k3socketbase.cpp:235
 #, kde-format
 msgctxt "Socket error code AlreadyCreated"
 msgid "socket is already created"
-msgstr "soket zaten oluşturulmuş"
+msgstr "yuva zaten oluşturulmuş"
 
 #: kdecore/k3socketbase.cpp:240
 #, kde-format
 msgctxt "Socket error code NotBound"
 msgid "socket is not bound"
-msgstr "soket bağlı değil"
+msgstr "yuva bağlı değil"
 
 #: kdecore/k3socketbase.cpp:245
 #, kde-format
 msgctxt "Socket error code NotCreated"
 msgid "socket has not been created"
-msgstr "soket oluşturulmamış"
+msgstr "yuva oluşturulmamış"
 
 #: kdecore/k3socketbase.cpp:250
 #, kde-format
