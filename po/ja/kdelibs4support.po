@@ -21,7 +21,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 1.1\n"
@@ -7785,7 +7785,6 @@ msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 ミリ秒"
-msgstr[1] "%1 ミリ秒"
 
 #: kdecore/klocale_kde.cpp:1491
 #, kde-format
@@ -7793,7 +7792,6 @@ msgctxt "@item:intext"
 msgid "1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 日"
-msgstr[1] "%1 日"
 
 #: kdecore/klocale_kde.cpp:1493
 #, kde-format
@@ -7801,7 +7799,6 @@ msgctxt "@item:intext"
 msgid "1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 時間"
-msgstr[1] "%1 時間"
 
 #: kdecore/klocale_kde.cpp:1495
 #, kde-format
@@ -7809,7 +7806,6 @@ msgctxt "@item:intext"
 msgid "1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 分"
-msgstr[1] "%1 分"
 
 #: kdecore/klocale_kde.cpp:1497
 #, kde-format
@@ -7817,7 +7813,6 @@ msgctxt "@item:intext"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 秒"
-msgstr[1] "%1 秒"
 
 #: kdecore/klocale_kde.cpp:1521
 #, kde-format
@@ -13186,9 +13181,6 @@ msgid_plural ""
 msgstr[0] ""
 "X11 RGB 色指定文字列を読み込めません。以下のファイルの場所を調べました:\n"
 "%2"
-msgstr[1] ""
-"X11 RGB 色指定文字列を読み込めません。以下のファイルの場所を調べました:\n"
-"%2"
 
 #: kdeui/kcolordialog.cpp:997
 #, kde-format
@@ -13532,7 +13524,6 @@ msgctxt "@item:intable"
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
-msgstr[1] ""
 
 #: kio/kfilemetadataprovider.cpp:446 kio/knfotranslator.cpp:39
 #, kde-format
