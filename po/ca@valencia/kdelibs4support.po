@@ -13200,7 +13200,7 @@ msgstr "Mou a&vall"
 #, kde-format
 msgctxt "short"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr "Jove xef, porte ací per beure whisky amb quinze glaçons d'hidrogen"
+msgstr "Jove xef, porte ací per a beure whisky amb quinze glaçons d'hidrogen"
 
 #. i18n: Integer which indicates the script you used in the sample text
 #. for font previews in your language. For the possible values, see
