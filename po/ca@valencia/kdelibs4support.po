@@ -13185,12 +13185,12 @@ msgstr "&Elimina"
 #: kdeui/keditlistbox.cpp:348
 #, kde-format
 msgid "Move &Up"
-msgstr "Mou am&unt"
+msgstr "Mou cap am&unt"
 
 #: kdeui/keditlistbox.cpp:353
 #, kde-format
 msgid "Move &Down"
-msgstr "Mou a&vall"
+msgstr "Mou cap a&vall"
 
 #. i18n: A shorter version of the alphabet test phrase translated in
 #. another message. It is displayed in the dropdown list of font previews
