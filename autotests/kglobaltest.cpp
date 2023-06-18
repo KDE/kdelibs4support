@@ -19,8 +19,10 @@
 #include <klocale.h>
 #include <kglobal.h>
 
+#include <QFutureSynchronizer>
 #include <QObject>
-#include <QtConcurrent>
+#include <QtConcurrentRun>
+#include <QTimer>
 
 #include <QTest>
 #include <qtest_kde.h> // kWaitForSignal

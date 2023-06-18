@@ -38,7 +38,7 @@
 #include <qtemporaryfile.h>
 #include <kdesktopfile.h>
 
-#include <QtConcurrent>
+#include <QtConcurrentRun>
 
 extern KSERVICE_EXPORT bool kservice_require_kded;
 
