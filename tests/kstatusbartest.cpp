@@ -5,7 +5,6 @@
 #include <QString>
 #include <QMessageBox>
 #include <QTextEdit>
-#include <QtCore>
 #include <QPixmap>
 #include <QCursor>
 
