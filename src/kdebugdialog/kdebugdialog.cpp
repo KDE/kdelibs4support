@@ -20,6 +20,8 @@
 
 #include "kdebugdialog.h"
 
+#include <QDBusConnection>
+#include <QDBusMessage>
 #include <QLayout>
 #include <QLineEdit>
 #include <QComboBox>
@@ -27,7 +29,6 @@
 #include <QGroupBox>
 #include <QCheckBox>
 #include <QPushButton>
-#include <QtDBus>
 
 #include <kdebug.h>
 #include <kglobal.h>
