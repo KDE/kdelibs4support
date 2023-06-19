@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:53+0000\n"
+"POT-Creation-Date: 2023-06-19 00:44+0000\n"
 "PO-Revision-Date: 2011-11-26 15:12+0400\n"
 "Last-Translator: Ainur Shakirov <ainur.shakirov.tt@gmail.com>\n"
 "Language-Team: Tatar <>\n"
@@ -2357,33 +2357,33 @@ msgctxt "color"
 msgid "yellow4"
 msgstr "Рөхсәт итәргә"
 
-#: kdebugdialog/kdebugdialog.cpp:43 kdebugdialog/klistdebugdialog.cpp:37
+#: kdebugdialog/kdebugdialog.cpp:44 kdebugdialog/klistdebugdialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgid "Debug Settings"
 msgstr "Көйләүләр"
 
-#: kdebugdialog/kdebugdialog.cpp:58
+#: kdebugdialog/kdebugdialog.cpp:59
 #, kde-format
 msgid "File"
 msgstr "Файл"
 
-#: kdebugdialog/kdebugdialog.cpp:59
+#: kdebugdialog/kdebugdialog.cpp:60
 #, kde-format
 msgid "Message Box"
 msgstr ""
 
-#: kdebugdialog/kdebugdialog.cpp:60
+#: kdebugdialog/kdebugdialog.cpp:61
 #, kde-format
 msgid "Shell"
 msgstr ""
 
-#: kdebugdialog/kdebugdialog.cpp:61
+#: kdebugdialog/kdebugdialog.cpp:62
 #, kde-format
 msgid "Syslog"
 msgstr ""
 
-#: kdebugdialog/kdebugdialog.cpp:62
+#: kdebugdialog/kdebugdialog.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "No border line"
 #| msgid "None"
@@ -2431,7 +2431,7 @@ msgid "Abort on fatal errors"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:78
 #, fuzzy, kde-format
 #| msgid "Do not suppress debug output"
 msgid "Disable all debug output"
@@ -2450,14 +2450,14 @@ msgstr "Кисәтү"
 msgid "Fatal Error"
 msgstr "Хата"
 
-#: kdebugdialog/klistdebugdialog.cpp:68
+#: kdebugdialog/klistdebugdialog.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Select All"
 msgid "&Select All"
 msgstr "Барысын сайлау"
 
-#: kdebugdialog/klistdebugdialog.cpp:69
+#: kdebugdialog/klistdebugdialog.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Select All"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:53+0000\n"
+"POT-Creation-Date: 2023-06-19 00:44+0000\n"
 "PO-Revision-Date: 2022-06-15 23:27+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -2292,32 +2292,32 @@ msgctxt "color"
 msgid "yellow4"
 msgstr "sarı4"
 
-#: kdebugdialog/kdebugdialog.cpp:43 kdebugdialog/klistdebugdialog.cpp:37
+#: kdebugdialog/kdebugdialog.cpp:44 kdebugdialog/klistdebugdialog.cpp:38
 #, kde-format
 msgid "Debug Settings"
 msgstr "Sazlama ayarları"
 
-#: kdebugdialog/kdebugdialog.cpp:58
+#: kdebugdialog/kdebugdialog.cpp:59
 #, kde-format
 msgid "File"
 msgstr "Fayl"
 
-#: kdebugdialog/kdebugdialog.cpp:59
+#: kdebugdialog/kdebugdialog.cpp:60
 #, kde-format
 msgid "Message Box"
 msgstr "İsmarıc Qutusu"
 
-#: kdebugdialog/kdebugdialog.cpp:60
+#: kdebugdialog/kdebugdialog.cpp:61
 #, kde-format
 msgid "Shell"
 msgstr "Üzlük"
 
-#: kdebugdialog/kdebugdialog.cpp:61
+#: kdebugdialog/kdebugdialog.cpp:62
 #, kde-format
 msgid "Syslog"
 msgstr "Sistem Bildirişləri Jurnalı"
 
-#: kdebugdialog/kdebugdialog.cpp:62
+#: kdebugdialog/kdebugdialog.cpp:63
 #, kde-format
 msgid "None"
 msgstr "Heç Biri"
@@ -2361,7 +2361,7 @@ msgid "Abort on fatal errors"
 msgstr "Ciddi xətalar zamanı ləğv et"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:78
 #, kde-format
 msgid "Disable all debug output"
 msgstr "Bütün sazlama çıxışlarını bağla"
@@ -2378,12 +2378,12 @@ msgstr "Xəbərdarlıq"
 msgid "Fatal Error"
 msgstr "Ciddi Xəta"
 
-#: kdebugdialog/klistdebugdialog.cpp:68
+#: kdebugdialog/klistdebugdialog.cpp:69
 #, kde-format
 msgid "&Select All"
 msgstr "&Hamısını Seç"
 
-#: kdebugdialog/klistdebugdialog.cpp:69
+#: kdebugdialog/klistdebugdialog.cpp:70
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Heç birini seçmə"

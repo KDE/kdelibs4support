@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4 stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:53+0000\n"
+"POT-Creation-Date: 2023-06-19 00:44+0000\n"
 "PO-Revision-Date: 2006-01-12 16:33+0200\n"
 "Last-Translator: JUANITA FRANZ <JUANITA.FRANZ@VR-WEB.DE>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -2610,32 +2610,32 @@ msgctxt "color"
 msgid "yellow4"
 msgstr "Liggeel4"
 
-#: kdebugdialog/kdebugdialog.cpp:43 kdebugdialog/klistdebugdialog.cpp:37
+#: kdebugdialog/kdebugdialog.cpp:44 kdebugdialog/klistdebugdialog.cpp:38
 #, kde-format
 msgid "Debug Settings"
 msgstr "Ontfouting van Instellings"
 
-#: kdebugdialog/kdebugdialog.cpp:58
+#: kdebugdialog/kdebugdialog.cpp:59
 #, fuzzy, kde-format
 msgid "File"
 msgstr "Lêernaam:"
 
-#: kdebugdialog/kdebugdialog.cpp:59
+#: kdebugdialog/kdebugdialog.cpp:60
 #, kde-format
 msgid "Message Box"
 msgstr "Boodskap Boks"
 
-#: kdebugdialog/kdebugdialog.cpp:60
+#: kdebugdialog/kdebugdialog.cpp:61
 #, kde-format
 msgid "Shell"
 msgstr "Tolk"
 
-#: kdebugdialog/kdebugdialog.cpp:61
+#: kdebugdialog/kdebugdialog.cpp:62
 #, kde-format
 msgid "Syslog"
 msgstr "Syslog"
 
-#: kdebugdialog/kdebugdialog.cpp:62
+#: kdebugdialog/kdebugdialog.cpp:63
 #, kde-format
 msgid "None"
 msgstr "Geen"
@@ -2679,7 +2679,7 @@ msgid "Abort on fatal errors"
 msgstr "Staak op fatale foute"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:78
 #, kde-format
 msgid "Disable all debug output"
 msgstr ""
@@ -2696,12 +2696,12 @@ msgstr "Waarskuwing"
 msgid "Fatal Error"
 msgstr "Fatale Fout"
 
-#: kdebugdialog/klistdebugdialog.cpp:68
+#: kdebugdialog/klistdebugdialog.cpp:69
 #, kde-format
 msgid "&Select All"
 msgstr "Kies Alle"
 
-#: kdebugdialog/klistdebugdialog.cpp:69
+#: kdebugdialog/klistdebugdialog.cpp:70
 #, kde-format
 msgid "&Deselect All"
 msgstr "Ontkies Alle"

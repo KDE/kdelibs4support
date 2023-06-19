@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-14 00:53+0000\n"
+"POT-Creation-Date: 2023-06-19 00:44+0000\n"
 "PO-Revision-Date: 2021-07-11 15:57+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -2298,32 +2298,32 @@ msgctxt "color"
 msgid "yellow4"
 msgstr "жовтий 4"
 
-#: kdebugdialog/kdebugdialog.cpp:43 kdebugdialog/klistdebugdialog.cpp:37
+#: kdebugdialog/kdebugdialog.cpp:44 kdebugdialog/klistdebugdialog.cpp:38
 #, kde-format
 msgid "Debug Settings"
 msgstr "Параметри налагодження"
 
-#: kdebugdialog/kdebugdialog.cpp:58
+#: kdebugdialog/kdebugdialog.cpp:59
 #, kde-format
 msgid "File"
 msgstr "Файл"
 
-#: kdebugdialog/kdebugdialog.cpp:59
+#: kdebugdialog/kdebugdialog.cpp:60
 #, kde-format
 msgid "Message Box"
 msgstr "Вікно повідомлень"
 
-#: kdebugdialog/kdebugdialog.cpp:60
+#: kdebugdialog/kdebugdialog.cpp:61
 #, kde-format
 msgid "Shell"
 msgstr "Командна оболонка"
 
-#: kdebugdialog/kdebugdialog.cpp:61
+#: kdebugdialog/kdebugdialog.cpp:62
 #, kde-format
 msgid "Syslog"
 msgstr "Системний журнал"
 
-#: kdebugdialog/kdebugdialog.cpp:62
+#: kdebugdialog/kdebugdialog.cpp:63
 #, kde-format
 msgid "None"
 msgstr "Немає"
@@ -2367,7 +2367,7 @@ msgid "Abort on fatal errors"
 msgstr "Завершувати роботу після критичних помилок"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_disableAll2)
-#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:77
+#: kdebugdialog/kdebugdialog.ui:138 kdebugdialog/klistdebugdialog.cpp:78
 #, kde-format
 msgid "Disable all debug output"
 msgstr "Вимкнути всі повідомлення налагоджування"
@@ -2384,12 +2384,12 @@ msgstr "Попередження"
 msgid "Fatal Error"
 msgstr "Критична помилка"
 
-#: kdebugdialog/klistdebugdialog.cpp:68
+#: kdebugdialog/klistdebugdialog.cpp:69
 #, kde-format
 msgid "&Select All"
 msgstr "&Вибрати все"
 
-#: kdebugdialog/klistdebugdialog.cpp:69
+#: kdebugdialog/klistdebugdialog.cpp:70
 #, kde-format
 msgid "&Deselect All"
 msgstr "&Зняти весь вибір"
