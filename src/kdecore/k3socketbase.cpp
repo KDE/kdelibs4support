@@ -453,3 +453,4 @@ KPassiveSocketBase::~KPassiveSocketBase()
 {
 }
 
+#include "moc_k3socketbase.cpp"

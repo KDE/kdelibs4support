@@ -147,3 +147,4 @@ void KColorValueSelector::drawPalette(QPixmap *pixmap)
     painter.fillRect(pixmap->rect(), gradient);
 }
 
+#include "moc_kcolorvalueselector.cpp"

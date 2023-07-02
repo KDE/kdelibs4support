@@ -154,3 +154,4 @@ void KHueSaturationSelector::drawPalette(QPixmap *pixmap)
     *pixmap = pix;
 }
 
+#include "moc_khuesaturationselect.cpp"

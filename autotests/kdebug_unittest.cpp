@@ -369,3 +369,5 @@ void KDebugTest::testMultipleThreads()
     }
 #endif
 }
+
+#include "moc_kdebug_unittest.cpp"

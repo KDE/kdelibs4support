@@ -40,3 +40,4 @@ KSplashScreen::~KSplashScreen()
 {
 }
 
+#include "moc_ksplashscreen.cpp"

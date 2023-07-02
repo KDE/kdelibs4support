@@ -104,3 +104,4 @@ void WicdStatus::wicdStateChanged()
     emit statusChanged( status );
 }
 
+#include "moc_wicdstatus.cpp"

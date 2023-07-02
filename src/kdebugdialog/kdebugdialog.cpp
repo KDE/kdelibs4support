@@ -186,3 +186,4 @@ void KDebugDialog::disableAllClicked()
     pAbortFatal->setEnabled(enabled);
 }
 
+#include "moc_kdebugdialog.cpp"

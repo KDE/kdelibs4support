@@ -290,5 +290,5 @@ void NetworkStatusModule::solidNetworkingStatusChanged( Solid::Networking::Statu
     setNetworkStatus( QLatin1String("SolidNetwork"), status );
 }
 
-
+#include "moc_networkstatus.cpp"
 #include "networkstatus.moc"

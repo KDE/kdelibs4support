@@ -3045,3 +3045,5 @@ void KCalendarTest::testWeekNumberSystem()
     delete calendar;
     delete locale;
 }
+
+#include "moc_kcalendartest.cpp"

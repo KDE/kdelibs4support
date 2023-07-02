@@ -107,3 +107,4 @@ void KHBox::setMargin(int margin)
     layout()->setMargin(margin);
 }
 
+#include "moc_khbox.cpp"

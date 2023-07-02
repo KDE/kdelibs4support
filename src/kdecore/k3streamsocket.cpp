@@ -380,3 +380,4 @@ void KStreamSocket::connectionSucceeded(const KResolverEntry &peer)
     emit connected(peer);
 }
 
+#include "moc_k3streamsocket.cpp"

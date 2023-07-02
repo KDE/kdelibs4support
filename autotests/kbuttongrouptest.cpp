@@ -198,3 +198,4 @@ void KButtonGroupTest::testSignals()
 
 QTEST_MAIN(KButtonGroupTest)
 
+#include "moc_kbuttongrouptest.cpp"

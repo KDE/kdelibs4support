@@ -101,3 +101,5 @@ void DisplayCertDialog::previousClicked()
     }
     showCertificate(m_index);
 }
+
+#include "moc_displaycertdialog_p.cpp"

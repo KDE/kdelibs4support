@@ -63,3 +63,4 @@ QWidget *KPassivePopupMessageHandler::parentWidget()
     return qobject_cast<QWidget *>(parent());
 }
 
+#include "moc_kpassivepopupmessagehandler.cpp"

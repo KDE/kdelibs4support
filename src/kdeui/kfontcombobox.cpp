@@ -403,5 +403,4 @@ QSize KFontComboBox::sizeHint() const
 #include "fonthelpers.cpp"
 
 #include "kfontcombobox.moc"
-#include "moc_kfontcombobox.moc"
-
+#include "moc_kfontcombobox.cpp"

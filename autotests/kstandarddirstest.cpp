@@ -599,3 +599,5 @@ void KStandarddirsTest::testThreads()
     sync.addFuture(QtConcurrent::run(this, &KStandarddirsTest::testRelativeLocation));
     sync.waitForFinished();
 }
+
+#include "moc_kstandarddirstest.cpp"

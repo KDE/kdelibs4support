@@ -467,3 +467,5 @@ void KSaveFileTest::cleanupTestCase()
         QFile::remove(fileToRemove);
     }
 }
+
+#include "moc_ksavefiletest.cpp"

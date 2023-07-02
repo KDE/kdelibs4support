@@ -175,3 +175,4 @@ bool KPrintPreview::isAvailable()
     return !KMimeTypeTrader::self()->query("application/pdf", "KParts/ReadOnlyPart").isEmpty();
 }
 
+#include "moc_kprintpreview.cpp"

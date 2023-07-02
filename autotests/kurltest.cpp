@@ -2209,3 +2209,5 @@ void KUrlTest::testHashing()
         QCOMPARE(it.key().url(), it.value().toString());
     }
 }
+
+#include "moc_kurltest.cpp"

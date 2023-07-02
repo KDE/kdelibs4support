@@ -79,3 +79,4 @@ QWidget *KMessageBoxMessageHandlerPrivate::parentWidget()
     return qobject_cast<QWidget *>(q->parent());
 }
 
+#include "moc_kmessageboxmessagehandler.cpp"

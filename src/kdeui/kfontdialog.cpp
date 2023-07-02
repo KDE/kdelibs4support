@@ -149,3 +149,4 @@ int KFontDialog::getFontAndText(QFont &theFont, QString &theString,
     return result;
 }
 
+#include "moc_kfontdialog.cpp"

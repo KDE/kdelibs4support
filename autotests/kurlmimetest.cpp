@@ -137,3 +137,5 @@ void KUrlMimeTest::testMostLocalUrlList()
     }
 
 }
+
+#include "moc_kurlmimetest.cpp"

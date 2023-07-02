@@ -134,3 +134,4 @@ KPluginFactory *KLibLoader::factory(const QString &_name, QLibrary::LoadHints hi
     return plugin.factory();
 }
 
+#include "moc_klibloader.cpp"

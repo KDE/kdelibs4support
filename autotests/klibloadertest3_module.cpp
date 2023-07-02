@@ -32,3 +32,5 @@ KLibLoaderTestObject::~KLibLoaderTestObject()
 {
     qDebug("KLibLoaderTestObject deleted");
 }
+
+#include "moc_klibloadertest3_module.cpp"

@@ -4023,3 +4023,5 @@ void KDateTimeTest::misc()
     }
     ::tzset();
 }
+
+#include "moc_kdatetimetest.cpp"

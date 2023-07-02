@@ -115,3 +115,4 @@ int KOCRDialog::nextId()
     return ++d->m_currentId;
 }
 
+#include "moc_kscan.cpp"

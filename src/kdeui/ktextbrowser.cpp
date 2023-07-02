@@ -123,3 +123,4 @@ void KTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     }
 }
 
+#include "moc_ktextbrowser.cpp"

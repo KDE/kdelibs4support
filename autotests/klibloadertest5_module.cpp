@@ -36,3 +36,4 @@ KLibLoaderTestObject::~KLibLoaderTestObject()
 }
 
 #include "klibloadertest5_module.moc"
+#include "moc_klibloadertest5_module.cpp"

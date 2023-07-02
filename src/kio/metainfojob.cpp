@@ -168,3 +168,4 @@ KDELIBS4SUPPORT_DEPRECATED_EXPORT MetaInfoJob *KIO::fileMetaInfo(const QList<QUr
     return job;
 }
 
+#include "moc_metainfojob.cpp"

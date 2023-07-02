@@ -1336,3 +1336,5 @@ KLocaleTest::formatByteSize2()
 }
 
 QTEST_MAIN(KLocaleTest)
+
+#include "moc_klocaletest.cpp"

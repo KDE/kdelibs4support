@@ -97,3 +97,4 @@ void KTemporaryFileTest::testKTemporaryFile()
     //directories we have write access to?
 }
 
+#include "moc_ktemporaryfiletest.cpp"

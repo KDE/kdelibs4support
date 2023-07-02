@@ -50,3 +50,4 @@ void KAsciiTest::testkasciistricmp()
     QVERIFY(kasciistricmp("B", "A") > 0);
 }
 
+#include "moc_kasciitest.cpp"

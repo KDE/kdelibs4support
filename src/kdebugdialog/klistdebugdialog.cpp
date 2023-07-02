@@ -171,3 +171,4 @@ void KListDebugDialog::disableAllClicked()
     m_buttonContainer->setEnabled(!allDisabled);
 }
 
+#include "moc_klistdebugdialog.cpp"

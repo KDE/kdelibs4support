@@ -252,3 +252,4 @@ QValidator::State KDoubleValidator::validate(QString &input, int &p) const
     return base::validate(s, p);
 }
 
+#include "moc_knumvalidator.cpp"

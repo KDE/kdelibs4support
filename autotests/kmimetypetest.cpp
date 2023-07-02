@@ -918,3 +918,5 @@ void KMimeTypeTest::testIsNull()
     ptr = KMimeType::mimeType(QStringLiteral("image/jpeg"));
     QVERIFY(!ptr.isNull());
 }
+
+#include "moc_kmimetypetest.cpp"

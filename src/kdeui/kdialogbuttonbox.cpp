@@ -55,3 +55,4 @@ KPushButton *KDialogButtonBox::addButton(const KGuiItem &guiitem, ButtonRole rol
     return pb;
 }
 
+#include "moc_kdialogbuttonbox.cpp"

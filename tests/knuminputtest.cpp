@@ -168,3 +168,4 @@ int main(int argc, char **argv)
     a.exec();
 }
 
+#include "moc_knuminputtest.cpp"

@@ -796,3 +796,4 @@ void KTimeZonesTest::tzfileTransitions()
     }
 }
 
+#include "moc_ktimezonestest.cpp"

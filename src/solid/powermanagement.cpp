@@ -292,3 +292,6 @@ void Solid::PowerManagementPrivate::slotServiceUnregistered(const QString &servi
                 SIGNAL(resumingFromSuspend()));
     }
 }
+
+#include "moc_powermanagement.cpp"
+#include "moc_powermanagement_p.cpp"

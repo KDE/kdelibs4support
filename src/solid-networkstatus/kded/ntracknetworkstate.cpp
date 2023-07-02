@@ -70,4 +70,4 @@ void NtrackNetworkState::ntrackStateChangedSlot(QNTrackState /*oldstate*/ , QNTr
     m_statusmodule->setNetworkStatus("ntrack",ntrackstate2solidstatus(newstate));
 }
 
-
+#include "moc_ntracknetworkstate.cpp"

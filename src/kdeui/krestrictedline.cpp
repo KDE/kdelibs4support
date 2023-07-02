@@ -100,3 +100,4 @@ QString KRestrictedLine::validChars() const
     return d->qsValidChars;
 }
 
+#include "moc_krestrictedline.cpp"

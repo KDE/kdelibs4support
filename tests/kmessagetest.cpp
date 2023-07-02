@@ -95,3 +95,4 @@ int main(int argc, char **argv)
     return app.exec();
 }
 
+#include "moc_kmessagetest.cpp"

@@ -115,3 +115,4 @@ QStringList KStringListValidator::stringList() const
     return d->mStringList;
 }
 
+#include "moc_kstringvalidator.cpp"

@@ -309,3 +309,4 @@ QString KDataTool::componentName() const
     return d->componentName;
 }
 
+#include "moc_kdatatool.cpp"

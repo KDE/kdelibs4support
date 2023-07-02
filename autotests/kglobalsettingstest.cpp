@@ -121,3 +121,5 @@ void KGlobalSettingsTest::testSettingsChange()
     QCOMPARE(settings_spy.at(0).at(0).toInt(), (int)KGlobalSettings::SETTINGS_PATHS);
     QCOMPARE(appearance_spy.size(), 0);
 }
+
+#include "moc_kglobalsettingstest.cpp"

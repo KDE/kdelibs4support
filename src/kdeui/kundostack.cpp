@@ -71,3 +71,4 @@ QAction *KUndoStack::createUndoAction(KActionCollection *actionCollection, const
     return action;
 }
 
+#include "moc_kundostack.cpp"

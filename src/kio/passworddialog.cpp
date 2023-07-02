@@ -80,3 +80,4 @@ int PasswordDialog::getNameAndPassword(QString &user, QString &pass, bool *keep,
     return ret;
 }
 
+#include "moc_passworddialog.cpp"

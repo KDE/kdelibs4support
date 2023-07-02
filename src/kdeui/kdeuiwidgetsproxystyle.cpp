@@ -173,3 +173,4 @@ void KdeUiProxyStyle::unpolish(QApplication *application)
     style()->unpolish(application);
 }
 
+#include "moc_kdeuiwidgetsproxystyle_p.cpp"

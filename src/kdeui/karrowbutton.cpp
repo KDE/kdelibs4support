@@ -115,3 +115,4 @@ void KArrowButton::paintEvent(QPaintEvent *)
     style()->drawPrimitive(e, &opt, &p, this);
 }
 
+#include "moc_karrowbutton.cpp"

@@ -220,3 +220,5 @@ int main(int argc, char **argv)
                                  QLatin1String("Your Choice"));
     return 0;
 }
+
+#include "moc_kfstest.cpp"

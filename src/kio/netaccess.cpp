@@ -532,3 +532,4 @@ void NetAccess::slotRedirection(KIO::Job *, const QUrl &url)
     d->m_url = url;
 }
 
+#include "moc_netaccess.cpp"

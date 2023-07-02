@@ -74,3 +74,4 @@ void KAbstractDebugDialog::load()
     m_disableAll->setChecked(topGroup.readEntry("DisableAll", false));
 }
 
+#include "moc_kabstractdebugdialog.cpp"

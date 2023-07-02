@@ -174,3 +174,4 @@ bool KDateWidget::setCalendarSystem(KLocale::CalendarSystem newCalendarSystem)
     return true;
 }
 
+#include "moc_kdatewidget.cpp"

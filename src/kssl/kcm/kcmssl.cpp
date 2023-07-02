@@ -77,3 +77,4 @@ void KcmSsl::pageChanged(bool isChanged)
 }
 
 #include "kcmssl.moc"
+#include "moc_kcmssl.cpp"

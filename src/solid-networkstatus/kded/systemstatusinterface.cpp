@@ -29,3 +29,4 @@ SystemStatusInterface::SystemStatusInterface( QObject *parent )
 
 }
 
+#include "moc_systemstatusinterface.cpp"

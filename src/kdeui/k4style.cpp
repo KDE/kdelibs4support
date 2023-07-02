@@ -4214,3 +4214,4 @@ void K4Style::TextOption::init()
     hAlign = Qt::AlignLeft; //NOTE: Check BIDI?
 }
 
+#include "moc_k4style.cpp"

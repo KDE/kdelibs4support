@@ -116,3 +116,5 @@ void KLibLoaderTest::testFindLibrary_noexist()
     const QString library = KLibLoader::findLibrary("idontexist");
     QVERIFY(library.isEmpty());
 }
+
+#include "moc_klibloadertest.cpp"

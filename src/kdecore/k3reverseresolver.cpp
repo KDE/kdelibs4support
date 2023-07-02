@@ -267,3 +267,4 @@ bool ReverseThread::postprocess()
     return true;
 }
 
+#include "moc_k3reverseresolver.cpp"
