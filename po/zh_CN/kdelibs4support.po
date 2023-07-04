@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-19 00:44+0000\n"
-"PO-Revision-Date: 2023-06-17 04:11\n"
+"PO-Revision-Date: 2023-07-03 11:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -10747,7 +10747,7 @@ msgstr "亚洲/胡志明市"
 #: kdecore/TIMEZONES:797
 #, kde-format
 msgid "Asia/Hong_Kong"
-msgstr "亚洲/香港"
+msgstr "亚洲/中国香港"
 
 #: kdecore/TIMEZONES:798
 #, kde-format
@@ -10962,7 +10962,7 @@ msgstr "亚洲/澳门"
 #: kdecore/TIMEZONES:856
 #, kde-format
 msgid "Asia/Macau"
-msgstr "亚洲/澳门"
+msgstr "亚洲/中国澳门"
 
 #: kdecore/TIMEZONES:857
 #, kde-format
@@ -12293,7 +12293,7 @@ msgstr "英国-爱尔兰"
 #: kdecore/TIMEZONES:1254
 #, kde-format
 msgid "Hongkong"
-msgstr "香港"
+msgstr "中国香港"
 
 #: kdecore/TIMEZONES:1255
 #, kde-format
