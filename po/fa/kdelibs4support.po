@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -8202,39 +8202,44 @@ msgid "%1 seconds"
 msgstr "%1 ثانیه"
 
 #: kdecore/klocale_kde.cpp:1484
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
 msgstr[0] "%1 میلی‌ثانیه"
+msgstr[1] ""
 
 #: kdecore/klocale_kde.cpp:1491
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:intext"
 msgid "1 day"
 msgid_plural "%1 days"
 msgstr[0] "%1 روز"
+msgstr[1] ""
 
 #: kdecore/klocale_kde.cpp:1493
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:intext"
 msgid "1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 ساعت"
+msgstr[1] ""
 
 #: kdecore/klocale_kde.cpp:1495
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:intext"
 msgid "1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 دقیقه"
+msgstr[1] ""
 
 #: kdecore/klocale_kde.cpp:1497
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:intext"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 ثانیه"
+msgstr[1] ""
 
 # %1 %2
 #: kdecore/klocale_kde.cpp:1521
@@ -13544,6 +13549,7 @@ msgid_plural ""
 "%2"
 msgstr[0] ""
 "قادر به خواندن رشته‌های رنگ X11 RGB نیست. محل)های( پرونده زیر امتحان شدند:\n"
+msgstr[1] ""
 
 #: kdeui/kcolordialog.cpp:997
 #, kde-format
@@ -13898,6 +13904,7 @@ msgctxt "@item:intable"
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 فقره"
+msgstr[1] ""
 
 #: kio/kfilemetadataprovider.cpp:446 kio/knfotranslator.cpp:39
 #, fuzzy, kde-format
