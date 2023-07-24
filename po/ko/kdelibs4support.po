@@ -7288,7 +7288,7 @@ msgstr "X 서버 디스플레이 'displayname'을 사용함"
 #: kdecore/kcmdlineargs.cpp:281
 #, kde-format
 msgid "Restore the application for the given 'sessionId'"
-msgstr "주어진 'sessionId'에 대한 프로그램을 복원함"
+msgstr "주어진 'sessionId'에 대한 앱을 복원함"
 
 #: kdecore/kcmdlineargs.cpp:282
 #, kde-format
@@ -7296,7 +7296,7 @@ msgid ""
 "Causes the application to install a private color\n"
 "map on an 8-bit display"
 msgstr ""
-"프로그램에서 8비트 디스플레이에 사용자 정의 색상\n"
+"앱에서 8비트 디스플레이에 사용자 정의 색상\n"
 "맵을 설치함"
 
 #: kdecore/kcmdlineargs.cpp:283
@@ -7307,8 +7307,8 @@ msgid ""
 "using the QApplication::ManyColor color\n"
 "specification"
 msgstr ""
-"만약 프로그램에서 QApplication::ManyColor 색\n"
-"정의를 사용하면 프로그램에서 사용할 수 있는\n"
+"만약 앱에서 QApplication::ManyColor 색\n"
+"정의를 사용하면 앱에서 사용할 수 있는\n"
 "색상을 8비트 디스플레이 상의 색상 큐브에서\n"
 "사용 가능한 색으로 제한함"
 
@@ -7334,7 +7334,7 @@ msgstr "디버깅 시 동기화 모드로 전환"
 #: kdecore/kcmdlineargs.cpp:288
 #, kde-format
 msgid "defines the application font"
-msgstr "프로그램 글꼴 지정"
+msgstr "앱 글꼴 지정"
 
 #: kdecore/kcmdlineargs.cpp:290
 #, kde-format
@@ -7343,7 +7343,7 @@ msgid ""
 "application palette (light and dark shades are\n"
 "calculated)"
 msgstr ""
-"기본 배경색과 프로그램 팔레트를 설정함\n"
+"기본 배경색과 앱 팔레트를 설정함\n"
 "(밝고 어두운 그림자는 자동으로 계산됨)"
 
 #: kdecore/kcmdlineargs.cpp:292
@@ -7359,12 +7359,12 @@ msgstr "기본 단추색을 설정함"
 #: kdecore/kcmdlineargs.cpp:295
 #, kde-format
 msgid "sets the application name"
-msgstr "프로그램 이름을 설정함"
+msgstr "앱 이름을 설정함"
 
 #: kdecore/kcmdlineargs.cpp:296
 #, kde-format
 msgid "sets the application title (caption)"
-msgstr "프로그램 제목(창 캡션)을 설정함"
+msgstr "앱 제목(창 캡션)을 설정함"
 
 #: kdecore/kcmdlineargs.cpp:297
 #, kde-format
@@ -7377,7 +7377,7 @@ msgid ""
 "forces the application to use a TrueColor visual on\n"
 "an 8-bit display"
 msgstr ""
-"프로그램이 8비트 화면에서 강제로 TrueColor 색상을\n"
+"앱이 8비트 화면에서 강제로 TrueColor 색상을\n"
 "사용하도록 설정함"
 
 #: kdecore/kcmdlineargs.cpp:300
@@ -7411,7 +7411,7 @@ msgstr "위젯의 전체 레이아웃을 반전합니다."
 #: kdecore/kcmdlineargs.cpp:305
 #, kde-format
 msgid "applies the Qt stylesheet to the application widgets"
-msgstr "프로그램 위젯에 Qt 스타일시트를 적용합니다"
+msgstr "앱 위젯에 Qt 스타일시트를 적용합니다"
 
 #: kdecore/kcmdlineargs.cpp:306
 #, kde-format
@@ -7429,7 +7429,7 @@ msgid ""
 "built with -DQT_DECLARATIVE_DEBUG for the debugger to be\n"
 "enabled"
 msgstr ""
-"QML JS 디버거 정보. 디버거를 사용하려면 프로그램을\n"
+"QML JS 디버거 정보. 디버거를 사용하려면 앱을\n"
 "컴파일할 때 -DQT_DECLARATIVE_DEBUG 옵션을 주어야함"
 
 #: kdecore/kcmdlineargs.cpp:308
@@ -7445,7 +7445,7 @@ msgstr "제목 표시줄 이름으로 'caption'을 사용함"
 #: kdecore/kcmdlineargs.cpp:311
 #, kde-format
 msgid "Use 'icon' as the application icon"
-msgstr "프로그램 아이콘으로 'icon'을 사용함"
+msgstr "앱 아이콘으로 'icon'을 사용함"
 
 #: kdecore/kcmdlineargs.cpp:312
 #, kde-format
@@ -7465,7 +7465,7 @@ msgstr "WM_NET 호환 창 관리자를 기다림"
 #: kdecore/kcmdlineargs.cpp:317
 #, kde-format
 msgid "sets the application GUI style"
-msgstr "프로그램 GUI 스타일를 설정함"
+msgstr "앱 GUI 스타일를 설정함"
 
 #: kdecore/kcmdlineargs.cpp:318
 #, kde-format
@@ -7479,7 +7479,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:436
 #, kde-format
 msgid "KDE Application"
-msgstr "KDE 프로그램"
+msgstr "KDE 앱"
 
 #: kdecore/kcmdlineargs.cpp:497
 #, kde-format
@@ -7529,7 +7529,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:924
 #, kde-format
 msgid "This application was written by somebody who wants to remain anonymous."
-msgstr "이 프로그램은 익명으로 남고 싶은 사람이 작성했습니다."
+msgstr "이 앱은 익명으로 남고 싶은 사람이 작성했습니다."
 
 #: kdecore/kcmdlineargs.cpp:929
 #, kde-format
@@ -7640,7 +7640,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr "프로그램이 연 파일과 URL은 사용 후 삭제됩니다"
+msgstr "앱이 연 파일과 URL은 사용 후 삭제됩니다"
 
 #: kdecore/kcmdlineargs.cpp:1581
 #, kde-format
