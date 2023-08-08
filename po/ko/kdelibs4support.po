@@ -13973,19 +13973,19 @@ msgstr "트랙"
 #, kde-format
 msgctxt "@label resource created time"
 msgid "Resource Created"
-msgstr "자원 생성됨"
+msgstr "리소스 생성됨"
 
 #: kio/knfotranslator.cpp:91
 #, kde-format
 msgctxt "@label"
 msgid "Sub Resource"
-msgstr "하위 자원"
+msgstr "하위 리소스"
 
 #: kio/knfotranslator.cpp:92
 #, kde-format
 msgctxt "@label resource last modified"
 msgid "Resource Modified"
-msgstr "자원 수정됨"
+msgstr "리소스 수정됨"
 
 #: kio/knfotranslator.cpp:93
 #, kde-format
