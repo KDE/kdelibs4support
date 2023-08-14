@@ -33,6 +33,9 @@
 #include <QEventLoop>
 #include <QSignalSpy>
 
+/** @file */ // Trigger doxygen coverage of global objects in the file, like macros
+
+/// The QTest namespace.
 namespace QTest
 {
 /**

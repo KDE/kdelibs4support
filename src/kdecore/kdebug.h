@@ -28,6 +28,8 @@
 #warning "This file is deprecated."
 #endif
 
+/** @file */ // Trigger doxygen coverage of global objects in the file, like macros
+
 #include <QDebug>
 #include <QElapsedTimer>
 
