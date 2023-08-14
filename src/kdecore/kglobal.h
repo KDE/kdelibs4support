@@ -25,6 +25,8 @@
 #warning "This file is deprecated."
 #endif
 
+/** @file */ // Trigger doxygen coverage of global objects in the file, like macros
+
 #include <QAtomicPointer>
 #include <sys/types.h>
 #include <QDebug>
