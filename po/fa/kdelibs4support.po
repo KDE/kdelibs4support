@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-19 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:41+0000\n"
 "PO-Revision-Date: 2008-07-11 18:00+0330\n"
 "Last-Translator: Saied Taghavi <s.taghavi@gmail.com>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -8392,7 +8392,7 @@ msgstr "«ai_socktype» پشتیبانی نمی‌شود"
 msgid "system error"
 msgstr "خطای سیستم"
 
-#: kdecore/qtest_kde.h:82 kdecore/qtest_kde.h:133
+#: kdecore/qtest_kde.h:85 kdecore/qtest_kde.h:136
 #, kde-format
 msgid "KDE Test Program"
 msgstr "برنامه تست KDE"

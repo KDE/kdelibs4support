@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdecalendarsystems\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-19 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:41+0000\n"
 "PO-Revision-Date: 2010-11-26 10:09+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -7956,7 +7956,7 @@ msgstr "មិន​គាំទ្រ 'ai_socktype' ទេ"
 msgid "system error"
 msgstr "កំហុស​ប្រព័ន្ធ"
 
-#: kdecore/qtest_kde.h:82 kdecore/qtest_kde.h:133
+#: kdecore/qtest_kde.h:85 kdecore/qtest_kde.h:136
 #, kde-format
 msgid "KDE Test Program"
 msgstr "កម្មវិធី​សាកល្បង​របស់ KDE"

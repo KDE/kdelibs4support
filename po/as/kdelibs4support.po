@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4_as\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-19 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:41+0000\n"
 "PO-Revision-Date: 2008-12-26 15:19+0530\n"
 "Last-Translator: Amitakhya Phukan <অমিতাক্ষ ফুকন>\n"
 "Language-Team: Assamese <fedora-trans-as@redhat.com>\n"
@@ -8424,7 +8424,7 @@ msgstr "'ai_socktype' সমৰ্থিত নহয়"
 msgid "system error"
 msgstr "ব্যৱস্থাপ্ৰণালীৰ ত্ৰুটি"
 
-#: kdecore/qtest_kde.h:82 kdecore/qtest_kde.h:133
+#: kdecore/qtest_kde.h:85 kdecore/qtest_kde.h:136
 #, kde-format
 msgid "KDE Test Program"
 msgstr "KDE পৰীক্ষা প্ৰোগ্ৰাম"

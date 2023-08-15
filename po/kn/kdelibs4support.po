@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-19 00:44+0000\n"
+"POT-Creation-Date: 2023-08-15 00:41+0000\n"
 "PO-Revision-Date: 2009-07-15 01:21+0200\n"
 "Last-Translator: Umesh Rudrapatna <umeshrs@gmail.com>\n"
 "Language-Team: Kannada <kde-l10n-kn@kde.org>\n"
@@ -8383,7 +8383,7 @@ msgstr "'ai_socktype' ಬೆಂಬಲವಿಲ್ಲ"
 msgid "system error"
 msgstr "ವ್ಯವಸ್ಥಾ ದೋಷ (system error)"
 
-#: kdecore/qtest_kde.h:82 kdecore/qtest_kde.h:133
+#: kdecore/qtest_kde.h:85 kdecore/qtest_kde.h:136
 #, kde-format
 msgid "KDE Test Program"
 msgstr "ಕೆಡಿಇ ಪರೀಕ್ಷಾರ್ಥ ಕ್ರಮವಿಧಿ (ಪ್ರೋಗ್ರಾಂ)"
