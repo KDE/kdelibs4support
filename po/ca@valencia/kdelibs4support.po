@@ -7287,7 +7287,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:308
 #, kde-format
 msgid "The windowing system platform (e.g. xcb or wayland)"
-msgstr "La plataforma del sistema de finestres (p. ex. xcb o wayland)"
+msgstr "La plataforma del sistema de finestres (p. ex., xcb o wayland)"
 
 #: kdecore/kcmdlineargs.cpp:310
 #, kde-format
