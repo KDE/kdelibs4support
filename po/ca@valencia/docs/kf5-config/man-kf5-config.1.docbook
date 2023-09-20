@@ -42,7 +42,7 @@
 >kf5-config</command
 ></refname>
 <refpurpose
->Imprimix a la pantalla els camins de la instal·lació de les &Qt; i de &frameworks;</refpurpose>
+>Imprimix a la pantalla els camins de la instal·lació de les &Qt; i dels &frameworks;</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
@@ -94,10 +94,10 @@
 <para
 ><command
 >kf5-config</command
-> és un programa de línia d'ordres emprat per a rebre informació quant a la instal·lació de &frameworks; o els camins emprats.</para>
+> és un programa de línia d'ordres emprat per a rebre informació quant a la instal·lació dels &frameworks; o els camins emprats.</para>
 
 <para
->Este programa s'utilitza per a determinar els diversos aspectes d'on residix instal·lat &frameworks; en el vostre sistema. </para
+>Este programa s'utilitza per a determinar els diversos aspectes d'on residixen instal·lats els &frameworks; al vostre sistema. </para
 > 
 
 <note
@@ -179,7 +179,7 @@
 ></term>
 <listitem>
 <para
->Versió de les &Qt; i versió contra la qual s'han compilat les biblioteques de &frameworks; i <command
+>Versió de les &Qt; i versió contra la qual s'han compilat les biblioteques dels &frameworks; i <command
 >kf5-config</command
 >.</para>
 </listitem>
@@ -300,7 +300,7 @@
 >Exemples</title>
 
 <para
->Imprimix a la pantalla el directori arrel de la instal·lació de &frameworks;:</para>
+>Imprimix a la pantalla el directori arrel de la instal·lació dels &frameworks;:</para>
 <para
 ><prompt
 >&percnt;</prompt

@@ -47,7 +47,7 @@
 
 <note>
 <para
->Només per a les aplicacions que utilitzen la biblioteca kdelibs4support de &frameworks;.</para>
+>Només per a les aplicacions que utilitzen la biblioteca kdelibs4support dels &frameworks;.</para>
 <para
 >kDebug() ja no s'utilitza en el &kf5-full;, en favor del registre per categories integrat a les &Qt;, vegeu <ulink url="https://doc.qt.io/qt-5/qloggingcategory.html"
 >QLoggingCategory</ulink
