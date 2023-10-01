@@ -7904,7 +7904,7 @@ msgstr "Non ten permisos de abondo no directorio de destino."
 #: kdecore/ksavefile.cpp:139
 #, kde-format
 msgid "Unable to open temporary file."
-msgstr "Non se pode abrir o ficheiro temporal."
+msgstr "Non é posíbel abrir o ficheiro temporal."
 
 #: kdecore/ksavefile.cpp:249
 #, kde-format
@@ -13119,11 +13119,11 @@ msgid_plural ""
 "examined:\n"
 "%2"
 msgstr[0] ""
-"Non se poden ler as cadeas das cores RGB de X11. Examinouse a seguinte ruta "
+"Non é posíbel ler as cadeas das cores RGB de X11. Examinouse a seguinte ruta "
 "de ficheiro:\n"
 "%2"
 msgstr[1] ""
-"Non se poden ler as cadeas das cores RGB de X11. Examináronse as seguintes "
+"Non é posíbel ler as cadeas das cores RGB de X11. Examináronse as seguintes "
 "rutas de ficheiro:\n"
 "%2"
 
@@ -13285,7 +13285,7 @@ msgstr "Seleccionar a fonte"
 #: kdeui/kprintpreview.cpp:118
 #, kde-format
 msgid "Could not load print preview part"
-msgstr "Non se puido cargar a compoñente de previsualización da impresión"
+msgstr "Non foi posíbel cargar a compoñente de previsualización da impresión"
 
 #: kdeui/kprintpreview.cpp:135
 #, kde-format
@@ -13315,7 +13315,7 @@ msgstr "<qt>Seguro que quere saír de <b>%1</b>?</qt>"
 #: kdeui/ksystemtrayicon.cpp:229
 #, kde-format
 msgid "Confirm Quit From System Tray"
-msgstr "Confirmar a saída desde a bandexa do sistema"
+msgstr "Confirmar a saída desde a área de notificación"
 
 #: kdeui/kundostack.cpp:47
 #, kde-format
@@ -14386,7 +14386,7 @@ msgid ""
 "The CA's (Certificate Authority) certificate can not be found. Most likely, "
 "your trust chain is broken."
 msgstr ""
-"Non se pode atopar a CA (Autoridade de Certificación) do certificado. "
+"Non é posíbel atopar a CA (Autoridade de Certificación) do certificado. "
 "Posibelmente se estragase a súa cadea de confianza."
 
 #: kssl/ksslcertificate.cpp:1106
@@ -14396,8 +14396,8 @@ msgid ""
 "trust chain and not self-signed. If you self-sign the certificate, make sure "
 "to import it into the list of trusted certificates."
 msgstr ""
-"Non se pode verificar o certificado xa que é o único na cadea de confianza e "
-"non está autoasinado. Se autoasina o certificado asegúrese de importalo á "
+"Non é posíbel verificar o certificado xa que é o único na cadea de confianza "
+"e non está autoasinado. Se autoasina o certificado asegúrese de importalo á "
 "lista de certificados de confianza."
 
 #: kssl/ksslcertificate.cpp:1108
@@ -14494,7 +14494,7 @@ msgstr ""
 #: kssl/ksslcertificate.cpp:1133
 #, kde-format
 msgid "OpenSSL could not be verified."
-msgstr "Non se puido verificar a OpenSSL."
+msgstr "Non foi posíbel verificar a OpenSSL."
 
 # skip-rule: noPT-2010-invalid
 #: kssl/ksslcertificate.cpp:1137
@@ -14535,7 +14535,7 @@ msgid ""
 "Certificate signing authority root files could not be found so the "
 "certificate is not verified."
 msgstr ""
-"Non se puideron atopar os ficheiros raíz da autoridade asinante polo que o "
+"Non foi posíbel atopar os ficheiros raíz da autoridade asinante polo que o "
 "certificado non está verificado."
 
 #: kssl/ksslcertificate.cpp:1147
