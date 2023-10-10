@@ -1989,7 +1989,7 @@ msgstr "Lila4"
 #, kde-format
 msgctxt "color"
 msgid "purple"
-msgstr "Púrpura"
+msgstr "Porpra"
 
 #, kde-format
 msgctxt "color"
