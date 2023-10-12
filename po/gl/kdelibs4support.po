@@ -2599,7 +2599,7 @@ msgstr "a operación cronometrada esgotou o tempo"
 #, kde-format
 msgctxt "Socket error code UnknownError"
 msgid "an unknown/unexpected error has happened"
-msgstr "ocorreu un erro descoñecido/inesperado"
+msgstr "produciuse un erro descoñecido/inesperado"
 
 #: kdecore/k3socketbase.cpp:290
 #, kde-format
