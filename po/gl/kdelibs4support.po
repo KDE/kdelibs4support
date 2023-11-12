@@ -1,7 +1,6 @@
 # translation of kdelibs4.po to galician
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2008, 2009.
 # Marce Villarino <mvillarino@users.sourceforge.net>, 2008, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
@@ -10,13 +9,14 @@
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2017.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2019-11-28 00:38+0100\n"
+"PO-Revision-Date: 2023-11-11 17:39+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -8049,10 +8049,9 @@ msgstr "Ceuta e Melilla"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:20
-#, fuzzy, kde-format
-#| msgid "Ceuta & Melilla"
+#, kde-format
 msgid "Ceuta, Melilla"
-msgstr "Ceuta e Melilla"
+msgstr "Ceuta, Melilla"
 
 #: kdecore/TIMEZONES:21
 #, kde-format
@@ -8137,10 +8136,9 @@ msgstr "oeste da República Democrática do Congo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:39
-#, fuzzy, kde-format
-#| msgid "west Dem. Rep. of Congo"
+#, kde-format
 msgid "Dem. Rep. of Congo (west)"
-msgstr "oeste da República Democrática do Congo"
+msgstr "República Democrática do Congo (oeste)"
 
 #: kdecore/TIMEZONES:40
 #, kde-format
@@ -8175,10 +8173,9 @@ msgstr "leste da República Democrática do Congo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:48
-#, fuzzy, kde-format
-#| msgid "east Dem. Rep. of Congo"
+#, kde-format
 msgid "Dem. Rep. of Congo (east)"
-msgstr "leste da República Democrática do Congo"
+msgstr "República Democrática do Congo (leste)"
 
 #: kdecore/TIMEZONES:49
 #, kde-format
@@ -8295,14 +8292,13 @@ msgstr "América/Anchorage"
 #: kdecore/TIMEZONES:73 kdecore/TIMEZONES:1407
 #, kde-format
 msgid "Alaska Time"
-msgstr "Hora de Alaska"
+msgstr "Hora de Alasca"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:75
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska (most areas)"
-msgstr "Hora de Alaska"
+msgstr "Alasca (maioría das zonas)"
 
 #: kdecore/TIMEZONES:76
 #, kde-format
@@ -8349,10 +8345,9 @@ msgstr "Catamarca (CT), Chubut (CH)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:88
-#, fuzzy, kde-format
-#| msgid "Catamarca (CT), Chubut (CH)"
+#, kde-format
 msgid "Catamarca (CT); Chubut (CH)"
-msgstr "Catamarca (CT), Chubut (CH)"
+msgstr "Catamarca (CT); Chubut (CH)"
 
 #: kdecore/TIMEZONES:89
 #, kde-format
@@ -8368,20 +8363,19 @@ msgstr "América/Arxentina/Córdoba"
 #: kdecore/TIMEZONES:94 kdecore/TIMEZONES:209 kdecore/TIMEZONES:556
 #, kde-format
 msgid "most locations (CB, CC, CN, ER, FM, LP, MN, NQ, RN, SA, SE, SF)"
-msgstr "a maioría dos lugares (CB, CC, CN, ER, FM, LP, MN, NQ, RN, SA, SE, SF)"
+msgstr "maioría das zonas (CB, CC, CN, ER, FM, LP, MN, NQ, RN, SA, SE, SF)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:96
 #, kde-format
 msgid "most locations (CB, CC, CN, ER, FM, MN, SE, SF)"
-msgstr "a maioría dos lugares (CB, CC, CN, ER, FM, MN, SE, SF)"
+msgstr "maioría das zonas (CB, CC, CN, ER, FM, MN, SE, SF)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:98
-#, fuzzy, kde-format
-#| msgid "most locations (CB, CC, CN, ER, FM, MN, SE, SF)"
+#, kde-format
 msgid "Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)"
-msgstr "a maioría dos lugares (CB, CC, CN, ER, FM, MN, SE, SF)"
+msgstr "Arxentina (maioría das zonas: CB, CC, CN, ER, FM, MN, SE, SF)"
 
 #: kdecore/TIMEZONES:99
 #, kde-format
@@ -8440,10 +8434,9 @@ msgstr "(SA, LP, NQ, RN)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:115
-#, fuzzy, kde-format
-#| msgid "(SA, LP, NQ, RN)"
+#, kde-format
 msgid "Salta (SA, LP, NQ, RN)"
-msgstr "(SA, LP, NQ, RN)"
+msgstr "Salta (SA, LP, NQ, RN)"
 
 #: kdecore/TIMEZONES:116
 #, kde-format
@@ -8508,13 +8501,13 @@ msgstr "América/Atikokan"
 #: kdecore/TIMEZONES:132 kdecore/TIMEZONES:206
 #, kde-format
 msgid "Eastern Standard Time - Atikokan, Ontario and Southampton I, Nunavut"
-msgstr "Hora estándar do leste: Atikokan, Ontario e Southampton I, Nunavut"
+msgstr "Hora estándar do leste — Atikokan, Ontario e Southampton I, Nunavut"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:134
 #, kde-format
 msgid "EST - ON (Atikokan); NU (Coral H)"
-msgstr ""
+msgstr "EST — ON (Atikokan); NU (Coral H)"
 
 #: kdecore/TIMEZONES:135
 #, kde-format
@@ -8541,14 +8534,13 @@ msgstr "América/Bahía_Banderas"
 #: kdecore/TIMEZONES:143
 #, kde-format
 msgid "Mexican Central Time - Bahia de Banderas"
-msgstr "Hora do centro de México - Bahía de Banderas"
+msgstr "Hora do centro de México — Bahía de Banderas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:145
-#, fuzzy, kde-format
-#| msgid "Mexican Central Time - Bahia de Banderas"
+#, kde-format
 msgid "Central Time - Bahia de Banderas"
-msgstr "Hora do centro de México - Bahía de Banderas"
+msgstr "Hora central — Bahía de Banderas"
 
 #: kdecore/TIMEZONES:146
 #, kde-format
@@ -8570,7 +8562,7 @@ msgstr "Amapa, E Para"
 #: kdecore/TIMEZONES:151
 #, kde-format
 msgid "Para (east); Amapa"
-msgstr ""
+msgstr "Para (leste); Amapa"
 
 #: kdecore/TIMEZONES:152
 #, kde-format
@@ -8590,10 +8582,9 @@ msgstr "Hora estándar do atlántico, Quebec, costa norte inferior"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:157
-#, fuzzy, kde-format
-#| msgid "Atlantic Standard Time - Quebec - Lower North Shore"
+#, kde-format
 msgid "AST - QC (Lower North Shore)"
-msgstr "Hora estándar do atlántico, Quebec, costa norte inferior"
+msgstr "AST — QC (costa norte inferior)"
 
 #: kdecore/TIMEZONES:158
 #, kde-format
@@ -8620,14 +8611,13 @@ msgstr "América/Boise"
 #: kdecore/TIMEZONES:164
 #, kde-format
 msgid "Mountain Time - south Idaho & east Oregon"
-msgstr "Hora da montaña: sur de Idaho e leste de Oregón"
+msgstr "Hora da montaña — sur de Idaho e leste de Oregón"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:166
-#, fuzzy, kde-format
-#| msgid "Mountain Time - south Idaho & east Oregon"
+#, kde-format
 msgid "Mountain - ID (south); OR (east)"
-msgstr "Hora da montaña: sur de Idaho e leste de Oregón"
+msgstr "Montaña — ID (sur); OR (leste)"
 
 #: kdecore/TIMEZONES:167
 #, kde-format
@@ -8644,7 +8634,8 @@ msgstr "América/Calgary"
 #, kde-format
 msgid "Mountain Time - Alberta, east British Columbia & west Saskatchewan"
 msgstr ""
-"Hora da montaña: Alberta, leste da Columbia Británica e oeste de Saskatchewan"
+"Hora da montaña — Alberta, leste da Columbia Británica e oeste de "
+"Saskatchewan"
 
 #: kdecore/TIMEZONES:173
 #, kde-format
@@ -8655,14 +8646,13 @@ msgstr "América/Bahía de Cambridge"
 #: kdecore/TIMEZONES:175
 #, kde-format
 msgid "Mountain Time - west Nunavut"
-msgstr "Hora da montaña: oeste de Nunavut"
+msgstr "Hora da montaña — oeste de Nunavut"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:177
-#, fuzzy, kde-format
-#| msgid "Mountain Time - west Nunavut"
+#, kde-format
 msgid "Mountain - NU (west)"
-msgstr "Hora da montaña: oeste de Nunavut"
+msgstr "Montaña — NU (oeste)"
 
 #: kdecore/TIMEZONES:178
 #, kde-format
@@ -8684,14 +8674,13 @@ msgstr "América/Cancún"
 #: kdecore/TIMEZONES:183
 #, kde-format
 msgid "Central Time - Quintana Roo"
-msgstr "Hora central: Quintana Roo"
+msgstr "Hora central — Quintana Roo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:185
-#, fuzzy, kde-format
-#| msgid "Central Time - Quintana Roo"
+#, kde-format
 msgid "Eastern Standard Time - Quintana Roo"
-msgstr "Hora central: Quintana Roo"
+msgstr "Hora estándar oriental — Quintana Roo"
 
 #: kdecore/TIMEZONES:186
 #, kde-format
@@ -8726,10 +8715,9 @@ msgstr "Hora central"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:196
-#, fuzzy, kde-format
-#| msgid "Central Time"
+#, kde-format
 msgid "Central (most areas)"
-msgstr "Hora central"
+msgstr "Central (maioría das zonas)"
 
 #: kdecore/TIMEZONES:197
 #, kde-format
@@ -8740,20 +8728,19 @@ msgstr "América/Chihuahua"
 #: kdecore/TIMEZONES:199
 #, kde-format
 msgid "Mountain Time - Chihuahua"
-msgstr "Hora da montaña: Chihuahua"
+msgstr "Hora da montaña — Chihuahua"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:201
 #, kde-format
 msgid "Mexican Mountain Time - Chihuahua away from US border"
-msgstr "Hora da montaña de México - Chihuahua lonxe da fronteira cos USA"
+msgstr "Hora da montaña de México — Chihuahua lonxe da fronteira cos EUA"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:203
-#, fuzzy, kde-format
-#| msgid "Mountain Time - Chihuahua"
+#, kde-format
 msgid "Mountain Time - Chihuahua (most areas)"
-msgstr "Hora da montaña: Chihuahua"
+msgstr "Hora da montaña — Chihuahua (maioría das zonas)"
 
 #: kdecore/TIMEZONES:204
 #, kde-format
@@ -8779,13 +8766,13 @@ msgstr "América/Creston"
 #: kdecore/TIMEZONES:213
 #, kde-format
 msgid "Mountain Standard Time - Creston, British Columbia"
-msgstr "Hora estándar da montaña - Creston, Columbia Británica"
+msgstr "Hora estándar da montaña — Creston, Columbia Británica"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:215
 #, kde-format
 msgid "MST - BC (Creston)"
-msgstr ""
+msgstr "MST — BC (Creston)"
 
 #: kdecore/TIMEZONES:216
 #, kde-format
@@ -8818,7 +8805,7 @@ msgstr "costa leste, norte de Scorebysund"
 #: kdecore/TIMEZONES:224
 #, kde-format
 msgid "National Park (east coast)"
-msgstr ""
+msgstr "Parque nacional (costa leste)"
 
 #: kdecore/TIMEZONES:225
 #, kde-format
@@ -8829,13 +8816,13 @@ msgstr "América/Dawson"
 #: kdecore/TIMEZONES:227
 #, kde-format
 msgid "Pacific Time - north Yukon"
-msgstr "Hora do Pacífico: norte do Yukon"
+msgstr "Hora do Pacífico — norte do Yukon"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:229
 #, kde-format
 msgid "MST - Yukon (west)"
-msgstr ""
+msgstr "MST — Yukon (oeste)"
 
 #: kdecore/TIMEZONES:230
 #, kde-format
@@ -8848,13 +8835,13 @@ msgstr "América/Dawson Creek"
 msgid ""
 "Mountain Standard Time - Dawson Creek & Fort Saint John, British Columbia"
 msgstr ""
-"Hora estándar da montaña: Dawson Creek e Fort Saint John, Columbia Británica"
+"Hora estándar da montaña — Dawson Creek e Fort Saint John, Columbia Británica"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:234
 #, kde-format
 msgid "MST - BC (Dawson Cr, Ft St John)"
-msgstr ""
+msgstr "MST — BC (Dawson Cr, Ft St John)"
 
 #: kdecore/TIMEZONES:235
 #, kde-format
@@ -8869,10 +8856,9 @@ msgstr "Hora da montaña"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:239
-#, fuzzy, kde-format
-#| msgid "Mountain Time"
+#, kde-format
 msgid "Mountain (most areas)"
-msgstr "Hora da montaña"
+msgstr "Montaña (maioría das zonas)"
 
 #: kdecore/TIMEZONES:240
 #, kde-format
@@ -8883,13 +8869,13 @@ msgstr "América/Detroit"
 #: kdecore/TIMEZONES:242 kdecore/TIMEZONES:1431
 #, kde-format
 msgid "Eastern Time - Michigan - most locations"
-msgstr "Hora do leste: Michigan, maioría dos lugares"
+msgstr "Hora do leste — Michigan — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:244
 #, kde-format
 msgid "Eastern - MI (most areas)"
-msgstr ""
+msgstr "Eastern — MI (maioría das zonas)"
 
 #: kdecore/TIMEZONES:245
 #, kde-format
@@ -8905,7 +8891,7 @@ msgstr "América/Edmonton"
 #: kdecore/TIMEZONES:250
 #, kde-format
 msgid "Mountain - AB; BC (E); SK (W)"
-msgstr ""
+msgstr "Montaña — AB; BC (E); SK (W)"
 
 #: kdecore/TIMEZONES:251
 #, kde-format
@@ -8920,10 +8906,9 @@ msgstr "Amazonas oeste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:255
-#, fuzzy, kde-format
-#| msgid "W Amazonas"
+#, kde-format
 msgid "Amazonas (west)"
-msgstr "Amazonas oeste"
+msgstr "Amazonas (oeste)"
 
 #: kdecore/TIMEZONES:256
 #, kde-format
@@ -8943,16 +8928,15 @@ msgid "Pacific Time"
 msgstr "Hora do Pacífico"
 
 #: kdecore/TIMEZONES:260
-#, fuzzy, kde-format
-#| msgid "America/Porto_Velho"
+#, kde-format
 msgid "America/Fort_Nelson"
-msgstr "América/Porto Vello"
+msgstr "America/Fort_Nelson"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:262
 #, kde-format
 msgid "MST - BC (Ft Nelson)"
-msgstr ""
+msgstr "MST — BC (Ft Nelson)"
 
 #: kdecore/TIMEZONES:263
 #, kde-format
@@ -8964,7 +8948,7 @@ msgstr "América/Forte_Wayne"
 #: kdecore/TIMEZONES:1419
 #, kde-format
 msgid "Eastern Time - Indiana - most locations"
-msgstr "Hora do leste: Indiana, maioría dos lugares"
+msgstr "Hora do leste — Indiana — maioría das zonas"
 
 #: kdecore/TIMEZONES:266
 #, kde-format
@@ -8979,10 +8963,9 @@ msgstr "NE Brazil (MA, PI, CE, RN, PB)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:270
-#, fuzzy, kde-format
-#| msgid "NE Brazil (MA, PI, CE, RN, PB)"
+#, kde-format
 msgid "Brazil (northeast: MA, PI, CE, RN, PB)"
-msgstr "NE Brazil (MA, PI, CE, RN, PB)"
+msgstr "Brasil (nordeste: MA, PI, CE, RN, PB)"
 
 #: kdecore/TIMEZONES:271
 #, kde-format
@@ -8993,7 +8976,7 @@ msgstr "América/Fredericton"
 #: kdecore/TIMEZONES:273 kdecore/TIMEZONES:299 kdecore/TIMEZONES:1102
 #, kde-format
 msgid "Atlantic Time - Nova Scotia (most places), PEI"
-msgstr "Hora do atlántico: Nova Escocia (maioría dos lugares), PEI"
+msgstr "Hora do atlántico — Nova Escocia (maioría das zonas), PEI"
 
 #: kdecore/TIMEZONES:274
 #, kde-format
@@ -9005,14 +8988,13 @@ msgstr "América/Bahía de Glace"
 #, kde-format
 msgid "Atlantic Time - Nova Scotia - places that did not observe DST 1966-1971"
 msgstr ""
-"Hora do atlántico: Nova Escocia, lugares que non seguen o DST 1966-1971"
+"Hora do atlántico — Nova Escocia — lugares que non seguen o DST 1966-1971"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:278
-#, fuzzy, kde-format
-#| msgid "Atlantic/Cape_Verde"
+#, kde-format
 msgid "Atlantic - NS (Cape Breton)"
-msgstr "Atlántico/Cabo_Verde"
+msgstr "Atlántico — NS (Cabo Bretón)"
 
 #: kdecore/TIMEZONES:279
 #, kde-format
@@ -9026,7 +9008,7 @@ msgstr "América/Godthab"
 #: kdecore/TIMEZONES:1350
 #, kde-format
 msgid "most locations"
-msgstr "maioría dos lugares"
+msgstr "maioría das zonas"
 
 #: kdecore/TIMEZONES:282
 #, kde-format
@@ -9037,14 +9019,13 @@ msgstr "América/Bahía de Goose"
 #: kdecore/TIMEZONES:284
 #, kde-format
 msgid "Atlantic Time - Labrador - most locations"
-msgstr "Hora do Atlántico: Labrador, maioría dos lugares"
+msgstr "Hora do Atlántico — Labrador — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:286
-#, fuzzy, kde-format
-#| msgid "Atlantic Time - Labrador - most locations"
+#, kde-format
 msgid "Atlantic - Labrador (most areas)"
-msgstr "Hora do Atlántico: Labrador, maioría dos lugares"
+msgstr "Atlántico — Labrador (maiorías das zonas)"
 
 #: kdecore/TIMEZONES:287
 #, kde-format
@@ -9080,10 +9061,9 @@ msgstr "continental"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:295
-#, fuzzy, kde-format
-#| msgid "mainland"
+#, kde-format
 msgid "Ecuador (mainland)"
-msgstr "continental"
+msgstr "Ecuador (continental)"
 
 #: kdecore/TIMEZONES:296
 #, kde-format
@@ -9097,10 +9077,9 @@ msgstr "América/Halifax"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:301
-#, fuzzy, kde-format
-#| msgid "Atlantic Time - Nova Scotia (most places), PEI"
+#, kde-format
 msgid "Atlantic - NS (most areas); PE"
-msgstr "Hora do atlántico: Nova Escocia (maioría dos lugares), PEI"
+msgstr "Atlántico — NS (maioría das zonas); PE"
 
 #: kdecore/TIMEZONES:302
 #, kde-format
@@ -9116,7 +9095,7 @@ msgstr "América/Hermosillo"
 #: kdecore/TIMEZONES:305
 #, kde-format
 msgid "Mountain Standard Time - Sonora"
-msgstr "Hora estándar da montaña: Sonora"
+msgstr "Hora estándar da montaña — Sonora"
 
 #: kdecore/TIMEZONES:306
 #, kde-format
@@ -9127,7 +9106,7 @@ msgstr "América/Indiana/Indianápole"
 #: kdecore/TIMEZONES:310
 #, kde-format
 msgid "Eastern - IN (most areas)"
-msgstr ""
+msgstr "Oriental — IN (maioría das zonas)"
 
 #: kdecore/TIMEZONES:311
 #, kde-format
@@ -9138,20 +9117,19 @@ msgstr "América/Indiana/Knox"
 #: kdecore/TIMEZONES:313 kdecore/TIMEZONES:384 kdecore/TIMEZONES:1428
 #, kde-format
 msgid "Eastern Time - Indiana - Starke County"
-msgstr "Hora do leste: Indiana, condado de Starke"
+msgstr "Hora do leste — Indiana — condado de Starke"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:315
 #, kde-format
 msgid "Central Time - Indiana - Starke County"
-msgstr "Hora do centro: Indiana, condado de Starke"
+msgstr "Hora do centro — Indiana — condado de Starke"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:317
-#, fuzzy, kde-format
-#| msgid "Central Time - Indiana - Starke County"
+#, kde-format
 msgid "Central - IN (Starke)"
-msgstr "Hora do centro: Indiana, condado de Starke"
+msgstr "Central — IN (Starke)"
 
 #: kdecore/TIMEZONES:318
 #, kde-format
@@ -9162,14 +9140,13 @@ msgstr "América/Indiana/Marengo"
 #: kdecore/TIMEZONES:320
 #, kde-format
 msgid "Eastern Time - Indiana - Crawford County"
-msgstr "Hora do leste: Indiana, condado de Crawford"
+msgstr "Hora do leste — Indiana — condado de Crawford"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:322
-#, fuzzy, kde-format
-#| msgid "Eastern Time - Indiana - Crawford County"
+#, kde-format
 msgid "Eastern - IN (Crawford)"
-msgstr "Hora do leste: Indiana, condado de Crawford"
+msgstr "Oriental — IN (Crawford)"
 
 #: kdecore/TIMEZONES:323
 #, kde-format
@@ -9180,20 +9157,19 @@ msgstr "América/Indiana/Petersburg"
 #: kdecore/TIMEZONES:325
 #, kde-format
 msgid "Central Time - Indiana - Pike County"
-msgstr "Hora do centro: Indiana, condado de Pike"
+msgstr "Hora do centro — Indiana — condado de Pike"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:327
 #, kde-format
 msgid "Eastern Time - Indiana - Pike County"
-msgstr "Hora do leste: Indiana, condado de Pike"
+msgstr "Hora do leste — Indiana — condado de Pike"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:329
-#, fuzzy, kde-format
-#| msgid "Eastern Time"
+#, kde-format
 msgid "Eastern - IN (Pike)"
-msgstr "Hora do leste"
+msgstr "Oriental — IN (Pike)"
 
 #: kdecore/TIMEZONES:330
 #, kde-format
@@ -9204,13 +9180,13 @@ msgstr "América/Indiana/Tell_City"
 #: kdecore/TIMEZONES:332
 #, kde-format
 msgid "Central Time - Indiana - Perry County"
-msgstr "Hora do centro: Indiana, condado de Perry"
+msgstr "Hora do centro — Indiana — condado de Perry"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:334
 #, kde-format
 msgid "Central - IN (Perry)"
-msgstr ""
+msgstr "Central — IN (Perry)"
 
 #: kdecore/TIMEZONES:335
 #, kde-format
@@ -9221,14 +9197,13 @@ msgstr "América/Indiana/Vevay"
 #: kdecore/TIMEZONES:337
 #, kde-format
 msgid "Eastern Time - Indiana - Switzerland County"
-msgstr "Hora do leste: Indiana, condado de Suíza"
+msgstr "Hora do leste — Indiana — condado de Suíza"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:339
-#, fuzzy, kde-format
-#| msgid "Eastern Time - Indiana - Switzerland County"
+#, kde-format
 msgid "Eastern - IN (Switzerland)"
-msgstr "Hora do leste: Indiana, condado de Suíza"
+msgstr "Oriental — IN (Suiza)"
 
 #: kdecore/TIMEZONES:340
 #, kde-format
@@ -9239,13 +9214,13 @@ msgstr "América/Indiana/Vicennes"
 #: kdecore/TIMEZONES:342
 #, kde-format
 msgid "Eastern Time - Indiana - Daviess, Dubois, Knox & Martin Counties"
-msgstr "Hora do leste: Indiana, condados de Daviess, Dubois, Knox e Martin"
+msgstr "Hora do leste — Indiana — condados de Daviess, Dubois, Knox e Martin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:344
 #, kde-format
 msgid "Eastern - IN (Da, Du, K, Mn)"
-msgstr ""
+msgstr "Oriental — IN (Da, Du, K, Mn)"
 
 #: kdecore/TIMEZONES:345
 #, kde-format
@@ -9256,14 +9231,13 @@ msgstr "América/Indiana/Winamac"
 #: kdecore/TIMEZONES:347
 #, kde-format
 msgid "Eastern Time - Indiana - Pulaski County"
-msgstr "Hora do leste: Indiana, condado de Pulaski"
+msgstr "Hora do leste — Indiana — condado de Pulaski"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:349
-#, fuzzy, kde-format
-#| msgid "Eastern Time - Indiana - Pulaski County"
+#, kde-format
 msgid "Eastern - IN (Pulaski)"
-msgstr "Hora do leste: Indiana, condado de Pulaski"
+msgstr "Oriental — IN (Pulaski)"
 
 #: kdecore/TIMEZONES:350
 #, kde-format
@@ -9279,14 +9253,13 @@ msgstr "América/Inuvik"
 #: kdecore/TIMEZONES:355
 #, kde-format
 msgid "Mountain Time - west Northwest Territories"
-msgstr "Hora da montaña: oeste dos Territorios do Noroeste"
+msgstr "Hora da montaña — oeste dos Territorios do Noroeste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:357
-#, fuzzy, kde-format
-#| msgid "Mountain Time"
+#, kde-format
 msgid "Mountain - NT (west)"
-msgstr "Hora da montaña"
+msgstr "Montaña — NT (oeste)"
 
 #: kdecore/TIMEZONES:358
 #, kde-format
@@ -9297,13 +9270,13 @@ msgstr "América/Iqaluit"
 #: kdecore/TIMEZONES:360
 #, kde-format
 msgid "Eastern Time - east Nunavut - most locations"
-msgstr "Hora do leste: leste de Nunavut, maioría dos lugares"
+msgstr "Hora do leste — leste de Nunavut — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:362
 #, kde-format
 msgid "Eastern - NU (most east areas)"
-msgstr ""
+msgstr "Oriental — NU (maioría das zonas orientais)"
 
 #: kdecore/TIMEZONES:363
 #, kde-format
@@ -9324,13 +9297,13 @@ msgstr "América/Juneau"
 #: kdecore/TIMEZONES:369
 #, kde-format
 msgid "Alaska Time - Alaska panhandle"
-msgstr "Hora de Alaska: Alaska panhandle"
+msgstr "Hora de Alasca — Mango de Alasca"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:371
 #, kde-format
 msgid "Alaska - Juneau area"
-msgstr ""
+msgstr "Alasca — zona de Juneau"
 
 #: kdecore/TIMEZONES:372
 #, kde-format
@@ -9341,14 +9314,13 @@ msgstr "América/Kentucky/Louisville"
 #: kdecore/TIMEZONES:374 kdecore/TIMEZONES:395
 #, kde-format
 msgid "Eastern Time - Kentucky - Louisville area"
-msgstr "Hora do leste: Kentucky, área de Louisville"
+msgstr "Hora do leste — Kentucky — área de Louisville"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:376
-#, fuzzy, kde-format
-#| msgid "Eastern Time - Kentucky - Louisville area"
+#, kde-format
 msgid "Eastern - KY (Louisville area)"
-msgstr "Hora do leste: Kentucky, área de Louisville"
+msgstr "Oriental — KY (zona de Louisville)"
 
 #: kdecore/TIMEZONES:377
 #, kde-format
@@ -9359,13 +9331,13 @@ msgstr "América/Kentucky/Monticello"
 #: kdecore/TIMEZONES:379
 #, kde-format
 msgid "Eastern Time - Kentucky - Wayne County"
-msgstr "Hora do leste: Kentucky, condado de Wayne"
+msgstr "Hora do leste — Kentucky — condado de Wayne"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:381
 #, kde-format
 msgid "Eastern - KY (Wayne)"
-msgstr ""
+msgstr "Oriental — KY (Wayne)"
 
 #: kdecore/TIMEZONES:382
 #, kde-format
@@ -9394,10 +9366,9 @@ msgstr "América/Os Ánxeles"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:392
-#, fuzzy, kde-format
-#| msgid "US/Pacific"
+#, kde-format
 msgid "Pacific"
-msgstr "US/Pacífico"
+msgstr "Pacífico"
 
 #: kdecore/TIMEZONES:393
 #, kde-format
@@ -9438,10 +9409,9 @@ msgstr "E Amazonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:405
-#, fuzzy, kde-format
-#| msgid "W Amazonas"
+#, kde-format
 msgid "Amazonas (east)"
-msgstr "Amazonas oeste"
+msgstr "Amazonas (leste)"
 
 #: kdecore/TIMEZONES:406
 #, kde-format
@@ -9463,15 +9433,14 @@ msgstr "América/Matamoros"
 #, kde-format
 msgid ""
 "US Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas near US border"
-msgstr "Hora do centro dos USA: Coahuila, Durango, Nuevo León, Tamaulipas"
+msgstr "Hora do centro dos EUA — Coahuila, Durango, Nuevo León, Tamaulipas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:412
-#, fuzzy, kde-format
-#| msgid ""
-#| "US Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas near US border"
+#, kde-format
 msgid "Central Time US - Coahuila, Nuevo Leon, Tamaulipas (US border)"
-msgstr "Hora do centro dos USA: Coahuila, Durango, Nuevo León, Tamaulipas"
+msgstr ""
+"Hora central dos EUA — Coahuila, Nuevo Leon, Tamaulipas (fronteira cos EUA)"
 
 #: kdecore/TIMEZONES:413
 #, kde-format
@@ -9486,10 +9455,9 @@ msgstr "Hora da montaña, S Baja, Nayarit, Sinaloa"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:417
-#, fuzzy, kde-format
-#| msgid "Mountain Time - S Baja, Nayarit, Sinaloa"
+#, kde-format
 msgid "Mountain Time - Baja California Sur, Nayarit, Sinaloa"
-msgstr "Hora da montaña, S Baja, Nayarit, Sinaloa"
+msgstr "Hora de Montaña — Baja California Sur, Nayarit, Sinaloa"
 
 #: kdecore/TIMEZONES:418
 #, kde-format
@@ -9506,13 +9474,13 @@ msgstr "América/Menominee"
 #, kde-format
 msgid "Central Time - Michigan - Dickinson, Gogebic, Iron & Menominee Counties"
 msgstr ""
-"Hora do centro: Michigan, condados de Dickinson, Gogebic, Iron e Menominee"
+"Hora do centro — Michigan — condados de Dickinson, Gogebic, Iron e Menominee"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:425
 #, kde-format
 msgid "Central - MI (Wisconsin border)"
-msgstr ""
+msgstr "Central — MI (fronteira con Wisconsin)"
 
 #: kdecore/TIMEZONES:426
 #, kde-format
@@ -9523,7 +9491,7 @@ msgstr "América/Mérida"
 #: kdecore/TIMEZONES:428
 #, kde-format
 msgid "Central Time - Campeche, Yucatan"
-msgstr "Hora do centro: Campeche, Yucatán"
+msgstr "Hora do centro — Campeche, Yucatán"
 
 #: kdecore/TIMEZONES:429
 #, kde-format
@@ -9534,14 +9502,13 @@ msgstr "América/Metlakatla"
 #: kdecore/TIMEZONES:431
 #, kde-format
 msgid "Metlakatla Time - Annette Island"
-msgstr "Hora de Metlakatla: Illa de Annette"
+msgstr "Hora de Metlakatla — Illa de Annette"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:433
-#, fuzzy, kde-format
-#| msgid "Metlakatla Time - Annette Island"
+#, kde-format
 msgid "Alaska - Annette Island"
-msgstr "Hora de Metlakatla: Illa de Annette"
+msgstr "Alasca — Illa Annette"
 
 #: kdecore/TIMEZONES:434
 #, kde-format
@@ -9552,7 +9519,7 @@ msgstr "América/Cidade de México"
 #: kdecore/TIMEZONES:436 kdecore/TIMEZONES:1283
 #, kde-format
 msgid "Central Time - most locations"
-msgstr "Hora do centro: maioría dos lugares"
+msgstr "Hora do centro — maioría das zonas"
 
 #: kdecore/TIMEZONES:439
 #, kde-format
@@ -9568,14 +9535,13 @@ msgstr "América/Moncton"
 #: kdecore/TIMEZONES:442
 #, kde-format
 msgid "Atlantic Time - New Brunswick"
-msgstr "Hora do Atlántico: Nova Brunswick"
+msgstr "Hora do Atlántico — Nova Brunswick"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:444
-#, fuzzy, kde-format
-#| msgid "Atlantic Time - New Brunswick"
+#, kde-format
 msgid "Atlantic - New Brunswick"
-msgstr "Hora do Atlántico: Nova Brunswick"
+msgstr "Atlántico — New Brunswick"
 
 #: kdecore/TIMEZONES:445
 #, kde-format
@@ -9586,7 +9552,7 @@ msgstr "América/Monterrey"
 #: kdecore/TIMEZONES:447
 #, kde-format
 msgid "Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas"
-msgstr "Hora do centro: Coahuila, Durango, Nuevo León, Tamaulipas"
+msgstr "Hora do centro — Coahuila, Durango, Nuevo León, Tamaulipas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:449
@@ -9594,14 +9560,14 @@ msgstr "Hora do centro: Coahuila, Durango, Nuevo León, Tamaulipas"
 msgid ""
 "Mexican Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas away from "
 "US border"
-msgstr "Hora do centro de México: Coahuila, Durango, Nuevo León, Tamaulipas"
+msgstr "Hora do centro de México — Coahuila, Durango, Nuevo León, Tamaulipas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:451
-#, fuzzy, kde-format
-#| msgid "Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas"
+#, kde-format
 msgid "Central Time - Durango; Coahuila, Nuevo Leon, Tamaulipas (most areas)"
-msgstr "Hora do centro: Coahuila, Durango, Nuevo León, Tamaulipas"
+msgstr ""
+"Hora central — Durango; Coahuila, Nuevo Leon, Tamaulipas (maioría das zonas)"
 
 #: kdecore/TIMEZONES:452
 #, kde-format
@@ -9617,7 +9583,7 @@ msgstr "América/Montreal"
 #: kdecore/TIMEZONES:455 kdecore/TIMEZONES:501
 #, kde-format
 msgid "Eastern Time - Quebec - most locations"
-msgstr "Hora do leste: Quebec, maioría dos lugares"
+msgstr "Hora do leste — Quebec — maioría das zonas"
 
 #: kdecore/TIMEZONES:456
 #, kde-format
@@ -9642,10 +9608,9 @@ msgstr "Hora do leste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:462
-#, fuzzy, kde-format
-#| msgid "Eastern Time"
+#, kde-format
 msgid "Eastern (most areas)"
-msgstr "Hora do leste"
+msgstr "Oriental (maioría das zonas)"
 
 #: kdecore/TIMEZONES:463
 #, kde-format
@@ -9658,13 +9623,13 @@ msgstr "América/Nipigon"
 msgid ""
 "Eastern Time - Ontario & Quebec - places that did not observe DST 1967-1973"
 msgstr ""
-"Hora do leste: Ontario e Quebec, lugares que non seguen o DST 1967-1973"
+"Hora do leste — Ontario e Quebec — lugares que non seguen o DST 1967-1973"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:467
 #, kde-format
 msgid "Eastern - ON, QC (no DST 1967-73)"
-msgstr ""
+msgstr "Oriental — ON, QC (sen DST 1967-73)"
 
 #: kdecore/TIMEZONES:468
 #, kde-format
@@ -9675,14 +9640,13 @@ msgstr "América/Nome"
 #: kdecore/TIMEZONES:470
 #, kde-format
 msgid "Alaska Time - west Alaska"
-msgstr "Hora de Alaska: oeste de Alaska"
+msgstr "Hora de Alasca — oeste de Alasca"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:472
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska (west)"
-msgstr "Hora de Alaska"
+msgstr "Alasca (oeste)"
 
 #: kdecore/TIMEZONES:473
 #, kde-format
@@ -9704,13 +9668,13 @@ msgstr "América/Dakota do Norte/Beulah"
 #: kdecore/TIMEZONES:478
 #, kde-format
 msgid "Central Time - North Dakota - Mercer County"
-msgstr "Hora do centro: Dakota do Norte, condado de Mercer"
+msgstr "Hora do centro — Dakota do Norte — condado de Mercer"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:480
 #, kde-format
 msgid "Central - ND (Mercer)"
-msgstr ""
+msgstr "Central — ND (Mercer)"
 
 #: kdecore/TIMEZONES:481
 #, kde-format
@@ -9721,14 +9685,13 @@ msgstr "América/Dakota do Norte/Centro"
 #: kdecore/TIMEZONES:483
 #, kde-format
 msgid "Central Time - North Dakota - Oliver County"
-msgstr "Hora do centro: Dakota do Norte, condado de Oliver"
+msgstr "Hora do centro — Dakota do Norte — condado de Oliver"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:485
-#, fuzzy, kde-format
-#| msgid "Central Time"
+#, kde-format
 msgid "Central - ND (Oliver)"
-msgstr "Hora central"
+msgstr "Central — ND (Oliver)"
 
 #: kdecore/TIMEZONES:486
 #, kde-format
@@ -9740,26 +9703,25 @@ msgstr "América/Dakota do Norte/Novo Salem"
 #, kde-format
 msgid "Central Time - North Dakota - Morton County (except Mandan area)"
 msgstr ""
-"Hora do centro: Dakota do Norte, condado de Morton (excepto a área de Mandan)"
+"Hora do centro — Dakota do Norte — condado de Morton (excepto a área de "
+"Mandan)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:490
 #, kde-format
 msgid "Central - ND (Morton rural)"
-msgstr ""
+msgstr "Central — ND (rural de Morton)"
 
 #: kdecore/TIMEZONES:491
-#, fuzzy, kde-format
-#| msgid "America/Jujuy"
+#, kde-format
 msgid "America/Nuuk"
-msgstr "América/Jujuy"
+msgstr "América/Nuuk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:493
-#, fuzzy, kde-format
-#| msgid "Queensland - most locations"
+#, kde-format
 msgid "Greenland (most areas)"
-msgstr "Queensland, maioría dos lugares"
+msgstr "Greenland (maioría das zonas)"
 
 #: kdecore/TIMEZONES:494
 #, kde-format
@@ -9770,14 +9732,13 @@ msgstr "América/Ojinaga"
 #: kdecore/TIMEZONES:496
 #, kde-format
 msgid "US Mountain Time - Chihuahua near US border"
-msgstr "Hora da montaña dos USA: Chihuahua preto da fronteira dos USA"
+msgstr "Hora da montaña dos EUA — Chihuahua preto da fronteira dos EUA"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:498
-#, fuzzy, kde-format
-#| msgid "US Mountain Time - Chihuahua near US border"
+#, kde-format
 msgid "Mountain Time US - Chihuahua (US border)"
-msgstr "Hora da montaña dos USA: Chihuahua preto da fronteira dos USA"
+msgstr "Hora de montaña dos EUA — Chihuahua (fronteira cos EUA)"
 
 #: kdecore/TIMEZONES:499
 #, kde-format
@@ -9798,14 +9759,13 @@ msgstr "América/Pangnirtung"
 #: kdecore/TIMEZONES:505
 #, kde-format
 msgid "Eastern Time - Pangnirtung, Nunavut"
-msgstr "Hora do leste: Pangnirtung, Nunavut"
+msgstr "Hora do leste — Pangnirtung, Nunavut"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:507
-#, fuzzy, kde-format
-#| msgid "Eastern Time - Pangnirtung, Nunavut"
+#, kde-format
 msgid "Eastern - NU (Pangnirtung)"
-msgstr "Hora do leste: Pangnirtung, Nunavut"
+msgstr "Oriental — NU (Pangnirtung)"
 
 #: kdecore/TIMEZONES:508
 #, kde-format
@@ -9821,13 +9781,13 @@ msgstr "América/Phoenix"
 #: kdecore/TIMEZONES:511 kdecore/TIMEZONES:1413
 #, kde-format
 msgid "Mountain Standard Time - Arizona"
-msgstr "Hora estándar da montaña: Arizona"
+msgstr "Hora estándar da montaña — Arizona"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:513
 #, kde-format
 msgid "MST - Arizona (except Navajo)"
-msgstr ""
+msgstr "MST — Arizona (salvo Navajo)"
 
 #: kdecore/TIMEZONES:514
 #, kde-format
@@ -9867,16 +9827,15 @@ msgid "America/Puerto_Rico"
 msgstr "América/Porto Rico"
 
 #: kdecore/TIMEZONES:523
-#, fuzzy, kde-format
-#| msgid "America/Buenos_Aires"
+#, kde-format
 msgid "America/Punta_Arenas"
-msgstr "América/Bos Aires"
+msgstr "América/Punta Arenas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:525
 #, kde-format
 msgid "Region of Magallanes"
-msgstr ""
+msgstr "Rexión de Magalláns"
 
 #: kdecore/TIMEZONES:526
 #, kde-format
@@ -9887,14 +9846,13 @@ msgstr "América/Rainy River"
 #: kdecore/TIMEZONES:528
 #, kde-format
 msgid "Central Time - Rainy River & Fort Frances, Ontario"
-msgstr "Hora do centro: Río Rainy e Forte Frances, Ontario"
+msgstr "Hora do centro — Río Rainy e Forte Frances, Ontario"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:530
-#, fuzzy, kde-format
-#| msgid "Central Time - Rainy River & Fort Frances, Ontario"
+#, kde-format
 msgid "Central - ON (Rainy R, Ft Frances)"
-msgstr "Hora do centro: Río Rainy e Forte Frances, Ontario"
+msgstr "Central — ON (Rainy R, Ft Frances)"
 
 #: kdecore/TIMEZONES:531
 #, kde-format
@@ -9905,14 +9863,13 @@ msgstr "América/Rankin Inlet"
 #: kdecore/TIMEZONES:533
 #, kde-format
 msgid "Central Time - central Nunavut"
-msgstr "Hora do centro: Nunavut central"
+msgstr "Hora do centro — Nunavut central"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:535
-#, fuzzy, kde-format
-#| msgid "Central Time - central Nunavut"
+#, kde-format
 msgid "Central - NU (central)"
-msgstr "Hora do centro: Nunavut central"
+msgstr "Central — NU (central)"
 
 #: kdecore/TIMEZONES:536
 #, kde-format
@@ -9935,13 +9892,13 @@ msgstr "América/Regina"
 #: kdecore/TIMEZONES:1123
 #, kde-format
 msgid "Central Standard Time - Saskatchewan - most locations"
-msgstr "Hora estándar do centro: Saskatchewan, maioría dos lugares"
+msgstr "Hora estándar do centro — Saskatchewan — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:543
 #, kde-format
 msgid "CST - SK (most areas)"
-msgstr ""
+msgstr "CST — SK (maioría das zonas)"
 
 #: kdecore/TIMEZONES:544
 #, kde-format
@@ -9952,19 +9909,19 @@ msgstr "América/Resolute"
 #: kdecore/TIMEZONES:546
 #, kde-format
 msgid "Eastern Time - Resolute, Nunavut"
-msgstr "Hora do leste: Resolute, Nunavut"
+msgstr "Hora do leste — Resolute, Nunavut"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:548
 #, kde-format
 msgid "Central Standard Time - Resolute, Nunavut"
-msgstr "Hora do estándar do centro: Resolute, Nunavut"
+msgstr "Hora do estándar do centro — Resolute, Nunavut"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:550
 #, kde-format
 msgid "Central - NU (Resolute)"
-msgstr ""
+msgstr "Central — NU (Resolute)"
 
 #: kdecore/TIMEZONES:551
 #, kde-format
@@ -9985,7 +9942,8 @@ msgstr "América/Santa_Isabel"
 #: kdecore/TIMEZONES:559
 #, kde-format
 msgid "Mexican Pacific Time - Baja California away from US border"
-msgstr "Hora do Pacífico de México: Baja California lonxe da fronteira cos USA"
+msgstr ""
+"Hora do Pacífico de México — Baja California lonxe da fronteira cos EUA"
 
 #: kdecore/TIMEZONES:560
 #, kde-format
@@ -10002,7 +9960,7 @@ msgstr "W Para"
 #: kdecore/TIMEZONES:564
 #, kde-format
 msgid "Para (west)"
-msgstr ""
+msgstr "Para (oeste)"
 
 #: kdecore/TIMEZONES:565
 #, kde-format
@@ -10013,7 +9971,7 @@ msgstr "América/Santiago"
 #: kdecore/TIMEZONES:569
 #, kde-format
 msgid "Chile (most areas)"
-msgstr ""
+msgstr "Chile (maioría das zonas)"
 
 #: kdecore/TIMEZONES:570
 #, kde-format
@@ -10033,10 +9991,9 @@ msgstr "S e SE do Brasil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:575
-#, fuzzy, kde-format
-#| msgid "S & SE Brazil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+#, kde-format
 msgid "Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
-msgstr "S e SE do Brasil (GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+msgstr "Brasil (sueste: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
 
 #: kdecore/TIMEZONES:576
 #, kde-format
@@ -10056,10 +10013,9 @@ msgstr "Scoresbysund / Ittoqqortoormiit"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:583
-#, fuzzy, kde-format
-#| msgid "Scoresbysund / Ittoqqortoormiit"
+#, kde-format
 msgid "Scoresbysund/Ittoqqortoormiit"
-msgstr "Scoresbysund / Ittoqqortoormiit"
+msgstr "Scoresbysund/Ittoqqortoormiit"
 
 #: kdecore/TIMEZONES:584
 #, kde-format
@@ -10070,7 +10026,7 @@ msgstr "América/Shiprock"
 #: kdecore/TIMEZONES:586
 #, kde-format
 msgid "Mountain Time - Navajo"
-msgstr "Hora da montaña: Navajo"
+msgstr "Hora da montaña — Navajo"
 
 #: kdecore/TIMEZONES:587
 #, kde-format
@@ -10081,14 +10037,13 @@ msgstr "América/Sitka"
 #: kdecore/TIMEZONES:589
 #, kde-format
 msgid "Alaska Time - southeast Alaska panhandle"
-msgstr "Hora de Alaska: Alaska panhandle sueste"
+msgstr "Hora de Alasca — Mango de Alasca sueste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:591
-#, fuzzy, kde-format
-#| msgid "Alaska Time"
+#, kde-format
 msgid "Alaska - Sitka area"
-msgstr "Hora de Alaska"
+msgstr "Alasca — zona de Sitka"
 
 #: kdecore/TIMEZONES:592
 #, kde-format
@@ -10110,7 +10065,7 @@ msgstr "Hora da Terra Nova, incluído o SE do Labrador"
 #: kdecore/TIMEZONES:597
 #, kde-format
 msgid "Newfoundland; Labrador (southeast)"
-msgstr ""
+msgstr "Newfoundland; Labrador (sueste)"
 
 #: kdecore/TIMEZONES:598
 #, kde-format
@@ -10141,13 +10096,13 @@ msgstr "América/Swift Current"
 #: kdecore/TIMEZONES:604
 #, kde-format
 msgid "Central Standard Time - Saskatchewan - midwest"
-msgstr "Hora estándar do centro: medio-oeste de Saskatchewan"
+msgstr "Hora estándar do centro — Saskatchewan — medio-oeste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:606
 #, kde-format
 msgid "CST - SK (midwest)"
-msgstr ""
+msgstr "CST — SK (centro oeste)"
 
 #: kdecore/TIMEZONES:607
 #, kde-format
@@ -10167,10 +10122,9 @@ msgstr "Thule / Pituffik"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:612
-#, fuzzy, kde-format
-#| msgid "Thule / Pituffik"
+#, kde-format
 msgid "Thule/Pituffik"
-msgstr "Thule / Pituffik"
+msgstr "Thule/Pituffik"
 
 #: kdecore/TIMEZONES:613
 #, kde-format
@@ -10181,14 +10135,13 @@ msgstr "América/Thunder Bay"
 #: kdecore/TIMEZONES:615
 #, kde-format
 msgid "Eastern Time - Thunder Bay, Ontario"
-msgstr "Hora do leste: Bahía de Thunder, Ontario"
+msgstr "Hora do leste — Bahía de Thunder, Ontario"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:617
-#, fuzzy, kde-format
-#| msgid "Eastern Time - Thunder Bay, Ontario"
+#, kde-format
 msgid "Eastern - ON (Thunder Bay)"
-msgstr "Hora do leste: Bahía de Thunder, Ontario"
+msgstr "Oriental — ON (Thunder Bay)"
 
 #: kdecore/TIMEZONES:618
 #, kde-format
@@ -10199,14 +10152,13 @@ msgstr "América/Tijuana"
 #: kdecore/TIMEZONES:622
 #, kde-format
 msgid "US Pacific Time - Baja California near US border"
-msgstr "Hora do Pacífico dos USA: Baja California preto da fronteira cos USA"
+msgstr "Hora do Pacífico dos EUA — Baja California preto da fronteira cos EUA"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:624
-#, fuzzy, kde-format
-#| msgid "US Pacific Time - Baja California near US border"
+#, kde-format
 msgid "Pacific Time US - Baja California"
-msgstr "Hora do Pacífico dos USA: Baja California preto da fronteira cos USA"
+msgstr "Hora do Pacífico dos EUA — Baja California"
 
 #: kdecore/TIMEZONES:625
 #, kde-format
@@ -10217,13 +10169,13 @@ msgstr "América/Toronto"
 #: kdecore/TIMEZONES:627 kdecore/TIMEZONES:1111
 #, kde-format
 msgid "Eastern Time - Ontario - most locations"
-msgstr "Hora do leste: Ontario, maioría dos lugares"
+msgstr "Hora do leste — Ontario — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:629
 #, kde-format
 msgid "Eastern - ON, QC (most areas)"
-msgstr ""
+msgstr "Oriental — ON, QC (maioría das zonas)"
 
 #: kdecore/TIMEZONES:630
 #, kde-format
@@ -10239,13 +10191,13 @@ msgstr "América/Vancouver"
 #: kdecore/TIMEZONES:633 kdecore/TIMEZONES:1120
 #, kde-format
 msgid "Pacific Time - west British Columbia"
-msgstr "Hora do Pacífico: oeste da Columbia Británica"
+msgstr "Hora do Pacífico — oeste da Columbia Británica"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:635
 #, kde-format
 msgid "Pacific - BC (most areas)"
-msgstr ""
+msgstr "Pacífico — BC (maioría das zonas)"
 
 #: kdecore/TIMEZONES:636
 #, kde-format
@@ -10261,13 +10213,13 @@ msgstr "América/Whitehorse"
 #: kdecore/TIMEZONES:639 kdecore/TIMEZONES:1126
 #, kde-format
 msgid "Pacific Time - south Yukon"
-msgstr "Hora do Pacífico: sur do Yukon"
+msgstr "Hora do Pacífico — sur do Yukon"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:641
 #, kde-format
 msgid "MST - Yukon (east)"
-msgstr ""
+msgstr "MST — Yukon (leste)"
 
 #: kdecore/TIMEZONES:642
 #, kde-format
@@ -10278,13 +10230,13 @@ msgstr "América/Winnipeg"
 #: kdecore/TIMEZONES:644 kdecore/TIMEZONES:1105
 #, kde-format
 msgid "Central Time - Manitoba & west Ontario"
-msgstr "Hora do centro: Manitoba e oeste de Ontario"
+msgstr "Hora do centro — Manitoba e oeste de Ontario"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:646
 #, kde-format
 msgid "Central - ON (west); Manitoba"
-msgstr ""
+msgstr "Central — ON (oeste); Manitoba"
 
 #: kdecore/TIMEZONES:647
 #, kde-format
@@ -10295,13 +10247,13 @@ msgstr "América/Yakutat"
 #: kdecore/TIMEZONES:649
 #, kde-format
 msgid "Alaska Time - Alaska panhandle neck"
-msgstr "Hora de Alaske: pescozo do Alaska panhandle"
+msgstr "Hora de Alasca — estreito do Mango de Alasca"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:651
 #, kde-format
 msgid "Alaska - Yakutat"
-msgstr ""
+msgstr "Alasca — Yakutat"
 
 #: kdecore/TIMEZONES:652
 #, kde-format
@@ -10312,14 +10264,13 @@ msgstr "América/Yellowknife"
 #: kdecore/TIMEZONES:654
 #, kde-format
 msgid "Mountain Time - central Northwest Territories"
-msgstr "Hora da montaña: centro dos Territorios do Noroeste"
+msgstr "Hora da montaña — centro dos Territorios do Noroeste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:656
-#, fuzzy, kde-format
-#| msgid "Mountain Time"
+#, kde-format
 msgid "Mountain - NT (central)"
-msgstr "Hora da montaña"
+msgstr "Montaña — NT (central)"
 
 #: kdecore/TIMEZONES:657
 #, kde-format
@@ -10336,7 +10287,7 @@ msgstr "Casey Station, península de Bailey"
 #: kdecore/TIMEZONES:661
 #, kde-format
 msgid "Casey"
-msgstr ""
+msgstr "Casey"
 
 #: kdecore/TIMEZONES:662
 #, kde-format
@@ -10353,7 +10304,7 @@ msgstr "Davis Station, Vestfold Hills"
 #: kdecore/TIMEZONES:666
 #, kde-format
 msgid "Davis"
-msgstr ""
+msgstr "Davis"
 
 #: kdecore/TIMEZONES:667
 #, kde-format
@@ -10368,10 +10319,9 @@ msgstr "Estación Dumont-d'Urville, Terra Adelia"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:671
-#, fuzzy, kde-format
-#| msgid "Antarctica/DumontDUrville"
+#, kde-format
 msgid "Dumont-d'Urville"
-msgstr "Antártida/Dumont D'Urville"
+msgstr "Dumont-d'Urville"
 
 #: kdecore/TIMEZONES:672
 #, kde-format
@@ -10386,10 +10336,9 @@ msgstr "Estación da illa de Macquarie, Illa de Macquarie"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:676
-#, fuzzy, kde-format
-#| msgid "Marquesas Islands"
+#, kde-format
 msgid "Macquarie Island"
-msgstr "Illas Marquesas"
+msgstr "Illa Macquarie"
 
 #: kdecore/TIMEZONES:677
 #, kde-format
@@ -10406,7 +10355,7 @@ msgstr "Estación Mawson, Bahía de Holme"
 #: kdecore/TIMEZONES:681
 #, kde-format
 msgid "Mawson"
-msgstr ""
+msgstr "Mawson"
 
 #: kdecore/TIMEZONES:682
 #, kde-format
@@ -10423,7 +10372,7 @@ msgstr "Estación McMurdo, Illa de Ross"
 #: kdecore/TIMEZONES:686
 #, kde-format
 msgid "New Zealand time - McMurdo, South Pole"
-msgstr ""
+msgstr "Hora de Nova Zelandia — McMurdo, Polo Sur"
 
 #: kdecore/TIMEZONES:687
 #, kde-format
@@ -10440,7 +10389,7 @@ msgstr "Estación Palmer, Illa de Anvers"
 #: kdecore/TIMEZONES:691
 #, kde-format
 msgid "Palmer"
-msgstr ""
+msgstr "Palmer"
 
 #: kdecore/TIMEZONES:692
 #, kde-format
@@ -10457,7 +10406,7 @@ msgstr "Estación Rothera, Illa de Adelaida"
 #: kdecore/TIMEZONES:696
 #, kde-format
 msgid "Rothera"
-msgstr ""
+msgstr "Rothera"
 
 #: kdecore/TIMEZONES:697
 #, kde-format
@@ -10485,19 +10434,18 @@ msgstr "Estación Syowa, Illa do leste de Ongul"
 #: kdecore/TIMEZONES:704
 #, kde-format
 msgid "Syowa"
-msgstr ""
+msgstr "Syowa"
 
 #: kdecore/TIMEZONES:705
-#, fuzzy, kde-format
-#| msgid "Antarctica/McMurdo"
+#, kde-format
 msgid "Antarctica/Troll"
-msgstr "Antártida/McMurdo"
+msgstr "Antártica/Troll"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:707
 #, kde-format
 msgid "Troll"
-msgstr ""
+msgstr "Troll"
 
 #: kdecore/TIMEZONES:708
 #, kde-format
@@ -10520,7 +10468,7 @@ msgstr "Estación Vostok, lago Vostok"
 #: kdecore/TIMEZONES:714
 #, kde-format
 msgid "Vostok"
-msgstr ""
+msgstr "Vostok"
 
 #: kdecore/TIMEZONES:715
 #, kde-format
@@ -10541,7 +10489,7 @@ msgstr "Asia/Almaty"
 #: kdecore/TIMEZONES:721
 #, kde-format
 msgid "Kazakhstan (most areas)"
-msgstr ""
+msgstr "Casaquistán (maioría das zonas)"
 
 #: kdecore/TIMEZONES:722
 #, kde-format
@@ -10557,20 +10505,19 @@ msgstr "Asia/Anadyr"
 #: kdecore/TIMEZONES:725
 #, kde-format
 msgid "Moscow+10 - Bering Sea"
-msgstr "Moscova+10, mar de Bering"
+msgstr "Moscova+10 — Mar de Bering"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:727
 #, kde-format
 msgid "Moscow+08 - Bering Sea"
-msgstr "Moscova+08, mar de Bering"
+msgstr "Moscova+08 — Mar de Bering"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:729
-#, fuzzy, kde-format
-#| msgid "Moscow+10 - Bering Sea"
+#, kde-format
 msgid "MSK+09 - Bering Sea"
-msgstr "Moscova+10, mar de Bering"
+msgstr "MSK+09 — Mar de Bering"
 
 #: kdecore/TIMEZONES:730
 #, kde-format
@@ -10587,7 +10534,7 @@ msgstr "Atirau (Atirau, Gur'yev), Mangghystau (Mankistau)"
 #: kdecore/TIMEZONES:734
 #, kde-format
 msgid "Mangghystau/Mankistau"
-msgstr ""
+msgstr "Mangghystau/Mankistau"
 
 #: kdecore/TIMEZONES:735
 #, kde-format
@@ -10602,10 +10549,9 @@ msgstr "Aqtobe (Aktobe)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:739
-#, fuzzy, kde-format
-#| msgid "Aqtobe (Aktobe)"
+#, kde-format
 msgid "Aqtobe/Aktobe"
-msgstr "Aqtobe (Aktobe)"
+msgstr "Aqtobe/Aktobe"
 
 #: kdecore/TIMEZONES:740
 #, kde-format
@@ -10618,16 +10564,15 @@ msgid "Asia/Ashkhabad"
 msgstr "Asia/Ashkhabad"
 
 #: kdecore/TIMEZONES:742
-#, fuzzy, kde-format
-#| msgid "Asia/Aqtau"
+#, kde-format
 msgid "Asia/Atyrau"
-msgstr "Asia/Aqtau"
+msgstr "Asia/Atyrau"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:744
 #, kde-format
 msgid "Atyrau/Atirau/Gur'yev"
-msgstr ""
+msgstr "Atyrau/Atirau/Gur'yev"
 
 #: kdecore/TIMEZONES:745
 #, kde-format
@@ -10650,16 +10595,15 @@ msgid "Asia/Bangkok"
 msgstr "Asia/Bangkok"
 
 #: kdecore/TIMEZONES:749
-#, fuzzy, kde-format
-#| msgid "Asia/Baku"
+#, kde-format
 msgid "Asia/Barnaul"
-msgstr "Asia/Baku"
+msgstr "Asia/Barnaul"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:751
 #, kde-format
 msgid "MSK+04 - Altai"
-msgstr ""
+msgstr "MSK+04 — Altai"
 
 #: kdecore/TIMEZONES:752
 #, kde-format
@@ -10670,7 +10614,7 @@ msgstr "Asia/Pequín"
 #: kdecore/TIMEZONES:754 kdecore/TIMEZONES:924 kdecore/TIMEZONES:1295
 #, kde-format
 msgid "east China - Beijing, Guangdong, Shanghai, etc."
-msgstr "leste da China: Pequin, Guangdong, Shangai etc."
+msgstr "leste da China — Pequin, Guangdong, Shangai etc."
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:756
@@ -10699,16 +10643,15 @@ msgid "Asia/Calcutta"
 msgstr "Asia/Calcuta"
 
 #: kdecore/TIMEZONES:761
-#, fuzzy, kde-format
-#| msgid "Asia/Choibalsan"
+#, kde-format
 msgid "Asia/Chita"
-msgstr "Asia/Choibalsan"
+msgstr "Asia/Chita"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:763
 #, kde-format
 msgid "MSK+06 - Zabaykalsky"
-msgstr ""
+msgstr "MSK+06 — Zabaykalsky"
 
 #: kdecore/TIMEZONES:764
 #, kde-format
@@ -10730,7 +10673,7 @@ msgstr "Asia/Chogqing"
 #: kdecore/TIMEZONES:769 kdecore/TIMEZONES:774
 #, kde-format
 msgid "central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc."
-msgstr "centro da China: Sichuán, Yunnan, Guangxi, Shaanxi, Guizhou etc."
+msgstr "centro da China — Sichuán, Yunnan, Guangxi, Shaanxi, Guizhou etc."
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:771
@@ -10779,17 +10722,15 @@ msgid "Asia/Dushanbe"
 msgstr "Asia/Dushanbe"
 
 #: kdecore/TIMEZONES:782
-#, fuzzy, kde-format
-#| msgid "Asia/Damascus"
+#, kde-format
 msgid "Asia/Famagusta"
-msgstr "Asia/Damasco"
+msgstr "Asia/Famagusta"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:784
-#, fuzzy, kde-format
-#| msgid "Northern Territory"
+#, kde-format
 msgid "Northern Cyprus"
-msgstr "Territorio do Norte"
+msgstr "Chipre do Norte"
 
 #: kdecore/TIMEZONES:785
 #, kde-format
@@ -10860,13 +10801,13 @@ msgstr "Asia/Irkutsk"
 #: kdecore/TIMEZONES:803
 #, kde-format
 msgid "Moscow+05 - Lake Baikal"
-msgstr "Moscova+05: Lago Baikal"
+msgstr "Moscova+05 — Lago Baikal"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:805
 #, kde-format
 msgid "MSK+05 - Irkutsk, Buryatia"
-msgstr ""
+msgstr "MSK+05 — Irkutsk, Buryatia"
 
 #: kdecore/TIMEZONES:806
 #, kde-format
@@ -10881,10 +10822,9 @@ msgstr "Xava e Sumatra"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:810
-#, fuzzy, kde-format
-#| msgid "Java & Sumatra"
+#, kde-format
 msgid "Java, Sumatra"
-msgstr "Xava e Sumatra"
+msgstr "Xava, Sumatra"
 
 #: kdecore/TIMEZONES:811
 #, kde-format
@@ -10905,10 +10845,9 @@ msgstr "Oeste de Nova Guinea (Irian Jaya) e as Molucas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:817
-#, fuzzy, kde-format
-#| msgid "west New Guinea (Irian Jaya) & Malukus (Moluccas)"
+#, kde-format
 msgid "New Guinea (West Papua / Irian Jaya); Malukus/Moluccas"
-msgstr "Oeste de Nova Guinea (Irian Jaya) e as Molucas"
+msgstr "Nova Guinea (Papúa Occidental / Irian Jaya); Malukus/Moluccas"
 
 #: kdecore/TIMEZONES:818
 #, kde-format
@@ -10929,20 +10868,19 @@ msgstr "Asia/Kamchatka"
 #: kdecore/TIMEZONES:822
 #, kde-format
 msgid "Moscow+09 - Kamchatka"
-msgstr "Moscova+09: Kamchatka"
+msgstr "Moscova+09 — Kamchatka"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:824
 #, kde-format
 msgid "Moscow+08 - Kamchatka"
-msgstr "Moscova+08: Kamchatka"
+msgstr "Moscova+08 — Kamchatka"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:826
-#, fuzzy, kde-format
-#| msgid "Moscow+09 - Kamchatka"
+#, kde-format
 msgid "MSK+09 - Kamchatka"
-msgstr "Moscova+09: Kamchatka"
+msgstr "MSK+09 — Kamchatka"
 
 #: kdecore/TIMEZONES:827
 #, kde-format
@@ -10964,7 +10902,7 @@ msgstr "oeste do Tíbet e Xinjiang"
 #: kdecore/TIMEZONES:832
 #, kde-format
 msgid "China west Xinjiang"
-msgstr "China: Xinjiang occidental"
+msgstr "China — Xinjiang occidental"
 
 #: kdecore/TIMEZONES:833
 #, kde-format
@@ -10977,16 +10915,15 @@ msgid "Asia/Katmandu"
 msgstr "Asia/Katmandú"
 
 #: kdecore/TIMEZONES:835
-#, fuzzy, kde-format
-#| msgid "Asia/Shanghai"
+#, kde-format
 msgid "Asia/Khandyga"
-msgstr "Asia/Shanghai"
+msgstr "Asia/Khandyga"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:837
 #, kde-format
 msgid "MSK+06 - Tomponsky, Ust-Maysky"
-msgstr ""
+msgstr "MSK+06 — Tomponsky, Ust-Maysky"
 
 #: kdecore/TIMEZONES:838
 #, kde-format
@@ -11002,13 +10939,13 @@ msgstr "Asia/Krasnoyarsk"
 #: kdecore/TIMEZONES:841
 #, kde-format
 msgid "Moscow+04 - Yenisei River"
-msgstr "Moscova+04: río Yenisei"
+msgstr "Moscova+04 — río Yenisei"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:843
 #, kde-format
 msgid "MSK+04 - Krasnoyarsk area"
-msgstr ""
+msgstr "MSK+04 — zona de Krasnoyarsk"
 
 #: kdecore/TIMEZONES:844
 #, kde-format
@@ -11025,7 +10962,7 @@ msgstr "Malaisia peninsular"
 #: kdecore/TIMEZONES:848
 #, kde-format
 msgid "Malaysia (peninsula)"
-msgstr ""
+msgstr "Malaisia (península)"
 
 #: kdecore/TIMEZONES:849
 #, kde-format
@@ -11040,10 +10977,9 @@ msgstr "Sabah e Sarawak"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:853
-#, fuzzy, kde-format
-#| msgid "Sabah & Sarawak"
+#, kde-format
 msgid "Sabah, Sarawak"
-msgstr "Sabah e Sarawak"
+msgstr "Sabah, Sarawak"
 
 #: kdecore/TIMEZONES:854
 #, kde-format
@@ -11069,14 +11005,13 @@ msgstr "Asia/Magadán"
 #: kdecore/TIMEZONES:859
 #, kde-format
 msgid "Moscow+08 - Magadan"
-msgstr "Moscova+08: Magadán"
+msgstr "Moscova+08 — Magadán"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:861
-#, fuzzy, kde-format
-#| msgid "Moscow+08 - Magadan"
+#, kde-format
 msgid "MSK+08 - Magadan"
-msgstr "Moscova+08: Magadán"
+msgstr "MSK+08 — Magadán"
 
 #: kdecore/TIMEZONES:862
 #, kde-format
@@ -11100,14 +11035,12 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:868
-#, fuzzy, kde-format
-#| msgid ""
-#| "east & south Borneo, Sulawesi (Celebes), Bali, Nusa Tenggara, west Timor"
+#, kde-format
 msgid ""
 "Borneo (east, south); Sulawesi/Celebes, Bali, Nusa Tengarra; Timor (west)"
 msgstr ""
-"leste e sur de Borneo, Sulawesi (illas Célebes), Bali, Nusa Tengarra, Timor-"
-"oeste"
+"Borneo (leste, sur); Sulawesi/Illas Célebes, Bali, Nusa Tengarra; Timor "
+"(oeste)"
 
 #: kdecore/TIMEZONES:869
 #, kde-format
@@ -11128,7 +11061,7 @@ msgstr "Asia/Nicosia"
 #: kdecore/TIMEZONES:873
 #, kde-format
 msgid "Cyprus (most areas)"
-msgstr ""
+msgstr "Chipre (maioría das zonas)"
 
 #: kdecore/TIMEZONES:874
 #, kde-format
@@ -11139,13 +11072,13 @@ msgstr "Asia/Novokuznetsk"
 #: kdecore/TIMEZONES:876
 #, kde-format
 msgid "Moscow+03 - Novokuznetsk"
-msgstr "Moscova+03 - Novokuznetsk"
+msgstr "Moscova+03 — Novokuznetsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:878
 #, kde-format
 msgid "MSK+04 - Kemerovo"
-msgstr ""
+msgstr "MSK+04 — Kemerovo"
 
 #: kdecore/TIMEZONES:879
 #, kde-format
@@ -11156,14 +11089,13 @@ msgstr "Asia/Novosibirsk"
 #: kdecore/TIMEZONES:881
 #, kde-format
 msgid "Moscow+03 - Novosibirsk"
-msgstr "Moscova+03: Novosibirsk"
+msgstr "Moscova+03 — Novosibirsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:883
-#, fuzzy, kde-format
-#| msgid "Moscow+03 - Novosibirsk"
+#, kde-format
 msgid "MSK+04 - Novosibirsk"
-msgstr "Moscova+03: Novosibirsk"
+msgstr "MSK+04 — Novosibirsk"
 
 #: kdecore/TIMEZONES:884
 #, kde-format
@@ -11174,13 +11106,13 @@ msgstr "Asia/Omsk"
 #: kdecore/TIMEZONES:886
 #, kde-format
 msgid "Moscow+03 - west Siberia"
-msgstr "Moscova+03 - oeste de Siberia"
+msgstr "Moscova+03 — oeste de Siberia"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:888
 #, kde-format
 msgid "MSK+03 - Omsk"
-msgstr ""
+msgstr "MSK+03 — Omsk"
 
 #: kdecore/TIMEZONES:889
 #, kde-format
@@ -11213,7 +11145,7 @@ msgstr "Borneo central e oeste"
 #: kdecore/TIMEZONES:897
 #, kde-format
 msgid "Borneo (west, central)"
-msgstr ""
+msgstr "Borneo (oeste, central)"
 
 #: kdecore/TIMEZONES:898
 #, kde-format
@@ -11226,16 +11158,15 @@ msgid "Asia/Qatar"
 msgstr "Asia/Qatar"
 
 #: kdecore/TIMEZONES:900
-#, fuzzy, kde-format
-#| msgid "Asia/Pontianak"
+#, kde-format
 msgid "Asia/Qostanay"
-msgstr "Asia/Pontianak"
+msgstr "Asia/Qostanay"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:902
 #, kde-format
 msgid "Qostanay/Kostanay/Kustanay"
-msgstr ""
+msgstr "Qostanay/Kostanay/Kustanay"
 
 #: kdecore/TIMEZONES:903
 #, kde-format
@@ -11250,10 +11181,9 @@ msgstr "Qyzylorda (Kyzylorda, Kzyl-Orda)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:907
-#, fuzzy, kde-format
-#| msgid "Qyzylorda (Kyzylorda, Kzyl-Orda)"
+#, kde-format
 msgid "Qyzylorda/Kyzylorda/Kzyl-Orda"
-msgstr "Qyzylorda (Kyzylorda, Kzyl-Orda)"
+msgstr "Qyzylorda/Kyzylorda/Kzyl-Orda"
 
 #: kdecore/TIMEZONES:908
 #, kde-format
@@ -11279,14 +11209,13 @@ msgstr "Asia/Sakhalin"
 #: kdecore/TIMEZONES:913
 #, kde-format
 msgid "Moscow+07 - Sakhalin Island"
-msgstr "Moscova+07: illa Sahalin"
+msgstr "Moscova+07 — illa Sahalin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:915
-#, fuzzy, kde-format
-#| msgid "Moscow+07 - Sakhalin Island"
+#, kde-format
 msgid "MSK+08 - Sakhalin Island"
-msgstr "Moscova+07: illa Sahalin"
+msgstr "MSK+07 — Illa Sakhalín"
 
 #: kdecore/TIMEZONES:916
 #, kde-format
@@ -11301,10 +11230,9 @@ msgstr "oeste de Uzbequistán"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:920
-#, fuzzy, kde-format
-#| msgid "west Uzbekistan"
+#, kde-format
 msgid "Uzbekistan (west)"
-msgstr "oeste de Uzbequistán"
+msgstr "Uzbequistán (oeste)"
 
 #: kdecore/TIMEZONES:921
 #, kde-format
@@ -11326,7 +11254,7 @@ msgstr "China oriental"
 #: kdecore/TIMEZONES:928
 #, kde-format
 msgid "Beijing Time"
-msgstr ""
+msgstr "Hora de Pequín"
 
 #: kdecore/TIMEZONES:929
 #, kde-format
@@ -11334,16 +11262,15 @@ msgid "Asia/Singapore"
 msgstr "Asia/Singapur"
 
 #: kdecore/TIMEZONES:930
-#, fuzzy, kde-format
-#| msgid "Asia/Krasnoyarsk"
+#, kde-format
 msgid "Asia/Srednekolymsk"
-msgstr "Asia/Krasnoyarsk"
+msgstr "Asia/Srednekolymsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:932
 #, kde-format
 msgid "MSK+08 - Sakha (E); North Kuril Is"
-msgstr ""
+msgstr "MSK+08 — Sakha (E); norte de Kuril Is"
 
 #: kdecore/TIMEZONES:933
 #, kde-format
@@ -11363,10 +11290,9 @@ msgstr "leste de Uzbequistán"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:938
-#, fuzzy, kde-format
-#| msgid "east Uzbekistan"
+#, kde-format
 msgid "Uzbekistan (east)"
-msgstr "leste de Uzbequistán"
+msgstr "Uzbequistán (leste)"
 
 #: kdecore/TIMEZONES:939
 #, kde-format
@@ -11399,16 +11325,15 @@ msgid "Asia/Tokyo"
 msgstr "Asia/Toquio"
 
 #: kdecore/TIMEZONES:945
-#, fuzzy, kde-format
-#| msgid "Asia/Omsk"
+#, kde-format
 msgid "Asia/Tomsk"
-msgstr "Asia/Omsk"
+msgstr "Asia/Tomsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:947
 #, kde-format
 msgid "MSK+04 - Tomsk"
-msgstr ""
+msgstr "MSK+04 — Tomsk"
 
 #: kdecore/TIMEZONES:948
 #, kde-format
@@ -11424,7 +11349,7 @@ msgstr "Asia/Ulán batar"
 #: kdecore/TIMEZONES:955
 #, kde-format
 msgid "Mongolia (most areas)"
-msgstr ""
+msgstr "Mongolia (maioría das zonas)"
 
 #: kdecore/TIMEZONES:956
 #, kde-format
@@ -11450,22 +11375,20 @@ msgstr "China Xinjiang-Tibet"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:965
-#, fuzzy, kde-format
-#| msgid "China Xinjiang-Tibet"
+#, kde-format
 msgid "Xinjiang Time"
-msgstr "China Xinjiang-Tibet"
+msgstr "Hora de Xinjiang"
 
 #: kdecore/TIMEZONES:966
-#, fuzzy, kde-format
-#| msgid "Asia/Tehran"
+#, kde-format
 msgid "Asia/Ust-Nera"
-msgstr "Asia/Teherán"
+msgstr "Asia/Ust-Nera"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:968
 #, kde-format
 msgid "MSK+07 - Oymyakonsky"
-msgstr ""
+msgstr "MSK+07 — Oymyakonsky"
 
 #: kdecore/TIMEZONES:969
 #, kde-format
@@ -11481,14 +11404,13 @@ msgstr "Asia/Vladivostok"
 #: kdecore/TIMEZONES:972
 #, kde-format
 msgid "Moscow+07 - Amur River"
-msgstr "Moscova+07: río Amur"
+msgstr "Moscova+07 — río Amur"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:974
-#, fuzzy, kde-format
-#| msgid "Moscow+07 - Amur River"
+#, kde-format
 msgid "MSK+07 - Amur River"
-msgstr "Moscova+07: río Amur"
+msgstr "MSK+07 — río Amur"
 
 #: kdecore/TIMEZONES:975
 #, kde-format
@@ -11499,20 +11421,18 @@ msgstr "Asia/Yakutsk"
 #: kdecore/TIMEZONES:977
 #, kde-format
 msgid "Moscow+06 - Lena River"
-msgstr "Moscova+06: río Lena"
+msgstr "Moscova+06 — río Lena"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:979
-#, fuzzy, kde-format
-#| msgid "Moscow+06 - Lena River"
+#, kde-format
 msgid "MSK+06 - Lena River"
-msgstr "Moscova+06: río Lena"
+msgstr "MSK+06 — río Lena"
 
 #: kdecore/TIMEZONES:980
-#, fuzzy, kde-format
-#| msgid "Asia/Rangoon"
+#, kde-format
 msgid "Asia/Yangon"
-msgstr "Asia/Rangún"
+msgstr "Asia/Yangon"
 
 #: kdecore/TIMEZONES:981
 #, kde-format
@@ -11523,14 +11443,13 @@ msgstr "Asia/Yekaterinburg"
 #: kdecore/TIMEZONES:983
 #, kde-format
 msgid "Moscow+02 - Urals"
-msgstr "Moscova+02: Os Urais"
+msgstr "Moscova+02 — Os Urais"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:985
-#, fuzzy, kde-format
-#| msgid "Moscow+02 - Urals"
+#, kde-format
 msgid "MSK+02 - Urals"
-msgstr "Moscova+02: Os Urais"
+msgstr "MSK+02 — Os Urais"
 
 #: kdecore/TIMEZONES:986
 #, kde-format
@@ -11625,7 +11544,7 @@ msgstr "Australia/ACT"
 #: kdecore/TIMEZONES:1073
 #, kde-format
 msgid "New South Wales - most locations"
-msgstr "Nova Gales do Sur, maioría dos lugares"
+msgstr "Nova Gales do Sur — maioría das zonas"
 
 #: kdecore/TIMEZONES:1008
 #, kde-format
@@ -11647,14 +11566,13 @@ msgstr "Australia/Brisbane"
 #: kdecore/TIMEZONES:1013 kdecore/TIMEZONES:1067
 #, kde-format
 msgid "Queensland - most locations"
-msgstr "Queensland, maioría dos lugares"
+msgstr "Queensland — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1015
-#, fuzzy, kde-format
-#| msgid "Queensland - most locations"
+#, kde-format
 msgid "Queensland (most areas)"
-msgstr "Queensland, maioría dos lugares"
+msgstr "Queensland (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1016
 #, kde-format
@@ -11669,10 +11587,9 @@ msgstr "Nova Gales do Sur, Yancowinna"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1020
-#, fuzzy, kde-format
-#| msgid "New South Wales - Yancowinna"
+#, kde-format
 msgid "New South Wales (Yancowinna)"
-msgstr "Nova Gales do Sur, Yancowinna"
+msgstr "Nova Gales do Sur (Yancowinna)"
 
 #: kdecore/TIMEZONES:1021
 #, kde-format
@@ -11714,10 +11631,9 @@ msgstr "Australia Occidental, área de Eucla"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1034
-#, fuzzy, kde-format
-#| msgid "Western Australia - Eucla area"
+#, kde-format
 msgid "Western Australia (Eucla)"
-msgstr "Australia Occidental, área de Eucla"
+msgstr "Australia Occidental (Eucla)"
 
 #: kdecore/TIMEZONES:1035
 #, kde-format
@@ -11728,14 +11644,13 @@ msgstr "Australia/Hobart"
 #: kdecore/TIMEZONES:1037 kdecore/TIMEZONES:1078
 #, kde-format
 msgid "Tasmania - most locations"
-msgstr "Tasmania, maioría dos lugares"
+msgstr "Tasmania — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1039
-#, fuzzy, kde-format
-#| msgid "Australia/Tasmania"
+#, kde-format
 msgid "Tasmania"
-msgstr "Australia/Tasmania"
+msgstr "Tasmania"
 
 #: kdecore/TIMEZONES:1040
 #, kde-format
@@ -11761,10 +11676,9 @@ msgstr "Queensland, illas de Holiday"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1047
-#, fuzzy, kde-format
-#| msgid "Queensland - Holiday Islands"
+#, kde-format
 msgid "Queensland (Whitsunday Islands)"
-msgstr "Queensland, illas de Holiday"
+msgstr "Queensland (Illas Whitsunday)"
 
 #: kdecore/TIMEZONES:1048
 #, kde-format
@@ -11801,14 +11715,13 @@ msgstr "Australia/Perth"
 #: kdecore/TIMEZONES:1062 kdecore/TIMEZONES:1084
 #, kde-format
 msgid "Western Australia - most locations"
-msgstr "Australia Occidental, maioría dos lugares"
+msgstr "Australia Occidental — maioría das zonas"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1064
-#, fuzzy, kde-format
-#| msgid "Western Australia - most locations"
+#, kde-format
 msgid "Western Australia (most areas)"
-msgstr "Australia Occidental, maioría dos lugares"
+msgstr "Australia Occidental (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1065
 #, kde-format
@@ -11827,10 +11740,9 @@ msgstr "Australia/Sidnei"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1075
-#, fuzzy, kde-format
-#| msgid "New South Wales - most locations"
+#, kde-format
 msgid "New South Wales (most areas)"
-msgstr "Nova Gales do Sur, maioría dos lugares"
+msgstr "Nova Gales do Sur (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1076
 #, kde-format
@@ -11959,16 +11871,15 @@ msgid "Europe/Andorra"
 msgstr "Europa/Andorra"
 
 #: kdecore/TIMEZONES:1138
-#, fuzzy, kde-format
-#| msgid "Europe/Athens"
+#, kde-format
 msgid "Europe/Astrakhan"
-msgstr "Europa/Atenas"
+msgstr "Europa/Astrakhan"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1140
 #, kde-format
 msgid "MSK+01 - Astrakhan"
-msgstr ""
+msgstr "MSK+01 — Astrakhan"
 
 #: kdecore/TIMEZONES:1141
 #, kde-format
@@ -11994,7 +11905,7 @@ msgstr "Europa/Berlín"
 #: kdecore/TIMEZONES:1146
 #, kde-format
 msgid "Germany (most areas)"
-msgstr ""
+msgstr "Alemaña (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1147
 #, kde-format
@@ -12017,16 +11928,15 @@ msgid "Europe/Budapest"
 msgstr "Europa/Budapest"
 
 #: kdecore/TIMEZONES:1151
-#, fuzzy, kde-format
-#| msgid "Europe/Brussels"
+#, kde-format
 msgid "Europe/Busingen"
-msgstr "Europa/Bruxelas"
+msgstr "Europa/Busingen"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1153
 #, kde-format
 msgid "Busingen"
-msgstr ""
+msgstr "Busingen"
 
 #: kdecore/TIMEZONES:1154
 #, kde-format
@@ -12086,10 +11996,9 @@ msgstr "Moscova-01, Kaliningrado"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1167
-#, fuzzy, kde-format
-#| msgid "Moscow-01 - Kaliningrad"
+#, kde-format
 msgid "MSK-01 - Kaliningrad"
-msgstr "Moscova-01, Kaliningrado"
+msgstr "MSK-01 — Kaliningrad"
 
 #: kdecore/TIMEZONES:1168
 #, kde-format
@@ -12100,19 +12009,18 @@ msgstr "Europa/Kiev"
 #: kdecore/TIMEZONES:1172
 #, kde-format
 msgid "Ukraine (most areas)"
-msgstr ""
+msgstr "Ucraína (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1173
-#, fuzzy, kde-format
-#| msgid "Europe/Kiev"
+#, kde-format
 msgid "Europe/Kirov"
-msgstr "Europa/Kiev"
+msgstr "Europa/Kirov"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1175
 #, kde-format
 msgid "MSK+00 - Kirov"
-msgstr ""
+msgstr "MSK+00 — Kirov"
 
 #: kdecore/TIMEZONES:1176
 #, kde-format
@@ -12123,7 +12031,7 @@ msgstr "Europa/Lisboa"
 #: kdecore/TIMEZONES:1180
 #, kde-format
 msgid "Portugal (mainland)"
-msgstr ""
+msgstr "Portugal (continental)"
 
 #: kdecore/TIMEZONES:1181
 #, kde-format
@@ -12147,10 +12055,9 @@ msgstr "Europa/Madrid"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1188
-#, fuzzy, kde-format
-#| msgid "mainland"
+#, kde-format
 msgid "Spain (mainland)"
-msgstr "continental"
+msgstr "España (peninsular)"
 
 #: kdecore/TIMEZONES:1189
 #, kde-format
@@ -12187,7 +12094,7 @@ msgstr "Moscova+00, oeste de Rusia"
 #: kdecore/TIMEZONES:1197
 #, kde-format
 msgid "MSK+00 - Moscow area"
-msgstr ""
+msgstr "MSK+00 — zona de Moscova"
 
 #: kdecore/TIMEZONES:1198
 #, kde-format
@@ -12238,10 +12145,9 @@ msgstr "Moscova+01, Samara, Udmurtia"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1210
-#, fuzzy, kde-format
-#| msgid "Moscow+01 - Samara, Udmurtia"
+#, kde-format
 msgid "MSK+01 - Samara, Udmurtia"
-msgstr "Moscova+01, Samara, Udmurtia"
+msgstr "MSK+01 — Samara, Udmurtia"
 
 #: kdecore/TIMEZONES:1211
 #, kde-format
@@ -12254,16 +12160,15 @@ msgid "Europe/Sarajevo"
 msgstr "Europa/Saraievo"
 
 #: kdecore/TIMEZONES:1213
-#, fuzzy, kde-format
-#| msgid "Europe/Sarajevo"
+#, kde-format
 msgid "Europe/Saratov"
-msgstr "Europa/Saraievo"
+msgstr "Europa/Saratov"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1215
 #, kde-format
 msgid "MSK+01 - Saratov"
-msgstr ""
+msgstr "MSK+01 — Saratov"
 
 #: kdecore/TIMEZONES:1216
 #, kde-format
@@ -12278,10 +12183,9 @@ msgstr "Crimea central"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1220
-#, fuzzy, kde-format
-#| msgid "Prime: "
+#, kde-format
 msgid "Crimea"
-msgstr "Primo: "
+msgstr "Crimea"
 
 #: kdecore/TIMEZONES:1221
 #, kde-format
@@ -12314,16 +12218,15 @@ msgid "Europe/Tiraspol"
 msgstr "Europa/Tiraspol"
 
 #: kdecore/TIMEZONES:1227
-#, fuzzy, kde-format
-#| msgid "Europe/Minsk"
+#, kde-format
 msgid "Europe/Ulyanovsk"
-msgstr "Europa/Minsk"
+msgstr "Europe/Ulyanovsk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1229
 #, kde-format
 msgid "MSK+01 - Ulyanovsk"
-msgstr ""
+msgstr "MSK+01 — Ulyanovsk"
 
 #: kdecore/TIMEZONES:1230
 #, kde-format
@@ -12340,7 +12243,7 @@ msgstr "Rutenia"
 #: kdecore/TIMEZONES:1234
 #, kde-format
 msgid "Transcarpathia"
-msgstr ""
+msgstr "Transcarpathia"
 
 #: kdecore/TIMEZONES:1235
 #, kde-format
@@ -12377,7 +12280,7 @@ msgstr "Moscova+00, mar Caspio"
 #: kdecore/TIMEZONES:1243
 #, kde-format
 msgid "MSK+00 - Volgograd"
-msgstr ""
+msgstr "MSK+00 — Volgograd"
 
 #: kdecore/TIMEZONES:1244
 #, kde-format
@@ -12402,10 +12305,9 @@ msgstr "Zaporozh'ye, Lugansk leste / Zaporizhia, Luhansk leste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1250
-#, fuzzy, kde-format
-#| msgid "Zaporozh'ye, E Lugansk / Zaporizhia, E Luhansk"
+#, kde-format
 msgid "Zaporozhye and east Lugansk"
-msgstr "Zaporozh'ye, Lugansk leste / Zaporizhia, Luhansk leste"
+msgstr "Zaporozhye e leste de Lugansk"
 
 #: kdecore/TIMEZONES:1251
 #, kde-format
@@ -12574,19 +12476,18 @@ msgstr "Pacífico/Illas Auckland"
 #: kdecore/TIMEZONES:1301
 #, kde-format
 msgid "New Zealand (most areas)"
-msgstr ""
+msgstr "Nova Zelandia (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1302
-#, fuzzy, kde-format
-#| msgid "Pacific/Honolulu"
+#, kde-format
 msgid "Pacific/Bougainville"
-msgstr "América/Honolulú"
+msgstr "Pacífico/Bougainville"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1304
 #, kde-format
 msgid "Bougainville"
-msgstr ""
+msgstr "Bougainville"
 
 #: kdecore/TIMEZONES:1305
 #, kde-format
@@ -12606,10 +12507,9 @@ msgstr "Chuuk (Truk) e Yap"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1312
-#, fuzzy, kde-format
-#| msgid "Chuuk (Truk) and Yap"
+#, kde-format
 msgid "Chuuk/Truk, Yap"
-msgstr "Chuuk (Truk) e Yap"
+msgstr "Chuuk/Truk, Yap"
 
 #: kdecore/TIMEZONES:1313
 #, kde-format
@@ -12618,10 +12518,9 @@ msgstr "Pacífico/Illa de Pascua"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1317
-#, fuzzy, kde-format
-#| msgid "Chile/EasterIsland"
+#, kde-format
 msgid "Easter Island"
-msgstr "Chile/Illa de Pascua"
+msgstr "Illa de Pascua"
 
 #: kdecore/TIMEZONES:1318
 #, kde-format
@@ -12744,7 +12643,7 @@ msgstr "Pacífico/Illas Majuro"
 #: kdecore/TIMEZONES:1352
 #, kde-format
 msgid "Marshall Islands (most areas)"
-msgstr ""
+msgstr "Illas Marshall (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1353
 #, kde-format
@@ -12816,10 +12715,9 @@ msgstr "Pohnpei (Ponape)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1370
-#, fuzzy, kde-format
-#| msgid "Pohnpei (Ponape)"
+#, kde-format
 msgid "Pohnpei/Ponape"
-msgstr "Pohnpei (Ponape)"
+msgstr "Pohnpei/Ponape"
 
 #: kdecore/TIMEZONES:1371
 #, kde-format
@@ -12841,7 +12739,7 @@ msgstr "Pacífico/Port Moresby"
 #: kdecore/TIMEZONES:1376
 #, kde-format
 msgid "Papua New Guinea (most areas)"
-msgstr ""
+msgstr "Papúa Nova Guinea (maioría das zonas)"
 
 #: kdecore/TIMEZONES:1377
 #, kde-format
@@ -12950,7 +12848,7 @@ msgstr "Turquía"
 #: kdecore/TIMEZONES:1405
 #, kde-format
 msgid "US/Alaska"
-msgstr "US/Alaska"
+msgstr "US/Alasca"
 
 #: kdecore/TIMEZONES:1408
 #, kde-format
