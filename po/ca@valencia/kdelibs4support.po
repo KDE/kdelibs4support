@@ -2440,7 +2440,7 @@ msgstr "cap error"
 #: kdecore/k3resolver.cpp:534
 #, kde-format
 msgid "requested family not supported for this host name"
-msgstr "no s'accepta la família sol·licitada per a este nom d'ordinador"
+msgstr "no s'accepta la família sol·licitada per a este nom d'amfitrió"
 
 #: kdecore/k3resolver.cpp:535 kdecore/netsupp.cpp:867
 #, kde-format
@@ -2598,7 +2598,7 @@ msgstr "s'ha produït un error desconegut/inesperat"
 #, kde-format
 msgctxt "Socket error code RemotelyDisconnected"
 msgid "remote host closed connection"
-msgstr "l'ordinador remot ha tancat la connexió"
+msgstr "l'amfitrió remot ha tancat la connexió"
 
 #: kdecore/k4aboutdata.cpp:267
 #, kde-format
@@ -7958,7 +7958,7 @@ msgstr "Error durant el canvi de nom."
 #: kdecore/ksocketfactory.cpp:92 kdecore/ksocketfactory.cpp:106
 #, kde-format
 msgid "Timed out trying to connect to remote host"
-msgstr "Temps límit excedit en intentar connectar amb l'ordinador remot"
+msgstr "Temps límit excedit en intentar connectar amb l'amfitrió remot"
 
 #: kdecore/netsupp.cpp:866
 #, kde-format
@@ -14489,7 +14489,7 @@ msgstr "Ha fallat la prova de la clau privada."
 #: kssl/ksslcertificate.cpp:1151
 #, kde-format
 msgid "The certificate has not been issued for this host."
-msgstr "El certificat no s'ha emés per a este ordinador."
+msgstr "El certificat no s'ha emés per a este amfitrió."
 
 #: kssl/ksslcertificate.cpp:1153
 #, kde-format
