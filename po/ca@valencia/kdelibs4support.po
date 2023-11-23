@@ -2562,7 +2562,7 @@ msgstr "s'ha rebutjat activament la connexió"
 #, kde-format
 msgctxt "Socket error code ConnectionTimedOut"
 msgid "connection timed out"
-msgstr "la connexió ha excedit el temps límit"
+msgstr "la connexió ha excedit el temps"
 
 #: kdecore/k3socketbase.cpp:265
 #, kde-format
@@ -2586,7 +2586,7 @@ msgstr "no s'admet l'operació"
 #, kde-format
 msgctxt "Socket error code Timeout"
 msgid "timed operation timed out"
-msgstr "l'operació programada ha excedit el temps límit"
+msgstr "l'operació programada ha excedit el temps"
 
 #: kdecore/k3socketbase.cpp:285
 #, kde-format
