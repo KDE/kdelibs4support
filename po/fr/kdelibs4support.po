@@ -1,6 +1,6 @@
 # translation of kdelibs4.po to Français
 # translation of kdelibs4.po to
-# SPDX-FileCopyrightText: 2021, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
+# SPDX-FileCopyrightText: 2021, 2023 Xavier Besnard <xavier.besnard@kde.org>
 # Matthieu Robin <kde@macolu.org>, 2002,2003, 2004.
 # Robert Jacolin <rjacolin@ifrance.com>, 2003,2004.
 # Gilles Caulier <caulier.gilles@free.fr>, 2003.
@@ -25,7 +25,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
 "PO-Revision-Date: 2023-11-06 17:19+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -49,7 +49,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "jcorn@free.fr,kde@macolu.org,renard@kde.org,vpinon@kde.org,sdepiets@gmail."
-"com, xavier.besnard@neuf.fr"
+"com, xavier.besnard@kde.org"
 
 #, kde-format
 msgctxt "color"
