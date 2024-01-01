@@ -13356,7 +13356,7 @@ msgstr "Carpeta nova..."
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Move to Trash"
-msgstr "Llença a la paperera"
+msgstr "Llença a dins de la paperera"
 
 #: kio/kdirselectdialog.cpp:359
 #, kde-format
