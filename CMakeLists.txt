@@ -224,7 +224,8 @@ install(EXPORT KF5KDELibs4SupportTargets
         FILE KF5KDELibs4LibraryTargets.cmake
         COMPONENT Devel)
 
-feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
+include(ECMFeatureSummary)
+ecm_feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 if (HAVE_X11 AND NOT X11_SM_FOUND)
   message(FATAL_ERROR "The X11 Session Management library (libSM) is required when building on X11.")
