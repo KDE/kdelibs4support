@@ -31,9 +31,9 @@
 <keyword
 >KDE</keyword>
 <keyword
->KDebugdialog</keyword>
+>KDebugDialog</keyword>
 <keyword
->Debug</keyword>
+>Déboguer</keyword>
 </keywordset>
 </articleinfo>
 
@@ -42,7 +42,7 @@
 >&kdebugdialog; est une boîte de dialogue pour gérer les messages de diagnostic pendant le fonctionnement des applications. Elle dispose d'un mode simplifié et d'un mode complet.</para>
 <para
 >Afin de pouvoir effectuer des changements, <guilabel
->Désactiver toutes les sorties de déboguage</guilabel
+>Désactiver toutes les sorties de débogage</guilabel
 > doit être décoché.</para>
 
 <note>
@@ -80,7 +80,7 @@
 <para
 >Saisissez une chaîne dans la boîte <guilabel
 >Rechercher</guilabel
-> en haut de la liste. Ceci vous permet de filtrer les zones affichées dans la liste. Utilisez les boutons en-dessous de la liste pour sélectionner ou désélectionner tous les éléments de la liste (les autres zones ne sont pas affectées), ou modifier la sortie de déboguage pour un seul élément en utilisant la case à cocher qui se trouve devant lui. </para>
+> en haut de la liste. Ceci vous permet de filtrer les zones affichées dans la liste. Utilisez les boutons en-dessous de la liste pour sélectionner ou désélectionner tous les éléments de la liste (les autres zones ne sont pas affectées), ou modifier la sortie de débogage pour un seul élément en utilisant la case à cocher qui se trouve devant lui. </para>
 
 </listitem>
 </varlistentry>
@@ -94,10 +94,10 @@
 >kdebugdialog5</command
 ><option
 >--fullmode</option
->, vous pouvez définir séparément pour chaque niveau de gravité ce qui doit être fait des messages de diagnostic de ce niveau, et cela pour chaque zone de déboguage.</para>
+>, vous pouvez définir séparément pour chaque niveau de gravité ce qui doit être fait des messages de diagnostic de ce niveau, et cela pour chaque zone de débogage.</para>
 
 <para
->En mode complet, choisissez d'abord la zone de déboguage qui vous intéresse dans la liste sur la gauche de la boîte de dialogue en utilisant la zone de recherche en haut de la liste.</para>
+>En mode complet, choisissez d'abord la zone de débogage qui vous intéresse dans la liste sur la gauche de la boîte de dialogue en utilisant la zone de recherche en haut de la liste.</para>
 
 <para
 >Vous pouvez voir la sortie pour différents types de messages de manière indépendante :</para>
