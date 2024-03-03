@@ -9,22 +9,22 @@
 # Xosé <xosecalvo@gmail.com>, 2010.
 # Marce Villarino <mvillarino@kde-espana.es>, 2011, 2014.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2017.
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2023-11-11 17:39+0100\n"
+"PO-Revision-Date: 2024-03-02 17:20+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -384,27 +384,27 @@ msgstr "Gris tebra"
 #, kde-format
 msgctxt "color"
 msgid "DodgerBlue"
-msgstr "Azul Dodgers"
+msgstr "Azul Dodger"
 
 #, kde-format
 msgctxt "color"
 msgid "DodgerBlue1"
-msgstr "Azul Dodgers 1"
+msgstr "Azul Dodger 1"
 
 #, kde-format
 msgctxt "color"
 msgid "DodgerBlue2"
-msgstr "Azul Dodgers 2"
+msgstr "Azul Dodger 2"
 
 #, kde-format
 msgctxt "color"
 msgid "DodgerBlue3"
-msgstr "Azul Dodgers 3"
+msgstr "Azul Dodger 3"
 
 #, kde-format
 msgctxt "color"
 msgid "DodgerBlue4"
-msgstr "Azul Dodgers 4"
+msgstr "Azul Dodger 4"
 
 #, kde-format
 msgctxt "color"
@@ -1614,27 +1614,27 @@ msgstr "millo sedoso 4"
 #, kde-format
 msgctxt "color"
 msgid "cyan"
-msgstr "cian"
+msgstr "ciano"
 
 #, kde-format
 msgctxt "color"
 msgid "cyan1"
-msgstr "cian 1"
+msgstr "ciano 1"
 
 #, kde-format
 msgctxt "color"
 msgid "cyan2"
-msgstr "cian 2"
+msgstr "ciano 2"
 
 #, kde-format
 msgctxt "color"
 msgid "cyan3"
-msgstr "cian 3"
+msgstr "ciano 3"
 
 #, kde-format
 msgctxt "color"
 msgid "cyan4"
-msgstr "cian 4"
+msgstr "ciano 4"
 
 #, kde-format
 msgctxt "color"
@@ -2827,7 +2827,7 @@ msgstr "Onte"
 #, kde-format
 msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, LongFormat"
 msgid "Anno Martyrum"
-msgstr "Era Diocleciana (Anno Diocletiani)"
+msgstr "Era diocleciana"
 
 #: kdecore/kcalendarsystemcoptic.cpp:46
 #, kde-format
@@ -4136,7 +4136,7 @@ msgstr "mai"
 #, kde-format
 msgctxt "Gregorian month 6 - KLocale::ShortName"
 msgid "Jun"
-msgstr "xun"
+msgstr "xuñ"
 
 #: kdecore/kcalendarsystemgregorian.cpp:212
 #, kde-format
@@ -5697,7 +5697,7 @@ msgstr "de Sha`ban"
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::LongName Possessive"
 msgid "of Ramadan"
-msgstr "de Ramadán"
+msgstr "do ramadán"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:277
 #, kde-format
@@ -6754,7 +6754,7 @@ msgstr "mai"
 #, kde-format
 msgctxt "Julian month 6 - KLocale::ShortName"
 msgid "Jun"
-msgstr "xun"
+msgstr "xuñ"
 
 #: kdecore/kcalendarsystemjulian.cpp:246
 #, kde-format
@@ -7507,7 +7507,7 @@ msgstr "Árabe-índica do leste"
 #, kde-format
 msgctxt "digit set"
 msgid "Gujarati"
-msgstr "Guxaratí"
+msgstr "Guxarati"
 
 #: kdecore/klocale_kde.cpp:800
 #, kde-format
@@ -7537,7 +7537,7 @@ msgstr "Malayalam"
 #, kde-format
 msgctxt "digit set"
 msgid "Oriya"
-msgstr "Orixa"
+msgstr "Oriya"
 
 #: kdecore/klocale_kde.cpp:815
 #, kde-format
@@ -7974,7 +7974,7 @@ msgstr "África/Accra"
 #: kdecore/TIMEZONES:3
 #, kde-format
 msgid "Africa/Addis_Ababa"
-msgstr "África/Addis Abeba"
+msgstr "África/Adís Abeba"
 
 #: kdecore/TIMEZONES:4
 #, kde-format
@@ -7999,7 +7999,7 @@ msgstr "África/Bamako"
 #: kdecore/TIMEZONES:8
 #, kde-format
 msgid "Africa/Bangui"
-msgstr "África/Bungui"
+msgstr "África/Bangui"
 
 #: kdecore/TIMEZONES:9
 #, kde-format
@@ -8081,7 +8081,7 @@ msgstr "África/Douala"
 #: kdecore/TIMEZONES:26
 #, kde-format
 msgid "Africa/El_Aaiun"
-msgstr "África/El Aaiun"
+msgstr "África/O Aaiún"
 
 #: kdecore/TIMEZONES:27
 #, kde-format
@@ -8101,7 +8101,7 @@ msgstr "África/Harare"
 #: kdecore/TIMEZONES:30
 #, kde-format
 msgid "Africa/Johannesburg"
-msgstr "África/Johanesburgo"
+msgstr "África/Xohanesburgo"
 
 #: kdecore/TIMEZONES:31
 #, kde-format
@@ -8116,7 +8116,7 @@ msgstr "África/Kampala"
 #: kdecore/TIMEZONES:33
 #, kde-format
 msgid "Africa/Khartoum"
-msgstr "África/Cartún"
+msgstr "África/Khartún"
 
 #: kdecore/TIMEZONES:34
 #, kde-format
@@ -8205,7 +8205,7 @@ msgstr "África/Mbabane"
 #: kdecore/TIMEZONES:54
 #, kde-format
 msgid "Africa/Mogadishu"
-msgstr "África/Mogadiscio"
+msgstr "África/Mogadixo"
 
 #: kdecore/TIMEZONES:55
 #, kde-format
@@ -8220,7 +8220,7 @@ msgstr "África/Nairobi"
 #: kdecore/TIMEZONES:57
 #, kde-format
 msgid "Africa/Ndjamena"
-msgstr "África/N'djamena"
+msgstr "África/Xamena"
 
 #: kdecore/TIMEZONES:58
 #, kde-format
@@ -8255,7 +8255,7 @@ msgstr "África/Santo Tomé"
 #: kdecore/TIMEZONES:64
 #, kde-format
 msgid "Africa/Timbuktu"
-msgstr "África/Timbuktú"
+msgstr "África/Tombouctou"
 
 #: kdecore/TIMEZONES:65
 #, kde-format
@@ -8380,7 +8380,7 @@ msgstr "Arxentina (maioría das zonas: CB, CC, CN, ER, FM, MN, SE, SF)"
 #: kdecore/TIMEZONES:99
 #, kde-format
 msgid "America/Argentina/Jujuy"
-msgstr "América/Argentina/Xuxui"
+msgstr "América/Arxentina/Jujuy"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:101 kdecore/TIMEZONES:366
@@ -8799,7 +8799,7 @@ msgstr "América/Danmarkshavn"
 #: kdecore/TIMEZONES:222
 #, kde-format
 msgid "east coast, north of Scoresbysund"
-msgstr "costa leste, norte de Scorebysund"
+msgstr "costa leste, norte de Ittoqqortoormiit"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:224
@@ -8981,7 +8981,7 @@ msgstr "Hora do atlántico — Nova Escocia (maioría das zonas), PEI"
 #: kdecore/TIMEZONES:274
 #, kde-format
 msgid "America/Glace_Bay"
-msgstr "América/Bahía de Glace"
+msgstr "América/Glace Bay"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:276
@@ -9013,7 +9013,7 @@ msgstr "maioría das zonas"
 #: kdecore/TIMEZONES:282
 #, kde-format
 msgid "America/Goose_Bay"
-msgstr "América/Bahía de Goose"
+msgstr "América/Goose Bay"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:284
@@ -9068,7 +9068,7 @@ msgstr "Ecuador (continental)"
 #: kdecore/TIMEZONES:296
 #, kde-format
 msgid "America/Guyana"
-msgstr "América/Guiana"
+msgstr "América/Güiana"
 
 #: kdecore/TIMEZONES:297
 #, kde-format
@@ -9100,7 +9100,7 @@ msgstr "Hora estándar da montaña — Sonora"
 #: kdecore/TIMEZONES:306
 #, kde-format
 msgid "America/Indiana/Indianapolis"
-msgstr "América/Indiana/Indianápole"
+msgstr "América/Indiana/Indianapolis"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:310
@@ -9208,7 +9208,7 @@ msgstr "Oriental — IN (Suiza)"
 #: kdecore/TIMEZONES:340
 #, kde-format
 msgid "America/Indiana/Vincennes"
-msgstr "América/Indiana/Vicennes"
+msgstr "América/Indiana/Vincennes"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:342
@@ -9491,7 +9491,7 @@ msgstr "América/Mérida"
 #: kdecore/TIMEZONES:428
 #, kde-format
 msgid "Central Time - Campeche, Yucatan"
-msgstr "Hora do centro — Campeche, Yucatán"
+msgstr "Hora do centro — Campeche, Iucatán"
 
 #: kdecore/TIMEZONES:429
 #, kde-format
@@ -9524,7 +9524,7 @@ msgstr "Hora do centro — maioría das zonas"
 #: kdecore/TIMEZONES:439
 #, kde-format
 msgid "America/Miquelon"
-msgstr "América/Miguelón"
+msgstr "América/Miquelón"
 
 #: kdecore/TIMEZONES:440
 #, kde-format
@@ -9598,7 +9598,7 @@ msgstr "América/Nassau"
 #: kdecore/TIMEZONES:458
 #, kde-format
 msgid "America/New_York"
-msgstr "América/Nova Iorque"
+msgstr "América/Nova York"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:460 kdecore/TIMEZONES:1422
@@ -9835,7 +9835,7 @@ msgstr "América/Punta Arenas"
 #: kdecore/TIMEZONES:525
 #, kde-format
 msgid "Region of Magallanes"
-msgstr "Rexión de Magalláns"
+msgstr "Rexión de Magallanes"
 
 #: kdecore/TIMEZONES:526
 #, kde-format
@@ -9981,7 +9981,7 @@ msgstr "América/Santo Domingo"
 #: kdecore/TIMEZONES:571
 #, kde-format
 msgid "America/Sao_Paulo"
-msgstr "América/Sao Paulo"
+msgstr "América/São Paulo"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:573 kdecore/TIMEZONES:1096
@@ -10582,7 +10582,7 @@ msgstr "Asia/Bagdad"
 #: kdecore/TIMEZONES:746
 #, kde-format
 msgid "Asia/Bahrain"
-msgstr "Asia/Barein"
+msgstr "Asia/Bahrain"
 
 #: kdecore/TIMEZONES:747
 #, kde-format
@@ -10614,7 +10614,7 @@ msgstr "Asia/Pequín"
 #: kdecore/TIMEZONES:754 kdecore/TIMEZONES:924 kdecore/TIMEZONES:1295
 #, kde-format
 msgid "east China - Beijing, Guangdong, Shanghai, etc."
-msgstr "leste da China — Pequin, Guangdong, Shangai etc."
+msgstr "leste da China — Pequín, Guangdong, Shanghai etc."
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:756
@@ -10667,13 +10667,13 @@ msgstr "Dornod, Sukhbaatar"
 #: kdecore/TIMEZONES:767
 #, kde-format
 msgid "Asia/Chongqing"
-msgstr "Asia/Chogqing"
+msgstr "Asia/Chongqing"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:769 kdecore/TIMEZONES:774
 #, kde-format
 msgid "central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc."
-msgstr "centro da China — Sichuán, Yunnan, Guangxi, Shaanxi, Guizhou etc."
+msgstr "centro da China — Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou etc."
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:771
@@ -10741,7 +10741,7 @@ msgstr "Asia/Gaza"
 #: kdecore/TIMEZONES:787
 #, kde-format
 msgid "Gaza Strip"
-msgstr "Franxa de Gaxa"
+msgstr "Franxa de Gaza"
 
 #: kdecore/TIMEZONES:788
 #, kde-format
@@ -10812,7 +10812,7 @@ msgstr "MSK+05 — Irkutsk, Buryatia"
 #: kdecore/TIMEZONES:806
 #, kde-format
 msgid "Asia/Jakarta"
-msgstr "Asia/Xacarta"
+msgstr "Asia/Iacarta"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:808
@@ -10999,19 +10999,19 @@ msgstr "Asia/Macau"
 #: kdecore/TIMEZONES:857
 #, kde-format
 msgid "Asia/Magadan"
-msgstr "Asia/Magadán"
+msgstr "Asia/Magadan"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:859
 #, kde-format
 msgid "Moscow+08 - Magadan"
-msgstr "Moscova+08 — Magadán"
+msgstr "Moscova+08 — Magadan"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:861
 #, kde-format
 msgid "MSK+08 - Magadan"
-msgstr "MSK+08 — Magadán"
+msgstr "MSK+08 — Magadan"
 
 #: kdecore/TIMEZONES:862
 #, kde-format
@@ -11022,7 +11022,9 @@ msgstr "Asia/Makassar"
 #: kdecore/TIMEZONES:864 kdecore/TIMEZONES:950
 #, kde-format
 msgid "east & south Borneo, Celebes, Bali, Nusa Tenggara, west Timor"
-msgstr "leste e sur de Borneo, illas Célebes, Bali, Nusa Tengarra, Timor-oeste"
+msgstr ""
+"leste e sur de Borneo, illas Célebes, Bali, illas menores da Sonda, Timor-"
+"oeste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:866
@@ -11030,8 +11032,8 @@ msgstr "leste e sur de Borneo, illas Célebes, Bali, Nusa Tengarra, Timor-oeste"
 msgid ""
 "east & south Borneo, Sulawesi (Celebes), Bali, Nusa Tenggara, west Timor"
 msgstr ""
-"leste e sur de Borneo, Sulawesi (illas Célebes), Bali, Nusa Tengarra, Timor-"
-"oeste"
+"leste e sur de Borneo, Sulawesi (illas Célebes), Bali, illas menores da "
+"Sonda, Timor-oeste"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:868
@@ -11188,7 +11190,7 @@ msgstr "Qyzylorda/Kyzylorda/Kzyl-Orda"
 #: kdecore/TIMEZONES:908
 #, kde-format
 msgid "Asia/Rangoon"
-msgstr "Asia/Rangún"
+msgstr "Asia/Yangon"
 
 #: kdecore/TIMEZONES:909
 #, kde-format
@@ -11198,7 +11200,7 @@ msgstr "Asia/Riyadh"
 #: kdecore/TIMEZONES:910
 #, kde-format
 msgid "Asia/Saigon"
-msgstr "Asia/Saigón"
+msgstr "Asia/Ho Chi Minh"
 
 #: kdecore/TIMEZONES:911
 #, kde-format
@@ -11209,7 +11211,7 @@ msgstr "Asia/Sakhalin"
 #: kdecore/TIMEZONES:913
 #, kde-format
 msgid "Moscow+07 - Sakhalin Island"
-msgstr "Moscova+07 — illa Sahalin"
+msgstr "Moscova+07 — illa Sakhalin"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:915
@@ -11338,12 +11340,12 @@ msgstr "MSK+04 — Tomsk"
 #: kdecore/TIMEZONES:948
 #, kde-format
 msgid "Asia/Ujung_Pandang"
-msgstr "Asia/Ujung Pandang"
+msgstr "Asia/Makassar"
 
 #: kdecore/TIMEZONES:951
 #, kde-format
 msgid "Asia/Ulaanbaatar"
-msgstr "Asia/Ulán batar"
+msgstr "Asia/Ulaanbaatar"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:955
@@ -11354,12 +11356,12 @@ msgstr "Mongolia (maioría das zonas)"
 #: kdecore/TIMEZONES:956
 #, kde-format
 msgid "Asia/Ulan_Bator"
-msgstr "Asia/Ulán Bator"
+msgstr "Asia/Ulán Bátor"
 
 #: kdecore/TIMEZONES:959
 #, kde-format
 msgid "Asia/Urumqi"
-msgstr "Asia/Urunqui"
+msgstr "Asia/Urumqi"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:961
@@ -11517,7 +11519,7 @@ msgstr "Illas de Madeira"
 #: kdecore/TIMEZONES:1001
 #, kde-format
 msgid "Atlantic/Reykjavik"
-msgstr "Atlántico/Reikiavik"
+msgstr "Atlántico/Reiquiavik"
 
 #: kdecore/TIMEZONES:1002
 #, kde-format
@@ -11920,7 +11922,7 @@ msgstr "Europa/Bruxelas"
 #: kdecore/TIMEZONES:1149
 #, kde-format
 msgid "Europe/Bucharest"
-msgstr "Europa/Bucarés"
+msgstr "Europa/Bucarest"
 
 #: kdecore/TIMEZONES:1150
 #, kde-format
@@ -12205,7 +12207,7 @@ msgstr "Europa/Estocolmo"
 #: kdecore/TIMEZONES:1224
 #, kde-format
 msgid "Europe/Tallinn"
-msgstr "Europa/Talin"
+msgstr "Europa/Talín"
 
 #: kdecore/TIMEZONES:1225
 #, kde-format
@@ -12455,7 +12457,7 @@ msgstr "Illas Chatham"
 #: kdecore/TIMEZONES:1290
 #, kde-format
 msgid "Navajo"
-msgstr "Navaxo"
+msgstr "Navajo"
 
 #: kdecore/TIMEZONES:1293
 #, kde-format
@@ -12588,13 +12590,13 @@ msgstr "Pacífico/Illa de Guam"
 #: kdecore/TIMEZONES:1333
 #, kde-format
 msgid "Pacific/Honolulu"
-msgstr "América/Honolulú"
+msgstr "Pacífico/Honolulu"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1335 kdecore/TIMEZONES:1425
 #, kde-format
 msgid "Hawaii"
-msgstr "Havai"
+msgstr "Hawai"
 
 #: kdecore/TIMEZONES:1336
 #, kde-format
@@ -12605,7 +12607,7 @@ msgstr "Pacífico/Arquipélago Johnston"
 #: kdecore/TIMEZONES:1338
 #, kde-format
 msgid "Johnston Atoll"
-msgstr "Atolón Johnston"
+msgstr "Atol Johnston"
 
 #: kdecore/TIMEZONES:1339
 #, kde-format
@@ -12621,7 +12623,7 @@ msgstr "Illas Line"
 #: kdecore/TIMEZONES:1342
 #, kde-format
 msgid "Pacific/Kosrae"
-msgstr "Pacífico/Illa Kodrae"
+msgstr "Pacífico/Illa Kosrae"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1344
@@ -12680,7 +12682,7 @@ msgstr "Pacífico/Illa Niue"
 #: kdecore/TIMEZONES:1361
 #, kde-format
 msgid "Pacific/Norfolk"
-msgstr "Pacífico/Illas Nolfolk"
+msgstr "Pacífico/Illa Norfolk"
 
 #: kdecore/TIMEZONES:1362
 #, kde-format
@@ -12705,7 +12707,7 @@ msgstr "Pacífico/Illas Pitcairn"
 #: kdecore/TIMEZONES:1366
 #, kde-format
 msgid "Pacific/Pohnpei"
-msgstr "Pacífico/Ponape"
+msgstr "Pacífico/Pohnpei"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1368
@@ -12770,7 +12772,7 @@ msgstr "Illas da Sociedade"
 #: kdecore/TIMEZONES:1383
 #, kde-format
 msgid "Pacific/Tarawa"
-msgstr "Pacífico/Illas Torawa"
+msgstr "Pacífico/Atol Tarawa"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1385
@@ -12878,7 +12880,7 @@ msgstr "US/Leste"
 #: kdecore/TIMEZONES:1423
 #, kde-format
 msgid "US/Hawaii"
-msgstr "US/Havai"
+msgstr "EUA/Hawai"
 
 #: kdecore/TIMEZONES:1426
 #, kde-format
@@ -13954,7 +13956,7 @@ msgstr "Diálogo de autorización"
 #: kioslave/metainfo/metainfo.cpp:98
 #, kde-format
 msgid "No metainfo for %1"
-msgstr "Non hai metainformación para %1"
+msgstr "Non hai metadatos para %1"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
 #: kssl/kcm/cacertificates.ui:24
