@@ -1,0 +1,232 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY kdebugdialog5 "<application
+>KDebugDialog</application
+>">
+  <!ENTITY kappname "&kdebugdialog;">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Slovenian "INCLUDE"
+> <!-- change language only here -->
+  
+  
+]>
+
+<article id="kdebugdialog5" lang="&language;">
+<title
+>KDebugdialog</title>
+<articleinfo>
+<authorgroup>
+<author
+>&David.Faure; &David.Faure.mail;</author>
+<othercredit role="translator"
+><firstname
+>Matjaž</firstname
+><surname
+>Jeran</surname
+><affiliation
+><address
+><email
+>matjaz.jeran@amis.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>02.04.2016</date>
+<releaseinfo
+>Frameworks 5.21</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>KDebugdialog</keyword>
+<keyword
+>Odpravljanje napak</keyword>
+</keywordset>
+</articleinfo>
+
+
+<para
+>&kdebugdialog; je pogovorno okno za upravljanje diagnostičnih sporočil med izvajanjem. Obstaja preprosti in polni način.</para>
+<para
+>Da bi lahko izvajali spremembe, mora biti polje <guilabel
+>Onemogoči vse rezultate odpravljanja napak</guilabel
+> ne-odkljukano.</para>
+
+<note>
+<para
+>Samo za aplikacije, ki uporabljajo &frameworks; knjižnica kdelibs4support.</para>
+<para
+>kDebug() je bil opuščen v &kf5-full; v korist vgrajenega &Qt; kategoriziranega beleženja, glejte <ulink url="https://doc.qt.io/qt-5/qloggingcategory.html"
+>QLoggingCategory</ulink
+>. Uporabite program <ulink url="https://invent.kde.org/utilities/kdebugsettings"
+>KDebugSettings</ulink
+> za omogočanje/onemogočanje qCDebug.​ </para>
+</note>
+
+<variablelist>
+<varlistentry>
+<term
+>Preprosti način</term>
+<listitem>
+<para
+>Če preprosto zaženete <command
+>kdebugdialog5</command
+>, boste videli seznam <quote
+>območij</quote
+>, ki jih je mogoče onemogočiti ali omogočiti. Klic <function
+>kDebug(area)</function
+> v kodi bo pokazal nekaj v rezultatu odpravljanja napak le, če je območje omogočeno.</para>
+
+<note
+><para
+>Upoštevajte, da se vedno prikažejo kWarning, kError in kFatal, ki jih <emphasis
+>NE</emphasis
+> krmili ta nastavitev. </para
+></note>
+
+<para
+>Vnesite ujemajoči se niz v polje <guilabel
+>Iskanje</guilabel
+> na vrhu seznama, kar vam omogoča filtriranje območij, ki so prikazana v pogledu seznama. Uporabite gumbe pod seznamom, da izberete ali prekličete izbor vseh elementov v pogledu (druga področja niso prizadeta) ali spremenite rezultat odpravljanja napak za posamezen element s potrditvenim poljem pred njim. </para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+>Polni način</term>
+<listitem>
+<para
+>Če zaženete <command
+>kdebugdialog5</command
+> <option
+>--fullmode</option
+>, potem lahko za vsako stopnjo resnosti napak posebej določite, kaj je treba storiti z diagnostičnimi sporočili te ravni, in enako za vsako območje za odpravljanje napak .</para>
+
+<para
+>V polnem načinu morate najprej izbrati območje za odpravljanje napak, ki vas zanima, s seznama na levi strani pogovornega okna z uporabo iskalnega polja na vrhu seznama.</para>
+
+<para
+>Neodvisno lahko nastavite izpis za različne vrste sporočil:</para>
+
+<itemizedlist>
+<listitem
+><para
+><guilabel
+>Informacije</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Opozorilo</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Napaka</guilabel
+></para
+></listitem>
+<listitem
+><para
+><guilabel
+>Usodna napaka</guilabel
+></para
+></listitem>
+</itemizedlist>
+
+<para
+>Za vsako od teh vrst lahko nastavite naslednje:</para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>Izhod v:</guilabel
+></term>
+<listitem>
+<para
+>V tem kombiniranem polju lahko izberete, kam naj bodo sporočila izpisana. Možnosti so: <quote
+>Datoteka</quote
+>, <quote
+>Sporočilno polje</quote
+>, <quote
+>Shell</quote
+> (kar pomeni stderr) in <quote
+>Syslog</quote
+>. Ne usmerjajte usodnih sporočil v syslog, razen če ste sami skrbnik sistema. Privzeto je <quote
+>Shell</quote
+>.</para
+> 
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Ime datoteke:</guilabel
+></term>
+<listitem
+><para
+>To je omogočeno le, če ste za izhod izbrali <quote
+>Datoteka</quote
+> in podali ime te datoteke (ki se razume glede na trenutno mapo). Privzeta vrednost je <filename
+>kdebug.dbg</filename
+>.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Poleg tega lahko označite tudi potrditveno polje <guilabel
+>Prekini ob usodnih napakah</guilabel
+>. Če se v tem primeru prikaže diagnostično sporočilo s stopnjo resnosti <computeroutput
+>KDEBUG_FATAL</computeroutput
+>, se aplikacija po izpisu sporočila prekine s SIGABRT.</para>
+
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Ko zaprete pogovorno okno s pritiskom <guibutton
+>V redu</guibutton
+>, vaši vnosi veljajo takoj in se shranijo v <filename
+>$<envar
+>XDG_CONFIG_HOME</envar
+>/kdebugrc</filename
+> (<filename
+>~/.config /kdebugrc</filename
+> privzeto). Ko pritisnete <guibutton
+>Prekliči</guibutton
+>, se vaši vnosi zavržejo in obnovijo stari.</para>
+
+<para
+>Zasluge Kalleju Dalheimerju za izvirno različico &kdebugdialog;</para>
+
+<para
+>Prevod: Matjaž Jeran <email
+>matjaz.jeran@amis.net</email
+></para
+> 
+
+&underFDL;
+
+</article>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-general-insert-case: lower
+sgml-shorttag: t
+End:
+-->
+

@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Slovenian "INCLUDE">
+]>
+<article id="kcm_ssl" lang="&language;">
+<title
+>SSL različice in potrdila</title>
+<articleinfo>
+<authorgroup>
+<author
+><firstname
+>Subhashish</firstname
+> <surname
+>Pradhan</surname
+></author>
+<author
+>&TC.Hollingsworth; &TC.Hollingsworth.mail;</author>
+<othercredit role="translator"
+><firstname
+>Matjaž</firstname
+><surname
+>Jeran</surname
+><affiliation
+><address
+><email
+>matjaz.jeran@amis.net</email
+></address
+></affiliation
+><contrib
+>Prevod</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>09.04.2015</date>
+<releaseinfo
+>Frameworks 5.9</releaseinfo>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>Sistemske nastavitve</keyword>
+<keyword
+>SSL</keyword>
+<keyword
+>potrdila</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="intro">
+<title
+>Uvod</title>
+<para
+>&kde; nudi seznam vseh potrdil X.509, ki jih uporablja sistem. Do njih lahko dostopate v modulu <guilabel
+>Nastavitve SSL</guilabel
+> v &systemsettings;.</para>
+
+<para
+>Ta modul ponuja kategoriziran seznam vseh različic in certifikatov SSL. Ogledate si lahko podrobnosti vsakega od potrdil in jih dodate, izbrišete, onemogočite ali omogočite.</para>
+
+<para
+>Potrdila so razvrščena v <guilabel
+>Sistemska potrdila</guilabel
+> in <guilabel
+>Uporabniško dodana potrdila</guilabel
+>. <guilabel
+>Sistemska potrdila</guilabel
+> nadalje kategorizira organizacija, ki jih je izdala.</para>
+
+<screenshot id="screenshot-module">
+<screeninfo
+>Modul različic in potrdil SSL</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="module.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Modul različic in potrdil SSL</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="details">
+<title
+>Ogled podrobnosti potrdila</title>
+
+<para
+>Izberite potrdilo pod navedeno organizacijo in kliknite <guibutton
+>Prikaži...</guibutton
+> pod seznamom, da si ogledate podrobnosti potrdila.</para>
+
+<screenshot id="screenshot-details">
+<screeninfo
+>Ogled podrobnosti potrdila</screeninfo>
+<mediaobject>
+<imageobject
+><imagedata fileref="details.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Okno s podrobnostmi potrdila.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+<sect2 id="enable-disable">
+<title
+>Omogočanje ali onemogočanje potrdila</title>
+
+<para
+>Najprej izberite potrdilo, navedeno pod organizacijo. Nato kliknite gumb <guibutton
+>Omogoči</guibutton
+>, da omogočite potrdilo, ali kliknite gumb <guibutton
+>Onemogoči</guibutton
+>, da onemogočite omogočeno potrdilo.</para>
+
+<para
+>Potrdilo lahko omogočite ali onemogočite tudi tako, da izberete ali počistite potrditveno polje pred potrdilom.</para>
+
+<tip>
+<para
+>Več potrdil lahko omogočite ali onemogočite tako, da jih izberete, medtem ko držite &Ctrl; in nato kliknite gumb <guibutton
+>Omogoči</guibutton
+> ali <guibutton
+>Onemogoči</guibutton
+> pod seznamom.</para>
+</tip>
+
+</sect2>
+
+<sect2 id="add">
+<title
+>Dodajanje potrdila</title>
+
+<!--link file selector dialog to buildingblocks when its done-->
+<para
+>Najprej kliknite gumb <guibutton
+>Dodaj...</guibutton
+> pod seznamom potrdil. Odprlo se bo pogovorno okno za izbiro datotek, ki vam bo omogočilo, da poiščete, kje so shranjene datoteke potrdil. Ko najdete datoteko potrdila, jo izberite in kliknite gumb <guibutton
+>Odpri</guibutton
+>, da ga dodate.</para>
+
+<note>
+<para
+>Potrdila morajo biti v eni od naslednjih oblik: <acronym
+>DER</acronym
+>, <acronym
+>PEM</acronym
+> ali potrdilo &Netscape;-kodirano X.509.</para>
+</note>
+
+</sect2>
+
+<sect2 id="remove">
+<title
+>Odstranjevanje potrdila</title>
+
+<para
+>Izberite navedeno potrdilo, ki ga želite odstraniti, in kliknite gumb <guibutton
+>Odstrani</guibutton
+>, da odstranite potrdilo.</para>
+
+<important>
+<para
+>Sistemskih potrdil ni mogoče odstraniti.</para>
+</important>
+
+</sect2>
+
+<sect2 id="ack">
+<title
+>Hvala in zasluge</title>
+
+<para
+>Posebna zahvala udeležencu Google Code-In 2011 Subhashishu Pradhanu za pisanje tega članka.</para>
+
+</sect2>
+
+</sect1>
+
+</article>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:;
+-->
