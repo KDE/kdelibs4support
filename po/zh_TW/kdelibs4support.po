@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2024-01-10 13:48+0900\n"
+"PO-Revision-Date: 2024-04-06 01:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -7518,7 +7518,7 @@ msgstr "Gurmukhi"
 #, kde-format
 msgctxt "digit set"
 msgid "Kannada"
-msgstr "Kannada"
+msgstr "卡納達語"
 
 #: kdecore/klocale_kde.cpp:806
 #, kde-format
@@ -7530,13 +7530,13 @@ msgstr "高棉語"
 #, kde-format
 msgctxt "digit set"
 msgid "Malayalam"
-msgstr "Malayalam"
+msgstr "馬拉雅拉姆語"
 
 #: kdecore/klocale_kde.cpp:812
 #, kde-format
 msgctxt "digit set"
 msgid "Oriya"
-msgstr "Oriya"
+msgstr "歐利亞語"
 
 #: kdecore/klocale_kde.cpp:815
 #, kde-format
@@ -7548,7 +7548,7 @@ msgstr "坦米爾文"
 #, kde-format
 msgctxt "digit set"
 msgid "Telugu"
-msgstr "Telugu"
+msgstr "泰盧固語"
 
 #: kdecore/klocale_kde.cpp:821
 #, kde-format
