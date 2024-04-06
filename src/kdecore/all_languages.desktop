@@ -501,7 +501,7 @@ Name[xh]=Amharic
 Name[x-test]=xxAmharicxx
 Name[zh_CN]=阿姆哈拉语
 Name[zh_HK]=衣索比亞官方語
-Name[zh_TW]=衣索比亞官方語
+Name[zh_TW]=阿姆哈拉語
 [ar]
 Name=Arabic
 Name[af]=Arabies
@@ -1082,7 +1082,7 @@ Name[xh]=Bashkir
 Name[x-test]=xxBashkirxx
 Name[zh_CN]=巴什基尔语
 Name[zh_HK]=Bashkir語
-Name[zh_TW]=Bashkir語
+Name[zh_TW]=巴什吉爾語
 [be]
 Name=Belarusian
 Name[af]=Belarusian
@@ -2633,7 +2633,7 @@ Name[vi]=Tiếng Tatar Crimea
 Name[wa]=Tatår del Crimêye
 Name[x-test]=xxCrimean Tatarxx
 Name[zh_CN]=克里米亚鞑靼语
-Name[zh_TW]=Crimean Tatar
+Name[zh_TW]=克里米亞韃靼語
 [cs]
 Name=Czech
 Name[af]=Tsjeggië
@@ -3514,7 +3514,7 @@ Name[xh]=Dzongkha
 Name[x-test]=xxDzongkhaxx
 Name[zh_CN]=宗喀语
 Name[zh_HK]=Dzongkha語
-Name[zh_TW]=Dzongkha語
+Name[zh_TW]=宗卡語
 [el]
 Name=Greek
 Name[af]=Grieks
@@ -8113,7 +8113,7 @@ Name[xh]=Kannada
 Name[x-test]=xxKannadaxx
 Name[zh_CN]=坎那达语
 Name[zh_HK]=坎那達語
-Name[zh_TW]=坎那達語
+Name[zh_TW]=卡納達語
 [ko]
 Name=Korean
 Name[af]=Koriaanse
@@ -9506,7 +9506,7 @@ Name[vi]=Tiếng Maithil
 Name[wa]=Maithili
 Name[x-test]=xxMaithilixx
 Name[zh_CN]=迈蒂利语
-Name[zh_TW]=Maithili語
+Name[zh_TW]=邁蒂利語
 [mg]
 Name=Malagasy
 Name[af]=Malagasy
@@ -10009,7 +10009,7 @@ Name[xh]=Malayalam
 Name[x-test]=xxMalayalamxx
 Name[zh_CN]=马拉雅拉姆语
 Name[zh_HK]=馬來亞拉姆語
-Name[zh_TW]=馬來亞拉姆語
+Name[zh_TW]=馬拉雅拉姆語
 [mn]
 Name=Mongolian
 Name[af]=Mongolees
@@ -12114,7 +12114,7 @@ Name[xh]=Oriya
 Name[x-test]=xxOriyaxx
 Name[zh_CN]=奥里亚语
 Name[zh_HK]=Oriya語
-Name[zh_TW]=Oriya語
+Name[zh_TW]=歐利亞語
 [os]
 Name=Ossetian
 Name[af]=Ossetian
@@ -13711,7 +13711,7 @@ Name[xh]=Sindhi
 Name[x-test]=xxSindhixx
 Name[zh_CN]=信德语
 Name[zh_HK]=Sindhi語
-Name[zh_TW]=Sindhi語
+Name[zh_TW]=信德語
 [se]
 Name=Northern Sami
 Name[af]=Noordelike Sami
@@ -13911,7 +13911,7 @@ Name[xh]=Sango
 Name[x-test]=xxSangoxx
 Name[zh_CN]=桑戈语
 Name[zh_HK]=Sango語
-Name[zh_TW]=Sango語
+Name[zh_TW]=桑戈語
 [si]
 Name=Sinhala
 Name[ar]=السنهالية
@@ -13992,7 +13992,7 @@ Name[vi]=Tiếng Sinhala
 Name[wa]=Sinhala
 Name[x-test]=xxSinhalaxx
 Name[zh_CN]=僧伽罗语
-Name[zh_TW]=Sinhala
+Name[zh_TW]=僧伽羅語
 [sk]
 Name=Slovak
 Name[af]=Slovakies
@@ -15647,7 +15647,7 @@ Name[xh]=Telugu
 Name[x-test]=xxTeluguxx
 Name[zh_CN]=泰卢固语
 Name[zh_HK]=特拉古語
-Name[zh_TW]=特拉古語
+Name[zh_TW]=泰盧固語
 [tg]
 Name=Tajik
 Name[af]=Tajikees
@@ -17821,7 +17821,7 @@ Name[xh]=isixhosa
 Name[x-test]=xxXhosaxx
 Name[zh_CN]=科萨语
 Name[zh_HK]=科薩語
-Name[zh_TW]=科薩語
+Name[zh_TW]=南非柯薩語
 [x-test]
 Name=KDE Test Language
 Name[ar]=لغة كِيدِي الاختبارية
