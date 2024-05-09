@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2024-05-08 02:58+0900\n"
+"PO-Revision-Date: 2024-05-08 13:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -7494,7 +7494,7 @@ msgstr "孟加拉語"
 #, kde-format
 msgctxt "digit set"
 msgid "Devanagari"
-msgstr "Devanagari"
+msgstr "天城文字"
 
 #: kdecore/klocale_kde.cpp:794
 #, kde-format
@@ -7506,7 +7506,7 @@ msgstr "東阿拉伯-印度文"
 #, kde-format
 msgctxt "digit set"
 msgid "Gujarati"
-msgstr "Gujarati"
+msgstr "古吉拉特語"
 
 #: kdecore/klocale_kde.cpp:800
 #, kde-format
