@@ -13055,12 +13055,12 @@ msgid_plural ""
 "examined:\n"
 "%2"
 msgstr[0] ""
-"No s'han pogut llegir les cadenes dels colors RGB de l'X11. S'ha examinat la "
+"No s'han pogut llegir les cadenes dels colors RGB de X11. S'ha examinat la "
 "ubicació següent:\n"
 "%2"
 msgstr[1] ""
-"No s'han pogut llegir les cadenes dels colors RGB de l'X11. S'han examinat "
-"les ubicacions següents:\n"
+"No s'han pogut llegir les cadenes dels colors RGB de X11. S'han examinat les "
+"ubicacions següents:\n"
 "%2"
 
 #: kdeui/kcolordialog.cpp:997
@@ -13170,7 +13170,7 @@ msgstr "&Detalls"
 #: kdeui/kdialog.cpp:1054
 #, kde-format
 msgid "Get help..."
-msgstr "Obtín ajuda..."
+msgstr "Obtín ajuda…"
 
 #: kdeui/keditlistbox.cpp:324
 #, kde-format
@@ -13277,13 +13277,13 @@ msgstr "S'afegirà internament si s'inicia des del buscador"
 #, kde-format
 msgctxt "@label"
 msgid "Add Comment..."
-msgstr "Afig un comentari..."
+msgstr "Afig un comentari…"
 
 #: kio/kcommentwidget.cpp:74
 #, kde-format
 msgctxt "@label"
 msgid "Change..."
-msgstr "Canvia..."
+msgstr "Canvia…"
 
 #: kio/kcommentwidget.cpp:128
 #, kde-format
@@ -13344,13 +13344,13 @@ msgstr "Seleccioneu una carpeta"
 #, kde-format
 msgctxt "@action:button"
 msgid "New Folder..."
-msgstr "Carpeta nova..."
+msgstr "Carpeta nova…"
 
 #: kio/kdirselectdialog.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Folder..."
-msgstr "Carpeta nova..."
+msgstr "Carpeta nova…"
 
 #: kio/kdirselectdialog.cpp:352
 #, kde-format
@@ -13362,7 +13362,7 @@ msgstr "Llença a dins de la paperera"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete"
-msgstr "Supressió"
+msgstr "Suprimiu"
 
 #: kio/kdirselectdialog.cpp:368
 #, kde-format
@@ -13528,7 +13528,7 @@ msgstr "Selecciona les dades que s'han de mostrar:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "Configura..."
+msgstr "Configura…"
 
 #: kio/kmetaprops.cpp:133
 #, kde-format
@@ -14010,7 +14010,7 @@ msgstr "Unitat organitzativa"
 #: kssl/kcm/cacertificates.ui:42
 #, kde-format
 msgid "Display..."
-msgstr "Visualitza..."
+msgstr "Visualitza…"
 
 #. i18n: ectx: property (text), widget (QPushButton, disableSelection)
 #: kssl/kcm/cacertificates.ui:68
@@ -14034,7 +14034,7 @@ msgstr "Elimina"
 #: kssl/kcm/cacertificates.ui:111
 #, kde-format
 msgid "Add..."
-msgstr "Afig..."
+msgstr "Afig…"
 
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
