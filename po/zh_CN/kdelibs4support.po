@@ -7264,7 +7264,7 @@ msgstr "等待 WM_NET 兼容的窗口管理器"
 #: kdecore/kcmdlineargs.cpp:317
 #, kde-format
 msgid "sets the application GUI style"
-msgstr "设置程序的图形界面风格"
+msgstr "设置程序的图形界面样式"
 
 #: kdecore/kcmdlineargs.cpp:318
 #, kde-format
