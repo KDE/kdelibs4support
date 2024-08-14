@@ -5,19 +5,20 @@
 # Tahereh Dadkhahfar <dadkhahfar@itland.ir>, 2006.
 # MaryamSadat Razavi <razavi@itland.ir>, 2007.
 # Nooshin Asiaie <asiaie@itland.ir>, 2007.
+# SPDX-FileCopyrightText: 2024 Mohi Mirdamadi <mohi.pub@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2008-07-11 18:00+0330\n"
-"Last-Translator: Saied Taghavi <s.taghavi@gmail.com>\n"
-"Language-Team: Persian <kde-i18n-fa@kde.org>\n"
+"PO-Revision-Date: 2024-08-14 00:40+0330\n"
+"Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
+"Language-Team: fa\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, kde-format
@@ -28,7 +29,7 @@ msgstr "محمدرضا میردامادی , نازنین کاظمی"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "mohi@linuxshop.ir , kazemi@itland.ir"
+msgstr "mohi.pub@gmail.com , kazemi@itland.ir"
 
 #, kde-format
 msgctxt "color"
@@ -2738,7 +2739,7 @@ msgstr ""
 "href=\"http://l10n.kde.org/team-infos.php?teamcode=fa\">http://l10n.kde.org/"
 "teaminfos.php?teamcode=fa</a></p><p> با وجود دقت زیاد در بررسی ترجمه‌ها، آنها "
 "ممکن است با کمبودهایی همراه باشند. در صورت وجود اشکال در ترجمه‌ها یا برای "
-"پیشنهادات و یا اطلاعات بیشتر با آدرس mohi@linuxshop.ir<email>mohi@linuxshop."
+"پیشنهادات و یا اطلاعات بیشتر با آدرس mohi.pub@gmail.com<email>mohi@linuxshop."
 "ir</email> تماس بگیرید.</p>"
 
 #: kdecore/kcalendarsystem.cpp:108
