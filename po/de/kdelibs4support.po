@@ -11,7 +11,7 @@
 # Torbjörn Klatt <torbjoern.k@googlemail.com>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: kdecalendarsystems\n"
+"Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
 "PO-Revision-Date: 2023-04-29 12:19+0200\n"
