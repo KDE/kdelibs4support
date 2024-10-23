@@ -1,16 +1,16 @@
 # Translation of kdelibs4support.po to Catalan (Valencian)
-# Copyright (C) 2014-2022 This_file_is_part_of_KDE
+# Copyright (C) 2014-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2017, 2019, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2022-03-31 21:05+0200\n"
+"PO-Revision-Date: 2024-10-20 22:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -12334,19 +12334,19 @@ msgstr "Europa/Zagreb"
 #: kdecore/TIMEZONES:1246
 #, kde-format
 msgid "Europe/Zaporozhye"
-msgstr "Europa/Zaporojie"
+msgstr "Europa/Zaporíjia"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1248
 #, kde-format
 msgid "Zaporozh'ye, E Lugansk / Zaporizhia, E Luhansk"
-msgstr "Zaporozh'ye, E Lugansk / Zaporizhia, E Luhansk"
+msgstr "Zaporozh'ye, E Lugansk / Zaporíjia, E Luhansk"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1250
 #, kde-format
 msgid "Zaporozhye and east Lugansk"
-msgstr "Zaporozhye i Lugansk est"
+msgstr "Zaporíjia i Luhansk est"
 
 #: kdecore/TIMEZONES:1251
 #, kde-format
@@ -13327,7 +13327,7 @@ msgstr ""
 #: kio/kdirselectdialog.cpp:172
 #, kde-format
 msgid "A file or folder named %1 already exists."
-msgstr "Ja existix un fitxer o una carpeta anomenat %1."
+msgstr "Ja existix un fitxer o una carpeta anomenats %1."
 
 #: kio/kdirselectdialog.cpp:175
 #, kde-format
