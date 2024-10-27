@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2024-10-20 22:40+0200\n"
+"PO-Revision-Date: 2024-10-26 19:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -8541,7 +8541,7 @@ msgstr "Amèrica/Atikokan"
 #: kdecore/TIMEZONES:132 kdecore/TIMEZONES:206
 #, kde-format
 msgid "Eastern Standard Time - Atikokan, Ontario and Southampton I, Nunavut"
-msgstr "Hora estàndard oriental - Atikokan, Ontàrio i Southampton I, Nunavut"
+msgstr "Hora estàndard oriental - Atikokan, Ontario i Southampton I, Nunavut"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:134
@@ -9669,7 +9669,7 @@ msgstr "Amèrica/Nipigon"
 msgid ""
 "Eastern Time - Ontario & Quebec - places that did not observe DST 1967-1973"
 msgstr ""
-"Hora oriental - Ontàrio & Quebec - llocs que no segueixen DST 1967-1973"
+"Hora oriental - Ontario & Quebec - llocs que no segueixen DST 1967-1973"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:467
@@ -9787,7 +9787,7 @@ msgstr "Hora de les muntanyes dels EUA - Chihuahua (prop de la frontera)"
 #: kdecore/TIMEZONES:499
 #, kde-format
 msgid "America/Ontario"
-msgstr "Amèrica/Ontàrio"
+msgstr "Amèrica/Ontario"
 
 #: kdecore/TIMEZONES:502
 #, kde-format
@@ -9890,7 +9890,7 @@ msgstr "Amèrica/Rainy_River"
 #: kdecore/TIMEZONES:528
 #, kde-format
 msgid "Central Time - Rainy River & Fort Frances, Ontario"
-msgstr "Hora central - Rainy River & Fort Frances, Ontàrio"
+msgstr "Hora central - Rainy River & Fort Frances, Ontario"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:530
@@ -10179,7 +10179,7 @@ msgstr "Amèrica/Thunder_Bay"
 #: kdecore/TIMEZONES:615
 #, kde-format
 msgid "Eastern Time - Thunder Bay, Ontario"
-msgstr "Hora oriental - Thunder Bay, Ontàrio"
+msgstr "Hora oriental - Thunder Bay, Ontario"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:617
@@ -10214,7 +10214,7 @@ msgstr "Amèrica/Toronto"
 #: kdecore/TIMEZONES:627 kdecore/TIMEZONES:1111
 #, kde-format
 msgid "Eastern Time - Ontario - most locations"
-msgstr "Hora oriental - Ontàrio - majoria de les ubicacions"
+msgstr "Hora oriental - Ontario - majoria de les ubicacions"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:629
@@ -10275,7 +10275,7 @@ msgstr "Amèrica/Winnipeg"
 #: kdecore/TIMEZONES:644 kdecore/TIMEZONES:1105
 #, kde-format
 msgid "Central Time - Manitoba & west Ontario"
-msgstr "Hora central - Manitoba & Ontàrio oest"
+msgstr "Hora central - Manitoba & Ontario oest"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:646
