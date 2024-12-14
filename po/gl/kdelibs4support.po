@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2024-08-10 13:33+0200\n"
+"PO-Revision-Date: 2024-12-13 22:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -7271,6 +7271,7 @@ msgstr "Usar un ficheiro de configuración alternativo"
 msgid "Disable crash handler, to get core dumps"
 msgstr "Desactivar o xestor de quebras, para obter envorcados"
 
+# skip-rule: trasno-window_reverse
 #: kdecore/kcmdlineargs.cpp:315
 #, kde-format
 msgid "Waits for a WM_NET compatible windowmanager"
@@ -13451,6 +13452,7 @@ msgstr "Peter Penz"
 msgid "Current maintainer"
 msgstr "Mantedor na actualidade"
 
+# skip-rule: trasno-sound_reverse
 #: kio/kfilemetadatareaderprocess.cpp:244
 #, kde-format
 msgid "Only the meta data that is part of the file is read"
