@@ -12,7 +12,7 @@
 # Mohamed SAAD <metehyi@free.fr>, 2006.
 # Khaled Hosny <khaledhosny@eglug.org>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008, 2009.
+# SPDX-FileCopyrightText: 2008, 2009, 2024 zayed <zayed.alsaidi@gmail.com>
 # Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2009, 2010, 2022.
 # Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2012.
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2022-01-22 17:55+0400\n"
+"PO-Revision-Date: 2024-12-22 18:45+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -29,6 +29,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -4715,7 +4716,7 @@ msgid "Shv"
 msgstr "شفاط"
 
 #: kdecore/kcalendarsystemhebrew.cpp:705
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hebrew month 6 - KLocale::ShortName"
 msgid "Ada"
 msgstr "أدا"
@@ -6129,7 +6130,7 @@ msgid "Kho"
 msgstr "جوزا"
 
 #: kdecore/kcalendarsystemjalali.cpp:240
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali month 4 - KLocale::ShortName"
 msgid "Tir"
 msgstr "سرطان"
@@ -6165,7 +6166,7 @@ msgid "Aza"
 msgstr "قوس"
 
 #: kdecore/kcalendarsystemjalali.cpp:252
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali month 10 - KLocale::ShortName"
 msgid "Dei"
 msgstr "جدي"
@@ -7831,7 +7832,7 @@ msgid "%1 seconds"
 msgstr "%1 من الثواني"
 
 #: kdecore/klocale_kde.cpp:1484
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:intext"
 msgid "%1 millisecond"
 msgid_plural "%1 milliseconds"
@@ -7879,7 +7880,7 @@ msgstr[4] "%1 دقيقة"
 msgstr[5] "%1 دقيقة"
 
 #: kdecore/klocale_kde.cpp:1497
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item:intext"
 msgid "1 second"
 msgid_plural "%1 seconds"
@@ -7985,7 +7986,7 @@ msgstr ""
 #: kdecore/ksavefile.cpp:139
 #, kde-format
 msgid "Unable to open temporary file."
-msgstr ""
+msgstr "غير قادر على فتح الملف المؤقت."
 
 #: kdecore/ksavefile.cpp:249
 #, kde-format
@@ -12686,8 +12687,7 @@ msgstr "الهادي/جزيرة_الفصح"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1317
-#, fuzzy, kde-format
-#| msgid "Chile/EasterIsland"
+#, kde-format
 msgid "Easter Island"
 msgstr "جزيرة القيامة"
 
@@ -13543,43 +13543,43 @@ msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
 #: kio/kfilemetadataprovider.cpp:446 kio/knfotranslator.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Comment"
-msgstr "تعليق"
+msgstr "التعليق"
 
 #: kio/kfilemetadataprovider.cpp:447
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Modified"
-msgstr "عُدّل في"
+msgstr "عُدّل"
 
 #: kio/kfilemetadataprovider.cpp:448
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Owner"
 msgstr "المالك"
 
 #: kio/kfilemetadataprovider.cpp:449
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Permissions"
 msgstr "التصاريح"
 
 #: kio/kfilemetadataprovider.cpp:450
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Rating"
-msgstr "التّقييم"
+msgstr "التقييم"
 
 #: kio/kfilemetadataprovider.cpp:451
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Size"
 msgstr "الحجم"
 
 #: kio/kfilemetadataprovider.cpp:452
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Tags"
 msgstr "الوسوم"
@@ -13591,10 +13591,10 @@ msgid "Total Size"
 msgstr "الحجم الكليّ"
 
 #: kio/kfilemetadataprovider.cpp:454
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Type"
-msgstr "النّوع"
+msgstr "النوع"
 
 #: kio/kfilemetadatareaderprocess.cpp:234
 #, kde-format
@@ -13617,9 +13617,9 @@ msgid "Peter Penz"
 msgstr "Peter Penz"
 
 #: kio/kfilemetadatareaderprocess.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgid "Current maintainer"
-msgstr "المصين الحاليّ"
+msgstr "الصائن الحاليّ"
 
 #: kio/kfilemetadatareaderprocess.cpp:244
 #, kde-format
@@ -13659,25 +13659,25 @@ msgid "Select which data should be shown:"
 msgstr "اختر أيّ البيانات التي يجب أن تظهر:"
 
 #: kio/kmetaprops.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "اضبط..."
 
 #: kio/kmetaprops.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:tab"
 msgid "Information"
 msgstr "معلومات"
 
 #: kio/knfotranslator.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label creation date"
 msgid "Created"
 msgstr "أُنشئ"
 
 #: kio/knfotranslator.cpp:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label file content size"
 msgid "Size"
 msgstr "الحجم"
@@ -13689,7 +13689,7 @@ msgid "Depends"
 msgstr ""
 
 #: kio/knfotranslator.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Description"
 msgstr "الوصف"
@@ -13722,13 +13722,13 @@ msgid "Part of"
 msgstr "المجلد الوالد"
 
 #: kio/knfotranslator.cpp:48
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Keyword"
-msgstr "الكلمة المفتاح"
+msgstr "الكلمات المفتاحيّة"
 
 #: kio/knfotranslator.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label modified date of file"
 msgid "Modified"
 msgstr "معدّل"
@@ -13752,13 +13752,13 @@ msgid "Related To"
 msgstr "أنشئ في %1"
 
 #: kio/knfotranslator.cpp:53
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Subject"
 msgstr "الموضوع"
 
 #: kio/knfotranslator.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label music title"
 msgid "Title"
 msgstr "العنوان"
@@ -13770,16 +13770,16 @@ msgid "File Location"
 msgstr "موقع الملف"
 
 #: kio/knfotranslator.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Creator"
-msgstr "المُنشئ"
+msgstr "المنشئ"
 
 #: kio/knfotranslator.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Average Bitrate"
-msgstr "المعدل المت&وسط للبت:"
+msgstr "المعدل المتوسط للبت"
 
 #: kio/knfotranslator.cpp:58
 #, kde-format
@@ -13788,16 +13788,16 @@ msgid "Channels"
 msgstr "القنوات"
 
 #: kio/knfotranslator.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label number of characters"
 msgid "Characters"
-msgstr "المحارف"
+msgstr "الحروف"
 
 #: kio/knfotranslator.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Codec"
-msgstr "فك الترميز"
+msgstr "مرماز"
 
 #: kio/knfotranslator.cpp:61
 #, kde-format
@@ -13806,13 +13806,13 @@ msgid "Color Depth"
 msgstr "عمق الألوان"
 
 #: kio/knfotranslator.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Duration"
 msgstr "المدّة"
 
 #: kio/knfotranslator.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Filename"
 msgstr "اسم الملفّ"
@@ -13824,7 +13824,7 @@ msgid "Hash"
 msgstr "التلبيدة"
 
 #: kio/knfotranslator.cpp:65
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Height"
 msgstr "الارتفاع"
@@ -13875,7 +13875,7 @@ msgstr "الحدقة"
 #, kde-format
 msgctxt "@label EXIF"
 msgid "Exposure Bias Value"
-msgstr ""
+msgstr "تعريض قيمة  Bias"
 
 #: kio/knfotranslator.cpp:74
 #, kde-format
@@ -13905,7 +13905,7 @@ msgstr "الطول البؤريّ 35مم"
 #, kde-format
 msgctxt "@label EXIF"
 msgid "ISO Speed Ratings"
-msgstr ""
+msgstr "تقديرات سرعة ISO"
 
 #: kio/knfotranslator.cpp:79
 #, kde-format
