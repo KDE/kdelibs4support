@@ -1082,7 +1082,7 @@ Name[xh]=Bashkir
 Name[x-test]=xxBashkirxx
 Name[zh_CN]=巴什基尔语
 Name[zh_HK]=Bashkir語
-Name[zh_TW]=巴什吉爾語
+Name[zh_TW]=巴什喀爾語
 [be]
 Name=Belarusian
 Name[af]=Belarusian
@@ -3414,7 +3414,7 @@ Name[vi]=Tiếng Hạ Sorb
 Name[wa]=Bas sorbyin
 Name[x-test]=xxLower Sorbianxx
 Name[zh_CN]=下索布语
-Name[zh_TW]=下塞爾維亞語
+Name[zh_TW]=下索布語
 [dz]
 Name=Dzongkha
 Name[af]=Dzongkha
@@ -6201,7 +6201,7 @@ Name[vi]=Tiếng Thượng Sorb
 Name[wa]=Hôt sorbyin
 Name[x-test]=xxUpper Sorbianxx
 Name[zh_CN]=上索布语
-Name[zh_TW]=塞爾維亞語
+Name[zh_TW]=上索布語
 [hu]
 Name=Hungarian
 Name[af]=Hongaars
@@ -17220,7 +17220,7 @@ Name[vi]=Tiếng Uzbek (Ki-rin)
 Name[wa]=Ouzbeke (cirilike)
 Name[x-test]=xxUzbek (Cyrillic)xx
 Name[zh_CN]=乌兹别克语 (西里尔字母)
-Name[zh_TW]=烏茲別克（斯拉夫）
+Name[zh_TW]=烏茲別克語（西里爾字母）
 [ven]
 Name=Venda
 Name[af]=Venda
