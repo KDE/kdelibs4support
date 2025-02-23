@@ -7479,7 +7479,7 @@ msgstr "孟加拉文数字"
 #, kde-format
 msgctxt "digit set"
 msgid "Devanagari"
-msgstr "梵文数字"
+msgstr "天成文数字"
 
 #: kdecore/klocale_kde.cpp:794
 #, kde-format
