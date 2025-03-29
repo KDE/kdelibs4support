@@ -12909,7 +12909,7 @@ msgstr "地区"
 #, kde-format
 msgctxt "Time zone"
 msgid "Region"
-msgstr "区域"
+msgstr "地域"
 
 #: kdeui/k4timezonewidget.cpp:62
 #, kde-format
