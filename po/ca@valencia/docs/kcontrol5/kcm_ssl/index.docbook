@@ -76,7 +76,7 @@
 
 <para
 >Seleccioneu un certificat davall una organització en la llista, i feu clic en el botó <guibutton
->Visualitza...</guibutton
+>Visualitza…</guibutton
 > davall de la llista per a veure els detalls del certificat.</para>
 
 <screenshot id="screenshot-details">
@@ -126,7 +126,7 @@
 <!--link file selector dialog to buildingblocks when its done-->
 <para
 >En primer lloc, feu clic en el botó <guibutton
->Afig...</guibutton
+>Afig…</guibutton
 > davall de la llista de certificats. S'obrirà el diàleg selector de fitxers que us permetrà ubicar el lloc on s'emmagatzemen els fitxers de certificats. Una vegada trobeu el fitxer del certificat, seleccioneu-lo i feu clic en el botó <guibutton
 >Obri</guibutton
 > per a afegir-lo.</para>
