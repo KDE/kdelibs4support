@@ -17,20 +17,20 @@
 # Meni Livne <livne@kde.org>, 2007.
 # tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2024-04-08 19:08+0300\n"
+"PO-Revision-Date: 2025-05-29 16:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -2023,10 +2023,10 @@ msgctxt "color"
 msgid "purple4"
 msgstr "סגול 4"
 
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "color"
 msgid "red"
-msgstr "הד"
+msgstr "אדום"
 
 #, kde-format
 msgctxt "color"
@@ -2415,9 +2415,9 @@ msgid "A dialog box for setting preferences for debug output"
 msgstr "תיבת דו־שיח להגדרת העדפות לפלט ניפוי באגים"
 
 #: kdebugdialog/main.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Copyright 1999-2009, David Faure <faure@kde.org>"
-msgstr "כל הזכויות שמורות 1999-2000, David Faure ‏<email>faure@kde.org</email>"
+msgstr "כל הזכויות שמורות 1999‏-2009, לדוד פור <faure@kde.org>"
 
 #: kdebugdialog/main.cpp:103
 #, kde-format
@@ -7309,9 +7309,9 @@ msgid "KDE"
 msgstr "KDE"
 
 #: kdecore/kcmdlineargs.cpp:821 kdecore/kcmdlineargs.cpp:835
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown option '%1'."
-msgstr "שגיאה: פרוטוקול לא מוכר \"%1\"."
+msgstr "האפשרות ‚%1’ לא ידועה."
 
 #: kdecore/kcmdlineargs.cpp:841
 #, kde-format
@@ -7371,7 +7371,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1096
 #, kde-format
 msgid "[options] "
-msgstr ""
+msgstr "[אפשרויות] "
 
 #: kdecore/kcmdlineargs.cpp:1101
 #, kde-format
@@ -7401,9 +7401,9 @@ msgid "Show %1 specific options"
 msgstr ""
 
 #: kdecore/kcmdlineargs.cpp:1140
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show all options"
-msgstr "רוב האיזורים"
+msgstr "הצגת כל האפשרויות"
 
 #: kdecore/kcmdlineargs.cpp:1141
 #, kde-format
@@ -7458,9 +7458,9 @@ msgstr "KDE-tempfile"
 
 #: kdecore/kdatetime.cpp:1567 kdecore/kdatetime.cpp:1577
 #: kdecore/kdatetime.cpp:2985
-#, fuzzy, kde-format
+#, kde-format
 msgid "am"
-msgstr "פאמ"
+msgstr "am"
 
 #: kdecore/kdatetime.cpp:1567 kdecore/kdatetime.cpp:1577
 #: kdecore/kdatetime.cpp:2990
@@ -7546,10 +7546,10 @@ msgid "Telugu"
 msgstr "טלוגו"
 
 #: kdecore/klocale_kde.cpp:821
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "digit set"
 msgid "Thai"
-msgstr "תאילנדית"
+msgstr ""
 
 #: kdecore/klocale_kde.cpp:824
 #, kde-format
@@ -12043,10 +12043,9 @@ msgid "Ukraine (most areas)"
 msgstr ""
 
 #: kdecore/TIMEZONES:1173
-#, fuzzy, kde-format
-#| msgid "Europe/Kiev"
+#, kde-format
 msgid "Europe/Kirov"
-msgstr "אירופה/קייב"
+msgstr "אירופה/קירוב"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1175
@@ -12440,9 +12439,9 @@ msgid "Jamaica"
 msgstr "ג'מייקה"
 
 #: kdecore/TIMEZONES:1270
-#, fuzzy, kde-format
+#, kde-format
 msgid "Japan"
-msgstr "יפני"
+msgstr "יפן"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1271 kdecore/TIMEZONES:1273 kdecore/TIMEZONES:1347
@@ -12510,7 +12509,7 @@ msgstr "האוקיינוס השקט/אוקלנד"
 #: kdecore/TIMEZONES:1301
 #, kde-format
 msgid "New Zealand (most areas)"
-msgstr ""
+msgstr "ניו זילנד (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1302
 #, fuzzy, kde-format
@@ -12522,7 +12521,7 @@ msgstr "האוקיינוס השקט/הונולולו"
 #: kdecore/TIMEZONES:1304
 #, kde-format
 msgid "Bougainville"
-msgstr ""
+msgstr "בוגנוויל"
 
 #: kdecore/TIMEZONES:1305
 #, kde-format
@@ -12553,10 +12552,9 @@ msgstr "האוקיינוס השקט/איי הפסחא"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1317
-#, fuzzy, kde-format
-#| msgid "Madeira Islands"
+#, kde-format
 msgid "Easter Island"
-msgstr "איי המדיירה"
+msgstr "אי הפסחא"
 
 #: kdecore/TIMEZONES:1318
 #, kde-format
@@ -12572,7 +12570,7 @@ msgstr "האוקיינוס השקט/אנדרברי"
 #: kdecore/TIMEZONES:1321
 #, kde-format
 msgid "Phoenix Islands"
-msgstr ""
+msgstr "איי פניקס"
 
 #: kdecore/TIMEZONES:1322
 #, kde-format
@@ -12609,7 +12607,7 @@ msgstr "האוקיינוס השקט/איי גמביר"
 #: kdecore/TIMEZONES:1330
 #, kde-format
 msgid "Gambier Islands"
-msgstr ""
+msgstr "איי גמבייה"
 
 #: kdecore/TIMEZONES:1331
 #, kde-format
@@ -12679,7 +12677,7 @@ msgstr "האוקיינוס השקט/מג'ורו"
 #: kdecore/TIMEZONES:1352
 #, kde-format
 msgid "Marshall Islands (most areas)"
-msgstr ""
+msgstr "איי מרשל (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1353
 #, kde-format
@@ -12701,7 +12699,7 @@ msgstr "האוקיינוס השקט/מידווי"
 #: kdecore/TIMEZONES:1358
 #, kde-format
 msgid "Midway Islands"
-msgstr ""
+msgstr "איי מידוויי"
 
 #: kdecore/TIMEZONES:1359
 #, kde-format
@@ -12776,7 +12774,7 @@ msgstr "האוקיינוס השקט/פורט מורסבי"
 #: kdecore/TIMEZONES:1376
 #, kde-format
 msgid "Papua New Guinea (most areas)"
-msgstr ""
+msgstr "פפואה גינאה החדשה (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1377
 #, kde-format
@@ -12840,7 +12838,7 @@ msgstr "האוקיינוס השקט/וויק"
 #: kdecore/TIMEZONES:1392
 #, kde-format
 msgid "Wake Island"
-msgstr ""
+msgstr "האי וייק"
 
 #: kdecore/TIMEZONES:1393
 #, kde-format
@@ -12984,9 +12982,9 @@ msgid "Region"
 msgstr "תת־איזור"
 
 #: kdeui/k4timezonewidget.cpp:62
-#, fuzzy, kde-format
+#, kde-format
 msgid "Comment"
-msgstr "פשנומנט"
+msgstr "הערה"
 
 #: kdeui/kapplication.cpp:741
 #, kde-format
@@ -13075,7 +13073,7 @@ msgstr "°"
 #: kdeui/kcolordialog.cpp:1088
 #, fuzzy, kde-format
 msgid "Saturation:"
-msgstr "שבת"
+msgstr "רוויה:"
 
 #: kdeui/kcolordialog.cpp:1098
 #, kde-format
@@ -13224,7 +13222,7 @@ msgstr "תצוגה מקדימה לפני הדפסה"
 #: kdeui/ksystemtrayicon.cpp:153
 #, kde-format
 msgid "Minimize"
-msgstr "מזער"
+msgstr "מזעור"
 
 #: kdeui/ksystemtrayicon.cpp:205
 #, kde-format
@@ -13270,25 +13268,25 @@ msgstr "נוסף באופן פנימי אם התוכנית מופעלת מתוך
 #, kde-format
 msgctxt "@label"
 msgid "Add Comment..."
-msgstr "הוסף הערה..."
+msgstr "הוספת הערה…"
 
 #: kio/kcommentwidget.cpp:74
 #, kde-format
 msgctxt "@label"
 msgid "Change..."
-msgstr "שינוי..."
+msgstr "שינוי…"
 
 #: kio/kcommentwidget.cpp:128
 #, kde-format
 msgctxt "@title:window"
 msgid "Change Comment"
-msgstr "שנה הערה"
+msgstr "שינוי הערה"
 
 #: kio/kcommentwidget.cpp:129
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Comment"
-msgstr "הוסף הערה"
+msgstr "הוספת הערה"
 
 #: kio/kdevicelistmodel.cpp:115
 #, kde-format
@@ -13314,7 +13312,7 @@ msgid ""
 "Create new folder in:\n"
 "%1"
 msgstr ""
-"צור תיקייה חדשה ב:\n"
+"יצירת תיקייה חדשה תחת:\n"
 "%1"
 
 #: kio/kdirselectdialog.cpp:172
@@ -13331,25 +13329,25 @@ msgstr "אין לך הרשאות ליצור תיקייה זו."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr "בחר תיקייה"
+msgstr "בחירת תיקייה"
 
 #: kio/kdirselectdialog.cpp:299
 #, kde-format
 msgctxt "@action:button"
 msgid "New Folder..."
-msgstr "תיקייה חדשה..."
+msgstr "תיקייה חדשה…"
 
 #: kio/kdirselectdialog.cpp:345
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Folder..."
-msgstr "תיקייה חדשה..."
+msgstr "תיקייה חדשה…"
 
 #: kio/kdirselectdialog.cpp:352
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Move to Trash"
-msgstr "העבר לאשפה"
+msgstr "העברה לאשפה"
 
 #: kio/kdirselectdialog.cpp:359
 #, kde-format
@@ -13397,14 +13395,14 @@ msgstr "שמירה בשם"
 msgctxt "@item:intable"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "פריט"
+msgstr[1] "%1 פריטים"
 
 #: kio/kfilemetadataprovider.cpp:446 kio/knfotranslator.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Comment"
-msgstr "פשנומנט"
+msgstr "הערה"
 
 #: kio/kfilemetadataprovider.cpp:447
 #, kde-format
@@ -13467,7 +13465,7 @@ msgstr "ניתן להשתמש ב־KFileMetaDataReader כדי לקרוא מטא �
 #: kio/kfilemetadatareaderprocess.cpp:238
 #, kde-format
 msgid "(C) 2011, Peter Penz"
-msgstr "כל הזכויות שמורות 2011, Peter Penz"
+msgstr "כל הזכויות שמורות 2011, פיטר פנז"
 
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
@@ -13487,7 +13485,7 @@ msgstr "נקרא רק מטא מידע שהוא חלק מהקובץ"
 #: kio/kfilemetadatareaderprocess.cpp:245
 #, kde-format
 msgid "List of URLs where the meta-data should be read from"
-msgstr "רשימת הכתובות שמהן יש לקרוא את המטא מידע"
+msgstr "רשימת הכתובות שמהן לקרוא את נתוני העל"
 
 #: kio/kfilemetainfowidget.cpp:161
 #, kde-format
@@ -13497,7 +13495,7 @@ msgstr "<שגיאה>"
 #: kio/kfiletreeview.cpp:192
 #, kde-format
 msgid "Show Hidden Folders"
-msgstr "הצג תיקיות מוסתרות"
+msgstr "הצגת תיקיות מוסתרות"
 
 #: kio/kimageio.cpp:46
 #, kde-format
@@ -13520,7 +13518,7 @@ msgstr "המידע הבא יוצג:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "הגדר..."
+msgstr "הגדרה…"
 
 #: kio/kmetaprops.cpp:133
 #, kde-format
@@ -13625,7 +13623,7 @@ msgstr "כותרת"
 #, kde-format
 msgctxt "@label file URL"
 msgid "File Location"
-msgstr ""
+msgstr "מקום הקובץ"
 
 #: kio/knfotranslator.cpp:56
 #, kde-format
@@ -13757,7 +13755,7 @@ msgstr "אורך מוקד"
 #, kde-format
 msgctxt "@label EXIF"
 msgid "Focal Length 35 mm"
-msgstr "אורך מוקד 35 מ\"מ"
+msgstr "אורך מוקד 35 מ״מ"
 
 #: kio/knfotranslator.cpp:78
 #, kde-format
