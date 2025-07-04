@@ -779,7 +779,7 @@ Name[vi]=Tiếng Asturias
 Name[wa]=Asturyin
 Name[x-test]=xxAsturianxx
 Name[zh_CN]=阿斯图里亚斯语
-Name[zh_TW]=Asturian
+Name[zh_TW]=阿斯圖里亞斯語
 [ay]
 Name=Aymara
 Name[af]=Aymara
@@ -1572,7 +1572,7 @@ Name[xh]=Bislama
 Name[x-test]=xxBislamaxx
 Name[zh_CN]=比斯拉马语
 Name[zh_HK]=Bislama語
-Name[zh_TW]=Bislama語
+Name[zh_TW]=比斯拉馬語
 [bn]
 Name=Bengali
 Name[af]=Bengali
@@ -1966,7 +1966,7 @@ Name[xh]=Breton
 Name[x-test]=xxBretonxx
 Name[zh_CN]=布列塔尼语
 Name[zh_HK]=不列塔尼語
-Name[zh_TW]=不列塔尼語
+Name[zh_TW]=布列塔尼語
 [bs]
 Name=Bosnian
 Name[af]=Bosnies
@@ -2168,7 +2168,7 @@ Name[xh]=Catalan
 Name[x-test]=xxCatalanxx
 Name[zh_CN]=加泰罗尼亚语
 Name[zh_HK]=嘉泰羅尼亞語
-Name[zh_TW]=嘉泰羅尼亞語
+Name[zh_TW]=加泰隆尼亞語
 [ca@valencia]
 Name=Catalan (Valencian)
 Name[ar]=الكاتالونية (فلنسية)
@@ -2243,7 +2243,7 @@ Name[vi]=Tiếng Catalan (Valencia)
 Name[wa]=Catalan (Valince)
 Name[x-test]=xxCatalan (Valencian)xx
 Name[zh_CN]=加泰罗尼亚语 (巴伦西亚)
-Name[zh_TW]=加泰羅尼亞（瓦倫西亞）語
+Name[zh_TW]=加泰隆尼亞語（瓦倫西亞）
 [ce]
 Name=Chechen
 Name[af]=Chechen
@@ -2825,7 +2825,7 @@ Name[vi]=Tiếng Kashubia
 Name[wa]=Cachoube
 Name[x-test]=xxKashubianxx
 Name[zh_CN]=卡舒比语
-Name[zh_TW]=Kashubian
+Name[zh_TW]=卡舒比語
 [cu]
 Name=Church Slavic
 Name[af]=Church Slavic
@@ -5901,7 +5901,7 @@ Name[vi]=Tiếng Chhattisgarh
 Name[wa]=Chhattisgarhi
 Name[x-test]=xxChhattisgarhixx
 Name[zh_CN]=恰蒂斯加尔语
-Name[zh_TW]=Chhattisgarhi
+Name[zh_TW]=恰蒂斯加爾語
 [ho]
 Name=Hiri Motu
 Name[af]=Hiri Motu
@@ -6804,7 +6804,7 @@ Name[xh]=Interlingue
 Name[x-test]=xxInterlinguexx
 Name[zh_CN]=国际语
 Name[zh_HK]=Interlingue語
-Name[zh_TW]=Interlingue語
+Name[zh_TW]=西方國際語
 [ik]
 Name=Inupiaq
 Name[af]=Inupiaq
@@ -11812,7 +11812,7 @@ Name[xh]=Chichewa
 Name[x-test]=xxChichewaxx
 Name[zh_CN]=齐切瓦语
 Name[zh_HK]=Chichewa語
-Name[zh_TW]=Chichewa語
+Name[zh_TW]=奇切瓦語
 [oc]
 Name=Occitan
 Name[af]=Okkitaan
@@ -11913,7 +11913,7 @@ Name[xh]=Occitan
 Name[x-test]=xxOccitanxx
 Name[zh_CN]=奥克语
 Name[zh_HK]=Occitan語
-Name[zh_TW]=Occitan語
+Name[zh_TW]=奧克語
 [om]
 Name=Oromo
 Name[af]=Oromo
@@ -12307,7 +12307,7 @@ Name[vi]=Tiếng Punjab/Panjab
 Name[wa]=Pundjabi
 Name[x-test]=xxPunjabi/Panjabixx
 Name[zh_CN]=旁遮普语
-Name[zh_TW]=Punjabi/Panjabi
+Name[zh_TW]=旁遮普語
 [pi]
 Name=Pali
 Name[af]=Pali
