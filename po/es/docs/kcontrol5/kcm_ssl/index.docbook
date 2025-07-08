@@ -104,7 +104,7 @@
 
 <para
 >Seleccione un certificado perteneciente a una organización listada y pulse el botón <guibutton
->Mostrar...</guibutton
+>Mostrar…</guibutton
 > que hay bajo la lista para ver los detalles del certificado.</para>
 
 <screenshot id="screenshot-details">
@@ -154,7 +154,7 @@
 <!--link file selector dialog to buildingblocks when its done-->
 <para
 >En primer lugar, pulse el botón <guibutton
->Añadir...</guibutton
+>Añadir…</guibutton
 > que hay debajo de la lista de certificados. Se abrirá el diálogo de selección de archivos, que le permitirá localizar los archivos del certificado. Una vez localizado el archivo, selecciónelo y pulse el botón <guibutton
 >Abrir</guibutton
 > para añadirlo.</para>
