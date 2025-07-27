@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-05-29 16:45+0300\n"
+"PO-Revision-Date: 2025-07-26 12:51+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -2568,7 +2568,7 @@ msgstr "הפעולה תביא לחסימה"
 #, kde-format
 msgctxt "Socket error code ConnectionRefused"
 msgid "connection actively refused"
-msgstr "החיבור כבר נדחה"
+msgstr "החיבור נדחה באופן מוצהר"
 
 #: kdecore/k3socketbase.cpp:260
 #, kde-format
@@ -2604,7 +2604,7 @@ msgstr "תם הזמן המוקצב לפעולה מוגבלת בזמן"
 #, kde-format
 msgctxt "Socket error code UnknownError"
 msgid "an unknown/unexpected error has happened"
-msgstr "אירעה שגיאה לא מוכרת/בלתי צפויה"
+msgstr "אירעה שגיאה לא מוכרת/מפתיעה"
 
 #: kdecore/k3socketbase.cpp:290
 #, kde-format
@@ -2635,7 +2635,7 @@ msgstr "GPL v2"
 #, kde-format
 msgctxt "@item license"
 msgid "GNU General Public License Version 2"
-msgstr "GNU General Public License Version 2"
+msgstr "הרישיון הציבורי הכללי של גנו בגרסה 2"
 
 #: kdecore/k4aboutdata.cpp:301
 #, kde-format
@@ -2647,31 +2647,31 @@ msgstr "LGPL v2"
 #, kde-format
 msgctxt "@item license"
 msgid "GNU Lesser General Public License Version 2"
-msgstr "GNU Lesser General Public License Version 2"
+msgstr "הרישיון הציבורי הכללי המוקטן של גנו בגרסה 2"
 
 #: kdecore/k4aboutdata.cpp:305
 #, kde-format
 msgctxt "@item license (short name)"
 msgid "BSD License"
-msgstr "BSD License"
+msgstr "רישיון BSD"
 
 #: kdecore/k4aboutdata.cpp:306
 #, kde-format
 msgctxt "@item license"
 msgid "BSD License"
-msgstr "BSD License"
+msgstr "רישיון BSD"
 
 #: kdecore/k4aboutdata.cpp:309
 #, kde-format
 msgctxt "@item license (short name)"
 msgid "Artistic License"
-msgstr "Artistic License"
+msgstr "רישיון אומנותי"
 
 #: kdecore/k4aboutdata.cpp:310
 #, kde-format
 msgctxt "@item license"
 msgid "Artistic License"
-msgstr "Artistic License"
+msgstr "רישיון אומנותי"
 
 #: kdecore/k4aboutdata.cpp:313
 #, kde-format
@@ -2683,7 +2683,7 @@ msgstr "QPL v1.0"
 #, kde-format
 msgctxt "@item license"
 msgid "Q Public License"
-msgstr "Q Public License"
+msgstr "הרישיון הציבורי Q"
 
 #: kdecore/k4aboutdata.cpp:317
 #, kde-format
@@ -2695,7 +2695,7 @@ msgstr "GPL v3"
 #, kde-format
 msgctxt "@item license"
 msgid "GNU General Public License Version 3"
-msgstr "GNU General Public License Version 3"
+msgstr "הרישיון הציבורי הכללי של גנו בגרסה 3"
 
 #: kdecore/k4aboutdata.cpp:321
 #, kde-format
@@ -2707,7 +2707,7 @@ msgstr "LGPL v3"
 #, kde-format
 msgctxt "@item license"
 msgid "GNU Lesser General Public License Version 3"
-msgstr "GNU Lesser General Public License Version 3"
+msgstr "הרישיון הציבורי הכללי המוקטן של גנו בגרסה 3"
 
 #: kdecore/k4aboutdata.cpp:326
 #, kde-format
@@ -2806,7 +2806,7 @@ msgstr "תאילנדית"
 #, kde-format
 msgctxt "@item Calendar system"
 msgid "Invalid Calendar Type"
-msgstr "סוג לוח שנה לא תקף"
+msgstr "סוג לוח שנה שגוי"
 
 #: kdecore/kcalendarsystem.cpp:1495
 #, kde-format
@@ -2927,313 +2927,313 @@ msgstr ""
 #, kde-format
 msgctxt "Coptic month 1 - KLocale::ShortName Possessive"
 msgid "of Tho"
-msgstr "בתו'"
+msgstr "בתות"
 
 #: kdecore/kcalendarsystemcoptic.cpp:188
 #, kde-format
 msgctxt "Coptic month 2 - KLocale::ShortName Possessive"
 msgid "of Pao"
-msgstr "בפאו'"
+msgstr "בבאבה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:190
 #, kde-format
 msgctxt "Coptic month 3 - KLocale::ShortName Possessive"
 msgid "of Hat"
-msgstr "בהאט'"
+msgstr "בהתור"
 
 #: kdecore/kcalendarsystemcoptic.cpp:192
 #, kde-format
 msgctxt "Coptic month 4 - KLocale::ShortName Possessive"
 msgid "of Kia"
-msgstr "בקיה'"
+msgstr "בכיהך"
 
 #: kdecore/kcalendarsystemcoptic.cpp:194
 #, kde-format
 msgctxt "Coptic month 5 - KLocale::ShortName Possessive"
 msgid "of Tob"
-msgstr "בטוב'"
+msgstr "בטובי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:196
 #, kde-format
 msgctxt "Coptic month 6 - KLocale::ShortName Possessive"
 msgid "of Mes"
-msgstr "במס'"
+msgstr "בבמס׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:198
 #, kde-format
 msgctxt "Coptic month 7 - KLocale::ShortName Possessive"
 msgid "of Par"
-msgstr "בפאר'"
+msgstr "בברמה׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:200
 #, kde-format
 msgctxt "Coptic month 8 - KLocale::ShortName Possessive"
 msgid "of Pam"
-msgstr "בפאמ'"
+msgstr "בברמו׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:202
 #, kde-format
 msgctxt "Coptic month 9 - KLocale::ShortName Possessive"
 msgid "of Pas"
-msgstr "בפאס'"
+msgstr "בבשנס"
 
 #: kdecore/kcalendarsystemcoptic.cpp:204
 #, kde-format
 msgctxt "Coptic month 10 - KLocale::ShortName Possessive"
 msgid "of Pan"
-msgstr "בפאנ'"
+msgstr "בבאו׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:206
 #, kde-format
 msgctxt "Coptic month 11 - KLocale::ShortName Possessive"
 msgid "of Epe"
-msgstr "באפה'"
+msgstr "באביב"
 
 #: kdecore/kcalendarsystemcoptic.cpp:208
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::ShortName Possessive"
 msgid "of Meo"
-msgstr "במאו'"
+msgstr "במסר׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:210
 #, kde-format
 msgctxt "Coptic month 13 - KLocale::ShortName Possessive"
 msgid "of Kou"
-msgstr "בקוהו'"
+msgstr "בנסי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:219
 #, kde-format
 msgctxt "Coptic month 1 - KLocale::ShortName"
 msgid "Tho"
-msgstr "ת'ו"
+msgstr "תות"
 
 #: kdecore/kcalendarsystemcoptic.cpp:221
 #, kde-format
 msgctxt "Coptic month 2 - KLocale::ShortName"
 msgid "Pao"
-msgstr "פאו"
+msgstr "באבה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:223
 #, kde-format
 msgctxt "Coptic month 3 - KLocale::ShortName"
 msgid "Hat"
-msgstr "האט"
+msgstr "התור"
 
 #: kdecore/kcalendarsystemcoptic.cpp:225
 #, kde-format
 msgctxt "Coptic month 4 - KLocale::ShortName"
 msgid "Kia"
-msgstr "קיא"
+msgstr "כיהך"
 
 #: kdecore/kcalendarsystemcoptic.cpp:227
 #, kde-format
 msgctxt "Coptic month 5 - KLocale::ShortName"
 msgid "Tob"
-msgstr "טוב"
+msgstr "טובי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:229
 #, kde-format
 msgctxt "Coptic month 6 - KLocale::ShortName"
 msgid "Mes"
-msgstr "מס"
+msgstr "אמש׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:231
 #, kde-format
 msgctxt "Coptic month 7 - KLocale::ShortName"
 msgid "Par"
-msgstr "פאר"
+msgstr "ברמה׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:233
 #, kde-format
 msgctxt "Coptic month 8 - KLocale::ShortName"
 msgid "Pam"
-msgstr "פאמ"
+msgstr "ברמו׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:235
 #, kde-format
 msgctxt "Coptic month 9 - KLocale::ShortName"
 msgid "Pas"
-msgstr "פאס"
+msgstr "בשנס"
 
 #: kdecore/kcalendarsystemcoptic.cpp:237
 #, kde-format
 msgctxt "Coptic month 10 - KLocale::ShortName"
 msgid "Pan"
-msgstr "פאנ"
+msgstr "באו׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:239
 #, kde-format
 msgctxt "Coptic month 11 - KLocale::ShortName"
 msgid "Epe"
-msgstr "אפה"
+msgstr "אביב"
 
 #: kdecore/kcalendarsystemcoptic.cpp:241
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::ShortName"
 msgid "Meo"
-msgstr "מאו"
+msgstr "מסר׳"
 
 #: kdecore/kcalendarsystemcoptic.cpp:243
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::ShortName"
 msgid "Kou"
-msgstr "קוו"
+msgstr "נסי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:252
 #, kde-format
 msgctxt "Coptic month 1 - KLocale::LongName Possessive"
 msgid "of Thoout"
-msgstr "בתואוט'"
+msgstr "בתות"
 
 #: kdecore/kcalendarsystemcoptic.cpp:254
 #, kde-format
 msgctxt "Coptic month 2 - KLocale::LongName Possessive"
 msgid "of Paope"
-msgstr "בפאופה"
+msgstr "בבאבה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:256
 #, kde-format
 msgctxt "Coptic month 3 - KLocale::LongName Possessive"
 msgid "of Hathor"
-msgstr "בהרתור"
+msgstr "בהתור"
 
 #: kdecore/kcalendarsystemcoptic.cpp:258
 #, kde-format
 msgctxt "Coptic month 4 - KLocale::LongName Possessive"
 msgid "of Kiahk"
-msgstr "בקיהאק"
+msgstr "בכיהך"
 
 #: kdecore/kcalendarsystemcoptic.cpp:260
 #, kde-format
 msgctxt "Coptic month 5 - KLocale::LongName Possessive"
 msgid "of Tobe"
-msgstr "בטובה"
+msgstr "בטובי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:262
 #, kde-format
 msgctxt "Coptic month 6 - KLocale::LongName Possessive"
 msgid "of Meshir"
-msgstr "במשיר"
+msgstr "באמשיר"
 
 #: kdecore/kcalendarsystemcoptic.cpp:264
 #, kde-format
 msgctxt "Coptic month 7 - KLocale::LongName Possessive"
 msgid "of Paremhotep"
-msgstr "פארמהוטפ"
+msgstr "בברמהאת"
 
 #: kdecore/kcalendarsystemcoptic.cpp:266
 #, kde-format
 msgctxt "Coptic month 8 - KLocale::LongName Possessive"
 msgid "of Parmoute"
-msgstr "בפארמאוט"
+msgstr "בברמודה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:268
 #, kde-format
 msgctxt "Coptic month 9 - KLocale::LongName Possessive"
 msgid "of Pashons"
-msgstr "בפאשונס"
+msgstr "בבשנס"
 
 #: kdecore/kcalendarsystemcoptic.cpp:270
 #, kde-format
 msgctxt "Coptic month 10 - KLocale::LongName Possessive"
 msgid "of Paone"
-msgstr "בפאונה"
+msgstr "בבאונה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:272
 #, kde-format
 msgctxt "Coptic month 11 - KLocale::LongName Possessive"
 msgid "of Epep"
-msgstr "באפאפ"
+msgstr "באביב"
 
 #: kdecore/kcalendarsystemcoptic.cpp:274
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::LongName Possessive"
 msgid "of Mesore"
-msgstr "במסורה"
+msgstr "במסרי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:276
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::LongName Possessive"
 msgid "of Kouji nabot"
-msgstr "קאוג'י נבוט"
+msgstr "בנסי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:285
 #, kde-format
 msgctxt "Coptic month 1 - KLocale::LongName"
 msgid "Thoout"
-msgstr "תוואט"
+msgstr "תות"
 
 #: kdecore/kcalendarsystemcoptic.cpp:287
 #, kde-format
 msgctxt "Coptic month 2 - KLocale::LongName"
 msgid "Paope"
-msgstr "פאופה"
+msgstr "באבה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:289
 #, kde-format
 msgctxt "Coptic month 3 - KLocale::LongName"
 msgid "Hathor"
-msgstr "הת'ור"
+msgstr "התור"
 
 #: kdecore/kcalendarsystemcoptic.cpp:291
 #, kde-format
 msgctxt "Coptic month 4 - KLocale::LongName"
 msgid "Kiahk"
-msgstr "קיאק"
+msgstr "כיהך"
 
 #: kdecore/kcalendarsystemcoptic.cpp:293
 #, kde-format
 msgctxt "Coptic month 5 - KLocale::LongName"
 msgid "Tobe"
-msgstr "טובה"
+msgstr "טובי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:295
 #, kde-format
 msgctxt "Coptic month 6 - KLocale::LongName"
 msgid "Meshir"
-msgstr "מאשיר"
+msgstr "אמשיר"
 
 #: kdecore/kcalendarsystemcoptic.cpp:297
 #, kde-format
 msgctxt "Coptic month 7 - KLocale::LongName"
 msgid "Paremhotep"
-msgstr "פארמהוטפ"
+msgstr "ברמהאת"
 
 #: kdecore/kcalendarsystemcoptic.cpp:299
 #, kde-format
 msgctxt "Coptic month 8 - KLocale::LongName"
 msgid "Parmoute"
-msgstr "פרמאוט"
+msgstr "ברמודה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:301
 #, kde-format
 msgctxt "Coptic month 9 - KLocale::LongName"
 msgid "Pashons"
-msgstr "פאשונס"
+msgstr "בשנס"
 
 #: kdecore/kcalendarsystemcoptic.cpp:303
 #, kde-format
 msgctxt "Coptic month 10 - KLocale::LongName"
 msgid "Paone"
-msgstr "פאונא"
+msgstr "באונה"
 
 #: kdecore/kcalendarsystemcoptic.cpp:305
 #, kde-format
 msgctxt "Coptic month 11 - KLocale::LongName"
 msgid "Epep"
-msgstr "אפאפ"
+msgstr "אביב"
 
 #: kdecore/kcalendarsystemcoptic.cpp:307
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::LongName"
 msgid "Mesore"
-msgstr "מסורה"
+msgstr "מסרי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:309
 #, kde-format
 msgctxt "Coptic month 12 - KLocale::LongName"
 msgid "Kouji nabot"
-msgstr "קאוג'י נבוט"
+msgstr "נסי"
 
 #: kdecore/kcalendarsystemcoptic.cpp:324
 #, kde-format
@@ -3462,103 +3462,103 @@ msgstr ""
 #, kde-format
 msgctxt "Ethiopian month 1 - KLocale::ShortName Possessive"
 msgid "of Mes"
-msgstr "במס'"
+msgstr "במס׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:101
 #, kde-format
 msgctxt "Ethiopian month 2 - KLocale::ShortName Possessive"
 msgid "of Teq"
-msgstr "בטק'"
+msgstr "בטק׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:103
 #, kde-format
 msgctxt "Ethiopian month 3 - KLocale::ShortName Possessive"
 msgid "of Hed"
-msgstr "בהד'"
+msgstr "בח׳ד׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:105
 #, kde-format
 msgctxt "Ethiopian month 4 - KLocale::ShortName Possessive"
 msgid "of Tah"
-msgstr "בתא'"
+msgstr "בתח׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:107
 #, kde-format
 msgctxt "Ethiopian month 5 - KLocale::ShortName Possessive"
 msgid "of Ter"
-msgstr "בתיר'"
+msgstr "בטר"
 
 #: kdecore/kcalendarsystemethiopian.cpp:109
 #, kde-format
 msgctxt "Ethiopian month 6 - KLocale::ShortName Possessive"
 msgid "of Yak"
-msgstr "ביאק'"
+msgstr "ביכת׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:111
 #, kde-format
 msgctxt "Ethiopian month 7 - KLocale::ShortName Possessive"
 msgid "of Mag"
-msgstr "במאג'"
+msgstr "במגב׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:113
 #, kde-format
 msgctxt "Ethiopian month 8 - KLocale::ShortName Possessive"
 msgid "of Miy"
-msgstr "במיי'"
+msgstr "במיא׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:115
 #, kde-format
 msgctxt "Ethiopian month 9 - KLocale::ShortName Possessive"
 msgid "of Gen"
-msgstr "בגנ'"
+msgstr "בגנב׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:117
 #, kde-format
 msgctxt "Ethiopian month 10 - KLocale::ShortName Possessive"
 msgid "of Sen"
-msgstr "בסנ'"
+msgstr "בסאנה"
 
 #: kdecore/kcalendarsystemethiopian.cpp:119
 #, kde-format
 msgctxt "Ethiopian month 11 - KLocale::ShortName Possessive"
 msgid "of Ham"
-msgstr "בהאמ'"
+msgstr "בחמל׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:121
 #, kde-format
 msgctxt "Ethiopian month 12 - KLocale::ShortName Possessive"
 msgid "of Neh"
-msgstr "בנאה'"
+msgstr "בנחשׂ׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:123
 #, kde-format
 msgctxt "Ethiopian month 13 - KLocale::ShortName Possessive"
 msgid "of Pag"
-msgstr "בפאג'"
+msgstr "בפאג׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:132
 #, kde-format
 msgctxt "Ethiopian month 1 - KLocale::ShortName"
 msgid "Mes"
-msgstr "מס"
+msgstr "מס׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:134
 #, kde-format
 msgctxt "Ethiopian month 2 - KLocale::ShortName"
 msgid "Teq"
-msgstr "טק"
+msgstr "טק׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:136
 #, kde-format
 msgctxt "Ethiopian month 3 - KLocale::ShortName"
 msgid "Hed"
-msgstr "הד"
+msgstr "ח׳ד׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:138
 #, kde-format
 msgctxt "Ethiopian month 4 - KLocale::ShortName"
 msgid "Tah"
-msgstr "טה"
+msgstr "תח׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:140
 #, kde-format
@@ -3570,43 +3570,43 @@ msgstr "טר"
 #, kde-format
 msgctxt "Ethiopian month 6 - KLocale::ShortName"
 msgid "Yak"
-msgstr "יכת"
+msgstr "יכת׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:144
 #, kde-format
 msgctxt "Ethiopian month 7 - KLocale::ShortName"
 msgid "Mag"
-msgstr "מגב"
+msgstr "מגב׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:146
 #, kde-format
 msgctxt "Ethiopian month 8 - KLocale::ShortName"
 msgid "Miy"
-msgstr "מיא"
+msgstr "מיא׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:148
 #, kde-format
 msgctxt "Ethiopian month 9 - KLocale::ShortName"
 msgid "Gen"
-msgstr "גנ"
+msgstr "גנב׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:150
 #, kde-format
 msgctxt "Ethiopian month 10 - KLocale::ShortName"
 msgid "Sen"
-msgstr "סאנ"
+msgstr "סאנה"
 
 #: kdecore/kcalendarsystemethiopian.cpp:152
 #, kde-format
 msgctxt "Ethiopian month 11 - KLocale::ShortName"
 msgid "Ham"
-msgstr "המל"
+msgstr "חמל׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:154
 #, kde-format
 msgctxt "Ethiopian month 12 - KLocale::ShortName"
 msgid "Neh"
-msgstr "נהס"
+msgstr "נחשׂ׳"
 
 #: kdecore/kcalendarsystemethiopian.cpp:156
 #, kde-format
@@ -3630,19 +3630,19 @@ msgstr "בטקמת"
 #, kde-format
 msgctxt "Ethiopian month 3 - KLocale::LongName Possessive"
 msgid "of Hedar"
-msgstr "בהדר"
+msgstr "בח׳דר"
 
 #: kdecore/kcalendarsystemethiopian.cpp:171
 #, kde-format
 msgctxt "Ethiopian month 4 - KLocale::LongName Possessive"
 msgid "of Tahsas"
-msgstr "בתהסס"
+msgstr "בתח׳שׂשׂ"
 
 #: kdecore/kcalendarsystemethiopian.cpp:173
 #, kde-format
 msgctxt "Ethiopian month 5 - KLocale::LongName Possessive"
 msgid "of Ter"
-msgstr "בטיר"
+msgstr "בטר"
 
 #: kdecore/kcalendarsystemethiopian.cpp:175
 #, kde-format
@@ -3678,13 +3678,13 @@ msgstr "בסאנה"
 #, kde-format
 msgctxt "Ethiopian month 11 - KLocale::LongName Possessive"
 msgid "of Hamle"
-msgstr "בהמלה"
+msgstr "בחמלה"
 
 #: kdecore/kcalendarsystemethiopian.cpp:187
 #, kde-format
 msgctxt "Ethiopian month 12 - KLocale::LongName Possessive"
 msgid "of Nehase"
-msgstr "בנהסה"
+msgstr "בנחסה"
 
 #: kdecore/kcalendarsystemethiopian.cpp:189
 #, kde-format
@@ -3696,7 +3696,7 @@ msgstr "בפאגומן"
 #, kde-format
 msgctxt "Ethiopian month 1 - KLocale::LongName"
 msgid "Meskerem"
-msgstr "מסקרם"
+msgstr "מסכרם"
 
 #: kdecore/kcalendarsystemethiopian.cpp:200
 #, kde-format
@@ -3708,13 +3708,13 @@ msgstr "טקמת"
 #, kde-format
 msgctxt "Ethiopian month 3 - KLocale::LongName"
 msgid "Hedar"
-msgstr "אדר"
+msgstr "ח׳דר"
 
 #: kdecore/kcalendarsystemethiopian.cpp:204
 #, kde-format
 msgctxt "Ethiopian month 4 - KLocale::LongName"
 msgid "Tahsas"
-msgstr "תהסס"
+msgstr "תח׳שׂשׂ"
 
 #: kdecore/kcalendarsystemethiopian.cpp:206
 #, kde-format
@@ -3756,13 +3756,13 @@ msgstr "סאנה"
 #, kde-format
 msgctxt "Ethiopian month 11 - KLocale::LongName"
 msgid "Hamle"
-msgstr "המלה"
+msgstr "חמלה"
 
 #: kdecore/kcalendarsystemethiopian.cpp:220
 #, kde-format
 msgctxt "Ethiopian month 12 - KLocale::LongName"
 msgid "Nehase"
-msgstr "נהסה"
+msgstr "נחסה"
 
 #: kdecore/kcalendarsystemethiopian.cpp:222
 #, kde-format
@@ -3977,7 +3977,7 @@ msgstr "פ"
 #, kde-format
 msgctxt "Gregorian month 3 - KLocale::NarrowName"
 msgid "M"
-msgstr "מ"
+msgstr "מר"
 
 #: kdecore/kcalendarsystemgregorian.cpp:144
 #, kde-format
@@ -3989,7 +3989,7 @@ msgstr "אפ"
 #, kde-format
 msgctxt "Gregorian month 5 - KLocale::NarrowName"
 msgid "M"
-msgstr "מ"
+msgstr "מא"
 
 #: kdecore/kcalendarsystemgregorian.cpp:148
 #, kde-format
@@ -4037,13 +4037,13 @@ msgstr "ד"
 #, kde-format
 msgctxt "Gregorian month 1 - KLocale::ShortName Possessive"
 msgid "of Jan"
-msgstr "בינו'"
+msgstr "בינו׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:171
 #, kde-format
 msgctxt "Gregorian month 2 - KLocale::ShortName Possessive"
 msgid "of Feb"
-msgstr "בפבר'"
+msgstr "בפבר׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:173
 #, kde-format
@@ -4055,7 +4055,7 @@ msgstr "במרץ"
 #, kde-format
 msgctxt "Gregorian month 4 - KLocale::ShortName Possessive"
 msgid "of Apr"
-msgstr "באפר'"
+msgstr "באפר׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:177
 #, kde-format
@@ -4079,31 +4079,31 @@ msgstr "ביולי"
 #, kde-format
 msgctxt "Gregorian month 8 - KLocale::ShortName Possessive"
 msgid "of Aug"
-msgstr "באוג'"
+msgstr "באוג׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:185
 #, kde-format
 msgctxt "Gregorian month 9 - KLocale::ShortName Possessive"
 msgid "of Sep"
-msgstr "בספט'"
+msgstr "בספט׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:187
 #, kde-format
 msgctxt "Gregorian month 10 - KLocale::ShortName Possessive"
 msgid "of Oct"
-msgstr "באוק'"
+msgstr "באוק׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:189
 #, kde-format
 msgctxt "Gregorian month 11 - KLocale::ShortName Possessive"
 msgid "of Nov"
-msgstr "בנוב'"
+msgstr "בנוב׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:191
 #, kde-format
 msgctxt "Gregorian month 12 - KLocale::ShortName Possessive"
 msgid "of Dec"
-msgstr "בדצמ'"
+msgstr "בדצמ׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:200
 #, kde-format
@@ -4354,7 +4354,7 @@ msgstr "ה"
 #, kde-format
 msgctxt "Gregorian weekday 5 - KLocale::NarrowName "
 msgid "F"
-msgstr "ה"
+msgstr "ו"
 
 #: kdecore/kcalendarsystemgregorian.cpp:307
 #: kdecore/kcalendarsystemhebrew.cpp:817
@@ -4375,49 +4375,49 @@ msgstr "א"
 #, kde-format
 msgctxt "Gregorian weekday 1 - KLocale::ShortName"
 msgid "Mon"
-msgstr "ב'"
+msgstr "ב׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:320
 #: kdecore/kcalendarsystemhebrew.cpp:830
 #, kde-format
 msgctxt "Gregorian weekday 2 - KLocale::ShortName"
 msgid "Tue"
-msgstr "ג'"
+msgstr "ג׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:322
 #: kdecore/kcalendarsystemhebrew.cpp:832
 #, kde-format
 msgctxt "Gregorian weekday 3 - KLocale::ShortName"
 msgid "Wed"
-msgstr "ד'"
+msgstr "ד׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:324
 #: kdecore/kcalendarsystemhebrew.cpp:834
 #, kde-format
 msgctxt "Gregorian weekday 4 - KLocale::ShortName"
 msgid "Thu"
-msgstr "ה'"
+msgstr "ה"
 
 #: kdecore/kcalendarsystemgregorian.cpp:326
 #: kdecore/kcalendarsystemhebrew.cpp:836
 #, kde-format
 msgctxt "Gregorian weekday 5 - KLocale::ShortName"
 msgid "Fri"
-msgstr "ו'"
+msgstr "ו׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:328
 #: kdecore/kcalendarsystemhebrew.cpp:838
 #, kde-format
 msgctxt "Gregorian weekday 6 - KLocale::ShortName"
 msgid "Sat"
-msgstr "ש'"
+msgstr "ש׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:330
 #: kdecore/kcalendarsystemhebrew.cpp:840
 #, kde-format
 msgctxt "Gregorian weekday 7 - KLocale::ShortName"
 msgid "Sun"
-msgstr "א'"
+msgstr "א׳"
 
 #: kdecore/kcalendarsystemgregorian.cpp:337
 #: kdecore/kcalendarsystemhebrew.cpp:847
@@ -4491,61 +4491,61 @@ msgstr ""
 #, kde-format
 msgctxt "Hebrew month 1 - KLocale::NarrowName"
 msgid "T"
-msgstr "ת"
+msgstr "תש"
 
 #: kdecore/kcalendarsystemhebrew.cpp:627
 #, kde-format
 msgctxt "Hebrew month 2 - KLocale::NarrowName"
 msgid "H"
-msgstr "ח"
+msgstr "חש"
 
 #: kdecore/kcalendarsystemhebrew.cpp:629
 #, kde-format
 msgctxt "Hebrew month 3 - KLocale::NarrowName"
 msgid "K"
-msgstr "כ"
+msgstr "כס"
 
 #: kdecore/kcalendarsystemhebrew.cpp:631
 #, kde-format
 msgctxt "Hebrew month 4 - KLocale::NarrowName"
 msgid "T"
-msgstr "ט"
+msgstr "טב"
 
 #: kdecore/kcalendarsystemhebrew.cpp:633
 #, kde-format
 msgctxt "Hebrew month 5 - KLocale::NarrowName"
 msgid "S"
-msgstr "ש"
+msgstr "שב"
 
 #: kdecore/kcalendarsystemhebrew.cpp:635
 #, kde-format
 msgctxt "Hebrew month 6 - KLocale::NarrowName"
 msgid "A"
-msgstr "א"
+msgstr "אד"
 
 #: kdecore/kcalendarsystemhebrew.cpp:637
 #, kde-format
 msgctxt "Hebrew month 7 - KLocale::NarrowName"
 msgid "N"
-msgstr "נ"
+msgstr "ני"
 
 #: kdecore/kcalendarsystemhebrew.cpp:639
 #, kde-format
 msgctxt "Hebrew month 8 - KLocale::NarrowName"
 msgid "I"
-msgstr "א"
+msgstr "אי"
 
 #: kdecore/kcalendarsystemhebrew.cpp:641
 #, kde-format
 msgctxt "Hebrew month 9 - KLocale::NarrowName"
 msgid "S"
-msgstr "ס"
+msgstr "סי"
 
 #: kdecore/kcalendarsystemhebrew.cpp:643
 #, kde-format
 msgctxt "Hebrew month 10 - KLocale::NarrowName"
 msgid "T"
-msgstr "ת"
+msgstr "תמ"
 
 #: kdecore/kcalendarsystemhebrew.cpp:645
 #, kde-format
@@ -4557,7 +4557,7 @@ msgstr "אב"
 #, kde-format
 msgctxt "Hebrew month 12 - KLocale::NarrowName"
 msgid "E"
-msgstr "א"
+msgstr "אל"
 
 #: kdecore/kcalendarsystemhebrew.cpp:649
 #, fuzzy, kde-format
@@ -4581,7 +4581,7 @@ msgstr "בתשרי"
 #, kde-format
 msgctxt "Hebrew month 2 - KLocale::ShortName Possessive"
 msgid "of Hes"
-msgstr "בחשוון"
+msgstr "בחשו׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:664
 #, kde-format
@@ -4617,7 +4617,7 @@ msgstr "בניסן"
 #, kde-format
 msgctxt "Hebrew month 8 - KLocale::ShortName Possessive"
 msgid "of Iya"
-msgstr "באיר"
+msgstr "באייר"
 
 #: kdecore/kcalendarsystemhebrew.cpp:676
 #, kde-format
@@ -4647,13 +4647,13 @@ msgstr "באלול"
 #, kde-format
 msgctxt "Hebrew month 13 - KLocale::ShortName Possessive"
 msgid "of Ad1"
-msgstr "באדר א'"
+msgstr "באדר א׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:686
 #, kde-format
 msgctxt "Hebrew month 14 - KLocale::ShortName Possessive"
 msgid "of Ad2"
-msgstr "באדר ב'"
+msgstr "באדר ב׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:695
 #, kde-format
@@ -4665,7 +4665,7 @@ msgstr "תשרי"
 #, kde-format
 msgctxt "Hebrew month 2 - KLocale::ShortName"
 msgid "Hes"
-msgstr "חשוון"
+msgstr "חשו׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:699
 #, kde-format
@@ -4701,13 +4701,13 @@ msgstr "ניסן"
 #, kde-format
 msgctxt "Hebrew month 8 - KLocale::ShortName"
 msgid "Iya"
-msgstr "אייר"
+msgstr "איי׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:711
 #, kde-format
 msgctxt "Hebrew month 9 - KLocale::ShortName"
 msgid "Siv"
-msgstr "סיוון"
+msgstr "סיו׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:713
 #, kde-format
@@ -4731,13 +4731,13 @@ msgstr "אלול"
 #, kde-format
 msgctxt "Hebrew month 13 - KLocale::ShortName"
 msgid "Ad1"
-msgstr "אדר א'"
+msgstr "אדר א׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:721
 #, kde-format
 msgctxt "Hebrew month 14 - KLocale::ShortName"
 msgid "Ad2"
-msgstr "אדר ב'"
+msgstr "אדר ב׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:730
 #, kde-format
@@ -4815,13 +4815,13 @@ msgstr "באלול"
 #, kde-format
 msgctxt "Hebrew month 13 - KLocale::LongName Possessive"
 msgid "of Adar I"
-msgstr "באדר א'"
+msgstr "באדר א׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:756
 #, kde-format
 msgctxt "Hebrew month 14 - KLocale::LongName Possessive"
 msgid "of Adar II"
-msgstr "באדר ב'"
+msgstr "באדר ב׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:765
 #, kde-format
@@ -4899,13 +4899,13 @@ msgstr "אלול"
 #, kde-format
 msgctxt "Hebrew month 13 - KLocale::LongName"
 msgid "Adar I"
-msgstr "אדר א'"
+msgstr "אדר א׳"
 
 #: kdecore/kcalendarsystemhebrew.cpp:791
 #, kde-format
 msgctxt "Hebrew month 14 - KLocale::LongName"
 msgid "Adar II"
-msgstr "אדר ב'"
+msgstr "אדר ב׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:66
 #, fuzzy, kde-format
@@ -5003,283 +5003,283 @@ msgstr ""
 #, kde-format
 msgctxt "Indian National month 1 - KLocale::ShortName Possessive"
 msgid "of Cha"
-msgstr "בצ'א'"
+msgstr "בצ׳אי׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:191
 #, kde-format
 msgctxt "Indian National month 2 - KLocale::ShortName Possessive"
 msgid "of Vai"
-msgstr "בואי'"
+msgstr "בואי׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:193
 #, kde-format
 msgctxt "Indian National month 3 - KLocale::ShortName Possessive"
 msgid "of Jya"
-msgstr "בג'יא'"
+msgstr "בג׳יא׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:195
 #, kde-format
 msgctxt "Indian National month 4 - KLocale::ShortName Possessive"
 msgid "of Āsh"
-msgstr "באש'"
+msgstr "באשא׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:197
 #, kde-format
 msgctxt "Indian National month 5 - KLocale::ShortName Possessive"
 msgid "of Shr"
-msgstr "בשר'"
+msgstr "בשרו׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:199
 #, kde-format
 msgctxt "Indian National month 6 - KLocale::ShortName Possessive"
 msgid "of Bhā"
-msgstr "בבה'"
+msgstr "בבהד׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:201
 #, kde-format
 msgctxt "Indian National month 7 - KLocale::ShortName Possessive"
 msgid "of Āsw"
-msgstr "באס'"
+msgstr "באשו׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:203
 #, kde-format
 msgctxt "Indian National month 8 - KLocale::ShortName Possessive"
 msgid "of Kār"
-msgstr "בקאר'"
+msgstr "בקרט׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:205
 #, kde-format
 msgctxt "Indian National month 9 - KLocale::ShortName Possessive"
 msgid "of Agr"
-msgstr "באג'ר'"
+msgstr "באגר׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:207
 #, kde-format
 msgctxt "Indian National month 10 - KLocale::ShortName Possessive"
 msgid "of Pau"
-msgstr "בפאו'"
+msgstr "בפאו׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:209
 #, kde-format
 msgctxt "Indian National month 11 - KLocale::ShortName Possessive"
 msgid "of Māg"
-msgstr "במאג'"
+msgstr "במגהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:211
 #, kde-format
 msgctxt "Indian National month 12 - KLocale::ShortName Possessive"
 msgid "of Phā"
-msgstr "בפא'"
+msgstr "בפאל׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:220
 #, kde-format
 msgctxt "Indian National month 1 - KLocale::ShortName"
 msgid "Cha"
-msgstr "צ'א"
+msgstr "צ׳אי׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:222
 #, kde-format
 msgctxt "Indian National month 2 - KLocale::ShortName"
 msgid "Vai"
-msgstr "ואי"
+msgstr "ואי׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:224
 #, kde-format
 msgctxt "Indian National month 3 - KLocale::ShortName"
 msgid "Jya"
-msgstr "ג'יא"
+msgstr "ג׳יא׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:226
 #, kde-format
 msgctxt "Indian National month 4 - KLocale::ShortName"
 msgid "Āsh"
-msgstr "אש"
+msgstr "אשא׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:228
 #, kde-format
 msgctxt "Indian National month 5 - KLocale::ShortName"
 msgid "Shr"
-msgstr "שר"
+msgstr "שרו׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:230
 #, kde-format
 msgctxt "Indian National month 6 - KLocale::ShortName"
 msgid "Bhā"
-msgstr "בהא"
+msgstr "בהד׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:232
 #, kde-format
 msgctxt "Indian National month 7 - KLocale::ShortName"
 msgid "Āsw"
-msgstr "אסו"
+msgstr "אשו׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:234
 #, kde-format
 msgctxt "Indian National month 8 - KLocale::ShortName"
 msgid "Kār"
-msgstr "קאר"
+msgstr "קרט׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:236
 #, kde-format
 msgctxt "Indian National month 9 - KLocale::ShortName"
 msgid "Agr"
-msgstr "אגר"
+msgstr "אגר׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:238
 #, kde-format
 msgctxt "Indian National month 10 - KLocale::ShortName"
 msgid "Pau"
-msgstr "פאו"
+msgstr "פאו׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:240
 #, kde-format
 msgctxt "Indian National month 11 - KLocale::ShortName"
 msgid "Māg"
-msgstr "מאג"
+msgstr "מגהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:242
 #, kde-format
 msgctxt "Indian National month 12 - KLocale::ShortName"
 msgid "Phā"
-msgstr "פא"
+msgstr "פאל׳"
 
 #: kdecore/kcalendarsystemindiannational.cpp:251
 #, kde-format
 msgctxt "Indian National month 1 - KLocale::LongName Possessive"
 msgid "of Chaitra"
-msgstr "בצ'ריטא"
+msgstr "בצ׳איטרה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:253
 #, kde-format
 msgctxt "Indian National month 2 - KLocale::LongName Possessive"
 msgid "of Vaishākh"
-msgstr "ואישאקא"
+msgstr "בואישאכה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:255
 #, kde-format
 msgctxt "Indian National month 3 - KLocale::LongName Possessive"
 msgid "of Jyaishtha"
-msgstr "בג'יאשתא"
+msgstr "בג׳יאשטהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:257
 #, kde-format
 msgctxt "Indian National month 4 - KLocale::LongName Possessive"
 msgid "of Āshādha"
-msgstr "אשאדא"
+msgstr "באשאדהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:259
 #, kde-format
 msgctxt "Indian National month 5 - KLocale::LongName Possessive"
 msgid "of Shrāvana"
-msgstr "בשארואנא"
+msgstr "בשראוונה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:261
 #, kde-format
 msgctxt "Indian National month 6 - KLocale::LongName Possessive"
 msgid "of Bhādrapad"
-msgstr "בהדרפאד"
+msgstr "בבהדרה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:263
 #, kde-format
 msgctxt "Indian National month 7 - KLocale::LongName Possessive"
 msgid "of Āshwin"
-msgstr "באשווין"
+msgstr "באשווינה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:265
 #, kde-format
 msgctxt "Indian National month 8 - KLocale::LongName Possessive"
 msgid "of Kārtik"
-msgstr "בקרטיק"
+msgstr "בקרטיקה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:267
 #, kde-format
 msgctxt "Indian National month 9 - KLocale::LongName Possessive"
 msgid "of Agrahayana"
-msgstr "באגראהימא"
+msgstr "באגרהאיאנה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:269
 #, kde-format
 msgctxt "Indian National month 10 - KLocale::LongName Possessive"
 msgid "of Paush"
-msgstr "בפאוש"
+msgstr "בפאושה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:271
 #, kde-format
 msgctxt "Indian National month 11 - KLocale::LongName Possessive"
 msgid "of Māgh"
-msgstr "במאג"
+msgstr "במגהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:273
 #, kde-format
 msgctxt "Indian National month 12 - KLocale::LongName Possessive"
 msgid "of Phālgun"
-msgstr "בפא'"
+msgstr "בפאלגונה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:282
 #, kde-format
 msgctxt "Indian National month 1 - KLocale::LongName"
 msgid "Chaitra"
-msgstr "צ'ריטא"
+msgstr "צ׳איטרה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:284
 #, kde-format
 msgctxt "Indian National month 2 - KLocale::LongName"
 msgid "Vaishākh"
-msgstr "ואישאקא"
+msgstr "ואישאכה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:286
 #, kde-format
 msgctxt "Indian National month 3 - KLocale::LongName"
 msgid "Jyaishtha"
-msgstr "ג'יאשתא"
+msgstr "ג׳יאשטהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:288
 #, kde-format
 msgctxt "Indian National month 4 - KLocale::LongName"
 msgid "Āshādha"
-msgstr "אשאדא"
+msgstr "אשאדהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:290
 #, kde-format
 msgctxt "Indian National month 5 - KLocale::LongName"
 msgid "Shrāvana"
-msgstr "שראוונא"
+msgstr "שראוונה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:292
 #, kde-format
 msgctxt "Indian National month 6 - KLocale::LongName"
 msgid "Bhādrapad"
-msgstr "בהדרפאד"
+msgstr "בהדרה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:294
 #, kde-format
 msgctxt "Indian National month 7 - KLocale::LongName"
 msgid "Āshwin"
-msgstr "באשווין"
+msgstr "אשווינה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:296
 #, kde-format
 msgctxt "Indian National month 8 - KLocale::LongName"
 msgid "Kārtik"
-msgstr "בקרטיק"
+msgstr "קרטיקה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:298
 #, kde-format
 msgctxt "Indian National month 9 - KLocale::LongName"
 msgid "Agrahayana"
-msgstr "אגראהיאנא"
+msgstr "אגרהאיאנה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:300
 #, kde-format
 msgctxt "Indian National month 10 - KLocale::LongName"
 msgid "Paush"
-msgstr "פאוש"
+msgstr "פאושה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:302
 #, kde-format
 msgctxt "Indian National month 11 - KLocale::LongName"
 msgid "Māgh"
-msgstr "מאג"
+msgstr "מגהה"
 
 #: kdecore/kcalendarsystemindiannational.cpp:304
 #, fuzzy, kde-format
@@ -5508,61 +5508,61 @@ msgstr ""
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::ShortName Possessive"
 msgid "of Muh"
-msgstr "במהר"
+msgstr "במוח׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:199
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::ShortName Possessive"
 msgid "of Saf"
-msgstr "בספר"
+msgstr "בצפר"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:201
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::ShortName Possessive"
 msgid "of R.A"
-msgstr "ברביע אלאוול"
+msgstr "ברביע 1"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:203
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::ShortName Possessive"
 msgid "of R.T"
-msgstr "ברביע אלתאני"
+msgstr "ברביע 2"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:205
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::ShortName Possessive"
 msgid "of J.A"
-msgstr "בג'מאדה אלאוול"
+msgstr "בגו׳מ 1"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:207
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::ShortName Possessive"
 msgid "of J.T"
-msgstr "בג'מאדה אלתאני"
+msgstr "בג׳ומ 2"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:209
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::ShortName Possessive"
 msgid "of Raj"
-msgstr "ברג'ב"
+msgstr "ברג׳ב"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:211
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::ShortName Possessive"
 msgid "of Sha"
-msgstr "בשהר'"
+msgstr "בשעב׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:213
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::ShortName Possessive"
 msgid "of Ram"
-msgstr "בפאמ'"
+msgstr "ברמד׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:215
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::ShortName Possessive"
 msgid "of Shw"
-msgstr "בשהר'"
+msgstr "בשוו׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:217
 #, kde-format
@@ -5574,25 +5574,25 @@ msgstr "בקעדה"
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::ShortName Possessive"
 msgid "of Hij"
-msgstr "בחג'ה"
+msgstr "בחיג׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:228
 #, kde-format
 msgctxt "Hijri month 1 - KLocale::ShortName"
 msgid "Muh"
-msgstr "מהר"
+msgstr "מוח׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:230
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::ShortName"
 msgid "Saf"
-msgstr "ספר"
+msgstr "צפר"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:232
 #, kde-format
 msgctxt "Hijri month 3 - KLocale::ShortName"
 msgid "R.A"
-msgstr "רביע אלאוול"
+msgstr "רביע 1"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:234
 #, kde-format
@@ -5604,7 +5604,7 @@ msgstr ""
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::ShortName"
 msgid "J.A"
-msgstr "ג'מאדה אלאוול"
+msgstr "ג׳ומ 1"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:238
 #, kde-format
@@ -5616,25 +5616,25 @@ msgstr ""
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::ShortName"
 msgid "Raj"
-msgstr "רג'ב"
+msgstr "רג׳ב"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:242
 #, kde-format
 msgctxt "Hijri month 8 - KLocale::ShortName"
 msgid "Sha"
-msgstr "שהר'"
+msgstr "שעב׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:244
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::ShortName"
 msgid "Ram"
-msgstr "פאמ"
+msgstr "רמד׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:246
 #, kde-format
 msgctxt "Hijri month 10 - KLocale::ShortName"
 msgid "Shw"
-msgstr "שהר'"
+msgstr "שוו׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:248
 #, kde-format
@@ -5646,7 +5646,7 @@ msgstr "קעדה"
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::ShortName"
 msgid "Hij"
-msgstr "היג'רי"
+msgstr "חיג׳"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:259
 #, kde-format
@@ -5658,7 +5658,7 @@ msgstr "במוחרם"
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::LongName Possessive"
 msgid "of Safar"
-msgstr "בספר"
+msgstr "בצפר"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:263
 #, kde-format
@@ -5670,25 +5670,25 @@ msgstr "ברביע אלאוול"
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::LongName Possessive"
 msgid "of Rabi` al-Thaani"
-msgstr "ברביע אלת'אני"
+msgstr "ברביע א־ת׳אני"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:267
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::LongName Possessive"
 msgid "of Jumaada al-Awal"
-msgstr "בג'מאדה אלאוול"
+msgstr "בג׳ומאדא אלאולא"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:269
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::LongName Possessive"
 msgid "of Jumaada al-Thaani"
-msgstr "בג'מאדה אלת'אני"
+msgstr "בג׳ומאדה א־ת׳אניה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:271
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::LongName Possessive"
 msgid "of Rajab"
-msgstr "ברג'ב"
+msgstr "ברג׳ב"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:273
 #, kde-format
@@ -5700,7 +5700,7 @@ msgstr "בשעבאן"
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::LongName Possessive"
 msgid "of Ramadan"
-msgstr "ברמדאן"
+msgstr "ברמד׳אן"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:277
 #, kde-format
@@ -5712,13 +5712,13 @@ msgstr "בשוואל"
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::LongName Possessive"
 msgid "of Thu al-Qi`dah"
-msgstr "בד'ו אלקעדה"
+msgstr "בד׳ו אלקעדה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:281
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::LongName Possessive"
 msgid "of Thu al-Hijjah"
-msgstr "בד'ו אלחג'ה"
+msgstr "בד׳ו אלחיג׳ה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:290
 #, kde-format
@@ -5730,7 +5730,7 @@ msgstr "מוחרם"
 #, kde-format
 msgctxt "Hijri month 2 - KLocale::LongName"
 msgid "Safar"
-msgstr "ספר"
+msgstr "צפר"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:294
 #, kde-format
@@ -5742,25 +5742,25 @@ msgstr "רביע אלאוול"
 #, kde-format
 msgctxt "Hijri month 4 - KLocale::LongName"
 msgid "Rabi` al-Thaani"
-msgstr "רביע אלתאני"
+msgstr "רביע א־ת׳אני"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:298
 #, kde-format
 msgctxt "Hijri month 5 - KLocale::LongName"
 msgid "Jumaada al-Awal"
-msgstr "ג'מאדה אלאוול"
+msgstr "ג׳ומאדא אלאולא"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:300
 #, kde-format
 msgctxt "Hijri month 6 - KLocale::LongName"
 msgid "Jumaada al-Thaani"
-msgstr "ג'מאדה אלתאני"
+msgstr "גו׳מאדא א־ת׳אניה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:302
 #, kde-format
 msgctxt "Hijri month 7 - KLocale::LongName"
 msgid "Rajab"
-msgstr "רג'ב"
+msgstr "רג׳ב"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:304
 #, kde-format
@@ -5772,7 +5772,7 @@ msgstr "שעבאן"
 #, kde-format
 msgctxt "Hijri month 9 - KLocale::LongName"
 msgid "Ramadan"
-msgstr "רמדאן"
+msgstr "רמד׳אן"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:308
 #, kde-format
@@ -5784,13 +5784,13 @@ msgstr "שוואל"
 #, kde-format
 msgctxt "Hijri month 11 - KLocale::LongName"
 msgid "Thu al-Qi`dah"
-msgstr "ד'ו אלקעדה"
+msgstr "ד׳ו אלקעדה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:312
 #, kde-format
 msgctxt "Hijri month 12 - KLocale::LongName"
 msgid "Thu al-Hijjah"
-msgstr "ד'ו אלחג'ה"
+msgstr "ד׳ו אלחיג׳ה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:325
 #, kde-format
@@ -6013,19 +6013,19 @@ msgstr ""
 #, kde-format
 msgctxt "Jalali month 1 - KLocale::ShortName Possessive"
 msgid "of Far"
-msgstr "בפרב'"
+msgstr "בפרב׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:205
 #, kde-format
 msgctxt "Jalali month 2 - KLocale::ShortName Possessive"
 msgid "of Ord"
-msgstr "באור'"
+msgstr "באור׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:207
 #, kde-format
 msgctxt "Jalali month 3 - KLocale::ShortName Possessive"
 msgid "of Kho"
-msgstr "בחור'"
+msgstr "בחור׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:209
 #, kde-format
@@ -6037,13 +6037,13 @@ msgstr "בתיר"
 #, kde-format
 msgctxt "Jalali month 5 - KLocale::ShortName Possessive"
 msgid "of Mor"
-msgstr "במור'"
+msgstr "במור׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:213
 #, kde-format
 msgctxt "Jalali month 6 - KLocale::ShortName Possessive"
 msgid "of Sha"
-msgstr "בשהר'"
+msgstr "בשהר׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:215
 #, kde-format
@@ -6079,25 +6079,25 @@ msgstr "בבהמן"
 #, kde-format
 msgctxt "Jalali month 12 - KLocale::ShortName Possessive"
 msgid "of Esf"
-msgstr "באספ'"
+msgstr "באספ׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:234
 #, kde-format
 msgctxt "Jalali month 1 - KLocale::ShortName"
 msgid "Far"
-msgstr "פרב'"
+msgstr "פרב׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:236
 #, kde-format
 msgctxt "Jalali month 2 - KLocale::ShortName"
 msgid "Ord"
-msgstr "אור'"
+msgstr "אור׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:238
 #, kde-format
 msgctxt "Jalali month 3 - KLocale::ShortName"
 msgid "Kho"
-msgstr "חור'"
+msgstr "חור׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:240
 #, kde-format
@@ -6109,13 +6109,13 @@ msgstr "תיר"
 #, kde-format
 msgctxt "Jalali month 5 - KLocale::ShortName"
 msgid "Mor"
-msgstr "מור'"
+msgstr "מור׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:244
 #, kde-format
 msgctxt "Jalali month 6 - KLocale::ShortName"
 msgid "Sha"
-msgstr "שהר'"
+msgstr "שהר׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:246
 #, kde-format
@@ -6151,7 +6151,7 @@ msgstr "בהמן"
 #, kde-format
 msgctxt "Jalali month 12 - KLocale::ShortName"
 msgid "Esf"
-msgstr "אספ'"
+msgstr "אספ׳"
 
 #: kdecore/kcalendarsystemjalali.cpp:265
 #, kde-format
@@ -6533,7 +6533,7 @@ msgstr ""
 #, kde-format
 msgctxt "Calendar Era: Julian Christian Era, years < 0, LongFormat"
 msgid "Before Christ"
-msgstr "לפי ישו"
+msgstr "לפני הספירה"
 
 #: kdecore/kcalendarsystemjulian.cpp:77
 #, kde-format
@@ -6655,13 +6655,13 @@ msgstr ""
 #, kde-format
 msgctxt "Julian month 1 - KLocale::ShortName Possessive"
 msgid "of Jan"
-msgstr "בינו'"
+msgstr "בינו׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:205
 #, kde-format
 msgctxt "Julian month 2 - KLocale::ShortName Possessive"
 msgid "of Feb"
-msgstr "בפבר'"
+msgstr "בפבר׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:207
 #, kde-format
@@ -6673,7 +6673,7 @@ msgstr "במרץ"
 #, kde-format
 msgctxt "Julian month 4 - KLocale::ShortName Possessive"
 msgid "of Apr"
-msgstr "באפר'"
+msgstr "באפר׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:211
 #, kde-format
@@ -6697,31 +6697,31 @@ msgstr "ביולי"
 #, kde-format
 msgctxt "Julian month 8 - KLocale::ShortName Possessive"
 msgid "of Aug"
-msgstr "באוג'"
+msgstr "באוג׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:219
 #, kde-format
 msgctxt "Julian month 9 - KLocale::ShortName Possessive"
 msgid "of Sep"
-msgstr "בספט'"
+msgstr "בספט׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:221
 #, kde-format
 msgctxt "Julian month 10 - KLocale::ShortName Possessive"
 msgid "of Oct"
-msgstr "באוק'"
+msgstr "באוק׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:223
 #, kde-format
 msgctxt "Julian month 11 - KLocale::ShortName Possessive"
 msgid "of Nov"
-msgstr "בנוב'"
+msgstr "בנוב׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:225
 #, kde-format
 msgctxt "Julian month 12 - KLocale::ShortName Possessive"
 msgid "of Dec"
-msgstr "בדצמ'"
+msgstr "בדצמ׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:234
 #, kde-format
@@ -6985,43 +6985,43 @@ msgstr "א"
 #, kde-format
 msgctxt "Julian weekday 1 - KLocale::ShortName"
 msgid "Mon"
-msgstr "ב'"
+msgstr "ב׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:354
 #, kde-format
 msgctxt "Julian weekday 2 - KLocale::ShortName"
 msgid "Tue"
-msgstr "ג'"
+msgstr "ג׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:356
 #, kde-format
 msgctxt "Julian weekday 3 - KLocale::ShortName"
 msgid "Wed"
-msgstr "ד'"
+msgstr "ד׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:358
 #, kde-format
 msgctxt "Julian weekday 4 - KLocale::ShortName"
 msgid "Thu"
-msgstr "ה'"
+msgstr "ה"
 
 #: kdecore/kcalendarsystemjulian.cpp:360
 #, kde-format
 msgctxt "Julian weekday 5 - KLocale::ShortName"
 msgid "Fri"
-msgstr "ו'"
+msgstr "ו׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:362
 #, kde-format
 msgctxt "Julian weekday 6 - KLocale::ShortName"
 msgid "Sat"
-msgstr "ש'"
+msgstr "ש׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:364
 #, kde-format
 msgctxt "Julian weekday 7 - KLocale::ShortName"
 msgid "Sun"
-msgstr "א'"
+msgstr "א׳"
 
 #: kdecore/kcalendarsystemjulian.cpp:371
 #, kde-format
@@ -7106,7 +7106,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:278
 #, kde-format
 msgid "Use the X-server display 'displayname'"
-msgstr "\"displayname\" X-השתמש בתצוגה של שרת ה"
+msgstr "להשתמש בתצוגה ‚displayname’ של שרת ה־X"
 
 #: kdecore/kcmdlineargs.cpp:281
 #, kde-format
@@ -7137,7 +7137,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:284
 #, kde-format
 msgid "tells Qt to never grab the mouse or the keyboard"
-msgstr "מורה ל־Qt לא לתפוס אף פעם את העכבר או את המקלדת  "
+msgstr "מורה ל־Qt לא לתפוס אף פעם את העכבר או את המקלדת"
 
 #: kdecore/kcmdlineargs.cpp:285
 #, kde-format
@@ -7146,7 +7146,7 @@ msgid ""
 "-nograb, use -dograb to override"
 msgstr ""
 "הפעלה של מנפה באגים גורמת להפעלה משתמעת של\n"
-"האפשרות nograb-. השתמש ב־dograb- כדי לעקוף זאת"
+"האפשרות nograb-. יש להשתמש ב־dograb- כדי לעקוף זאת"
 
 #: kdecore/kcmdlineargs.cpp:286
 #, kde-format
@@ -7156,7 +7156,7 @@ msgstr "עובר למצב סנכרוני בשביל ניפוי באגים"
 #: kdecore/kcmdlineargs.cpp:288
 #, kde-format
 msgid "defines the application font"
-msgstr "מגדיר את הגופן של התכנית"
+msgstr "מגדיר את הגופן של התוכנית"
 
 #: kdecore/kcmdlineargs.cpp:290
 #, kde-format
@@ -9285,7 +9285,7 @@ msgstr ""
 #: kdecore/TIMEZONES:363
 #, kde-format
 msgid "America/Jamaica"
-msgstr "אמריקה/ג'מייקה"
+msgstr "אמריקה/ג׳מייקה"
 
 #: kdecore/TIMEZONES:364
 #, kde-format
@@ -9295,7 +9295,7 @@ msgstr "אמריקה/חוחוי"
 #: kdecore/TIMEZONES:367
 #, kde-format
 msgid "America/Juneau"
-msgstr "אמריקה/ג'ונו"
+msgstr "אמריקה/ג׳ונו"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:369
@@ -9371,10 +9371,9 @@ msgstr "אמריקה/לוס אנג'לס"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:392
-#, fuzzy, kde-format
-#| msgid "US/Pacific"
+#, kde-format
 msgid "Pacific"
-msgstr "האוקיינוס השקט/ארה\"ב"
+msgstr "האוקיינוס השקט"
 
 #: kdecore/TIMEZONES:393
 #, kde-format
@@ -9723,7 +9722,7 @@ msgstr "אמריקה/חוחוי"
 #: kdecore/TIMEZONES:493
 #, kde-format
 msgid "Greenland (most areas)"
-msgstr ""
+msgstr "גרינלנד (רוב האזורים)"
 
 #: kdecore/TIMEZONES:494
 #, fuzzy, kde-format
@@ -9888,7 +9887,7 @@ msgstr "פרנמבוקו"
 #: kdecore/TIMEZONES:539
 #, kde-format
 msgid "America/Regina"
-msgstr "אמריקה/רג'ינה"
+msgstr "אמריקה/רג׳ינה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:541 kdecore/TIMEZONES:578 kdecore/TIMEZONES:1108
@@ -10513,13 +10512,13 @@ msgstr "אסיה/אנדיר"
 #: kdecore/TIMEZONES:725
 #, kde-format
 msgid "Moscow+10 - Bering Sea"
-msgstr "מוסקבה+ 10 - ים ברינג"
+msgstr "מוסקבה+10 - ים ברינג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:727
 #, kde-format
 msgid "Moscow+08 - Bering Sea"
-msgstr "מוסקבה+ 8 - ים ברינג"
+msgstr "מוסקבה+08 - ים ברינג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:729
@@ -10619,7 +10618,7 @@ msgstr ""
 #: kdecore/TIMEZONES:752
 #, kde-format
 msgid "Asia/Beijing"
-msgstr "אסיה/בייג'ינג"
+msgstr "אסיה/בייג׳ינג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:754 kdecore/TIMEZONES:924 kdecore/TIMEZONES:1295
@@ -10668,7 +10667,7 @@ msgstr ""
 #: kdecore/TIMEZONES:764
 #, kde-format
 msgid "Asia/Choibalsan"
-msgstr "אסיה/צ'ויבלסן"
+msgstr "אסיה/צ׳ויבלסאן"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:766
@@ -10679,7 +10678,7 @@ msgstr ""
 #: kdecore/TIMEZONES:767
 #, kde-format
 msgid "Asia/Chongqing"
-msgstr "אסיה/צ'ונגקינג"
+msgstr "אסיה/צ׳ונגצ׳ינג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:769 kdecore/TIMEZONES:774
@@ -10691,7 +10690,7 @@ msgstr ""
 #: kdecore/TIMEZONES:771
 #, kde-format
 msgid "China mountains"
-msgstr "ערי סין"
+msgstr "הרי סין"
 
 #: kdecore/TIMEZONES:772
 #, kde-format
@@ -10755,7 +10754,7 @@ msgstr "אסיה/עזה"
 #: kdecore/TIMEZONES:787
 #, kde-format
 msgid "Gaza Strip"
-msgstr ""
+msgstr "רצועת עזה"
 
 #: kdecore/TIMEZONES:788
 #, kde-format
@@ -10777,18 +10776,18 @@ msgstr ""
 #: kdecore/TIMEZONES:793
 #, kde-format
 msgid "Asia/Hebron"
-msgstr "אסיה/חרבון"
+msgstr "אסיה/חברון"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:795
 #, kde-format
 msgid "West Bank"
-msgstr ""
+msgstr "הגדה המערבית"
 
 #: kdecore/TIMEZONES:796
 #, kde-format
 msgid "Asia/Ho_Chi_Minh"
-msgstr "אסיה/או צ'י מין"
+msgstr "אסיה/הו צ׳י מין"
 
 #: kdecore/TIMEZONES:797
 #, kde-format
@@ -10815,7 +10814,7 @@ msgstr "אסיה/אירקוצק"
 #: kdecore/TIMEZONES:803
 #, kde-format
 msgid "Moscow+05 - Lake Baikal"
-msgstr ""
+msgstr "מוסקבה+05 - ימת באיקל"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:805
@@ -10826,7 +10825,7 @@ msgstr ""
 #: kdecore/TIMEZONES:806
 #, kde-format
 msgid "Asia/Jakarta"
-msgstr "אסיה/ג'קרטה"
+msgstr "אסיה/ג׳קרטה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:808
@@ -10843,7 +10842,7 @@ msgstr ""
 #: kdecore/TIMEZONES:811
 #, kde-format
 msgid "Asia/Jayapura"
-msgstr "אסיה/ג'יאפורה"
+msgstr "אסיה/ג׳יאפורה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:813
@@ -10876,31 +10875,30 @@ msgstr "אסיה/קאבול"
 #: kdecore/TIMEZONES:820
 #, kde-format
 msgid "Asia/Kamchatka"
-msgstr "אסיה/קמצ'טקה"
+msgstr "אסיה/קמצ׳טקה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:822
 #, kde-format
 msgid "Moscow+09 - Kamchatka"
-msgstr "מוסקבה+ 09 - קמצ'טקה"
+msgstr "מוסקבה+ 09 - קמצ׳טקה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:824
 #, kde-format
 msgid "Moscow+08 - Kamchatka"
-msgstr "מוסקבה+ 08 - קמצ'טקה"
+msgstr "מוסקבה+ 08 - קמצ׳טקה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:826
-#, fuzzy, kde-format
-#| msgid "Moscow+09 - Kamchatka"
+#, kde-format
 msgid "MSK+09 - Kamchatka"
-msgstr "מוסקבה+ 09 - קמצ'טקה"
+msgstr "מוסקבה+09 - קמצ׳טקה"
 
 #: kdecore/TIMEZONES:827
 #, kde-format
 msgid "Asia/Karachi"
-msgstr "אסיה/קראצ'י"
+msgstr "אסיה/קראצ׳י"
 
 #: kdecore/TIMEZONES:828
 #, kde-format
@@ -10911,13 +10909,13 @@ msgstr "אסיה/קשגאר"
 #: kdecore/TIMEZONES:830
 #, kde-format
 msgid "west Tibet & Xinjiang"
-msgstr "מערב טיבט ושינג'יאנג"
+msgstr "מערב טיבט ושינג׳יאנג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:832
 #, kde-format
 msgid "China west Xinjiang"
-msgstr "מערב סין ושינג'יאנג"
+msgstr "מערב סין ושינג׳יאנג"
 
 #: kdecore/TIMEZONES:833
 #, kde-format
@@ -10930,10 +10928,9 @@ msgid "Asia/Katmandu"
 msgstr "אסיה/קטמנדו"
 
 #: kdecore/TIMEZONES:835
-#, fuzzy, kde-format
-#| msgid "Asia/Shanghai"
+#, kde-format
 msgid "Asia/Khandyga"
-msgstr "אסיה/שנגחאי"
+msgstr "אסיה/חנדיגה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:837
@@ -10955,7 +10952,7 @@ msgstr "אסיה/קרסנויארסק"
 #: kdecore/TIMEZONES:841
 #, kde-format
 msgid "Moscow+04 - Yenisei River"
-msgstr "מוסקבה+04 - נהר ינסיסיי"
+msgstr "מוסקבה+04 - נהר יניסיי"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:843
@@ -10983,7 +10980,7 @@ msgstr ""
 #: kdecore/TIMEZONES:849
 #, kde-format
 msgid "Asia/Kuching"
-msgstr "אסיה/קוצ'ינג"
+msgstr "אסיה/קוצ׳ינג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:851
@@ -11074,12 +11071,12 @@ msgstr "אסיה/ניקוסיה"
 #: kdecore/TIMEZONES:873
 #, kde-format
 msgid "Cyprus (most areas)"
-msgstr ""
+msgstr "קפריסין (רוב האזורים)"
 
 #: kdecore/TIMEZONES:874
-#, fuzzy, kde-format
+#, kde-format
 msgid "Asia/Novokuznetsk"
-msgstr "אסיה/אירקוצק"
+msgstr "אסיה/נובוקוזנצק"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:876
@@ -11172,16 +11169,15 @@ msgid "Asia/Qatar"
 msgstr "אסיה/קטאר"
 
 #: kdecore/TIMEZONES:900
-#, fuzzy, kde-format
-#| msgid "Asia/Pontianak"
+#, kde-format
 msgid "Asia/Qostanay"
-msgstr "אסיה/פונטיאנק"
+msgstr "אסיה/קוסטנאי"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:902
 #, kde-format
 msgid "Qostanay/Kostanay/Kustanay"
-msgstr ""
+msgstr "קוסטנאי/קוסטאנאי/כוסתנאי"
 
 #: kdecore/TIMEZONES:903
 #, kde-format
@@ -11245,10 +11241,9 @@ msgstr "מערב אוזבקיסטן"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:920
-#, fuzzy, kde-format
-#| msgid "west Uzbekistan"
+#, kde-format
 msgid "Uzbekistan (west)"
-msgstr "מערב אוזבקיסטן"
+msgstr "אוזבקיסטן (מערב)"
 
 #: kdecore/TIMEZONES:921
 #, kde-format
@@ -11278,10 +11273,9 @@ msgid "Asia/Singapore"
 msgstr "אסיה/סינגפור"
 
 #: kdecore/TIMEZONES:930
-#, fuzzy, kde-format
-#| msgid "Asia/Krasnoyarsk"
+#, kde-format
 msgid "Asia/Srednekolymsk"
-msgstr "אסיה/קרסנויארסק"
+msgstr "אסיה/סרדנקולימסק"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:932
@@ -11292,7 +11286,7 @@ msgstr ""
 #: kdecore/TIMEZONES:933
 #, kde-format
 msgid "Asia/Taipei"
-msgstr "אסיה/טייפה"
+msgstr "אסיה/טאיפיי"
 
 #: kdecore/TIMEZONES:934
 #, kde-format
@@ -11307,10 +11301,9 @@ msgstr "מזרח אוזבקיסטן"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:938
-#, fuzzy, kde-format
-#| msgid "east Uzbekistan"
+#, kde-format
 msgid "Uzbekistan (east)"
-msgstr "מזרח אוזבקיסטן"
+msgstr "אוזבקיסטן (מזרח)"
 
 #: kdecore/TIMEZONES:939
 #, kde-format
@@ -11330,7 +11323,7 @@ msgstr "אסיה/תל־אביב"
 #: kdecore/TIMEZONES:942
 #, kde-format
 msgid "Asia/Thimbu"
-msgstr "אסיה/ת'ימפו"
+msgstr "אסיה/ת׳ימפו"
 
 #: kdecore/TIMEZONES:943
 #, kde-format
@@ -11343,10 +11336,9 @@ msgid "Asia/Tokyo"
 msgstr "אסיה/טוקיו"
 
 #: kdecore/TIMEZONES:945
-#, fuzzy, kde-format
-#| msgid "Asia/Omsk"
+#, kde-format
 msgid "Asia/Tomsk"
-msgstr "אסיה/אומסק"
+msgstr "אסיה/טומסק"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:947
@@ -11357,7 +11349,7 @@ msgstr ""
 #: kdecore/TIMEZONES:948
 #, kde-format
 msgid "Asia/Ujung_Pandang"
-msgstr "אסיה/אויונג פדאנג"
+msgstr "אסיה/אוג׳ונג פנדאנג"
 
 #: kdecore/TIMEZONES:951
 #, kde-format
@@ -11378,13 +11370,13 @@ msgstr "אסיה/אולן בטור"
 #: kdecore/TIMEZONES:959
 #, kde-format
 msgid "Asia/Urumqi"
-msgstr "אסיה/אורומצ'י"
+msgstr "אסיה/אורומצ׳י"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:961
 #, kde-format
 msgid "most of Tibet & Xinjiang"
-msgstr "רוב טיבט ושינג'יאנג"
+msgstr "רוב טיבט ושינג׳יאנג"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:963
@@ -11674,10 +11666,9 @@ msgstr "טזמניה - רוב האיזורים"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1039
-#, fuzzy, kde-format
-#| msgid "Australia/Tasmania"
+#, kde-format
 msgid "Tasmania"
-msgstr "אוסטרליה/טאסמניה"
+msgstr "טסמניה"
 
 #: kdecore/TIMEZONES:1040
 #, kde-format
@@ -11736,7 +11727,7 @@ msgstr "אוסטרליה/צפון"
 #: kdecore/TIMEZONES:1060
 #, kde-format
 msgid "Australia/Perth"
-msgstr "אוסטרליה/פרת'"
+msgstr "אוסטרליה/פרת׳"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1062 kdecore/TIMEZONES:1084
@@ -11746,10 +11737,9 @@ msgstr "מערב אוסטרליה - רוב האיזורים"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1064
-#, fuzzy, kde-format
-#| msgid "Western Australia - most locations"
+#, kde-format
 msgid "Western Australia (most areas)"
-msgstr "מערב אוסטרליה - רוב האיזורים"
+msgstr "מערב אוסטרליה (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1065
 #, kde-format
@@ -11850,7 +11840,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1121
 #, kde-format
 msgid "Canada/Saskatchewan"
-msgstr ""
+msgstr "קנדה/ססקצ׳ואן"
 
 #: kdecore/TIMEZONES:1124
 #, kde-format
@@ -11934,7 +11924,7 @@ msgstr "אירופה/ברלין"
 #: kdecore/TIMEZONES:1146
 #, kde-format
 msgid "Germany (most areas)"
-msgstr ""
+msgstr "גרמניה (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1147
 #, kde-format
@@ -11957,16 +11947,15 @@ msgid "Europe/Budapest"
 msgstr "אירופה/בודפשט"
 
 #: kdecore/TIMEZONES:1151
-#, fuzzy, kde-format
-#| msgid "Europe/Brussels"
+#, kde-format
 msgid "Europe/Busingen"
-msgstr "אירופה/בריסל"
+msgstr "אירופה/ביזינגן"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1153
 #, kde-format
 msgid "Busingen"
-msgstr ""
+msgstr "ביזינגן"
 
 #: kdecore/TIMEZONES:1154
 #, kde-format
@@ -12011,7 +12000,7 @@ msgstr "אירופה/איסטנבול"
 #: kdecore/TIMEZONES:1162
 #, kde-format
 msgid "Europe/Jersey"
-msgstr "אירופה/ג'רסי"
+msgstr "אירופה/ג׳רזי"
 
 #: kdecore/TIMEZONES:1163
 #, kde-format
@@ -12026,10 +12015,9 @@ msgstr "מוסקבה- 01 - קלינינגרד"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1167
-#, fuzzy, kde-format
-#| msgid "Moscow-01 - Kaliningrad"
+#, kde-format
 msgid "MSK-01 - Kaliningrad"
-msgstr "מוסקבה- 01 - קלינינגרד"
+msgstr "מוסקבה-01 - קלינינגרד"
 
 #: kdecore/TIMEZONES:1168
 #, kde-format
@@ -12040,7 +12028,7 @@ msgstr "אירופה/קייב"
 #: kdecore/TIMEZONES:1172
 #, kde-format
 msgid "Ukraine (most areas)"
-msgstr ""
+msgstr "אוקראינה (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1173
 #, kde-format
@@ -12191,10 +12179,9 @@ msgid "Europe/Sarajevo"
 msgstr "אירופה/סרייבו"
 
 #: kdecore/TIMEZONES:1213
-#, fuzzy, kde-format
-#| msgid "Europe/Sarajevo"
+#, kde-format
 msgid "Europe/Saratov"
-msgstr "אירופה/סרייבו"
+msgstr "אירופה/סראטוב"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1215
@@ -12211,19 +12198,18 @@ msgstr "אירופה/סימפרופול"
 #: kdecore/TIMEZONES:1218
 #, kde-format
 msgid "central Crimea"
-msgstr ""
+msgstr "מרכז קרים"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1220
-#, fuzzy, kde-format
-#| msgid "Prime: "
+#, kde-format
 msgid "Crimea"
-msgstr "ראשוני: "
+msgstr "קרים"
 
 #: kdecore/TIMEZONES:1221
 #, kde-format
 msgid "Europe/Skopje"
-msgstr "אירופה/סקופייה"
+msgstr "אירופה/שקופיה"
 
 #: kdecore/TIMEZONES:1222
 #, kde-format
@@ -12251,10 +12237,9 @@ msgid "Europe/Tiraspol"
 msgstr "אירופה/טירספול"
 
 #: kdecore/TIMEZONES:1227
-#, fuzzy, kde-format
-#| msgid "Europe/Minsk"
+#, kde-format
 msgid "Europe/Ulyanovsk"
-msgstr "אירופה/מינסק"
+msgstr "אירופה/אוליאנובסק"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1229
@@ -12265,7 +12250,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1230
 #, kde-format
 msgid "Europe/Uzhgorod"
-msgstr "אירופה/אוז'גורוד"
+msgstr "אירופה/אוז׳גורוד"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1232
@@ -12282,7 +12267,7 @@ msgstr ""
 #: kdecore/TIMEZONES:1235
 #, kde-format
 msgid "Europe/Vaduz"
-msgstr "אירופה/ודוז"
+msgstr "אירופה/ואדוץ"
 
 #: kdecore/TIMEZONES:1236
 #, kde-format
@@ -12329,7 +12314,7 @@ msgstr "אירופה/זאגרב"
 #: kdecore/TIMEZONES:1246
 #, kde-format
 msgid "Europe/Zaporozhye"
-msgstr "אירופה/זפורוז'יה"
+msgstr "אירופה/זפורוז׳יה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1248
@@ -12376,7 +12361,7 @@ msgstr "האוקיינוס ההודי/אנטננריבו"
 #: kdecore/TIMEZONES:1257
 #, kde-format
 msgid "Indian/Chagos"
-msgstr "האוקיינוס ההודי/איי צ'גוס"
+msgstr "האוקיינוס ההודי/איי צ׳גוס"
 
 #: kdecore/TIMEZONES:1258
 #, kde-format
@@ -12426,7 +12411,7 @@ msgstr "הודי לאומי"
 #: kdecore/TIMEZONES:1267
 #, kde-format
 msgid "Iran"
-msgstr "אירן"
+msgstr "איראן"
 
 #: kdecore/TIMEZONES:1268
 #, kde-format
@@ -12436,7 +12421,7 @@ msgstr "ישראל"
 #: kdecore/TIMEZONES:1269
 #, kde-format
 msgid "Jamaica"
-msgstr "ג'מייקה"
+msgstr "ג׳מייקה"
 
 #: kdecore/TIMEZONES:1270
 #, kde-format
@@ -12447,7 +12432,7 @@ msgstr "יפן"
 #: kdecore/TIMEZONES:1271 kdecore/TIMEZONES:1273 kdecore/TIMEZONES:1347
 #, kde-format
 msgid "Kwajalein"
-msgstr "קואג'לין"
+msgstr "קווג׳לין"
 
 #: kdecore/TIMEZONES:1274
 #, kde-format
@@ -12470,9 +12455,9 @@ msgid "Mexico/General"
 msgstr "מקסיקו/כללי"
 
 #: kdecore/TIMEZONES:1284
-#, fuzzy, kde-format
+#, kde-format
 msgid "NZ"
-msgstr "נ"
+msgstr ""
 
 #: kdecore/TIMEZONES:1287
 #, kde-format
@@ -12512,10 +12497,9 @@ msgid "New Zealand (most areas)"
 msgstr "ניו זילנד (רוב האזורים)"
 
 #: kdecore/TIMEZONES:1302
-#, fuzzy, kde-format
-#| msgid "Pacific/Honolulu"
+#, kde-format
 msgid "Pacific/Bougainville"
-msgstr "האוקיינוס השקט/הונולולו"
+msgstr "האוקיינוס השקט/בוגנוויל"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1304
@@ -12526,7 +12510,7 @@ msgstr "בוגנוויל"
 #: kdecore/TIMEZONES:1305
 #, kde-format
 msgid "Pacific/Chatham"
-msgstr "האוקיינוס השקט/צ'טם"
+msgstr "האוקיינוס השקט/צ׳טם"
 
 #: kdecore/TIMEZONES:1308
 #, fuzzy, kde-format
@@ -12580,7 +12564,7 @@ msgstr "האוקיינוס השקט/פקאופו"
 #: kdecore/TIMEZONES:1323
 #, kde-format
 msgid "Pacific/Fiji"
-msgstr "האוקיינוס השקט/פיג'י"
+msgstr "האוקיינוס השקט/פיג׳י"
 
 #: kdecore/TIMEZONES:1324
 #, kde-format
@@ -12633,7 +12617,7 @@ msgstr "הוואי"
 #: kdecore/TIMEZONES:1336
 #, kde-format
 msgid "Pacific/Johnston"
-msgstr "האוקיינוס השקט/ג'ונסטון"
+msgstr "האוקיינוס השקט/ג׳ונסטון"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1338
@@ -12655,18 +12639,18 @@ msgstr ""
 #: kdecore/TIMEZONES:1342
 #, kde-format
 msgid "Pacific/Kosrae"
-msgstr "האוקיינוס השקט/קוסרה"
+msgstr "האוקיינוס השקט/קוסראה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1344
 #, kde-format
 msgid "Kosrae"
-msgstr "קוסרה"
+msgstr "קוסראה"
 
 #: kdecore/TIMEZONES:1345
 #, kde-format
 msgid "Pacific/Kwajalein"
-msgstr "האוקיינוס השקט/קואג'לין"
+msgstr "האוקיינוס השקט/קווג׳לין"
 
 #: kdecore/TIMEZONES:1348
 #, kde-format
@@ -12883,7 +12867,7 @@ msgstr "טורקיה"
 #: kdecore/TIMEZONES:1405
 #, kde-format
 msgid "US/Alaska"
-msgstr "ארה\"ב/אלסקה"
+msgstr "ארה״ב/אלסקה"
 
 #: kdecore/TIMEZONES:1408
 #, kde-format
@@ -12893,27 +12877,27 @@ msgstr ""
 #: kdecore/TIMEZONES:1411
 #, kde-format
 msgid "US/Arizona"
-msgstr "ארה\"ב/אריזונה"
+msgstr "ארה״ב/אריזונה"
 
 #: kdecore/TIMEZONES:1414
 #, kde-format
 msgid "US/Central"
-msgstr "ארה\"ב/מרכז"
+msgstr "ארה״ב/מרכז"
 
 #: kdecore/TIMEZONES:1417
 #, kde-format
 msgid "US/East-Indiana"
-msgstr "ארה\"ב/מזרח־אינדיאנה"
+msgstr "ארה״ב/מזרח־אינדיאנה"
 
 #: kdecore/TIMEZONES:1420
 #, kde-format
 msgid "US/Eastern"
-msgstr "ארה\"ב-מזרח"
+msgstr "ארה״ב/מזרחי"
 
 #: kdecore/TIMEZONES:1423
 #, kde-format
 msgid "US/Hawaii"
-msgstr "ארה\"ב/הוואי"
+msgstr "ארה״ב/הוואי"
 
 #: kdecore/TIMEZONES:1426
 #, kde-format
@@ -12923,22 +12907,22 @@ msgstr ""
 #: kdecore/TIMEZONES:1429
 #, kde-format
 msgid "US/Michigan"
-msgstr "ארה\"ב/מישיגן"
+msgstr "ארה״ב/מישיגן"
 
 #: kdecore/TIMEZONES:1432
 #, kde-format
 msgid "US/Mountain"
-msgstr "ארה\"ב/ההר"
+msgstr "ארה״ב/ההר"
 
 #: kdecore/TIMEZONES:1435
 #, kde-format
 msgid "US/Pacific"
-msgstr "האוקיינוס השקט/ארה\"ב"
+msgstr "ארה״ב/האוקיינוס השקט"
 
 #: kdecore/TIMEZONES:1438
 #, kde-format
 msgid "US/Samoa"
-msgstr "ארה\"ב/סמואה"
+msgstr "ארה״ב/סמואה"
 
 #: kdecore/TIMEZONES:1439
 #, kde-format
@@ -12951,7 +12935,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item Font name"
 msgid "Sans Serif"
-msgstr "ללא תגים"
+msgstr "ללא עיטורים"
 
 #. i18n: Generic serif font presented in font choosers. When selected,
 #. the system will choose a real font, mandated by distro settings.
@@ -12959,7 +12943,7 @@ msgstr "ללא תגים"
 #, kde-format
 msgctxt "@item Font name"
 msgid "Serif"
-msgstr "עם תגים"
+msgstr "עם עיטורים"
 
 #. i18n: Generic monospace font presented in font choosers. When selected,
 #. the system will choose a real font, mandated by distro settings.
@@ -12967,19 +12951,19 @@ msgstr "עם תגים"
 #, kde-format
 msgctxt "@item Font name"
 msgid "Monospace"
-msgstr "ברווח אחיד"
+msgstr "ברוחב אחיד"
 
 #: kdeui/k4timezonewidget.cpp:62
 #, kde-format
 msgctxt "Define an area in the time zone, like a town area"
 msgid "Area"
-msgstr "איזור"
+msgstr "אזור"
 
 #: kdeui/k4timezonewidget.cpp:62
 #, kde-format
 msgctxt "Time zone"
 msgid "Region"
-msgstr "תת־איזור"
+msgstr "מחוז"
 
 #: kdeui/k4timezonewidget.cpp:62
 #, kde-format
@@ -12989,7 +12973,7 @@ msgstr "הערה"
 #: kdeui/kapplication.cpp:741
 #, kde-format
 msgid "The style '%1' was not found"
-msgstr "הסגנון \"%1\" לא נמצא"
+msgstr "הסגנון ‚%1’ לא נמצא"
 
 #: kdeui/kcolordialog.cpp:102
 #, kde-format
@@ -13001,7 +12985,7 @@ msgstr "* צבעים אחרונים *"
 #, kde-format
 msgctxt "palette name"
 msgid "* Custom Colors *"
-msgstr "* צבעים מותאמים אישית *"
+msgstr "* צבעים בהתאמה אישית *"
 
 #: kdeui/kcolordialog.cpp:104
 #, kde-format
@@ -13013,7 +12997,7 @@ msgstr "ארבעים צבעים"
 #, kde-format
 msgctxt "palette name"
 msgid "Oxygen Colors"
-msgstr "צבעי Oxygen"
+msgstr "צבעי חמצן"
 
 #: kdeui/kcolordialog.cpp:106
 #, kde-format
@@ -13036,7 +13020,7 @@ msgstr "צבעי אינטרנט"
 #: kdeui/kcolordialog.cpp:572
 #, kde-format
 msgid "Named Colors"
-msgstr "צבעים בעלי שמות"
+msgstr "צבעים עם שמות"
 
 #: kdeui/kcolordialog.cpp:746
 #, kde-format
@@ -13071,7 +13055,7 @@ msgid "°"
 msgstr "°"
 
 #: kdeui/kcolordialog.cpp:1088
-#, fuzzy, kde-format
+#, kde-format
 msgid "Saturation:"
 msgstr "רוויה:"
 
@@ -13099,12 +13083,12 @@ msgstr "כחול:"
 #: kdeui/kcolordialog.cpp:1152
 #, kde-format
 msgid "Alpha:"
-msgstr "אלפא:"
+msgstr "שקיפות:"
 
 #: kdeui/kcolordialog.cpp:1206
 #, kde-format
 msgid "&Add to Custom Colors"
-msgstr "&הוסף לצבעים מותאמים אישית"
+msgstr "הוספה לצבעים בהתאמה &אישית"
 
 #: kdeui/kcolordialog.cpp:1234
 #, kde-format
@@ -13140,12 +13124,12 @@ msgstr "הדפסה"
 #: kdeui/kdialog.cpp:271
 #, kde-format
 msgid "&Try"
-msgstr "&נסה"
+msgstr "ל&נסות"
 
 #: kdeui/kdialog.cpp:484
 #, kde-format
 msgid "modified"
-msgstr "שונה"
+msgstr "נערך"
 
 #: kdeui/kdialog.cpp:495
 #, kde-format
@@ -13161,27 +13145,27 @@ msgstr "&פרטים"
 #: kdeui/kdialog.cpp:1054
 #, kde-format
 msgid "Get help..."
-msgstr "קבלת עזרה..."
+msgstr "קבלת עזרה…"
 
 #: kdeui/keditlistbox.cpp:324
 #, kde-format
 msgid "&Add"
-msgstr "&הוסף"
+msgstr "הו&ספה"
 
 #: kdeui/keditlistbox.cpp:336
 #, kde-format
 msgid "&Remove"
-msgstr "&הסר"
+msgstr "הס&רה"
 
 #: kdeui/keditlistbox.cpp:348
 #, kde-format
 msgid "Move &Up"
-msgstr "הזז מ&עלה"
+msgstr "ה&עלה מעלה"
 
 #: kdeui/keditlistbox.cpp:353
 #, kde-format
 msgid "Move &Down"
-msgstr "&הורד"
+msgstr "הו&רדה מטה"
 
 #. i18n: A shorter version of the alphabet test phrase translated in
 #. another message. It is displayed in the dropdown list of font previews
@@ -13202,7 +13186,7 @@ msgstr "דג סקרן שט לו בים זך ולפתע מצא חבורה נחמ�
 #, kde-format
 msgctxt "Numeric IDs of scripts for font previews"
 msgid "1"
-msgstr "1"
+msgstr "1,5"
 
 #: kdeui/kfontdialog.cpp:51
 #, kde-format
@@ -13212,7 +13196,7 @@ msgstr "בחירת גופן"
 #: kdeui/kprintpreview.cpp:118
 #, kde-format
 msgid "Could not load print preview part"
-msgstr "אין אפשרות לטעון את רכיב התצוגה המקדימה"
+msgstr "אי אפשר לטעון את רכיב התצוגה המקדימה"
 
 #: kdeui/kprintpreview.cpp:135
 #, kde-format
@@ -13227,17 +13211,17 @@ msgstr "מזעור"
 #: kdeui/ksystemtrayicon.cpp:205
 #, kde-format
 msgid "&Minimize"
-msgstr "&מזער"
+msgstr "מ&זעור"
 
 #: kdeui/ksystemtrayicon.cpp:207
 #, kde-format
 msgid "&Restore"
-msgstr "&שחזר"
+msgstr "&שחזור"
 
 #: kdeui/ksystemtrayicon.cpp:226
 #, kde-format
 msgid "<qt>Are you sure you want to quit <b>%1</b>?</qt>"
-msgstr "<qt>האם אתה בטוח שרצונך לצאת מ־<b>%1</b>?</qt>"
+msgstr "<qt>לצאת מ־<b>%1</b>?</qt>"
 
 #: kdeui/ksystemtrayicon.cpp:229
 #, kde-format
@@ -13247,17 +13231,17 @@ msgstr "אישור יציאה ממגש המערכת"
 #: kdeui/kundostack.cpp:47
 #, kde-format
 msgid "Redo"
-msgstr "בצע שוב"
+msgstr "ביצוע מחדש"
 
 #: kdeui/kundostack.cpp:66
 #, kde-format
 msgid "Undo"
-msgstr "בטל"
+msgstr "הסגה"
 
 #: kdeui/kuniqueapplication.cpp:79
 #, kde-format
 msgid "Do not run in the background."
-msgstr "אל תפעל ברקע."
+msgstr "לא לפעול ברקע."
 
 #: kdeui/kuniqueapplication.cpp:81
 #, kde-format
@@ -13323,7 +13307,7 @@ msgstr "קובץ או תיקייה בשם %1 כבר קיימים."
 #: kio/kdirselectdialog.cpp:175
 #, kde-format
 msgid "You do not have permission to create that folder."
-msgstr "אין לך הרשאות ליצור תיקייה זו."
+msgstr "אין לך הרשאה ליצור את התיקייה הזאת."
 
 #: kio/kdirselectdialog.cpp:290
 #, kde-format
@@ -13353,13 +13337,13 @@ msgstr "העברה לאשפה"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete"
-msgstr "מחק"
+msgstr "מחיקה"
 
 #: kio/kdirselectdialog.cpp:368
 #, kde-format
 msgctxt "@option:check"
 msgid "Show Hidden Folders"
-msgstr "הצג תיקיות מוסתרות"
+msgstr "הצגת תיקיות מוסתרות"
 
 #: kio/kdirselectdialog.cpp:375
 #, kde-format
@@ -13382,7 +13366,7 @@ msgstr "כל הקבצים הנתמכים"
 #: kio/kfiledialog.cpp:591 kio/kfiledialog.cpp:643
 #, kde-format
 msgid "Open"
-msgstr "פתח"
+msgstr "פתיחה"
 
 #: kio/kfiledialog.cpp:734 kio/kfiledialog.cpp:754 kio/kfiledialog.cpp:794
 #: kio/kfiledialog.cpp:838
@@ -13408,7 +13392,7 @@ msgstr "הערה"
 #, kde-format
 msgctxt "@label"
 msgid "Modified"
-msgstr "שונה"
+msgstr "נערך"
 
 #: kio/kfilemetadataprovider.cpp:448
 #, kde-format
@@ -13438,7 +13422,7 @@ msgstr "גודל"
 #, kde-format
 msgctxt "@label"
 msgid "Tags"
-msgstr "תוויות"
+msgstr "תגיות"
 
 #: kio/kfilemetadataprovider.cpp:453
 #, kde-format
@@ -13460,17 +13444,17 @@ msgstr "KFileMetaDataReader"
 #: kio/kfilemetadatareaderprocess.cpp:236
 #, kde-format
 msgid "KFileMetaDataReader can be used to read metadata from a file"
-msgstr "ניתן להשתמש ב־KFileMetaDataReader כדי לקרוא מטא מידע מקובץ"
+msgstr "ניתן להשתמש ב־KFileMetaDataReader כדי לקרוא נתוני על מקובץ"
 
 #: kio/kfilemetadatareaderprocess.cpp:238
 #, kde-format
 msgid "(C) 2011, Peter Penz"
-msgstr "כל הזכויות שמורות 2011, פיטר פנז"
+msgstr "כל הזכויות שמורות 2011, פיטר פנץ"
 
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
 msgid "Peter Penz"
-msgstr "Peter Penz"
+msgstr "פיטר פנץ"
 
 #: kio/kfilemetadatareaderprocess.cpp:239
 #, kde-format
@@ -13480,7 +13464,7 @@ msgstr "מתחזק נוכחי"
 #: kio/kfilemetadatareaderprocess.cpp:244
 #, kde-format
 msgid "Only the meta data that is part of the file is read"
-msgstr "נקרא רק מטא מידע שהוא חלק מהקובץ"
+msgstr "נקראים רק נתוני העל שהם חלק מהקובץ"
 
 #: kio/kfilemetadatareaderprocess.cpp:245
 #, kde-format
@@ -13512,7 +13496,7 @@ msgstr "הגדרת המידע המוצג"
 #, kde-format
 msgctxt "@label::textbox"
 msgid "Select which data should be shown:"
-msgstr "המידע הבא יוצג:"
+msgstr "בחירת המידע שיוצג:"
 
 #: kio/kmetaprops.cpp:123
 #, kde-format
@@ -13605,7 +13589,7 @@ msgstr "תוכן"
 #, kde-format
 msgctxt "@label"
 msgid "Related To"
-msgstr "שייך אל"
+msgstr "משויך אל"
 
 #: kio/knfotranslator.cpp:53
 #, kde-format
@@ -13797,7 +13781,7 @@ msgstr "איזון צבע לבן"
 #, kde-format
 msgctxt "@label video director"
 msgid "Director"
-msgstr "עורך"
+msgstr "עורך/ת"
 
 #: kio/knfotranslator.cpp:85
 #, kde-format
@@ -13815,7 +13799,7 @@ msgstr "אלבום"
 #, kde-format
 msgctxt "@label"
 msgid "Performer"
-msgstr "מבצע"
+msgstr "מבצע/ת"
 
 #: kio/knfotranslator.cpp:88
 #, kde-format
@@ -13857,7 +13841,7 @@ msgstr "דירוג מספרי"
 #, kde-format
 msgctxt "@label"
 msgid "Copied From"
-msgstr "הועתק מאת"
+msgstr "הועתק מתוך"
 
 #: kio/knfotranslator.cpp:95
 #, kde-format
@@ -13875,25 +13859,25 @@ msgstr "שימוש אחרון"
 #, kde-format
 msgctxt "@label"
 msgid "Usage Count"
-msgstr "מספר פעמים בשימוש"
+msgstr "כמות שימושים"
 
 #: kio/knfotranslator.cpp:98
 #, kde-format
 msgctxt "@label"
 msgid "Unix File Group"
-msgstr "קבוצת יוניקס של הקובץ"
+msgstr "קבוצת הקובץ לפי יוניקס"
 
 #: kio/knfotranslator.cpp:99
 #, kde-format
 msgctxt "@label"
 msgid "Unix File Mode"
-msgstr "מצג יוניקס של הקובץ"
+msgstr "מצב הקובץ לפי יוניקס"
 
 #: kio/knfotranslator.cpp:100
 #, kde-format
 msgctxt "@label"
 msgid "Unix File Owner"
-msgstr "בעלי יוניקס של הקובץ"
+msgstr "בעלי הקובץ לפי יוניקס"
 
 #: kio/knfotranslator.cpp:101
 #, kde-format
@@ -13905,7 +13889,7 @@ msgstr "סוג"
 #, kde-format
 msgctxt "@label Number of fuzzy translations"
 msgid "Fuzzy Translations"
-msgstr "תרגומים מעוממים"
+msgstr "תרגומים שדורשים סקירה"
 
 #: kio/knfotranslator.cpp:103
 #, kde-format
@@ -13923,13 +13907,13 @@ msgstr "תרגומים מיושנים"
 #, kde-format
 msgctxt "@label"
 msgid "Translation Source Date"
-msgstr "תאריך קובץ המקור של התרגום"
+msgstr "תאריך מקור התרגום"
 
 #: kio/knfotranslator.cpp:106
 #, kde-format
 msgctxt "@label Number of total translations"
 msgid "Total Translations"
-msgstr "סה\"כ תרגומים"
+msgstr "סה״כ תרגומים"
 
 #: kio/knfotranslator.cpp:107
 #, kde-format
@@ -13957,7 +13941,7 @@ msgstr "&תצוגה מקדימה"
 #: kio/kscan.cpp:49
 #, kde-format
 msgid "Acquire Image"
-msgstr "סרוק תמונה"
+msgstr "סריקת תמונה"
 
 #: kio/kscan.cpp:97
 #, kde-format
@@ -13967,28 +13951,28 @@ msgstr "זיהוי אופטי של תמונה"
 #: kio/netaccess.cpp:102
 #, kde-format
 msgid "File '%1' is not readable"
-msgstr "הקובץ \"%1\" אינו ניתן לקריאה"
+msgstr "הקובץ ‚%1’ בלתי קריא"
 
 #: kio/netaccess.cpp:435
 #, kde-format
 msgid "ERROR: Unknown protocol '%1'"
-msgstr "שגיאה: פרוטוקול לא מוכר \"%1\"."
+msgstr "שגיאה: הפרוטוקול ‚%1’ לא ידוע."
 
 #: kio/passworddialog.cpp:56
 #, kde-format
 msgid "Authorization Dialog"
-msgstr "דו־שיח אימות"
+msgstr "חלונית אימות"
 
 #: kioslave/metainfo/metainfo.cpp:98
 #, kde-format
 msgid "No metainfo for %1"
-msgstr "אין מידע קובץ עבור %1"
+msgstr "אין מידע על עבור %1"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
 #: kssl/kcm/cacertificates.ui:24
 #, kde-format
 msgid "Organization / Common Name"
-msgstr "ארגון או שם כללי"
+msgstr "שם ארגון או נפוץ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, treeWidget)
 #: kssl/kcm/cacertificates.ui:29
@@ -14000,58 +13984,58 @@ msgstr "יחידה ארגונית"
 #: kssl/kcm/cacertificates.ui:42
 #, kde-format
 msgid "Display..."
-msgstr "תצוגה..."
+msgstr "תצוגה…"
 
 #. i18n: ectx: property (text), widget (QPushButton, disableSelection)
 #: kssl/kcm/cacertificates.ui:68
 #, kde-format
 msgid "Disable"
-msgstr "מבוטל"
+msgstr "השבתה"
 
 #. i18n: ectx: property (text), widget (QPushButton, enableSelection)
 #: kssl/kcm/cacertificates.ui:78
 #, kde-format
 msgid "Enable"
-msgstr "מופעל"
+msgstr "הפעלה"
 
 #. i18n: ectx: property (text), widget (QPushButton, removeSelection)
 #: kssl/kcm/cacertificates.ui:104
 #, kde-format
 msgid "Remove"
-msgstr "הסר"
+msgstr "הסרה"
 
 #. i18n: ectx: property (text), widget (QPushButton, add)
 #: kssl/kcm/cacertificates.ui:111
 #, kde-format
 msgid "Add..."
-msgstr "הוספה..."
+msgstr "הוספה…"
 
 #: kssl/kcm/cacertificatespage.cpp:140
 #, kde-format
 msgid "System certificates"
-msgstr "תעודות המערכת"
+msgstr "אישורי המערכת"
 
 #: kssl/kcm/cacertificatespage.cpp:147
 #, kde-format
 msgid "User-added certificates"
-msgstr "תעודות שהתווספו על ידי המשתמש"
+msgstr "אישורים שנוספו על ידי המשתמש"
 
 #: kssl/kcm/cacertificatespage.cpp:302
 #, kde-format
 msgid "Pick Certificates"
-msgstr "בחר תעודות"
+msgstr "בחירת אישורים"
 
 #. i18n: ectx: property (text), widget (QLabel, subjectHeading)
 #: kssl/kcm/displaycert.ui:23
 #, kde-format
 msgid "<b>Subject Information</b>"
-msgstr "<b>מידע אודות הנושא</b>"
+msgstr "<b>מידע על הנושא</b>"
 
 #. i18n: ectx: property (text), widget (QLabel, issuerHeading)
 #: kssl/kcm/displaycert.ui:39
 #, kde-format
 msgid "<b>Issuer Information</b>"
-msgstr "<b>מידע אודות המנפיק</b>"
+msgstr "<b>מידע על המנפיק</b>"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: kssl/kcm/displaycert.ui:55
@@ -14063,7 +14047,7 @@ msgstr "<b>אחר</b>"
 #: kssl/kcm/displaycert.ui:64
 #, kde-format
 msgid "Validity period"
-msgstr "תאריך תוקף"
+msgstr "תקופת תוקף"
 
 #. i18n: ectx: property (text), widget (QLabel, serialNumberLabel)
 #: kssl/kcm/displaycert.ui:78
@@ -14087,7 +14071,7 @@ msgstr "לקט SHA1"
 #, kde-format
 msgctxt "%1 is the effective date of the certificate, %2 is the expiry date"
 msgid "%1 to %2"
-msgstr "%1 אל %2"
+msgstr "%1 עד %2"
 
 #: kssl/kcm/kcmssl.cpp:37
 #, kde-format
@@ -14097,12 +14081,12 @@ msgstr "מודול תצורת SSL"
 #: kssl/kcm/kcmssl.cpp:39
 #, kde-format
 msgid "Copyright 2010 Andreas Hartmetz"
-msgstr "כל הזכויות שמורות 2010 Andreas Hartmetz"
+msgstr "כל הזכויות שמורות 2010 לאנדראס הארטמץ"
 
 #: kssl/kcm/kcmssl.cpp:40
 #, kde-format
 msgid "Andreas Hartmetz"
-msgstr "Andreas Hartmetz"
+msgstr "אנדראס הארטמץ"
 
 #: kssl/kcm/kcmssl.cpp:52
 #, kde-format
@@ -14168,7 +14152,7 @@ msgstr "מפתח ציבורי: "
 #: kssl/ksslcertificate.cpp:1065
 #, kde-format
 msgid "The certificate is valid."
-msgstr "התעודה בתוקף."
+msgstr "האישור תקף."
 
 #: kssl/ksslcertificate.cpp:1067
 #, kde-format
@@ -14224,12 +14208,12 @@ msgstr ""
 #: kssl/ksslcertificate.cpp:1081
 #, kde-format
 msgid "The certificate is not valid, yet."
-msgstr "התעודה אינה בתוקף, עדיין."
+msgstr "האישור אינו תקף עדיין."
 
 #: kssl/ksslcertificate.cpp:1083
 #, kde-format
 msgid "The certificate is not valid, any more."
-msgstr "התעודה אינה בתוקף יותר."
+msgstr "האישור אינו תקף עוד."
 
 #: kssl/ksslcertificate.cpp:1085 kssl/ksslcertificate.cpp:1087
 #, kde-format
@@ -14263,7 +14247,7 @@ msgstr ""
 #: kssl/ksslcertificate.cpp:1097
 #, kde-format
 msgid "The OpenSSL process ran out of memory."
-msgstr "אזל הזיכרון ךתהליך ה־OpenSSL."
+msgstr "אזל הזיכרון לתהליך ה־OpenSSL."
 
 #: kssl/ksslcertificate.cpp:1099
 #, kde-format
@@ -14303,7 +14287,7 @@ msgstr ""
 #: kssl/ksslcertificate.cpp:1111
 #, kde-format
 msgid "The certificate has been revoked."
-msgstr "התעודה בוטלה."
+msgstr "האישור נשלל."
 
 #: kssl/ksslcertificate.cpp:1113
 #, kde-format
@@ -14419,7 +14403,7 @@ msgstr "התעודה לא הונפקה עבור שרת מארח זה."
 #: kssl/ksslcertificate.cpp:1153
 #, kde-format
 msgid "This certificate is not relevant."
-msgstr "התעודה אינה רלוונטית."
+msgstr "האישור אינה מתאים."
 
 #: kssl/ksslcertificate.cpp:1158
 #, kde-format
