@@ -13122,9 +13122,7 @@ msgstr "下移(&D)"
 #, kde-format
 msgctxt "short"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr ""
-"The Quick Brown Fox Jumps Over The Lazy Dog\n"
-"龙跳天门，虎卧凰阁"
+msgstr "The Quick Brown Fox Jumps Over The Lazy Dog 龙跳天门 虎卧凰阁"
 
 #. i18n: Integer which indicates the script you used in the sample text
 #. for font previews in your language. For the possible values, see
