@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-08-03 15:07+0400\n"
+"PO-Revision-Date: 2025-08-04 18:36+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -7227,12 +7227,12 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:292
 #, kde-format
 msgid "sets the default foreground color"
-msgstr "يحدد اللون الأمامي الافتراضي"
+msgstr "يحدد اللون الأمامي المبدئي"
 
 #: kdecore/kcmdlineargs.cpp:294
 #, kde-format
 msgid "sets the default button color"
-msgstr "يحدد لون الأزرار الافتراضي"
+msgstr "يحدد لون الأزرار المبدئي"
 
 #: kdecore/kcmdlineargs.cpp:295
 #, kde-format
@@ -7296,8 +7296,7 @@ msgid ""
 "use a different graphics system instead of the default one, options are "
 "raster and opengl (experimental)"
 msgstr ""
-"استعمل نظام رسوميات أخر غير الافتراضي ، الخيارات هي raster  و opengl  "
-"(تجريبي)."
+"استعمل نظام رسوميات أخر غير المبدئي ، الخيارات هي raster  و opengl  (تجريبي)."
 
 #: kdecore/kcmdlineargs.cpp:307
 #, kde-format
