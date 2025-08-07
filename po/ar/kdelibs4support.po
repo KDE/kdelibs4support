@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-08-04 18:36+0400\n"
+"PO-Revision-Date: 2025-08-06 13:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -7514,7 +7514,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
 msgid "The files/URLs opened by the application will be deleted after use"
-msgstr "سيتم محو الملفات/الـ URL المفتوحة من التطبيق بعد استعمالها"
+msgstr "ستمحى الملفات/العناوين المفتوحة من التطبيق بعد استعمالها"
 
 #: kdecore/kcmdlineargs.cpp:1581
 #, kde-format
@@ -14502,8 +14502,7 @@ msgid ""
 "The root CA (Certificate Authority) has been marked to be rejected for the "
 "purpose you tried to use it for."
 msgstr ""
-"قد تم تعليم جذر شهادة السلطة CA على أنه مرفوض للغرض الذي تحاول أن تستخدمه "
-"فيه ."
+"عُلِّمَ جذر شهادة السلطة CA على أنه مرفوض للغرض الذي تحاول أن تستخدمه فيه ."
 
 #: kssl/ksslcertificate.cpp:1125
 #, kde-format
@@ -14594,7 +14593,7 @@ msgstr "فشل اختبار المفتاح الشخصي"
 #: kssl/ksslcertificate.cpp:1151
 #, kde-format
 msgid "The certificate has not been issued for this host."
-msgstr "لم يتم إصدار الشهادة لهذا المضيف."
+msgstr "لم تصدر الشهادة لهذا المضيف."
 
 #: kssl/ksslcertificate.cpp:1153
 #, kde-format
