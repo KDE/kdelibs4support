@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-08-06 13:33+0400\n"
+"PO-Revision-Date: 2025-08-09 23:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2734,7 +2734,7 @@ msgid ""
 msgstr ""
 "<p>يقوم طاقم عربآيز بترجمة واجهة كِيدِي إلى اللغة العربية، و هذا بفضل جهود "
 "طاقم مترجمين متطوعين من كافة الدول العربية وغيرها. </p><p>للمزيد من "
-"المعلومات حول ترجمة كِيدِي إلى العربية ، زر  <a href=\"http://www.arabeyes.org"
+"المعلومات حول ترجمة كِيدِي إلى العربية، زر  <a href=\"http://www.arabeyes.org"
 "\"> الموقع الرسمي لعربآيز</a> الرجاء التبليغ عن أخطاء الترجمة على العنوان "
 "التالي: contact@arabeyes.org</p><p>تترجم كِيدِي إلى لغات متعددة بفضل طواقم "
 "الترجمة من العالم بأسره.</p><p>لمزيد من المعلومات زر <a  href=\"http://l10n."
@@ -7296,7 +7296,7 @@ msgid ""
 "use a different graphics system instead of the default one, options are "
 "raster and opengl (experimental)"
 msgstr ""
-"استعمل نظام رسوميات أخر غير المبدئي ، الخيارات هي raster  و opengl  (تجريبي)."
+"استعمل نظام رسوميات أخر غير المبدئي، الخيارات هي raster  و opengl  (تجريبي)."
 
 #: kdecore/kcmdlineargs.cpp:307
 #, kde-format
@@ -7329,7 +7329,7 @@ msgstr "استعمل ملف إعدادات بديل"
 #: kdecore/kcmdlineargs.cpp:313
 #, kde-format
 msgid "Disable crash handler, to get core dumps"
-msgstr "عطّ ل معالج الانهيارات ، للحصول على مخرجات الخام"
+msgstr "عطّ ل معالج الانهيارات، للحصول على مخرجات الخام"
 
 #: kdecore/kcmdlineargs.cpp:315
 #, kde-format
@@ -8426,7 +8426,7 @@ msgstr "أمريكا/أرجنتينا/كاتاماركا"
 #: kdecore/TIMEZONES:86 kdecore/TIMEZONES:91 kdecore/TIMEZONES:189
 #, kde-format
 msgid "Catamarca (CT), Chubut (CH)"
-msgstr "كاتاماركا (CT) ، وتشوبوت (CH)"
+msgstr "كاتاماركا (CT)، وتشوبوت (CH)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:88
@@ -8589,7 +8589,7 @@ msgstr "أمريكا/أنتيغوا"
 #: kdecore/TIMEZONES:132 kdecore/TIMEZONES:206
 #, kde-format
 msgid "Eastern Standard Time - Atikokan, Ontario and Southampton I, Nunavut"
-msgstr "التوقيت الشرقي -- أتكوكن ، أونتاريو وساوثامبتون الأول ، نونافوت"
+msgstr "التوقيت الشرقي -- أتكوكن، أونتاريو وساوثامبتون الأول، نونافوت"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:134
@@ -8645,7 +8645,7 @@ msgstr "أمريكا/بيليم"
 #: kdecore/TIMEZONES:149
 #, kde-format
 msgid "Amapa, E Para"
-msgstr "أمابا ، إي بارا"
+msgstr "أمابا، إي بارا"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:151
@@ -8927,7 +8927,7 @@ msgstr "أمريكا/داوسن_كريك"
 #, kde-format
 msgid ""
 "Mountain Standard Time - Dawson Creek & Fort Saint John, British Columbia"
-msgstr "التوقيت الجبلي - داوسون كريك و فورت سانت جون ، كولومبيا البريطانية"
+msgstr "التوقيت الجبلي - داوسون كريك و فورت سانت جون، كولومبيا البريطانية"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:234
@@ -9072,7 +9072,7 @@ msgstr "أمريكا / فريدريكتون"
 #: kdecore/TIMEZONES:273 kdecore/TIMEZONES:299 kdecore/TIMEZONES:1102
 #, kde-format
 msgid "Atlantic Time - Nova Scotia (most places), PEI"
-msgstr "التوقيت الأطلسي -- نوفا سكوتيا (معظم الأماكن) ، وجزيرة الأمير إدوارد"
+msgstr "التوقيت الأطلسي -- نوفا سكوتيا (معظم الأماكن)، وجزيرة الأمير إدوارد"
 
 #: kdecore/TIMEZONES:274
 #, kde-format
@@ -9496,7 +9496,7 @@ msgstr "أمريكا/ماسييو"
 #: kdecore/TIMEZONES:399
 #, kde-format
 msgid "Alagoas, Sergipe"
-msgstr "ألاغوس ، سيرغيبي"
+msgstr "ألاغوس، سيرغيبي"
 
 #: kdecore/TIMEZONES:400
 #, kde-format
@@ -9558,7 +9558,7 @@ msgstr "أمريكا/مازاتلان"
 #: kdecore/TIMEZONES:415 kdecore/TIMEZONES:1280
 #, kde-format
 msgid "Mountain Time - S Baja, Nayarit, Sinaloa"
-msgstr "التوقيت الجبلي - دإ باخا ، ناياريت ، سينالوا"
+msgstr "التوقيت الجبلي - دإ باخا، ناياريت، سينالوا"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:417
@@ -9581,8 +9581,7 @@ msgstr "أمريكا/مينوميني"
 #: kdecore/TIMEZONES:423
 #, kde-format
 msgid "Central Time - Michigan - Dickinson, Gogebic, Iron & Menominee Counties"
-msgstr ""
-"التوقيت المركزي - ميتشيغان - بلدات ديكينسون ، وجوجباك ، وأيرون ، ومنومني"
+msgstr "التوقيت المركزي - ميتشيغان - بلدات ديكينسون، وجوجباك، وأيرون، ومنومني"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:425
@@ -9599,7 +9598,7 @@ msgstr "أمريكا/ميريدا"
 #: kdecore/TIMEZONES:428
 #, kde-format
 msgid "Central Time - Campeche, Yucatan"
-msgstr "التوقيت المركزي - كامبيتشي ، يوكاتان"
+msgstr "التوقيت المركزي - كامبيتشي، يوكاتان"
 
 #: kdecore/TIMEZONES:429
 #, fuzzy, kde-format
@@ -9662,7 +9661,7 @@ msgstr "أمريكا/مونتيري"
 #: kdecore/TIMEZONES:447
 #, kde-format
 msgid "Central Time - Coahuila, Durango, Nuevo Leon, Tamaulipas"
-msgstr "التوقيت المركزي -- كواهويلا ، دورانغو ، ولاية نويفو ليون ، تاماوليباس"
+msgstr "التوقيت المركزي -- كواهويلا، دورانغو، ولاية نويفو ليون، تاماوليباس"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:449
@@ -9873,7 +9872,7 @@ msgstr "أمريكا/بانغنيرتنغ"
 #: kdecore/TIMEZONES:505
 #, kde-format
 msgid "Eastern Time - Pangnirtung, Nunavut"
-msgstr "التوقيت الشرقي - Pangnirtung ، نونافوت"
+msgstr "التوقيت الشرقي - Pangnirtung، نونافوت"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:507
@@ -9962,7 +9961,7 @@ msgstr "أمريكا/رايني_ريفر"
 #: kdecore/TIMEZONES:528
 #, kde-format
 msgid "Central Time - Rainy River & Fort Frances, Ontario"
-msgstr "التوقيت المركزي -- نهر ريني و فورت فرانسيس ، أونتاريو"
+msgstr "التوقيت المركزي -- نهر ريني و فورت فرانسيس، أونتاريو"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:530
@@ -10027,7 +10026,7 @@ msgstr "أمريكا/ريسولت"
 #: kdecore/TIMEZONES:546
 #, kde-format
 msgid "Eastern Time - Resolute, Nunavut"
-msgstr "التوقيت الشرقي -- رسوليت ، نونافو"
+msgstr "التوقيت الشرقي -- رسوليت، نونافو"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:548
@@ -10179,7 +10178,7 @@ msgstr "أمريكا/سانت_جونس"
 #: kdecore/TIMEZONES:595 kdecore/TIMEZONES:1117
 #, kde-format
 msgid "Newfoundland Time, including SE Labrador"
-msgstr "توقيت نيوفواندلاند ، بما في ذلك جنوب شرق لابرادور"
+msgstr "توقيت نيوفواندلاند، بما في ذلك جنوب شرق لابرادور"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:597
@@ -10256,7 +10255,7 @@ msgstr "أمريكا/ثندر_بي"
 #: kdecore/TIMEZONES:615
 #, kde-format
 msgid "Eastern Time - Thunder Bay, Ontario"
-msgstr "التوقيت الشرقي - خليج ثندر ، أونتاريو"
+msgstr "التوقيت الشرقي - خليج ثندر، أونتاريو"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:617
@@ -10405,7 +10404,7 @@ msgstr "أنتاركتيكا/كاسي"
 #: kdecore/TIMEZONES:659
 #, kde-format
 msgid "Casey Station, Bailey Peninsula"
-msgstr "محطة كيسي ، جزيرة بيلي"
+msgstr "محطة كيسي، جزيرة بيلي"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:661
@@ -10422,7 +10421,7 @@ msgstr "أنتاركتيكا/دايفس"
 #: kdecore/TIMEZONES:664
 #, kde-format
 msgid "Davis Station, Vestfold Hills"
-msgstr "محطة ديفيس ، فيستفولد هيلز"
+msgstr "محطة ديفيس، فيستفولد هيلز"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:666
@@ -10474,7 +10473,7 @@ msgstr "أنتاركتيكا/ماوسن"
 #: kdecore/TIMEZONES:679
 #, kde-format
 msgid "Mawson Station, Holme Bay"
-msgstr "محطة موسن ، خليج هولم"
+msgstr "محطة موسن، خليج هولم"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:681
@@ -10491,7 +10490,7 @@ msgstr "أنتاركتيكا/ماك_موردو"
 #: kdecore/TIMEZONES:684
 #, kde-format
 msgid "McMurdo Station, Ross Island"
-msgstr "محطة ماكمورد ، جزيرةة روس"
+msgstr "محطة ماكمورد، جزيرةة روس"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:686
@@ -10508,7 +10507,7 @@ msgstr "أنتاركتيكا/بالمر"
 #: kdecore/TIMEZONES:689
 #, kde-format
 msgid "Palmer Station, Anvers Island"
-msgstr "محطة بالمر ، جزيرة أنفيرس"
+msgstr "محطة بالمر، جزيرة أنفيرس"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:691
@@ -10525,7 +10524,7 @@ msgstr "القطب_الجنوبي/روثيرا"
 #: kdecore/TIMEZONES:694
 #, kde-format
 msgid "Rothera Station, Adelaide Island"
-msgstr "محطة روثيرا ، جزيرة أدليد"
+msgstr "محطة روثيرا، جزيرة أدليد"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:696
@@ -10542,7 +10541,7 @@ msgstr "أنتاركتيكا/القطب_الجنوبي"
 #: kdecore/TIMEZONES:699
 #, kde-format
 msgid "Amundsen-Scott Station, South Pole"
-msgstr "محطة أموندسن سكوت ، القطب الشمالي"
+msgstr "محطة أموندسن سكوت، القطب الشمالي"
 
 #: kdecore/TIMEZONES:700
 #, kde-format
@@ -10553,7 +10552,7 @@ msgstr "أنتاركتيكا/سايووا"
 #: kdecore/TIMEZONES:702
 #, kde-format
 msgid "Syowa Station, E Ongul I"
-msgstr "محطة سيوا ، E Ongul I"
+msgstr "محطة سيوا، E Ongul I"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:704
@@ -10582,7 +10581,7 @@ msgstr "أنتاركتيكا/فوستك"
 #: kdecore/TIMEZONES:710
 #, kde-format
 msgid "Vostok Station, S Magnetic Pole"
-msgstr "محطة فوستوك ، القطب الجنوبي المغناطيسي"
+msgstr "محطة فوستوك، القطب الجنوبي المغناطيسي"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:712
@@ -10655,7 +10654,7 @@ msgstr "آسيا/أكتاوو"
 #: kdecore/TIMEZONES:732
 #, kde-format
 msgid "Atyrau (Atirau, Gur'yev), Mangghystau (Mankistau)"
-msgstr "اتيراو (Atirau ، Gur'yev) ، Mangghystau (Mankistau)"
+msgstr "اتيراو (Atirau، Gur'yev)، Mangghystau (Mankistau)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:734
@@ -10744,7 +10743,7 @@ msgstr "آسيا/بكين"
 #: kdecore/TIMEZONES:754 kdecore/TIMEZONES:924 kdecore/TIMEZONES:1295
 #, kde-format
 msgid "east China - Beijing, Guangdong, Shanghai, etc."
-msgstr "شرق الصين - بكين وقوانغدونغ وشانغهاي ، الخ."
+msgstr "شرق الصين - بكين وقوانغدونغ وشانغهاي، الخ."
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:756
@@ -10793,7 +10792,7 @@ msgstr "آسيا/شويبالسان"
 #: kdecore/TIMEZONES:766
 #, kde-format
 msgid "Dornod, Sukhbaatar"
-msgstr "دورنود ، سخباتار"
+msgstr "دورنود، سخباتار"
 
 #: kdecore/TIMEZONES:767
 #, kde-format
@@ -10804,7 +10803,7 @@ msgstr "آسيا/تشونغكنغ"
 #: kdecore/TIMEZONES:769 kdecore/TIMEZONES:774
 #, kde-format
 msgid "central China - Sichuan, Yunnan, Guangxi, Shaanxi, Guizhou, etc."
-msgstr "وسط الصين - سيتشوان ويوننان وقوانغشى ، وشنشى ، وقويتشو ، الخ."
+msgstr "وسط الصين - سيتشوان ويوننان وقوانغشى، وشنشى، وقويتشو، الخ."
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:771
@@ -10884,7 +10883,7 @@ msgstr "آسيا/هاربن"
 #: kdecore/TIMEZONES:790
 #, kde-format
 msgid "Heilongjiang (except Mohe), Jilin"
-msgstr "هيلونغجيانغ (باستثناء Mohe) ، جيلين"
+msgstr "هيلونغجيانغ (باستثناء Mohe)، جيلين"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:792
@@ -11313,7 +11312,7 @@ msgstr "آسيا/كيزيلوردا"
 #: kdecore/TIMEZONES:905
 #, kde-format
 msgid "Qyzylorda (Kyzylorda, Kzyl-Orda)"
-msgstr "كيزيلوردا (Kyzylorda ، Kzyl - Orda)"
+msgstr "كيزيلوردا (Kyzylorda، Kzyl - Orda)"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:907
@@ -12295,13 +12294,13 @@ msgstr "أوروبا/سامارا"
 #: kdecore/TIMEZONES:1206
 #, kde-format
 msgid "Moscow+01 - Samara, Udmurtia"
-msgstr "موسكو +01 -- سامارا ، يدمرتيا"
+msgstr "موسكو +01 -- سامارا، يدمرتيا"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1208
 #, kde-format
 msgid "Moscow+00 - Samara, Udmurtia"
-msgstr "موسكو +00 -- سامارا ، يدمرتيا"
+msgstr "موسكو +00 -- سامارا، يدمرتيا"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1210
@@ -14425,8 +14424,8 @@ msgid ""
 "If you want to accept this certificate, import it into the list of trusted "
 "certificates."
 msgstr ""
-"إن الشهادة موقعة ذاتيا ، وليست موجودة في قائمة الشهادات الموثوقة. إذا أردت "
-"أن تقبل هذه الشهادة ، فستوردها إلى قائمة الشهادات الموثوقة."
+"إن الشهادة موقعة ذاتيا، وليست موجودة في قائمة الشهادات الموثوقة. إذا أردت أن "
+"تقبل هذه الشهادة، فستوردها إلى قائمة الشهادات الموثوقة."
 
 #: kssl/ksslcertificate.cpp:1102
 #, kde-format
@@ -14434,15 +14433,15 @@ msgid ""
 "The certificate is self-signed. While the trust chain could be built up, the "
 "root CA's (Certificate Authority) certificate can not be found."
 msgstr ""
-"الشهادة موقعة ذاتيا. وفي حين أنه يمكن بناء سلسلة الثقة ، لكن أصل شهادة "
-"السلطة CA للشهادة لا يمكن إيجاده."
+"الشهادة موقعة ذاتيا. وفي حين أنه يمكن بناء سلسلة الثقة، لكن أصل شهادة السلطة "
+"CA للشهادة لا يمكن إيجاده."
 
 #: kssl/ksslcertificate.cpp:1104
 #, kde-format
 msgid ""
 "The CA's (Certificate Authority) certificate can not be found. Most likely, "
 "your trust chain is broken."
-msgstr "لا يمكن إيجاد شهادة السلطة CA للشهادة ، في الأغلب سلسلة الثقة مكسورة."
+msgstr "لا يمكن إيجاد شهادة السلطة CA للشهادة، في الأغلب سلسلة الثقة مكسورة."
 
 #: kssl/ksslcertificate.cpp:1106
 #, kde-format
@@ -14553,9 +14552,9 @@ msgid ""
 "messages."
 msgstr ""
 "فشل اختبار التوقيع في هذه الشهادة. هذا قد يعني أن التوقيع هذه الشهادة أو "
-"طريق الثقة غير صحيحين ، أو أنه لا يمكن فك تشفيره ، أو أن قائمة إبطال الشهادة "
-"لا يمكن التحقق منها. إذا رأيت هذه الرسالة ، فالمرجو أن تخبر كاتب التطبيق "
-"الذي تستخدمه أنه يجب أن يستخدم رسائل جديدة و أكثر تحديدا."
+"طريق الثقة غير صحيحين، أو أنه لا يمكن فك ترميزها، أو أن قائمة إبطال الشهادة "
+"لا يمكن التحقق منها. إذا رأيت هذه الرسالة، فالمرجو أن تخبر كاتب التطبيق الذي "
+"تستخدمه أنه يجب أن يستخدم رسائل جديدة و أكثر تحديدا."
 
 #: kssl/ksslcertificate.cpp:1139
 #, kde-format
@@ -14566,8 +14565,8 @@ msgid ""
 "author of the software you are using know that he or she should use the new, "
 "more specific error messages."
 msgstr ""
-"هذه الشهادة ، أو مسلك الثقة ، أو شهادة السلطة لقائمة إبطال الشهادة غير صحيح. "
-"لا يمكن لأي منها أن تكون ليست صحيحة بعد أو بعد الآن. إذا رأيت هذه الرسالة ، "
+"هذه الشهادة، أو مسلك الثقة، أو شهادة السلطة لقائمة إبطال الشهادة غير صحيح. "
+"لا يمكن لأي منها أن تكون ليست صحيحة بعد أو بعد الآن. إذا رأيت هذه الرسالة، "
 "فالمرجو  أن تخبر كاتب التطبيق الذي تستخدمه أنه يجب أن يستخدم رسائل جديدة و "
 "أكثر تحديدا."
 
