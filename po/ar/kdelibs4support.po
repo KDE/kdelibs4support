@@ -14475,7 +14475,7 @@ msgid ""
 "The length of the trust chain exceeded one of the CA's (Certificate "
 "Authority) 'pathlength' parameters, making all subsequent signatures invalid."
 msgstr ""
-"تجاوز طول سلسلة الثقة أحد معاملات 'pathlength' لشهادة السلطة ؛ مما يجعل بقية "
+"تجاوز طول سلسلة الثقة أحد معاملات 'pathlength' لشهادة السلطة؛ مما يجعل بقية "
 "التواقيع اللاحقة غير صحيحة."
 
 #: kssl/ksslcertificate.cpp:1117
