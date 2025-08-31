@@ -2385,7 +2385,7 @@ msgstr "Error fatal"
 #: kdebugdialog/klistdebugdialog.cpp:69
 #, kde-format
 msgid "&Select All"
-msgstr "&Selecciona-ho tot"
+msgstr "&Tria-ho tot"
 
 #: kdebugdialog/klistdebugdialog.cpp:70
 #, kde-format
@@ -13066,7 +13066,7 @@ msgstr[1] ""
 #: kdeui/kcolordialog.cpp:997
 #, kde-format
 msgid "Select Color"
-msgstr "Seleccioneu el color"
+msgstr "Trieu el color"
 
 #: kdeui/kcolordialog.cpp:1077
 #, kde-format
@@ -13216,7 +13216,7 @@ msgstr "1"
 #: kdeui/kfontdialog.cpp:51
 #, kde-format
 msgid "Select Font"
-msgstr "Seleccioneu el tipus de lletra"
+msgstr "Trieu el tipus de lletra"
 
 #: kdeui/kprintpreview.cpp:118
 #, kde-format
@@ -13338,7 +13338,7 @@ msgstr "No teniu permís per a crear esta carpeta."
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder"
-msgstr "Seleccioneu una carpeta"
+msgstr "Trieu una carpeta"
 
 #: kio/kdirselectdialog.cpp:299
 #, kde-format
@@ -13522,7 +13522,7 @@ msgstr "Configureu les dades mostrades"
 #, kde-format
 msgctxt "@label::textbox"
 msgid "Select which data should be shown:"
-msgstr "Selecciona les dades que s'han de mostrar:"
+msgstr "Tria les dades que s'han de mostrar:"
 
 #: kio/kmetaprops.cpp:123
 #, kde-format
@@ -14049,7 +14049,7 @@ msgstr "Certificats afegits per l'usuari"
 #: kssl/kcm/cacertificatespage.cpp:302
 #, kde-format
 msgid "Pick Certificates"
-msgstr "Seleccioneu els certificats"
+msgstr "Trieu els certificats"
 
 #. i18n: ectx: property (text), widget (QLabel, subjectHeading)
 #: kssl/kcm/displaycert.ui:23
