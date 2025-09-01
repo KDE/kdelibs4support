@@ -2385,7 +2385,7 @@ msgstr "Error fatal"
 #: kdebugdialog/klistdebugdialog.cpp:69
 #, kde-format
 msgid "&Select All"
-msgstr "&Tria-ho tot"
+msgstr "&Selecciona-ho tot"
 
 #: kdebugdialog/klistdebugdialog.cpp:70
 #, kde-format
