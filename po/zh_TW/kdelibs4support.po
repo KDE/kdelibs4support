@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-09-30 22:55+0900\n"
+"PO-Revision-Date: 2025-10-01 22:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -12663,7 +12663,7 @@ msgstr "太平洋/諾魯"
 #: kdecore/TIMEZONES:1360
 #, kde-format
 msgid "Pacific/Niue"
-msgstr "太平洋/紐埃島"
+msgstr "太平洋/紐埃"
 
 #: kdecore/TIMEZONES:1361
 #, kde-format
