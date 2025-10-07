@@ -3,6 +3,7 @@ CurrencyCodeIsoAlpha3=CLF
 CurrencyCodeIsoNumeric3=990
 #Context for Name: Adjectival Country Name and Currency Name
 Name=Chilean Unidad de Fomento
+Name[ar]=وحدة التنمية التشيلية
 Name[az]=Çili İnkişaf Birliyi Pul Vahidi
 Name[bg]=Чилийска обменна единица (UF)
 Name[bn]=Chilean Unidad de Fomento
