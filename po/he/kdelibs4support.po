@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:24+0000\n"
-"PO-Revision-Date: 2025-08-28 20:48+0300\n"
+"PO-Revision-Date: 2025-10-06 11:11+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -5877,46 +5877,46 @@ msgid "Ahd"
 msgstr "יום א"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:365
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 1 - KLocale::LongName"
 msgid "Yaum al-Ithnain"
-msgstr "יום שני"
+msgstr "יוֹם אֵ(ל)תִّ׳נֵין"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:367
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 2 - KLocale::LongName"
 msgid "Yau al-Thulatha"
-msgstr "יום שלישי"
+msgstr "יוֹם אֵ(ל)תַّ׳לַאתַ׳א"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:369
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 3 - KLocale::LongName"
 msgid "Yaum al-Arbi'a"
-msgstr "יום רביעי"
+msgstr "יוֹם אֵלְאַרְבְּעַא"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:371
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 4 - KLocale::LongName"
 msgid "Yaum al-Khamees"
-msgstr "יום חמישי"
+msgstr "יוֹם אֵלְחַ׳מִיס"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:373
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 5 - KLocale::LongName"
 msgid "Yaum al-Jumma"
-msgstr "יום שישי"
+msgstr "יוֹם אֵלְגֻ׳מְעַה"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:375
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 6 - KLocale::LongName"
 msgid "Yaum al-Sabt"
-msgstr "שבת"
+msgstr "יוֹם אִ(ל)סַّבֵּת"
 
 #: kdecore/kcalendarsystemislamiccivil.cpp:377
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Hijri weekday 7 - KLocale::LongName"
 msgid "Yaum al-Ahad"
-msgstr "יום ראשון"
+msgstr "יוֹם אֵלְאַחַד"
 
 #: kdecore/kcalendarsystemjalali.cpp:74
 #, kde-format
@@ -10771,7 +10771,7 @@ msgstr ""
 #: kdecore/TIMEZONES:792
 #, kde-format
 msgid "China north"
-msgstr ""
+msgstr "צפון סין"
 
 #: kdecore/TIMEZONES:793
 #, kde-format
