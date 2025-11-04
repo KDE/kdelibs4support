@@ -2421,7 +2421,7 @@ msgstr "KDebugDialog"
 #, kde-format
 msgid "A dialog box for setting preferences for debug output"
 msgstr ""
-"Une boîte de dialogue pour configurer les paramètres de sortie pour les "
+"Une boite de dialogue pour configurer les paramètres de sortie pour les "
 "messages de débogage."
 
 #: kdebugdialog/main.cpp:102
@@ -2442,7 +2442,7 @@ msgstr "Mainteneur"
 #: kdebugdialog/main.cpp:108
 #, kde-format
 msgid "Show the fully-fledged dialog instead of the default list dialog"
-msgstr "Afficher la boîte de dialogue détaillée au lieu de la liste par défaut"
+msgstr "Afficher la boite de dialogue détaillée au lieu de la liste par défaut"
 
 #: kdebugdialog/main.cpp:109
 #, kde-format
@@ -13062,11 +13062,11 @@ msgid_plural ""
 "examined:\n"
 "%2"
 msgstr[0] ""
-"Il est impossible de lire la configuration des chaînes de couleurs RVB de "
+"Il est impossible de lire la configuration des chaines de couleurs RVB de "
 "X11. L'emplacement de fichier suivant a été examiné :\n"
 "%2"
 msgstr[1] ""
-"Il est impossible de lire la configuration des chaînes de couleurs RVB de "
+"Il est impossible de lire la configuration des chaines de couleurs RVB de "
 "X11. Les emplacements de fichiers suivants ont été examinés :\n"
 "%2"
 
@@ -13258,7 +13258,7 @@ msgstr "<qt>Voulez-vous vraiment quitter <b>%1</b> ?</qt>"
 #: kdeui/ksystemtrayicon.cpp:229
 #, kde-format
 msgid "Confirm Quit From System Tray"
-msgstr "Confirmer la fermeture depuis la boîte à miniatures"
+msgstr "Confirmer la fermeture depuis la boite à miniatures"
 
 #: kdeui/kundostack.cpp:47
 #, kde-format
@@ -14329,7 +14329,7 @@ msgid ""
 "The certificate is self-signed. While the trust chain could be built up, the "
 "root CA's (Certificate Authority) certificate can not be found."
 msgstr ""
-"Le certificat est signé avec lui-même. Bien que la chaîne de confiance "
+"Le certificat est signé avec lui-même. Bien que la chaine de confiance "
 "puisse être construite, le certificat racine de l'autorité de certification "
 "(CA) n'a pu être trouvé."
 
@@ -14340,7 +14340,7 @@ msgid ""
 "your trust chain is broken."
 msgstr ""
 "Le certificat de l'autorité de certification (CA) ne peut être trouvé. Votre "
-"chaîne de confiance est certainement brisée."
+"chaine de confiance est certainement brisée."
 
 #: kssl/ksslcertificate.cpp:1106
 #, kde-format
@@ -14349,14 +14349,14 @@ msgid ""
 "trust chain and not self-signed. If you self-sign the certificate, make sure "
 "to import it into the list of trusted certificates."
 msgstr ""
-"Le certificat ne peut être vérifié car il est le seul de la chaîne de "
+"Le certificat ne peut être vérifié car il est le seul de la chaine de "
 "confiance et il n'est pas signé par lui-même. Si vous signez le certificat "
 "avec lui-même, pensez à l'ajouter dans la liste des certificats de confiance."
 
 #: kssl/ksslcertificate.cpp:1108
 #, kde-format
 msgid "The certificate chain is longer than the maximum depth specified."
-msgstr "La chaîne de certificat est plus longue la profondeur spécifiée."
+msgstr "La chaine de certificat est plus longue la profondeur spécifiée."
 
 #: kssl/ksslcertificate.cpp:1111
 #, kde-format
@@ -14374,7 +14374,7 @@ msgid ""
 "The length of the trust chain exceeded one of the CA's (Certificate "
 "Authority) 'pathlength' parameters, making all subsequent signatures invalid."
 msgstr ""
-"La longueur de la chaîne de confiance excède la valeur du paramètre "
+"La longueur de la chaine de confiance excède la valeur du paramètre "
 "« pathlength » d'une des autorité de certification (CA). Ceci rend toutes "
 "les signatures suivantes non valables."
 
@@ -14460,7 +14460,7 @@ msgid ""
 "messages."
 msgstr ""
 "Le test de signature pour ce certificat a échoué. Ceci peut signifier que la "
-"signature de ce certificat ou n'importe quelle signature dans sa chaîne de "
+"signature de ce certificat ou n'importe quelle signature dans sa chaine de "
 "confiance n'a pu être déchiffré ou bien que la liste de révocation des "
 "certificats (CRL) n'a pu être vérifiée. Si vous voyez ce message, prévenez "
 "l'auteur du logiciel que vous utilisez afin qu'il utilise un des nouveaux "
@@ -14475,7 +14475,7 @@ msgid ""
 "author of the software you are using know that he or she should use the new, "
 "more specific error messages."
 msgstr ""
-"Ce certificat ou un des certificats de sa chaîne de confiance ou l'autorité "
+"Ce certificat ou un des certificats de sa chaine de confiance ou l'autorité "
 "de certification (CA) ou bien la liste de révocation des certificats (CRL) "
 "n'est pas valable (plus valable ou pas encore valable). Si vous voyez ce "
 "message, prévenez l'auteur du logiciel que vous utilisez afin qu'il utilise "
