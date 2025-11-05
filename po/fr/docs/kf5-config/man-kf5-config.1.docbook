@@ -179,7 +179,7 @@
 ></term>
 <listitem>
 <para
->Version de &Qt; et compilé dans une chaîne de version pour les bibliothèques de &frameworks; et <command
+>Version de &Qt; et compilé dans une chaine de version pour les bibliothèques de &frameworks; et <command
 >kf5-config</command
 >.</para>
 </listitem>
@@ -192,7 +192,7 @@
 ></term>
 <listitem>
 <para
->Compilé dans la chaîne de version pour les bibliothèques de &frameworks;.</para>
+>Compilé dans la chaine de version pour les bibliothèques de &frameworks;.</para>
 </listitem>
 </varlistentry>
 
