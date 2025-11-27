@@ -23,14 +23,14 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2025-10-14 07:47+0300\n"
+"PO-Revision-Date: 2025-11-26 12:58+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -2619,11 +2619,14 @@ msgid ""
 "Please check the documentation or the source for any\n"
 "licensing terms.\n"
 msgstr ""
+"לא צוינו תנאי רישיון כלשהם לתוכנית זו.\n"
+"כדאי לבדוק אם יש תנאי רישיון כלשהם\n"
+"בתיעוד או בקוד המקור.\n"
 
 #: kdecore/k4aboutdata.cpp:273
 #, kde-format
 msgid "This program is distributed under the terms of the %1."
-msgstr ""
+msgstr "תוכנית זו כפופה לתנאים של %1."
 
 #: kdecore/k4aboutdata.cpp:297
 #, kde-format
@@ -6382,46 +6385,46 @@ msgid "1sh"
 msgstr "יום א"
 
 #: kdecore/kcalendarsystemjalali.cpp:371
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 1 - KLocale::LongName"
 msgid "Do shanbe"
-msgstr "יום שני"
+msgstr "דושנבה"
 
 #: kdecore/kcalendarsystemjalali.cpp:373
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 2 - KLocale::LongName"
 msgid "Se shanbe"
-msgstr "יום שלישי"
+msgstr "סהשנבה"
 
 #: kdecore/kcalendarsystemjalali.cpp:375
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 3 - KLocale::LongName"
 msgid "Chahar shanbe"
-msgstr "יום רביעי"
+msgstr "צ׳הארשנבה"
 
 #: kdecore/kcalendarsystemjalali.cpp:377
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 4 - KLocale::LongName"
 msgid "Panj shanbe"
-msgstr "יום חמישי"
+msgstr "פאנג׳שנבה"
 
 #: kdecore/kcalendarsystemjalali.cpp:379
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 5 - KLocale::LongName"
 msgid "Jumee"
-msgstr "יום שישי"
+msgstr "ג׳ומעה"
 
 #: kdecore/kcalendarsystemjalali.cpp:381
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 6 - KLocale::LongName"
 msgid "Shanbe"
-msgstr "שבת"
+msgstr "שנבה"
 
 #: kdecore/kcalendarsystemjalali.cpp:383
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Jalali weekday 7 - KLocale::LongName"
 msgid "Yek-shanbe"
-msgstr "יום ראשון"
+msgstr "יכשנבה"
 
 #: kdecore/kcalendarsystemjapanese.cpp:62
 #, kde-format
@@ -7346,12 +7349,12 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:924
 #, kde-format
 msgid "This application was written by somebody who wants to remain anonymous."
-msgstr ""
+msgstr "יישום זה נכתב על ידי מישהו או מישהי שלא רוצים להיחשף."
 
 #: kdecore/kcmdlineargs.cpp:929
 #, kde-format
 msgid "Please use http://bugs.kde.org to report bugs.\n"
-msgstr ""
+msgstr "נא להשתמש ב־http://bugs.kde.org כדי לדווח על תקלות.\n"
 
 #: kdecore/kcmdlineargs.cpp:931
 #, kde-format
@@ -7381,7 +7384,7 @@ msgstr ""
 #: kdecore/kcmdlineargs.cpp:1122
 #, kde-format
 msgid "Usage: %1 %2\n"
-msgstr ""
+msgstr "שימוש: %1 %2\n"
 
 #: kdecore/kcmdlineargs.cpp:1125
 #, kde-format
@@ -7389,6 +7392,8 @@ msgid ""
 "\n"
 "Generic options:\n"
 msgstr ""
+"\n"
+"אפשרויות כלליות:\n"
 
 #: kdecore/kcmdlineargs.cpp:1127
 #, kde-format
@@ -7398,7 +7403,7 @@ msgstr "הצגת מידע על האפשרויות"
 #: kdecore/kcmdlineargs.cpp:1133
 #, kde-format
 msgid "Show %1 specific options"
-msgstr ""
+msgstr "הצגת אפשרויות נקודתיות ל־%1"
 
 #: kdecore/kcmdlineargs.cpp:1140
 #, kde-format
@@ -7408,17 +7413,17 @@ msgstr "הצגת כל האפשרויות"
 #: kdecore/kcmdlineargs.cpp:1141
 #, kde-format
 msgid "Show author information"
-msgstr ""
+msgstr "הצגת פרטי היוצר"
 
 #: kdecore/kcmdlineargs.cpp:1142
 #, kde-format
 msgid "Show version information"
-msgstr ""
+msgstr "הצגת פרטי הגרסה"
 
 #: kdecore/kcmdlineargs.cpp:1143
 #, kde-format
 msgid "Show license information"
-msgstr ""
+msgstr "הצגת פרטי רישיון"
 
 #: kdecore/kcmdlineargs.cpp:1144
 #, kde-format
@@ -7431,6 +7436,8 @@ msgid ""
 "\n"
 "%1 options:\n"
 msgstr ""
+"\n"
+"אפשרויות %1:\n"
 
 #: kdecore/kcmdlineargs.cpp:1166
 #, kde-format
@@ -7438,6 +7445,8 @@ msgid ""
 "\n"
 "Options:\n"
 msgstr ""
+"\n"
+"אפשרויות:\n"
 
 #: kdecore/kcmdlineargs.cpp:1219
 #, kde-format
@@ -7445,6 +7454,8 @@ msgid ""
 "\n"
 "Arguments:\n"
 msgstr ""
+"\n"
+"ארגומנטים:\n"
 
 #: kdecore/kcmdlineargs.cpp:1580
 #, kde-format
