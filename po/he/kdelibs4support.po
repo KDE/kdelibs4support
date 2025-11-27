@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4support\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 09:00+0000\n"
-"PO-Revision-Date: 2025-11-26 12:58+0200\n"
+"PO-Revision-Date: 2025-11-27 12:16+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -11898,10 +11898,9 @@ msgid "Europe/Andorra"
 msgstr "אירופה/אנדורה"
 
 #: kdecore/TIMEZONES:1138
-#, fuzzy, kde-format
-#| msgid "Europe/Athens"
+#, kde-format
 msgid "Europe/Astrakhan"
-msgstr "אירופה/אתונה"
+msgstr "אירופה/אסטרחן"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1140
@@ -12167,9 +12166,9 @@ msgstr ""
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1208
-#, fuzzy, kde-format
+#, kde-format
 msgid "Moscow+00 - Samara, Udmurtia"
-msgstr "מוסקבה+ 09 - קמצ'טקה"
+msgstr "מוסקבה+00 - סמרה, אודמורטיה"
 
 #. i18n: comment to the previous timezone
 #: kdecore/TIMEZONES:1210
