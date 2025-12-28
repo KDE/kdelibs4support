@@ -42,7 +42,7 @@
 >kf5-config</command
 ></refname>
 <refpurpose
->Mostra os caminhos da instalação do &Qt; e Frameworks</refpurpose>
+>Mostra os caminhos da instalação do &Qt; e &frameworks;</refpurpose>
 </refnamediv>
 
 <refsynopsisdiv>
@@ -92,15 +92,21 @@
 <title
 >Descrição</title>
 <para
->O kf5-config é um programa de linha de comando que é usado para obter informações sobre os caminhos de instalação do Frameworks ou dos usuários.</para>
+>O <command
+>kf5-config</command
+> é um programa de linha de comando que é usado para obter informações sobre os caminhos de instalação do &frameworks; ou dos usuários.</para>
 
 <para
->Use este programa para determinar onde residem os vários aspectos da instalação do Frameworks no seu sistema. </para
+>Use este programa para determinar onde residem os vários aspectos da instalação do &frameworks; no seu sistema. </para
 > 
 
 <note
 ><para
->O kf5-config é basicamente um substituto obsoleto para o kde4-config, já que a ferramenta recomendada é o qtpaths (que é disponibilizada pelo &Qt;). </para
+>O <command
+>kf5-config</command
+> é basicamente um substituto obsoleto para o kde4-config, já que a ferramenta recomendada é o <command
+>qtpaths</command
+> (que é disponibilizada pelo &Qt;). </para
 ></note>
 </refsect1>
 
@@ -116,7 +122,7 @@
 ></term>
 <listitem>
 <para
->expande o ${prefix} e o ${exec_prefix} no resultado</para>
+>Expande o ${prefix} e o ${exec_prefix} no resultado.</para>
 </listitem>
 </varlistentry>
 
@@ -127,7 +133,7 @@
 ></term>
 <listitem>
 <para
->O prefixo pré-compilado para as bibliotecas do Frameworks</para>
+>O prefixo pré-compilado para as bibliotecas do &frameworks;.</para>
 </listitem>
 </varlistentry>
 
@@ -138,7 +144,7 @@
 ></term>
 <listitem>
 <para
->O prefixo de executáveis pré-compilado para as bibliotecas do Frameworks</para>
+>O prefixo de executáveis pré-compilado para as bibliotecas do &frameworks;.</para>
 </listitem>
 </varlistentry>
 
@@ -149,7 +155,7 @@
 ></term>
 <listitem>
 <para
->O sufixo pré-compilado do local das bibliotecas</para>
+>Compilado no sufixo do caminho da biblioteca.</para>
 </listitem>
 </varlistentry>
 
@@ -162,7 +168,7 @@
 <para
 >O prefixo usado na $<envar
 >HOME</envar
-> para salvar os arquivos</para>
+> para salvar os arquivos.</para>
 </listitem>
 </varlistentry>
 
@@ -173,7 +179,9 @@
 ></term>
 <listitem>
 <para
->String de versão e compilação do &Qt; para as bibliotecas dos Frameworks e do kf5-config</para>
+>Versão do &Qt; e compilada na string de versão para bibliotecas &frameworks; e <command
+>kf5-config</command
+>.</para>
 </listitem>
 </varlistentry>
 
@@ -184,7 +192,7 @@
 ></term>
 <listitem>
 <para
->O texto pré-compilado da versão das bibliotecas do Frameworks</para>
+>O texto pré-compilado da versão das bibliotecas do &frameworks;.</para>
 </listitem>
 </varlistentry>
 
@@ -195,7 +203,7 @@
 ></term>
 <listitem>
 <para
->Imprime uma lista com todos os tipos de recursos do &kde; disponíveis</para>
+>Imprime uma lista com todos os tipos de recursos do &kde; disponíveis.</para>
 </listitem>
 </varlistentry>
 
@@ -210,7 +218,7 @@
 <para
 >Procura no local pelo <replaceable
 >tipo</replaceable
-> indicado</para>
+> indicado.</para>
 </listitem>
 </varlistentry>
 
@@ -236,7 +244,7 @@
 ></term>
 <listitem>
 <para
->O prefixo onde instalar os arquivos de recursos</para>
+>O prefixo onde instalar os arquivos de recursos.</para>
 </listitem>
 </varlistentry>
 
@@ -247,7 +255,7 @@
 ></term>
 <listitem>
 <para
->Prefixo de instalação do &Qt;</para>
+>Prefixo de instalação do &Qt;.</para>
 </listitem>
 </varlistentry>
 
@@ -258,7 +266,7 @@
 ></term>
 <listitem>
 <para
->Localização dos binários do &Qt; instalados</para>
+>Localização dos binários do &Qt; instalados.</para>
 </listitem>
 </varlistentry>
 
@@ -269,7 +277,7 @@
 ></term>
 <listitem>
 <para
->Localização das bibliotecas do &Qt; instaladas</para>
+>Localização das bibliotecas do &Qt; instaladas.</para>
 </listitem>
 </varlistentry>
 
@@ -280,7 +288,7 @@
 ></term>
 <listitem>
 <para
->Localização dos plugins do &Qt; instalados</para>
+>Localização dos plugins do &Qt; instalados.</para>
 </listitem>
 </varlistentry>
 
@@ -292,7 +300,7 @@
 >Exemplos</title>
 
 <para
->Imprimir a pasta de instalação de topo do Frameworks:</para>
+>Imprimir a pasta de instalação de topo do &frameworks;:</para>
 <para
 ><prompt
 >&percnt;</prompt
